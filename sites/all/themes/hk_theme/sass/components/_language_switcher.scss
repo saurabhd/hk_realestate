@@ -1,0 +1,31 @@
+@import "base";
+
+.language-switcher {
+  position: absolute;
+  right: 0;
+  top: 150px;
+  li {
+    list-style: none;
+    background: rgba(255,255,255,.9);
+    @include border-top-left-radius($border-radius);
+    @include border-bottom-left-radius($border-radius);
+    border: 2px solid $secondary;
+    border-right: 0;
+    @include box-shadow($box-shadow);
+    width: 40px;
+    margin-bottom: .5em;
+    a {
+      display: block;
+      padding: .35em 1em .35em .5em;
+      color: $greyer;
+      font-weight: 500;
+      &:hover {
+        color: $primary;
+        text-decoration: none;
+      }
+    }
+    &.zh-hans, &.ru {
+      display: none;
+    }
+  }
+}

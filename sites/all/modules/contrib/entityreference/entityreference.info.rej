@@ -1,0 +1,7 @@
+--- entityreference.info
++++ entityreference.info
+@@ -27,3 +27,4 @@
+ files[] = tests/entityreference.taxonomy.test
+ files[] = tests/entityreference.admin.test
+ files[] = tests/entityreference.feeds.test
++files[] = tests/entityreference.entity_translation.test

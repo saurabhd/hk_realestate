@@ -1,0 +1,70 @@
+<?php
+/**
+ * @file
+ * Provides a fallback language for language negotiation if user language
+ * couldn't be detected and you want use a other language like the
+ * system default language as default.
+ */
+
+/**
+ * Implements hook_language_negotiation_info().
+ * - provides provider callback for language negotiation
+ *
+ * @see hook_language_negotiation_info()
+ *
+ * @return array
+ */
+function fallback_language_negotiation_language_negotiation_info() {
+  return array(
+    'fallback_language_negotiation_provider' => array(
+      'callbacks' => array(
+        'language' => 'fallback_language_negotiation_provider_callback',
+      ),
+      'file' => drupal_get_path('module', 'fallback_language_negotiation') . '/fallback_language_negotiation.module',
+      'config' => 'admin/config/regional/language/configure/fallback-language-negotiation',
+      'name' => t('Fallback language for language negotiation'),
+      'description' => t('Provides a fallback language for language negotiation if user language couldn´t be detected and you want use a other language like the system default language as default.'),
+      'cache' => 0,
+    ),
+  );
+}
+
+/**
+ * Language negotiation callback.
+ *
+ * @param $languages
+ *   An array of valid language objects.
+ *
+ * @return
+ *   A valid language code on success, FALSE otherwise.
+ */
+function fallback_language_negotiation_provider_callback($languages) {
+  $default = variable_get('fallback_language_negotiation_langcode', NULL);
+  if (isset($default) && isset($languages[$default]->enabled) && $languages[$default]->enabled == TRUE) {
+    return $default;
+  }
+  return FALSE;
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * @see hook_menu()
+ *
+ * @return array
+ *   An array with menu items.
+ */
+function fallback_language_negotiation_menu() {
+  $items = array();
+
+  $items['admin/config/regional/language/configure/fallback-language-negotiation'] = array(
+    'title' => 'Fallback language settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('fallback_language_negotiation_fallback_form'),
+    'access arguments' => array('administer languages'),
+    'file' => 'fallback_language_negotiation.admin.inc',
+    'type' => MENU_VISIBLE_IN_BREADCRUMB,
+  );
+
+  return $items;
+}

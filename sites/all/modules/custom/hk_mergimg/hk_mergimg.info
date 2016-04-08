@@ -1,0 +1,4 @@
+name = "Merging Images"
+description = "Merge the images from building and apartment into field_apart_gallery"
+core = 7.x
+package = Experimental

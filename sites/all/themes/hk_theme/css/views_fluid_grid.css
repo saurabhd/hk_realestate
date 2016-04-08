@@ -1,0 +1,27 @@
+ul.views-fluid-grid-items-border-radius li.views-fluid-grid-item {
+  border-radius: 4px;
+}
+
+ul.views-fluid-grid-items-box-shadow li.views-fluid-grid-item {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+li.views-fluid-grid-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #444;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  vertical-align: top;
+  min-height: 280px;
+}
+
+.views-fluid-grid h2 {
+  font-size: 1em;
+  margin: .5em 0;
+  line-height: 1;
+}
+.views-fluid-grid .group-card {
+  padding: 0 0.5rem 0.5rem;
+}

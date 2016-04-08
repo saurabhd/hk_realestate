@@ -1,0 +1,14 @@
+name = Context Flag
+description = Provides integration between the Context and Flag modules.
+core = 7.x
+package = Context
+
+dependencies[] = context
+dependencies[] = flag (>3.0)
+
+; Information added by Drupal.org packaging script on 2014-05-24
+version = "7.x-1.2"
+core = "7.x"
+project = "context_flag"
+datestamp = "1400950428"
+

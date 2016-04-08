@@ -1,0 +1,245 @@
+@import "compass/css3";
+@import "base";
+
+// Based on Animenu: https://github.com/catalinred/Animenu
+
+// Variables
+$subMenuItemWidth: 100%;     // Minimum width for submenus' items
+$baseMenuBackground: transparent;     // Base color theme
+$baseMenuBackgroundHover: transparent;    // When main item is hovered
+$secondaryMenuBackground: rgba(255,255,255,.9);  // Secondary color (highlights, triangles...)
+$baseMenuColor: $black;        // Proper menu items color
+$baseMenuColorHover: $primary;
+$gutter: 1em;           // Base gutter
+$input: "input[type=checkbox]";   // Checkbox hack selector
+$selector: "#navigation .hauptmenu";
+
+// Menu background mixin
+@mixin menu-background($color, $menu-gradient: false) {
+  background-color: $color;
+  @if $menu-gradient == true {
+    @include background-image(linear-gradient(rgba(255, 255, 255, .2),
+                          rgba(255, 255, 255, 0)));
+  }
+  @else {
+    background-image: none;
+  }
+}
+
+// Menu background mixin
+// The $size argument specifies the actual size of the triangle
+// The $shift-left helps on horizontal positioning.
+@mixin pseudo-triangle($size, $shift-left) {
+  &:after {
+    content: '';
+    position: absolute;
+    left: $shift-left * $gutter;
+    top: -$size * 2;
+    border: $size solid transparent;
+    border-bottom-color: inherit;
+  }
+}
+
+// Shortest clearfix. Ever. IE8+.
+// http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+%cf:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+// Fix for Android
+// http://timpietrusky.com/advanced-checkbox-hack
+body {
+  -webkit-animation: bugfix infinite 1s;
+}
+
+@-webkit-keyframes bugfix {
+  from { padding: 0; }
+  to { padding: 0; }
+}
+
+// New box model, small reset, global stuff
+#{$selector} {
+  font: 500 1em $helvetica-neue;
+  * {
+    @include box-sizing(border-box);
+  }
+  ul {
+    margin: 0;
+    @media screen and (min-width: 560px) {
+      margin: 0;
+      line-height: 1;
+    }
+    @media screen and (min-width: 731px) {
+      margin: 44px 0 0 0;
+    }
+    @include breakpoint($br-desk) {
+      margin: 44px 0 0 2em;
+    }
+    padding: 0;
+    list-style: none;
+    /*@include border-radius(3px);*/
+  }
+  li {
+    position: relative;
+    &:hover {
+      border-right-color: $baseMenuBackgroundHover;
+      /*@include box-shadow(0 1px 0 rgba(255, 255, 255, .2) inset);*/
+      > ul {
+        opacity: 1;
+        visibility: visible;
+        margin: 0;
+      }
+      > a {
+        color: $baseMenuColorHover;
+        background: $baseMenuBackgroundHover;
+      }
+    }
+  }
+  #{$input} {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  label {
+    display:none;
+    cursor: pointer;
+    user-select:none;
+  }
+}
+
+// First level -> main menu items
+// <nav class="animenu">
+//    <ul></ul>
+//  </nav>
+#{$selector} > ul {
+  border: 0;
+  @include menu-background($baseMenuBackground);
+  /*@include box-shadow(0 1px 0 rgba(255, 255, 255, .2) inset);*/
+  @extend %cf;
+  > li {
+    float: left;
+    border-right: 0px solid /*lighten($baseMenuBackground, 5%)*/;
+    /*@include box-shadow(1px 0 0 lighten($baseMenuBackground, 20%));*/
+    > a {
+      float: left;
+      padding: 0.8em;
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+      &:hover {
+        color: $primary;
+        background: $baseMenuBackgroundHover;
+        border-bottom: 4px solid $primary;
+        /*-moz-box-shadow: inset 0 0 5px #666;
+        -webkit-box-shadow: inset 0 0 5px #666;
+        box-shadow: inset 0 0 10px #666;*/
+      }
+      &.active {
+        color: $black;
+        background: $baseMenuBackgroundHover;
+        border-bottom: 4px solid $primary;
+        /*-moz-box-shadow: inset 0 0 5px #666;
+        -webkit-box-shadow: inset 0 0 5px #666;
+        box-shadow: inset 0 0 10px #666;*/
+      }
+    }
+  }
+  a {
+    color: $baseMenuColor;
+    text-decoration: none;
+    /*text-shadow: 0 -1px 0 #585858;*/
+  }
+
+  // Second level
+  // <nav class="animenu">
+  //    <ul>
+  //      <ul></ul>
+  //    </ul>
+  //  </nav>
+  ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10000;
+    min-width: $subMenuItemWidth;
+    background: rgba(255,255,255,0.9);
+    opacity: 0;
+    visibility: hidden;
+    margin: 2 * $gutter 0 0 0;
+    background: $secondaryMenuBackground;
+    white-space: nowrap;
+    /*@include menu-background(lighten($baseMenuBackground, 15%), false);*/
+    @include transition-property("margin, opacity");
+    @include transition-duration(".15s");
+    @include transition-timing-function(ease-in-out);
+    &:hover {
+      border-top: 4px solid transparent;
+    }
+    li {
+      display: block;
+      width: $subMenuItemWidth;
+      text-align: center;
+      /*border-bottom: 4px solid transparent;*/
+      /*@include box-shadow(0 1px 0 lighten($baseMenuBackground, 5%),
+                0 2px 0 lighten($baseMenuBackground, 25%));*/
+      &:hover {
+        /*border-bottom: 4px solid $primary;*/
+      }
+      &:first-child > a {
+        /*@include border-radius(3px 3px 0 0);
+        @include pseudo-triangle(6px, 4);*/
+      }
+      &:last-child {
+        @include box-shadow(none);
+        > a {
+          @include border-radius(0 0 3px 3px);
+        }
+      }
+    }
+    a {
+      padding: $gutter;
+      width: $subMenuItemWidth;
+      display: block;
+      /*border-color: lighten($baseMenuBackground, 15%);*/
+      &:hover {
+        background-color: $secondaryMenuBackground;
+        border-color: $secondaryMenuBackground;
+      }
+    }
+  }
+}
+#navigation .hauptmenu > ul li.active-trail ul:hover {
+        border-top: 0;
+      }
+
+/* Service Menu */
+#navigation #block-menu-menu-service-menu {
+  ul {
+    &:hover {
+      border: 0;
+    }
+    li {
+      width: 40px;
+      a {
+        color: $greyer;
+        text-decoration: none;
+        &:hover,
+        &.active {
+        color: $primary;
+        border:0;
+        background: none;
+        text-decoration: none;
+        }
+      }
+    }
+  }
+  .title-hide {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+  }
+}

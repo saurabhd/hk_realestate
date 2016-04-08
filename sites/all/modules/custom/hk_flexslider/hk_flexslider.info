@@ -1,0 +1,6 @@
+name = HK Flexslider
+description = Customizations for HK Flexslider.
+core = 7.x
+package = Flexslider
+;dependencies[] = leaflet
+dependencies[] = flexslider

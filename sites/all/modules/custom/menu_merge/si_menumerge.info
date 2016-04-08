@@ -1,0 +1,4 @@
+name = Menu Merge
+description = "Merges two or more menus into one and creates a block called <em>Mobile Menu</em>. Until we find time to add an admin interface menus must be hardcoded inside the module file."
+core = 7.x
+files[] = si_menumerge.module

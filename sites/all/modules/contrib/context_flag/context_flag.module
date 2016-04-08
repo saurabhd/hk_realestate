@@ -1,0 +1,137 @@
+<?php
+/**
+ * @file
+ * Main module file for the context_flag module.
+ */
+
+/**
+ * Implements hook_context_plugins().
+ */
+function context_flag_context_plugins() {
+  $plugins = array();
+  $path = drupal_get_path('module', 'context_flag') . '/conditions/';
+  // Plugins: Node Flags.
+  $plugins['flag_node_active'] = array(
+    'handler' => array(
+      'path' => $path,
+      'file' => 'context_flag_condition.node.inc',
+      'class' => 'ContextFlagNodeActive',
+      'parent' => 'context_condition',
+    ),
+  );
+  // Plugins: User Page Flags.
+  $plugins['flag_user_page_active'] = array(
+    'handler' => array(
+      'path' => $path,
+      'file' => 'context_flag_condition.user_page.inc',
+      'class' => 'ContextFlagUserPageActive',
+      'parent' => 'context_condition',
+    ),
+  );
+  // Plugins: User Account Flags.
+  $plugins['flag_user_account_active'] = array(
+    'handler' => array(
+      'path' => $path,
+      'file' => 'context_flag_condition.user.inc',
+      'class' => 'ContextFlagUserAccountActive',
+      'parent' => 'context_condition',
+    ),
+  );
+  return $plugins;
+}
+
+/**
+ * Implements hook_context_registry().
+ */
+function context_flag_context_registry() {
+  return array(
+    'conditions' => array(
+      // Node conditions.
+      'flag_node_active' => array(
+        'title' => t('Flag - node'),
+        'description' => t('Enable this context when these Flags are active.'),
+        'plugin' => 'flag_node_active',
+      ),
+      // User page conditions.
+      'flag_user_page_active' => array(
+        'title' => t('Flag - user page'),
+        'description' => t('Enable this context when viewing a user profile and this Flag is active.'),
+        'plugin' => 'flag_user_page_active',
+      ),
+      // User account conditions.
+      'flag_user_account_active' => array(
+        'title' => t('Flag - current user'),
+        'description' => t('Enable this context when this Flag is active for the currently logged-in user.'),
+        'plugin' => 'flag_user_account_active',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_context_page_condition().
+ */
+function context_flag_context_page_condition() {
+  // Use the conditions stored in the registry to trigger contexts.
+  $contexts = context_flag_context_registry();
+  foreach ($contexts['conditions'] as $context) {
+    // The user_account_active condition needs the user object passed to it.
+    if ($context['plugin'] === 'flag_user_account_active') {
+      if ($plugin = context_get_plugin('condition', $context['plugin'])) {
+        global $user;
+        $plugin->execute($user);
+      }
+    }
+    // Anything that doesn't have a special condition.
+    else {
+      if ($plugin = context_get_plugin('condition', $context['plugin'])) {
+        $plugin->execute();
+      }
+    }
+  }
+}
+
+/**
+ * Helper function for managing the "Require all flags" checkbox on forms.
+ *
+ * This is used in multiple condition plugins as part of options_form().
+ *
+ * @param string $str_setting
+ *   The name of the context setting value for the selected context.
+ * @param bool $value
+ *   The checked/unchecked state of this checkbox.
+ *
+ * @return array
+ *   A forms API form element for capturing settings for this context.
+ */
+function _context_flag_requireall_form($str_setting, &$value = FALSE) {
+  $form = array(
+    $str_setting => array(
+      '#title' => t('Require all flags'),
+      '#type' => 'checkbox',
+      '#description' => t('Trigger this context only when ALL selections are active.'),
+      '#default_value' => $value,
+    ),
+  );
+  return $form;
+}
+
+/**
+ * Implements hook_help().
+ */
+function context_flag_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#context_flag':
+      $markup = array();
+      $markup[] = '<h3>' . t('About Context Flag') . '</h3>';
+      $markup[] = '<p>' . t('The Context Flag module adds three new options for conditions to the Context management interface.') . '</p>';
+      $markup[] = '<ul>';
+      $markup[] = '<li>' . t('Flag - node: This will be active when viewing a node with the identified flags applied to it.') . '</li>';
+      $markup[] = '<li>' . t('Flag - user page: This will be active when viewing the profile page of a user with flags applied to them.') . '</li>';
+      $markup[] = '<li>' . t('Flag - current user: This will be active if the user account currently being used to view the site has flags applied to it.') . '</li>';
+      $markup[] = '</ul>';
+      $markup[] = '<h4>' . t('How do I apply this to the anonymous user?') . '</h4>';
+      $markup[] = '<p>' . t('Since the Anonymous user has its own role you can do this by using the default &quot;User role&quot; Context condition (included as part of the main context module).') . '</p>';
+      return implode('', $markup);
+  }
+}

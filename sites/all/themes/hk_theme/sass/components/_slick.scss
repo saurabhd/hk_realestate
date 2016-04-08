@@ -1,0 +1,83 @@
+.field-name-field-apart-floor-plan img {
+  margin-right: 0;
+  margin: 1.4em 0 0 10px;
+  width: 90.65%;
+  height: 90.65%;
+}
+.media-icon--lightbox {
+  z-index: 9;
+  visibility: visible !important;
+  padding: 300px;
+  margin: -300px 0 0 -300px;
+}
+.media-icon--lightbox:hover::before,
+.media-icon--lightbox:hover::after {
+  background-color: #C61C2C;
+}
+.slick-wrapper,
+.slick-slider,
+.slick--slider,
+.slick__slider > .slick-list {
+  margin: 0 !important;
+}
+.slick-wrapper {
+  position: relative;
+}
+.slick--main {
+
+}
+.slick--nav {
+  width: 82.6% !important;
+  float: left;
+    .slick__slider > .slick-list {
+    /*max-width: 790px;*/
+  }
+  .slick__slide.slick-current {
+    -ms-transform: scale(1.1) !important;
+    -webkit-transform: scale(1.1) !important;
+    transform: scale(1.1) !important;
+  }
+  .slick-track {
+      padding-bottom: 1em !important;
+      padding-top: 1em !important;
+      /*left: 0 !important;
+      transform: none !important;*/
+  }
+  .slick--display--thumbnail {
+    float: left;
+    /*max-width: 800px;*/
+    width: auto;
+    margin-bottom: 1.5em;
+  }
+  /*.slick__slide {
+    width: 150px !important;
+    margin-right: 10px;
+  }*/
+}
+.slick ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    margin: 0;
+  }
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: $primary;
+}
+.slick-prev::before:hover,
+.slick-next::before:hover {
+  color: $secondary;
+}
+.slick-next {
+    right: 10px;
+}
+.slide__caption {
+    display: none;
+}
+/* Photobox Style */
+.pbThumbs li.active a img {
+  border-color: $primary;
+}

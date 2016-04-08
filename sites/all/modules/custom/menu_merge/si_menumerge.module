@@ -1,0 +1,49 @@
+<?php
+// $Id$
+/**
+ * @file
+ * A module that concatenates two or more menus into one block
+ *
+ * This modules takes two or more existing menu trees and
+ * merges them into one block. This is useful if your mobile
+ * theme has only one menu with all items of your main and
+ * navigation combined.
+ */
+
+/** 
+ * Implements hook_block_info().
+ */
+function si_menumerge_block_info(){
+  $blocks = array();
+
+  $blocks['menu_merge'] = array(
+    'info' => t('Mobile Menu'),
+    );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function si_menumerge_block_view($block_name = '') {
+  if ($block_name == 'menu_merge') {
+    
+    // Define the menus to be concatenated 
+    // this should become a user configurable option in a future version
+    $menu_1 = menu_tree_all_data('main-menu');
+    $menu_2 = menu_tree_all_data('menu-menu-footer-menu');
+
+    // merge the menu arrays
+    $mobile_menu = array_merge($menu_1, $menu_2);
+    
+    // render a menu from the merged array
+    $content = menu_tree_output($mobile_menu);
+
+    $block = array(
+      'subject' => t('Mobile Menu'),
+      'content' => $content,
+    );
+
+    return $block;
+  }
+}

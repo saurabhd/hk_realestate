@@ -1,0 +1,72 @@
+/***********
+~VARIABLES
+***********/
+
+$yellow: #F9B634;
+$brown: #4C1B01;
+$browner: #454147;
+$grey: #EFF2F1;
+$greyer: #91988e; /* Warm grey von Natascha, war #d1d3d2 */
+$blue: #0091ea;
+$dark: #4b4b4b; /* Dunkelgrau von Natascha */
+$whitey: #f9f9f9;
+$vertical-gutter: 10px 0;
+$sb-padding: 0.2em 1.1em 0.3em 1.2em;  // Button padding
+$rowgrey: #e3e5e3;
+
+$primary: #c61c2c; /* Rot von Natascha */
+$secondary: #cbc1ba; /* Light warm grey von Natascha */
+$black: #1a1a1a; /* Schriftfarbe von Natascha */
+
+$border-radius: 5px;
+$box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+$border: 2px solid $secondary;
+
+/***********
+~BREAKPOINTS
+***********/
+// create $breakpoint variables like so
+// assume min-width (by default) if only a number
+
+$breakpoint-small-width: max-width 320px;
+$breakpoint-med-small-width: max-width  480px;
+$breakpoint-medium-width: max-width 768px;
+$breakpoint-large-width: max-width 1000px;
+$breakpoint-full-width: max-width 1280px;
+
+$br-mobil: 480px;
+$br-tablet: 768px;
+$br-850: 850px;
+$br-desk: 1024px;
+$br-wide: 1280px;
+
+/***********
+~MIXINS
+***********/
+
+@mixin hyphenate {
+  -ms-hyphenate-limit-chars: 6 3 2;
+    -moz-hyphenate-limit-chars: 6 3 2;
+    -webkit-hyphenate-limit-chars: 6 3 2;
+    hyphenate-limit-chars: 6 3 2;
+    -ms-hyphenate-limit-lines: 2;
+    -moz-hyphenate-limit-lines: 2;
+    -webkit-hyphenate-limit-lines: 2;
+    hyphenate-limit-lines: 2;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    word-break: normal;
+}
+
+/************
+~PLACEHOLDER
+*************/
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

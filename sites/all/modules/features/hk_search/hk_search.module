@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the HK Search feature.
+ */
+
+include_once 'hk_search.features.inc';

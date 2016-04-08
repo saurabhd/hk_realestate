@@ -1,0 +1,37 @@
+div.krumo-root {
+  z-index: 112 !important;
+}
+
+/****************
+OUR CUSTOM MIXINS
+*****************/
+/***********
+~VARIABLES
+***********/
+/* Warm grey von Natascha, war #d1d3d2 */
+/* Dunkelgrau von Natascha */
+/* Rot von Natascha */
+/* Light warm grey von Natascha */
+/* Schriftfarbe von Natascha */
+/***********
+~BREAKPOINTS
+***********/
+@media screen and (max-width: max-width 321px) {
+  #page .container, #page .wrapper.main {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  #page .wrapper.navigation {
+    position: static;
+    height: auto;
+  }
+
+  .footer footer {
+    width: 100%;
+  }
+
+  .front #search {
+    display: none;
+  }
+}

@@ -1,0 +1,13 @@
+name = Fallback language negotiation
+description = "Provides a fallback language negotiation if user language couldn't be detected"
+core = 7.x
+package = locale
+dependencies[] = locale
+configure = admin/config/regional/language/configure
+
+; Information added by drupal.org packaging script on 2013-09-30
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "fallback_language_negotation"
+datestamp = "1380577812"
+

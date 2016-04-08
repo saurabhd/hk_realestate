@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Leaflet MapBox module install file.
+ */
+
+/**
+ * Copy existing Mapbox configuration into the new multi-map data structure.
+ */
+function leaflet_mapbox_update_7201() {
+  if (variable_get('leaflet_mapbox_code')) {
+    $map_configs = array();
+    $map_configs[0] = array(
+      'mapbox_code' => variable_get('leaflet_mapbox_code'),
+      'label' => variable_get('leaflet_mapbox_label'),
+      'description' => variable_get('leaflet_mapbox_description'),
+      'zoomlevel' => variable_get('leaflet_mapbox_zoomlevel', 2),
+    );
+    variable_set('leaflet_map_configs', $map_configs);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function leaflet_mapbox_uninstall() {
+  variable_del('leaflet_mapbox_label');
+  variable_del('leaflet_mapbox_description');
+  variable_del('leaflet_mapbox_api_version');
+  variable_del('leaflet_mapbox_code');
+  variable_del('leaflet_mapbox_style_url');
+  variable_del('leaflet_mapbox_token');
+  variable_del('leaflet_mapbox_zoomlevel');
+  variable_del('leaflet_mapbox_configs');
+}

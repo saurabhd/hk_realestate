@@ -1,0 +1,9 @@
+<?php
+/**
+ * @file
+ * provides install / uninstall hooks for fallback language negotiation module
+ */
+
+function fallback_language_negotiation_uninstall() {
+  variable_del('fallback_language_negotiation_langcode');
+}

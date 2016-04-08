@@ -1,0 +1,13 @@
+.pdf > ol {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -ms-column-count: 2;
+  column-count: 2;
+  padding-left: 20px;
+  li {
+    margin-bottom: 1em;
+  }
+  ol {
+    padding-left: 17px;
+  }
+}

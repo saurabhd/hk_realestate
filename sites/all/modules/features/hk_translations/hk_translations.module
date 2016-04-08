@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the hk_translations feature.
+ */
+
+include_once 'hk_translations.features.inc';

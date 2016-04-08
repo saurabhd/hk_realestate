@@ -1,0 +1,12 @@
+<?php
+// dpm(get_defined_vars());
+function hk_mergimg_node_presave($node) {
+        if($node->type=='apartment'){
+            $imm=node_load($node->field_object_ref['und'][0]['target_id']);
+            // $imm=node_load($nid);
+            // $obj = field_get_items('node', $imm, 'field_object_ref');
+            // $objimg = field_view_value('node', $imm, 'field_object_ref', $obj[0]);
+            $tab_merge=drupal_array_merge_deep($node->field_apart_pictures,$imm->field_object_images);
+            $node->field_apart_gallery = $tab_merge;
+    }
+}

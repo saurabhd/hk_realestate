@@ -1,0 +1,264 @@
+/**
+ * @file
+ *
+ * Bear Starter Theme Main Styling
+ *
+ * Adds basic bear styles for starter theme.
+ *
+ */
+
+/***********
+~IMPORTS
+***********/
+@import "base";
+@import "compass/css3/border-radius";
+
+
+/***********
+~GENERIC
+***********/
+body.not-front {
+  background: url(../images/map.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  color: $black;
+  @include m-links;
+  font-weight: 400;
+}
+html, body, button, input, select, textarea {
+  /*@include bearfont-main;*/
+}
+h1, h2, h3, h5 {
+  /*@include bearfont-titles;*/
+  font-weight: 300;
+}
+h4 {
+  font-weight: 500;
+}
+.node-type-page {
+  h3 {
+    clear: both;
+  }
+  img {
+    margin-bottom: 1em;
+    float: left;
+    margin-right: 2em;
+  }
+}
+strong, b, bold {
+  font-weight: 500;
+}
+p {
+  line-height: 1.5;
+}
+a {
+  color: $primary;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+#main {
+  clear: both;
+  @include border-bottom-radius($border-radius);
+}
+#page {
+  min-width: 300px;
+}
+#navigation {
+  width: 100%;
+  /*padding: 0 0 15px 0;*/
+}
+#logo {
+  @include breakpoint($br-desk) {
+    padding: 0 1em;
+  }
+  img {
+    margin: 0;
+    @media screen and (max-width: 560px) {
+      height: 60px;
+      width: 110px;
+      position: fixed;
+    }
+  }
+}
+@include breakpoint ($breakpoint-small-width) {
+  ul.primary li, ul.secondary li {
+    float: none;
+    clear: both;
+    margin: 0;
+    a {
+      width: 88%;
+    }
+  }
+}
+/***********
+~STRUCTURE
+***********/
+
+h1 {
+  font-size: 160%;
+}
+.breadcrumb {
+  margin: 20px 0;
+}
+/***********
+~HEADER
+***********/
+.region-header {
+  clear: none;
+}
+.wrapper.header {
+  #header {
+    padding: 25px 0;
+    position: relative;
+    #bear-user-menu {
+      float: right;
+      margin: 0;
+      @include breakpoint ($breakpoint-medium-width) {
+        float: none;
+        text-align: center;
+        margin: 0;
+      }
+      ul {
+        margin: 20px 0 0 0;
+        padding: 0;
+        li {
+          display: inline;
+          list-style-type: none;
+          margin: 0 0 0 10px;
+          a {
+            @include sassy-button("matte", 2px, 90%, #777, #666, #fff, "inset");
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+h1#site-name {
+ font-size: 2em;
+ line-height: .5em;
+ margin: 70px 0 0 25px;
+  a:link, a:visited {
+      color: #ffffff;
+  }
+}
+#block-search-form {
+  background: #FFFFFF;
+  padding: 0 0 0 10px;
+  float: right;
+  width: 200px;
+  margin: 60px 0 0 0;
+  @include breakpoint ($breakpoint-medium-width) {
+    clear: both;
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+  input.form-text {
+    border: none;
+    border-right: 1px solid #CCCCCC;
+
+    width: 150px;
+    &:focus {
+      box-shadow: none;
+      moz-box-shadow: none;
+    }
+  }
+  input.form-submit {
+    text-indent: -9999px;
+    background: #FFFFFF url(../images/search.png) no-repeat center center;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    filter: none;
+    padding: 5px 15px;
+    width: 40px;
+    height: 28px;
+    text-shadow: none;
+    margin: 0;
+  }
+}
+@include breakpoint ($breakpoint-medium-width) {
+  .wrapper.header #header {
+    text-align: center;
+    padding: 0;
+    #logo {
+      float: none;
+      clear: both;
+      display: block;
+      padding: 0;
+    }
+    #name-and-slogan {
+      float: none;
+      h1 {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+/***********
+~SIDEBARS
+***********/
+
+aside.sidebars {
+  .sidebar {
+    padding: 5px 0 20px 0;
+    h2 {
+      background: $grey;
+      text-indent: 10px;
+      margin: 0 0 10px 0;
+      font-size: 110%;
+      }
+    @include breakpoint ($breakpoint-large-width) {
+      padding-left: auto;
+    }
+  }
+}
+
+/***********
+~FOOTER
+***********/
+
+.wrapper.footer {
+  #footer {
+    @include breakpoint ($breakpoint-full-width) {
+      padding-left: 0 20px;
+      padding-right: 0 20px;
+    }
+  }
+}
+@include breakpoint ($breakpoint-medium-width) {
+  #footer {
+    text-align: center;
+  }
+  ul.social-footer {
+    margin-top: -10px;
+    li {
+     display: inline-block;
+     float: none;
+    }
+  }
+}
+
+/* BEARSKIN site Documentation page fun */
+
+#documentation {
+  p.tb {
+    @include col(1/4, $cycle: 4, $gutter: 1);
+    //@include box-sizing(border-box);
+    @include box-sizing(border-box);
+    background: #DDDDDD;
+    padding: 20px;
+  }
+}

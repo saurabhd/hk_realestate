@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the HK Base feature.
+ */
+
+include_once 'hk_base.features.inc';

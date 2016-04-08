@@ -1,0 +1,176 @@
+/**
+ * Colorbox Core Style:
+ * The following CSS is consistent between example themes and should not be altered.
+ */
+#colorbox, #cboxOverlay, #cboxWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+#cboxOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+#cboxMiddleLeft, #cboxBottomLeft {
+  clear: left;
+}
+#cboxContent {
+  position: initial;
+  /*overflow: auto;*/
+  img {
+    margin: 0;
+  }
+}
+#cboxLoadedContent {
+  /*overflow: auto !important;*/
+  -webkit-overflow-scrolling: touch;
+}
+#cboxTitle {
+  margin: 0;
+}
+#cboxLoadingOverlay, #cboxLoadingGraphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/**
+ * These elements are buttons, and may need to have additional
+ * styles reset to avoid unwanted base styles.
+ */
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  width: auto;
+  background: none;
+  cursor: pointer;
+}
+/**
+ * Avoid outlines on :active (mouseclick),
+ * but preserve outlines on :focus (tabbed navigating)
+ */
+#cboxPrevious:active, #cboxNext:active, #cboxClose:active, #cboxSlideshow:active {
+  outline: 0;
+}
+.cboxPhoto {
+  float: left;
+  margin: 0 !important;
+  border: 0;
+  display: block;
+  max-width: none;
+}
+.cboxIframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+/* Reset box sizing to content-box if theme is using border-box. */
+#colorbox, #cboxContent, #cboxLoadedContent {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/**
+ * Colorbox module plain style:
+ * The styles are ordered & tabbed in a way that represents
+ * the nesting of the generated HTML.
+ */
+#cboxOverlay {
+  background: #000;
+}
+#cboxLoadedContent {
+  padding: 1em;
+}
+  #cboxWrapper {}
+    /*#cboxContent {
+      overflow: hidden;
+    }*/
+      #cboxContent, .cboxPhoto {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+      }
+      #cboxError {
+        padding: 50px;
+        border: 1px solid #ccc;
+      }
+      #cboxTitle {
+        position: absolute;
+        display: block;
+        background: rgba(255, 255, 255, 0.7);
+        bottom: 0;
+        left: 0;
+        color: #cbc1ba;
+        width: 100%;
+        padding: 0 2em 0.5em;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-border-bottom-right-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      #cboxLoadingOverlay {
+        background: #fff;
+      }
+      #cboxLoadingGraphic {
+        background: url(images/loading_animation.gif) no-repeat center center;
+      }
+      #cboxClose, #cboxClose.cbox-close-plain {
+        opacity: 1 !important;
+        position: absolute;
+        font-size: 40px;
+        line-height: .65;
+        text-align: center;
+        color: #fff;
+        background: url(images/Icon_x_Kreis.png) no-repeat;
+        top: -14px;
+        right: -14px;
+        width: 34px;
+        height: 34px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        border-radius: 25px;
+        padding: 0 0 10px;
+      }
+      #cboxClose.cbox-close-plain:hover {
+        color: #c61c2c;
+      }
+      #cboxNext {
+        background: url(images/Arrow_right.png) 2em center no-repeat;
+        width: 25em;
+        height: 100%;
+        float: right;
+      }
+      #cboxPrevious {
+        background: url(images/Arrow_left.png) 2em center no-repeat;
+        width: 25em;
+        height: 100%;
+        float: left;
+      }
+      #cboxCurrent {
+        left: auto;
+        right: 2em;
+        bottom: .5em;
+        float: none;
+        color: #cbc1ba;
+      }
+
+/*#cboxClose {
+    padding: 0 0 29px;
+    right: -12px;
+    top: -12px;
+    z-index: 1;
+}*/

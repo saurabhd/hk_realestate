@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the HK Admin feature.
+ */
+
+include_once 'hk_admin.features.inc';

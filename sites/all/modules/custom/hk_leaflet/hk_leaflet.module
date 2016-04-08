@@ -1,0 +1,20 @@
+<?php
+
+/**
+* Implements hook_leaflet_map_info_alter(). ip_geoloc_leaflet_map_info_alter
+* Customize some settings of the maps across the site.
+* @param boolean $map_info
+*/
+
+function hk_leaflet_leaflet_map_info_alter(&$map_info) {
+  // dpm();
+  // Walk each map setting (OSM, bing, etc) to disable debilitating scroll-zoom
+  foreach ($map_info as $map_id => $info) {
+    $map_info[$map_id]['settings']['scrollWheelZoom'] = TRUE;
+    $map_info[$map_id]['settings']['minZoom'] = 10;
+    $map_info[$map_id]['settings']['zoom'] = 12;
+    $map_info[$map_id]['settings']['maxBounds'] = array([[52.270517, 12.796015],[52.721994,13.812250]]);
+    $map_info[$map_id]['settings']['zoomIndicator'] = FALSE;
+    $map_info[$map_id]['settings']['attributionControl'] = TRUE;
+  }
+}

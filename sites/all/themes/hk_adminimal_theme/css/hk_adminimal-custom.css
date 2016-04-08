@@ -1,0 +1,151 @@
+.vbo-select-all-markup, .vbo-table-select-all-markup {
+    display: block;
+    padding-top: 8px;
+}
+.views-field-field-apart-no {
+  line-height: 2;
+  padding-right: 0;
+  text-align: right;
+  /*max-width: 30px;*/
+}
+.aparts ul {
+  margin: 0;
+  list-style: none;
+}
+.aparts ul li {
+  list-style: none;
+  line-height: 2;
+}
+/*.views-field.views-field-field-objektid-nunumeric {
+    max-width: 45px;
+}
+.views-field.views-field-title {
+    max-width: 200px;
+}
+.views-field.views-field-sid {
+    max-width: 40px;
+}*/
+.view-admin .views-field {
+  vertical-align: top;
+}
+body.adminimal-skin-material #views-form-admin-page-3 table tbody td a {
+  padding: 0;
+}
+body.adminimal-skin-material #views-form-admin-page-3 table.tableheader-processed {
+  border: 0;
+}
+#views-form-admin-page-3 table caption {
+    float: left;
+    width: 15%;
+  }
+#views-form-admin-page-3 table thead,
+#views-form-admin-page-3 table tbody {
+    float: right;
+    width: 84%;
+    display: table;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
+  }
+#views-form-admin-page-3 .views-field-views-bulk-operations {
+    width: 2%;
+}
+#views-form-admin-page-3 .views-field-field-objektid-nunumeric,
+#views-form-admin-page-3 .views-field-sid,
+#views-form-admin-page-3 .views-field-field-kategorie,
+#views-form-admin-page-3 .views-field-field-apart-price-editable {
+  width: 7%;
+}
+#views-form-admin-page-3 .views-field-field-obj-schattenobjekt {
+  width: 5%;
+}
+#views-form-admin-page-3 .views-field-created,
+#views-form-admin-page-3 .views-field-changed {
+  width: 10%;
+}
+#views-form-admin-page-3 table thead {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+#views-form-admin-page-3 table tbody {
+  margin-bottom: 1em;
+}
+
+.group-project-card {
+    border: 1px solid #CBC1BA;
+    background-color: #fff;
+    border-radius: 0;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
+}
+
+#views-form-admin-page-3 h2 {
+  font-weight: bold;
+  font-size: 1em;
+}
+#views-form-admin-page-3 img {
+  max-width: 100%;
+  height: auto;
+}
+#views-form-admin-page-3 #edit-select {
+  float: left;
+  margin-right: 1em;
+}
+#views-form-admin-page-3 .vbo-fieldset-select-all{
+  width: auto;
+  text-align: left;
+}
+#views-form-admin-page-3 .vbo-fieldset-select-all-markup {
+  padding-top: .6em;
+}
+#views-form-admin-page-3 .vbo-select-all-markup .form-item,
+#views-form-admin-page-3 .vbo-select-all-markup em {
+  display: inline-block;
+  margin: 0 1em !important;
+}
+
+#views-form-admin-page-3 .street-block,
+#views-form-admin-page-3 .thoroughfare,
+#views-form-admin-page-3 .locality-block {
+  display: inline;
+}
+#views-form-admin-page-3 .street-block::after {
+  content: ", ";
+}
+.media-item {
+  margin-bottom: 2.5em;
+}
+.media-item .label-wrapper {
+  width: 95px;
+  top: 110px;
+  left: -1px;
+  bottom: auto;
+  right: auto;
+  line-height: 1;
+}
+.media-item .label-wrapper label {
+    font-size: 9px;
+    padding: 5px 5px;
+    width: 102px;
+}
+/* CRM Core */
+
+/* Disable Mitarbeiter on Anfrage View */
+.crm-core-contact-mitarbeiter {
+  display: none;
+}
+
+/* Referenzen admin page */
+.views-field-title-field-editable,
+.views-field-field-ref-anzahl-wohnungen-editable {
+  max-width: 200px;
+}
+.view-referenzen input.text-full {
+  max-width: 200px;
+}
+
+/* Aktuelle Sprache Markieren */
+body.adminimal-skin-material #navigation ul.secondary li.active a.language-link {
+  color: #C61C2C !important;
+  border-bottom: 1px solid #C61C2C;
+  font-weight: bold;
+}

@@ -1,8 +1,0 @@
-name = HK Leaflet
-description = Customizations for HK Leaflet Map.
-core = 7.x
-package = Leaflet
-dependencies[] = ip_geoloc
-scripts[] = hk_leaflet_script.js
-files[] = MimeMailSystem__MandrillMailSystem.mail.inc
-files[] = MimeMailSystem__SmtpMailSystem.mail.inc

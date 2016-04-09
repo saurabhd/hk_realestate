@@ -243,3 +243,55 @@ body {
     width: 1px;
   }
 }
+
+
+/**
+ * Mobile menu changes
+ */
+/* Menu design */
+#block-si-menumerge-menu-merge {
+  display: none !important;
+}
+/* Responsive design */
+@media(max-width: 1024px) {
+  /* Menu design */
+  #block-system-main-menu {
+    display: none;
+  }
+  .mean-bar .mean-nav > .menu {
+    /*display: block !important;*/
+  }
+  #page .wrapper.navigation {
+    margin-top: 0;
+  }
+  .meanmenu-reveal { 
+    margin-right: 40px;
+    z-index: 999;
+  }
+  .mean-container .mean-nav {
+    height: 500px;
+    overflow-y: auto;
+  }
+  .mean-container .mean-nav ul { z-index: 999;}
+  .mean-container .mean-nav ul li a {
+    text-align: left !important;
+    z-index: 999;
+  }
+  .mean-container .mean-nav > ul  li:hover {
+    background: #FFF !important;
+  }
+  .mean-container .mean-nav > ul li a:hover {
+    color: #c61c2c;
+  }
+  /* End */
+}
+@media(max-width: 767px) {
+  .mean-container .mean-nav {
+    height: 200px;
+  }
+}
+@media(max-width: 420px) {
+  .mean-container .mean-nav {
+    height: 400px;
+  }
+}

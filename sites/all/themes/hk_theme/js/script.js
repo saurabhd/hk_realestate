@@ -66,7 +66,18 @@
       // if ($('#navigation .menu-block-wrapper').length) {
       //   $('#navigation .menu-block-wrapper').prepend('<input type="checkbox" id="button"><label for="button" onclick>Menu</label>');
       //$('.equalheight').eqHeight();
-       }
+      
+      //
+      //$(document).ready(function() {
+        $(document).ready(function() {
+          $('.mean-container a.meanmenu-reveal').click(function() {
+            $('.mean-bar .mean-nav > .menu').slideToggle();
+          });
+        });
+      //});
+
+
+      }
 
      }
 //   }

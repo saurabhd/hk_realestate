@@ -160,6 +160,7 @@ h1.page-title {
     width: 50%;
     &::after {
       content: " \*";
+      color: $greyer;
     }
   }
   .apartaddress,

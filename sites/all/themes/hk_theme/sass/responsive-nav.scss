@@ -216,6 +216,13 @@ a.meanmenu-reveal {
     clear: both;
   }
 }
+@media screen and (max-width: 560px) {
+  .mean-container {
+    .mean-nav {
+      margin-top: 41px;
+    }
+  }
+}
 @include breakpoint($br-tablet) {
   .block-si-menumerge {
     font: 500 1em $helvetica-neue;

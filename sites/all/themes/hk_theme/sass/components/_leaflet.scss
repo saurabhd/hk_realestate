@@ -146,10 +146,241 @@
     }
   }
 }
+.home-form-wrap {
+  a.form-show-link {
+    top: 0;
+    left: 0;
+    display: none;
+    border: 2px solid #ccc;
+    background-image: url('../images/search-icon.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: right 4px center;
+    background-size: 16px auto;
+    height: 24px;
+    width: auto;
+    background-color: #fff;
+    cursor: pointer;
+    margin: 90px 0 0 46px;
+    padding: 5px 30px 5px 10px;
+    position: absolute;
+    text-decoration: none;
+    z-index: 1000;
+    text-transform: capitalize;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .ui-button {
+    top: 0;
+    right: 0;
+    left: auto;
+    margin: -24px -23px 0 0;
+    .ui-icon {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: 0;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+.ui-dialog {
+  left: 0 !important;
+  top: 150px !important;
+  width: 80% !important;
+  margin-left: 10%;
+  width: 640px inline-block;
+  }
+  .front {
+    #search {
+      .bezirk,
+      .kategorie,
+      .preis,
+      .zimmer,
+      .flaeche {
+        .select2-container
+         {
+          width: 100% !important;
+        }
+      }
+      > div {
+        width: 47% !important;
+      }
+    }
+  }
+  #block-menu-menu-menu-footer-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+/*.ui-dialog {
+  left: 0 !important;
+  top: 150px !important;
+  width: 80% !important;
+  margin-left: 10%;
+  width: 640px inline-block;
+  }*/
+  .front {
+    #search {
+      margin-bottom: 7px !important;
+      .bezirk,
+      .kategorie,
+      .preis,
+      .zimmer,
+      .flaeche {
+        .select2-container
+         {
+          width: 100% !important;
+        }
+      }
+      > div {
+        width: 47% !important;
+      }
+    }
+  } 
+}
+@media screen and (max-width: 767px) {
+  .front {
+    #search {
+      .bezirk,
+      .kategorie,
+      .preis,
+      .zimmer,
+      .flaeche {
+        .select2-container
+         {
+          width: 100% !important;
+        }
+      }
+      > div {
+        width: 46% !important;
+      }
+    }
+  }
+  .ui-dialog {
+    .ui-dialog-titlebar {
+      .ui-dialog-titlebar-close {
+        margin: -35px -3px 0 0;
+      }
+    }
+  }
+  .home-form-wrap {
+    a.form-show-link {
+      left: 50%;
+      display: inline-block;
+      margin: 105px 0 0 -46px;
+      text-align: center;
+    }
+  } 
+  .ui-dialog {
+    display: none !important;
+    &.ui-dialog-show { display: inline-block !important; }
+  }
+}
 @media screen and (max-width: 560px) {
   .front .ui-dialog {
     max-width: 270px;
+    /*margin: 100px 0 0 289px;*/
+    text-transform: capitalize;
   }
+  .ui-dialog {
+  left: 0 !important;
+  top: 150px !important;
+  max-width: 70% !important;
+  margin-left: 13%;
+  width: 640px inline-block;
+  }
+  .front {
+    #search {
+      .bezirk,
+      .kategorie,
+      .preis,
+      .zimmer,
+      .flaeche {
+        .select2-container
+         {
+          width: 100% !important;
+        }
+      }
+      > div {
+        width: 100% !important;
+      }
+    }
+  }
+  .ui-dialog {
+    .ui-dialog-titlebar {
+      .ui-dialog-titlebar-close {
+        margin: -35px -3px 0 0;
+      }
+    }
+  }
+  .home-form-wrap {
+    a.form-show-link {
+      left: 50%;
+      display: inline-block;
+      margin: 90px 0 0 -46px;
+      text-align: center;
+    }
+  } 
+}
+@media screen and (max-width: 480px) {
+.ui-dialog {
+  left: 0 !important;
+  top: 150px !important;
+  max-width: 70% !important;
+  margin-left: 13%;
+  width: 640px inline-block;
+  }
+  #block-menu-menu-menu-footer-menu {
+    display: none;
+  }
+  .front {
+    #search {
+      .bezirk,
+      .kategorie,
+      .preis,
+      .zimmer,
+      .flaeche {
+        .select2-container
+         {
+          width: 100% !important;
+        }
+      }
+      > div {
+        width: 100% !important;
+      }
+    }
+  }  
+}
+@media screen and (max-width: 360px) {
+  .ui-dialog {
+    left: 0 !important;
+    top: 150px !important;
+    max-width: 66% !important;
+    margin-left: 13%;
+    width: 640px inline-block;
+  }
+  #block-menu-menu-menu-footer-menu {
+    display: none;
+  }
+  .front {
+    #search {
+      .bezirk,
+      .kategorie,
+      .preis,
+      .zimmer,
+      .flaeche {
+        .select2-container
+         {
+          width: 100% !important;
+        }
+      }
+      > div {
+        width: 100% !important;
+      }
+    }
+  }  
 }
 .ui-effects-transfer { border: 2px dotted gray; }
 

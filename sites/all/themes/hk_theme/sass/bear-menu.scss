@@ -269,10 +269,9 @@ body {
     z-index: 999;
   }
   .mean-container .mean-nav {
-    height: 500px;
-    overflow-y: auto;
+    
   }
-  .mean-container .mean-nav ul { z-index: 999;}
+  .mean-container .mean-nav ul { z-index: 999;overflow-y: auto;height: 500px;}
   .mean-container .mean-nav ul li a {
     text-align: left !important;
     z-index: 999;
@@ -286,12 +285,12 @@ body {
   /* End */
 }
 @media(max-width: 767px) {
-  .mean-container .mean-nav {
+  .mean-container .mean-nav ul {
     height: 200px;
   }
 }
 @media(max-width: 420px) {
-  .mean-container .mean-nav {
+  .mean-container .mean-nav ul {
     height: 400px;
   }
 }

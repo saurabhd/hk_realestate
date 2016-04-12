@@ -75,7 +75,21 @@
           });
         });
       //});
+      jQuery('.front .ui-dialog').wrap('<div class="home-form-wrap"></div>');
+      jQuery('.home-form-wrap').prepend('<a href="javascript:void(0);" class="form-show-link">Search</a>');
 
+      jQuery('body').click(function(){
+         jQuery('.ui-dialog').removeClass('ui-dialog-show');
+       })
+      jQuery("a.form-show-link").on("click", function() {
+        jQuery(this).parent().children('.ui-dialog').toggleClass('ui-dialog-show');
+      });
+      jQuery(".home-form-wrap .ui-dialog-titlebar-close").on("click", function() {
+        jQuery(this).parent().parent('.ui-dialog').toggleClass('ui-dialog-show');
+      });
+      jQuery('.home-form-wrap').click(function(e) {
+        e.stopPropagation();
+      });
 
       }
 

@@ -216,6 +216,7 @@ body {
 
 /* Service Menu */
 #navigation #block-menu-menu-service-menu {
+  /*background-color: red;*/
   ul {
     &:hover {
       border: 0;
@@ -223,14 +224,16 @@ body {
     li {
       width: 40px;
       a {
-        color: $greyer;
+        display: inline-block;
+        margin-top: -20px;
+        color: #FFF;
         text-decoration: none;
         &:hover,
         &.active {
-        color: $primary;
-        border:0;
-        background: none;
-        text-decoration: none;
+          color: $primary;
+          border:0;
+          background: none;
+          text-decoration: none;
         }
       }
     }
@@ -244,6 +247,26 @@ body {
   }
 }
 
+/* New Service Menu */
+#navigation {
+  display: inline-block;
+  width: calc(100% - 250px) !important;
+  #block-system-main-menu {
+    display: inline-block;
+    margin-top: -15px;
+    text-align: center;
+    width: calc(100% - 80px);
+    ul {
+      display: inline-block;
+      float: none;
+      margin-left: 0;
+    }
+  }
+  #block-menu-menu-service-menu {
+    background-color: red;
+  }
+}
+/* End */
 
 /**
  * Mobile menu changes
@@ -255,7 +278,7 @@ body {
 /* Responsive design */
 @media(max-width: 1024px) {
   /* Menu design */
-  #block-system-main-menu {
+  #navigation #block-system-main-menu {
     display: none;
   }
   .mean-bar .mean-nav > .menu {
@@ -268,10 +291,16 @@ body {
     margin-right: 40px;
     z-index: 999;
   }
+  /* Responsive menu changes */
   .mean-container .mean-nav {
-    
   }
-  .mean-container .mean-nav ul { z-index: 999;overflow-y: auto;height: 500px;}
+  .mean-container .mean-nav ul {
+    z-index: 999;
+    overflow-y: auto;
+    height: 500px;
+  }
+  /* End*/
+
   .mean-container .mean-nav ul li a {
     text-align: left !important;
     z-index: 999;
@@ -284,6 +313,8 @@ body {
   }
   /* End */
 }
+
+/* Responsive menu changes */
 @media(max-width: 767px) {
   .mean-container .mean-nav ul {
     height: 200px;
@@ -294,3 +325,4 @@ body {
     height: 400px;
   }
 }
+/* End */

@@ -216,6 +216,7 @@ a.meanmenu-reveal {
     clear: both;
   }
 }
+/* Resposive menu*/
 @media screen and (max-width: 560px) {
   .mean-container {
     .mean-nav {
@@ -223,6 +224,7 @@ a.meanmenu-reveal {
     }
   }
 }
+/* End */
 @include breakpoint($br-tablet) {
   .block-si-menumerge {
     font: 500 1em $helvetica-neue;

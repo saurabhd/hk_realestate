@@ -59,6 +59,9 @@
         //allowClear: true
       });
 
+      //var uiDialogHeight = jQuery('.ui-dialog').outerHeight();
+      //alert (uiDialogHeight);
+
       //$(":file").filestyle({buttonText: "Find file"});
       // if ($('#navigation .block-menu').length) {
       //   $('#navigation .block-menu').prepend('<input type="checkbox" id="button"><label for="button" onclick>Menu</label>');
@@ -74,15 +77,27 @@
             $('.mean-bar .mean-nav > .menu').slideToggle();
           });
         });
+
+        /*$(document).ready(function() {
+          $('.home-form-wrap a.form-show-link').click(function() {
+            $('.ui-dialog.ui-dialog-show').slideToggle();
+          });
+        });*/
+
       //});
       jQuery('.front .ui-dialog').wrap('<div class="home-form-wrap"></div>');
       jQuery('.home-form-wrap').prepend('<a href="javascript:void(0);" class="form-show-link">Search</a>');
 
       jQuery('body').click(function(){
-         jQuery('.ui-dialog').removeClass('ui-dialog-show');
-       })
+        jQuery('.ui-dialog').removeClass('ui-dialog-show');
+      })
+      if(jQuery(window).width() < 767) {
+        jQuery('.home-form-wrap .ui-dialog').hide();
+      }
+      // jQuery( window ).resize(function() {});
       jQuery("a.form-show-link").on("click", function() {
-        jQuery(this).parent().children('.ui-dialog').toggleClass('ui-dialog-show');
+        jQuery(this).parent().children('.ui-dialog').toggleClass('ui-dialog-show2');
+        jQuery('.ui-dialog').slideToggle();
       });
       jQuery(".home-form-wrap .ui-dialog-titlebar-close").on("click", function() {
         jQuery(this).parent().parent('.ui-dialog').toggleClass('ui-dialog-show');
@@ -93,7 +108,7 @@
 
       }
 
-     }
+    }
 //   }
  }(jQuery));
 

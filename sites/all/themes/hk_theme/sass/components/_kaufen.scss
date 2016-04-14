@@ -42,4 +42,40 @@
     }
   }
 }
+/* buy page search box */
+.page-buy,
+.page-mieten,
+.view-merkliste,
+.view-apartment {
+  #search {
+    .block-facetapi {
+      width: 18.4%;
+    }
+    div:last-child {
+      margin-right: 0;
+    }
+  }
+}
+/* End */
+
+/* Responsive buy page search box */
+@media screen and (max-width: 992px) {
+  /*.page-buy,
+  .page-mieten,
+  .view-merkliste,
+  .view-apartment {
+    #search {
+      .block-facetapi {
+        width: 30%;
+      }
+    }
+  }*/
+}
+@media screen and (max-width: 560px) {
+  /*.page-buy .view-karten div >div {
+    max-width: 100%;
+    margin-right: 2.5%;
+  }*/
+}
+/* End */
 

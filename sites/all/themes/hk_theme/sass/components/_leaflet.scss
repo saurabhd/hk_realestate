@@ -146,6 +146,7 @@
     }
   }
 }
+/* Responsive search box */
 .home-form-wrap {
   a.form-show-link {
     top: 0;
@@ -161,7 +162,7 @@
     width: auto;
     background-color: #fff;
     cursor: pointer;
-    margin: 90px 0 0 46px;
+    margin: 90px 0 10px 46px;
     padding: 5px 30px 5px 10px;
     position: absolute;
     text-decoration: none;
@@ -184,33 +185,48 @@
     }
   }
 }
-@media screen and (max-width: 1024px) {
-.ui-dialog {
-  left: 0 !important;
-  top: 150px !important;
-  width: 80% !important;
-  margin-left: 10%;
-  width: 640px inline-block;
+.front {
+  .ui-dialog {
+    width: 541px !important;
+    left: 50% !important;
+    margin-left: -270px;
   }
-  .front {
-    #search {
-      .bezirk,
-      .kategorie,
-      .preis,
-      .zimmer,
-      .flaeche {
-        .select2-container
-         {
-          width: 100% !important;
-        }
+  .ui-dialog-content {
+    padding-right: 0 !important;
+  }
+}
+/*.front .ui-dialog.ui-dialog-show {
+  -moz-transition: height 1s ease;
+  -webkit-transition: height 1s ease;
+  -o-transition: height 1s ease;
+  transition: height 1s ease;
+}*/
+@media screen and (max-width: 1024px) {
+.front {
+  .ui-dialog {
+    left: 0 !important;
+    top: 150px !important;
+    width: 80% !important;
+    margin-left: 10%;
+    width: 80% !important;
+  }
+  #search {
+    .bezirk,
+    .kategorie,
+    .preis,
+    .zimmer,
+    .flaeche {
+      .select2-container {
+        width: 100% !important;
       }
-      > div {
-        width: 47% !important;
-      }
+    }
+    > div {
+      width: 47% !important;
     }
   }
   #block-menu-menu-menu-footer-menu {
     display: none;
+  }
   }
 }
 @media screen and (max-width: 992px) {
@@ -257,11 +273,11 @@
         width: 46% !important;
       }
     }
-  }
-  .ui-dialog {
-    .ui-dialog-titlebar {
-      .ui-dialog-titlebar-close {
-        margin: -35px -3px 0 0;
+    .ui-dialog {
+      .ui-dialog-titlebar {
+        .ui-dialog-titlebar-close {
+          margin: -35px -3px 0 0;
+        }
       }
     }
   }
@@ -272,10 +288,14 @@
       margin: 105px 0 0 -46px;
       text-align: center;
     }
-  } 
-  .ui-dialog {
-    display: none !important;
-    &.ui-dialog-show { display: inline-block !important; }
+    .ui-dialog {
+      display: none;
+      /*height: 0;*/
+      &.ui-dialog-show { 
+        display: inline-block;
+        /*height: auto; */
+      }
+    }
   }
 }
 @media screen and (max-width: 560px) {
@@ -285,11 +305,11 @@
     text-transform: capitalize;
   }
   .ui-dialog {
-  left: 0 !important;
-  top: 150px !important;
-  max-width: 70% !important;
-  margin-left: 13%;
-  width: 640px inline-block;
+    left: 0 !important;
+    top: 150px !important;
+    max-width: 70% !important;
+    margin-left: 14% !important;
+    width: 640px inline-block;
   }
   .front {
     #search {
@@ -306,6 +326,9 @@
       > div {
         width: 100% !important;
       }
+    }
+    .ui-dialog-content {
+      padding: 0 1em !important;
     }
   }
   .ui-dialog {
@@ -382,6 +405,8 @@
     }
   }  
 }
+/* End */
+
 .ui-effects-transfer { border: 2px dotted gray; }
 
 .views-exposed-form .views-exposed-widget .form-submit {

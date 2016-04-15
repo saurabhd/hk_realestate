@@ -35,8 +35,8 @@
       $( ".front #block-views-exp-karten-map-page, .front #search").dialog({
             height: "auto",
             minHeight: "120",
-            width: "640",
-            maxWidth: "640",
+            width: "540",
+            maxWidth: "540",
             resizable: "false",
             closeOnEscape: "true",
             modal: "false",

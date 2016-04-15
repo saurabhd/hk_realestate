@@ -56,25 +56,95 @@
     }
   }
 }
+.page-buy {
+  #search {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+}
+.page-buy-capital-investment,
+.page-buy-commercial-property-sale,
+.page-buy-freehold-apartments {
+  #search {
+    .block-facetapi {
+      width: 23.4%;
+    }
+    div:last-child {
+      margin-right: 0;
+    }
+  }
+}
 /* End */
 
 /* Responsive buy page search box */
-@media screen and (max-width: 992px) {
-  /*.page-buy,
+@media screen and (max-width: 905px) {
+  .page-buy,
   .page-mieten,
   .view-merkliste,
   .view-apartment {
     #search {
       .block-facetapi {
-        width: 30%;
+        width: 18.4%;
+        min-width: 18.4%;
+        margin-right: 2%;
       }
     }
-  }*/
+  }
+  .page-buy-capital-investment,
+  .page-buy-commercial-property-sale,
+  .page-buy-freehold-apartments {
+    #search {
+      .block-facetapi {
+        width: 23.4%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .section-buy {
+    #search {
+      .block-facetapi {
+        width: 48%;
+        margin-right: 2%;
+      }
+    }
+  }
 }
 @media screen and (max-width: 560px) {
   /*.page-buy .view-karten div >div {
     max-width: 100%;
     margin-right: 2.5%;
+  }*/
+  .page-buy-capital-investment,
+  .page-buy-commercial-property-sale,
+  .page-buy-freehold-apartments,
+  .section-buy {
+    .view-karten {
+      .group-card {
+        max-width: 100%;
+      }
+    }
+  }
+  .page-buy,
+  .page-mieten,
+  .view-merkliste,
+  .view-apartment {
+    #search {
+      .block-facetapi {
+        width: 48%;
+        margin-right: 2%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  /*.page-buy-capital-investment,
+  .page-buy-commercial-property-sale {
+    #search {
+      .block-facetapi {
+        width: 100%;
+      }
+    }
   }*/
 }
 /* End */

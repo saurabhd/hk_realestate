@@ -106,8 +106,32 @@ li a.active {
         li a {
           width: auto;
           padding: 0;
+          color: #91988E;
+          &:hover{
+            color: #c61c2c;
+          }
           i {
+            color: #91988E;
             font-size: 2em;
+            &:hover{
+            color: #c61c2c;
+            }
+            &::before {
+              display: inline-block;
+              font-family: "hk";
+              font-style: normal;
+              font-variant: normal;
+              font-weight: normal;
+              line-height: 1em;
+              margin-left: 0.2em;
+              margin-right: 0.2em;
+              text-align: center;
+              text-decoration: inherit;
+              text-transform: none;
+              width: 1em;
+            }
+            &.icon-hk-icon-favorite { &::before { content:'\e800'; } }
+            &.icon-hk-icon-search { &::before { content:'\e804'; } }
           }
         }
       }

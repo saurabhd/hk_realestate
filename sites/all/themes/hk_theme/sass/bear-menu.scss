@@ -253,7 +253,7 @@ body {
   width: calc(100% - 250px) !important;
   #block-system-main-menu {
     display: inline-block;
-    margin-top: -15px;
+    margin-top: 0;
     text-align: center;
     width: calc(100% - 80px);
     ul {
@@ -266,6 +266,46 @@ body {
     /*background-color: red;*/
   }
 }
+/* End */
+
+/* favorite */
+/*#navigation {
+  #block-menu-menu-service-menu {
+    ul {
+      li {
+        a { 
+          color: #91988E;
+          &:hover {
+           color: C61C2C;
+          }
+        }
+      }
+    }
+  }
+}*/
+
+/*.icon-hk-icon-favorite::before {
+  content: "";
+}
+.icon-hk-icon-search::before {
+  content: "";
+}*/
+
+/*[class^="icon-"]::before,
+[class*="icon-"]::before {
+  display: inline-block;
+  font-family: "hk";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  text-align: center;
+  text-decoration: inherit;
+  text-transform: none;
+  width: 1em;
+}*/
 /* End */
 
 /**

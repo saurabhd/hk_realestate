@@ -195,12 +195,6 @@
     padding-right: 0 !important;
   }
 }
-/*.front .ui-dialog.ui-dialog-show {
-  -moz-transition: height 1s ease;
-  -webkit-transition: height 1s ease;
-  -o-transition: height 1s ease;
-  transition: height 1s ease;
-}*/
 @media screen and (max-width: 1024px) {
 .front {
   .ui-dialog {
@@ -226,7 +220,7 @@
   }
   #block-menu-menu-menu-footer-menu {
     display: none;
-  }
+    }
   }
 }
 @media screen and (max-width: 992px) {
@@ -254,7 +248,7 @@
         width: 47% !important;
       }
     }
-  } 
+  }
 }
 @media screen and (max-width: 767px) {
   .front {
@@ -291,11 +285,14 @@
     .ui-dialog {
       display: none;
       /*height: 0;*/
-      &.ui-dialog-show { 
+      &.ui-dialog-show {
         display: inline-block;
         /*height: auto; */
       }
     }
+  }
+  .leaflet-bottom {
+    bottom: 0px !important;
   }
 }
 @media screen and (max-width: 560px) {
@@ -345,7 +342,10 @@
       margin: 90px 0 0 -46px;
       text-align: center;
     }
-  } 
+  }
+  .leaflet-top {
+    top: 60px !important;
+  }
 }
 @media screen and (max-width: 480px) {
 .ui-dialog {
@@ -374,7 +374,7 @@
         width: 100% !important;
       }
     }
-  }  
+  }
 }
 @media screen and (max-width: 360px) {
   .ui-dialog {
@@ -403,7 +403,7 @@
         width: 100% !important;
       }
     }
-  }  
+  }
 }
 /* End */
 

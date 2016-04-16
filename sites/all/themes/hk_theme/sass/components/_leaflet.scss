@@ -111,7 +111,7 @@
     line-height: 0;
     padding: 0;
     .ui-dialog-titlebar-close {
-        margin: -35px -12px 0 0;
+        margin: -23px -34px 0 0;
         padding: 0;
         position: absolute;
         right: 0;
@@ -207,14 +207,14 @@
       margin-right: 2%;
       .select2-container {
         width: 100% !important;
-      } 
-    } 
+      }
+    }
     .kategorie {
       width: 50% !important;
       margin-right: 0;
       .select2-container {
         width: 100% !important;
-      } 
+      }
     }
     .zimmer,
     .flaeche {
@@ -222,13 +222,13 @@
       margin-right: 2%;
       .select2-container {
         width: 100% !important;
-      } 
+      }
     }
     .flaeche {
       margin-right: 0;
     }
   }
-  
+
 }
 /*.front .ui-dialog.ui-dialog-show {
   -moz-transition: height 1s ease;
@@ -281,7 +281,7 @@
         width: 47% !important;
       }
     }
-  } 
+  }
 }
 @media screen and (max-width: 767px) {
   .front {
@@ -331,7 +331,7 @@
     .ui-dialog {
       display: none;
       /*height: 0;*/
-      &.ui-dialog-show { 
+      &.ui-dialog-show {
         display: inline-block;
         /*height: auto; */
       }
@@ -350,7 +350,7 @@
         margin-right: 0;
         .select2-container {
           width: 100% !important;
-        } 
+        }
       }
       .zimmer,
       .flaeche {
@@ -358,7 +358,7 @@
         margin-right: 2%;
         .select2-container {
           width: 100% !important;
-        } 
+        }
       }
       .flaeche {
         margin-right: 0;
@@ -387,14 +387,14 @@
       margin-right: 2%;
       .select2-container {
         width: 100% !important;
-      } 
-    } 
+      }
+    }
     .kategorie {
       width: 100% !important;
       margin-right: 0;
       .select2-container {
         width: 100% !important;
-      } 
+      }
     }
     .zimmer,
     .flaeche {
@@ -402,7 +402,7 @@
       margin-right: 2%;
       .select2-container {
         width: 100% !important;
-      } 
+      }
     }
     .flaeche {
       margin-right: 0;
@@ -426,7 +426,7 @@
       margin: 90px 0 0 -46px;
       text-align: center;
     }
-  } 
+  }
 }
 @media screen and (max-width: 480px) {
   .ui-dialog {
@@ -455,7 +455,7 @@
         width: 100% !important;
       }
     }
-  }  
+  }
 }
 @media screen and (max-width: 360px) {
   .ui-dialog {
@@ -484,7 +484,7 @@
         width: 100% !important;
       }
     }
-  }  
+  }
 }
 /* End */
 

@@ -46,7 +46,7 @@ function features_populate($info, $module_name) {
  */
 function _features_populate($pipe, &$export, $module_name = '', $reset = FALSE) {
   // Ensure that the export will be created in the english language.
-  _features_set_export_language();
+  $language = _features_export_language();
 
   if ($reset) {
     drupal_static_reset(__FUNCTION__);
@@ -92,6 +92,7 @@ function _features_populate($pipe, &$export, $module_name = '', $reset = FALSE) 
       }
     }
   }
+  _features_export_language($language);
   return $export;
 }
 
@@ -671,10 +672,7 @@ function features_get_storage($module_name) {
 function features_get_signature($state = 'default', $module_name, $component, $reset = FALSE) {
   switch ($state) {
     case 'cache':
-      $cache = cache_get('features_codecache', 'cache_featurestate');
-      if (!empty($cache->data)) {
-        $codecache = $cache->data;
-      }
+      $codecache = variable_get('features_codecache', array());
       return isset($codecache[$module_name][$component]) ? $codecache[$module_name][$component] : FALSE;
     case 'default':
       $objects = features_get_default($component, $module_name, TRUE, $reset);
@@ -694,13 +692,10 @@ function features_get_signature($state = 'default', $module_name, $component, $r
  * Set the signature of a module/component pair in the codecache.
  */
 function features_set_signature($module, $component, $signature = NULL) {
-  $cache = cache_get('features_codecache', 'cache_featurestate');
-  if (!empty($cache->data)) {
-    $codecache = $cache->data;
-  }
+  $var_codecache = variable_get('features_codecache', array());
   $signature = isset($signature) ? $signature : features_get_signature('default', $module, $component, TRUE);
-  $codecache[$module][$component] = $signature;
-  cache_set('features_codecache', $codecache, 'cache_featurestate');
+  $var_codecache[$module][$component] = $signature;
+  variable_set('features_codecache', $var_codecache);
 }
 
 /**
@@ -849,6 +844,13 @@ function features_get_default($component, $module_name = NULL, $alter = TRUE, $r
 
 /**
  * Get a map of components to their providing modules.
+ *
+ * @param string $component
+ * @param string $attribute
+ * @param callable $callback
+ * @param bool $reset
+ *
+ * @return array|bool
  */
 function features_get_default_map($component, $attribute = NULL, $callback = NULL, $reset = FALSE) {
   $map = &drupal_static(__FUNCTION__, array());
@@ -898,7 +900,7 @@ function features_get_default_map($component, $attribute = NULL, $callback = NUL
  */
 function features_get_component_states($features = array(), $rebuild_only = TRUE, $reset = FALSE) {
   // Ensure that the export will be created in the English language.
-  _features_set_export_language();
+  $language = _features_export_language();
 
   if ($reset) {
     drupal_static_reset(__FUNCTION__);
@@ -993,6 +995,9 @@ function features_get_component_states($features = array(), $rebuild_only = TRUE
   foreach ($return as $k => $v) {
     $return[$k] = array_intersect_key($return[$k], array_flip($components));
   }
+
+  _features_export_language($language);
+
   return $return;
 }
 

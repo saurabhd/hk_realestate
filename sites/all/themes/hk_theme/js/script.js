@@ -73,9 +73,6 @@
       //
       //$(document).ready(function() {
         //$(document).ready(function() {
-          $('.mean-container a.meanmenu-reveal').click(function() {
-            $('.mean-bar .mean-nav > .menu').slideToggle();
-          });
         //});
 
         /*$(document).ready(function() {
@@ -85,8 +82,11 @@
         });*/
 
       //});
+
+      /* Serach text in responsive */
       jQuery('.front .ui-dialog').wrap('<div class="home-form-wrap"></div>');
-      jQuery('.home-form-wrap').prepend('<a href="javascript:void(0);" class="form-show-link">Search</a>');
+      /*jQuery('.home-form-wrap').prepend('<a href="javascript:void(0);" class="form-show-link">Search</a>');*/
+      /* End */
 
       jQuery('body').click(function(){
         jQuery('.ui-dialog').removeClass('ui-dialog-show');
@@ -212,3 +212,11 @@
 //     });
 //   }
 // });
+
+jQuery(document).ready(function() {
+  //alert('load');
+  /*jQuery('.mean-container a.meanmenu-reveal').once().click(function() {
+    //alert('click');
+    jQuery('.mean-bar .mean-nav > ul.menu').slideToggle();
+  });*/
+});

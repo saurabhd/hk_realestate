@@ -47,7 +47,7 @@
       $( ".ismobiledevice.front .ui-dialog").hide();
 
       $( '#block-menu-menu-service-menu .menu li:nth-child(2)').click(function(e) {
-          $( ".ui-dialog,#block-views-exp-karten-kaufen,#block-views-exp-karten-mieten, .not-front #search").toggle();
+          $( ".ui-dialog,#block-views-exp-karten-kaufen,#block-views-exp-karten-mieten, .not-front #search").slideToggle();
             e.preventDefault();
           });
       }

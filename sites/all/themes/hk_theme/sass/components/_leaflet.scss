@@ -111,7 +111,8 @@
     line-height: 0;
     padding: 0;
     .ui-dialog-titlebar-close {
-        margin: -23px -34px 0 0;
+        /*margin: -23px -34px 0 0;*/
+        margin: -30px -20px 0 0;
         padding: 0;
         position: absolute;
         right: 0;
@@ -415,7 +416,7 @@
   .ui-dialog {
     .ui-dialog-titlebar {
       .ui-dialog-titlebar-close {
-        margin: -35px -3px 0 0;
+        /*margin: -35px -3px 0 0;*/
       }
     }
   }
@@ -456,7 +457,7 @@
       }
     }
   }
-}
+} /* 480 */
 @media screen and (max-width: 360px) {
   .ui-dialog {
     /*left: 0 !important;

@@ -366,6 +366,9 @@
       }
     }
   }
+  .leaflet-bottom {
+    bottom: 0;
+  }
 }
 @media screen and (max-width: 560px) {
   /*.front .ui-dialog {
@@ -427,6 +430,9 @@
       margin: 90px 0 0 -46px;
       text-align: center;
     }
+  }
+  .leaflet-top {
+    top: 60px;
   }
 }
 @media screen and (max-width: 480px) {

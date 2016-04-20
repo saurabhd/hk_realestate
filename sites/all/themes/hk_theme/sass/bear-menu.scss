@@ -225,7 +225,7 @@ body {
       width: 40px;
       a {
         display: inline-block;
-        margin-top: -20px;
+        margin-top: 0;
         color: #FFF;
         text-decoration: none;
         &:hover,
@@ -256,7 +256,7 @@ body {
     margin-top: 0;
     text-align: center;
     width: calc(100% - 80px);
-    ul {
+    ul.menu {
       display: inline-block;
       float: none;
       margin-left: 0;
@@ -273,7 +273,7 @@ body {
   #block-menu-menu-service-menu {
     ul {
       li {
-        a { 
+        a {
           color: #91988E;
           &:hover {
            color: C61C2C;
@@ -327,7 +327,7 @@ body {
   #page .wrapper.navigation {
     margin-top: 0;
   }
-  .meanmenu-reveal { 
+  .meanmenu-reveal {
     margin-right: 40px;
     z-index: 999;
   }

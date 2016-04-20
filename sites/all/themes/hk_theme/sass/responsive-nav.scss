@@ -6,7 +6,7 @@
   }
   .region-navigation #block-menu-menu-service-menu {
     width: 40px;
-    top: 60px;
+    top: 100px;
     position: fixed;
     ul.menu {
       margin: 0;
@@ -28,15 +28,18 @@
       background: #fff;
     }
     .icon-hk-icon-favorite {
-      margin: .75em 0 0 0 !important;
+      margin: 10px 0 0 0;
     }
     .icon-hk-icon-search {
-      margin-top: .4em;
+      margin-top: 16px;
     }
   }
   .language-switcher {
-    top: 155px !important;
+    top: 195px !important;
     position: fixed !important;
+    ul {
+      margin: 16px 0 0 0;
+    }
   }
 }
 
@@ -62,13 +65,13 @@ a.meanmenu-reveal {
     box-sizing: content-box !important;
     width: 22px;
     height: 22px;
-    padding: 8px;
+    padding: 16px 8px 16px 16px;
     /*border: 2px solid $secondary;*/
     border-right: 0;
     @include border-radius($border-radius 0 0 $border-radius);
     /*background: #fff;*/
     position: absolute;
-    top: 0;
+    top: -6px;
     right: 0;
     cursor: pointer;
     color: $greyer;
@@ -222,6 +225,12 @@ a.meanmenu-reveal {
     .mean-nav {
       margin-top: 41px;
     }
+  }
+  .region-navigation #block-menu-menu-service-menu {
+    top: 60px;
+  }
+  .language-switcher {
+    top: 155px !important;
   }
 }
 /* End */

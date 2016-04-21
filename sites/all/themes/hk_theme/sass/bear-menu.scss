@@ -237,6 +237,11 @@ body {
         }
       }
     }
+    li.flaggged {
+      a {
+        background-color: #c43042;
+      }
+    }
   }
   .title-hide {
     clip: rect(1px, 1px, 1px, 1px);

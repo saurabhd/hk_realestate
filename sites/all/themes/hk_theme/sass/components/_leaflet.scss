@@ -188,11 +188,11 @@
 }
 .front {
   .ui-dialog {
-    left: 50% !important;
-    /*display: none;*/
+    /*left: 50% !important;*/
     height: 120px;
     width: 540px;
-    margin-left: -270px;
+    margin-left: 0;
+    /*margin-left: -270px;*/
     padding: 3px 13px 12px;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;

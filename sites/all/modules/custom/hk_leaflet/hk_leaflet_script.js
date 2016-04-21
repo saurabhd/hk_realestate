@@ -32,6 +32,9 @@
                       }
           });
         });
+    /*  var body_width = $('body').outerWidth();
+      var ui_dialog_width = $('.home-form-wrap .ui-dailog').outerWidth();
+      var left_position = (body_width - ui_dialog_width) / 2;*/
       $( ".front #block-views-exp-karten-map-page, .front #search").dialog({
             height: "auto",
             minHeight: "120",
@@ -42,7 +45,7 @@
             modal: "false",
             hide: { effect: "explode", duration: "1000" },
             autoOpen: "false",
-            position: { my: "center bottom", at: "center-180 bottom-80", collision: "fit flip", of: "#page" }
+            position: { my: "center bottom", at: "bottom-80", collision: "fit flip", of: "#page" }
           });
       $( ".ismobiledevice.front .ui-dialog").hide();
 

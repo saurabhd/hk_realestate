@@ -1,4 +1,4 @@
-/**
+*
  * @file
  * A JavaScript file for the theme.
  *
@@ -213,10 +213,30 @@
 //   }
 // });
 
+/* Home page search box */
 jQuery(document).ready(function() {
-  //alert('load');
-  /*jQuery('.mean-container a.meanmenu-reveal').once().click(function() {
-    //alert('click');
-    jQuery('.mean-bar .mean-nav > ul.menu').slideToggle();
-  });*/
+  home_dialog_center ();
+  jQuery( window ).resize(function() {
+    home_dialog_center ();
+  });
+});
+
+function home_dialog_center () {
+  var body_width = jQuery('body').outerWidth();
+  var ui_dialog_width = jQuery('.home-form-wrap .ui-dailog').outerWidth();
+  var left_position = (body_width - ui_dialog_width) / 2;
+  jQuery('.home-form-wrap .ui-dailog').css('left', left_position);
+}
+/* End */
+
+/*var body_width = jQuery('body').outerWidth();
+var ui_dialog_width = jQuery('.home-form-wrap .ui-dailog').outerWidth();
+var left_position = (body_width - ui_dialog_width) / 2;
+jQuery('.home-form-wrap .ui-dailog').css('left', left_position);
+
+jQuery( window ).resize(function() {
+  var body_width = jQuery('body').outerWidth();
+  var ui_dialog_width = jQuery('.home-form-wrap .ui-dailog').outerWidth();
+  var left_position = (body_width - ui_dialog_width) / 2;
+  jQuery('.home-form-wrap .ui-dailog').css('left', left_position);
 });

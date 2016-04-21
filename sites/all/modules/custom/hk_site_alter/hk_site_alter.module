@@ -1,0 +1,32 @@
+<?php
+
+/* implements hook_flag_flag() */
+function hk_site_alter_flag_flag($flag, $entity_id, $account, $flagging) {
+  $flag1 = flag_get_flag($flag->name);
+  GLOBAL $user;
+  if ($flag1) {
+    $result = db_query("SELECT COUNT(*) FROM flagging WHERE uid=:uid and fid=1", array(':uid' => $user->uid))->fetchField(); //fid = ID your flag
+    $mlid = 795;
+    if ($menu_link = menu_link_load($mlid)) {
+      $menu_link['options']['attributes']['class'] = array('flagged');
+      menu_link_save($menu_link);
+    }
+  }
+
+}
+
+/* implements hook_flag_unflag() */
+function hk_site_alter_flag_unflag($flag, $entity_id, $account, $flagging) {
+$flag1 = flag_get_flag($flag->name);
+  GLOBAL $user;
+  if ($flag1) {
+    $result = db_query("SELECT COUNT(*) FROM flagging WHERE uid=:uid and fid=1", array(':uid' => $user->uid))->fetchField(); //fid = ID your flag
+    if($result == 1) {
+      $mlid = 795;
+      if ($menu_link = menu_link_load($mlid)) {
+        $menu_link['options']['attributes']['class'] = array('unflagged');
+        menu_link_save($menu_link);
+      }
+    }
+  }
+}

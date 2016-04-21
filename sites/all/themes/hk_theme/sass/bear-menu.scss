@@ -236,10 +236,10 @@ body {
           text-decoration: none;
         }
       }
-    }
-    li.flaggged {
-      a {
-        background-color: #c43042;
+      a.flaggged {
+        i {
+          color: #c43042;
+        }
       }
     }
   }

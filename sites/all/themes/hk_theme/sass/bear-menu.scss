@@ -237,10 +237,14 @@ body {
         }
       }
       a.flagged {
-        i {
-          color: #c43042;
-        }
-      }
+       background: none;
+       &:hover {
+         i { color: $primary; }
+       }
+       i {
+         color: #c43042;
+       }
+     }
     }
   }
   .title-hide {
@@ -250,10 +254,6 @@ body {
     position: absolute;
     width: 1px;
   }
-}
-
-.region-navigation #block-menu-menu-service-menu ul.menu li a.flagged i {
-  color: #c43042;
 }
 
 /* New Service Menu */

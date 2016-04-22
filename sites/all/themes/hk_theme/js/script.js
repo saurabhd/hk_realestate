@@ -14,8 +14,8 @@
 (function ($, Drupal, window, document, undefined) {
 
 (function ($) {
-   Drupal.behaviors.BearScripts = {
-     attach: function (context, settings) {
+  Drupal.behaviors.BearScripts = {
+    attach: function (context, settings) {
 
       $('#block-si-menumerge-menu-merge').meanmenu({
         meanMenuContainer: '.header',
@@ -90,7 +90,7 @@
 
       jQuery('body').click(function(){
         jQuery('.ui-dialog').removeClass('ui-dialog-show');
-      })
+      });
       if(jQuery(window).width() < 767) {
         jQuery('.home-form-wrap .ui-dialog').hide();
       }
@@ -106,11 +106,11 @@
         e.stopPropagation();
       });
 
-      }
-
     }
-//   }
- }(jQuery));
+
+  }
+
+}(jQuery));
 
 (function ($) {
   Drupal.behaviors.ResponsiveScripts = {
@@ -216,7 +216,7 @@
 /* Home page search box */
 jQuery(document).ready(function() {
   home_dialog_center ();
-  jQuery( window ).resize(function() {
+  jQuery(window).resize(function() {
     home_dialog_center ();
   });
 });
@@ -228,15 +228,3 @@ function home_dialog_center () {
   jQuery('.home-form-wrap .ui-dailog').css('left', left_position);
 }
 /* End */
-
-/*var body_width = jQuery('body').outerWidth();
-var ui_dialog_width = jQuery('.home-form-wrap .ui-dailog').outerWidth();
-var left_position = (body_width - ui_dialog_width) / 2;
-jQuery('.home-form-wrap .ui-dailog').css('left', left_position);
-
-jQuery( window ).resize(function() {
-  var body_width = jQuery('body').outerWidth();
-  var ui_dialog_width = jQuery('.home-form-wrap .ui-dailog').outerWidth();
-  var left_position = (body_width - ui_dialog_width) / 2;
-  jQuery('.home-form-wrap .ui-dailog').css('left', left_position);
-});

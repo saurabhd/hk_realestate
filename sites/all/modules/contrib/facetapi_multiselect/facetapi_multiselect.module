@@ -55,9 +55,7 @@ function facetapi_multiselect_form($form, &$form_state, $widget, $element) {
   );
   // Record this in the form too, in case someone needs to access it there.
   $form['#facetapi_multiselect'] = $form_state['facetapi_multiselect'];
-
-
-   // Get an array of the facet options
+    // Get an array of the facet options
   $options = $widget->buildOptions($element);
 
   // Because of an issue with iOS and multiselect fields, we need to add an
@@ -65,6 +63,7 @@ function facetapi_multiselect_form($form, &$form_state, $widget, $element) {
   // handle that in preprocess.
   // @see http://stackoverflow.com/questions/34985606/ios-9-2-select-list-multiple-incorrectly-firing-change-event-and-setting-valu
   $options = array('disabled' => '') + $options;
+
 
   // Build the form.
   $form['facets'] = array(
@@ -79,8 +78,6 @@ function facetapi_multiselect_form($form, &$form_state, $widget, $element) {
     '#type' => 'submit',
     '#value' => t('Submit'),
   );
-
-
   $build = $widget->getBuild();
   $settings = $build['#settings']->settings;
 
@@ -88,10 +85,8 @@ function facetapi_multiselect_form($form, &$form_state, $widget, $element) {
     $form['#attached']['js'][] = drupal_get_path('module', 'facetapi_multiselect') . '/js/facetapi_multiselect_autosubmit.js';
   }
 
-
   return $form;
 }
-
 
 /**
  * Set any option items that have a "disabled" value to be disabled
@@ -102,7 +97,7 @@ function facetapi_multiselect_form($form, &$form_state, $widget, $element) {
 function _facetapi_multiselect_disable_options($content, $element) {
   // Create a new DOMDocument object with our rendered HTML
   $select = new DOMDocument;
-  $select->loadHTML($content);
+  $select->loadHTML('<?xml encoding="UTF-8">' .$content);
 
   // Loop over our options list
   foreach ($select->getElementsByTagName('option') as $option) {
@@ -116,9 +111,9 @@ function _facetapi_multiselect_disable_options($content, $element) {
       $option->removeAttribute('value');
     }
   }
-
   return $select->saveHTML();
 }
+
 
 /**
  * Submit handler for facetapi_multiselect_form().

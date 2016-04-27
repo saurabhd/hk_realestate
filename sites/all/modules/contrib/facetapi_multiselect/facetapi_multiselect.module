@@ -56,20 +56,68 @@ function facetapi_multiselect_form($form, &$form_state, $widget, $element) {
   // Record this in the form too, in case someone needs to access it there.
   $form['#facetapi_multiselect'] = $form_state['facetapi_multiselect'];
 
+
+   // Get an array of the facet options
+  $options = $widget->buildOptions($element);
+
+  // Because of an issue with iOS and multiselect fields, we need to add an
+  // empty option. This option must have the `disabled` attribute, so  we'll
+  // handle that in preprocess.
+  // @see http://stackoverflow.com/questions/34985606/ios-9-2-select-list-multiple-incorrectly-firing-change-event-and-setting-valu
+  $options = array('disabled' => '') + $options;
+
   // Build the form.
   $form['facets'] = array(
     '#type' => 'select',
     '#multiple' => TRUE,
-    '#options' => $widget->buildOptions($element),
+    '#options' => $options,
     '#default_value' => $widget->buildDefaultValue($element),
     '#attributes' => array('class' => array('facetapi-multiselect', $form_state['facetapi_multiselect']['facet_class'])),
+    '#post_render' => array('_facetapi_multiselect_disable_options'),
   );
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Submit'),
   );
 
+
+  $build = $widget->getBuild();
+  $settings = $build['#settings']->settings;
+
+  if ($settings['auto_submit']) {
+    $form['#attached']['js'][] = drupal_get_path('module', 'facetapi_multiselect') . '/js/facetapi_multiselect_autosubmit.js';
+  }
+
+
   return $form;
+}
+
+
+/**
+ * Set any option items that have a "disabled" value to be disabled
+ * @param  string $content The rendered HTML for the select item
+ * @param  array $element The Drupal FAPI item
+ * @return string          The updated markeup
+ */
+function _facetapi_multiselect_disable_options($content, $element) {
+  // Create a new DOMDocument object with our rendered HTML
+  $select = new DOMDocument;
+  $select->loadHTML($content);
+
+  // Loop over our options list
+  foreach ($select->getElementsByTagName('option') as $option) {
+    if ($option->hasAttribute('value')) {
+      // Get the value and see if it's set to 'disabled'. If not, skip
+      $value = $option->getAttribute('value');
+      if ($value != 'disabled') { continue; }
+
+      // Set the disabled attribute, remove the value attribute.
+      $option->setAttribute('disabled', 'disabled');
+      $option->removeAttribute('value');
+    }
+  }
+
+  return $select->saveHTML();
 }
 
 /**

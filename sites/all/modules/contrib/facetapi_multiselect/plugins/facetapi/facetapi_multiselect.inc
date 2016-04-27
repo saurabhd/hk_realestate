@@ -55,10 +55,6 @@ class FacetapiMultiSelectWidget extends FacetapiWidgetLinks {
         }
       }
     }
-    print('<pre style="color:red;">');
-    print_r($options);
-    print('</pre>');
-    //exit;
     return $options;
   }
 

@@ -219,6 +219,36 @@ jQuery(document).ready(function() {
   jQuery(window).resize(function() {
     home_dialog_center ();
   });
+
+  /* Search box auto height */
+  /*jQuery('body').click(function() {
+    var selectHeight = jQuery('#search .block-facetapi .select2-container .select2-choices').outerHeight();
+    jQuery('.not-front #search').css('padding-bottom', selectHeight);
+
+    jQuery('#search .block-facetapi .select2-container .select2-choices').each(function() {
+      var selectHeight = jQuery(this).outerHeight();
+      jQuery('.not-front #search').css('padding-bottom', selectHeight);
+    });
+  });*/
+
+  jQuery('.not-front #facetapi-multiselect-form-1 .form-item').click(function() {
+    //alert('form1');
+    var selectHeight = jQuery(this).find('.select2-choices').outerHeight();
+    var paddingbottom = selectHeight - 30;
+    jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+  });
+  jQuery('.not-front #facetapi-multiselect-form-2 .form-item').click(function() {
+    //alert('form2');
+    var selectHeight = jQuery(this).find('.select2-choices').outerHeight();
+    var paddingbottom = selectHeight - 30;
+    jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+  });
+  /* End */
+
+  /*jQuery(".select2-container .select2-choices").change(function() {
+    alert("Hi");
+  });*/
+
 });
 
 function home_dialog_center () {
@@ -228,3 +258,8 @@ function home_dialog_center () {
   jQuery('.home-form-wrap .ui-dailog').css('left', left_position);
 }
 /* End */
+
+// function drop_down_height () {
+//   var selectHeight = jQuery('#search .block-facetapi .select2-container .select2-choices').outerHeight();
+//   jQuery('.not-front #search').css('padding-bottom', selectHeight);
+// }

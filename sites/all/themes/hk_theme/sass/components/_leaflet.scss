@@ -238,7 +238,6 @@
 
 }
 
-
 /* Search box */
 .page-kaufen #block-views-exp-karten-kaufen, 
 .page-buy #search, .page-rent #search {
@@ -281,7 +280,47 @@ div.hide-submit-processing {
 }
 /* End */
 
-
+/* Inquiry form */
+#content {
+  .view-merkliste {
+    .view-footer {
+      > div {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  .view-merkliste {
+    .view-footer {
+      > div {
+        .Inquiry-button {
+          color: #C61C2C;
+          font-size: 20px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+    input.inquiry {
+      display: inline-block;
+      float: left;
+      margin-right: 10px;
+    }
+    .group-card {
+      width: calc(100% - 30px);
+      -webkit-width: calc(100% - 30px);
+      -moz-width: calc(100% - 30px);
+    }
+  }
+}
+#field-angefragte-wohnung-add-more-wrapper {
+  .form-item {
+    input.field-add-more-submit {
+      display: none;
+    }
+  }
+}
+/* End */
 
 /*.front .ui-dialog.ui-dialog-show {
   -moz-transition: height 1s ease;

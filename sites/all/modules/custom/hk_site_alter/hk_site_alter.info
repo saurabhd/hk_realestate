@@ -1,3 +1,4 @@
 name = HK site alter
 description = "Misc site edits"
 core = 7.x
+scripts[] = hk_site_alter.js

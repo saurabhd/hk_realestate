@@ -1,5 +1,13 @@
 <?php
 
+
+/*
+function hk_site_alter_form_alter(&$form, &$form_state, $form_id) {
+$path = drupal_get_path('module', 'hk_site_alter');
+drupal_add_js($path . '/hk_site_alter.js', array('weight' => 1));
+}*/
+
+
 /* implements hook_flag_flag() */
 function hk_site_alter_flag_flag($flag, $entity_id, $account, $flagging) {
   $flag1 = flag_get_flag($flag->name);

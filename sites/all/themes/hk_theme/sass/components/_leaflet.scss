@@ -153,7 +153,7 @@
     top: 0;
     left: 0;
     display: none;
-    border: 2px solid #ccc;
+    border: 2px solid $secondary;
     background-image: url('../images/search-icon.png');
     background-repeat: no-repeat;
     background-color: transparent;
@@ -239,13 +239,13 @@
 }
 
 /* Search box */
-.page-kaufen #block-views-exp-karten-kaufen, 
+.page-kaufen #block-views-exp-karten-kaufen,
 .page-buy #search, .page-rent #search {
   display: inline-block !important;
   width: 100%;
   margin-bottom: 20px;
   padding-bottom: 10px;
-} 
+}
 .home-form-wrap {
   #search {
     .preis {
@@ -262,15 +262,13 @@
   }
   .select2-choices {
     background-color: #fff;
-    border: 2px solid #cbc1ba !important;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    border: 2px solid $secondary !important;
+    @include border-radius(4px);
     color: #444;
   }
   &.select2-container-active {
     .select2-choices {
-      border-color: #c61c2c !important;
+      border-color: $primary !important;
     }
   }
 }
@@ -294,7 +292,7 @@ div.hide-submit-processing {
     .view-footer {
       > div {
         .Inquiry-button {
-          color: #C61C2C;
+          color: $primary;
           font-size: 20px;
           font-weight: bold;
           cursor: pointer;

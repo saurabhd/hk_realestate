@@ -147,7 +147,7 @@
 .tile {
     background: #fff;
     border: 2px solid $secondary;
-    @include border-radius(5px);
+    @include border-radius($border-radius);
     @include box-shadow($box-shadow);
     float: left;
     margin: 0 2.5% 2em 0;
@@ -177,7 +177,7 @@
     margin-right: 2%;
   }
 }
-/* disabl ewidget overlay */
+/* disable widget overlay */
 .ui-widget-overlay {
     position: static !important;
     top: 0;

@@ -237,11 +237,12 @@
   }
 
 }
-
 /* Search box */
 .page-kaufen #block-views-exp-karten-kaufen,
 .page-buy #search, .page-rent #search {
-  display: inline-block !important;
+  /*display: inline-block !important;*/
+  float: left;
+  clear: both;
   width: 100%;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -290,7 +291,11 @@ div.hide-submit-processing {
   }
   .view-merkliste {
     .view-footer {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
       > div {
+          max-width: 150px;
         .Inquiry-button {
           color: $primary;
           font-size: 20px;
@@ -889,5 +894,79 @@ div.hide-submit-processing {
     display: block;
   }
 }
+
+/* Popup design */
+.not-front {
+  #colorbox {
+    .navigation {
+      display: none;
+    }
+    #main {
+      margin-top: -30px;
+      border: 2px solid #CBC1BA;
+      #crm-core-profile-entry-form-anfrage {
+        select {
+          display: block;
+          min-height: 30px;
+          width: 170px;
+          padding: 0 0 0 8px;
+          background-image: url('../images/sprite-sc8b09672a3.png');
+          background-position: right 232px;
+          background-repeat: repeat-y;
+          background-color: #FFF;
+          color: #91988E;
+          border: 2px solid #CBC1BA;
+          border-radius: 4px;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          font-size: 85%;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          &:focus {
+            border-color: #C61C2C;
+            outline: none;
+          }
+        }
+        select.field_angefragte_wohnung-delta-order {
+          display: none;
+        }
+      }
+      #crm-core-profile-entry-form-anfrage {
+        table {
+          tr {
+            th:nth-child(2) {
+              display: none;
+            }
+            &.even,
+            &.odd {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+    button#cboxClose {
+      position: absolute;
+      top: -25px;
+      right: -20px;
+      background-image: url(../images/Icon_x_Kreis.png);
+      background-position: 0 -3px;
+      background-color: transparent;
+      text-indent: -9999px;
+      content: '';
+      &:hover {
+        background-image: url(../images/redIcon_x_Kreis.png);
+      }
+    }
+  }
+}
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+  overflow: visible !important;
+}
+
+/* End */
 
 

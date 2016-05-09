@@ -125,9 +125,9 @@
   }
 }(jQuery));
 
- // (function($) {
- //     Drupal.behaviors.leafletMap = {
- //         attach: function(context, settings) {
+  (function($) {
+      Drupal.behaviors.leafletMap = {
+          attach: function(context, settings) {
 //    /* RH Kartensuche */
      //    $( ".front #block-views-exp-karten-map-page, .front #search").dialog({
      //        height: "auto",
@@ -138,14 +138,14 @@
      //        hide: { effect: "explode", duration: "1000" },
      //        position: { my: "center bottom", at: "center-180 bottom-80", collision: "fit flip", of: "#page" }
      //      });
-     //     $( '#block-menu-menu-service-menu .menu li:nth-child(2)').click(function(e) {
-     //          $( ".ui-dialog,#block-views-exp-karten-kaufen,#block-views-exp-karten-mieten").toggle();
-     //            e.preventDefault();
-     //          });
-     //        }
-     // }
+          $( '#block-menu-menu-service-menu .menu li:nth-child(2)').click(function(e) {
+               $( ".ui-dialog,#block-views-exp-karten-kaufen,#block-views-exp-karten-mieten").toggle();
+                 e.preventDefault();
+               });
+             }
+      }
 
- // })(jQuery);
+  })(jQuery);
 /*(function ($) {
   Drupal.behaviors.leafletZoomTo = {
     attach: function (context, settings) {

@@ -106,6 +106,12 @@
         e.stopPropagation();
       });
 
+
+      // Hide Keyboard
+      if(jQuery(window).width() < 767) {
+        jQuery('.home-form-wrap ul li.select2-search-field input').attr('readonly',true);
+      }
+      // End
     }
 
   }

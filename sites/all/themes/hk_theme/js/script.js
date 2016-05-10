@@ -106,10 +106,20 @@
         e.stopPropagation();
       });
 
+      // Search Slide toggle
+      jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function() {
+        jQuery('.ui-dialog').slideToggle();
+      });
+      jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function() {
+        jQuery('#search.region-search').slideToggle();
+      });
+      // end
 
-      // Hide Keyboard
+      // Hide keyboard
       if(jQuery(window).width() < 767) {
         jQuery('.home-form-wrap ul li.select2-search-field input').attr('readonly',true);
+        jQuery('.home-form-wrap .ui-dialog #search .block-facetapi input').attr('readonly',true);
+        
       }
       // End
     }
@@ -131,9 +141,9 @@
   }
 }(jQuery));
 
-  (function($) {
-      Drupal.behaviors.leafletMap = {
-          attach: function(context, settings) {
+ // (function($) {
+ //     Drupal.behaviors.leafletMap = {
+ //         attach: function(context, settings) {
 //    /* RH Kartensuche */
      //    $( ".front #block-views-exp-karten-map-page, .front #search").dialog({
      //        height: "auto",
@@ -144,14 +154,14 @@
      //        hide: { effect: "explode", duration: "1000" },
      //        position: { my: "center bottom", at: "center-180 bottom-80", collision: "fit flip", of: "#page" }
      //      });
-          $( '#block-menu-menu-service-menu .menu li:nth-child(2)').click(function(e) {
-               $( ".ui-dialog,#block-views-exp-karten-kaufen,#block-views-exp-karten-mieten").toggle();
-                 e.preventDefault();
-               });
-             }
-      }
+     //     $( '#block-menu-menu-service-menu .menu li:nth-child(2)').click(function(e) {
+     //          $( ".ui-dialog,#block-views-exp-karten-kaufen,#block-views-exp-karten-mieten").toggle();
+     //            e.preventDefault();
+     //          });
+     //        }
+     // }
 
-  })(jQuery);
+ // })(jQuery);
 /*(function ($) {
   Drupal.behaviors.leafletZoomTo = {
     attach: function (context, settings) {

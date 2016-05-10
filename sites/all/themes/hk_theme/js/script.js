@@ -107,10 +107,12 @@
       });
 
       // Search Slide toggle
-      jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function() {
+      jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
+        e.preventDefault();
         jQuery('.ui-dialog').slideToggle();
       });
-      jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function() {
+      jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
+        e.preventDefault();
         jQuery('#search.region-search').slideToggle();
       });
       // end

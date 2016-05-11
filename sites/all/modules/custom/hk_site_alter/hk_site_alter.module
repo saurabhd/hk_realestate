@@ -38,3 +38,58 @@ $flag1 = flag_get_flag($flag->name);
     }
   }
 }
+
+function hk_site_alter_form_alter(&$form, &$form_state, $form_id) {
+  /*if($form_id == 'simplenews_subscriptions_multi_block_form') {
+    $form['newsletters']['#options'][322] = 'I want to be informed on future offers that might be comparable.';
+  }
+  */
+  if($form_id == 'crm_core_profile_entry_form_kontaktformular') {
+    $block = block_load('simplenews', '0');
+    $block = _block_get_renderable_array(_block_render_blocks(array($block)));
+    $output = drupal_render($block);
+    $form_1 = drupal_get_form('simplenews_subscriptions_multi_block_form');
+    //$form['field_activity_notes']['#suffix'] = render($form_1); 
+    $form['newsletters'] = $form_1['newsletters'];
+    $form['newsletters']['#weight'] = '36';
+    $form['newsletters']['#tree'] = '1';
+    $form['mail'] = $form_1['mail'];
+    $form['mail']['#weight'] = '37';
+    $form['mail']['#tree'] = '1';
+    $form['mail']['#required'] = 0;
+    
+   $form['#submit'][] = 'hk_site_alter_subscriptions_page_form_submit';
+  }
+  if($form_id == 'crm_core_profile_entry_form_call') {
+    $block = block_load('simplenews', '0');
+    $block = _block_get_renderable_array(_block_render_blocks(array($block)));
+    $output = drupal_render($block);
+    //$form['field_phone']['#suffix'] = $output;
+    $form_1 = drupal_get_form('simplenews_subscriptions_multi_block_form');
+    //$form['field_activity_notes']['#suffix'] = render($form_1); 
+    $form['newsletters'] = $form_1['newsletters'];
+    $form['newsletters']['#weight'] = '36';
+    $form['newsletters']['#tree'] = '1';
+    $form['mail'] = $form_1['mail'];
+    $form['mail']['#weight'] = '37';
+    $form['mail']['#required'] = 0;
+    $form['mail']['#tree'] = '1';
+    $form['mail']['#required'] = 0;
+    $form['#submit'][] = 'hk_site_alter_subscriptions_page_form_submit';
+  } 
+}
+
+function hk_site_alter_subscriptions_page_form_submit($form,&$form_state) {
+  global $user;  
+    if(in_array("anonymous user", $user->roles)) {
+      if(isset($form_state['input']['mail']) && !empty($form_state['input']['mail'])) {
+        $email = $form_state['input']['mail']; 
+      }      
+    } else {
+        $email = $user->mail;
+    } 
+  if(isset($form_state['input']['newsletters'])) {
+    $newsletter_id = 322;
+    simplenews_subscribe_user($email, $newsletter_id, $confirm = FALSE, $source = 'action', NULL);
+  }  
+}

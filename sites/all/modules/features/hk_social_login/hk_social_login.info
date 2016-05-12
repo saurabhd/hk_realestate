@@ -14,6 +14,7 @@ features[features_api][] = api:2
 features[user_permission][] = create dokument content
 features[user_permission][] = delete own dokument content
 features[user_permission][] = edit own dokument content
+features[user_permission][] = use hybridauth
 features[user_role][] = Buyer
 features[variable][] = hybridauth_debug
 features[variable][] = hybridauth_destination

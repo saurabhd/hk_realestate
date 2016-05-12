@@ -37,5 +37,21 @@ function hk_social_login_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'use hybridauth'.
+  $permissions['use hybridauth'] = array(
+    'name' => 'use hybridauth',
+    'roles' => array(
+      'Buyer' => 'Buyer',
+      'Editor' => 'Editor',
+      'administrator' => 'administrator',
+      'admintooluser' => 'admintooluser',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'Übersetzer' => 'Übersetzer',
+      'Übersetzungsgeber' => 'Übersetzungsgeber',
+    ),
+    'module' => 'hybridauth',
+  );
+
   return $permissions;
 }

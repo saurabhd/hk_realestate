@@ -49,32 +49,19 @@ function hk_site_alter_form_alter(&$form, &$form_state, $form_id) {
     $block = _block_get_renderable_array(_block_render_blocks(array($block)));
     $output = drupal_render($block);
     $form_1 = drupal_get_form('simplenews_subscriptions_multi_block_form');
-    //$form['field_activity_notes']['#suffix'] = render($form_1); 
     $form['newsletters'] = $form_1['newsletters'];
     $form['newsletters']['#weight'] = '36';
     $form['newsletters']['#tree'] = '1';
-    $form['mail'] = $form_1['mail'];
-    $form['mail']['#weight'] = '37';
-    $form['mail']['#tree'] = '1';
-    $form['mail']['#required'] = 0;
-    
    $form['#submit'][] = 'hk_site_alter_subscriptions_page_form_submit';
   }
   if($form_id == 'crm_core_profile_entry_form_call') {
     $block = block_load('simplenews', '0');
     $block = _block_get_renderable_array(_block_render_blocks(array($block)));
     $output = drupal_render($block);
-    //$form['field_phone']['#suffix'] = $output;
     $form_1 = drupal_get_form('simplenews_subscriptions_multi_block_form');
-    //$form['field_activity_notes']['#suffix'] = render($form_1); 
     $form['newsletters'] = $form_1['newsletters'];
     $form['newsletters']['#weight'] = '36';
     $form['newsletters']['#tree'] = '1';
-    $form['mail'] = $form_1['mail'];
-    $form['mail']['#weight'] = '37';
-    $form['mail']['#required'] = 0;
-    $form['mail']['#tree'] = '1';
-    $form['mail']['#required'] = 0;
     $form['#submit'][] = 'hk_site_alter_subscriptions_page_form_submit';
   } 
 }
@@ -82,14 +69,15 @@ function hk_site_alter_form_alter(&$form, &$form_state, $form_id) {
 function hk_site_alter_subscriptions_page_form_submit($form,&$form_state) {
   global $user;  
     if(in_array("anonymous user", $user->roles)) {
-      if(isset($form_state['input']['mail']) && !empty($form_state['input']['mail'])) {
-        $email = $form_state['input']['mail']; 
+     
+      if(isset($form_state['values']['field_e_mail'][LANGUAGE_NONE]) && !empty($form_state['values']['field_e_mail'][LANGUAGE_NONE])) {
+        $email = $form_state['values']['field_e_mail'][LANGUAGE_NONE][0]['email']; 
       }      
     } else {
         $email = $user->mail;
     } 
+  $newsletter_id = 322;
   if(isset($form_state['input']['newsletters'])) {
-    $newsletter_id = 322;
     simplenews_subscribe_user($email, $newsletter_id, $confirm = FALSE, $source = 'action', NULL);
   }  
 }

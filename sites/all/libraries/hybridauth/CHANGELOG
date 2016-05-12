@@ -1,5 +1,64 @@
 Hybridauth Change log
 =====================
+2.6.0 - January 12 2016
+      New providers:
+        #546 + #547 - GitLab OAuth2
+        #577 - MixCloud
+        #568 + #589 - Digital Ocean
+      Updates:
+        Updated LightOpenID to 1.2.0
+        #572 - Add cURL timeouts for OpenID
+        #582 - [Facebook] read_stream removed
+        #588 - [BitBucket] Upgrade to OAuth2 protocol and patches
+        #607 + #240 - Gzip support added
+      Changes:
+        #567 - [Odnoklassniki] Get better size of user avatar
+        #570 - [odnoklassniki] Improve error reporting
+        #571 - [Hybrid_Endpoint] Improve error reporting
+        #576 - Improve logging and error handling in main providers
+        #598 - Update GitLab API points, fix LastFM typo, refactor file/folder structure stack exchange
+      Fixes:
+        #575 - [Steam] Fix Steam profileUrl
+        #578 - [Odnoklassniki] new link
+        #595 - [DigitalOcean] Removing location
+        #606 + #607 - [stackexchange] Bugs fixing and improvements
+
+
+2.5.1 - October 12 2015
+      Fixes:
+        #542 - [XING] updated provider to 1.1.0
+        #549 - Update Auth.php library version
+        #558 - [XING] Fix typo
+        #559 - [VKontakte] Fix warnings for getUserByResponse() for undefined City and Country
+        #560 - [Drupal module] Require OAuth.php only if not exist
+        #564 - Fix DateTime error in Logger
+
+2.5.0 - September 7 2015
+      New:
+        #444 + #445 - Slack provider
+        $474 - WarGaming OpenID provider
+        #454 - xuite's oauth provider
+        #480 - Improved inline documentation for IDE support
+        #370 + #495 - [github] getUserContacts() implementation (followers & following)
+        #372 + #495 - [instagram] getUserContacts() implementation (follows & followed-by)
+        #519 - [Twitter] Add email option to Twitter API
+      Fixes:
+        #438 + #445 - [LinkedIn] getusercontacts error
+        #446 + #447 - [Steam] xml parsing error
+        #340 + #476 - Ensure session is saved before sending response
+        #472 - [Facebook] Obsolete 'read_friendlists' FB permission was changed to 'read_custom_friendlists'
+        #453 - [Vkontakte] fix Undefined property: stdClass::$email
+        #499 + #500 - [Facebook] Bug: treating hometown as current location
+        #523 - [Draugiem] API does not always return the birthday object
+        #525 - [Facebook] Fixes getUserProfile v2.4 compatibility
+        #532 + #533 [soundcloud] Provider doesn't implement getUserProfile() and getUserContacts()
+        #535 - [Draugiem] API does not always return the birthday object
+      Changes:
+        #477 - [Vkontakte] Move Vkontakte fields to configuration
+        71531f2 - [Facebook] Adding birthday field to be retrieved
+      Removed:
+        #455 - [Viadeo] Viadeo connect not existing anymore
+
 2.4.1 - April 11 2015
       Fixes:
         #430 - Disable autoloading for class_exists() checks

@@ -113,7 +113,7 @@
       });
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
-        jQuery('#search.region-search').slideToggle();
+        //jQuery('#search.region-search').slideToggle();
       });
       // end
 

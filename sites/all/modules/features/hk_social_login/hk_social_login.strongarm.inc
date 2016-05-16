@@ -56,7 +56,7 @@ function hk_social_login_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hybridauth_email_verification';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['hybridauth_email_verification'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -115,8 +115,8 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
   $strongarm->name = 'hybridauth_providers';
   $strongarm->value = array(
     'Twitter' => 'Twitter',
-    'Facebook' => 0,
     'AOL' => 0,
+    'Facebook' => 0,
     'Foursquare' => 0,
     'Google' => 0,
     'LinkedIn' => 0,

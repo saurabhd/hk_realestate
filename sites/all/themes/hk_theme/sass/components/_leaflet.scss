@@ -898,7 +898,8 @@ div.hide-submit-processing {
 /* Popup design */
 .not-front {
   #colorbox {
-    .navigation {
+    .navigation,
+    .footer {
       display: none;
     }
     #main {
@@ -969,4 +970,47 @@ div.hide-submit-processing {
 
 /* End */
 
+/* Anfrage page*/
+#crm-core-profile-entry-form-call {
+  .field-name-field-e-mail,
+  .field-type-phone,
+  .field-type-text-long {
+    max-width: 533px;
+    width: 100% !important;
+    input,
+    textarea {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }/*
+  .field_angefragte_wohnung-delta-order {
+    display: none;
+  }*/
+  #field-angefragte-wohnung-values {
+    tr.odd {
+      background-color: transparent;
+    }
+    tr {
+      .field-multiple-drag,
+      &:last-child {
+        display: none;
+      }
+      td {
+        padding: 5px 0;
+      }
+    }
+  }
+}
+/* Pop up */
+#cboxContent {
+  #main {
+    overflow: hidden;
+  }
+  #crm-core-profile-entry-form-call {
+    .field_angefragte_wohnung-delta-order {
+      display: none;
+    }
+  }
+}
 
+/* End */

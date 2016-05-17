@@ -290,5 +290,355 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
   $strongarm->value = '100';
   $export['hybridauth_widget_weight'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'tabtamer_tab_settings';
+  $strongarm->value = array(
+    'crm-core/contact' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'crm-core/contact',
+      'tabtamer_title' => '',
+    ),
+    'crm-core/reports' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'crm-core/reports',
+      'tabtamer_title' => '',
+    ),
+    'crm-core/dashboard' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'crm-core/dashboard',
+      'tabtamer_title' => '',
+    ),
+    'crm-core/aktivitaeten' => array(
+      'weight' => '6',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'crm-core/aktivitaeten',
+      'tabtamer_title' => '',
+    ),
+    'crm-core/anfragen' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'crm-core/anfragen',
+      'tabtamer_title' => '',
+    ),
+    'crm-core/contact/%/activity' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'crm-core/contact/%/activity',
+      'tabtamer_title' => '',
+    ),
+    'crm-core/activity/%/view' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'crm-core/activity/%crm_core_activity/view',
+      'tabtamer_title' => '',
+    ),
+    'crm-core/activity/%/edit' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'crm-core/activity/%crm_core_activity/edit',
+      'tabtamer_title' => '',
+    ),
+    'node/%/revisions' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/revisions',
+      'tabtamer_title' => '',
+    ),
+    'node/%/import' => array(
+      'weight' => '10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/import',
+      'tabtamer_title' => '',
+    ),
+    'node/%/delete-items' => array(
+      'weight' => '11',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/delete-items',
+      'tabtamer_title' => '',
+    ),
+    'node/%/unlock' => array(
+      'weight' => '11',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/unlock',
+      'tabtamer_title' => '',
+    ),
+    'node/%/view' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/view',
+      'tabtamer_title' => '',
+    ),
+    'node/%/edit' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/edit',
+      'tabtamer_title' => '',
+    ),
+    'node/%/delete' => array(
+      'weight' => '1',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/delete',
+      'tabtamer_title' => '',
+    ),
+    'node/%/simplenews' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/simplenews',
+      'tabtamer_title' => '',
+    ),
+    'node/%/translate' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/translate',
+      'tabtamer_title' => '',
+    ),
+    'node/%/display' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/display',
+      'tabtamer_title' => '',
+    ),
+    'node/%/workflow' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/workflow',
+      'tabtamer_title' => '',
+    ),
+    'node/%/apartment-crm-activities' => array(
+      'weight' => '4',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%/apartment-crm-activities',
+      'tabtamer_title' => '',
+    ),
+    'node/%/log' => array(
+      'weight' => '12',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%views_arg/log',
+      'tabtamer_title' => '',
+    ),
+    'import/%/import' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'import/%feeds_importer/import',
+      'tabtamer_title' => '',
+    ),
+    'import/%/delete-items' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'import/%feeds_importer/delete-items',
+      'tabtamer_title' => '',
+    ),
+    'import/%/unlock' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'import/%feeds_importer/unlock',
+      'tabtamer_title' => '',
+    ),
+    'import/%/log' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'import/%/log',
+      'tabtamer_title' => '',
+    ),
+    'file/add/upload' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'file/add/upload',
+      'tabtamer_title' => '',
+    ),
+    'file/add/upload/file' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'file/add/upload/file',
+      'tabtamer_title' => '',
+    ),
+    'file/add/upload/archive' => array(
+      'weight' => '-5',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'file/add/upload/archive',
+      'tabtamer_title' => '',
+    ),
+    'file/%/view' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'file/%file/view',
+      'tabtamer_title' => '',
+    ),
+    'file/%/usage' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'file/%file/usage',
+      'tabtamer_title' => '',
+    ),
+    'file/%/edit' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'file/%file/edit',
+      'tabtamer_title' => '',
+    ),
+    'file/%/delete' => array(
+      'weight' => '1',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'file/%file/delete',
+      'tabtamer_title' => '',
+    ),
+    'user/%/hybridauth' => array(
+      'weight' => '-96',
+      'action' => 'disabled',
+      'tabtamer_original_path' => 'user/%user/hybridauth',
+      'tabtamer_title' => '',
+    ),
+    'user/%/view' => array(
+      'weight' => '-100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/view',
+      'tabtamer_title' => '',
+    ),
+    'user/%/edit' => array(
+      'weight' => '-99',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/edit',
+      'tabtamer_title' => '',
+    ),
+    'user/%/display' => array(
+      'weight' => '-98',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/display',
+      'tabtamer_title' => '',
+    ),
+    'user/%/document' => array(
+      'weight' => '-97',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%/document',
+      'tabtamer_title' => '',
+    ),
+    'user/%/edit/account' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user_category/edit/account',
+      'tabtamer_title' => '',
+    ),
+    'user/%/edit/simplenews' => array(
+      'weight' => '10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user_category/edit/simplenews',
+      'tabtamer_title' => '',
+    ),
+    'user/%/edit/twitter' => array(
+      'weight' => '10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/edit/twitter',
+      'tabtamer_title' => '',
+    ),
+    'user/login' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/login',
+      'tabtamer_title' => '',
+    ),
+    'user/register' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/register',
+      'tabtamer_title' => '',
+    ),
+    'user/password' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/password',
+      'tabtamer_title' => '',
+    ),
+    'search/node' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'search/node',
+      'tabtamer_title' => '',
+    ),
+    'search/user' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'search/user',
+      'tabtamer_title' => '',
+    ),
+    'search/node/%' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'search/node/%menu_tail',
+      'tabtamer_title' => '',
+    ),
+    'search/user/%' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'search/user/%menu_tail',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/view' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/view',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/edit' => array(
+      'weight' => '10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/edit',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/merge' => array(
+      'weight' => '10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/merge',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/display' => array(
+      'weight' => '11',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/display',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/merge/default' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/merge/default',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/merge/duplicates' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/merge/duplicates',
+      'tabtamer_title' => '',
+    ),
+    'workflow/summary' => array(
+      'weight' => '-1',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'workflow/summary',
+      'tabtamer_title' => '',
+    ),
+    'workflow/my' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'workflow/my',
+      'tabtamer_title' => '',
+    ),
+    'workflow/pending' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'workflow/pending',
+      'tabtamer_title' => '',
+    ),
+    'workflow/history' => array(
+      'weight' => '3',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'workflow/history',
+      'tabtamer_title' => '',
+    ),
+  );
+  $export['tabtamer_tab_settings'] = $strongarm;
+
   return $export;
 }

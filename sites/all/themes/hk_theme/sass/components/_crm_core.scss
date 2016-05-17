@@ -18,7 +18,10 @@
   }
 }
 
-#colorbox {
+#colorbox, #ng-lightbox {
+  .lightbox__body {
+    padding-top: 0;
+  }
   .tabledrag-toggle-weight-wrapper {
     display: none;
   }
@@ -27,11 +30,17 @@
   }
   td {
     padding: 0;
+    background: #fff;
+    border: 0;
   }
+
   .field-multiple-drag {
     display: none;
   }
-  #edit-field-contact-telefon-und-add-more {
+
+  #edit-field-contact-telefon-und-add-more, 
+  #edit-field-angefragte-wohnung-und-1-target-id,
+  .field-add-more-submit {
     display: none;
   }
 }

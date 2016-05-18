@@ -55,6 +55,7 @@ function hk_site_alter_form_alter(&$form, &$form_state, $form_id) {
    $form['#submit'][] = 'hk_site_alter_subscriptions_page_form_submit';
   }
   if($form_id == 'crm_core_profile_entry_form_call') {
+    $form['field_angefragte_wohnung'][LANGUAGE_NONE]['#title'] = t('Inquiry for');
     $block = block_load('simplenews', '0');
     $block = _block_get_renderable_array(_block_render_blocks(array($block)));
     $output = drupal_render($block);

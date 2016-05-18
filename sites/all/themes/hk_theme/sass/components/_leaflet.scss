@@ -990,13 +990,24 @@ div.hide-submit-processing {
     tr.odd {
       background-color: transparent;
     }
-    tr {
-      .field-multiple-drag,
-      &:last-child {
-        display: none;
+     thead {
+      tr {
+        th {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
       }
-      td {
-        padding: 5px 0;
+    }
+    tbody {
+      tr {
+        .field-multiple-drag,
+        &:last-child {
+          display: none;
+        }
+        td {
+          padding: 5px 0;
+        }
       }
     }
   }

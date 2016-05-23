@@ -110,6 +110,7 @@
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
         jQuery('.ui-dialog').slideToggle();
+        jQuery('.page-buy #search').slideToggle();
       });
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
@@ -233,6 +234,8 @@
 
 /* Home page search box */
 jQuery(document).ready(function() {
+  //alert('document.ready');
+
   home_dialog_center ();
   jQuery(window).resize(function() {
     home_dialog_center ();
@@ -262,6 +265,46 @@ jQuery(document).ready(function() {
     jQuery('.not-front #search').css('padding-bottom', paddingbottom);
   });
   /* End */
+
+  window.onload = function() {
+    jQuery('.not-front #facetapi-multiselect-form-1 .form-item').click(function() {
+      //alert('form1');
+      var selectHeight = jQuery(this).find('.select2-choices').outerHeight();
+      var paddingbottom = selectHeight - 30;
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+    });
+    /*jQuery('.not-front #facetapi-multiselect-form-1 .select2-search-choice-close').click(function() {
+      var selectHeight = jQuery('.not-front #facetapi-multiselect-form-2 .select2-choices').outerHeight();
+      var paddingbottom = selectHeight - 30;
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+    });*/
+
+    jQuery('.not-front #facetapi-multiselect-form-2 .form-item').click(function() {
+      //alert('form2');
+      var selectHeight = jQuery(this).find('.select2-choices').outerHeight();
+      var paddingbottom = selectHeight - 30;
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+    });
+    /*jQuery('.not-front #facetapi-multiselect-form-2 .select2-search-choice-close').click(function() {
+      var selectHeight = jQuery('.not-front #facetapi-multiselect-form-1 .select2-choices').outerHeight();
+      var paddingbottom = selectHeight - 30;
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+    });*/
+  };
+
+  var paddingbottom_high = 0;
+  jQuery('.page-buy .select2-choices').each(function() {
+    //console.log('each');
+    var selectHeight = jQuery(this).outerHeight();
+    var paddingbottom = selectHeight - 30;
+    //var paddingbottom_high = paddingbottom;
+    console.log('p', + paddingbottom);
+    if(paddingbottom_high < paddingbottom) {
+      paddingbottom_high = paddingbottom;
+      console.log('high' + paddingbottom_high);
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom_high);
+    }
+  });
 
   /*jQuery(".select2-container .select2-choices").change(function() {
     alert("Hi");

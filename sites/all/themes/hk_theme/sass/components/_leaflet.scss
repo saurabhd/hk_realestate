@@ -954,9 +954,11 @@ div.hide-submit-processing {
       background-position: 0 -3px;
       background-color: transparent;
       text-indent: -9999px;
+      cursor: pointer;
       content: '';
       &:hover {
         background-image: url(../images/redIcon_x_Kreis.png);
+        cursor: pointer;
       }
     }
   }
@@ -1010,6 +1012,7 @@ div.hide-submit-processing {
       }
     }
   }
+
 }
 /* Pop up */
 #cboxContent {
@@ -1021,7 +1024,27 @@ div.hide-submit-processing {
       display: none;
     }
   }
+  #field-angefragte-wohnung-values {
+    .form-item {
+      #ng-lightbox {
+        display: block;
+      }
+    }
+  }
 }
-
+#crm-core-profile-entry-form-call {
+  #field-angefragte-wohnung-values {
+    .form-item {
+      #edit-field-angefragte-wohnung-und-1-target-id {
+        display: block;
+      }
+    }
+  }
+}
+#ng-lightbox {
+  #edit-field-angefragte-wohnung-und-1-target-id {
+    display: block;
+  }
+}
 /* End */
 body.not-front.not-logged-in.page-hybridauth { background: none; }

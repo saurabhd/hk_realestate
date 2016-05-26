@@ -963,6 +963,9 @@ div.hide-submit-processing {
     }
   }
 }
+.form-item .form-select.error .select2-choice {
+  border: 1px solid #C00;
+}
 #colorbox,
 #cboxOverlay,
 #cboxWrapper {

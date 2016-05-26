@@ -29,6 +29,9 @@
   .tabledrag-toggle-weight-wrapper {
     display: none;
   }
+  thead th:nth-child(2) {
+    display: none;
+  }
   tbody {
     border: 0;
   }
@@ -36,6 +39,10 @@
     padding: 0;
     background: #fff;
     border: 0;
+    input {
+      background: #fff;
+      border: 0;
+    }
   }
 
   .field-multiple-drag {

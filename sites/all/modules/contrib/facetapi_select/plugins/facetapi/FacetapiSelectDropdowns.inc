@@ -9,32 +9,41 @@
  * Widget that renders facets as dropdowns.
  */
 class FacetapiSelectDropdowns extends FacetapiWidgetLinks {
+
   private $urls_cache = array();
 
   /**
-   * Renders the links.
+   * {@inheritdoc}
    */
   public function execute() {
     static $count = 0;
     $count++;
+
     $element = &$this->build[$this->facet['field alias']];
-    $settings = $this->settings;
-
     $variables = $this->buildItems($element);
+    $variables = $this->appendDefaultOrResetOptions($variables);
 
-    if (!empty($variables['options'])) {
-      $default_option_label = !empty($settings->settings['default_option_label']) ? filter_xss_admin($settings->settings['default_option_label']) : t('--Choose--');
-      $variables['default_option_label'] = theme('facetapi_select_select_option', array(
-        'facet_text' => $default_option_label,
-        'show_count' => FALSE
-      ));
+    $element = drupal_get_form("facetapi_select_facet_form_$count", $variables);
+
+    if ($this->isActive()) {
+      $this->build['#attributes']['class'][] = 'form-select selected';
     }
 
-    $element = drupal_get_form('facetapi_select_facet_form', $variables, $count);
+    $element['#attributes'] = array_merge($element['#attributes'], $this->build['#attributes']);
   }
 
   /**
-   * Build the active items and the options array for the provided facetapi element.
+   * Determine if the Facet is active.
+   *
+   * @return boolean
+   *   Returns TRUE if the Facet is active.
+   */
+  public function isActive() {
+   return (boolean) count($this->build['#adapter']->getActiveItems($this->facet->getFacet()));
+  }
+
+  /**
+   * Build the options array for the provided facetapi element.
    *
    * @param array $element
    *   The facetapi element as provided by execute().
@@ -44,33 +53,26 @@ class FacetapiSelectDropdowns extends FacetapiWidgetLinks {
    */
   protected function buildItems($element, $depth = 0) {
     $settings = $this->settings;
-    $variables = array('active_items' => array(), 'options' => array());
+    $variables = array('options' => array());
+    $facet_settings = $this->facet->getSettings();
 
-    $is_active = FALSE;
     $url = NULL;
     foreach ($element as $value => $item) {
-      $is_active = FALSE;
       $url = $this->getUrl($item);
       $item['#markup'] = str_repeat('-', $depth) . ' ' . $item['#markup'];
 
-      if ($item['#active']) {
-        // We use $element[$value] so we don't get the "--" in front of the text
-        // since it is already tiered for the active links.
-        $variables['active_items'][$url]['data'] = $this->buildActiveLink($element[$value]);
-        $is_active = TRUE;
+      if ($facet_settings->settings['limit_active_items'] && $item['#active']) {
+        $variables['options'][''] = $this->buildSelectOption($item, $facet_settings->settings);
+        $variables['facet_reset_url'] = $url;
       }
       else {
-        $variables['options'][$url] = $this->buildSelectOption($item);
-      }
-
-      if ($this->shouldExpandChildren($is_active, $item)) {
-        $this->appendChildren($variables, $item, $depth, $is_active);
+        $variables['options'][$url] = $this->buildSelectOption($item, $facet_settings->settings);
       }
     }
 
-    // When there are currently no options and the current active item has children
-    // let's add the children as options.
-    if ($is_active && empty($variables['options']) && !empty($item['#item_children'])) {
+    // When there is only one option and it is active with children let's add
+    // the children as options.
+    if ($item['#active'] && count($variables['options']) === 1 && !empty($item['#item_children'])) {
       $this->appendChildren($variables, $item, $depth);
     }
 
@@ -78,26 +80,64 @@ class FacetapiSelectDropdowns extends FacetapiWidgetLinks {
   }
 
   /**
-   * Determine if we should expand the children for the current active item.
+   * Append either the Default option or the Reset option to the available options.
    *
-   * @param array $is_active
-   *   Dictates if the current item is active.
-   * @param array $item
-   *   The current item we are processing.
+   * @param array $variables
+   *   The variables array of built items to be modified that will be passed as
+   *   to the facet form.
    *
-   * @return boolean
-   *   Returns TRUE if we should expand the items children and FALSE otherwise.
+   * @return array
+   *   The modified variables array.
    */
-  protected function shouldExpandChildren($is_active, $item) {
-    $element = &$this->build[$this->facet['field alias']];
-    $settings = $this->settings;
+  protected function appendDefaultOrResetOptions(&$variables) {
+    if (!empty($variables['options'])) {
+      if (!empty($variables['facet_reset_url'])) {
+        $variables['options'] = array_merge(
+          array($variables['facet_reset_url'] => $this->getResetOptionLabel()),
+          $variables['options']
+        );
+      }
+      else {
+        $variables['default_option_label'] = theme('facetapi_select_select_option', array(
+          'facet_text' => $this->getDefaultOptionLabel(),
+          'show_count' => FALSE
+        ));
+      }
+    }
 
-    $has_siblings = count($element) > 1;
-    $has_children = !empty($item['#item_children']);
-    $is_expanded = (bool) $settings->settings['show_expanded'];
-    $is_active_and_has_siblings = ($is_active && $has_siblings);
+    return $variables;
+  }
 
-    return (($is_expanded || $is_active_and_has_siblings) && $has_children);
+  /**
+   * Retrieve the facet reset option label.
+   *
+   * @return string
+   *   The reset option label.
+   */
+  protected function getResetOptionLabel() {
+    $reset_option_label = t('--Reset--');
+
+    if (!empty($this->settings->settings['reset_option_label'])) {
+      $reset_option_label = self::translateLabel('reset_option_label', $this->settings->settings['reset_option_label'], $this->key);
+    }
+
+    return $reset_option_label;
+  }
+
+  /**
+   * Retrieve the facet default option label.
+   *
+   * @return string
+   *   The default option label.
+   */
+  protected function getDefaultOptionLabel() {
+    $default_option_label = t('--Choose--');
+
+    if (!empty($this->settings->settings['default_option_label'])) {
+      $default_option_label = self::translateLabel('default_option_label', $this->settings->settings['default_option_label'], $this->key);
+    }
+
+    return $default_option_label;
   }
 
   /**
@@ -114,70 +154,12 @@ class FacetapiSelectDropdowns extends FacetapiWidgetLinks {
    *
    * @return void
    */
-  protected function appendChildren(array &$variables, array $item, $depth = 0, $is_active = FALSE) {
+  protected function appendChildren(array &$variables, array $item, $depth = 0) {
     $tmpItems = $this->buildItems($item['#item_children'], ++$depth);
 
-    if (!empty($tmpItems['active_items'])) {
-      $variables['active_items'][$this->getUrl($item)]['children'] = $tmpItems['active_items'];
-    }
-
     if (!empty($tmpItems['options'])) {
-      // We only ever want to add an OpGroup when there are child options and
-      // the current item is active.
-      if ($is_active) {
-        $this->appendOpGroupheader($variables, $item);
-      }
       $variables['options'] += $tmpItems['options'];
     }
-  }
-
-  /**
-   * Append the OpGroup header to the options array for active items so that
-   * they should not selectable.
-   *
-   * @param array $variables
-   *   The variables array as provided by FacetapiSlectDropdowns::getItems().
-   * @param array $item
-   *   The item to build the opgroup header for.
-   *
-   * @return void
-   */
-  function appendOpGroupheader(array &$variables, array $item) {
-    if (!empty($item) && isset($variables['active_items'][$this->getUrl($item)])) {
-      $text = $this->buildSelectOption($item);
-      $variables['options'][$text] = array();
-    }
-  }
-
-  /**
-   * Build an individual active item link.
-   *
-   * @param array $item
-   *   The facet item to build as an active link.
-   * @param string $path
-   *   The path to use for the link as determined by the facetapi_select settings.
-   *
-   * @return string
-   *   The built active link based on the specified item.
-   */
-  protected function buildActiveLink(array $item) {
-    // We call theme directly here because we will be adding these items to a
-    // theme_list() build array as the items.
-    return theme('facetapi_link_active', array(
-      'text' => $item['#markup'],
-      'count' => $item['#count'],
-      'path' => $item['#path'],
-      'options' => array(
-        'query' => $item['#query'],
-        'attributes' => array(
-          'class' => 'facetapi-active',
-          'id' => drupal_html_id('facetapi-link'),
-          'rel' => 'nofollow',
-        ),
-        // Because the path has already been through url(), mark it as external.
-        'html' => TRUE,
-      )
-    ));
   }
 
   /**
@@ -185,15 +167,19 @@ class FacetapiSelectDropdowns extends FacetapiWidgetLinks {
    *
    * @param array $item
    *   The facet item to use for to build the select option for.
+   * @param array $facet_settings
+   *   The facet settings.
    *
    * @return string
    *   The themed individual select option text.
    */
-  protected function buildSelectOption(array $item) {
+  protected function buildSelectOption(array $item, array $facet_settings) {
     return theme('facetapi_select_select_option', array(
       'facet_text' => $item['#markup'],
       'facet_count' => $item['#count'],
       'show_count' => isset($this->settings->settings['hide_facet_count']) ? !$this->settings->settings['hide_facet_count'] : TRUE,
+      'is_active' => isset($item['#active']) ? $item['#active'] : FALSE,
+      'facet_settings' => $facet_settings,
     ));
   }
 
@@ -216,6 +202,9 @@ class FacetapiSelectDropdowns extends FacetapiWidgetLinks {
     return url($this->urls_cache[$item['#path']], array('query' => $query));
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function settingsForm(&$form, &$form_state) {
     parent::settingsForm($form, $form_state);
 
@@ -226,9 +215,15 @@ class FacetapiSelectDropdowns extends FacetapiWidgetLinks {
     );
 
     $form['widget']['widget_settings']['links'][$this->id]['default_option_label'] = array(
-      '#title' => t('Default Option Label'),
+      '#title' => t('Default option label'),
       '#type' => 'textfield',
       '#default_value' => !empty($this->settings->settings['default_option_label']) ? $this->settings->settings['default_option_label'] : '',
+      '#states' => $states,
+    );
+    $form['widget']['widget_settings']['links'][$this->id]['reset_option_label'] = array(
+      '#title' => t('Reset option label'),
+      '#type' => 'textfield',
+      '#default_value' => !empty($this->settings->settings['reset_option_label']) ? $this->settings->settings['reset_option_label'] : '',
       '#states' => $states,
     );
     $form['widget']['widget_settings']['links'][$this->id]['submit_page'] = array(
@@ -244,5 +239,47 @@ class FacetapiSelectDropdowns extends FacetapiWidgetLinks {
       '#default_value' => !empty($this->settings->settings['hide_facet_count']) ? $this->settings->settings['hide_facet_count'] : FALSE,
       '#states' => $states,
     );
+
+    $form['#submit'] = empty($form['#submit']) ? array() : $form['#submit'];
+    $form['#submit'][] = 'facetapi_select_facet_settings_form_submit';
   }
+
+  /**
+   * Helper function to integrate with the i18n_string_translate function.
+   *
+   * @param string $name
+   *   Translation context.
+   * @param string $string
+   *   The raw db value for the given property.
+   *
+   * @return string
+   *   If i18n_string is available the translated string is returned, otherwise,
+   *   the supplied string is returned.
+   */
+  public static function translateLabel($name, $string, $key) {
+    if (!function_exists('i18n_string_translate')) {
+      return $string;
+    }
+
+    $i18n_name = array('facetapi_select', $name, str_replace(':', '_', $key), 'label');
+    return i18n_string_translate($i18n_name, $string);
+  }
+
+  /**
+   * Helper function to integrate with the i18n_string_update function.
+   *
+   * @param string $name
+   *   Translation context.
+   * @param string $string
+   *   The raw db value for the given property.
+   *
+   * @return void
+   */
+  public static function updateLabelTranslation($name, $string, $key) {
+    if (function_exists('i18n_string_update')) {
+      $i18n_name = array('facetapi_select', $name, str_replace(':', '_', $key), 'label');
+      i18n_string_update($i18n_name, $string);
+    }
+  }
+
 }

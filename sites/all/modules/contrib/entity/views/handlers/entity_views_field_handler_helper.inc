@@ -442,14 +442,7 @@ class EntityFieldHandlerHelper {
         return NULL;
 
       case 'count':
-        $entities = entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment')));
-        $count = 0;
-        foreach ($entities as $entity) {
-          if (empty($entity->field_obj_schattenobjekt) || empty($entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'])) {
-            $count++;
-          }
-        }
-        return $count;
+        return count($list);
 
       // Handles both collapse and list output. Fallback is to collapse.
       default:

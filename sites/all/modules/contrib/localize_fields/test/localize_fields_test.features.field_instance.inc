@@ -10,7 +10,8 @@
 function localize_fields_test_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_date_to_multi'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_date_to_multi'
   $field_instances['field_collection_item-field_lclzflds_fieldcol-field_lclzflds_date_to_multi'] = array(
     'bundle' => 'field_lclzflds_fieldcol',
     'deleted' => 0,
@@ -57,7 +58,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_fieldcol_multi'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_fieldcol_multi'
   $field_instances['field_collection_item-field_lclzflds_fieldcol-field_lclzflds_fieldcol_multi'] = array(
     'bundle' => 'field_lclzflds_fieldcol',
     'default_value' => NULL,
@@ -94,7 +96,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_file'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_file'
   $field_instances['field_collection_item-field_lclzflds_fieldcol-field_lclzflds_file'] = array(
     'bundle' => 'field_lclzflds_fieldcol',
     'deleted' => 0,
@@ -130,7 +133,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_integer_multi'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_integer_multi'
   $field_instances['field_collection_item-field_lclzflds_fieldcol-field_lclzflds_integer_multi'] = array(
     'bundle' => 'field_lclzflds_fieldcol',
     'default_value' => NULL,
@@ -170,7 +174,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_list_bool'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_list_bool'
   $field_instances['field_collection_item-field_lclzflds_fieldcol-field_lclzflds_list_bool'] = array(
     'bundle' => 'field_lclzflds_fieldcol',
     'default_value' => NULL,
@@ -201,7 +206,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_list_text_check'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_list_text_check'
   $field_instances['field_collection_item-field_lclzflds_fieldcol-field_lclzflds_list_text_check'] = array(
     'bundle' => 'field_lclzflds_fieldcol',
     'default_value' => NULL,
@@ -232,7 +238,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_text'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol-field_lclzflds_text'
   $field_instances['field_collection_item-field_lclzflds_fieldcol-field_lclzflds_text'] = array(
     'bundle' => 'field_lclzflds_fieldcol',
     'default_value' => NULL,
@@ -266,7 +273,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol_multi-field_lclzflds_decimal'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol_multi-field_lclzflds_decimal'
   $field_instances['field_collection_item-field_lclzflds_fieldcol_multi-field_lclzflds_decimal'] = array(
     'bundle' => 'field_lclzflds_fieldcol_multi',
     'default_value' => NULL,
@@ -306,7 +314,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol_multi-field_lclzflds_image_multi'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol_multi-field_lclzflds_image_multi'
   $field_instances['field_collection_item-field_lclzflds_fieldcol_multi-field_lclzflds_image_multi'] = array(
     'bundle' => 'field_lclzflds_fieldcol_multi',
     'deleted' => 0,
@@ -350,7 +359,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_lclzflds_fieldcol_multi-field_lclzflds_text_multi'
+  // Exported field_instance:
+  // 'field_collection_item-field_lclzflds_fieldcol_multi-field_lclzflds_text_multi'
   $field_instances['field_collection_item-field_lclzflds_fieldcol_multi-field_lclzflds_text_multi'] = array(
     'bundle' => 'field_lclzflds_fieldcol_multi',
     'default_value' => NULL,
@@ -384,7 +394,51 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_bool_radio'
+  // Exported field_instance: 'node-localize_fields_test-body'
+  $field_instances['node-localize_fields_test-body'] = array(
+    'bundle' => 'localize_fields_test',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Body help: [current-date:short] LOCALIZE_FIELDS_UNTRANSLATED',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'kk_field_description_tooltip_disabled' => 0,
+    'label' => 'Body LOCALIZE_FIELDS_UNTRANSLATED',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 2,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_bool_radio'
   $field_instances['node-localize_fields_test-field_lclzflds_bool_radio'] = array(
     'bundle' => 'localize_fields_test',
     'default_value' => NULL,
@@ -520,7 +574,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_fieldcol'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_fieldcol'
   $field_instances['node-localize_fields_test-field_lclzflds_fieldcol'] = array(
     'bundle' => 'localize_fields_test',
     'default_value' => NULL,
@@ -563,7 +618,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_fieldcol_multi'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_fieldcol_multi'
   $field_instances['node-localize_fields_test-field_lclzflds_fieldcol_multi'] = array(
     'bundle' => 'localize_fields_test',
     'default_value' => NULL,
@@ -648,7 +704,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_file_multi'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_file_multi'
   $field_instances['node-localize_fields_test-field_lclzflds_file_multi'] = array(
     'bundle' => 'localize_fields_test',
     'deleted' => 0,
@@ -740,7 +797,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_image_multi'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_image_multi'
   $field_instances['node-localize_fields_test-field_lclzflds_image_multi'] = array(
     'bundle' => 'localize_fields_test',
     'deleted' => 0,
@@ -790,7 +848,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_integer_encoded'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_integer_encoded'
   $field_instances['node-localize_fields_test-field_lclzflds_integer_encoded'] = array(
     'bundle' => 'localize_fields_test',
     'default_value' => NULL,
@@ -836,7 +895,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_integer_multi'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_integer_multi'
   $field_instances['node-localize_fields_test-field_lclzflds_integer_multi'] = array(
     'bundle' => 'localize_fields_test',
     'default_value' => NULL,
@@ -882,7 +942,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_list_bool'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_list_bool'
   $field_instances['node-localize_fields_test-field_lclzflds_list_bool'] = array(
     'bundle' => 'localize_fields_test',
     'default_value' => array(
@@ -925,7 +986,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_list_text'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_list_text'
   $field_instances['node-localize_fields_test-field_lclzflds_list_text'] = array(
     'bundle' => 'localize_fields_test',
     'default_value' => NULL,
@@ -1042,7 +1104,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_text_multi'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_text_multi'
   $field_instances['node-localize_fields_test-field_lclzflds_text_multi'] = array(
     'bundle' => 'localize_fields_test',
     'default_value' => NULL,
@@ -1082,7 +1145,8 @@ function localize_fields_test_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-localize_fields_test-field_lclzflds_textlong'
+  // Exported field_instance:
+  // 'node-localize_fields_test-field_lclzflds_textlong'
   $field_instances['node-localize_fields_test-field_lclzflds_textlong'] = array(
     'bundle' => 'localize_fields_test',
     'default_value' => NULL,
@@ -1124,6 +1188,7 @@ function localize_fields_test_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+
   // Translatables created/updated by the Localize Fields (localize_fields) module.
   t('Multiple dates to dates LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:field_lclzflds_fieldcol-field_lclzflds_date_to_multi:label'));
   t('Multiple dates to dates help LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:field_lclzflds_fieldcol-field_lclzflds_date_to_multi:description'));
@@ -1149,6 +1214,8 @@ function localize_fields_test_field_default_field_instances() {
   t('Multiple images help: [current-date:short] LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:field_lclzflds_fieldcol_multi-field_lclzflds_image_multi:description'));
   t('Multiple texts LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:field_lclzflds_fieldcol_multi-field_lclzflds_text_multi:label'));
   t('Multiple texts help LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:field_lclzflds_fieldcol_multi-field_lclzflds_text_multi:description'));
+  t('Body LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:localize_fields_test-body:label'));
+  t('Body help: [current-date:short] LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:localize_fields_test-body:description'));
   t('Boolean list radio LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:localize_fields_test-field_lclzflds_bool_radio:label'));
   t('Boolean list radio help: [current-date:short] LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:localize_fields_test-field_lclzflds_bool_radio:description'));
   t('Date LOCALIZE_FIELDS_UNTRANSLATED', array(), array('context' => 'field_instance:localize_fields_test-field_lclzflds_date:label'));

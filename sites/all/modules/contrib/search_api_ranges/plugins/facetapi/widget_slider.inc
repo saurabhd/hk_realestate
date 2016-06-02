@@ -104,6 +104,7 @@ class SearchApiRangesWidgetUISlider extends FacetapiWidget {
       'suffix' => '',
       'auto-submit-delay' => 1500,
       'slider-step' => 1,
+      'round-precision' => 0,
     );
   }
 

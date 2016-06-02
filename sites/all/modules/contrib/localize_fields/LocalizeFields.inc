@@ -661,6 +661,19 @@ class LocalizeFields {
             );
           }
         }
+        // 'Add another item' button label, if multi-cardinal.
+        if (!empty($element['add_more']['#value'])) {
+          $fieldInfo = field_info_field($field_name);
+          if ($fieldInfo && !empty($fieldInfo['settings']['add_row_localization_source'])) {
+            $element['add_more']['#value'] = field_filter_xss(
+              self::translateInternal(
+                $fieldInfo['settings']['add_row_localization_source'],
+                'field' . self::CONTEXT_DELIMITER  . $field_name . self::CONTEXT_DELIMITER . 'add_row',
+                FALSE
+              )
+            );
+          }
+        }
       }
       unset($element); // Clear ref.
     }
@@ -953,11 +966,15 @@ class LocalizeFields {
         return;
       }
     }
+    // The bundle found may be array in a view.
+    if (!is_string($bundle)) {
+      return;
+    }
 
     $context = 'field_instance' . $cntxtDelim . $bundle . self::CONTEXT_DELIMITER_BUNDLE;
 
     foreach ($output as $field_name => &$field) {
-      if (strpos($field_name, 'field_') === 0 && is_array($field) && !empty($field['#field_type'])) {
+      if (is_array($field) && !empty($field['#field_type'])) {
         $context_instance = $context . $field_name . $cntxtDelim;
         if (!empty($field['#title'])) {
           // Not escaped with check_plain() due to double encoding.

@@ -547,6 +547,28 @@ class LocalizeFieldsUI extends LocalizeFields {
           // allowed_values.
           self::addAllowedValuesTranslationFields($field_settings, $context, $allowed_values_no_localization, $list_boolean_sources);
         }
+        // Non-list field types.
+        else {
+          // 'Add another item' button label.
+          if (!empty($form['field']['cardinality'])) {
+            $field_settings['add_row_localization_source'] = array(
+              '#type' => 'textfield',
+              '#title' => t('Source text of \'!add_row\' button label', array('!add_row' => t('Add another item')), array('context' => 'module:localize_fields_ui')),
+              '#description' => t(
+                'Only applicable if \'!cardinality\' isn\'t 1 (one).<br>Actually means adding another <em>row</em>.',
+                array('!cardinality' => t('Number of values')),
+                array('context' => 'module:localize_fields_ui')
+              ),
+              '#default_value' => isset($form['#field']['settings']['add_row_localization_source']) ?
+                $form['#field']['settings']['add_row_localization_source'] :
+                variable_get('localize_fields_source_add_row', 'Add another item'),
+              '#required' => FALSE,
+              // Hopefully right after the cardinality select field.
+              '#weight' => -1,
+            );
+            // @todo: Make it translatable here, in field UI.
+          }
+        }
 
         unset($field_settings); // Simple ref.
       }
@@ -600,6 +622,9 @@ class LocalizeFieldsUI extends LocalizeFields {
    *   List of messages.
    */
   protected static function translateItems(&$input, &$values) {
+    // Use db.locales_target.l10n_status column if it exists.
+    $column_l10n_status = module_exists('features_translations');
+
     /*
      * We have to remove all the fields added during form_alter,
      * otherwise their values get written to database field_config/field_config_instance.
@@ -729,12 +754,16 @@ class LocalizeFieldsUI extends LocalizeFields {
 
                   if ($existing !== $translation) {
                     if ($existing === FALSE) {
+                      $fields = array(
+                        'lid' => $source_id,
+                        'translation' => $translation,
+                        'language' => $targetLang,
+                      );
+                      if ($column_l10n_status) {
+                        $fields['l10n_status'] = 1;
+                      }
                       db_insert('locales_target')
-                        ->fields(array(
-                          'lid' => $source_id,
-                          'translation' => $translation,
-                          'language' => $targetLang,
-                        ))
+                        ->fields($fields)
                         ->execute();
                       $inserts[] = $targetLang;
                     }
@@ -792,12 +821,16 @@ class LocalizeFieldsUI extends LocalizeFields {
               // Ignore empty translations; don't create empty translations ;-).
               if ($translations_nonEmpty) {
                 foreach ($translations_nonEmpty as $targetLang => $translation) {
+                  $fields = array(
+                    'lid' => $source_id,
+                    'translation' => $translation,
+                    'language' => $targetLang,
+                  );
+                  if ($column_l10n_status) {
+                    $fields['l10n_status'] = 1;
+                  }
                   db_insert('locales_target')
-                    ->fields(array(
-                      'lid' => $source_id,
-                      'translation' => $translation,
-                      'language' => $targetLang,
-                    ))
+                    ->fields($fields)
                     ->execute();
 
                   if (empty(self::$affectedLanguages[$targetLang])) {
@@ -845,6 +878,9 @@ class LocalizeFieldsUI extends LocalizeFields {
    *   List of messages.
    */
   protected static function translateAllowedValues($props, $allowedValues) {
+    // Use db.locales_target.l10n_status column if it exists.
+    $column_l10n_status = module_exists('features_translations');
+
     $messages = array();
 
     // Don't use translation of un-translated-marker if the translation is empty (paranoid).
@@ -995,7 +1031,7 @@ class LocalizeFieldsUI extends LocalizeFields {
                 self::$affectedLanguages[$targetLang] = 2;
               }
             }
-            
+
             if (!($existingByLangs = db_select('locales_target', 'trg')
               ->fields('trg', array('language'))
               ->condition('lid', $source_id)
@@ -1004,12 +1040,16 @@ class LocalizeFieldsUI extends LocalizeFields {
               ->fetchCol())
             ) {
               foreach ($translations as $targetLang => $translation) {
+                $fields = array(
+                  'lid' => $source_id,
+                  'translation' => $translation,
+                  'language' => $targetLang,
+                );
+                if ($column_l10n_status) {
+                  $fields['l10n_status'] = 1;
+                }
                 db_insert('locales_target')
-                  ->fields(array(
-                    'lid' => $source_id,
-                    'translation' => $translation,
-                    'language' => $targetLang,
-                  ))
+                  ->fields($fields)
                   ->execute();
                 $inserts[$targetLang] = TRUE;
                 self::$affectedLanguages[$targetLang] = 2;
@@ -1018,12 +1058,16 @@ class LocalizeFieldsUI extends LocalizeFields {
             else {
               foreach ($translations as $targetLang => $translation) {
                 if (!in_array($targetLang, $existingByLangs)) {
+                  $fields = array(
+                    'lid' => $source_id,
+                    'translation' => $translation,
+                    'language' => $targetLang,
+                  );
+                  if ($column_l10n_status) {
+                    $fields['l10n_status'] = 1;
+                  }
                   db_insert('locales_target')
-                    ->fields(array(
-                      'lid' => $source_id,
-                      'translation' => $translation,
-                      'language' => $targetLang,
-                    ))
+                    ->fields($fields)
                     ->execute();
                   $inserts[$targetLang] = TRUE;
                 }
@@ -1064,12 +1108,16 @@ class LocalizeFieldsUI extends LocalizeFields {
               ))
               ->execute();
             foreach ($translations as $targetLang => $translation) {
+              $fields = array(
+                'lid' => $source_id,
+                'translation' => $translation,
+                'language' => $targetLang,
+              );
+              if ($column_l10n_status) {
+                $fields['l10n_status'] = 1;
+              }
               db_insert('locales_target')
-                ->fields(array(
-                  'lid' => $source_id,
-                  'translation' => $translation,
-                  'language' => $targetLang,
-                ))
+                ->fields($fields)
                 ->execute();
               $inserts[$targetLang] = TRUE;
 

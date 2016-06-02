@@ -45,12 +45,16 @@ while ($start_price <= $maxPrice) {
 
         $query = db_select('node','n');
         $query->join('field_data_field_apart_price','fp','fp.entity_id = n.nid');
+        $query->join('field_data_field_obj_schattenobjekt','fos','fos.entity_id = n.nid');
+        $query->join('field_data_field_kategorie','fk','fk.entity_id = n.nid');
+        $query->join('taxonomy_term_data','t','fk.field_kategorie_tid = t.tid');
         $query->fields('n',array('nid'))
               ->condition('n.status', '1', '=')
               ->condition('n.type', 'apartment', '=')
+              ->condition('fos.field_obj_schattenobjekt_value', '1', '!=')
               ->condition('fp.field_apart_price_value', $minprice, '>=')
-              ->condition('fp.field_apart_price_value', $maxprice, '<=');
-        $result = $query->execute()->fetchAll();
+              ->condition('fp.field_apart_price_value', $maxprice, '<');
+        $result = $query->execute()->fetchAll(); 
         $node_count = count($result);
       ?>
       <?php if($node_count > 0) {?>

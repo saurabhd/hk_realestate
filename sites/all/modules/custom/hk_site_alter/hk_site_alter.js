@@ -46,7 +46,7 @@
       });
     }); 
     jQuery(document).ajaxComplete(function() {
-      jQuery('.lightbox__body #page-title, #ng-lightbox div .lightbox.lightbox--plain, #field-angefragte-wohnung-values .delta-order').hide();
+      jQuery('.page-favorites .lightbox__body #page-title, #ng-lightbox div .lightbox.lightbox--plain, #field-angefragte-wohnung-values .delta-order').hide();
     });
     jQuery( ".view-id-merkliste .views-row .inquiry" ).click( function(e) { 
       e.stopImmediatePropagation();

@@ -6,7 +6,6 @@
  * the README.txt next to this file.
  */
 
-
 // JavaScript should be made compatible with libraries other than jQuery by
 // wrapping it with an "anonymous closure". See:
 // - http://drupal.org/node/1446420
@@ -58,7 +57,6 @@
         placeholderOption: "first"
         //allowClear: true
       });
-
       //var uiDialogHeight = jQuery('.ui-dialog').outerHeight();
       //alert (uiDialogHeight);
 
@@ -125,6 +123,24 @@
         
       }
       // End
+
+      // Custom search box //
+      jQuery('#search .facets-borough-block .item-list', context).once().prepend('<a class="borough-select facet-select">Borough</a>');
+      jQuery('#search .facets-category-block .item-list', context).once().prepend('<a class="category-select facet-select">Category</a>');
+      jQuery('.facet-select').click(function(e){
+          e.stopImmediatePropagation();
+          jQuery('.facet-select').parent().removeClass('active');
+          jQuery(this).parent().addClass('active');
+          if(jQuery(this).parent().hasClass() == 'active') {
+            alert('test');
+            jQuery(this).parent().removeClass('active');
+          }
+          //jQuery('#search .block-views .active ul li:nth-child(1) a').mouseenter();
+      });
+       jQuery('body').click(function(){
+          jQuery('.facet-select').parent().removeClass('active');
+      });
+      // End //
     }
 
   }

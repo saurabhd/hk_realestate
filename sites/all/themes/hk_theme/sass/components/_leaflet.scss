@@ -295,8 +295,8 @@ div.hide-submit-processing {
       text-align: center;
       > div {
           max-width: 150px;
-        .Inquiry-button {
-          color: $primary;
+        .inquiry-button {
+          color: #FFF;
           font-size: 20px;
           font-weight: bold;
           cursor: pointer;
@@ -320,6 +320,11 @@ div.hide-submit-processing {
     input.field-add-more-submit {
       display: none;
     }
+  }
+}
+#ng-lightbox {
+  #search {
+    display: none;
   }
 }
 /* End */

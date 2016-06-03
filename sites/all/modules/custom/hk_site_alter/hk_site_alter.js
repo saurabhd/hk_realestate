@@ -9,8 +9,8 @@
   attach: function (context, settings) {
     var data = [];
     var alldata = [];
-    jQuery( ".page-favorites .Inquiry-button" ).click(function(e) {
-      var path = jQuery('.page-favorites .Inquiry-button').attr('href');
+    jQuery( ".page-favorites .inquiry-button" ).click(function(e) {
+      var path = jQuery('.page-favorites .inquiry-button').attr('href');
       jQuery.ajax({
         url: path,
         type: "GET",
@@ -31,7 +31,7 @@
           var content_height = jQuery(window).height();
           var lightbox_height = content_height - 300;
           jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
-          jQuery('.page-favorites .Inquiry-button').on("click", function(event) {
+          jQuery('.page-favorites .inquiry-button').on("click", function(event) {
             jQuery('#ng-lightbox').show();
           });
           jQuery( window ).resize(function() {
@@ -46,28 +46,28 @@
       });
     }); 
     jQuery(document).ajaxComplete(function() {
-      jQuery('.page-favorites .lightbox__body #page-title, #ng-lightbox div .lightbox.lightbox--plain, #field-angefragte-wohnung-values .delta-order').hide();
+      jQuery('.lightbox__body #page-title, .page-favorites #ng-lightbox div .lightbox.lightbox--plain, #field-angefragte-wohnung-values .delta-order').hide();
     });
     jQuery( ".view-id-merkliste .views-row .inquiry" ).click( function(e) { 
       e.stopImmediatePropagation();
       if(this.checked){
         data.push(jQuery(this).val());
-        jQuery('.page-favorites .Inquiry-button').attr('href', '/anfrage?field_angefragte_wohnung='+data+'&destination=/favorites&width=600&height=600');
+        jQuery('.page-favorites .inquiry-button').attr('href', '/anfrage?field_angefragte_wohnung='+data+'&destination=/favorites&width=600&height=600');
       } else {
         var removeItem = jQuery(this).val();
         data = jQuery.grep(data, function(value) {
           return value != removeItem;
         });
         if(data.length != 0) {
-          jQuery('.page-favorites .Inquiry-button').attr('href', '/anfrage?field_angefragte_wohnung='+data+'&destination=/favorites&width=600&height=600');
+          jQuery('.page-favorites .inquiry-button').attr('href', '/anfrage?field_angefragte_wohnung='+data+'&destination=/favorites&width=600&height=600');
         } else {
-          jQuery('.page-favorites .Inquiry-button').attr('href', '/anfrage?field_angefragte_wohnung='+alldata+'&destination=/favorites&width=600&height=600');
+          jQuery('.page-favorites .inquiry-button').attr('href', '/anfrage?field_angefragte_wohnung='+alldata+'&destination=/favorites&width=600&height=600');
         } 
       }
     });
     jQuery(".view-id-merkliste .views-row .inquiry", context).once().each(function() {
       alldata.push(jQuery(this).val());
-      jQuery('.page-favorites .Inquiry-button').attr('href', '/anfrage?field_angefragte_wohnung='+alldata+'&destination=/favorites&width=600&height=600');
+      jQuery('.page-favorites .inquiry-button').attr('href', '/anfrage?field_angefragte_wohnung='+alldata+'&destination=/favorites&width=600&height=600');
     }); 
   }
   };

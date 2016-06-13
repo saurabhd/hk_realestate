@@ -1,0 +1,20 @@
+diff --git a/views/handlers/entity_views_field_handler_helper.inc b/views/handlers/entity_views_field_handler_helper.inc
+index 0077f4a..fd9bfdb 100644
+--- a/views/handlers/entity_views_field_handler_helper.inc
++++ b/views/handlers/entity_views_field_handler_helper.inc
+@@ -442,7 +442,14 @@ class EntityFieldHandlerHelper {
+         return NULL;
+
+       case 'count':
+-        return count($list);
++        $entities = entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment')));
++        $count = 0;
++        foreach ($entities as $entity) {
++          if (empty($entity->field_obj_schattenobjekt) || empty($entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'])) {
++            $count++;
++          }
++        }
++        return $count;
+
+       // Handles both collapse and list output. Fallback is to collapse.
+       default:

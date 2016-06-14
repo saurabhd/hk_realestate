@@ -1,0 +1,57 @@
+<?php
+
+/**
+* Implements hook_block_info().
+*/
+function hk_custom_crm_block_info() {
+  $blocks = array();
+  $blocks['crm_contact_type'] = array(
+    'info' => t('CRM Contact Type'),
+  );
+  return $blocks;
+}
+/**
+* Implements hook_block_view().
+*/
+function hk_custom_crm_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'crm_contact_type':
+      $block['subject'] = '';
+      $block['content'] = _hk_custom_crm_content();
+      break;
+  }
+  return $block;
+}
+function _hk_custom_crm_content() {
+  global $base_url;
+  $query = db_select('crm_core_contact_type', 'cct')
+      ->fields('cct', array('type', 'name'))
+      ->execute();
+  $results = $query->fetchAll();
+  $output = '<div class="view-crm-contact-type"><div class="view-header"><div class="contact-type-header">Create Contact</div></div><div class="item-list"><ul>';
+  foreach ($results as $key => $value) {
+    $count = $key+1;
+    $output .= '<li class="views-row views-row-'.$count.'"><div class="views-field views-field-label"><span class="field-content"><a href="'.$base_url.'/crm-core/contact/activity-add/'.$value->type.'">'.$value->name.'</a></span></div></li>';
+  }
+  $output .= '</ul></div></div>'; 
+  return $output;
+}
+
+function hk_custom_crm_form_alter(&$form, &$form_state, $form_id) {
+  /*
+   * Implements form alter for user search expose filter. 
+   */
+  if($form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-dashboard-page'){
+   $form['#submit'][] = 'hk_custom_crm_expose_page_form_submit'; 
+  }
+}  
+
+function hk_custom_crm_expose_page_form_submit($form,&$form_state) {
+  if(isset($form_state['values']['uid']) && !empty($form_state['values']['uid'])) {
+    $user_name = $form_state['values']['uid'];
+    $user = user_load_by_name($user_name);
+    $uid = $user->uid;
+    drupal_goto('/user/'.$uid.'/contact');
+  }
+}

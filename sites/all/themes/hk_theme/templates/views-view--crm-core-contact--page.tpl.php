@@ -35,12 +35,12 @@
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
     <div class="view-header">
-      <?php print $header; ?>
       <?php $contact = block_load('hk_custom_crm', 'crm_contact_type');
             $render_array = _block_get_renderable_array(_block_render_blocks(array($contact)));
             $output = render($render_array);
             print $output;
       ?>
+      <?php print $header; ?>
     </div>
   <?php endif; ?>
 

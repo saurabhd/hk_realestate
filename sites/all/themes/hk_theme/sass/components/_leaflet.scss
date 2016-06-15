@@ -1246,7 +1246,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
               input#edit-submit-dashboard {
                 position: absolute;
                 height: 44px;
-                margin: 4px 0 0 -150px;
+                margin: 4px 0 0 -161px;
                 padding: 10px 43px;
                 border-radius: 0;
                 background-image: url("../images/select2x2.png");
@@ -1287,11 +1287,13 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       }
     }
   }
-  #block-views-crm-anfragen-block-1 {
+  .view-id-unclaimed_leads_table_view.view-display-id-block {
     border: 1px solid #FFF;
     margin-top: 100px;
     background-color: #EBEBEB;
+    margin-top: 100px;
     table {
+      margin-top: 2px;
       thead {
         tr {
           height: 50px;
@@ -1322,8 +1324,6 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         }
       }
     }
-    .view {
-      margin-top: -24px;
       .item-list {
         ul.pager {
           li.pager-current{
@@ -1363,7 +1363,6 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           }
         }
       }
-    }
   }
 }
 /* End */

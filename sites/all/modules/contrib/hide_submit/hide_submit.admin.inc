@@ -16,7 +16,11 @@ function hide_submit_settings() {
 
   $form['hide_submit_method'] = array(
     '#type' => 'select',
-    '#options' => array('disable' => t('Disable the submit buttons.'), 'hide' => t('Hide the submit buttons.')),
+    '#options' => array(
+      'disable' => t('Disable the submit buttons.'),
+      'hide' => t('Hide the submit buttons.'),
+      'indicator' => t('Built-in loading indicator.'),
+    ),
     '#default_value' => variable_get('hide_submit_method', 'disable'),
     '#title' => t('Blocking method'),
     '#description' => t('Choose the blocking method.'),
@@ -71,6 +75,60 @@ function hide_submit_settings() {
     '#title' => t('Processing text'),
     '#default_value' => variable_get('hide_submit_hide_text', 'Processing...'),
     '#description' => t('This text will be shown to the user instead of the submit buttons.'),
+  );
+
+  $form['hide_submit_indicator'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Indicator settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#description' => t('Choose the spinner style as defined by the
+      <a href="!library" target="_blank" rel="noopener">ladda.js jQuery library
+      </a>. Examples of these styles can be found on the <a href="!examples"
+      target="_blank" rel="noopener">Ladda example page</a>.', array(
+        '!library' => '//github.com/hakimel/Ladda',
+        '!examples' => '//lab.hakim.se/ladda/',
+      )),
+  );
+
+  $form['hide_submit_indicator']['hide_submit_indicator_style'] = array(
+    '#type' => 'select',
+    '#options' => array(
+      'expand-left' => t('expand-left'),
+      'expand-right' => t('expand-right'),
+      'expand-up' => t('expand-up'),
+      'expand-down' => t('expand-down'),
+      'contract' => t('contract'),
+      'contract-overlay' => t('contract-overlay'),
+      'zoom-in' => t('zoom-in'),
+      'zoom-out' => t('zoom-out'),
+      'slide-left' => t('slide-left'),
+      'slide-right' => t('slide-right'),
+      'slide-up' => t('slide-up'),
+      'slide-down' => t('slide-down'),
+    ),
+    '#default_value' => variable_get('hide_submit_indicator_style', 'expand-left'),
+    '#title' => t('Built-In Loading Indicator Style'),
+  );
+
+  $form['hide_submit_indicator']['hide_submit_spinner_color'] = array(
+    '#type' => 'select',
+    '#options' => array(
+      '#000' => t('Black'),
+      '#A9A9A9' => t('Dark Grey'),
+      '#808080' => t('Grey'),
+      '#D3D3D3' => t('Light Grey'),
+      '#fff' => t('White'),
+    ),
+    '#default_value' => variable_get('hide_submit_spinner_color', '#000'),
+    '#title' => t('Built-In Loading Indicator Spinner Color'),
+  );
+
+  $form['hide_submit_indicator']['hide_submit_spinner_lines'] = array(
+    '#type' => 'textfield',
+    '#title' => t('The number of lines for the spinner'),
+    '#default_value' => variable_get('hide_submit_spinner_lines', 12),
+    '#element_validate' => array('_hide_submit_is_numeric'),
   );
 
   return system_settings_form($form);

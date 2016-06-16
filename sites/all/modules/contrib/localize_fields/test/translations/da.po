@@ -264,7 +264,17 @@ msgctxt "field_instance:localize_fields_test-field_lclzflds_text_multi:descripti
 msgid "Multiple texts help LOCALIZE_FIELDS_UNTRANSLATED"
 msgstr "Flere tekster hjælp."
 
-#: localize_fields_test.features.field_instance.inc:1152
+#: localize_fields_test.features.field_instance.inc:1217
+msgctxt "field_instance:localize_fields_test-body:label"
+msgid "Body LOCALIZE_FIELDS_UNTRANSLATED"
+msgstr "Brødtekst"
+
+#: localize_fields_test.features.field_instance.inc:1218
+msgctxt "field_instance:localize_fields_test-body:description"
+msgid "Body help: [current-date:short] LOCALIZE_FIELDS_UNTRANSLATED"
+msgstr "Body hjælp: [current-date:short]."
+
+#: localize_fields_test.features.field_instance.inc:1219
 msgctxt "field_instance:localize_fields_test-field_lclzflds_bool_radio:label"
 msgid "Boolean list radio LOCALIZE_FIELDS_UNTRANSLATED"
 msgstr "Boolsk liste radio"

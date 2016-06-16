@@ -24,6 +24,7 @@ function localize_fields_uninstall() {
   variable_del('localize_fields_entsencoded');
   variable_del('localize_fields_noautoenableui');
   variable_del('localize_fields_tentative');
+  variable_del('localize_fields_source_add_row');
 }
 
 /**

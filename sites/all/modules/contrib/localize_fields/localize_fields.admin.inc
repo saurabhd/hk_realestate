@@ -54,6 +54,14 @@ function _localize_fields_admin_form($form, &$form_state) {
     '#default_value' => variable_get('localize_fields_tentative', 0),
   );
 
+  $form['localize_fields_source_add_row'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Default source text of \'!add_row\' button labels', array('!add_row' => t('Add another item')), array('context' => 'module:localize_fields')),
+    '#description' => t('For multi-valued fields.', array(), array('context' => 'module:localize_fields')),
+    '#default_value' => variable_get('localize_fields_source_add_row', 'Add another item'),
+    '#size' => 30,
+  );
+
   // Add the UI module's fields.
   if (module_exists('localize_fields_ui')) {
     module_load_include('inc', 'localize_fields_ui', 'localize_fields_ui.admin');
@@ -146,6 +154,9 @@ function _localize_fields_copy_i18n_field_translations($to_foreign, &$batch_cont
   $iteration_limit = 100;
   $time_limit_percent = 50;
 
+  // Use db.locales_target.l10n_status column if it exists.
+  $column_l10n_status = module_exists('features_translations');
+
   try {
     $delim = LocalizeFields::CONTEXT_DELIMITER;
     $location = 'localize_fields.module';
@@ -215,7 +226,7 @@ function _localize_fields_copy_i18n_field_translations($to_foreign, &$batch_cont
     }
     else {
       $batch_context['sandbox']['iteration'] += 1;
-      
+
       if ($batch_context['sandbox']['iteration'] > $iteration_limit) {
         $replacers = array('!n' => $iteration_limit);
         $batch_context['results'][] = $drush ? dt('Batch processing stopped because reached !n iterations limit.', $replacers) :
@@ -275,15 +286,20 @@ function _localize_fields_copy_i18n_field_translations($to_foreign, &$batch_cont
               ))
               ->execute();
             foreach ($copy_targets as $language => $translation) {
+              $fields = array(
+                'lid' => $new_source_id,
+                'translation' => $translation,
+                'language' => $language,
+              );
+              if ($column_l10n_status) {
+                $fields['l10n_status'] = 1;
+              }
               db_insert('locales_target')
-                ->fields(array(
-                  'lid' => $new_source_id,
-                  'translation' => $translation,
-                  'language' => $language,
-                ))
+                ->fields($fields)
                 ->execute();
               $batch_context['results']['translations'] += 1;
             }
+            unset($fields);
           }
         }
       }

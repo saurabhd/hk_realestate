@@ -116,7 +116,7 @@ function drush_localize_fields($path = '') {
     $dir = $os_nix ? $resolved : str_replace('\\', '/', $resolved);
   }
   // Working outside current site's document root is forbidden.
-  if (strpos($dir, $document_root . '/') !== 0) {
+  if (stripos($dir, $document_root . '/') !== 0) {
     drush_log(dt('This script is not allowed to work outside current site\'s document root - saw path[' . $dir . '].'), 'error');
     return;
   }
@@ -204,6 +204,9 @@ function drush_localize_fields($path = '') {
     drush_print(dt('Do you really want to continue?'));
     drush_print(dt('- Aye, it\'s just a test...' . "\n"));
   }
+
+  // Use db.locales_target.l10n_status column if it exists.
+  $column_l10n_status = module_exists('features_translations');
 
   $no_work_files = array();
   $identical_files = array();
@@ -456,12 +459,16 @@ function drush_localize_fields($path = '') {
                         foreach ($existing_targets as $props) {
                           if ($props->lid == $source_id && $props->translation !== '') {
                             if (!$test) {
+                              $fields = array(
+                                'lid' => $new_source_id,
+                                'translation' => $props->translation,
+                                'language' => $props->language,
+                              );
+                              if ($column_l10n_status) {
+                                $fields['l10n_status'] = 1;
+                              }
                               db_insert('locales_target')
-                                ->fields(array(
-                                  'lid' => $new_source_id,
-                                  'translation' => $props->translation,
-                                  'language' => $props->language,
-                                ))
+                                ->fields($fields)
                                 ->execute();
                             }
                             $inspections[] = '- new (cloned) target: language [' . $props->language . '], source >>' . $props->translation . '<<.';
@@ -674,6 +681,18 @@ function _localize_fields_type_field_base($path_file, $function) {
       }
       else {
         drush_log('Skipped extracting allowed_values of field [' . $field_name . '] because has \'allowed_values_no_localization\' flag.', 'status');
+      }
+    }
+    else {
+      // 'Add another item' button label, if multi-cardinal.
+      if (!empty($props['cardinality']) && $props['cardinality'] != 1) {
+        $sources[$field_name] = array(
+          'context' => 'field' . $cntxtDelim . $field_name,
+          'sources' => array(
+            'add_row' => !empty($props['settings']['add_row_localization_source']) ?
+              $props['settings']['add_row_localization_source'] : variable_get('localize_fields_source_add_row', 'Add another item'),
+          ),
+        );
       }
     }
   }

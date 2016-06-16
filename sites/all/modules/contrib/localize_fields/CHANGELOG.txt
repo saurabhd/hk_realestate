@@ -1,3 +1,31 @@
+localize_fields 7.x-1.x, 2016-05-05
+-----------------------------------
+- Doesn’t translate the Body field label in display mode (issue #2543718 fixed
+  by PascalAnimateur).
+- Fixed critical issue introduced by adding support for the Features Translation
+  module (issue #254397).
+- Release 7.x-1.6.
+
+localize_fields 7.x-1.x, 2016-05-01
+-----------------------------------
+- Don't attempt to translate in field view if bundle cannot be determined;
+  seen in a Views instance (issue #2633546).
+- Translate 'Add another item' button label (issue #2626664).
+- Support import/export via the Features Translation module (issue #2543974
+  fixed by rafa3l).
+- Release 7.x-1.5.
+
+localize_fields 7.x-1.x, 2015-12-01
+-----------------------------------
+- Fixed that a field whose name doesn't start with 'field_' weren't translatable
+  in display mode (issue #2543718).
+
+localize_fields 7.x-1.x, 2015-08-27
+-----------------------------------
+- Added 'Body' field - 'Long text and summary' type - to the test features
+  module.
+- Fixed that drush localize-fields saw in-site paths as outside on Windows.
+
 localize_fields 7.x-1.x, 2015-06-28
 -----------------------------------
 - Release 7.x-1.4.

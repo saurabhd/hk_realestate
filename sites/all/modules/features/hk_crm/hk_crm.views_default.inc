@@ -22,17 +22,23 @@ function hk_crm_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['title'] = '- keine -';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: CRM Core Activity Type: Activity Type ID */
+  /* Feld: CRM COre Aktivitätstyp: Activity Type ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'crm_core_activity_type';
   $handler->display->display_options['fields']['id']['field'] = 'id';
@@ -46,20 +52,20 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="activity-header">Create Activity</div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: CRM Core Activity Type: Type */
+  /* Feld: CRM COre Aktivitätstyp: Typ */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'crm_core_activity_type';
   $handler->display->display_options['fields']['type']['field'] = 'type';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['alter']['activity_create_link'] = 0;
-  /* Field: CRM Core Activity Type: Label */
+  /* Feld: CRM COre Aktivitätstyp: Beschriftung */
   $handler->display->display_options['fields']['label']['id'] = 'label';
   $handler->display->display_options['fields']['label']['table'] = 'crm_core_activity_type';
   $handler->display->display_options['fields']['label']['field'] = 'label';
@@ -85,28 +91,40 @@ function hk_crm_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'CRM CORE CONTACT';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Alle';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'ds';
-  /* Field: User: Name */
+  /* Feld: Benutzer: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: User: Created date */
+  /* Sortierkriterien: Benutzer: Erstellungsdatum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: User: Active */
+  /* Filterkriterium: Benutzer: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -132,17 +150,18 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'crm_activity_type:block';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: User: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
   $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
@@ -174,28 +193,40 @@ function hk_crm_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Dashboard';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Alle';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'ds';
-  /* Field: User: Name */
+  /* Feld: Benutzer: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: User: Created date */
+  /* Sortierkriterien: Benutzer: Erstellungsdatum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: User: Active */
+  /* Filterkriterium: Benutzer: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -212,11 +243,15 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none-accelerated';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Suchen';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
       'allow_secondary' => 0,
-      'secondary_label' => 'Advanced options',
+      'secondary_label' => 'Erweiterte Optionen',
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
@@ -294,13 +329,13 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'crm_activity_type:block';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Uid */
+  /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -308,7 +343,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  /* Field: User: Name */
+  /* Feld: Benutzer: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -319,11 +354,12 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: User: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
   $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
@@ -334,14 +370,14 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
+  /* Filterkriterium: Benutzer: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Name */
+  /* Filterkriterium: Benutzer: Name */
   $handler->display->display_options['filters']['uid']['id'] = 'uid';
   $handler->display->display_options['filters']['uid']['table'] = 'users';
   $handler->display->display_options['filters']['uid']['field'] = 'uid';
@@ -361,7 +397,7 @@ function hk_crm_views_default_views() {
     8 => 0,
     9 => 0,
   );
-  /* Filter criterion: User: Roles */
+  /* Filterkriterium: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -390,15 +426,23 @@ function hk_crm_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = 'Alle';
   $handler->display->display_options['pager']['options']['tags']['first'] = '';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '«';
   $handler->display->display_options['pager']['options']['tags']['next'] = '»';
@@ -459,25 +503,26 @@ function hk_crm_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Field: CRM Core Activity: Inquiry for */
+  /* Feld: CRM Core Aktivität: Inquiry for */
   $handler->display->display_options['fields']['field_angefragte_wohnung']['id'] = 'field_angefragte_wohnung';
   $handler->display->display_options['fields']['field_angefragte_wohnung']['table'] = 'field_data_field_angefragte_wohnung';
   $handler->display->display_options['fields']['field_angefragte_wohnung']['field'] = 'field_angefragte_wohnung';
-  $handler->display->display_options['fields']['field_angefragte_wohnung']['label'] = 'Image';
+  $handler->display->display_options['fields']['field_angefragte_wohnung']['label'] = 'Bild';
   $handler->display->display_options['fields']['field_angefragte_wohnung']['type'] = 'entityreference_entity_id';
   $handler->display->display_options['fields']['field_angefragte_wohnung']['settings'] = array(
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_angefragte_wohnung']['delta_offset'] = '0';
-  /* Field: CRM Core Activity: Inquiry for */
+  /* Feld: CRM Core Aktivität: Inquiry for */
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['id'] = 'field_angefragte_wohnung_1';
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['table'] = 'field_data_field_angefragte_wohnung';
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['field'] = 'field_angefragte_wohnung';
+  $handler->display->display_options['fields']['field_angefragte_wohnung_1']['label'] = 'Anfrage für';
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['settings'] = array(
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['delta_offset'] = '0';
-  /* Field: CRM Core Activity: Participants */
+  /* Feld: CRM Core Aktivität: Participants */
   $handler->display->display_options['fields']['field_activity_participants']['id'] = 'field_activity_participants';
   $handler->display->display_options['fields']['field_activity_participants']['table'] = 'field_data_field_activity_participants';
   $handler->display->display_options['fields']['field_activity_participants']['field'] = 'field_activity_participants';
@@ -489,26 +534,26 @@ function hk_crm_views_default_views() {
     'use_content_language' => 1,
   );
   $handler->display->display_options['fields']['field_activity_participants']['delta_offset'] = '0';
-  /* Field: CRM Core Activity: Notes */
+  /* Feld: CRM Core Aktivität: Notes */
   $handler->display->display_options['fields']['field_activity_notes']['id'] = 'field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['table'] = 'field_data_field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['field'] = 'field_activity_notes';
-  $handler->display->display_options['fields']['field_activity_notes']['label'] = 'Message';
-  /* Field: CRM Core Activity: Date created */
+  $handler->display->display_options['fields']['field_activity_notes']['label'] = 'Nachricht';
+  /* Feld: CRM Core Aktivität: Erstellungsdatum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'crm_core_activity';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Date';
+  $handler->display->display_options['fields']['created']['label'] = 'Datum';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
-  /* Filter criterion: CRM Core Activity: Type */
+  /* Filterkriterium: CRM Core Aktivität: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'crm_core_activity';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'anfrage' => 'anfrage',
   );
-  /* Filter criterion: CRM Core Activity: Status (field_activity_status) */
+  /* Filterkriterium: CRM Core Aktivität: Status (field_activity_status) */
   $handler->display->display_options['filters']['field_activity_status_value']['id'] = 'field_activity_status_value';
   $handler->display->display_options['filters']['field_activity_status_value']['table'] = 'field_data_field_activity_status';
   $handler->display->display_options['filters']['field_activity_status_value']['field'] = 'field_activity_status_value';

@@ -26,6 +26,9 @@ function hk_crm_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
+  if ($module == "quicktabs" && $api == "quicktabs") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -205,7 +208,7 @@ function hk_crm_default_search_api_page() {
   $items['contact_search_box'] = entity_import('search_api_page', '{
     "index_id" : "crm_contacts",
     "path" : "search",
-    "name" : "Contact Search Box",
+    "name" : "Dashboard",
     "machine_name" : "contact_search_box",
     "description" : "",
     "options" : {

@@ -156,7 +156,7 @@ function hk_crm_field_default_field_instances() {
   // Exported field_instance: 'crm_core_activity-email-field_email_type'.
   $field_instances['crm_core_activity-email-field_email_type'] = array(
     'bundle' => 'email',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -174,15 +174,17 @@ function hk_crm_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'crm_core_activity',
     'field_name' => 'field_email_type',
-    'label' => 'email type',
-    'required' => FALSE,
+    'label' => 'Email type',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
@@ -213,7 +215,7 @@ function hk_crm_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'crm_core_activity',
     'field_name' => 'field_expose_file_field',
-    'label' => 'expose file field',
+    'label' => 'Expose File Field',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -566,7 +568,7 @@ function hk_crm_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'crm_core_contact',
     'field_name' => 'field_profile_picture',
-    'label' => 'profile picture',
+    'label' => 'Profile Picture',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -629,17 +631,17 @@ function hk_crm_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Date');
+  t('Email type');
+  t('Expose File Field');
   t('Individual Type');
   t('Job title');
   t('Meeting Type');
   t('Notes');
   t('Participants');
+  t('Profile Picture');
   t('Recipient');
   t('birthday');
   t('company');
-  t('email type');
-  t('expose file field');
-  t('profile picture');
 
   return $field_instances;
 }

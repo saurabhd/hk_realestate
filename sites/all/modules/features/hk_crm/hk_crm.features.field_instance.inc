@@ -541,6 +541,98 @@ function hk_crm_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'crm_core_contact-individual-field_languages'.
+  $field_instances['crm_core_contact-individual-field_languages'] = array(
+    'bundle' => 'individual',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'crm_core_contact',
+    'field_name' => 'field_languages',
+    'label' => 'Languages',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'crm_core_contact-individual-field_other'.
+  $field_instances['crm_core_contact-individual-field_other'] = array(
+    'bundle' => 'individual',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'crm_core_contact',
+    'field_name' => 'field_other',
+    'label' => 'Other',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance:
   // 'crm_core_contact-individual-field_profile_picture'.
   $field_instances['crm_core_contact-individual-field_profile_picture'] = array(
@@ -635,8 +727,10 @@ function hk_crm_field_default_field_instances() {
   t('Expose File Field');
   t('Individual Type');
   t('Job title');
+  t('Languages');
   t('Meeting Type');
   t('Notes');
+  t('Other');
   t('Participants');
   t('Profile Picture');
   t('Recipient');

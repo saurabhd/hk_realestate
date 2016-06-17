@@ -1,0 +1,193 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* Contact page design */
+/* line 12, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-header {
+  background-image: url("../images/select_arrow.gif");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  text-transform: uppercase;
+}
+/* line 18, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-header .view-crm-activity-type,
+.page-crm-core-contact .view-crm-contact-page .view-header .block-hk-custom-crm {
+  display: inline-block;
+  float: right;
+}
+/* line 22, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-header .view-crm-activity-type .view-header,
+.page-crm-core-contact .view-crm-contact-page .view-header .block-hk-custom-crm .view-header {
+  width: 232px;
+  margin-right: 10px;
+  padding: 10px 38px;
+  background-color: #1A1A1A;
+  color: #FFF;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* line 35, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-header #block-hk-custom-crm-crm-contact-type:hover .item-list ul {
+  display: block;
+}
+/* line 44, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-header .view-crm-activity-type:hover .item-list ul {
+  display: block;
+}
+/* line 51, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-header .block-hk-custom-crm .view-header {
+  background-color: #D92227;
+}
+/* line 57, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .item-list ul {
+  position: absolute;
+  display: none;
+  max-width: 304px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  color: #212830;
+  border: 2px solid #CDCDCD;
+  text-align: center;
+}
+/* line 68, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .item-list ul li {
+  list-style: none;
+}
+/* line 70, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .item-list ul li a {
+  text-decoration: none;
+}
+/* line 76, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row {
+  display: inline-block;
+  width: 100%;
+  margin-top: 50px;
+  padding: 15px;
+  border: 1px solid #C3C3C3;
+}
+/* line 82, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container {
+  width: 100%;
+  border-bottom: 2px solid #666;
+  display: inline-block;
+}
+/* line 86, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container .left-content {
+  display: inline-block;
+}
+/* line 90, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container .left-content .views-field .field-content img {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+/* line 97, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container .right-content {
+  display: inline-block;
+}
+/* line 99, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container .right-content .views-field.views-field-field-name {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+}
+/* line 104, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container .right-content .views-field.views-field-field-company-name {
+  color: #666;
+  font-size: 17px;
+  margin-top: 10px;
+}
+/* line 109, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container .right-content .views-field.views-field-field-address {
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  margin-right: 12px;
+}
+/* line 114, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container .right-content .views-field.views-field-field-address .field-label {
+  font-weight: bold;
+}
+/* line 117, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container .right-content .views-field.views-field-field-address .views-field.views-field-field-email {
+  display: inline-block;
+  float: left;
+}
+/* line 121, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .top-container .right-content .views-field.views-field-field-address .views-field.views-field-field-phone {
+  display: inline-block;
+  float: left;
+}
+/* line 128, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .views-row .bottom-container {
+  width: 100%;
+  display: inline-block;
+}

@@ -3,6 +3,8 @@ description = Minimalist administration theme.
 core = 7.x
 scripts[] = js/jRespond.js
 scripts[] = js/adminimal_theme.js
+
+stylesheets[all][] = css/custom.css
 settings[shortcut_module_link] = 1
 settings[style_checkboxes] = 1
 settings[display_icons_config] = 1

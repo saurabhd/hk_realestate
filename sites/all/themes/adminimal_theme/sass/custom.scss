@@ -1,0 +1,134 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+/* Contact page design */
+
+.page-crm-core-contact {
+  .view-crm-contact-page {
+    .view-header {
+      background-image: url("../images/select_arrow.gif");
+      background-position: right 10px center;
+      background-repeat: no-repeat;
+      background-size: 24px auto;
+      text-transform: uppercase;
+      .view-crm-activity-type,
+      .block-hk-custom-crm {
+        display: inline-block;
+        float: right;
+        .view-header {
+          width: 232px;
+          margin-right: 10px;
+          padding: 10px 38px;
+          background-color: #1A1A1A;
+          color: #FFF;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+      #block-hk-custom-crm-crm-contact-type {
+        &:hover {
+          .item-list {
+            ul {
+              display: block;
+            }
+          }
+        }
+      }
+      .view-crm-activity-type {
+        &:hover {
+          .item-list {
+            ul {
+              display: block;
+            }
+          }
+        }
+      }
+      .block-hk-custom-crm {
+        .view-header {
+          background-color: #D92227;
+        }
+      }
+    }
+    .item-list {
+        ul {
+          position: absolute;
+          display: none;
+          max-width: 304px;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          background-color: #FFF;
+          color: #212830;
+          border: 2px solid #CDCDCD;
+          text-align: center;
+          li {
+            list-style: none;
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    .views-row {
+      display: inline-block;
+      width: 100%;
+      margin-top: 50px;
+      padding: 15px;
+      border: 1px solid #C3C3C3;
+      .top-container {
+        width: 100%;
+        border-bottom: 2px solid #666;
+        display: inline-block;
+        .left-content {
+          display: inline-block;
+          .views-field {
+            .field-content {
+              img {
+                border-radius: 50%;
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+        .right-content {
+          display: inline-block;
+          .views-field.views-field-field-name {
+            color: #000;
+            font-size: 30px;
+            font-weight: bold;
+          }
+          .views-field.views-field-field-company-name {
+            color: #666;
+            font-size: 17px;
+            margin-top: 10px;
+          }
+          .views-field.views-field-field-address {
+            display: inline-block;
+            float: left;
+            font-size: 14px;
+            margin-right: 12px;
+            .field-label {
+              font-weight: bold;
+            }
+            .views-field.views-field-field-email {
+              display: inline-block;
+              float: left;
+            }
+            .views-field.views-field-field-phone {
+              display: inline-block;
+              float: left;
+            }
+          }
+        }
+      }
+      .bottom-container {
+        width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+}

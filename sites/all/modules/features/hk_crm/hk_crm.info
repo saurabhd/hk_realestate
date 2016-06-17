@@ -29,6 +29,7 @@ dependencies[] = hk_custom_crm
 dependencies[] = image
 dependencies[] = options
 dependencies[] = quicktabs
+dependencies[] = quicktabs_tabstyles
 dependencies[] = search_api
 dependencies[] = search_api_autocomplete
 dependencies[] = search_api_live_results

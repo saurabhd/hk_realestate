@@ -40,7 +40,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'hk_theme',
-        'weight' => 0,
+        'weight' => -26,
       ),
     ),
     'title' => '<none>',
@@ -91,7 +91,7 @@ function hk_crm_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'dashboard',
+    'pages' => 'search',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -110,7 +110,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'hk_theme',
-        'weight' => 0,
+        'weight' => -23,
       ),
     ),
     'title' => '',

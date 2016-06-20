@@ -11,90 +11,6 @@
   .view-crm-contact-page {
     display: inline-block;
     width: 100%;
-    .view-header {
-      display: inline-block;
-      width: 100%;
-      background-image: url("../images/Icon_Arrow_down.png");
-      background-position: right 10px center;
-      background-repeat: no-repeat;
-      background-size: 24px auto;
-      text-transform: uppercase;
-      .view-crm-activity-type,
-      .block-hk-custom-crm {
-        display: inline-block;
-        float: right;
-        .view-header {
-          width: 148px;
-          margin-right: 10px;
-          padding: 15px 40px;
-          background-color: #1A1A1A;
-          color: #FFF;
-          font-size: 14px;
-          cursor: pointer;
-        }
-        .item-list {
-          ul {
-            position: absolute;
-            display: none;
-            max-width: 238px;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #FFF;
-            color: #212830;
-            border: 2px solid #CDCDCD;
-            text-align: center;
-            li {
-              list-style: none;
-              a {
-                text-decoration: none;
-              }
-            }
-          }
-        }
-      }
-      #block-hk-custom-crm-crm-contact-type {
-        &:hover {
-          .item-list {
-            ul {
-              display: block;
-            }
-          }
-        }
-        ul {
-          position: absolute;
-          display: none;
-          max-width: 225px;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-          background-color: #FFF;
-          color: #212830;
-          border: 2px solid #CDCDCD;
-          text-align: center;
-          li {
-            list-style: none;
-            a {
-              text-decoration: none;
-            }
-          }
-        }
-      }
-      .view-crm-activity-type {
-        &:hover {
-          .item-list {
-            ul {
-              display: block;
-            }
-          }
-        }
-      }
-      .block-hk-custom-crm {
-        .view-header {
-          background-color: #D92227;
-        }
-      }
-    }
     .view-content {
       .views-row {
         display: inline-block;
@@ -212,6 +128,64 @@
       }
     }
   }
+  #content-before {
+    #block-hk-custom-crm-crm-contact-type,
+    #block-views-crm-activity-type-block {
+      float: right;
+      display: inline-block;
+      text-transform: uppercase;
+      .view-header {
+        width: 162px;
+        margin-right: 5px;
+        padding: 10px 38px;
+        background-color: #1A1A1A;
+        color: #FFF;
+        font-size: 14px;
+        cursor: pointer;
+        background-image: url('../images/Icon_Arrow_down.png');
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+      }
+      .view-crm-contact-type {
+        .view-header {
+          background-color: #D92227;
+        }
+      }
+      .item-list {
+        ul {
+          position: absolute;
+          display: none;
+          max-width: 232px;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          background-color: #FFF;
+          color: #212830;
+          border: 2px solid #CDCDCD;
+          text-align: center;
+          li {
+            list-style: none;
+            a {
+              text-decoration: none;
+              font-size: 14px;
+              color: #C61C2C;
+              &:hover {
+                color: #1A1A1A;
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        .item-list {
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+  }
   #block-quicktabs-crm-contact-page {
     display: inline-block;
     width: 100%;
@@ -313,6 +287,41 @@
               margin: 0;
               padding: 0;
               width: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #content-wrapper {
+    width: 100%;
+    #main-content {
+      float: left;
+      display: inline-block;
+      width: 69%;
+      float: left;
+      margin-right: 2%;
+    }
+    #sidebar-right {
+      float: left;
+      display: inline-block;
+      width: calc(29% - 2px);
+      float: left;
+      border: 1px solid #C5C5C5;
+      margin-top: 50px;
+      .region-sidebar-right {
+        width: 100%;
+        padding-left: 0;
+        #block-views-search-area-block {
+          .view.view-search-area {
+            padding: 20px;
+            .view-content {
+              .content-header {
+                .block-title {
+                  font-size: 30px;
+                  margin-bottom: 10px;
+                }
+              }
             }
           }
         }

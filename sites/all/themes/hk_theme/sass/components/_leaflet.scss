@@ -1170,19 +1170,19 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       #block-views-crm-activity-type-block {
         float: right;
         display: inline-block;
-        background-image: url("../images/select_arrow.gif");
-        background-position: right 10px center;
-        background-repeat: no-repeat;
-        background-size: 24px auto;
         text-transform: uppercase;
         .view-header {
           width: 232px;
-          margin-right: 10px;
+          margin-right: 5px;
           padding: 10px 38px;
           background-color: #1A1A1A;
           color: #FFF;
           font-size: 14px;
           cursor: pointer;
+          background-image: url("../images/select_arrow.gif");
+          background-position: right 10px center;
+          background-repeat: no-repeat;
+          background-size: 24px auto;
         }
         .view-crm-contact-type {
           .view-header {
@@ -1201,11 +1201,16 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             color: #212830;
             border: 2px solid #CDCDCD;
             text-align: center;
+            z-index: 1;
             li {
               list-style: none;
               a {
                 text-decoration: none;
                 font-size: 14px;
+                color: #C61C2C;
+                &:hover {
+                  color: #1A1A1A;
+                }
               }
             }
           }
@@ -1224,7 +1229,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       #search-api-page-search-form {
         display: inline-block;
         width: 100%;
-        margin: 200px 0;
+        margin-top: 100px;
         text-align: center;
         input {
           height: 58px;
@@ -1348,6 +1353,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     margin-left: 8px;
     margin-top: -5px;
     border: none;
+    z-index: 1;
     ul {
       li {
         padding-left: 30px;
@@ -1359,6 +1365,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             font-size: 15px;
             text-decoration: none;
             text-align: left;
+            color: #000;
           }
         }
         &:hover {

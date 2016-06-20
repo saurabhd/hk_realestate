@@ -31,8 +31,8 @@ function hk_crm_default_fe_block_settings() {
         'weight' => -29,
       ),
       'hk_adminimal' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'hk_adminimal',
         'weight' => 0,
       ),
@@ -111,6 +111,76 @@ function hk_crm_default_fe_block_settings() {
         'status' => 1,
         'theme' => 'hk_theme',
         'weight' => -23,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
+  $export['views-crm_activity_type-block'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'crm_activity_type-block',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'search',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'hk_theme',
+        'weight' => -30,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
+  $export['views-search_area-block'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'search_area-block',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'crm-core/contact/*',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => 'sidebar_right',
+        'status' => 1,
+        'theme' => 'adminimal',
+        'weight' => -31,
+      ),
+      'hk_adminimal' => array(
+        'region' => 'sidebar_right',
+        'status' => 1,
+        'theme' => 'hk_adminimal',
+        'weight' => -33,
+      ),
+      'hk_theme' => array(
+        'region' => 'sidebar_second',
+        'status' => 1,
+        'theme' => 'hk_theme',
+        'weight' => 0,
       ),
     ),
     'title' => '',

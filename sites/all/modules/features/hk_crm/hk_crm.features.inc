@@ -16,6 +16,13 @@ function hk_crm_default_crm_core_activity_type() {
     "activity_string" : "",
     "description" : ""
   }');
+  $items['notes'] = entity_import('crm_core_activity_type', '{
+    "type" : "notes",
+    "label" : "Notes",
+    "weight" : 0,
+    "activity_string" : "",
+    "description" : ""
+  }');
   return $items;
 }
 
@@ -190,6 +197,21 @@ function hk_crm_default_search_api_live_results_search() {
     "enabled" : "1",
     "options" : {
       "custom" : { "page_id" : "1" },
+      "result count" : true,
+      "num_results" : "5",
+      "display" : "view_mode",
+      "caching" : 0,
+      "entity_type" : "crm_core_contact"
+    }
+  }');
+  $items['search_api_page_2'] = entity_import('search_api_live_results_search', '{
+    "machine_name" : "search_api_page_2",
+    "name" : "Dashboard",
+    "index_id" : "crm_contacts",
+    "type" : "search_api_page",
+    "enabled" : "1",
+    "options" : {
+      "custom" : { "page_id" : "2" },
       "result count" : true,
       "num_results" : "5",
       "display" : "view_mode",

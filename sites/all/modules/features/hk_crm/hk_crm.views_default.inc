@@ -45,6 +45,8 @@ function hk_crm_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -623,6 +625,129 @@ function hk_crm_views_default_views() {
   $export['recipient'] = $view;
 
   $view = new view();
+  $view->name = 'search_area';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_solr_node_index';
+  $view->human_name = 'search area';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'search area';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Indexed Content: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'search_api_views_cache';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Content: Pictures */
+  $handler->display->display_options['fields']['field_apart_pictures']['id'] = 'field_apart_pictures';
+  $handler->display->display_options['fields']['field_apart_pictures']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_pictures']['field'] = 'field_apart_pictures';
+  $handler->display->display_options['fields']['field_apart_pictures']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_pictures']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_apart_pictures']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_apart_pictures']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_apart_pictures']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_apart_pictures']['delta_offset'] = '0';
+  /* Field: Indexed Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  /* Field: Indexed Content: Object ID */
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['label'] = '';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['element_label_colon'] = FALSE;
+  /* Field: Indexed Content: Apartment No. */
+  $handler->display->display_options['fields']['field_apart_no']['id'] = 'field_apart_no';
+  $handler->display->display_options['fields']['field_apart_no']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_no']['field'] = 'field_apart_no';
+  $handler->display->display_options['fields']['field_apart_no']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_no']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_apart_no']['alter']['text'] = '[field_objektid_nunumeric]-[field_apart_no]';
+  $handler->display->display_options['fields']['field_apart_no']['element_label_colon'] = FALSE;
+  /* Field: Indexed Content: Living space */
+  $handler->display->display_options['fields']['field_apart_living_space']['id'] = 'field_apart_living_space';
+  $handler->display->display_options['fields']['field_apart_living_space']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_living_space']['field'] = 'field_apart_living_space';
+  $handler->display->display_options['fields']['field_apart_living_space']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_living_space']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_apart_living_space']['settings'] = array(
+    'thousand_separator' => '',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Indexed Content: Sleeping rooms */
+  $handler->display->display_options['fields']['field_apart_sleeping_rooms']['id'] = 'field_apart_sleeping_rooms';
+  $handler->display->display_options['fields']['field_apart_sleeping_rooms']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_sleeping_rooms']['field'] = 'field_apart_sleeping_rooms';
+  $handler->display->display_options['fields']['field_apart_sleeping_rooms']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_sleeping_rooms']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_apart_sleeping_rooms']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Indexed Content: Purchasing price */
+  $handler->display->display_options['fields']['field_apart_price']['id'] = 'field_apart_price';
+  $handler->display->display_options['fields']['field_apart_price']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_price']['field'] = 'field_apart_price';
+  $handler->display->display_options['fields']['field_apart_price']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_price']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_apart_price']['settings'] = array(
+    'thousand_separator' => '',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Indexed Content: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'apartment' => 'apartment',
+  );
+  $export['search_area'] = $view;
+
+  $view = new view();
   $view->name = 'unclaimed_leads_table_view';
   $view->description = '';
   $view->tag = 'default';
@@ -818,7 +943,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_no']['label'] = '';
   $handler->display->display_options['fields']['field_apart_no']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_apart_no']['element_label_colon'] = FALSE;
-  /* Field: Content: Object ID */
+  /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
@@ -992,6 +1117,62 @@ function hk_crm_views_default_views() {
     'In Bearbeitung' => 'In Bearbeitung',
     'Wiedervorlage' => 'Wiedervorlage',
     'Erledigt' => 'Erledigt',
+  );
+
+  /* Display: Notes */
+  $handler = $view->new_display('block', 'Notes', 'block_3');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_activity_participants_target_id']['id'] = 'field_activity_participants_target_id';
+  $handler->display->display_options['relationships']['field_activity_participants_target_id']['table'] = 'field_data_field_activity_participants';
+  $handler->display->display_options['relationships']['field_activity_participants_target_id']['field'] = 'field_activity_participants_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: CRM Core Activity: Notes */
+  $handler->display->display_options['fields']['field_activity_notes']['id'] = 'field_activity_notes';
+  $handler->display->display_options['fields']['field_activity_notes']['table'] = 'field_data_field_activity_notes';
+  $handler->display->display_options['fields']['field_activity_notes']['field'] = 'field_activity_notes';
+  $handler->display->display_options['fields']['field_activity_notes']['label'] = '';
+  $handler->display->display_options['fields']['field_activity_notes']['element_label_colon'] = FALSE;
+  /* Field: CRM Core Activity: Date */
+  $handler->display->display_options['fields']['field_activity_date']['id'] = 'field_activity_date';
+  $handler->display->display_options['fields']['field_activity_date']['table'] = 'field_data_field_activity_date';
+  $handler->display->display_options['fields']['field_activity_date']['field'] = 'field_activity_date';
+  $handler->display->display_options['fields']['field_activity_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: CRM Core Activity: Participants */
+  $handler->display->display_options['fields']['field_activity_participants']['id'] = 'field_activity_participants';
+  $handler->display->display_options['fields']['field_activity_participants']['table'] = 'field_data_field_activity_participants';
+  $handler->display->display_options['fields']['field_activity_participants']['field'] = 'field_activity_participants';
+  $handler->display->display_options['fields']['field_activity_participants']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_activity_participants']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: CRM Core Contact: Contact ID */
+  $handler->display->display_options['arguments']['contact_id']['id'] = 'contact_id';
+  $handler->display->display_options['arguments']['contact_id']['table'] = 'crm_core_contact';
+  $handler->display->display_options['arguments']['contact_id']['field'] = 'contact_id';
+  $handler->display->display_options['arguments']['contact_id']['relationship'] = 'field_activity_participants_target_id';
+  $handler->display->display_options['arguments']['contact_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['contact_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['contact_id']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['contact_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['contact_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['contact_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: CRM Core Activity: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'crm_core_activity';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'notes' => 'notes',
   );
   $export['unclaimed_leads_table_view'] = $view;
 

@@ -29,10 +29,18 @@ function hk_crm_quicktabs_default_quicktabs() {
     ),
     1 => array(
       'vid' => 'unclaimed_leads_table_view',
+      'display' => 'block_3',
+      'args' => '',
+      'title' => 'Notes',
+      'weight' => '-99',
+      'type' => 'view',
+    ),
+    2 => array(
+      'vid' => 'unclaimed_leads_table_view',
       'display' => 'block_2',
       'args' => '',
       'title' => 'Favourites',
-      'weight' => '-99',
+      'weight' => '-98',
       'type' => 'view',
     ),
   );
@@ -45,6 +53,7 @@ function hk_crm_quicktabs_default_quicktabs() {
   t('Activities');
   t('CRM Contact Page');
   t('Favourites');
+  t('Notes');
 
   $export['crm_contact_page'] = $quicktabs;
 

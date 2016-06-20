@@ -1,0 +1,12 @@
+diff --git a/views/entity.views.inc b/views/entity.views.inc
+index b24fb4a..0f4e08f 100644
+--- a/views/entity.views.inc
++++ b/views/entity.views.inc
+@@ -173,6 +173,7 @@ function entity_views_table_definition($type, $exclude = TRUE) {
+  * @see entity_views_table_definition()
+  */
+ function entity_views_field_definition($field, array $property_info, array &$table, $title_prefix = '') {
++  if (!isset($property_info)) return;
+   $additional = array();
+   $additional_field = array();
+ 

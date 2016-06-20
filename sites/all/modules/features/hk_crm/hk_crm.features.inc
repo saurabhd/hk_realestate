@@ -33,6 +33,9 @@ function hk_crm_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
+  if ($module == "facetapi" && $api == "facetapi_defaults") {
+    return array("version" => "1");
+  }
   if ($module == "quicktabs" && $api == "quicktabs") {
     return array("version" => "1");
   }

@@ -412,8 +412,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 330, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area {
   padding: 20px;
+  background-color: #EBEBEB;
 }
-/* line 333, ../sass/custom.scss */
+/* line 334, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .content-header {
   display: inline-block;
   width: 100%;
@@ -422,29 +423,36 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-image: url("../images/Line_dotted.jpg");
   background-position: center bottom;
   background-repeat: repeat-x;
+  background-color: transparent;
 }
-/* line 341, ../sass/custom.scss */
+/* line 343, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .content-header .block-title {
   font-size: 30px;
   margin-bottom: 10px;
 }
-/* line 345, ../sass/custom.scss */
+/* line 347, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .content-header .sub-title {
   color: #0a0a0a;
   display: inline-block;
   font-size: 16px;
 }
-/* line 351, ../sass/custom.scss */
-.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row {
-  background-color: #EBEBEB;
-}
 /* line 353, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E2E2E2;
+}
+/* line 357, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .left-content {
   float: left;
   display: inline-block;
   margin-right: 10px;
 }
-/* line 358, ../sass/custom.scss */
+/* line 362, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row.views-row-last {
+  border-bottom: none;
+}
+/* line 365, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content {
   display: inline-block;
   float: left;
@@ -452,19 +460,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-width: calc(100% - 120px);
   width: calc(100% - 120px);
 }
-/* line 365, ../sass/custom.scss */
+/* line 372, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .views-field-title a {
   color: #343434;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 371, ../sass/custom.scss */
+/* line 378, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-apart-no-email {
   display: inline-block;
   width: 100%;
   margin-top: 10px;
 }
-/* line 375, ../sass/custom.scss */
+/* line 382, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-apart-no-email .views-field-apart-no {
   color: #ef595a;
   display: inline-block;
@@ -472,35 +480,58 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 18px;
   font-weight: bold;
 }
-/* line 382, ../sass/custom.scss */
+/* line 389, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-apart-no-email .views-field-email {
-  float: right;
+  /*float: right;
   display: inline-block;
-}
-/* line 387, ../sass/custom.scss */
-.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms {
-  display: inline-block;
-  width: 100%;
+  background-image: url('../images/Layer 22.png');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  font-size: 0;*/
 }
 /* line 390, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-apart-no-email .views-field-email a {
+  display: inline-block;
+  width: 40px;
+  text-decoration: none;
+  float: right;
+  display: inline-block;
+  background-image: url("../images/Black_Email.png");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  font-size: 0;
+}
+/* line 411, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms {
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+}
+/* line 415, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-living-space {
   display: inline-block;
   float: left;
 }
-/* line 393, ../sass/custom.scss */
-.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-living-space:before {
-  background-image: url("../images/Layer 22.png");
+/* line 418, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-living-space::before {
+  display: inline-block;
+  height: 29px;
+  width: 29px;
+  background-image: url("../images/Layer-22.png");
   background-position: right 10px center;
   background-repeat: no-repeat;
   background-size: 24px auto;
   content: '';
+  vertical-align: top;
 }
-/* line 401, ../sass/custom.scss */
+/* line 430, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-email {
   display: inline-block;
   float: right;
 }
-/* line 404, ../sass/custom.scss */
+/* line 433, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-email .field-content {
   font-size: 0;
   background-image: url("../images/Black_Email.png");
@@ -508,20 +539,29 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 414, ../sass/custom.scss */
+/* line 443, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .bottom-content {
   width: 100%;
   display: inline-block;
+  margin-top: 10px;
 }
-/* line 417, ../sass/custom.scss */
+/* line 447, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .bottom-content .views-field-price {
-  float: right;
-  margin-right: 20px;
   background-color: #c71c2c;
+  background-image: url("../images/Buy.png");
+  background-position: 9px 13px;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
   color: #fff;
+  float: right;
   font-size: 20px;
   font-weight: bold;
-  padding: 10px 20px;
+  margin-right: 20px;
+  padding: 15px 40px;
+}
+/* line 459, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .bottom-content .views-field-price:hover {
+  cursor: pointer;
 }
 
 /* Search page design */

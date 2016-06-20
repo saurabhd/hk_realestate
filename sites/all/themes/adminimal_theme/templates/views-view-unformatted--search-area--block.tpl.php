@@ -12,6 +12,7 @@
   <div class="block-title">Matching Apartments</div>
   <div class="sub-title">Similar Properties</div>
 </div>
+<div class="content-section">
 <?php foreach ($rows as $id => $row): ?>
   <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
     <div class="top-content">
@@ -29,7 +30,7 @@
             <span class="field-content"><?php print $row['field_apart_no']; ?></span>
           </div>
           <div class="views-field views-field-email">
-            <span class="field-content"><?php print 'email-link'; ?></span>
+            <span class="field-content"><a class="ng-lightbox unclaimed-email" href="/crm-core/contact/activity-add/email?destination=/crm-core/contact/<?php print arg(2);?>">E-mail</a></span>
           </div>
         </div>
         <div class="content-space-rooms">
@@ -37,7 +38,13 @@
             <span class="field-content"><?php print $row['field_apart_living_space']; ?></span>
           </div>
           <div class="views-field views-field-email">
-            <span class="field-content"><?php print $row['field_apart_sleeping_rooms']; ?></span>
+            <span class="field-content">
+            <?php 
+            if(isset($row['field_apart_sleeping_rooms']) && !empty($row['field_apart_sleeping_rooms'])) {
+              print $row['field_apart_sleeping_rooms'].t(' Zimmer'); 
+            }
+            ?>
+            </span>
           </div>
         </div>
       </div>
@@ -48,4 +55,5 @@
           </div>
     </div>
   </div>
+</div>  
 <?php endforeach; ?>

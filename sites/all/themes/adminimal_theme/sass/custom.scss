@@ -329,6 +329,7 @@
         #block-views-search-area-block {
           .view.view-search-area {
             padding: 20px;
+            background-color: #EBEBEB;
             .view-content {
               .content-header {
                 display: inline-block;
@@ -338,6 +339,7 @@
                 background-image: url("../images/Line_dotted.jpg");
                 background-position: center bottom;
                 background-repeat: repeat-x;
+                background-color: transparent;
                 .block-title {
                   font-size: 30px;
                   margin-bottom: 10px;
@@ -349,82 +351,117 @@
                 }
               }
               .views-row {
-  background-color: #EBEBEB;
-  .left-content {
-    float: left;
-    display: inline-block;
-    margin-right: 10px;
-  }
-  .right-content {
-    display: inline-block;
-    float: left;
-    -mox-width: calc(100% - 120px);
-      -webkit-width: calc(100% - 120px);
-      width: calc(100% - 120px);
-    .views-field-title {
-      a {
-        color: #343434;
-        font-size: 14px;
-        font-weight: bold;
-      }
-    }
-    .content-apart-no-email {
-      display: inline-block;
-      width: 100%;
-      margin-top: 10px;
-      .views-field-apart-no {
-        color: #ef595a;
-        display: inline-block;
-        float: left;
-        font-size: 18px;
-        font-weight: bold;
-      }
-      .views-field-email {
-        float: right;
-        display: inline-block;
-      }
-    }
-    .content-space-rooms {
-      display: inline-block;
-      width: 100%;
-      .views-field-living-space {
-        display: inline-block;
-        float: left;
-        &:before {
-          background-image: url('../images/Layer 22.png');
-          background-position: right 10px center;
-          background-repeat: no-repeat;
-          background-size: 24px auto;
-          content: '';
-        }
-      }
-      .views-field-email {
-        display: inline-block;
-        float: right;
-        .field-content {
-          font-size: 0;
-          background-image: url('../images/Black_Email.png');
-          background-position: right 10px center;
-          background-repeat: no-repeat;
-          background-size: 24px auto;
-        }
-      }
-    }
-  }
-  .bottom-content {
-    width: 100%;
-    display: inline-block;
-    .views-field-price {
-      float: right;
-      margin-right: 20px;
-      background-color: #c71c2c;
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      padding: 10px 20px;
-    }
-  }
-}
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #E2E2E2;
+                .left-content {
+                  float: left;
+                  display: inline-block;
+                  margin-right: 10px;
+                }
+                &.views-row-last {
+                  border-bottom: none;
+                }
+                .right-content {
+                  display: inline-block;
+                  float: left;
+                  -mox-width: calc(100% - 120px);
+                    -webkit-width: calc(100% - 120px);
+                    width: calc(100% - 120px);
+                  .views-field-title {
+                    a {
+                      color: #343434;
+                      font-size: 14px;
+                      font-weight: bold;
+                    }
+                  }
+                  .content-apart-no-email {
+                    display: inline-block;
+                    width: 100%;
+                    margin-top: 10px;
+                    .views-field-apart-no {
+                      color: #ef595a;
+                      display: inline-block;
+                      float: left;
+                      font-size: 18px;
+                      font-weight: bold;
+                    }
+                    .views-field-email {
+                      a {
+                        display: inline-block;
+                        width: 40px;
+                        text-decoration: none;
+                        float: right;
+                        display: inline-block;
+                        background-image: url('../images/Black_Email.png');
+                        background-position: right 10px center;
+                        background-repeat: no-repeat;
+                        background-size: 24px auto;
+                        font-size: 0;
+                      }
+                      /*float: right;
+                      display: inline-block;
+                      background-image: url('../images/Layer 22.png');
+                      background-position: right 10px center;
+                      background-repeat: no-repeat;
+                      background-size: 24px auto;
+                      font-size: 0;*/
+                    }
+                  }
+                  .content-space-rooms {
+                    display: inline-block;
+                    margin-top: 10px;
+                    width: 100%;
+                    .views-field-living-space {
+                      display: inline-block;
+                      float: left;
+                      &::before {
+                        display: inline-block;
+                        height: 29px;
+                        width: 29px;
+                        background-image: url('../images/Layer-22.png');
+                        background-position: right 10px center;
+                        background-repeat: no-repeat;
+                        background-size: 24px auto;
+                        content: '';
+                        vertical-align: top;
+                      }
+                    }
+                    .views-field-email {
+                      display: inline-block;
+                      float: right;
+                      .field-content {
+                        font-size: 0;
+                        background-image: url('../images/Black_Email.png');
+                        background-position: right 10px center;
+                        background-repeat: no-repeat;
+                        background-size: 24px auto;
+                      }
+                    }
+                  }
+                }
+                .bottom-content {
+                  width: 100%;
+                  display: inline-block;
+                  margin-top: 10px;
+                  .views-field-price {
+                    background-color: #c71c2c;
+                    background-image: url("../images/Buy.png");
+                    background-position: 9px 13px;
+                    background-repeat: no-repeat;
+                    background-size: 24px auto;
+                    color: #fff;
+                    float: right;
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-right: 20px;
+                    padding: 15px 40px;
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
             }
           }
         }

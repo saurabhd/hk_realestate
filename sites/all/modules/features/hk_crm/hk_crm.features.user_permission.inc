@@ -43,6 +43,42 @@ function hk_crm_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'create crm_core_activity entities of bundle email'.
+  $permissions['create crm_core_activity entities of bundle email'] = array(
+    'name' => 'create crm_core_activity entities of bundle email',
+    'roles' => array(
+      'agent' => 'agent',
+    ),
+    'module' => 'crm_core_activity',
+  );
+
+  // Exported permission: 'create crm_core_activity entities of bundle notes'.
+  $permissions['create crm_core_activity entities of bundle notes'] = array(
+    'name' => 'create crm_core_activity entities of bundle notes',
+    'roles' => array(
+      'agent' => 'agent',
+    ),
+    'module' => 'crm_core_activity',
+  );
+
+  // Exported permission: 'edit any crm_core_activity entity of bundle email'.
+  $permissions['edit any crm_core_activity entity of bundle email'] = array(
+    'name' => 'edit any crm_core_activity entity of bundle email',
+    'roles' => array(
+      'agent' => 'agent',
+    ),
+    'module' => 'crm_core_activity',
+  );
+
+  // Exported permission: 'edit any crm_core_activity entity of bundle notes'.
+  $permissions['edit any crm_core_activity entity of bundle notes'] = array(
+    'name' => 'edit any crm_core_activity entity of bundle notes',
+    'roles' => array(
+      'agent' => 'agent',
+    ),
+    'module' => 'crm_core_activity',
+  );
+
   // Exported permission: 'use search_api_autocomplete for search_api_page_contact_search_box'.
   $permissions['use search_api_autocomplete for search_api_page_contact_search_box'] = array(
     'name' => 'use search_api_autocomplete for search_api_page_contact_search_box',
@@ -63,6 +99,24 @@ function hk_crm_user_default_permissions() {
       'agent' => 'agent',
     ),
     'module' => 'search_api_live_results',
+  );
+
+  // Exported permission: 'view any crm_core_activity entity of bundle email'.
+  $permissions['view any crm_core_activity entity of bundle email'] = array(
+    'name' => 'view any crm_core_activity entity of bundle email',
+    'roles' => array(
+      'agent' => 'agent',
+    ),
+    'module' => 'crm_core_activity',
+  );
+
+  // Exported permission: 'view any crm_core_activity entity of bundle notes'.
+  $permissions['view any crm_core_activity entity of bundle notes'] = array(
+    'name' => 'view any crm_core_activity entity of bundle notes',
+    'roles' => array(
+      'agent' => 'agent',
+    ),
+    'module' => 'crm_core_activity',
   );
 
   return $permissions;

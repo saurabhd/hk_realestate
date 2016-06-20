@@ -5,8 +5,8 @@
 
 @import "compass/reset";
 
-/* Contact page design */
 
+/* Contact page design */
 .page-crm-core-contact {
   .view-crm-contact-page {
     display: inline-block;
@@ -14,6 +14,7 @@
     .view-content {
       .views-row {
         display: inline-block;
+        width: 100%;
         margin-top: 50px;
         border: 1px solid #C3C3C3;
         .top-container {
@@ -29,8 +30,12 @@
             .views-field {
               .field-content {
                 img {
-                  border-radius: 50%;
+                  height: 200px;
+                  width: 200px;
                   margin-right: 20px;
+                  -webkit-border-radius: 1000px;
+                     -moz-border-radius: 1000px;
+                          border-radius: 1000px;
                 }
               }
             }
@@ -294,21 +299,27 @@
     }
   }
   #content-wrapper {
+    display: inline-block;
     width: 100%;
+    * {
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
     #main-content {
       float: left;
       display: inline-block;
-      width: 69%;
-      float: left;
-      margin-right: 2%;
+      width: -webkit-calc(70% - 15px);
+      width: -moz-calc(70% - 15px);
+      width: calc(70% - 15px);
+      margin: 0 15px 0 0;
     }
     #sidebar-right {
       float: left;
       display: inline-block;
-      width: calc(29% - 2px);
-      float: left;
+      width: 30%;
       border: 1px solid #C5C5C5;
-      margin-top: 50px;
+      margin: 50px 0 0;
       .region-sidebar-right {
         width: 100%;
         padding-left: 0;
@@ -317,9 +328,75 @@
             padding: 20px;
             .view-content {
               .content-header {
+                display: inline-block;
+                width: 100%;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+                background-image: url("../images/Line_dotted.jpg");
+                background-position: center bottom;
+                background-repeat: repeat-x;
                 .block-title {
                   font-size: 30px;
                   margin-bottom: 10px;
+                }
+                .sub-title {
+                  color: #0a0a0a;
+                  display: inline-block;
+                  font-size: 16px;
+                }
+              }
+              .views-row {
+                background-color: #EBEBEB;
+                .left-content {
+                  display: inline-block;
+                  float: left;
+                  margin-right: 10px;
+                }
+                .right-content {
+                  display: inline-block;
+                  float: left;
+                  .views-field-title {
+                    a {
+                      color: #343434;
+                      font-size: 14px;
+                      font-weight: bold;
+                    }
+                  }
+                  .content-apart-no-email {
+                    display: inline-block;
+                    width: 100%;
+                    margin-top: 10px;
+                    .views-field-apart-no {
+                      color: #ef595a;
+                      display: inline-block;
+                      float: left;
+                      font-size: 18px;
+                      font-weight: bold;
+                    }
+                    .views-field-email {
+                      float: right;
+                      display: inline-block;
+                    }
+                  }
+                  .content-space-rooms {
+                    display: inline-block;
+                    width: 100%;
+                    .views-field-living-space {
+                      display: inline-block;
+                      float: left;
+                    }
+                    .views-field-email {
+                      display: inline-block;
+                      float: right;
+                      .field-content {
+                        font-size: 0;
+                        background-image: url('../images/Black_Email.png');
+                        background-position: right 10px center;
+                        background-repeat: no-repeat;
+                        background-size: 24px auto;
+                      }
+                    }
+                  }
                 }
               }
             }

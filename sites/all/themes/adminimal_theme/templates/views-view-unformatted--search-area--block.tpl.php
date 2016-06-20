@@ -37,11 +37,11 @@
           <div class="views-field views-field-living-space">
             <span class="field-content"><?php print $row['field_apart_living_space']; ?></span>
           </div>
-          <div class="views-field views-field-email">
+          <div class="views-field views-field-bedrooms">
             <span class="field-content">
             <?php 
             if(isset($row['field_apart_sleeping_rooms']) && !empty($row['field_apart_sleeping_rooms'])) {
-              print $row['field_apart_sleeping_rooms'].t(' Zimmer'); 
+              print $row['field_apart_sleeping_rooms'].t('-Zimmer'); 
             }
             ?>
             </span>

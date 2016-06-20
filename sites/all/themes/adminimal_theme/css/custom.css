@@ -452,7 +452,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row.views-row-last {
   border-bottom: none;
 }
-/* line 365, ../sass/custom.scss */
+/* line 367, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .left-content .views-field-picture img {
+  width: 106px;
+  height: 92px;
+}
+/* line 373, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content {
   display: inline-block;
   float: left;
@@ -460,19 +465,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-width: calc(100% - 120px);
   width: calc(100% - 120px);
 }
-/* line 372, ../sass/custom.scss */
+/* line 380, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .views-field-title a {
   color: #343434;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 378, ../sass/custom.scss */
+/* line 386, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-apart-no-email {
   display: inline-block;
   width: 100%;
   margin-top: 10px;
 }
-/* line 382, ../sass/custom.scss */
+/* line 390, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-apart-no-email .views-field-apart-no {
   color: #ef595a;
   display: inline-block;
@@ -480,7 +485,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 18px;
   font-weight: bold;
 }
-/* line 389, ../sass/custom.scss */
+/* line 397, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-apart-no-email .views-field-email {
   /*float: right;
   display: inline-block;
@@ -490,7 +495,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-size: 24px auto;
   font-size: 0;*/
 }
-/* line 390, ../sass/custom.scss */
+/* line 398, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-apart-no-email .views-field-email a {
   display: inline-block;
   width: 40px;
@@ -503,35 +508,66 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-size: 24px auto;
   font-size: 0;
 }
-/* line 411, ../sass/custom.scss */
+/* line 419, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms {
   display: inline-block;
   margin-top: 10px;
   width: 100%;
 }
-/* line 415, ../sass/custom.scss */
+/* line 423, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-living-space {
   display: inline-block;
   float: left;
 }
-/* line 418, ../sass/custom.scss */
+/* line 426, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-living-space::before {
   display: inline-block;
   height: 29px;
   width: 29px;
   background-image: url("../images/Layer-22.png");
-  background-position: right 10px center;
+  background-position: right 5px center;
   background-repeat: no-repeat;
   background-size: 24px auto;
   content: '';
   vertical-align: top;
 }
-/* line 430, ../sass/custom.scss */
+/* line 437, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-living-space span {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* line 444, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-bedrooms {
+  display: inline-block;
+  float: right;
+}
+/* line 447, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-bedrooms::before {
+  display: inline-block;
+  height: 29px;
+  width: 29px;
+  background-image: url("../images/Layer-21.png");
+  background-position: right 5px center;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  content: '';
+  vertical-align: top;
+}
+/* line 458, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-bedrooms span {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* line 465, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-email {
   display: inline-block;
   float: right;
 }
-/* line 433, ../sass/custom.scss */
+/* line 468, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .right-content .content-space-rooms .views-field-email .field-content {
   font-size: 0;
   background-image: url("../images/Black_Email.png");
@@ -539,13 +575,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 443, ../sass/custom.scss */
+/* line 478, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .bottom-content {
   width: 100%;
   display: inline-block;
   margin-top: 10px;
 }
-/* line 447, ../sass/custom.scss */
+/* line 482, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .bottom-content .views-field-price {
   background-color: #c71c2c;
   background-image: url("../images/Buy.png");
@@ -556,12 +592,48 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   float: right;
   font-size: 20px;
   font-weight: bold;
-  margin-right: 20px;
+  margin-right: 5px;
   padding: 15px 40px;
 }
-/* line 459, ../sass/custom.scss */
+/* line 494, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .view.view-search-area .view-content .views-row .bottom-content .views-field-price:hover {
   cursor: pointer;
+}
+/* line 503, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .item-list ul {
+  display: inline-block;
+  float: right;
+  margin-right: 24px;
+}
+/* line 507, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .item-list ul li {
+  padding: 0;
+}
+/* line 511, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .item-list ul li.pager-next a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+  background-image: url("../images/next-arrow.png");
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+}
+/* line 523, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .item-list ul li.pager-previous a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+  background-image: url("../images/previous-arrow.png");
+  background-position: -4px -4px;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+}
+/* line 534, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-search-area-block .item-list ul li.pager-current {
+  display: none;
 }
 
 /* Search page design */

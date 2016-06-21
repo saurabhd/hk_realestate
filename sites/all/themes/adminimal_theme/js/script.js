@@ -43,30 +43,30 @@
           placeholderOption: "first"
       });
 
-      $('#facetapi-bonus-select-field-apart-bathrooms select').select2({
+      $('.bathrooms select').select2({
           placeholder: Drupal.t('Bathrooms'),
           placeholderOption: "first"
       });
 
-      /*$('#facetapi-bonus-select-field-apart-type select').select2({
+      $('.apart-type select').select2({
           placeholder: Drupal.t('Type'),
           placeholderOption: "first"
       });
 
-      $('#facetapi-bonus-select-field-apart-floor select').select2({
+      $('.floor select').select2({
           placeholder: Drupal.t('Floor'),
           placeholderOption: "first"
       });
 
-      $('#facetapi-bonus-select-field-status-quo select').select2({
+      $('.status-quo select').select2({
           placeholder: Drupal.t('Status quo'),
           placeholderOption: "first"
       });
 
-      $('#facetapi-bonus-select-field-ausstattung select').select2({
+      $('.fittings select').select2({
           placeholder: Drupal.t('Fittings'),
           placeholderOption: "first"
-      });*/
+      });
     }
   }
 }(jQuery));

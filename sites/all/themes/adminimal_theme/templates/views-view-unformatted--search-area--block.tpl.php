@@ -14,7 +14,7 @@
 </div>
 <div class="content-section">
 <?php foreach ($rows as $id => $row): ?>
-  <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
+  <div <?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
     <div class="top-content">
       <div class="left-content">
         <div class="views-field views-field-picture">
@@ -51,9 +51,9 @@
     </div>
     <div class="bottom-content">
       <div class="views-field views-field-price">
-            <span class="field-content"><?php print $row['field_apart_price']; ?></span>
-          </div>
+        <span class="field-content"><?php print $row['field_apart_price']; ?></span>
+      </div>
     </div>
   </div>
-</div>  
 <?php endforeach; ?>
+</div> 

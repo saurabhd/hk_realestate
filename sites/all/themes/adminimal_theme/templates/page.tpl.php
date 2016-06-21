@@ -66,6 +66,12 @@
 	    <?php print render($page['content']); ?>
 	  </div>
 
+    <?php if (isset($page['sidebar_right_top'])): ?>
+      <div id="sidebar-right-top">
+        <?php print render($page['sidebar_right_top']); ?>
+      </div>
+    <?php endif; ?>
+
     <?php if (isset($page['sidebar_right'])): ?>
       <div id="sidebar-right">
         <?php print render($page['sidebar_right']); ?>

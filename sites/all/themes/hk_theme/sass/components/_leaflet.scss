@@ -1246,10 +1246,11 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           padding: 10px 43px;
           border-radius: 0;
           background-image: url("../images/search-icon-dashboard.png");
-          background-position: left 10px center;
+          background-position: left 16px center;
           background-repeat: no-repeat;
-          background-size: 34px 34px;
+          background-size: 22px 22px;
           font-weight: bold;
+          background-color: #DA2228 !important;
         }
         input.form-autocomplete {
           padding-left: 30px;
@@ -1295,6 +1296,40 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             img {
               width: 65px;
               height: 65px;
+            }
+            a.unclaimed-email {
+              float: left;
+              display: inline-block;
+              margin-left: -11px;
+              width: 28px;
+              height: 18px;
+              background-image: url("../images/mix-icon.jpg");
+              background-repeat: no-repeat;
+              background-position: 7px center;
+              font-size: 0;
+              text-decoration: none;
+            }
+            a.unclaimed-phone {
+              float: left;
+              display: inline-block;
+              width: 28px;
+              height: 18px;
+              background-image: url("../images/mix-icon.jpg");
+              background-repeat: no-repeat;
+              background-position: -98px -3px;
+              font-size: 0;
+              text-decoration: none;
+            }
+            a.unclaimed-notes {
+              float: left;
+              display: inline-block;
+              width: 28px;
+              height: 18px;
+              background-image: url("../images/mix-icon.jpg");
+              background-repeat: no-repeat;
+              background-position: -49px -3px;
+              font-size: 0;
+              text-decoration: none;
             }
           }
           > td {

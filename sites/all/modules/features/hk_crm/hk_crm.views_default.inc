@@ -917,6 +917,14 @@ function hk_crm_views_default_views() {
     9 => '9',
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: CRM Core Activity: Activity ID */
+  $handler->display->display_options['fields']['activity_id']['id'] = 'activity_id';
+  $handler->display->display_options['fields']['activity_id']['table'] = 'crm_core_activity';
+  $handler->display->display_options['fields']['activity_id']['field'] = 'activity_id';
+  $handler->display->display_options['fields']['activity_id']['label'] = '';
+  $handler->display->display_options['fields']['activity_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['activity_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['activity_id']['separator'] = '';
   /* Field: CRM Core Activity: Inquiry for */
   $handler->display->display_options['fields']['field_angefragte_wohnung']['id'] = 'field_angefragte_wohnung';
   $handler->display->display_options['fields']['field_angefragte_wohnung']['table'] = 'field_data_field_angefragte_wohnung';
@@ -958,9 +966,9 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Actions';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a class="ng-lightbox unclaimed-email" href="/crm-core/contact/activity-add/email?destination=/search">E-mail</a>
-<a class="ng-lightbox unclaimed-phone" href="/crm-core/contact/activity-add/phone_call?destination=/search">Phone</a>
-<a class="ng-lightbox unclaimed-notes" href="/crm-core/contact/activity-add/notes?destination=/search">Notes</a>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a class="ng-lightbox unclaimed-email" href="/crm-core/contact/activity-add/email?field_inquiry=[activity_id]&destination=/search">E-mail</a>
+<a class="ng-lightbox unclaimed-phone" href="/crm-core/contact/activity-add/phone_call?field_inquiry=[activity_id]&destination=/search">Phone</a>
+<a class="ng-lightbox unclaimed-notes" href="/crm-core/contact/activity-add/notes?field_inquiry=[activity_id]&destination=/search">Notes</a>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: CRM Core Activity: Date created */
   $handler->display->display_options['fields']['created']['id'] = 'created';
@@ -969,6 +977,22 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = 'Datum';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: CRM Core Activity: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'crm_core_activity';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'anfrage' => 'anfrage',
+  );
+  /* Filter criterion: CRM Core Activity: Status (field_activity_status) */
+  $handler->display->display_options['filters']['field_activity_status_value']['id'] = 'field_activity_status_value';
+  $handler->display->display_options['filters']['field_activity_status_value']['table'] = 'field_data_field_activity_status';
+  $handler->display->display_options['filters']['field_activity_status_value']['field'] = 'field_activity_status_value';
+  $handler->display->display_options['filters']['field_activity_status_value']['value'] = array(
+    'Frisch Eingetroffen' => 'Frisch Eingetroffen',
+  );
 
   /* Display: Activities */
   $handler = $view->new_display('block', 'Activities', 'block_1');

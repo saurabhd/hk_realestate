@@ -12,6 +12,41 @@ function hk_crm_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-search_criteria'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'search_criteria',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => 'sidebar_right',
+        'status' => 1,
+        'theme' => 'adminimal',
+        'weight' => -36,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Search Criteria',
+    'visibility' => 0,
+  );
+
   $export['facetapi-MD9nwU0ckZx4U9x9Yq6LhiMOWw1yG2fZ'] = array(
     'cache' => 6,
     'css_class' => 'flaeche',
@@ -28,7 +63,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'adminimal',
-        'weight' => -30,
+        'weight' => -31,
       ),
       'hk_adminimal' => array(
         'region' => 'sidebar_right',
@@ -98,7 +133,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'adminimal',
-        'weight' => -33,
+        'weight' => -34,
       ),
       'hk_adminimal' => array(
         'region' => 'sidebar_right',
@@ -133,7 +168,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'adminimal',
-        'weight' => -31,
+        'weight' => -32,
       ),
       'hk_adminimal' => array(
         'region' => 'sidebar_right',
@@ -154,7 +189,7 @@ function hk_crm_default_fe_block_settings() {
 
   $export['facetapi-du3diR20Hj2mRmP640AjZ9ll1UK5JWZK'] = array(
     'cache' => 6,
-    'css_class' => '',
+    'css_class' => 'floor',
     'custom' => 0,
     'delta' => 'du3diR20Hj2mRmP640AjZ9ll1UK5JWZK',
     'i18n_block_language' => array(),
@@ -189,7 +224,7 @@ function hk_crm_default_fe_block_settings() {
 
   $export['facetapi-gJy3epytLjwvPjU6IQhmi3dtEc22JmM4'] = array(
     'cache' => 6,
-    'css_class' => '',
+    'css_class' => 'fittings',
     'custom' => 0,
     'delta' => 'gJy3epytLjwvPjU6IQhmi3dtEc22JmM4',
     'i18n_block_language' => array(),
@@ -238,7 +273,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'adminimal',
-        'weight' => -34,
+        'weight' => -35,
       ),
       'hk_adminimal' => array(
         'region' => 'sidebar_right',
@@ -259,7 +294,7 @@ function hk_crm_default_fe_block_settings() {
 
   $export['facetapi-qLxlPWfptWGUQeUMUZ3wQXDl82p31Hrl'] = array(
     'cache' => 6,
-    'css_class' => '',
+    'css_class' => 'apart-type',
     'custom' => 0,
     'delta' => 'qLxlPWfptWGUQeUMUZ3wQXDl82p31Hrl',
     'i18n_block_language' => array(),
@@ -294,7 +329,7 @@ function hk_crm_default_fe_block_settings() {
 
   $export['facetapi-us0K51a2I3ChtgWGgkL0DUx1Per0uNpQ'] = array(
     'cache' => 6,
-    'css_class' => '',
+    'css_class' => 'bathrooms',
     'custom' => 0,
     'delta' => 'us0K51a2I3ChtgWGgkL0DUx1Per0uNpQ',
     'i18n_block_language' => array(),
@@ -329,7 +364,7 @@ function hk_crm_default_fe_block_settings() {
 
   $export['facetapi-vL7Z22Ef0ErTIPk0XWchisHpWXueqwAQ'] = array(
     'cache' => 6,
-    'css_class' => '',
+    'css_class' => 'status-quo',
     'custom' => 0,
     'delta' => 'vL7Z22Ef0ErTIPk0XWchisHpWXueqwAQ',
     'i18n_block_language' => array(),
@@ -378,7 +413,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'adminimal',
-        'weight' => -32,
+        'weight' => -33,
       ),
       'hk_adminimal' => array(
         'region' => 'sidebar_right',
@@ -587,10 +622,10 @@ search',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
-        'region' => 'sidebar_right',
+        'region' => 'sidebar_right_top',
         'status' => 1,
         'theme' => 'adminimal',
-        'weight' => -35,
+        'weight' => -36,
       ),
       'hk_adminimal' => array(
         'region' => 'sidebar_right',

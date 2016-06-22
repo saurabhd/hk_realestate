@@ -47,6 +47,41 @@ function hk_crm_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['facetapi-EVAO1Dik0cL0frYte4IiocJ9Wj7i8YFY'] = array(
+    'cache' => 6,
+    'css_class' => 'bedrooms',
+    'custom' => 0,
+    'delta' => 'EVAO1Dik0cL0frYte4IiocJ9Wj7i8YFY',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => 'sidebar_right',
+        'status' => 1,
+        'theme' => 'adminimal',
+        'weight' => -30,
+      ),
+      'hk_adminimal' => array(
+        'region' => 'sidebar_right',
+        'status' => 1,
+        'theme' => 'hk_adminimal',
+        'weight' => -29,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   $export['facetapi-MD9nwU0ckZx4U9x9Yq6LhiMOWw1yG2fZ'] = array(
     'cache' => 6,
     'css_class' => 'flaeche',
@@ -84,7 +119,7 @@ function hk_crm_default_fe_block_settings() {
 
   $export['facetapi-N3lL2pGyIgIY0V4GiukL4KJsCMRPHy5o'] = array(
     'cache' => 6,
-    'css_class' => '',
+    'css_class' => 'moving-from',
     'custom' => 0,
     'delta' => 'N3lL2pGyIgIY0V4GiukL4KJsCMRPHy5o',
     'i18n_block_language' => array(),
@@ -113,7 +148,7 @@ function hk_crm_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 

@@ -56,6 +56,7 @@ features[ctools][] = views:views_default:3.0
 features[ds_layout_settings][] = crm_core_contact|mitarbeiter|live_results_search
 features[fe_block_boxes][] = search_criteria
 features[fe_block_settings][] = block-search_criteria
+features[fe_block_settings][] = facetapi-EVAO1Dik0cL0frYte4IiocJ9Wj7i8YFY
 features[fe_block_settings][] = facetapi-MD9nwU0ckZx4U9x9Yq6LhiMOWw1yG2fZ
 features[fe_block_settings][] = facetapi-N3lL2pGyIgIY0V4GiukL4KJsCMRPHy5o
 features[fe_block_settings][] = facetapi-TiTk5IgH07zFSr6CyqVB835ryHANLc1G

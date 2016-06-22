@@ -701,11 +701,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 100%;
   padding: 25px;
   background-color: #757D88;
+ /*
+.block-facetapi {
+  width:49% !important;
+  display: inline-block !important;
+  
+}*/
 }
 /* line 593, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi {
   float: left;
-  width: 48%;
+  width: 48% !important;
   margin: 0 2% 20px 0;
   /** {
     margin: 0;
@@ -770,11 +776,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 15px;
   cursor: pointer;
 }
-/* line 658, ../sass/custom.scss */
-.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi {
-  width: 48% !important;
-  display: inline-block !important;
-}
 /* line 663, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right a.select2-choice {
   float: left;
@@ -795,15 +796,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 683, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop {
-  display: inline-block;
+  /*display: inline-block;
   max-width: 146px !important;
-  width: 100% !important;
+  width: 100% !important;*/
 }
 /* line 687, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search {
-  margin-top: 4px;
-}
-/* line 689, ../sass/custom.scss */
-.page-crm-core-contact #select2-drop .select2-search input {
-  width: 109px;
+  display: none;
 }

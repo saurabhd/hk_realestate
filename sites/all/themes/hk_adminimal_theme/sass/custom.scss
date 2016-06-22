@@ -592,7 +592,7 @@
         background-color: #757D88;
         .block-facetapi {
           float: left;
-          width: 48%;
+          width: 48% !important;
           margin: 0 2% 20px 0;
           &:nth-child(2n + 1) {
             margin-right: 0;
@@ -654,12 +654,12 @@
               }
             }
           }
-        }
+        }/*
         .block-facetapi {
-          width:48% !important;
+          width:49% !important;
           display: inline-block !important;
           
-        }
+        }*/
         a.select2-choice {
           float: left;
           height: 45px;
@@ -681,14 +681,11 @@
     }
   }
   #select2-drop {
-    display: inline-block;
+    /*display: inline-block;
     max-width: 146px !important;
-    width: 100% !important;
+    width: 100% !important;*/
     .select2-search {
-      margin-top: 4px;
-      input {
-        width: 109px;
-      }
+      display: none;
     }
   }
 }

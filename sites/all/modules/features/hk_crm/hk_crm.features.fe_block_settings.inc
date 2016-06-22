@@ -21,7 +21,7 @@ function hk_crm_default_fe_block_settings() {
     'machine_name' => 'search_criteria',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'crm-core/contact/*',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -31,10 +31,10 @@ function hk_crm_default_fe_block_settings() {
         'weight' => -36,
       ),
       'hk_adminimal' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_right',
+        'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => 0,
+        'weight' => -35,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -44,7 +44,7 @@ function hk_crm_default_fe_block_settings() {
       ),
     ),
     'title' => 'Search Criteria',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['facetapi-MD9nwU0ckZx4U9x9Yq6LhiMOWw1yG2fZ'] = array(
@@ -69,7 +69,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -29,
+        'weight' => -30,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -139,7 +139,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -32,
+        'weight' => -33,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -174,7 +174,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -30,
+        'weight' => -31,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -244,7 +244,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -27,
+        'weight' => -23,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -279,7 +279,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -33,
+        'weight' => -34,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -314,7 +314,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -34,
+        'weight' => -27,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -349,7 +349,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -35,
+        'weight' => -28,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -419,7 +419,7 @@ function hk_crm_default_fe_block_settings() {
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -31,
+        'weight' => -32,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -452,8 +452,8 @@ search',
         'weight' => 0,
       ),
       'hk_adminimal' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'content_before',
+        'status' => 1,
         'theme' => 'hk_adminimal',
         'weight' => 0,
       ),
@@ -487,8 +487,8 @@ search',
         'weight' => -29,
       ),
       'hk_adminimal' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'content',
+        'status' => 1,
         'theme' => 'hk_adminimal',
         'weight' => 0,
       ),
@@ -593,8 +593,8 @@ search',
         'weight' => 0,
       ),
       'hk_adminimal' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'content_before',
+        'status' => 1,
         'theme' => 'hk_adminimal',
         'weight' => 0,
       ),
@@ -628,10 +628,10 @@ search',
         'weight' => -36,
       ),
       'hk_adminimal' => array(
-        'region' => 'sidebar_right',
+        'region' => 'sidebar_right_top',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -23,
+        'weight' => -36,
       ),
       'hk_theme' => array(
         'region' => 'sidebar_second',

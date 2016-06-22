@@ -74,7 +74,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['label']['label'] = '';
   $handler->display->display_options['fields']['label']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['label']['alter']['path'] = 'crm-core/contact/activity-add/[type]';
-  $handler->display->display_options['fields']['label']['alter']['link_class'] = 'activity-link';
+  $handler->display->display_options['fields']['label']['alter']['link_class'] = 'ng-lightbox activity-link';
   $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_description'] = 'CRM Activity type';
   $export['crm_activity_type'] = $view;

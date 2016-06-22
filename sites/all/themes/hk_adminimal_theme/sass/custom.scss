@@ -587,6 +587,26 @@
         width: 100%;
         padding: 25px;
         background-color: #757D88;
+        .block-facetapi {
+          float: left;
+          width: 48%;
+          margin: 0 2% 20px 0;
+          &:nth-child(2n + 1) {
+            margin-right: 0;
+            float: right;
+          }
+          &:nth-child(2n) {
+            clear: left;
+          }
+          .form-item {
+            margin: 0;
+            padding: 0;
+          }
+          /** {
+            margin: 0;
+            padding: 0;
+          }*/
+        }
         #block-block-1 {
           display: inline-block;
           width: 100%;
@@ -609,24 +629,24 @@
         }
         .select2-container-multi {
           .select2-choices {
-            margin-right: 5px;
-            margin-bottom: 10px;
+            height: 45px;
+            margin: 0;
             background-color: #757D88;
-            background-image: none;
+            display: inline-block;
+            background-image: url("../images/Icon_Arrow_down.png");
+            background-position: right 4px;
+            background-repeat: no-repeat;
             border-radius: 4px;
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
+            vertical-align: top;
             li.select2-search-field {
               input {
-                width: 140px !important;
                 float: left;
-                margin-right: 5px;
+                width: 100% !important;
                 padding: 10px;
                 color: rgba(255,255,255,0.8) !important;
                 font-size: 15px;
-                background-image: url("../images/Icon_Arrow_down.png");
-                background-position: right 4px;
-                background-repeat: no-repeat;
                 cursor: pointer;
               }
             }
@@ -638,8 +658,9 @@
           
         }
         a.select2-choice {
+          float: left;
           height: 45px;
-          margin-right: 5px;
+          width: 100%;
           background-color: #757D88;
           border: 1px solid #AAAAAA;
           border-radius: 4px;
@@ -648,12 +669,16 @@
           color: rgba(255,255,255,0.8) !important;
           line-height: 45px;
           font-size: 15px;
+          display: inline-block;
+          background-image: url("../images/Icon_Arrow_down.png");
+          background-position: right 4px;
+          background-repeat: no-repeat;
         }
       }
     }
   }
   #select2-drop {
-    width: 141px !important;
+    width: 146px !important;
     .select2-search {
       margin-top: 4px;
       input {

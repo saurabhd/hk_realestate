@@ -1293,6 +1293,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           border-bottom: 1px dashed #898989;
           td {
             font-size: 13px;
+            vertical-align: top;
             img {
               width: 65px;
               height: 65px;
@@ -1300,7 +1301,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             a.unclaimed-email {
               float: left;
               display: inline-block;
-              margin-left: -11px;
+              margin-left: -24px;
               width: 28px;
               height: 18px;
               background-image: url("../images/mix-icon.jpg");

@@ -49,7 +49,7 @@
           <?php } ?>
         <?php endforeach; ?>
       </tr>
-      <tr class="show-notes">
+      <tr class="hide-notes">
       <td class="notes" colspan="5">
       <?php 
       print $row['field_activity_notes'];

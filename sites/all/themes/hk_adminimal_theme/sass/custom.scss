@@ -269,8 +269,11 @@
                 cursor: pointer;
               }
             }
-            &.show-notes {
+            &.hide-notes {
               display: none;
+            }
+            &.show-notes {
+              display: block;
             }
           }
           tr.odd {

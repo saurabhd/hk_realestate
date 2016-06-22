@@ -55,7 +55,40 @@ function hk_crm_default_rules_configuration() {
             "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
           }
         },
-        { "component_rules_anfrage_status_change" : { "activity" : [ "entity-fetched" ] } }
+        { "component_rules_anfrage_status_change" : { "activity" : [ "entity-fetched" ] } },
+        { "entity_fetch" : {
+            "USING" : {
+              "type" : "crm_core_contact",
+              "id" : [ "crm-core-activity:field-activity-participants:0:contact-id" ]
+            },
+            "PROVIDE" : { "entity_fetched" : { "entity_fetched_contact_id" : "Fetched entity" } }
+          }
+        },
+        { "component_rules_set_responsible_agent_to_contact" : { "contact" : [ "entity-fetched-contact-id" ] } }
+      ]
+    }
+  }');
+  $items['rules_set_responsible_agent_to_contact'] = entity_import('rules_config', '{ "rules_set_responsible_agent_to_contact" : {
+      "LABEL" : "Set responsible agent to contact",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : { "contact" : { "label" : "cotact", "type" : "crm_core_contact" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "contact" ],
+            "type" : "crm_core_contact",
+            "bundle" : { "value" : { "individual" : "individual" } }
+          }
+        },
+        { "data_is_empty" : { "data" : [ "contact:field-responsible-agent" ] } }
+      ],
+      "DO" : [
+        { "data_set" : {
+            "data" : [ "contact:field-responsible-agent" ],
+            "value" : [ "site:current-user:relation-crm-core-user-sync-crm-core-contact:0" ]
+          }
+        }
       ]
     }
   }');

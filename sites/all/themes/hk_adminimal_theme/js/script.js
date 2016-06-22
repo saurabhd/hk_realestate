@@ -12,7 +12,12 @@
     attach: function (context, settings) {
 
       $(".views-field-field-activity-notes").click(function(){
-          $(this).parent().next().slideToggle();
+        if($(this).parent().next().hasClass('show-notes')) {
+            $(this).parent().next().removeClass('show-notes');
+         } else {
+          $('.hide-notes').removeClass('show-notes');
+          $(this).parent().next().addClass('show-notes');
+         }  
       });
 
       $('.facetapi-multiselect-field-bezirk').select2({

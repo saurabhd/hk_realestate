@@ -681,7 +681,9 @@
     }
   }
   #select2-drop {
-    width: 146px !important;
+    display: inline-block;
+    max-width: 146px !important;
+    width: 100% !important;
     .select2-search {
       margin-top: 4px;
       input {

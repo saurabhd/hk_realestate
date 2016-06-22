@@ -795,13 +795,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 683, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop {
-  width: 146px !important;
+  display: inline-block;
+  max-width: 146px !important;
+  width: 100% !important;
 }
-/* line 685, ../sass/custom.scss */
+/* line 687, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search {
   margin-top: 4px;
 }
-/* line 687, ../sass/custom.scss */
+/* line 689, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search input {
   width: 109px;
 }

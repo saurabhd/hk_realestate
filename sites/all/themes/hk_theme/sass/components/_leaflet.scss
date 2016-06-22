@@ -1266,6 +1266,16 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         }
       }
     }
+    #ng-lightbox {
+      .lightbox {
+        .lightbox__content {
+          .lightbox__body {
+            max-height: 475px;
+            overflow-y: auto;
+          }
+        }
+      }
+    }
   }
   .view-id-unclaimed_leads_table_view.view-display-id-block {
     border: 1px solid #FFF;

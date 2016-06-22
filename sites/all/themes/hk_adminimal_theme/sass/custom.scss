@@ -688,4 +688,19 @@
       display: none;
     }
   }
+  #ng-lightbox {
+    .lightbox {
+      .lightbox__content {
+        .lightbox__body {
+          max-height: 475px;
+          overflow-y: auto;
+        }
+      }
+    }
+    #edit-contact-name {
+      a.select2-choice {
+        height: 30px;
+      }
+    }
+  }
 }

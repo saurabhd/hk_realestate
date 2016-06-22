@@ -804,3 +804,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .page-crm-core-contact #select2-drop .select2-search {
   display: none;
 }
+/* line 694, ../sass/custom.scss */
+.page-crm-core-contact #ng-lightbox .lightbox .lightbox__content .lightbox__body {
+  max-height: 475px;
+  overflow-y: auto;
+}
+/* line 701, ../sass/custom.scss */
+.page-crm-core-contact #ng-lightbox #edit-contact-name a.select2-choice {
+  height: 30px;
+}

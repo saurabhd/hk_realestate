@@ -63,6 +63,12 @@
           placeholderOption: "first"
       });
 
+      $('.moving-from select').select2({
+          placeholder: Drupal.t('Movable in from'),
+          placeholderOption: "first"
+      });
+
+
       $('.fittings select').select2({
           placeholder: Drupal.t('Fittings'),
           placeholderOption: "first"

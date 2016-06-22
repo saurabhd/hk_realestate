@@ -721,14 +721,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 611, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices {
-  margin-right: 5px !important;
-  background-color: #757D88 !important;
-  background-image: none !important;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  background-color: #757D88;
+  background-image: none;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
 }
-/* line 619, ../sass/custom.scss */
+/* line 620, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices li.select2-search-field input {
   width: 140px !important;
   float: left;
@@ -741,12 +742,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   cursor: pointer;
 }
-/* line 634, ../sass/custom.scss */
+/* line 635, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi {
   width: 48% !important;
   display: inline-block !important;
 }
-/* line 639, ../sass/custom.scss */
+/* line 640, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right a.select2-choice {
   height: 45px;
   margin-right: 5px;
@@ -759,15 +760,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   line-height: 45px;
   font-size: 15px;
 }
-/* line 654, ../sass/custom.scss */
+/* line 655, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop {
   width: 141px !important;
 }
-/* line 656, ../sass/custom.scss */
+/* line 657, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search {
   margin-top: 4px;
 }
-/* line 658, ../sass/custom.scss */
+/* line 659, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search input {
   width: 109px;
 }

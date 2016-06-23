@@ -29,10 +29,10 @@ function _hk_custom_crm_content() {
       ->fields('cct', array('type', 'name'))
       ->execute();
   $results = $query->fetchAll();
-  $output = '<div class="view-crm-contact-type"><div class="view-header"><div class="contact-type-header">Create Contact</div></div><div class="item-list"><ul>';
+  $output = '<div class="view-crm-contact-type"><div class="view-header"><div class="contact-type-header">'.t("Create Contact").'</div></div><div class="item-list"><ul>';
   foreach ($results as $key => $value) {
     $count = $key+1;
-    $output .= '<li class="views-row views-row-'.$count.'"><div class="views-field views-field-label"><span class="field-content"><a href="'.$base_url.'/crm-core/contact/add/'.$value->type.'" class="ng-lightbox contact-label">'.$value->name.'</a></span></div></li>';
+    $output .= '<li class="views-row views-row-'.$count.'"><div class="views-field views-field-label"><span class="field-content"><a href="'.$base_url.'/crm-core/contact/add/'.$value->type.'" class="ng-lightbox contact-label">'.t("$value->name").'</a></span></div></li>';
   }
   $output .= '</ul></div></div>'; 
   return $output;

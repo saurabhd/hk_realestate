@@ -30,6 +30,7 @@ dependencies[] = hk_custom_crm
 dependencies[] = image
 dependencies[] = menu
 dependencies[] = options
+dependencies[] = php
 dependencies[] = quicktabs
 dependencies[] = quicktabs_tabstyles
 dependencies[] = rules

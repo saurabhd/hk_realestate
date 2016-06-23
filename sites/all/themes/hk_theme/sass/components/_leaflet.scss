@@ -1172,6 +1172,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           display: inline-block;
           width: 100%;
           #block-search-api-page-contact-search-box {
+            position: relative;
             display: inline-block;
             margin-top: 25px;
             #search-api-page-search-form-contact-search-box {
@@ -1180,6 +1181,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
                 display: inline-block;
                 width: 270px;
                 height: 35px;
+                background-image: none;
                 padding-left: 20px;
                 border-color: #969696;
                 border-radius: 4px;
@@ -1188,6 +1190,8 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
               }
               input.form-submit {
                 position: absolute;
+                top: 0;
+                right: 0;
                 display: inline-block;
                 width: 20px;
                 height: 35px;

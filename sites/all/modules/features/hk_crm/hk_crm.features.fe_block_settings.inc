@@ -21,7 +21,13 @@ function hk_crm_default_fe_block_settings() {
     'machine_name' => 'search_criteria',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'crm-core/contact/*',
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3))) {
+  return true;
+} else {
+  return false;
+}
+?>',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -44,7 +50,7 @@ function hk_crm_default_fe_block_settings() {
       ),
     ),
     'title' => 'Search Criteria',
-    'visibility' => 1,
+    'visibility' => 2,
   );
 
   $export['facetapi-EVAO1Dik0cL0frYte4IiocJ9Wj7i8YFY'] = array(
@@ -476,8 +482,13 @@ function hk_crm_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'hk_custom_crm',
     'node_types' => array(),
-    'pages' => 'crm-core/contact/*
-search',
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(0) == \'search\') {
+  return true;
+} else {
+  return false;
+}
+?>',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -500,7 +511,42 @@ search',
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 2,
+  );
+
+  $export['menu-menu-crm-core-menu'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-crm-core-menu',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => 'search',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => 'navigation',
+        'status' => 1,
+        'theme' => 'hk_theme',
+        'weight' => -32,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['quicktabs-crm_contact_page'] = array(
@@ -512,7 +558,13 @@ search',
     'i18n_mode' => 0,
     'module' => 'quicktabs',
     'node_types' => array(),
-    'pages' => 'crm-core/contact/*',
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3))) {
+  return true;
+} else {
+  return false;
+}
+?>',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -535,19 +587,19 @@ search',
       ),
     ),
     'title' => '<none>',
-    'visibility' => 1,
+    'visibility' => 2,
   );
 
   $export['search_api_page-contact_search_box'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'search-block',
     'custom' => 0,
     'delta' => 'contact_search_box',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'search_api_page',
     'node_types' => array(),
-    'pages' => 'user/*/dashboard',
+    'pages' => 'search',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -563,13 +615,13 @@ search',
         'weight' => -34,
       ),
       'hk_theme' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'navigation',
+        'status' => 1,
         'theme' => 'hk_theme',
-        'weight' => 0,
+        'weight' => -33,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 1,
   );
 
@@ -617,8 +669,13 @@ search',
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'crm-core/contact/*
-search',
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(0) == \'search\') {
+  return true;
+} else {
+  return false;
+}
+?>',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -641,7 +698,7 @@ search',
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 2,
   );
 
   $export['views-search_area-block'] = array(
@@ -653,7 +710,13 @@ search',
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'crm-core/contact/*',
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3))) {
+  return true;
+} else {
+  return false;
+}
+?>',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -676,7 +739,7 @@ search',
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 2,
   );
 
   return $export;

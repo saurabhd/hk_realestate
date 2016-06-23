@@ -514,6 +514,41 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'visibility' => 2,
   );
 
+  $export['locale-language'] = array(
+    'cache' => 2,
+    'css_class' => 'language-switcher',
+    'custom' => 0,
+    'delta' => 'language',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'locale',
+    'node_types' => array(),
+    'pages' => 'search',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => -24,
+      ),
+      'hk_theme' => array(
+        'region' => 'navigation',
+        'status' => 1,
+        'theme' => 'hk_theme',
+        'weight' => -34,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   $export['menu-menu-crm-core-menu'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -543,6 +578,41 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'status' => 1,
         'theme' => 'hk_theme',
         'weight' => -32,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 1,
+  );
+
+  $export['menu-menu-service-menu'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-service-menu',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => 'search',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => -25,
+      ),
+      'hk_theme' => array(
+        'region' => 'navigation',
+        'status' => 1,
+        'theme' => 'hk_theme',
+        'weight' => -35,
       ),
     ),
     'title' => '',
@@ -625,6 +695,41 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'visibility' => 1,
   );
 
+  $export['system-main-menu'] = array(
+    'cache' => -1,
+    'css_class' => 'hauptmenu',
+    'custom' => 0,
+    'delta' => 'main-menu',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'system',
+    'node_types' => array(),
+    'pages' => 'search',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => -25,
+      ),
+      'hk_theme' => array(
+        'region' => 'navigation',
+        'status' => 1,
+        'theme' => 'hk_theme',
+        'weight' => -37,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   $export['views-001b516921acc1670ffb153e391b7f91'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -697,7 +802,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => -35,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 2,
   );
 
@@ -738,7 +843,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 2,
   );
 

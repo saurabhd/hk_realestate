@@ -916,6 +916,15 @@ function hk_crm_views_default_views() {
     4 => '4',
     9 => '9',
   );
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['id'] = 'field_angefragte_wohnung_target_id';
+  $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['table'] = 'field_data_field_angefragte_wohnung';
+  $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['field'] = 'field_angefragte_wohnung_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_activity_participants_target_id']['id'] = 'field_activity_participants_target_id';
+  $handler->display->display_options['relationships']['field_activity_participants_target_id']['table'] = 'field_data_field_activity_participants';
+  $handler->display->display_options['relationships']['field_activity_participants_target_id']['field'] = 'field_activity_participants_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: CRM Core Activity: Activity ID */
   $handler->display->display_options['fields']['activity_id']['id'] = 'activity_id';
@@ -935,11 +944,29 @@ function hk_crm_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_angefragte_wohnung']['delta_offset'] = '0';
+  /* Field: Content: Object ID */
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['relationship'] = 'field_angefragte_wohnung_target_id';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['label'] = 'Objekt ID';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['exclude'] = TRUE;
+  /* Field: Content: Apartment No. */
+  $handler->display->display_options['fields']['field_apart_no']['id'] = 'field_apart_no';
+  $handler->display->display_options['fields']['field_apart_no']['table'] = 'field_data_field_apart_no';
+  $handler->display->display_options['fields']['field_apart_no']['field'] = 'field_apart_no';
+  $handler->display->display_options['fields']['field_apart_no']['relationship'] = 'field_angefragte_wohnung_target_id';
+  $handler->display->display_options['fields']['field_apart_no']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_no']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_apart_no']['element_label_colon'] = FALSE;
   /* Field: CRM Core Activity: Inquiry for */
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['id'] = 'field_angefragte_wohnung_1';
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['table'] = 'field_data_field_angefragte_wohnung';
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['field'] = 'field_angefragte_wohnung';
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['label'] = 'Anfrage für';
+  $handler->display->display_options['fields']['field_angefragte_wohnung_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_angefragte_wohnung_1']['alter']['text'] = '[field_angefragte_wohnung_1]</br>
+[field_objektid_nunumeric]-[field_apart_no]';
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['settings'] = array(
     'link' => 0,
   );
@@ -955,20 +982,28 @@ function hk_crm_views_default_views() {
     'links' => 1,
     'use_content_language' => 1,
   );
+  $handler->display->display_options['fields']['field_activity_participants']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_activity_participants']['delta_offset'] = '0';
   /* Field: CRM Core Activity: Notes */
   $handler->display->display_options['fields']['field_activity_notes']['id'] = 'field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['table'] = 'field_data_field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['field'] = 'field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['label'] = 'Nachricht';
+  /* Field: CRM Core Contact: E-Mail */
+  $handler->display->display_options['fields']['field_e_mail']['id'] = 'field_e_mail';
+  $handler->display->display_options['fields']['field_e_mail']['table'] = 'field_data_field_e_mail';
+  $handler->display->display_options['fields']['field_e_mail']['field'] = 'field_e_mail';
+  $handler->display->display_options['fields']['field_e_mail']['relationship'] = 'field_activity_participants_target_id';
+  $handler->display->display_options['fields']['field_e_mail']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_e_mail']['type'] = 'email_plain';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Actions';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a class="ng-lightbox unclaimed-email" href="/crm-core/contact/activity-add/email?field_inquiry=[activity_id]&destination=/search">E-mail</a>
-<a class="ng-lightbox unclaimed-phone" href="/crm-core/contact/activity-add/phone_call?field_inquiry=[activity_id]&destination=/search">Phone</a>
-<a class="ng-lightbox unclaimed-notes" href="/crm-core/contact/activity-add/notes?field_inquiry=[activity_id]&destination=/search">Notes</a>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a class="ng-lightbox unclaimed-email" href="/crm-core/contact/activity-add/email?field_inquiry=[activity_id]&destination=/search" title="E-mail">E-mail</a>
+<a class="ng-lightbox unclaimed-phone" href="/crm-core/contact/activity-add/phone_call?field_inquiry=[activity_id]&destination=/search" title="Phone Call">Phone</a>
+<a class="ng-lightbox unclaimed-notes" href="/crm-core/contact/activity-add/notes?field_inquiry=[activity_id]&destination=/search" title="Notes">Notes</a>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: CRM Core Activity: Date created */
   $handler->display->display_options['fields']['created']['id'] = 'created';
@@ -1042,7 +1077,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_no']['label'] = '';
   $handler->display->display_options['fields']['field_apart_no']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_apart_no']['element_label_colon'] = FALSE;
-  /* Field: Content: Objekt ID */
+  /* Field: Content: Object ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';

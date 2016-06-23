@@ -115,6 +115,8 @@
 
         }
         .bottom-container {
+          display: inline-block;
+          min-height: 399px;
           width: 100%;
           display: inline-block;
           padding: 30px;
@@ -158,6 +160,11 @@
       .view-crm-contact-type {
         .view-header {
           background-color: #D92227;
+        }
+      }
+      .view-crm-activity-type {
+        p {
+          margin: 0;
         }
       }
       .item-list {

@@ -1163,6 +1163,98 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 /* User dashboard design */
 .not-front {
   &.page-search {
+    .navigation {
+      background-image: url('../images/search-page-parten.png') !important;
+      #navigation {
+        display: inline-block;
+        float: right;
+        .region-navigation {
+          display: inline-block;
+          width: 100%;
+          #block-search-api-page-contact-search-box {
+            display: inline-block;
+            margin-top: 25px;
+            #search-api-page-search-form-contact-search-box {
+              input.auto_submit {
+                position: relative;
+                display: inline-block;
+                width: 270px;
+                height: 35px;
+                padding-left: 20px;
+                border-color: #969696;
+                border-radius: 4px;
+                font-size: 15px;
+                color: #333;
+              }
+              input.form-submit {
+                position: absolute;
+                display: inline-block;
+                width: 20px;
+                height: 35px;
+                margin-left: -30px;
+                font-size: 0;
+                background-image: url('../images/red-search-icon.png');
+                background-repeat: no-repeat;
+                background-position: 0 8px;
+                background-color: transparent;
+              }
+            }
+            #autocomplete {
+              margin-left: 2px !important;
+              ul {
+                li {
+                  font-size: 10px;
+                  padding-left: 20px;
+                  a {
+                    font-size: 13px;
+                  }
+                }
+              }
+            }
+          }
+          #block-menu-menu-crm-core-menu {
+            display: inline-block;
+            float: right;
+            ul.menu {
+              margin-top: 35px;
+              li {
+                a {
+                  margin: 0 35px 0 8px;
+                  color: #747474;
+                  line-height: normal;
+                  font-size: 14px;
+                  vertical-align: middle;
+                  letter-spacing: 2px;
+                  &:hover {
+                    color: #C61C2C;
+                  }
+                }
+                &::before {
+                  display: inline-block;
+                  width: 14px;
+                  height: 17px;
+                  background-image: url("../images/menu-symbol-of-four-lines.png");
+                  background-repeat: no-repeat;
+                  background-position: 0 0;
+                  content: '';
+                  vertical-align: middle;
+                }
+                &.menu-logout {
+                  &::before {
+                    height: 17px;
+                    width: 19px;
+                    background-image: url("../images/logout.png");
+                  }
+                  a {
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     #main {
       background: transparent;
       border: none;
@@ -1172,7 +1264,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         display: inline-block;
         text-transform: uppercase;
         .view-header {
-          width: 232px;
+          width: 240px;
           margin-right: 5px;
           padding: 10px 38px;
           background-color: #1A1A1A;
@@ -1189,11 +1281,16 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             background-color: #D92227;
           }
         }
+        .view-crm-activity-type {
+          p {
+            margin: 1px 0 2px;
+          }
+        }
         .item-list {
           ul {
             position: absolute;
             display: none;
-            max-width: 232px;
+            max-width: 240px;
             width: 100%;
             margin: 0;
             padding: 0;

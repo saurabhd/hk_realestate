@@ -17,6 +17,8 @@ function hk_crm_menu_default_menu_links() {
     'router_path' => 'search',
     'link_title' => 'Dashboard',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'menu-crm-core-menu_dashboard:search',
       'icon' => array(
         'icon' => '',
         'position' => 'title_before',
@@ -28,11 +30,9 @@ function hk_crm_menu_default_menu_links() {
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
-        'class' => '',
+        'class' => 'menu-dashboard',
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'menu-crm-core-menu_dashboard:search',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -51,6 +51,8 @@ function hk_crm_menu_default_menu_links() {
     'router_path' => 'user/logout',
     'link_title' => 'Logout',
     'options' => array(
+      'alter' => TRUE,
+      'identifier' => 'menu-crm-core-menu_logout:user/logout',
       'icon' => array(
         'icon' => '',
         'position' => 'title_before',
@@ -62,11 +64,9 @@ function hk_crm_menu_default_menu_links() {
       'attributes' => array(),
       'item_attributes' => array(
         'id' => '',
-        'class' => '',
+        'class' => ' menu-logout',
         'style' => '',
       ),
-      'alter' => TRUE,
-      'identifier' => 'menu-crm-core-menu_logout:user/logout',
     ),
     'module' => 'menu',
     'hidden' => 0,

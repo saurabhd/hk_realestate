@@ -58,7 +58,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="activity-header">Create Activity</div>';
+  $handler->display->display_options['header']['area']['content'] = 'Create Activity';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: CRM Core Activity Type: Type */

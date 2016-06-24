@@ -116,6 +116,7 @@ features[field_instance][] = crm_core_contact-individual-field_other
 features[field_instance][] = crm_core_contact-individual-field_profile_picture
 features[menu_custom][] = menu-crm-core-menu
 features[menu_links][] = menu-crm-core-menu_dashboard:search
+features[menu_links][] = menu-crm-core-menu_login:user/login
 features[menu_links][] = menu-crm-core-menu_logout:user/logout
 features[quicktabs][] = crm_contact_page
 features[rules_config][] = rules_anfrage_status_change

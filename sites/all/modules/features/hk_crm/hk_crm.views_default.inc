@@ -1172,14 +1172,6 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['relationship'] = 'field_angefragte_wohnung_target_id';
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'merken';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
-  /* Relationship: CRM Core Contact: Relation: User (crm_core_contact → user) */
-  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['id'] = 'relation_crm_core_user_sync_user';
-  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['table'] = 'crm_core_contact';
-  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['field'] = 'relation_crm_core_user_sync_user';
-  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['relationship'] = 'field_activity_participants_target_id';
-  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['r_index'] = '-1';
-  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['entity_deduplication_left'] = 0;
-  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['entity_deduplication_right'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';

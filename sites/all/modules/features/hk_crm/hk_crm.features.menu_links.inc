@@ -44,6 +44,40 @@ function hk_crm_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: menu-crm-core-menu_login:user/login.
+  $menu_links['menu-crm-core-menu_login:user/login'] = array(
+    'menu_name' => 'menu-crm-core-menu',
+    'link_path' => 'user/login',
+    'router_path' => 'user/login',
+    'link_title' => 'Login',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => 'menu-login',
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-crm-core-menu_login:user/login',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 3,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: menu-crm-core-menu_logout:user/logout.
   $menu_links['menu-crm-core-menu_logout:user/logout'] = array(
     'menu_name' => 'menu-crm-core-menu',
@@ -82,6 +116,7 @@ function hk_crm_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Dashboard');
+  t('Login');
   t('Logout');
 
   return $menu_links;

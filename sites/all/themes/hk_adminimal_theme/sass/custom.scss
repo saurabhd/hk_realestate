@@ -262,25 +262,34 @@
       width: 100%;
       margin-top: 23px;
       table {
+        thead {
+          tr {
+            th {
+              padding: 25px;
+            }
+          }
+        }
         tbody {
           tr {
             background: transparent;
             td {
+              max-width: 160px;
               padding: 25px;
               font-size: 17px;
               color: #333333;
-              &.views-field-field-activity-notes {
-                background-image: url("../images/plus.png");
-                background-repeat: no-repeat;
-                background-position: 26px 25px;
-                cursor: pointer;
+              a {
+                padding: 0;
+                white-space: normal;
               }
             }
             &.hide-notes {
               display: none;
             }
             &.show-notes {
-              display: block;
+              display: table-row;
+              -webkit-transition: all 0.5s ease 0.5s;
+                 -moz-transition: all 0.5s ease 0.5s;
+                      transition: all 0.5s ease 0.5s;
             }
           }
           tr.odd {
@@ -291,6 +300,22 @@
           tr.even {
             border-top: none;
             border-bottom: none;
+          }
+        }
+      }
+      .view-display-id-block_1 {
+        table {
+          tbody {
+            tr {
+              td {
+                &.views-field-field-activity-notes {
+                  background-image: url("../images/plus.png");
+                  background-repeat: no-repeat;
+                  background-position: 26px 25px;
+                  cursor: pointer;
+                }
+              }
+            }
           }
         }
       }
@@ -393,7 +418,7 @@
               .content-section {
                 background-color: #EBEBEB;
                 padding: 20px;
-                min-height: 500px;
+                min-height: 527px;
                 .views-row {
                   margin-bottom: 20px;
                   padding-bottom: 20px;

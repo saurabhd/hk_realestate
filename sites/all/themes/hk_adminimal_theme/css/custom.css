@@ -338,47 +338,60 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 100%;
   margin-top: 23px;
 }
-/* line 266, ../sass/custom.scss */
+/* line 267, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table thead tr th {
+  padding: 25px;
+}
+/* line 273, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr {
   background: transparent;
 }
-/* line 268, ../sass/custom.scss */
+/* line 275, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td {
+  max-width: 160px;
   padding: 25px;
   font-size: 17px;
   color: #333333;
 }
-/* line 272, ../sass/custom.scss */
-.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td.views-field-field-activity-notes {
-  background-image: url("../images/plus.png");
-  background-repeat: no-repeat;
-  background-position: 26px 25px;
-  cursor: pointer;
+/* line 280, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td a {
+  padding: 0;
+  white-space: normal;
 }
-/* line 279, ../sass/custom.scss */
+/* line 285, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.hide-notes {
   display: none;
 }
-/* line 282, ../sass/custom.scss */
+/* line 288, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.show-notes {
-  display: block;
+  display: table-row;
+  -webkit-transition: all 0.5s ease 0.5s;
+  -moz-transition: all 0.5s ease 0.5s;
+  transition: all 0.5s ease 0.5s;
 }
-/* line 286, ../sass/custom.scss */
+/* line 295, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.odd {
   border-top: 1px solid #C3C3C3;
   border-bottom: 1px solid #C3C3C3;
   background-image: url("../images/Pattern.jpg");
 }
-/* line 291, ../sass/custom.scss */
+/* line 300, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.even {
   border-top: none;
   border-bottom: none;
 }
-/* line 297, ../sass/custom.scss */
+/* line 311, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .view-display-id-block_1 table tbody tr td.views-field-field-activity-notes {
+  background-image: url("../images/plus.png");
+  background-repeat: no-repeat;
+  background-position: 26px 25px;
+  cursor: pointer;
+}
+/* line 322, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list {
   margin-top: 50px;
 }
-/* line 300, ../sass/custom.scss */
+/* line 325, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current {
   background-color: #D11F01;
   border-radius: 50%;
@@ -390,7 +403,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 25px;
   line-height: 25px;
 }
-/* line 310, ../sass/custom.scss */
+/* line 335, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current a {
   /*background-color: #D11F01;
   border-radius: 50%;
@@ -401,7 +414,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 0;
   width: 25px;*/
 }
-/* line 321, ../sass/custom.scss */
+/* line 346, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous {
@@ -409,7 +422,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   /*border: 1px solid #B8B8B8;
   border-radius: 50%;*/
 }
-/* line 327, ../sass/custom.scss */
+/* line 352, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item a,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next a,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous a {
@@ -422,18 +435,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 0;
   width: 25px;
 }
-/* line 342, ../sass/custom.scss */
+/* line 367, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper {
   display: inline-block;
   width: 100%;
 }
-/* line 345, ../sass/custom.scss */
+/* line 370, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 350, ../sass/custom.scss */
+/* line 375, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #main-content {
   float: left;
   display: inline-block;
@@ -442,7 +455,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: calc(70% - 30px);
   margin: 0 30px 0 0;
 }
-/* line 358, ../sass/custom.scss */
+/* line 383, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top {
   float: left;
   display: inline-block;
@@ -450,18 +463,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #C5C5C5;
   margin: 50px 0 0;
 }
-/* line 364, ../sass/custom.scss */
+/* line 389, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top {
   width: 100%;
   padding-left: 0;
   /* Matching Apartments section design */
   /* End */
 }
-/* line 369, ../sass/custom.scss */
+/* line 394, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area {
   background-color: #FFF;
 }
-/* line 372, ../sass/custom.scss */
+/* line 397, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header {
   display: inline-block;
   -webkit-width: calc(100% - 30px);
@@ -474,45 +487,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: repeat-x;
   background-color: #FFF;
 }
-/* line 383, ../sass/custom.scss */
+/* line 408, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .block-title {
   font-size: 32px;
   margin-bottom: 10px;
 }
-/* line 387, ../sass/custom.scss */
+/* line 412, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .sub-title {
   color: #0a0a0a;
   display: inline-block;
   font-size: 16px;
 }
-/* line 393, ../sass/custom.scss */
+/* line 418, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section {
   background-color: #EBEBEB;
   padding: 20px;
-  min-height: 500px;
+  min-height: 527px;
 }
-/* line 397, ../sass/custom.scss */
+/* line 422, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #E7E7E7;
 }
-/* line 401, ../sass/custom.scss */
+/* line 426, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content {
   float: left;
   display: inline-block;
   margin-right: 10px;
 }
-/* line 406, ../sass/custom.scss */
+/* line 431, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row.views-row-last {
   border-bottom: none;
 }
-/* line 411, ../sass/custom.scss */
+/* line 436, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content .views-field-picture img {
   width: 106px;
   height: 92px;
 }
-/* line 417, ../sass/custom.scss */
+/* line 442, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content {
   display: inline-block;
   float: left;
@@ -520,19 +533,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-width: calc(100% - 120px);
   width: calc(100% - 120px);
 }
-/* line 424, ../sass/custom.scss */
+/* line 449, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .views-field-title a {
   color: #343434;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 430, ../sass/custom.scss */
+/* line 455, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email {
   display: inline-block;
   width: 100%;
   margin-top: 10px;
 }
-/* line 434, ../sass/custom.scss */
+/* line 459, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-apart-no {
   color: #ef595a;
   display: inline-block;
@@ -540,7 +553,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 18px;
   font-weight: bold;
 }
-/* line 441, ../sass/custom.scss */
+/* line 466, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email {
   /*float: right;
   display: inline-block;
@@ -550,7 +563,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-size: 24px auto;
   font-size: 0;*/
 }
-/* line 442, ../sass/custom.scss */
+/* line 467, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email a {
   display: inline-block;
   width: 40px;
@@ -563,18 +576,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-size: 24px auto;
   font-size: 0;
 }
-/* line 463, ../sass/custom.scss */
+/* line 488, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms {
   display: inline-block;
   margin-top: 10px;
   width: 100%;
 }
-/* line 467, ../sass/custom.scss */
+/* line 492, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space {
   display: inline-block;
   float: left;
 }
-/* line 470, ../sass/custom.scss */
+/* line 495, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space::before {
   display: inline-block;
   height: 29px;
@@ -586,19 +599,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   vertical-align: top;
 }
-/* line 481, ../sass/custom.scss */
+/* line 506, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space span {
   display: inline-block;
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 488, ../sass/custom.scss */
+/* line 513, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms {
   display: inline-block;
   float: right;
 }
-/* line 491, ../sass/custom.scss */
+/* line 516, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms::before {
   display: inline-block;
   height: 29px;
@@ -609,19 +622,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   vertical-align: top;
 }
-/* line 501, ../sass/custom.scss */
+/* line 526, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms span {
   display: inline-block;
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 508, ../sass/custom.scss */
+/* line 533, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email {
   display: inline-block;
   float: right;
 }
-/* line 511, ../sass/custom.scss */
+/* line 536, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email .field-content {
   font-size: 0;
   background-image: url("../images/Black_Email.png");
@@ -629,13 +642,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 521, ../sass/custom.scss */
+/* line 546, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content {
   width: 100%;
   display: inline-block;
   margin-top: 10px;
 }
-/* line 525, ../sass/custom.scss */
+/* line 550, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price {
   background-color: #c71c2c;
   background-image: url("../images/Buy.png");
@@ -649,11 +662,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 5px;
   padding: 15px 15px 15px 40px;
 }
-/* line 537, ../sass/custom.scss */
+/* line 562, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price:hover {
   cursor: pointer;
 }
-/* line 546, ../sass/custom.scss */
+/* line 571, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list {
   display: inline-block;
   margin-top: -50px;
@@ -661,17 +674,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-color: #EBEBEB;
   float: right;
 }
-/* line 552, ../sass/custom.scss */
+/* line 577, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul {
   display: inline-block;
   float: right;
   margin-right: 24px;
 }
-/* line 556, ../sass/custom.scss */
+/* line 581, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li {
   padding: 0;
 }
-/* line 560, ../sass/custom.scss */
+/* line 585, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-next a {
   display: inline-block;
   width: 25px;
@@ -681,7 +694,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: -17px 0;
   background-repeat: no-repeat;
 }
-/* line 571, ../sass/custom.scss */
+/* line 596, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-previous a {
   display: inline-block;
   width: 25px;
@@ -691,11 +704,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: 6px 0;
   background-repeat: no-repeat;
 }
-/* line 581, ../sass/custom.scss */
+/* line 606, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-current {
   display: none;
 }
-/* line 590, ../sass/custom.scss */
+/* line 615, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right {
   float: left;
   display: inline-block;
@@ -703,7 +716,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #C5C5C5;
   margin: 50px 0 0;
 }
-/* line 596, ../sass/custom.scss */
+/* line 621, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right {
   display: inline-block;
   width: 100%;
@@ -716,7 +729,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   
 }*/
 }
-/* line 601, ../sass/custom.scss */
+/* line 626, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi {
   float: left;
   width: 48% !important;
@@ -726,21 +739,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding: 0;
   }*/
 }
-/* line 605, ../sass/custom.scss */
+/* line 630, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi:nth-child(2n + 1) {
   margin-right: 0;
   float: right;
 }
-/* line 609, ../sass/custom.scss */
+/* line 634, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi:nth-child(2n) {
   clear: left;
 }
-/* line 612, ../sass/custom.scss */
+/* line 637, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi .form-item {
   margin: 0;
   padding: 0;
 }
-/* line 621, ../sass/custom.scss */
+/* line 646, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 {
   display: inline-block;
   width: 100%;
@@ -749,19 +762,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: repeat-x;
   background-position: center bottom;
 }
-/* line 628, ../sass/custom.scss */
+/* line 653, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 h2 {
   margin-bottom: 13px;
   color: #fff;
   font-size: 35px;
   font-weight: bold;
 }
-/* line 635, ../sass/custom.scss */
+/* line 660, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 .content p {
   color: #fff;
   font-size: 17px;
 }
-/* line 642, ../sass/custom.scss */
+/* line 667, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices {
   height: 45px;
   margin: 0;
@@ -775,7 +788,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -moz-border-radius: 4px;
   vertical-align: top;
 }
-/* line 655, ../sass/custom.scss */
+/* line 680, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices li.select2-search-field input {
   float: left;
   width: 100% !important;
@@ -784,7 +797,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 15px;
   cursor: pointer;
 }
-/* line 671, ../sass/custom.scss */
+/* line 696, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right a.select2-choice {
   float: left;
   height: 45px;
@@ -802,22 +815,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: right 4px;
   background-repeat: no-repeat;
 }
-/* line 691, ../sass/custom.scss */
+/* line 716, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop {
   /*display: inline-block;
   max-width: 146px !important;
   width: 100% !important;*/
 }
-/* line 695, ../sass/custom.scss */
+/* line 720, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search {
   display: none;
 }
-/* line 702, ../sass/custom.scss */
+/* line 727, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox .lightbox .lightbox__content .lightbox__body {
   max-height: 475px;
   overflow-y: auto;
 }
-/* line 709, ../sass/custom.scss */
+/* line 734, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox #edit-contact-name a.select2-choice {
   height: 30px;
 }

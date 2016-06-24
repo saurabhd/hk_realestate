@@ -662,7 +662,7 @@ function hk_crm_field_default_field_instances() {
     'label' => 'birthday',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -674,7 +674,7 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - g:i:sa',
+        'input_format' => 'd/m/Y - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,

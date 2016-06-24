@@ -45,5 +45,12 @@ function hk_crm_strongarm() {
   );
   $export['crm_core_user_sync_rules'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_short_format';
+  $strongarm->value = 'd.m.Y - H:I';
+  $export['date_format_short_format'] = $strongarm;
+
   return $export;
 }

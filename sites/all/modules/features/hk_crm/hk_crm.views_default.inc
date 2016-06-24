@@ -165,11 +165,9 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_crm_address']['table'] = 'field_data_field_crm_address';
   $handler->display->display_options['fields']['field_crm_address']['field'] = 'field_crm_address';
   $handler->display->display_options['fields']['field_crm_address']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_crm_address']['type'] = 'addressfield_linear';
   $handler->display->display_options['fields']['field_crm_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
-    ),
+    'subformatter' => '',
   );
   /* Field: CRM Core Contact: E-Mail */
   $handler->display->display_options['fields']['field_e_mail']['id'] = 'field_e_mail';
@@ -199,7 +197,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_birthday']['table'] = 'field_data_field_birthday';
   $handler->display->display_options['fields']['field_birthday']['field'] = 'field_birthday';
   $handler->display->display_options['fields']['field_birthday']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'datum_ohne_uhrzeit',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -706,7 +704,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_living_space']['settings'] = array(
     'thousand_separator' => '',
     'decimal_separator' => '.',
-    'scale' => '2',
+    'scale' => '0',
     'prefix_suffix' => 1,
   );
   /* Field: Indexed Content: Sleeping rooms */
@@ -726,7 +724,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_price']['label'] = '';
   $handler->display->display_options['fields']['field_apart_price']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_apart_price']['settings'] = array(
-    'thousand_separator' => '',
+    'thousand_separator' => ' ',
     'decimal_separator' => '.',
     'scale' => '0',
     'prefix_suffix' => 1,
@@ -1067,7 +1065,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['created']['custom_date_format'] = 'm.d.Y';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.Y.';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
   /* Field: Content: Apartment No. */
   $handler->display->display_options['fields']['field_apart_no']['id'] = 'field_apart_no';
@@ -1174,6 +1172,14 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['relationship'] = 'field_angefragte_wohnung_target_id';
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'merken';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
+  /* Relationship: CRM Core Contact: Relation: User (crm_core_contact → user) */
+  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['id'] = 'relation_crm_core_user_sync_user';
+  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['table'] = 'crm_core_contact';
+  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['field'] = 'relation_crm_core_user_sync_user';
+  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['relationship'] = 'field_activity_participants_target_id';
+  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['r_index'] = '-1';
+  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['entity_deduplication_left'] = 0;
+  $handler->display->display_options['relationships']['relation_crm_core_user_sync_user']['entity_deduplication_right'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1281,18 +1287,21 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['relationships']['field_activity_participants_target_id']['table'] = 'field_data_field_activity_participants';
   $handler->display->display_options['relationships']['field_activity_participants_target_id']['field'] = 'field_activity_participants_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: CRM Core Activity: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'crm_core_activity';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
   /* Field: CRM Core Activity: Notes */
   $handler->display->display_options['fields']['field_activity_notes']['id'] = 'field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['table'] = 'field_data_field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['field'] = 'field_activity_notes';
-  $handler->display->display_options['fields']['field_activity_notes']['label'] = '';
   $handler->display->display_options['fields']['field_activity_notes']['element_label_colon'] = FALSE;
   /* Field: CRM Core Activity: Date */
   $handler->display->display_options['fields']['field_activity_date']['id'] = 'field_activity_date';
   $handler->display->display_options['fields']['field_activity_date']['table'] = 'field_data_field_activity_date';
   $handler->display->display_options['fields']['field_activity_date']['field'] = 'field_activity_date';
   $handler->display->display_options['fields']['field_activity_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short_format',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

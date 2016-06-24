@@ -9,8 +9,8 @@
 ?>
 <?php $rows = $view->style_plugin->rendered_fields; ?>
 <div class="content-header">
-  <div class="block-title">Matching Apartments</div>
-  <div class="sub-title">Similar Properties</div>
+  <div class="block-title"><?php print t('Matching Apartments'); ?></div>
+  <div class="sub-title"><?php print t('Similar Properties'); ?></div>
 </div>
 <div class="content-section">
 <?php foreach ($rows as $id => $row): ?>
@@ -34,18 +34,18 @@
           </div>
         </div>
         <div class="content-space-rooms">
+          <?php if(isset($row['field_apart_living_space']) && !empty($row['field_apart_living_space'])) { ?>
           <div class="views-field views-field-living-space">
             <span class="field-content"><?php print $row['field_apart_living_space']; ?></span>
           </div>
+          <?php } ?>
+          <?php if(isset($row['field_apart_sleeping_rooms']) && !empty($row['field_apart_sleeping_rooms'])) { ?>    
           <div class="views-field views-field-bedrooms">
             <span class="field-content">
-            <?php 
-            if(isset($row['field_apart_sleeping_rooms']) && !empty($row['field_apart_sleeping_rooms'])) {
-              print $row['field_apart_sleeping_rooms'].t('-Zimmer'); 
-            }
-            ?>
+            <?php print $row['field_apart_sleeping_rooms'].t('-Zimmer'); ?>
             </span>
           </div>
+          <?php } ?>
         </div>
       </div>
     </div>

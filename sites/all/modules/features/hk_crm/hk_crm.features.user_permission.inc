@@ -90,6 +90,23 @@ function hk_crm_user_default_permissions() {
     'module' => 'search_api_autocomplete',
   );
 
+  // Exported permission: 'use search_api_saved_searches'.
+  $permissions['use search_api_saved_searches'] = array(
+    'name' => 'use search_api_saved_searches',
+    'roles' => array(
+      'Buyer' => 'Buyer',
+      'Editor' => 'Editor',
+      'administrator' => 'administrator',
+      'admintooluser' => 'admintooluser',
+      'agent' => 'agent',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'Übersetzer' => 'Übersetzer',
+      'Übersetzungsgeber' => 'Übersetzungsgeber',
+    ),
+    'module' => 'search_api_saved_searches',
+  );
+
   // Exported permission: 'use_search_api_live_results'.
   $permissions['use_search_api_live_results'] = array(
     'name' => 'use_search_api_live_results',

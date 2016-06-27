@@ -152,7 +152,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['contact_name_given']['field'] = 'contact_name_given';
   $handler->display->display_options['fields']['contact_name_given']['label'] = '';
   $handler->display->display_options['fields']['contact_name_given']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['contact_name_given']['alter']['text'] = '[contact_name_family] [contact_name_given]';
+  $handler->display->display_options['fields']['contact_name_given']['alter']['text'] = '[contact_name_given] [contact_name_family]';
   $handler->display->display_options['fields']['contact_name_given']['element_label_colon'] = FALSE;
   /* Field: CRM Core Contact: company */
   $handler->display->display_options['fields']['field_company']['id'] = 'field_company';
@@ -568,6 +568,56 @@ function hk_crm_views_default_views() {
   $export['dashboard'] = $view;
 
   $view = new view();
+  $view->name = 'last_saved_searches';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_saved_search';
+  $view->human_name = 'Last Saved Searches';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Last Saved Searches';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Saved search: Saved search ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'search_api_saved_search';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Saved search: Label */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'search_api_saved_search';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_type'] = 'div';
+  $handler->display->display_options['fields']['name']['element_class'] = 'last-save-searches';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_page'] = 1;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Saved search: Last_execute */
+  $handler->display->display_options['sorts']['last_execute']['id'] = 'last_execute';
+  $handler->display->display_options['sorts']['last_execute']['table'] = 'search_api_saved_search';
+  $handler->display->display_options['sorts']['last_execute']['field'] = 'last_execute';
+  $handler->display->display_options['sorts']['last_execute']['order'] = 'DESC';
+  $export['last_saved_searches'] = $view;
+
+  $view = new view();
   $view->name = 'recipient';
   $view->description = '';
   $view->tag = 'default';
@@ -648,6 +698,8 @@ function hk_crm_views_default_views() {
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'search_api_views_cache';
   $handler->display->display_options['cache']['results_lifespan'] = '3600';
@@ -914,15 +966,17 @@ function hk_crm_views_default_views() {
     4 => '4',
     9 => '9',
   );
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['id'] = 'field_angefragte_wohnung_target_id';
   $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['table'] = 'field_data_field_angefragte_wohnung';
   $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['field'] = 'field_angefragte_wohnung_target_id';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_activity_participants_target_id']['id'] = 'field_activity_participants_target_id';
-  $handler->display->display_options['relationships']['field_activity_participants_target_id']['table'] = 'field_data_field_activity_participants';
-  $handler->display->display_options['relationships']['field_activity_participants_target_id']['field'] = 'field_activity_participants_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: CRM Core Activity: Activity ID */
   $handler->display->display_options['fields']['activity_id']['id'] = 'activity_id';
@@ -942,12 +996,11 @@ function hk_crm_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_angefragte_wohnung']['delta_offset'] = '0';
-  /* Field: Content: Object ID */
+  /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['relationship'] = 'field_angefragte_wohnung_target_id';
-  $handler->display->display_options['fields']['field_objektid_nunumeric']['label'] = 'Objekt ID';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['exclude'] = TRUE;
   /* Field: Content: Apartment No. */
   $handler->display->display_options['fields']['field_apart_no']['id'] = 'field_apart_no';
@@ -981,19 +1034,12 @@ function hk_crm_views_default_views() {
     'use_content_language' => 1,
   );
   $handler->display->display_options['fields']['field_activity_participants']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_activity_participants']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_activity_participants']['delta_offset'] = '1';
   /* Field: CRM Core Activity: Notes */
   $handler->display->display_options['fields']['field_activity_notes']['id'] = 'field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['table'] = 'field_data_field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['field'] = 'field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['label'] = 'Nachricht';
-  /* Field: CRM Core Contact: E-Mail */
-  $handler->display->display_options['fields']['field_e_mail']['id'] = 'field_e_mail';
-  $handler->display->display_options['fields']['field_e_mail']['table'] = 'field_data_field_e_mail';
-  $handler->display->display_options['fields']['field_e_mail']['field'] = 'field_e_mail';
-  $handler->display->display_options['fields']['field_e_mail']['relationship'] = 'field_activity_participants_target_id';
-  $handler->display->display_options['fields']['field_e_mail']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_e_mail']['type'] = 'email_plain';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -1024,6 +1070,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'anfrage' => 'anfrage',
+    'kontaktformular' => 'kontaktformular',
   );
   /* Filter criterion: CRM Core Activity: Status (field_activity_status) */
   $handler->display->display_options['filters']['field_activity_status_value']['id'] = 'field_activity_status_value';
@@ -1035,6 +1082,8 @@ function hk_crm_views_default_views() {
 
   /* Display: Activities */
   $handler = $view->new_display('block', 'Activities', 'block_1');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -1042,6 +1091,9 @@ function hk_crm_views_default_views() {
     4 => '4',
     9 => '9',
   );
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_activity_participants_target_id']['id'] = 'field_activity_participants_target_id';
@@ -1075,7 +1127,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_no']['label'] = '';
   $handler->display->display_options['fields']['field_apart_no']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_apart_no']['element_label_colon'] = FALSE;
-  /* Field: Content: Object ID */
+  /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
@@ -1109,6 +1161,11 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_activity_notes']['field'] = 'field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['label'] = '';
   $handler->display->display_options['fields']['field_activity_notes']['element_label_colon'] = FALSE;
+  /* Field: CRM Core Activity: Activity ID */
+  $handler->display->display_options['fields']['activity_id']['id'] = 'activity_id';
+  $handler->display->display_options['fields']['activity_id']['table'] = 'crm_core_activity';
+  $handler->display->display_options['fields']['activity_id']['field'] = 'activity_id';
+  $handler->display->display_options['fields']['activity_id']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: CRM Core Contact: Contact ID */
   $handler->display->display_options['arguments']['contact_id']['id'] = 'contact_id';
@@ -1156,6 +1213,10 @@ function hk_crm_views_default_views() {
     4 => '4',
     9 => '9',
   );
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['id'] = 'field_angefragte_wohnung_target_id';
@@ -1204,7 +1265,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_price']['field'] = 'field_apart_price';
   $handler->display->display_options['fields']['field_apart_price']['relationship'] = 'field_angefragte_wohnung_target_id';
   $handler->display->display_options['fields']['field_apart_price']['settings'] = array(
-    'thousand_separator' => '',
+    'thousand_separator' => ' ',
     'decimal_separator' => '.',
     'scale' => '0',
     'prefix_suffix' => 1,

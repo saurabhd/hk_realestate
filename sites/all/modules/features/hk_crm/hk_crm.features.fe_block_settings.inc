@@ -695,6 +695,46 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'visibility' => 1,
   );
 
+  $export['search_api_saved_searches-solr_node_index'] = array(
+    'cache' => 5,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'solr_node_index',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'search_api_saved_searches',
+    'node_types' => array(),
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3))) {
+  return true;
+} else {
+  return false;
+}',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => 'sidebar_right',
+        'status' => 1,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 2,
+  );
+
   $export['system-main-menu'] = array(
     'cache' => -1,
     'css_class' => 'hauptmenu',
@@ -800,6 +840,46 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'status' => 1,
         'theme' => 'hk_theme',
         'weight' => -35,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 2,
+  );
+
+  $export['views-last_saved_searches-block'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'last_saved_searches-block',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3))) {
+  return true;
+} else {
+  return false;
+}',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => 'sidebar_right',
+        'status' => 1,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
       ),
     ),
     'title' => '<none>',

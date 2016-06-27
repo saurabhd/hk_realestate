@@ -25,9 +25,12 @@
   $nid = $output;
   $node = node_load($nid);
   $public_path = variable_get('file_public_path', conf_path() . '/files');
-  $image_path = $node->field_apart_pictures[LANGUAGE_NONE][0]['uri'];
-  $image_path = str_replace('public://', '', $image_path);
-  $image_path = $base_url.'/'.$public_path.'/'.$image_path;
+  $image_path = '';
+  if(isset($node->field_apart_pictures[LANGUAGE_NONE]) && !empty($node->field_apart_pictures[LANGUAGE_NONE])) {
+    $image_path = $node->field_apart_pictures[LANGUAGE_NONE][0]['uri'];
+    $image_path = str_replace('public://', '', $image_path);
+    $image_path = $base_url.'/'.$public_path.'/'.$image_path;
+  }
   $output = '<img src="'.$image_path.'" height="50px" width="50px"/>'
 ?>
 <?php print $output; ?>

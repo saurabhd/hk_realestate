@@ -1,7 +1,7 @@
 /**
  *  Ontact page design
  **/
-/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,45 +23,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -798,6 +798,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   cursor: pointer;
 }
 /* line 696, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-last-saved-searches-block {
+  display: none;
+}
+/* line 699, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-search-api-saved-searches-solr-node-index {
+  display: inline-block;
+  width: 100%;
+}
+/* line 703, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right a.select2-choice {
   float: left;
   height: 45px;
@@ -815,22 +824,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: right 4px;
   background-repeat: no-repeat;
 }
-/* line 716, ../sass/custom.scss */
+/* line 723, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop {
   /*display: inline-block;
   max-width: 146px !important;
   width: 100% !important;*/
 }
-/* line 720, ../sass/custom.scss */
+/* line 727, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search {
   display: none;
 }
-/* line 727, ../sass/custom.scss */
+/* line 734, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox .lightbox .lightbox__content .lightbox__body {
   max-height: 475px;
   overflow-y: auto;
 }
-/* line 734, ../sass/custom.scss */
+/* line 741, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox #edit-contact-name a.select2-choice {
   height: 30px;
 }

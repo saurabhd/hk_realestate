@@ -693,6 +693,13 @@
           display: inline-block !important;
           
         }*/
+        #block-views-last-saved-searches-block {
+          display: none;
+        }
+        #block-search-api-saved-searches-solr-node-index {
+          display: inline-block;
+          width: 100%;
+        }
         a.select2-choice {
           float: left;
           height: 45px;

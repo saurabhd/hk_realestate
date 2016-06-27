@@ -131,6 +131,7 @@ features[search_api_index][] = crm_contacts
 features[search_api_live_results_search][] = search_api_page_1
 features[search_api_live_results_search][] = search_api_page_2
 features[search_api_page][] = contact_search_box
+features[search_api_saved_searches_settings][] = solr_node_index
 features[taxonomy][] = email
 features[taxonomy][] = individual_type
 features[taxonomy][] = meeting_type

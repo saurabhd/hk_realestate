@@ -26,7 +26,7 @@
       <a href="<?php print $front_page; ?>" title="<?php print t('Herbert + Kohlmeyer Real Estate: Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Herbert + Kohlmeyer Real Estate Logo'); ?>" width="165" height="90" /></a>
     <?php endif; ?>
 
-    <div id="navigation" tabindex="-1">
+    <div id="navigation-inner" tabindex="-1">
       <?php print render($page['navigation']); ?>
     </div><!-- /#navigation -->
   </div>

@@ -8,6 +8,130 @@
 
 /* Contact page design */
 .page-crm-core-contact {
+  .navigation {
+    position: fixed;
+    height: 96px;
+    width: 100%;
+    background-image: url('../images/search-page-parten.png') !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    z-index: 102;
+    #logo {
+      float: left;
+      width: 170px;
+      margin-left: 50px;
+    }
+    #navigation-inner {
+      display: inline-block;
+      float: left;
+      width: calc(100% - 220px);
+      .region-navigation {
+        display: inline-block;
+        width: 100%;
+        /*width: calc(100% - 220px);*/
+        #block-search-api-page-contact-search-box {
+          float: left;
+          position: relative;
+          display: inline-block;
+          margin-top: 35px;
+          margin-left: 38px;
+          #search-api-page-search-form-contact-search-box {
+            input.auto_submit {
+              position: relative;
+              display: inline-block;
+              width: 270px;
+              height: 20px;
+              background-image: none;
+              padding-left: 20px;
+              border-color: #969696;
+              border-radius: 3px;
+              font-size: 15px;
+              color: #333;
+            }
+            input.form-submit {
+              position: absolute;
+              top: 0;
+              right: 0;
+              left: auto;
+              display: inline-block;
+              width: 20px;
+              height: 35px;
+              margin-left: -30px;
+              font-size: 0;
+              background-image: url('../images/red-search-icon.png');
+              background-repeat: no-repeat;
+              background-position: 12px 8px;
+              background-color: transparent;
+              &:hover {
+                box-shadow: none !important;
+              }
+            }
+          }
+          
+          #autocomplete {
+            margin-left: 2px !important;
+            ul {
+              li {
+                font-size: 10px;
+                padding-left: 20px;
+                a {
+                  font-size: 13px;
+                }
+              }
+            }
+          }
+        }
+        #block-menu-menu-crm-core-menu {
+          display: inline-block;
+          float: right;
+          ul.menu {
+            margin-top: 35px;
+            /*margin-right: 56px;*/
+            li {
+              float: left;
+              list-style: none;
+              a {
+                margin: 0 35px 0 8px;
+                color: #747474;
+                line-height: normal;
+                font-size: 14px;
+                vertical-align: middle;
+                letter-spacing: 2px;
+                &:hover {
+                  color: #C61C2C;
+                }
+              }
+              &::before {
+                display: inline-block;
+                width: 14px;
+                height: 17px;
+                background-image: url("../images/menu-symbol-of-four-lines.png");
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                content: '';
+                vertical-align: middle;
+              }
+              &.menu-logout {
+                &::before {
+                  height: 17px;
+                  width: 19px;
+                  background-image: url("../images/logout.png");
+                }
+                a {
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #navigation {
+    display: inline-block;
+    width: 100%;
+    padding-top: 96px;
+    clear: both;
+  }
   .view-crm-contact-page {
     display: inline-block;
     width: 100%;

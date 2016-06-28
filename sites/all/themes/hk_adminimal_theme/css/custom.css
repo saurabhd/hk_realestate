@@ -1,7 +1,7 @@
 /**
  *  Ontact page design
  **/
-/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,63 +23,200 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
 /* Contact page design */
 /* line 11, ../sass/custom.scss */
+.page-crm-core-contact .navigation {
+  position: fixed;
+  height: 96px;
+  width: 100%;
+  background-image: url("../images/search-page-parten.png") !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  z-index: 102;
+}
+/* line 18, ../sass/custom.scss */
+.page-crm-core-contact .navigation #logo {
+  float: left;
+  width: 170px;
+  margin-left: 50px;
+}
+/* line 23, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner {
+  display: inline-block;
+  float: left;
+  width: calc(100% - 220px);
+}
+/* line 27, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation {
+  display: inline-block;
+  width: 100%;
+  /*width: calc(100% - 220px);*/
+}
+/* line 31, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box {
+  float: left;
+  position: relative;
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 38px;
+}
+/* line 38, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.auto_submit {
+  position: relative;
+  display: inline-block;
+  width: 270px;
+  height: 20px;
+  background-image: none;
+  padding-left: 20px;
+  border-color: #969696;
+  border-radius: 3px;
+  font-size: 15px;
+  color: #333;
+}
+/* line 50, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  display: inline-block;
+  width: 20px;
+  height: 35px;
+  margin-left: -30px;
+  font-size: 0;
+  background-image: url("../images/red-search-icon.png");
+  background-repeat: no-repeat;
+  background-position: 12px 8px;
+  background-color: transparent;
+}
+/* line 64, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit:hover {
+  box-shadow: none !important;
+}
+/* line 70, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete {
+  margin-left: 2px !important;
+}
+/* line 73, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li {
+  font-size: 10px;
+  padding-left: 20px;
+}
+/* line 76, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li a {
+  font-size: 13px;
+}
+/* line 83, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu {
+  display: inline-block;
+  float: right;
+}
+/* line 86, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu {
+  margin-top: 35px;
+  /*margin-right: 56px;*/
+}
+/* line 89, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li {
+  float: left;
+  list-style: none;
+}
+/* line 92, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a {
+  margin: 0 35px 0 8px;
+  color: #747474;
+  line-height: normal;
+  font-size: 14px;
+  vertical-align: middle;
+  letter-spacing: 2px;
+}
+/* line 99, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:hover {
+  color: #C61C2C;
+}
+/* line 103, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li::before {
+  display: inline-block;
+  width: 14px;
+  height: 17px;
+  background-image: url("../images/menu-symbol-of-four-lines.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  content: '';
+  vertical-align: middle;
+}
+/* line 114, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout::before {
+  height: 17px;
+  width: 19px;
+  background-image: url("../images/logout.png");
+}
+/* line 119, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout a {
+  font-weight: bold;
+}
+/* line 129, ../sass/custom.scss */
+.page-crm-core-contact #navigation {
+  display: inline-block;
+  width: 100%;
+  padding-top: 96px;
+  clear: both;
+}
+/* line 135, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page {
   display: inline-block;
   width: 100%;
 }
-/* line 15, ../sass/custom.scss */
+/* line 139, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row {
   display: inline-block;
   width: 100%;
   margin-top: 50px;
   border: 1px solid #C3C3C3;
 }
-/* line 20, ../sass/custom.scss */
+/* line 144, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container {
   width: 100%;
   padding: 15px 0 20px;
@@ -88,12 +225,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: repeat-x;
   background-position: center bottom;
 }
-/* line 27, ../sass/custom.scss */
+/* line 151, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .left-content {
   padding-left: 15px;
   display: inline-block;
 }
-/* line 32, ../sass/custom.scss */
+/* line 156, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .left-content .views-field .field-content img {
   height: 200px;
   width: 200px;
@@ -102,7 +239,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -moz-border-radius: 1000px;
   border-radius: 1000px;
 }
-/* line 43, ../sass/custom.scss */
+/* line 167, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content {
   -webkit-width: calc(100% - 250px);
   -moz-width: calc(100% - 250px);
@@ -111,22 +248,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-top: 20px;
   vertical-align: top;
 }
-/* line 50, ../sass/custom.scss */
+/* line 174, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field {
   margin-bottom: 10px;
 }
-/* line 52, ../sass/custom.scss */
+/* line 176, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-content {
   display: inline-block;
   font-size: 14px;
   color: #525252;
 }
-/* line 56, ../sass/custom.scss */
+/* line 180, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-content * {
   display: inline-block;
   vertical-align: top;
 }
-/* line 61, ../sass/custom.scss */
+/* line 185, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-label {
   display: inline-block;
   width: 100px;
@@ -135,22 +272,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: bold;
   vertical-align: top;
 }
-/* line 70, ../sass/custom.scss */
+/* line 194, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-name .field-content {
   font-size: 25px;
   color: #242021;
   font-weight: bold;
 }
-/* line 76, ../sass/custom.scss */
+/* line 200, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-company-name {
   margin-bottom: 15px;
 }
-/* line 78, ../sass/custom.scss */
+/* line 202, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-company-name .field-content {
   font-size: 17px;
   color: #656565;
 }
-/* line 84, ../sass/custom.scss */
+/* line 208, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-address::before {
   background-image: url("../images/location-icon.png");
   background-repeat: no-repeat;
@@ -158,7 +295,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding-left: 30px;
   content: '';
 }
-/* line 94, ../sass/custom.scss */
+/* line 218, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-email::before {
   background-image: url("../images/envelope.png");
   background-repeat: no-repeat;
@@ -166,7 +303,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding-left: 30px;
   content: '';
 }
-/* line 104, ../sass/custom.scss */
+/* line 228, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-phone::before {
   background-image: url("../images/call-answer.png");
   background-repeat: no-repeat;
@@ -174,7 +311,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding-left: 30px;
   content: '';
 }
-/* line 117, ../sass/custom.scss */
+/* line 241, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container {
   display: inline-block;
   min-height: 406px;
@@ -182,11 +319,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: inline-block;
   padding: 30px;
 }
-/* line 123, ../sass/custom.scss */
+/* line 247, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .views-field {
   padding: 15px 0;
 }
-/* line 125, ../sass/custom.scss */
+/* line 249, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .views-field .field-label {
   display: inline-block;
   width: 100px;
@@ -194,19 +331,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #323232;
   font-weight: bold;
 }
-/* line 133, ../sass/custom.scss */
+/* line 257, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .field-content {
   display: inline-block;
   font-size: 15px;
 }
-/* line 142, ../sass/custom.scss */
+/* line 266, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block {
   float: right;
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 147, ../sass/custom.scss */
+/* line 271, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-header,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-header {
   width: 162px;
@@ -221,17 +358,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 161, ../sass/custom.scss */
+/* line 285, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-crm-contact-type .view-header,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-crm-contact-type .view-header {
   background-color: #D92227;
 }
-/* line 166, ../sass/custom.scss */
+/* line 290, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-crm-activity-type p,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-crm-activity-type p {
   margin: 0;
 }
-/* line 171, ../sass/custom.scss */
+/* line 295, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul {
   position: absolute;
@@ -246,56 +383,56 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-align: center;
   z-index: 1;
 }
-/* line 183, ../sass/custom.scss */
+/* line 307, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li {
   list-style: none;
 }
-/* line 185, ../sass/custom.scss */
+/* line 309, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li a {
   text-decoration: none;
   font-size: 14px;
   color: #C61C2C;
 }
-/* line 189, ../sass/custom.scss */
+/* line 313, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a:hover,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li a:hover {
   color: #1A1A1A;
 }
-/* line 198, ../sass/custom.scss */
+/* line 322, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type:hover .item-list ul,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block:hover .item-list ul {
   display: block;
 }
-/* line 205, ../sass/custom.scss */
+/* line 329, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page {
   display: inline-block;
   width: 100%;
   margin-top: 50px;
 }
-/* line 209, ../sass/custom.scss */
+/* line 333, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page {
   display: inline-block;
   width: 100%;
 }
-/* line 212, ../sass/custom.scss */
+/* line 336, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs {
   display: inline-block;
   margin-left: 0;
 }
-/* line 215, ../sass/custom.scss */
+/* line 339, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li {
   display: inline-block;
   margin-right: -3px;
   float: left;
 }
-/* line 220, ../sass/custom.scss */
+/* line 344, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li.active a {
   position: relative;
   background-color: #282D33;
 }
-/* line 223, ../sass/custom.scss */
+/* line 347, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li.active a::after {
   border-color: transparent;
   border-top-color: #282D33;
@@ -309,15 +446,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 0;
   content: '';
 }
-/* line 238, ../sass/custom.scss */
+/* line 362, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li:first-child {
   border-right: none;
 }
-/* line 241, ../sass/custom.scss */
+/* line 365, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li:last-child {
   border-right: none;
 }
-/* line 244, ../sass/custom.scss */
+/* line 368, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li a {
   height: 37px;
   background-color: #BD1725;
@@ -328,70 +465,70 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: bold;
   font-size: 15px;
 }
-/* line 253, ../sass/custom.scss */
+/* line 377, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li a:hover {
   background-color: #282D33;
 }
-/* line 260, ../sass/custom.scss */
+/* line 384, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page {
   display: inline-block;
   width: 100%;
   margin-top: 23px;
 }
-/* line 267, ../sass/custom.scss */
+/* line 391, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table thead tr th {
   padding: 25px;
 }
-/* line 273, ../sass/custom.scss */
+/* line 397, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr {
   background: transparent;
 }
-/* line 275, ../sass/custom.scss */
+/* line 399, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td {
   max-width: 160px;
   padding: 25px;
   font-size: 17px;
   color: #333333;
 }
-/* line 280, ../sass/custom.scss */
+/* line 404, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td a {
   padding: 0;
   white-space: normal;
 }
-/* line 285, ../sass/custom.scss */
+/* line 409, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.hide-notes {
   display: none;
 }
-/* line 288, ../sass/custom.scss */
+/* line 412, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.show-notes {
   display: table-row;
   -webkit-transition: all 0.5s ease 0.5s;
   -moz-transition: all 0.5s ease 0.5s;
   transition: all 0.5s ease 0.5s;
 }
-/* line 295, ../sass/custom.scss */
+/* line 419, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.odd {
   border-top: 1px solid #C3C3C3;
   border-bottom: 1px solid #C3C3C3;
   background-image: url("../images/Pattern.jpg");
 }
-/* line 300, ../sass/custom.scss */
+/* line 424, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.even {
   border-top: none;
   border-bottom: none;
 }
-/* line 311, ../sass/custom.scss */
+/* line 435, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .view-display-id-block_1 table tbody tr td.views-field-field-activity-notes {
   background-image: url("../images/plus.png");
   background-repeat: no-repeat;
   background-position: 26px 25px;
   cursor: pointer;
 }
-/* line 322, ../sass/custom.scss */
+/* line 446, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list {
   margin-top: 50px;
 }
-/* line 325, ../sass/custom.scss */
+/* line 449, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current {
   background-color: #D11F01;
   border-radius: 50%;
@@ -403,7 +540,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 25px;
   line-height: 25px;
 }
-/* line 335, ../sass/custom.scss */
+/* line 459, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current a {
   /*background-color: #D11F01;
   border-radius: 50%;
@@ -414,7 +551,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 0;
   width: 25px;*/
 }
-/* line 346, ../sass/custom.scss */
+/* line 470, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous {
@@ -422,7 +559,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   /*border: 1px solid #B8B8B8;
   border-radius: 50%;*/
 }
-/* line 352, ../sass/custom.scss */
+/* line 476, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item a,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next a,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous a {
@@ -435,18 +572,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 0;
   width: 25px;
 }
-/* line 367, ../sass/custom.scss */
+/* line 491, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper {
   display: inline-block;
   width: 100%;
 }
-/* line 370, ../sass/custom.scss */
+/* line 494, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 375, ../sass/custom.scss */
+/* line 499, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #main-content {
   float: left;
   display: inline-block;
@@ -455,7 +592,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: calc(70% - 30px);
   margin: 0 30px 0 0;
 }
-/* line 383, ../sass/custom.scss */
+/* line 507, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top {
   float: left;
   display: inline-block;
@@ -463,18 +600,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #C5C5C5;
   margin: 50px 0 0;
 }
-/* line 389, ../sass/custom.scss */
+/* line 513, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top {
   width: 100%;
   padding-left: 0;
   /* Matching Apartments section design */
   /* End */
 }
-/* line 394, ../sass/custom.scss */
+/* line 518, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area {
   background-color: #FFF;
 }
-/* line 397, ../sass/custom.scss */
+/* line 521, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header {
   display: inline-block;
   -webkit-width: calc(100% - 30px);
@@ -487,45 +624,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: repeat-x;
   background-color: #FFF;
 }
-/* line 408, ../sass/custom.scss */
+/* line 532, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .block-title {
   font-size: 32px;
   margin-bottom: 10px;
 }
-/* line 412, ../sass/custom.scss */
+/* line 536, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .sub-title {
   color: #0a0a0a;
   display: inline-block;
   font-size: 16px;
 }
-/* line 418, ../sass/custom.scss */
+/* line 542, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section {
   background-color: #EBEBEB;
   padding: 20px;
   min-height: 527px;
 }
-/* line 422, ../sass/custom.scss */
+/* line 546, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #E7E7E7;
 }
-/* line 426, ../sass/custom.scss */
+/* line 550, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content {
   float: left;
   display: inline-block;
   margin-right: 10px;
 }
-/* line 431, ../sass/custom.scss */
+/* line 555, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row.views-row-last {
   border-bottom: none;
 }
-/* line 436, ../sass/custom.scss */
+/* line 560, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content .views-field-picture img {
   width: 106px;
   height: 92px;
 }
-/* line 442, ../sass/custom.scss */
+/* line 566, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content {
   display: inline-block;
   float: left;
@@ -533,19 +670,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-width: calc(100% - 120px);
   width: calc(100% - 120px);
 }
-/* line 449, ../sass/custom.scss */
+/* line 573, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .views-field-title a {
   color: #343434;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 455, ../sass/custom.scss */
+/* line 579, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email {
   display: inline-block;
   width: 100%;
   margin-top: 10px;
 }
-/* line 459, ../sass/custom.scss */
+/* line 583, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-apart-no {
   color: #ef595a;
   display: inline-block;
@@ -553,7 +690,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 18px;
   font-weight: bold;
 }
-/* line 466, ../sass/custom.scss */
+/* line 590, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email {
   /*float: right;
   display: inline-block;
@@ -563,7 +700,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-size: 24px auto;
   font-size: 0;*/
 }
-/* line 467, ../sass/custom.scss */
+/* line 591, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email a {
   display: inline-block;
   width: 40px;
@@ -576,18 +713,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-size: 24px auto;
   font-size: 0;
 }
-/* line 488, ../sass/custom.scss */
+/* line 612, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms {
   display: inline-block;
   margin-top: 10px;
   width: 100%;
 }
-/* line 492, ../sass/custom.scss */
+/* line 616, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space {
   display: inline-block;
   float: left;
 }
-/* line 495, ../sass/custom.scss */
+/* line 619, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space::before {
   display: inline-block;
   height: 29px;
@@ -599,19 +736,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   vertical-align: top;
 }
-/* line 506, ../sass/custom.scss */
+/* line 630, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space span {
   display: inline-block;
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 513, ../sass/custom.scss */
+/* line 637, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms {
   display: inline-block;
   float: right;
 }
-/* line 516, ../sass/custom.scss */
+/* line 640, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms::before {
   display: inline-block;
   height: 29px;
@@ -622,19 +759,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   vertical-align: top;
 }
-/* line 526, ../sass/custom.scss */
+/* line 650, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms span {
   display: inline-block;
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 533, ../sass/custom.scss */
+/* line 657, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email {
   display: inline-block;
   float: right;
 }
-/* line 536, ../sass/custom.scss */
+/* line 660, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email .field-content {
   font-size: 0;
   background-image: url("../images/Black_Email.png");
@@ -642,13 +779,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 546, ../sass/custom.scss */
+/* line 670, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content {
   width: 100%;
   display: inline-block;
   margin-top: 10px;
 }
-/* line 550, ../sass/custom.scss */
+/* line 674, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price {
   background-color: #c71c2c;
   background-image: url("../images/Buy.png");
@@ -662,11 +799,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 5px;
   padding: 15px 15px 15px 40px;
 }
-/* line 562, ../sass/custom.scss */
+/* line 686, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price:hover {
   cursor: pointer;
 }
-/* line 571, ../sass/custom.scss */
+/* line 695, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list {
   display: inline-block;
   margin-top: -50px;
@@ -674,17 +811,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-color: #EBEBEB;
   float: right;
 }
-/* line 577, ../sass/custom.scss */
+/* line 701, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul {
   display: inline-block;
   float: right;
   margin-right: 24px;
 }
-/* line 581, ../sass/custom.scss */
+/* line 705, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li {
   padding: 0;
 }
-/* line 585, ../sass/custom.scss */
+/* line 709, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-next a {
   display: inline-block;
   width: 25px;
@@ -694,7 +831,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: -17px 0;
   background-repeat: no-repeat;
 }
-/* line 596, ../sass/custom.scss */
+/* line 720, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-previous a {
   display: inline-block;
   width: 25px;
@@ -704,11 +841,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: 6px 0;
   background-repeat: no-repeat;
 }
-/* line 606, ../sass/custom.scss */
+/* line 730, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-current {
   display: none;
 }
-/* line 615, ../sass/custom.scss */
+/* line 739, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right {
   float: left;
   display: inline-block;
@@ -716,7 +853,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #C5C5C5;
   margin: 50px 0 0;
 }
-/* line 621, ../sass/custom.scss */
+/* line 745, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right {
   display: inline-block;
   width: 100%;
@@ -729,7 +866,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   
 }*/
 }
-/* line 626, ../sass/custom.scss */
+/* line 750, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi {
   float: left;
   width: 48% !important;
@@ -739,21 +876,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding: 0;
   }*/
 }
-/* line 630, ../sass/custom.scss */
+/* line 754, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi:nth-child(2n + 1) {
   margin-right: 0;
   float: right;
 }
-/* line 634, ../sass/custom.scss */
+/* line 758, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi:nth-child(2n) {
   clear: left;
 }
-/* line 637, ../sass/custom.scss */
+/* line 761, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi .form-item {
   margin: 0;
   padding: 0;
 }
-/* line 646, ../sass/custom.scss */
+/* line 770, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 {
   display: inline-block;
   width: 100%;
@@ -762,19 +899,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: repeat-x;
   background-position: center bottom;
 }
-/* line 653, ../sass/custom.scss */
+/* line 777, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 h2 {
   margin-bottom: 13px;
   color: #fff;
   font-size: 35px;
   font-weight: bold;
 }
-/* line 660, ../sass/custom.scss */
+/* line 784, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 .content p {
   color: #fff;
   font-size: 17px;
 }
-/* line 667, ../sass/custom.scss */
+/* line 791, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices {
   height: 45px;
   margin: 0;
@@ -788,7 +925,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -moz-border-radius: 4px;
   vertical-align: top;
 }
-/* line 680, ../sass/custom.scss */
+/* line 804, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices li.select2-search-field input {
   float: left;
   width: 100% !important;
@@ -797,16 +934,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 15px;
   cursor: pointer;
 }
-/* line 696, ../sass/custom.scss */
+/* line 820, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-last-saved-searches-block {
   display: none;
 }
-/* line 699, ../sass/custom.scss */
+/* line 823, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-search-api-saved-searches-solr-node-index {
   display: inline-block;
   width: 100%;
 }
-/* line 703, ../sass/custom.scss */
+/* line 827, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right a.select2-choice {
   float: left;
   height: 45px;
@@ -824,22 +961,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: right 4px;
   background-repeat: no-repeat;
 }
-/* line 723, ../sass/custom.scss */
+/* line 847, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop {
   /*display: inline-block;
   max-width: 146px !important;
   width: 100% !important;*/
 }
-/* line 727, ../sass/custom.scss */
+/* line 851, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search {
   display: none;
 }
-/* line 734, ../sass/custom.scss */
+/* line 858, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox .lightbox .lightbox__content .lightbox__body {
   max-height: 475px;
   overflow-y: auto;
 }
-/* line 741, ../sass/custom.scss */
+/* line 865, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox #edit-contact-name a.select2-choice {
   height: 30px;
 }

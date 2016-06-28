@@ -80,22 +80,16 @@
       });
       var current_url = window.location.href;
       var current_url = current_url.split('?');
-      var last_search_full_url = $('body').find('.last-save-searches a').attr('href');
-      var last_search_url = last_search_full_url.split('?');
-      
-      if(typeof current_url[1] === 'undefined') {
-        var url = current_url+'?'+last_search_url[1];
-         /*$.ajax({url:url,success: function(data){
-          //alert(data);
-          $('#content').html(data);
-        }});
-        if (history.pushState) {
-          history.pushState(null, 'test', url);
-        } else {
-          alert("Your Browser will not Support HTML5");
-        }*/
-        window.location.href = url;
+      if($('body').find('.last-save-searches a').length) {
+        var last_search_full_url = $('body').find('.last-save-searches a').attr('href');
+        var last_search_url = last_search_full_url.split('?');
+        
+        if(typeof current_url[1] === 'undefined') {
+          var url = current_url[0]+'?'+last_search_url[1];
+          window.location.href = url;
+        }
       }
+      
 
      
     }

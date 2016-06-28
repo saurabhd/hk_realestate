@@ -1163,6 +1163,8 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 /* User dashboard design */
 .not-front {
   &.page-search {
+    .tabs-primary { display: none; }
+    #page-title { display: none; }
     .navigation {
       background-image: url('../images/search-page-parten.png') !important;
       #navigation {
@@ -1203,6 +1205,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
                 background-color: transparent;
               }
             }
+            
             #autocomplete {
               margin-left: 2px !important;
               ul {
@@ -1343,7 +1346,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           width: 100%;
           max-width: 134px;
           height: 44px;
-          margin: 7px 0 0 -141px;
+          margin: -75px 0 0 217px;
           padding: 10px 43px;
           border-radius: 0;
           background-image: url("../images/search-icon-dashboard.png");

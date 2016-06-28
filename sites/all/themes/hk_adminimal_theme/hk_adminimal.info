@@ -19,6 +19,7 @@ settings[use_custom_media_queries] = 0
 settings[media_query_mobile] = only screen and (max-width: 480px)
 settings[media_query_tablet] = only screen and (min-width : 481px) and (max-width : 1024px)
 regions[hidden] = Hidden
+regions[navigation]= Navigation bar
 regions[content_before] = Before Content
 regions[sidebar_left] = Sidebar Left
 regions[content] = Content

@@ -229,6 +229,11 @@ function hk_crm_views_default_views() {
     'mitarbeiter' => 'mitarbeiter',
   );
   $handler->display->display_options['path'] = 'crm-core/contact/%';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'My Contacts';
   $export['crm_contact_page'] = $view;
 
   $view = new view();

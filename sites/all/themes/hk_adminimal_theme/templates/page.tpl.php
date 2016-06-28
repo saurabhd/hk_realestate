@@ -4,7 +4,7 @@
 * Main page template.
 */
 ?>
-
+<?php if(arg(0) != 'crm-core' && arg(1) != 'contact') { ?>
 <div id="branding" class="clearfix">
 
 	<?php print $breadcrumb; ?>
@@ -18,7 +18,20 @@
 	<?php print render($title_suffix); ?>
 
 </div>
+<?php } ?>
+<?php if(arg(0) == 'crm-core' && arg(1) == 'contact' && is_numeric(arg(2)) && empty(arg(3))) { ?>
+<div class="wrapper navigation">
+  <div class="container">
+    <?php if ($logo): ?>
+      <a href="<?php print $front_page; ?>" title="<?php print t('Herbert + Kohlmeyer Real Estate: Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Herbert + Kohlmeyer Real Estate Logo'); ?>" width="165" height="90" /></a>
+    <?php endif; ?>
 
+    <div id="navigation" tabindex="-1">
+      <?php print render($page['navigation']); ?>
+    </div><!-- /#navigation -->
+  </div>
+</div>
+<?php } ?>
 <div id="navigation">
 
   <?php if ($primary_local_tasks): ?>
@@ -32,7 +45,6 @@
 </div>
 
 <div id="page">
-
 	<div id="content" class="clearfix">
 		<div class="element-invisible"><a id="main-content"></a></div>
 

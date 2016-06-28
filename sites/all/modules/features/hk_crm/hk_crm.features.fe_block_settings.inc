@@ -558,7 +558,13 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'i18n_mode' => 0,
     'module' => 'menu',
     'node_types' => array(),
-    'pages' => 'search',
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(0) == \'search\') {
+  return true;
+} else {
+  return false;
+}
+?>',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -568,8 +574,8 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => 0,
       ),
       'hk_adminimal' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'navigation',
+        'status' => 1,
         'theme' => 'hk_adminimal',
         'weight' => 0,
       ),
@@ -581,7 +587,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
       ),
     ),
     'title' => '<none>',
-    'visibility' => 1,
+    'visibility' => 2,
   );
 
   $export['menu-menu-service-menu'] = array(
@@ -669,7 +675,13 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'i18n_mode' => 0,
     'module' => 'search_api_page',
     'node_types' => array(),
-    'pages' => 'search',
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3))) {
+  return true;
+} else {
+  return false;
+}
+?>',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -679,7 +691,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => 0,
       ),
       'hk_adminimal' => array(
-        'region' => 'content_before',
+        'region' => 'navigation',
         'status' => 1,
         'theme' => 'hk_adminimal',
         'weight' => -34,
@@ -692,7 +704,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
       ),
     ),
     'title' => '<none>',
-    'visibility' => 1,
+    'visibility' => 2,
   );
 
   $export['search_api_saved_searches-solr_node_index'] = array(

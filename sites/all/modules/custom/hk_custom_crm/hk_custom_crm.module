@@ -38,7 +38,7 @@ function _hk_custom_crm_content() {
   return $output;
 }
 
-function hk_custom_crm_form_alter(&$form, &$form_state, $form_id) {
+/*function hk_custom_crm_form_alter(&$form, &$form_state, $form_id) {
   /*
    * Implements form alter for user search expose filter. 
    */
@@ -55,5 +55,5 @@ function hk_custom_crm_expose_page_form_submit($form,&$form_state) {
     $uid = $user->uid;
     drupal_goto('/user/'.$uid.'/contact');
   }
-}
+}*/
 

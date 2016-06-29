@@ -52,6 +52,11 @@
           placeholderOption: "first"
           //allowClear: true
       });
+      $('#edit-field-email-type-und').select2({
+          placeholder: Drupal.t('Select Email Type'),
+          placeholderOption: "first"
+          //allowClear: true
+      });
       $(".field-name-contact-name select, #edit-field-crm-address-und-0-country").select2({
         placeholder: Drupal.t('please select'),
         placeholderOption: "first"

@@ -132,6 +132,8 @@ function hk_crm_views_default_views() {
     3 => '3',
     9 => '9',
   );
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none-accelerated';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1157,7 +1159,8 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['created']['table'] = 'crm_core_activity';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'Datum';
-  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.Y - H:i';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: CRM Core Activity: Date created */

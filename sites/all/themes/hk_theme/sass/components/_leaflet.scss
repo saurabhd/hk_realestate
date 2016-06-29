@@ -1295,6 +1295,9 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           }
         }
         .item-list {
+          /*.views-field-label {
+            padding: 3px 0 0;
+          }*/
           ul {
             position: absolute;
             display: none;
@@ -1308,7 +1311,11 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             text-align: center;
             z-index: 1;
             li {
+              padding: 3px 0 0;
               list-style: none;
+              &:last-child {
+                padding: 3px 0;
+              }
               a {
                 text-decoration: none;
                 font-size: 14px;

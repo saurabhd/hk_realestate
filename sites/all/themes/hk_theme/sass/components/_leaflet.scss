@@ -1239,13 +1239,20 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
                 }
                 &::before {
                   display: inline-block;
-                  width: 14px;
                   height: 17px;
-                  background-image: url("../images/menu-symbol-of-four-lines.png");
+                  width: 14px;
+                  /*background-image: url("../images/menu-symbol-of-four-lines.png");*/
                   background-repeat: no-repeat;
                   background-position: 0 0;
                   content: '';
                   vertical-align: middle;
+                }
+                &.menu-dashboard {
+                  &::before {
+                    height: 17px;
+                    width: 14px;
+                    background-image: url("../images/menu-symbol-of-four-lines.png");
+                  }
                 }
                 &.menu-logout {
                   &::before {
@@ -1255,6 +1262,13 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
                   }
                   a {
                     font-weight: bold;
+                  }
+                }
+                &.menu-agent-central {
+                  &::before {
+                    height: 15px;
+                    width: 13px;
+                    background-image: url("../images/malware.png");
                   }
                 }
               }

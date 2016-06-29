@@ -108,6 +108,7 @@
                 color: #747474;
                 line-height: normal;
                 font-size: 14px;
+                font-family: "sans-serif";
                 vertical-align: middle;
                 letter-spacing: 2px;
                 &:hover {
@@ -116,13 +117,20 @@
               }
               &::before {
                 display: inline-block;
-                width: 14px;
+                /*width: 14px;
                 height: 17px;
-                background-image: url("../images/menu-symbol-of-four-lines.png");
+                background-image: url("../images/menu-symbol-of-four-lines.png");*/
                 background-repeat: no-repeat;
                 background-position: 0 0;
                 content: '';
                 vertical-align: middle;
+              }
+              &.menu-dashboard {
+                &::before {
+                  height: 17px;
+                  width: 14px;
+                  background-image: url("../images/menu-symbol-of-four-lines.png");
+                }
               }
               &.menu-logout {
                 &::before {
@@ -296,6 +304,7 @@
         background-color: #1A1A1A;
         color: #FFF;
         font-size: 14px;
+        font-family: '$helvetica-neue';
         cursor: pointer;
         background-image: url('../images/Icon_Arrow_down.png');
         background-position: right 10px center;
@@ -337,6 +346,7 @@
             a {
               text-decoration: none;
               font-size: 14px;
+              font-family: '$helvetica-neue';
               color: #C61C2C;
               &:hover {
                 color: #1A1A1A;

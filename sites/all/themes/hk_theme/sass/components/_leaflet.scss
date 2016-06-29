@@ -1553,5 +1553,10 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       }
     }
   }
+  #crm-core-activity-edit-email-form {
+    #edit-field-activity-date {
+      display: none !important;
+    }
+  }
 }
 /* End */

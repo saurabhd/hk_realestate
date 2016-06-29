@@ -17,7 +17,7 @@ function hk_crm_default_fe_block_settings() {
     'css_class' => '',
     'custom' => 0,
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'machine_name' => 'search_criteria',
     'module' => 'block',
     'node_types' => array(),
@@ -823,7 +823,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'custom' => 0,
     'delta' => 'crm_activity_type-block',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<?php

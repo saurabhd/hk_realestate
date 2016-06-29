@@ -10,6 +10,40 @@
 function hk_crm_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: menu-crm-core-menu_agent-central:<front>.
+  $menu_links['menu-crm-core-menu_agent-central:<front>'] = array(
+    'menu_name' => 'menu-crm-core-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'Agent Central',
+    'options' => array(
+      'alter' => TRUE,
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => 'menu-agent-central',
+        'style' => '',
+      ),
+      'identifier' => 'menu-crm-core-menu_agent-central:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: menu-crm-core-menu_dashboard:search.
   $menu_links['menu-crm-core-menu_dashboard:search'] = array(
     'menu_name' => 'menu-crm-core-menu',
@@ -39,7 +73,7 @@ function hk_crm_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 1,
+    'weight' => -50,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -73,7 +107,7 @@ function hk_crm_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 3,
+    'weight' => -47,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -107,7 +141,7 @@ function hk_crm_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 2,
+    'weight' => -48,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -115,6 +149,7 @@ function hk_crm_menu_default_menu_links() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Agent Central');
   t('Dashboard');
   t('Login');
   t('Logout');

@@ -126,6 +126,15 @@ function hk_crm_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    9 => '9',
+  );
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: CRM Core Contact: Profile Picture */
@@ -234,6 +243,88 @@ function hk_crm_views_default_views() {
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'My Contacts';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'contact_id' => 'contact_id',
+    'field_profile_picture' => 'field_profile_picture',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'contact_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_profile_picture' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_activity_participants_crm_core_activity']['id'] = 'reverse_field_activity_participants_crm_core_activity';
+  $handler->display->display_options['relationships']['reverse_field_activity_participants_crm_core_activity']['table'] = 'crm_core_contact';
+  $handler->display->display_options['relationships']['reverse_field_activity_participants_crm_core_activity']['field'] = 'reverse_field_activity_participants_crm_core_activity';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: CRM Core Contact: Contact ID */
+  $handler->display->display_options['fields']['contact_id']['id'] = 'contact_id';
+  $handler->display->display_options['fields']['contact_id']['table'] = 'crm_core_contact';
+  $handler->display->display_options['fields']['contact_id']['field'] = 'contact_id';
+  /* Field: CRM Core Contact: Mitarbeiter */
+  $handler->display->display_options['fields']['contact_name']['id'] = 'contact_name';
+  $handler->display->display_options['fields']['contact_name']['table'] = 'field_data_contact_name';
+  $handler->display->display_options['fields']['contact_name']['field'] = 'contact_name';
+  $handler->display->display_options['fields']['contact_name']['label'] = 'Name';
+  $handler->display->display_options['fields']['contact_name']['click_sort_column'] = 'title';
+  $handler->display->display_options['fields']['contact_name']['settings'] = array(
+    'format' => 'short_full',
+    'markup' => 0,
+    'output' => 'default',
+    'multiple' => 'default',
+    'multiple_delimiter' => ', ',
+    'multiple_and' => 'text',
+    'multiple_delimiter_precedes_last' => 'never',
+    'multiple_el_al_min' => '3',
+    'multiple_el_al_first' => '1',
+  );
+  /* Field: CRM Core Activity: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'crm_core_activity';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['relationship'] = 'reverse_field_activity_participants_crm_core_activity';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: CRM Core Contact: Responsible agent (field_responsible_agent) */
+  $handler->display->display_options['arguments']['field_responsible_agent_target_id']['id'] = 'field_responsible_agent_target_id';
+  $handler->display->display_options['arguments']['field_responsible_agent_target_id']['table'] = 'field_data_field_responsible_agent';
+  $handler->display->display_options['arguments']['field_responsible_agent_target_id']['field'] = 'field_responsible_agent_target_id';
+  $handler->display->display_options['arguments']['field_responsible_agent_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_responsible_agent_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_responsible_agent_target_id']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['field_responsible_agent_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_responsible_agent_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_responsible_agent_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: CRM Core Contact: Contact Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'crm_core_contact';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'individual' => 'individual',
+  );
   $export['crm_contact_page'] = $view;
 
   $view = new view();
@@ -975,8 +1066,15 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '«';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '»';
+  $handler->display->display_options['pager']['options']['tags']['last'] = '';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['id'] = 'field_angefragte_wohnung_target_id';

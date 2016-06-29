@@ -9,6 +9,23 @@
  */
 function hk_crm_default_rules_configuration() {
   $items = array();
+  $items['rules_after_login_agent_role_redirect_to_search_page'] = entity_import('rules_config', '{ "rules_after_login_agent_role_redirect_to_search_page" : {
+      "LABEL" : "After login agent role redirect to search page",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_login" : [] },
+      "IF" : [
+        { "user_has_role" : {
+            "account" : [ "account" ],
+            "roles" : { "value" : { "9" : "9" } },
+            "operation" : "OR"
+          }
+        }
+      ],
+      "DO" : [ { "redirect" : { "url" : "\\/search" } } ]
+    }
+  }');
   $items['rules_anfrage_status_change'] = entity_import('rules_config', '{ "rules_anfrage_status_change" : {
       "LABEL" : "anfrage status change",
       "PLUGIN" : "rule",

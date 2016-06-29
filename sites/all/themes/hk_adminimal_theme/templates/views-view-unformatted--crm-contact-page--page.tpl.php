@@ -34,19 +34,19 @@
         <?php } ?>
         <?php if(isset($row['field_crm_address']) && !empty($row['field_crm_address'])) { ?>
         <div class="views-field views-field-field-address"> 
-          <span class="field-label">Address</span> 
+          <span class="field-label"><?php print t('Address'); ?></span> 
           <div class="field-content"><?php print $row['field_crm_address']; ?></div>
         </div>
         <?php } ?>
         <?php if(isset($row['field_e_mail']) && !empty($row['field_e_mail'])) { ?>
         <div class="views-field views-field-field-email">  
-          <span class="field-label">Email</span> 
+          <span class="field-label"><?php print t('Email'); ?></span> 
           <div class="field-content"><?php print $row['field_e_mail']; ?></div>
         </div>
         <?php } ?>
         <?php if(isset($row['field_phone']) && !empty($row['field_phone'])) { ?>
         <div class="views-field views-field-field-phone"> 
-          <span class="field-label">Phone</span>
+          <span class="field-label"><?php print t('Phone'); ?></span>
           <div class="field-content"><?php print $row['field_phone']; ?></div>
         </div>
         <?php } ?>
@@ -55,25 +55,25 @@
     <div class="bottom-container">
       <?php if(isset($row['field_job_title']) && !empty($row['field_job_title'])) { ?>
       <div class="views-field views-field-field-job-title"> 
-        <span class="field-label">Job Title:</span>
+        <span class="field-label"><?php print t('Job Title'); ?>:</span>
         <div class="field-content"><?php print $row['field_job_title']; ?></div>
       </div>
       <?php } ?>
       <?php if(isset($row['field_languages']) && !empty($row['field_languages'])) { ?>
       <div class="views-field views-field-field-languages"> 
-        <span class="field-label">Languages:</span>
+        <span class="field-label"><?php print t('Languages'); ?>:</span>
         <div class="field-content"><?php print $row['field_languages']; ?></div>
       </div>
       <?php } ?> 
       <?php if(isset($row['field_birthday']) && !empty($row['field_birthday'])) { ?>
       <div class="views-field views-field-field-birthday"> 
-        <span class="field-label">Birthday:</span>
+        <span class="field-label"><?php print t('Birthday'); ?>:</span>
         <div class="field-content"><?php print $row['field_birthday']; ?></div>
       </div>
       <?php } ?>
       <?php if(isset($row['field_other']) && !empty($row['field_other'])) { ?>
       <div class="views-field views-field-field-other"> 
-        <span class="field-label">Other:</span>
+        <span class="field-label"><?php print t('Other'); ?>:</span>
         <div class="field-content"><?php print $row['field_other']; ?></div>
       </div>
       <?php } ?>

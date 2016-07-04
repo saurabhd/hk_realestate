@@ -33,5 +33,13 @@ function hk_crm_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'task_type' => array(
+      'name' => 'Task type',
+      'machine_name' => 'task_type',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
   );
 }

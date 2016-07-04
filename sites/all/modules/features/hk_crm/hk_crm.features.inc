@@ -23,6 +23,13 @@ function hk_crm_default_crm_core_activity_type() {
     "activity_string" : "",
     "description" : ""
   }');
+  $items['task'] = entity_import('crm_core_activity_type', '{
+    "type" : "task",
+    "label" : "Task",
+    "weight" : 0,
+    "activity_string" : "An agent created a task",
+    "description" : "Agents can create tasks to fill their personal to-do list on the agent central view."
+  }');
   return $items;
 }
 

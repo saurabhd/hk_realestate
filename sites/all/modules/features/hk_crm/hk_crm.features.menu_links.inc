@@ -18,6 +18,7 @@ function hk_crm_menu_default_menu_links() {
     'link_title' => 'Agent Central',
     'options' => array(
       'alter' => TRUE,
+      'identifier' => 'menu-crm-core-menu_agent-central:<front>',
       'icon' => array(
         'icon' => '',
         'position' => 'title_before',
@@ -32,7 +33,6 @@ function hk_crm_menu_default_menu_links() {
         'class' => 'menu-agent-central',
         'style' => '',
       ),
-      'identifier' => 'menu-crm-core-menu_agent-central:<front>',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -42,6 +42,40 @@ function hk_crm_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
     'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-crm-core-menu_ausloggen:user/logout.
+  $menu_links['menu-crm-core-menu_ausloggen:user/logout'] = array(
+    'menu_name' => 'menu-crm-core-menu',
+    'link_path' => 'user/logout',
+    'router_path' => 'user/logout',
+    'link_title' => 'Ausloggen',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => 'menu-logout',
+        'style' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-crm-core-menu_ausloggen:user/logout',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 1,
+    'customized' => 1,
+    'language' => 'de',
     'menu_links_customized' => 1,
   );
   // Exported menu link: menu-crm-core-menu_dashboard:search.
@@ -150,6 +184,7 @@ function hk_crm_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Agent Central');
+  t('Ausloggen');
   t('Dashboard');
   t('Login');
   t('Logout');

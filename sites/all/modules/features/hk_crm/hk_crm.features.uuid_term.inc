@@ -37,7 +37,7 @@ function hk_crm_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Buyer',
+    'name' => 'Prospective buyer',
     'description' => '',
     'format' => 'full_html',
     'weight' => 0,
@@ -52,7 +52,7 @@ function hk_crm_uuid_features_default_terms() {
           'source' => '',
           'status' => 1,
           'translate' => 0,
-          'created' => 1466055734,
+          'created' => 1467614207,
           'entity_uuid' => '066dd50b-eef1-4595-8e2a-921c4ed82b09',
           'user_uuid' => '928db377-1630-4f2f-ba49-dbf713df4139',
         ),
@@ -66,7 +66,7 @@ function hk_crm_uuid_features_default_terms() {
     'name' => 'Business partner',
     'description' => '',
     'format' => 'full_html',
-    'weight' => 0,
+    'weight' => 2,
     'uuid' => '094ac88a-d41e-4149-8fcf-42e49ee3ebd5',
     'vocabulary_machine_name' => 'individual_type',
     'translations' => array(
@@ -300,7 +300,7 @@ function hk_crm_uuid_features_default_terms() {
     'name' => 'Agent',
     'description' => '',
     'format' => 'full_html',
-    'weight' => 0,
+    'weight' => 3,
     'uuid' => '89565d57-4e16-44c8-93f8-a1ec188864a4',
     'vocabulary_machine_name' => 'individual_type',
     'translations' => array(
@@ -349,10 +349,10 @@ function hk_crm_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Seller',
+    'name' => 'Owner',
     'description' => '',
     'format' => 'full_html',
-    'weight' => 0,
+    'weight' => 1,
     'uuid' => '960b677d-0691-410e-9ca9-4c1b59a137d5',
     'vocabulary_machine_name' => 'individual_type',
     'translations' => array(
@@ -364,7 +364,7 @@ function hk_crm_uuid_features_default_terms() {
           'source' => '',
           'status' => 1,
           'translate' => 0,
-          'created' => 1466055745,
+          'created' => 1467614177,
           'entity_uuid' => '960b677d-0691-410e-9ca9-4c1b59a137d5',
           'user_uuid' => '928db377-1630-4f2f-ba49-dbf713df4139',
         ),

@@ -1,0 +1,125 @@
+<?php
+
+/**
+ * @file
+ * Fill form elements with data from GET or POST values.
+ *
+ * Originally written by ea. Farris <eafarris@gmail.com>
+ * Based on an idea from chx, from the conversation at
+ * http://www.drupal.org/node/27155.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function prepopulate_help($path, $arg) {
+  switch ($path) {
+    case 'admin/modules#description':
+      return t('Pre-populates forms with HTTP GET or POST data');
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function prepopulate_form_alter(&$form, $form_state, $form_id) {
+  // If this is a subsequent step of a multi-step form, the prepopulate values
+  // have done their work, and the user may have modified them: bail.
+  if (!empty($form_state['rebuild'])) {
+    return;
+  }
+  if (isset($_REQUEST['edit'])) {
+    $form['#after_build'][] = 'prepopulate_after_build';
+  }
+}
+
+/**
+ * An #after_build function to set the values prepopulated in the request.
+ */
+function prepopulate_after_build($form, &$form_state) {
+  _prepopulate_log($form, 'form');
+  if (isset($_REQUEST['edit'])) {
+    $request = (array) $_REQUEST['edit'];
+    _prepopulate_request_walk($form, $request);
+  }
+  return $form;
+}
+
+/**
+ * Internal helper to set element values from the $_REQUEST variable.
+ *
+ * @param array &$form
+ *   A form element.
+ * @param mixed &$request_slice
+ *   String or array. Value(s) to be applied to the element.
+ */
+function _prepopulate_request_walk(&$form, &$request_slice) {
+  $limited_types = array(
+    'actions',
+    'button',
+    'token',
+    'value',
+    'hidden',
+    'image_button',
+    'password',
+    'password_confirm',
+    'markup',
+    );
+  if (is_array($request_slice)) {
+    foreach (array_keys($request_slice) as $request_variable) {
+
+      $and_checks = array(
+        'is child' => element_child($request_variable),
+        'in form' => !empty($form[$request_variable]),
+      );
+      _prepopulate_log($and_checks, "Is element: " . $request_variable);
+      if (array_sum($and_checks) == count($and_checks)) {
+        $or_checks = array(
+            'no #type set' => !isset($form[$request_variable]['#type']),
+            'language container' => isset($form[$request_variable]['#language']) && isset($form[$request_variable][$form[$request_variable]['#language']]['#type']) && !in_array($form[$request_variable][$form[$request_variable]['#language']]['#type'], $limited_types),
+            'container' => isset($form[$request_variable]['#type']) && $form[$request_variable]['#type'] == 'container' && isset($form[$request_variable]['#language']) && isset($form[$request_variable][$form[$request_variable]['#language']][0]['#type']) && $form[$request_variable][$form[$request_variable]['#language']][0]['#type'] == 'text_format',
+            'allowed #type' => isset($form[$request_variable]['#type']) && !in_array($form[$request_variable]['#type'], $limited_types),
+        );
+        _prepopulate_log($or_checks, 'is valid for drill down: ' . $request_variable);
+        if (array_sum($or_checks) > 0) {
+          if (!isset($form[$request_variable]['#access']) || $form[$request_variable]['#access'] != FALSE) {
+            _prepopulate_request_walk($form[$request_variable], $request_slice[$request_variable]);
+          }
+        }
+        else {
+          _prepopulate_log($or_checks, 'Not valid: ' . $request_variable);
+        }
+      }
+      else {
+        _prepopulate_log($and_checks, 'Not valid: ' . $request_variable);
+      }
+    }
+    if (!empty($form['#default_value']) && is_array($form['#default_value'])) {
+      $form['#default_value'] = array_merge($form['#default_value'], $request_slice);
+    }
+  }
+  else {
+    _prepopulate_log($request_slice, 'setting value');
+    if ($form['#type'] == 'markup' || empty($form['#type'])) {
+      $form['#value'] = check_plain($request_slice);
+    }
+    else {
+      $form['#value'] = $request_slice;
+    }
+    if ($form['#type'] == 'checkboxes' || $form['#type'] == 'checkbox') {
+      if (!empty($form['#value'])) {
+        $form['#checked'] = TRUE;
+      }
+      else {
+        $form['#checked'] = FALSE;
+      }
+    }
+  }
+}
+
+function _prepopulate_log($item, $reason) {
+  global $user;
+  if ($user->uid == 1 && function_exists('dsm')) {
+    dsm($item, $reason);
+  }
+}

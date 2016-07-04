@@ -483,7 +483,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'module' => 'hk_custom_crm',
     'node_types' => array(),
     'pages' => '<?php
-if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(0) == \'search\') {
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(0) == \'search\' || arg(1) == \'agent-central\') {
   return true;
 } else {
   return false;
@@ -501,7 +501,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'content_before',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -35,
+        'weight' => -40,
       ),
       'hk_theme' => array(
         'region' => 'content',
@@ -817,6 +817,76 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'visibility' => 1,
   );
 
+  $export['views-ab8e5f645812c25bdab53ec78e960cb5'] = array(
+    'cache' => -1,
+    'css_class' => 'to-do-task',
+    'custom' => 0,
+    'delta' => 'ab8e5f645812c25bdab53ec78e960cb5',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'crm-core/agent-central/*',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => 'content_before',
+        'status' => 1,
+        'theme' => 'hk_adminimal',
+        'weight' => -39,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'To-do Task',
+    'visibility' => 1,
+  );
+
+  $export['views-calendar-block_2'] = array(
+    'cache' => -1,
+    'css_class' => 'agent-calendar',
+    'custom' => 0,
+    'delta' => 'calendar-block_2',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'crm-core/agent-central/*',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => 'content_before',
+        'status' => 1,
+        'theme' => 'hk_adminimal',
+        'weight' => -38,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 1,
+  );
+
   $export['views-crm_activity_type-block'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -827,7 +897,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<?php
-if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(0) == \'search\') {
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(0) == \'search\' || arg(1) == \'agent-central\') {
   return true;
 } else {
   return false;
@@ -845,7 +915,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'content_before',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -36,
+        'weight' => -41,
       ),
       'hk_theme' => array(
         'region' => 'content',

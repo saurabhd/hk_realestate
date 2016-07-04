@@ -61,6 +61,34 @@ function hk_crm_user_default_permissions() {
     'module' => 'crm_core_activity',
   );
 
+  // Exported permission: 'create crm_core_activity entities of bundle task'.
+  $permissions['create crm_core_activity entities of bundle task'] = array(
+    'name' => 'create crm_core_activity entities of bundle task',
+    'roles' => array(),
+    'module' => 'crm_core_activity',
+  );
+
+  // Exported permission: 'delete any crm_core_activity entity of bundle task'.
+  $permissions['delete any crm_core_activity entity of bundle task'] = array(
+    'name' => 'delete any crm_core_activity entity of bundle task',
+    'roles' => array(),
+    'module' => 'crm_core_activity',
+  );
+
+  // Exported permission: 'delete terms in meeting_type'.
+  $permissions['delete terms in meeting_type'] = array(
+    'name' => 'delete terms in meeting_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in task_type'.
+  $permissions['delete terms in task_type'] = array(
+    'name' => 'delete terms in task_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any crm_core_activity entity of bundle email'.
   $permissions['edit any crm_core_activity entity of bundle email'] = array(
     'name' => 'edit any crm_core_activity entity of bundle email',
@@ -77,6 +105,41 @@ function hk_crm_user_default_permissions() {
       'agent' => 'agent',
     ),
     'module' => 'crm_core_activity',
+  );
+
+  // Exported permission: 'edit any crm_core_activity entity of bundle task'.
+  $permissions['edit any crm_core_activity entity of bundle task'] = array(
+    'name' => 'edit any crm_core_activity entity of bundle task',
+    'roles' => array(),
+    'module' => 'crm_core_activity',
+  );
+
+  // Exported permission: 'edit terms in meeting_type'.
+  $permissions['edit terms in meeting_type'] = array(
+    'name' => 'edit terms in meeting_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in task_type'.
+  $permissions['edit terms in task_type'] = array(
+    'name' => 'edit terms in task_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'merge meeting_type terms'.
+  $permissions['merge meeting_type terms'] = array(
+    'name' => 'merge meeting_type terms',
+    'roles' => array(),
+    'module' => 'term_merge',
+  );
+
+  // Exported permission: 'merge task_type terms'.
+  $permissions['merge task_type terms'] = array(
+    'name' => 'merge task_type terms',
+    'roles' => array(),
+    'module' => 'term_merge',
   );
 
   // Exported permission: 'use search_api_autocomplete for search_api_page_contact_search_box'.
@@ -133,6 +196,13 @@ function hk_crm_user_default_permissions() {
     'roles' => array(
       'agent' => 'agent',
     ),
+    'module' => 'crm_core_activity',
+  );
+
+  // Exported permission: 'view any crm_core_activity entity of bundle task'.
+  $permissions['view any crm_core_activity entity of bundle task'] = array(
+    'name' => 'view any crm_core_activity entity of bundle task',
+    'roles' => array(),
     'module' => 'crm_core_activity',
   );
 

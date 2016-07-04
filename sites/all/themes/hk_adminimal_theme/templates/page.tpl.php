@@ -19,7 +19,7 @@
 
 </div>
 <?php } ?>
-<?php if(arg(0) == 'crm-core' && arg(1) == 'contact' && is_numeric(arg(2)) && empty(arg(3))) { ?>
+<?php if(arg(0) == 'crm-core' && arg(1) == 'contact' && is_numeric(arg(2)) && empty(arg(3)) || arg(1) == 'agent-central') { ?>
 <div class="wrapper navigation">
   <div class="container">
     <?php if ($logo): ?>

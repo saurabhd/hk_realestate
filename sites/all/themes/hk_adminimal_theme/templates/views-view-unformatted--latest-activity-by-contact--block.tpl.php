@@ -15,5 +15,5 @@
   <td class="views-field views-field-activity-date"><?php print $row['field_activity_date']; ?></td>
   <td class="views-field views-field-activity-type"><?php print $row['type']; ?><span></span></td>
   <td class="views-field views-field-action"><?php print $row['nothing']; ?></td>
-  <tr><td colspan="5"><?php print $row['field_activity_notes']; ?></td></tr>
+  <tr class="hide-notes"><td colspan="5"><?php print $row['field_activity_notes']; ?></td></tr>
 <?php endforeach; ?>

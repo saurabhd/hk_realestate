@@ -37,6 +37,7 @@ dependencies[] = locale
 dependencies[] = menu
 dependencies[] = options
 dependencies[] = php
+dependencies[] = prepopulate
 dependencies[] = quicktabs
 dependencies[] = quicktabs_tabstyles
 dependencies[] = rules

@@ -26,10 +26,10 @@
   <?php if (!empty($header)) : ?>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Last Date</th>
-        <th>Last Activity</th>
-        <th>Action</th>
+        <th><?php print t('Name'); ?></th>
+        <th><?php print t('Last Date'); ?></th>
+        <th><?php print t('Last Activity'); ?></th>
+        <th><?php print t('Action'); ?></th>
       </tr>
     </thead>
   <?php endif; ?>

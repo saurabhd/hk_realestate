@@ -281,7 +281,7 @@ class date_views_plugin_pager extends views_plugin_pager {
         else {
           $this->view->date_info->prev_date = clone($argument->min_date);
           date_modify($this->view->date_info->prev_date, '-1 ' . $argument->date_handler->granularity);
-          $this->view->date_info->next_date = clone($argument->max_date);
+          $this->view->date_info->next_date = clone($argument->min_date);
           date_modify($this->view->date_info->next_date, '+1 ' . $argument->date_handler->granularity);
         }
         // Write the date_info properties that depend on the current value.
@@ -295,7 +295,7 @@ class date_views_plugin_pager extends views_plugin_pager {
       }
       $i++;
     }
-
+   // exit;
     // Is this a view that needs to be altered based on a pager value?
     // If there is pager input and the argument has set the placeholders,
     // swap the pager value in for the placeholder set by the argument.

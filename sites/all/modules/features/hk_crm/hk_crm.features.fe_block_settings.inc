@@ -559,7 +559,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '<?php
-if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(0) == \'search\') {
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(0) == \'search\' || arg(1) == \'agent-central\') {
   return true;
 } else {
   return false;
@@ -625,6 +625,41 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'visibility' => 0,
   );
 
+  $export['quicktabs-agent_calendar'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'agent_calendar',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'quicktabs',
+    'node_types' => array(),
+    'pages' => 'crm-core/agent-central/*',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => 'content_before',
+        'status' => 1,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['quicktabs-crm_contact_page'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -676,7 +711,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'module' => 'search_api_page',
     'node_types' => array(),
     'pages' => '<?php
-if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3))) {
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3)) || arg(1) == \'agent-central\') {
   return true;
 } else {
   return false;
@@ -871,8 +906,8 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => 0,
       ),
       'hk_adminimal' => array(
-        'region' => 'content_before',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'hk_adminimal',
         'weight' => -38,
       ),

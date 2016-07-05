@@ -8,6 +8,9 @@
 
 /* Contact page design */
 .page-crm-core-contact {
+  #page {
+    padding: 0;
+  }
   .navigation {
     position: fixed;
     height: 96px;
@@ -23,7 +26,7 @@
     #navigation-inner {
       display: inline-block;
       float: left;
-      width: calc(100% - 220px);
+      width: calc(100% - 250px);
       .region-navigation {
         display: inline-block;
         width: 100%;
@@ -78,7 +81,7 @@
                 a {
                   color: #000;
                   font-size: 15px;
-                  font-family: '$helvetica-neue';
+                  font-family: 'helvetica-neue';
                   text-decoration: none;
                   text-align: left;
                 }
@@ -157,7 +160,7 @@
   }
   #navigation {
     display: inline-block;
-    width: 100%;
+    width: 100% !important;
     padding-top: 96px;
     clear: both;
   }
@@ -298,13 +301,13 @@
       display: inline-block;
       text-transform: uppercase;
       .view-header {
-        width: 162px;
-        margin-right: 5px;
+        width: 240px;
+        margin-right:  5px;
         padding: 10px 38px;
         background-color: #1A1A1A;
         color: #FFF;
         font-size: 14px;
-        font-family: '$helvetica-neue';
+        font-family: 'helvetica-neue';
         cursor: pointer;
         background-image: url('../images/Icon_Arrow_down.png');
         background-position: right 10px center;
@@ -313,6 +316,7 @@
       }
       .view-crm-contact-type {
         .view-header {
+          width: 163px;
           background-color: #D92227;
         }
       }
@@ -984,7 +988,7 @@
                 a {
                   color: #000;
                   font-size: 15px;
-                  font-family: '$helvetica-neue';
+                  font-family: 'helvetica-neue';
                   text-decoration: none;
                   text-align: left;
                 }
@@ -1074,7 +1078,7 @@
         background-color: #1A1A1A;
         color: #FFF;
         font-size: 14px;
-        font-family: '$helvetica-neue';
+        font-family: 'helvetica-neue';
         cursor: pointer;
         background-image: url('../images/Icon_Arrow_down.png');
         background-position: right 10px center;
@@ -1083,6 +1087,7 @@
       }
       .view-crm-contact-type {
         .view-header {
+          width: 240px;
           background-color: #D92227;
         }
       }
@@ -1130,6 +1135,166 @@
         .item-list {
           ul {
             display: block;
+          }
+        }
+      }
+    }
+    .to-do-task {
+      float: left;
+      display: inline-block;
+      width: 46%;
+      .view-header {
+        .block-title {
+          margin-top: 10px;
+          font-size: 32px;
+          font-family: 'sans-serif';
+        }
+      }
+      .view-content {
+        border: 1px solid #C5C5C5;
+        .views-row {
+          padding: 20px;
+          background-image: url('../images/Line_dotted.jpg');
+          background-position: center bottom;
+          background-repeat: repeat-x;
+        }
+        .views-row-last {
+          background-image: none;
+        }
+        .views-field-title {
+          display: inline-block;
+          font-size: 18px;
+          font-family: 'sans-serif';
+        }
+        .views-field-field-activity-date {
+          float: right;
+          display: inline-block;
+          .field-content {
+            float: right;
+          }
+        }
+        .views-field-field-activity-notes {
+          font-size: 14px;
+          font-family: 'sans-serif';
+        }
+      }
+    }
+    #block-quicktabs-agent-calendar {
+      float: right;
+      display: inline-block;
+      width: 48%;
+      margin-top: 30px;
+      border: 1px solid #7A7A7A;
+      .header-section {
+        padding: 15px 0;
+        background-color: #D92227;
+        color: #FFF;
+        font-weight: bold;
+        background-image: url('../images/Line_dotted.jpg');
+        background-position: center 65px;
+        background-repeat: repeat-x;
+        h2,
+        .sub-title {
+          padding-left: 40px;
+        }
+        h2 {
+          margin-bottom: 5px;
+          font-size: 30px;
+        }
+        .sub-title {
+          font-size: 14px;
+        }
+      }
+      .quicktabs-style-zen {
+        padding: 0 10px 3px 0;
+        .quicktabs-style-zen {
+          margin: 20px 0 10px 0;
+          padding: 0px 0 3px 40px;
+          li {
+            a {
+              color: #000;
+            }
+          }
+          li.active {
+            padding: 0;
+            background-image: none;
+            a {
+              background-image: none;
+              background-color: #ED91A1;
+              border-radius: 5px 5px 0 0;
+            }
+          }
+        }
+      }
+      #quicktabs-container-agent_calendar {
+        .date-nav {
+          .date-heading {
+            font-size: 15px;
+            font-family: 'sans-serif';
+          }
+          .pager {
+            .date-prev {
+              padding: 5px 10px 5px 0;
+              background-color: #D92227;
+              color: #FFF;
+            }
+            .date-next {
+              padding: 5px 0 5px 10px;
+              background-color: #D92227;
+              color: #FFF;
+            }
+          }
+        }
+        .view-content {
+          padding-top: 10px;
+          .views-row {
+            margin-bottom: 10px;
+          }
+          .left-section {
+            display: inline-block;
+            margin-right: 20px;
+            .views-field-activity-date {
+              .field-content {
+                display: inline-block;
+                width: 50px;
+                padding: 5px 10px;
+                background-color: #E5DFED;
+                text-align: center;
+                font-size: 28px;
+                line-height: 24px;
+              }
+            }
+          }
+          .right-section {
+            display: inline-block;
+            width: calc(100% - 135px);
+            vertical-align: top;
+            background-color: #EBEBEB;
+            padding: 10px 10px 10px 30px;
+            .notes-plus-icon {
+              float: right;
+              height: 25px;
+              width: 25px;
+              margin-top: -30px;
+              background-image: url('../images/plus.png');
+              background-repeat: no-repeat;
+              vertical-align: middle;
+            }
+            .left-content {
+              .views-field-title {
+                .field-content {
+                  color: #C61C2C;
+                  font-size: 14px;
+                  font-family: 'sans-serif';
+                }
+              }
+              .views-field-activity-time {
+                .field-content {
+                  font-size: 14px;
+                  font-family: 'sans-serif';
+                }
+              }
+            }
           }
         }
       }

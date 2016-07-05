@@ -93,6 +93,14 @@ function hk_crm_views_default_views() {
 
   /* Display: day */
   $handler = $view->new_display('block', 'day', 'block');
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="no-results">There is no meeting scheduled for this day.</div>';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (crm_core_activity) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
@@ -117,6 +125,14 @@ function hk_crm_views_default_views() {
 
   /* Display: week */
   $handler = $view->new_display('block', 'week', 'block_1');
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="no-results">There is no meeting scheduled for this week.</div>';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: CRM Core Activity: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -201,6 +217,14 @@ function hk_crm_views_default_views() {
 
   /* Display: month */
   $handler = $view->new_display('block', 'month', 'block_2');
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="no-results">There is no meeting scheduled for this month.</div>';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: CRM Core Activity: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -284,6 +308,14 @@ function hk_crm_views_default_views() {
 
   /* Display: year */
   $handler = $view->new_display('block', 'year', 'block_3');
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="no-results">There is no meeting scheduled for this year.</div>';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (crm_core_activity) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
@@ -598,11 +630,10 @@ function hk_crm_views_default_views() {
       'separator' => ', ',
     ),
   );
-  $handler->display->display_options['path'] = 'crm-core/agent-central/%';
-  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['path'] = 'crm-core/agent-central';
   $handler->display->display_options['menu']['title'] = 'Agent Central';
   $handler->display->display_options['menu']['weight'] = '10';
-  $handler->display->display_options['menu']['name'] = 'crm-core-menu';
+  $handler->display->display_options['menu']['name'] = 'menu-crm-core-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['agent_central'] = $view;
@@ -1914,6 +1945,57 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail']['label'] = '';
   $handler->display->display_options['fields']['field_e_mail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail']['type'] = 'email_plain';
+
+  /* Display: Entity Reference 2 */
+  $handler = $view->new_display('entityreference', 'Entity Reference 2', 'entityreference_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'contact_name' => 'contact_name',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: CRM Core Contact: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'crm_core_contact';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: CRM Core Contact: Mitarbeiter */
+  $handler->display->display_options['fields']['contact_name']['id'] = 'contact_name';
+  $handler->display->display_options['fields']['contact_name']['table'] = 'field_data_contact_name';
+  $handler->display->display_options['fields']['contact_name']['field'] = 'contact_name';
+  $handler->display->display_options['fields']['contact_name']['label'] = '';
+  $handler->display->display_options['fields']['contact_name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['contact_name']['alter']['text'] = '[contact_name-title] [contact_name] ';
+  $handler->display->display_options['fields']['contact_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['contact_name']['click_sort_column'] = 'title';
+  $handler->display->display_options['fields']['contact_name']['settings'] = array(
+    'format' => 'short_full',
+    'markup' => 0,
+    'output' => 'default',
+    'multiple' => 'default',
+    'multiple_delimiter' => ', ',
+    'multiple_and' => 'text',
+    'multiple_delimiter_precedes_last' => 'never',
+    'multiple_el_al_min' => '3',
+    'multiple_el_al_first' => '1',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    9 => '9',
+  );
   $export['recipient'] = $view;
 
   $view = new view();
@@ -2365,11 +2447,12 @@ function hk_crm_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_angefragte_wohnung']['delta_offset'] = '0';
-  /* Field: Content: Objekt ID */
+  /* Field: Content: Object ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['relationship'] = 'field_angefragte_wohnung_target_id';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['label'] = 'Objekt ID';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['exclude'] = TRUE;
   /* Field: Content: Apartment No. */
   $handler->display->display_options['fields']['field_apart_no']['id'] = 'field_apart_no';
@@ -2502,7 +2585,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_no']['label'] = '';
   $handler->display->display_options['fields']['field_apart_no']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_apart_no']['element_label_colon'] = FALSE;
-  /* Field: Content: Objekt ID */
+  /* Field: Content: Object ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';

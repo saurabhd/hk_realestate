@@ -657,7 +657,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['quicktabs-crm_contact_page'] = array(

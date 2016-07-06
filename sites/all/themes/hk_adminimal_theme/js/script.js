@@ -138,8 +138,7 @@
       if($('body').find('.last-save-searches a').length) {
         var last_search_full_url = $('body').find('.last-save-searches a').attr('href');
         var last_search_url = last_search_full_url.split('?');
-        
-        if(typeof current_url[1] === 'undefined') {
+        if(typeof current_url[1] === 'undefined' && typeof last_search_url[1] !== 'undefined') {
           var url = current_url[0]+'?'+last_search_url[1];
           window.location.href = url;
         }

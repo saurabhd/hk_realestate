@@ -514,6 +514,46 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'visibility' => 2,
   );
 
+  $export['hk_custom_crm-custom_saved_search'] = array(
+    'cache' => 1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'custom_saved_search',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'hk_custom_crm',
+    'node_types' => array(),
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3))) {
+  return true;
+} else {
+  return false;
+}',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => 'sidebar_right',
+        'status' => 1,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 2,
+  );
+
   $export['locale-language'] = array(
     'cache' => 2,
     'css_class' => 'language-switcher',
@@ -987,8 +1027,8 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => 0,
       ),
       'hk_adminimal' => array(
-        'region' => 'sidebar_right',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'hk_adminimal',
         'weight' => 0,
       ),

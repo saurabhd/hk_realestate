@@ -1233,7 +1233,11 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
                   vertical-align: middle;
                   letter-spacing: 2px;
                   font-family: "sans-serif";
-                  &:hover {
+                  &:hover,
+                  &:active {
+                    color: #C61C2C;
+                  }
+                  &.active {
                     color: #C61C2C;
                   }
                 }

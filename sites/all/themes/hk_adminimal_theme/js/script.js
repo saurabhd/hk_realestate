@@ -19,6 +19,22 @@
           $(this).parent().next().addClass('show-notes');
          }  
       });
+      $(".notes-plus-icon").click(function(){
+        if($(this).parents('.right-section').next().hasClass('show-notes')) {
+            $(this).parents('.right-section').next().removeClass('show-notes');
+         } else {
+          $('.hide-notes').removeClass('show-notes');
+          $(this).parents('.right-section').next().addClass('show-notes');
+         }  
+      });
+      $(".plus-icon").click(function(){
+        if($(this).parents('tr').next().hasClass('show-notes')) {
+            $(this).parents('tr').next().removeClass('show-notes');
+         } else {
+          $('.hide-notes').removeClass('show-notes');
+          $(this).parents('tr').next().addClass('show-notes');
+         }  
+      });
 
       $('.facetapi-multiselect-field-bezirk').select2({
           placeholder: Drupal.t('Borough'),

@@ -85,7 +85,7 @@ function hk_custom_crm_translated_menu_link_alter(&$link) {
       ->condition('uid', $uid)
       ->execute();
   $results = $query->fetchAll();
-  if(in_array('agent', $user->roles) || isset($results) && !empty($results) ) {
+  if(in_array('agent', $user->roles) && isset($results) && !empty($results) ) {  
     $cid = $results[0]->contact_id;
   }
   if ($link['link_title'] == 'Agent Central') {

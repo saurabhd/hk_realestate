@@ -271,6 +271,7 @@ function hk_crm_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'anfrage' => 'anfrage',
+          'kontaktformular' => 'kontaktformular',
         ),
       ),
       'target_type' => 'crm_core_activity',

@@ -71,10 +71,10 @@ function hk_crm_flag_default_flags() {
     'types' => array(
       0 => 'task',
     ),
-    'flag_short' => 'Task Complete',
+    'flag_short' => 'Mark as completed',
     'flag_long' => '',
     'flag_message' => '',
-    'unflag_short' => 'Task Uncomplete',
+    'unflag_short' => 'Mark as uncompleted',
     'unflag_long' => '',
     'unflag_message' => '',
     'unflag_denied_text' => '',

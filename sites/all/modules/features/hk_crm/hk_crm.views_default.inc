@@ -572,10 +572,18 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: CRM Core Contact: Contact ID */
+  $handler->display->display_options['fields']['contact_id']['id'] = 'contact_id';
+  $handler->display->display_options['fields']['contact_id']['table'] = 'crm_core_contact';
+  $handler->display->display_options['fields']['contact_id']['field'] = 'contact_id';
+  $handler->display->display_options['fields']['contact_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['contact_id']['link_to_contact'] = 0;
   /* Field: CRM Core Contact: Mitarbeiter */
   $handler->display->display_options['fields']['contact_name']['id'] = 'contact_name';
   $handler->display->display_options['fields']['contact_name']['table'] = 'field_data_contact_name';
   $handler->display->display_options['fields']['contact_name']['field'] = 'contact_name';
+  $handler->display->display_options['fields']['contact_name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['contact_name']['alter']['path'] = 'crm-core/contact/[contact_id]';
   $handler->display->display_options['fields']['contact_name']['click_sort_column'] = 'title';
   $handler->display->display_options['fields']['contact_name']['settings'] = array(
     'format' => 'full',
@@ -588,12 +596,6 @@ function hk_crm_views_default_views() {
     'multiple_el_al_min' => '3',
     'multiple_el_al_first' => '1',
   );
-  /* Field: CRM Core Contact: Contact ID */
-  $handler->display->display_options['fields']['contact_id']['id'] = 'contact_id';
-  $handler->display->display_options['fields']['contact_id']['table'] = 'crm_core_contact';
-  $handler->display->display_options['fields']['contact_id']['field'] = 'contact_id';
-  $handler->display->display_options['fields']['contact_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['contact_id']['link_to_contact'] = 0;
   /* Field: Global: View */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
@@ -2256,7 +2258,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none-accelerated';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
@@ -2866,6 +2868,8 @@ function hk_crm_views_default_views() {
   $handler = $view->new_display('block', 'Task List', 'block_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'To-do Task';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none-debug';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -2909,7 +2913,17 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_activity_notes']['table'] = 'field_data_field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['field'] = 'field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['label'] = '';
+  $handler->display->display_options['fields']['field_activity_notes']['alter']['max_length'] = '80';
+  $handler->display->display_options['fields']['field_activity_notes']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['field_activity_notes']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_activity_notes']['type'] = 'readmore';
+  $handler->display->display_options['fields']['field_activity_notes']['settings'] = array(
+    'readmore_trim_length' => '80',
+    'readmore_trim_on_break' => 1,
+    'readmore_show_readless' => 1,
+    'readmore_ellipsis' => 1,
+    'readmore_wordsafe' => 1,
+  );
   /* Field: CRM Core Activity: Author */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'crm_core_activity';
@@ -2924,6 +2938,11 @@ function hk_crm_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_activity_participants']['delta_offset'] = '0';
+  /* Field: CRM Core Activity: Activity ID */
+  $handler->display->display_options['fields']['activity_id']['id'] = 'activity_id';
+  $handler->display->display_options['fields']['activity_id']['table'] = 'crm_core_activity';
+  $handler->display->display_options['fields']['activity_id']['field'] = 'activity_id';
+  $handler->display->display_options['fields']['activity_id']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: CRM Core Activity: Date (field_activity_date) */
   $handler->display->display_options['sorts']['field_activity_date_value']['id'] = 'field_activity_date_value';

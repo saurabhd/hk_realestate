@@ -1840,12 +1840,12 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_activity_date']['table'] = 'field_data_field_activity_date';
   $handler->display->display_options['fields']['field_activity_date']['field'] = 'field_activity_date';
   $handler->display->display_options['fields']['field_activity_date']['label'] = '';
-  $handler->display->display_options['fields']['field_activity_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_activity_date']['alter']['text'] = '[field_activity_date] Before';
+  $handler->display->display_options['fields']['field_activity_date']['alter']['text'] = '[field_activity_date] ';
   $handler->display->display_options['fields']['field_activity_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_activity_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_activity_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
+    'format_type' => 'search_api_facetapi_DAY',
+    'fromto' => '',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -1891,6 +1891,15 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['arguments']['field_activity_participants_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_activity_participants_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_activity_participants_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: CRM Core Activity: Date (field_activity_date) */
+  $handler->display->display_options['filters']['field_activity_date_value']['id'] = 'field_activity_date_value';
+  $handler->display->display_options['filters']['field_activity_date_value']['table'] = 'field_data_field_activity_date';
+  $handler->display->display_options['filters']['field_activity_date_value']['field'] = 'field_activity_date_value';
+  $handler->display->display_options['filters']['field_activity_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_activity_date_value']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_activity_date_value']['default_date'] = 'now';
   $export['latest_activity_by_contact'] = $view;
 
   $view = new view();
@@ -2888,6 +2897,12 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2 class="block-title">To-do Task</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Flags: completed */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'crm_core_activity';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'completed';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: CRM Core Activity: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -2918,7 +2933,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_activity_notes']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_activity_notes']['type'] = 'readmore';
   $handler->display->display_options['fields']['field_activity_notes']['settings'] = array(
-    'readmore_trim_length' => '80',
+    'readmore_trim_length' => '60',
     'readmore_trim_on_break' => 1,
     'readmore_show_readless' => 1,
     'readmore_ellipsis' => 1,
@@ -2943,6 +2958,14 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['activity_id']['table'] = 'crm_core_activity';
   $handler->display->display_options['fields']['activity_id']['field'] = 'activity_id';
   $handler->display->display_options['fields']['activity_id']['exclude'] = TRUE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['ops']['link_type'] = 'toggle';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: CRM Core Activity: Date (field_activity_date) */
   $handler->display->display_options['sorts']['field_activity_date_value']['id'] = 'field_activity_date_value';
@@ -2976,6 +2999,12 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['filters']['field_erledigt_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '0';
   $export['unclaimed_leads_table_view'] = $view;
 
   return $export;

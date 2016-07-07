@@ -59,6 +59,48 @@ function hk_crm_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function hk_crm_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Completed".
+  $flags['completed'] = array(
+    'entity_type' => 'crm_core_activity',
+    'title' => 'Completed',
+    'global' => 0,
+    'types' => array(
+      0 => 'task',
+    ),
+    'flag_short' => 'Task Complete',
+    'flag_long' => '',
+    'flag_message' => '',
+    'unflag_short' => 'Task Uncomplete',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 'full',
+      'diff_standard' => 0,
+      'live_results_search' => 0,
+      'token' => 0,
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'api_version' => 3,
+    'module' => 'hk_crm',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_default_search_api_autocomplete_search().
  */
 function hk_crm_default_search_api_autocomplete_search() {

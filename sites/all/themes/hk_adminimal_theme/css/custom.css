@@ -67,6 +67,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 9, ../sass/custom.scss */
+body.page-crm-core-contact, body.page-crm-core-agent-central {
+  font-family: 'helvetica-neue w01' !important;
+}
+
+/* line 16, ../sass/custom.scss */
 .page-crm-core-contact #page,
 .page-crm-core-agent-central #page {
   width: auto !important;
@@ -74,7 +79,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* Contact page design */
-/* line 17, ../sass/custom.scss */
+/* line 24, ../sass/custom.scss */
 .page-crm-core-contact .navigation {
   position: fixed;
   height: 96px;
@@ -83,25 +88,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   z-index: 102;
 }
-/* line 24, ../sass/custom.scss */
+/* line 31, ../sass/custom.scss */
 .page-crm-core-contact .navigation #logo {
   float: left;
   width: 170px;
   margin-left: 50px;
 }
-/* line 29, ../sass/custom.scss */
+/* line 36, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner {
   display: inline-block;
   float: left;
   width: calc(100% - 250px);
 }
-/* line 33, ../sass/custom.scss */
+/* line 40, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation {
   display: inline-block;
   width: 100%;
   /*width: calc(100% - 220px);*/
 }
-/* line 37, ../sass/custom.scss */
+/* line 44, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box {
   float: left;
   position: relative;
@@ -109,7 +114,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-top: 35px;
   margin-left: 38px;
 }
-/* line 44, ../sass/custom.scss */
+/* line 51, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.auto_submit {
   position: relative;
   display: inline-block;
@@ -122,7 +127,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 15px;
   color: #333;
 }
-/* line 56, ../sass/custom.scss */
+/* line 63, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit {
   position: absolute;
   top: 0;
@@ -138,22 +143,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: 12px 8px;
   background-color: transparent;
 }
-/* line 70, ../sass/custom.scss */
+/* line 77, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit:hover {
   box-shadow: none !important;
 }
-/* line 76, ../sass/custom.scss */
+/* line 83, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete {
   width: 294px !important;
   margin-left: 2px !important;
 }
-/* line 80, ../sass/custom.scss */
+/* line 87, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li {
   font-size: 15px;
   padding: 15px 10px 0;
   white-space: nowrap !important;
 }
-/* line 84, ../sass/custom.scss */
+/* line 91, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li a {
   color: #000;
   font-size: 15px;
@@ -161,30 +166,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-decoration: none;
   text-align: left;
 }
-/* line 91, ../sass/custom.scss */
+/* line 98, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover {
   background-color: #1A1A1A;
 }
-/* line 94, ../sass/custom.scss */
+/* line 101, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover h2 a {
   color: #FFF !important;
 }
-/* line 103, ../sass/custom.scss */
+/* line 110, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu {
   display: inline-block;
   float: right;
 }
-/* line 106, ../sass/custom.scss */
+/* line 113, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu {
   margin-top: 35px;
   /*margin-right: 56px;*/
 }
-/* line 109, ../sass/custom.scss */
+/* line 116, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li {
   float: left;
   list-style: none;
 }
-/* line 112, ../sass/custom.scss */
+/* line 119, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a {
   margin: 0 35px 0 8px;
   color: #747474;
@@ -194,16 +199,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   vertical-align: middle;
   letter-spacing: 2px;
 }
-/* line 120, ../sass/custom.scss */
+/* line 127, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:hover, .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:active {
   color: #C61C2C;
   text-decoration: none;
 }
-/* line 126, ../sass/custom.scss */
+/* line 133, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li li.active {
   color: #C61C2C;
 }
-/* line 129, ../sass/custom.scss */
+/* line 136, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li::before {
   display: inline-block;
   /*width: 14px;
@@ -214,48 +219,48 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   vertical-align: middle;
 }
-/* line 140, ../sass/custom.scss */
+/* line 147, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-dashboard::before {
   height: 17px;
   width: 14px;
   background-image: url("../images/menu-symbol-of-four-lines.png");
 }
-/* line 147, ../sass/custom.scss */
+/* line 154, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout::before {
   height: 17px;
   width: 19px;
   background-image: url("../images/logout.png");
 }
-/* line 152, ../sass/custom.scss */
+/* line 159, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout a {
   font-weight: bold;
 }
-/* line 157, ../sass/custom.scss */
+/* line 164, ../sass/custom.scss */
 .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-agent-central::before {
   height: 15px;
   width: 13px;
   background-image: url("../images/malware.png");
 }
-/* line 169, ../sass/custom.scss */
+/* line 176, ../sass/custom.scss */
 .page-crm-core-contact #navigation {
   display: inline-block;
   width: 100% !important;
   padding-top: 96px;
   clear: both;
 }
-/* line 175, ../sass/custom.scss */
+/* line 182, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page {
   display: inline-block;
   width: 100%;
 }
-/* line 179, ../sass/custom.scss */
+/* line 186, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row {
   display: inline-block;
   width: 100%;
   margin-top: 50px;
   border: 1px solid #C3C3C3;
 }
-/* line 184, ../sass/custom.scss */
+/* line 191, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container {
   width: 100%;
   padding: 15px 0 20px;
@@ -264,12 +269,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: repeat-x;
   background-position: center bottom;
 }
-/* line 191, ../sass/custom.scss */
+/* line 198, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .left-content {
   padding-left: 15px;
   display: inline-block;
 }
-/* line 196, ../sass/custom.scss */
+/* line 203, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .left-content .views-field .field-content img {
   height: 200px;
   width: 200px;
@@ -278,7 +283,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -moz-border-radius: 1000px;
   border-radius: 1000px;
 }
-/* line 207, ../sass/custom.scss */
+/* line 214, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content {
   -webkit-width: calc(100% - 250px);
   -moz-width: calc(100% - 250px);
@@ -287,22 +292,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-top: 20px;
   vertical-align: top;
 }
-/* line 214, ../sass/custom.scss */
+/* line 221, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field {
   margin-bottom: 10px;
 }
-/* line 216, ../sass/custom.scss */
+/* line 223, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-content {
   display: inline-block;
   font-size: 14px;
   color: #525252;
 }
-/* line 220, ../sass/custom.scss */
+/* line 227, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-content * {
   display: inline-block;
   vertical-align: top;
 }
-/* line 225, ../sass/custom.scss */
+/* line 232, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-label {
   display: inline-block;
   width: 100px;
@@ -311,22 +316,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: bold;
   vertical-align: top;
 }
-/* line 234, ../sass/custom.scss */
+/* line 241, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-name .field-content {
   font-size: 25px;
   color: #242021;
   font-weight: bold;
 }
-/* line 240, ../sass/custom.scss */
+/* line 247, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-company-name {
   margin-bottom: 15px;
 }
-/* line 242, ../sass/custom.scss */
+/* line 249, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-company-name .field-content {
   font-size: 17px;
   color: #656565;
 }
-/* line 248, ../sass/custom.scss */
+/* line 255, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-address::before {
   background-image: url("../images/location-icon.png");
   background-repeat: no-repeat;
@@ -334,7 +339,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding-left: 30px;
   content: '';
 }
-/* line 258, ../sass/custom.scss */
+/* line 265, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-email::before {
   background-image: url("../images/envelope.png");
   background-repeat: no-repeat;
@@ -342,7 +347,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding-left: 30px;
   content: '';
 }
-/* line 268, ../sass/custom.scss */
+/* line 275, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-phone::before {
   background-image: url("../images/call-answer.png");
   background-repeat: no-repeat;
@@ -350,7 +355,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding-left: 30px;
   content: '';
 }
-/* line 281, ../sass/custom.scss */
+/* line 288, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container {
   display: inline-block;
   min-height: 406px;
@@ -358,11 +363,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: inline-block;
   padding: 30px;
 }
-/* line 287, ../sass/custom.scss */
+/* line 294, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .views-field {
   padding: 15px 0;
 }
-/* line 289, ../sass/custom.scss */
+/* line 296, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .views-field .field-label {
   display: inline-block;
   width: 100px;
@@ -370,62 +375,63 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #323232;
   font-weight: bold;
 }
-/* line 297, ../sass/custom.scss */
+/* line 304, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .field-content {
   display: inline-block;
   font-size: 15px;
 }
-/* line 306, ../sass/custom.scss */
+/* line 313, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block {
   float: right;
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 311, ../sass/custom.scss */
+/* line 318, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-header,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-header {
   width: 240px;
   box-sizing: border-box;
-  margin-right: 5px;
+  margin-left: 5px;
   padding: 10px 38px;
   background-color: #1A1A1A;
   color: #FFF;
   font-size: 14px;
-  font-family: 'helvetica-neue';
+  /*font-family: 'helvetica-neue';*/
   cursor: pointer;
   background-image: url("../images/Icon_Arrow_down.png");
   background-position: right 10px center;
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 327, ../sass/custom.scss */
+/* line 334, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-crm-contact-type .view-header,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-crm-contact-type .view-header {
   width: 240px;
   background-color: #D92227;
+  font-family: 'helvetica-neue w01';
   box-sizing: border-box;
 }
-/* line 334, ../sass/custom.scss */
+/* line 342, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-crm-activity-type p,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-crm-activity-type p {
   margin: 0;
 }
-/* line 338, ../sass/custom.scss */
+/* line 346, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list {
   /*.views-field-label {
     padding: 3px 0 0;
   }*/
 }
-/* line 342, ../sass/custom.scss */
+/* line 350, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul {
   position: absolute;
   display: none;
   max-width: 234px;
   width: 100%;
-  margin: 0;
+  margin: 0 0 0 5px;
   padding: 0;
   background-color: #FFF;
   color: #212830;
@@ -433,18 +439,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-align: center;
   z-index: 1;
 }
-/* line 354, ../sass/custom.scss */
+/* line 362, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li {
   padding: 4px 0 0;
   list-style: none;
 }
-/* line 357, ../sass/custom.scss */
+/* line 365, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li:last-child,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li:last-child {
   padding: 4px 0;
 }
-/* line 360, ../sass/custom.scss */
+/* line 368, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li a {
   text-decoration: none;
@@ -453,44 +459,44 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #C61C2C;
   line-height: 24px;
 }
-/* line 366, ../sass/custom.scss */
+/* line 374, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a:hover,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li a:hover {
   color: #1A1A1A;
 }
-/* line 375, ../sass/custom.scss */
+/* line 383, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type:hover .item-list ul,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block:hover .item-list ul {
   display: block;
 }
-/* line 382, ../sass/custom.scss */
+/* line 390, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page {
   display: inline-block;
   width: 100%;
   margin-top: 50px;
 }
-/* line 386, ../sass/custom.scss */
+/* line 394, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page {
   display: inline-block;
   width: 100%;
 }
-/* line 389, ../sass/custom.scss */
+/* line 397, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs {
   display: inline-block;
   margin-left: 0;
 }
-/* line 392, ../sass/custom.scss */
+/* line 400, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li {
   display: inline-block;
   margin-right: -3px;
   float: left;
 }
-/* line 397, ../sass/custom.scss */
+/* line 405, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li.active a {
   position: relative;
   background-color: #282D33;
 }
-/* line 400, ../sass/custom.scss */
+/* line 408, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li.active a::after {
   border-color: transparent;
   border-top-color: #282D33;
@@ -504,15 +510,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 0;
   content: '';
 }
-/* line 415, ../sass/custom.scss */
+/* line 423, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li:first-child {
   border-right: none;
 }
-/* line 418, ../sass/custom.scss */
+/* line 426, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li:last-child {
   border-right: none;
 }
-/* line 421, ../sass/custom.scss */
+/* line 429, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li a {
   height: 37px;
   background-color: #BD1725;
@@ -523,70 +529,70 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: bold;
   font-size: 15px;
 }
-/* line 430, ../sass/custom.scss */
+/* line 438, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li a:hover {
   background-color: #282D33;
 }
-/* line 437, ../sass/custom.scss */
+/* line 445, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page {
   display: inline-block;
   width: 100%;
   margin-top: 23px;
 }
-/* line 444, ../sass/custom.scss */
+/* line 452, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table thead tr th {
   padding: 25px;
 }
-/* line 450, ../sass/custom.scss */
+/* line 458, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr {
   background: transparent;
 }
-/* line 452, ../sass/custom.scss */
+/* line 460, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td {
   max-width: 160px;
   padding: 25px;
   font-size: 17px;
   color: #333333;
 }
-/* line 457, ../sass/custom.scss */
+/* line 465, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td a {
   padding: 0;
   white-space: normal;
 }
-/* line 462, ../sass/custom.scss */
+/* line 470, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.hide-notes {
   display: none;
 }
-/* line 465, ../sass/custom.scss */
+/* line 473, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.show-notes {
   display: table-row;
   -webkit-transition: all 0.5s ease 0.5s;
   -moz-transition: all 0.5s ease 0.5s;
   transition: all 0.5s ease 0.5s;
 }
-/* line 472, ../sass/custom.scss */
+/* line 480, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.odd {
   border-top: 1px solid #C3C3C3;
   border-bottom: 1px solid #C3C3C3;
   background-image: url("../images/Pattern.jpg");
 }
-/* line 477, ../sass/custom.scss */
+/* line 485, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.even {
   border-top: none;
   border-bottom: none;
 }
-/* line 488, ../sass/custom.scss */
+/* line 496, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .view-display-id-block_1 table tbody tr td.views-field-field-activity-notes {
   background-image: url("../images/plus.png");
   background-repeat: no-repeat;
   background-position: 26px 25px;
   cursor: pointer;
 }
-/* line 499, ../sass/custom.scss */
+/* line 507, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list {
   margin-top: 50px;
 }
-/* line 502, ../sass/custom.scss */
+/* line 510, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current {
   background-color: #D11F01;
   border-radius: 50%;
@@ -598,7 +604,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 25px;
   line-height: 25px;
 }
-/* line 512, ../sass/custom.scss */
+/* line 520, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current a {
   /*background-color: #D11F01;
   border-radius: 50%;
@@ -609,7 +615,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 0;
   width: 25px;*/
 }
-/* line 523, ../sass/custom.scss */
+/* line 531, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous {
@@ -617,7 +623,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   /*border: 1px solid #B8B8B8;
   border-radius: 50%;*/
 }
-/* line 529, ../sass/custom.scss */
+/* line 537, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item a,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next a,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous a {
@@ -630,18 +636,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 0;
   width: 25px;
 }
-/* line 544, ../sass/custom.scss */
+/* line 552, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper {
   display: inline-block;
   width: 100%;
 }
-/* line 547, ../sass/custom.scss */
+/* line 555, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 552, ../sass/custom.scss */
+/* line 560, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #main-content {
   float: left;
   display: inline-block;
@@ -650,7 +656,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: calc(70% - 30px);
   margin: 0 30px 0 0;
 }
-/* line 560, ../sass/custom.scss */
+/* line 568, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top {
   float: left;
   display: inline-block;
@@ -658,18 +664,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #C5C5C5;
   margin: 50px 0 0;
 }
-/* line 566, ../sass/custom.scss */
+/* line 574, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top {
   width: 100%;
   padding-left: 0;
   /* Matching Apartments section design */
   /* End */
 }
-/* line 571, ../sass/custom.scss */
+/* line 579, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area {
   background-color: #FFF;
 }
-/* line 574, ../sass/custom.scss */
+/* line 582, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header {
   display: inline-block;
   -webkit-width: calc(100% - 30px);
@@ -682,45 +688,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: repeat-x;
   background-color: #FFF;
 }
-/* line 585, ../sass/custom.scss */
+/* line 593, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .block-title {
   font-size: 32px;
   margin-bottom: 10px;
 }
-/* line 589, ../sass/custom.scss */
+/* line 597, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .sub-title {
   color: #0a0a0a;
   display: inline-block;
   font-size: 16px;
 }
-/* line 595, ../sass/custom.scss */
+/* line 603, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section {
   background-color: #EBEBEB;
   padding: 20px;
   min-height: 527px;
 }
-/* line 599, ../sass/custom.scss */
+/* line 607, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #E7E7E7;
 }
-/* line 603, ../sass/custom.scss */
+/* line 611, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content {
   float: left;
   display: inline-block;
   margin-right: 10px;
 }
-/* line 608, ../sass/custom.scss */
+/* line 616, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row.views-row-last {
   border-bottom: none;
 }
-/* line 613, ../sass/custom.scss */
+/* line 621, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content .views-field-picture img {
   width: 106px;
   height: 92px;
 }
-/* line 619, ../sass/custom.scss */
+/* line 627, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content {
   display: inline-block;
   float: left;
@@ -728,19 +734,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-width: calc(100% - 120px);
   width: calc(100% - 120px);
 }
-/* line 626, ../sass/custom.scss */
+/* line 634, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .views-field-title a {
   color: #343434;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 632, ../sass/custom.scss */
+/* line 640, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email {
   display: inline-block;
   width: 100%;
   margin-top: 10px;
 }
-/* line 636, ../sass/custom.scss */
+/* line 644, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-apart-no {
   color: #ef595a;
   display: inline-block;
@@ -748,7 +754,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 18px;
   font-weight: bold;
 }
-/* line 643, ../sass/custom.scss */
+/* line 651, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email {
   /*float: right;
   display: inline-block;
@@ -758,7 +764,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-size: 24px auto;
   font-size: 0;*/
 }
-/* line 644, ../sass/custom.scss */
+/* line 652, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email a {
   display: inline-block;
   width: 40px;
@@ -771,18 +777,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-size: 24px auto;
   font-size: 0;
 }
-/* line 665, ../sass/custom.scss */
+/* line 673, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms {
   display: inline-block;
   margin-top: 10px;
   width: 100%;
 }
-/* line 669, ../sass/custom.scss */
+/* line 677, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space {
   display: inline-block;
   float: left;
 }
-/* line 672, ../sass/custom.scss */
+/* line 680, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space::before {
   display: inline-block;
   height: 29px;
@@ -794,19 +800,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   vertical-align: top;
 }
-/* line 683, ../sass/custom.scss */
+/* line 691, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space span {
   display: inline-block;
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 690, ../sass/custom.scss */
+/* line 698, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms {
   display: inline-block;
   float: right;
 }
-/* line 693, ../sass/custom.scss */
+/* line 701, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms::before {
   display: inline-block;
   height: 29px;
@@ -817,19 +823,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   vertical-align: top;
 }
-/* line 703, ../sass/custom.scss */
+/* line 711, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms span {
   display: inline-block;
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 710, ../sass/custom.scss */
+/* line 718, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email {
   display: inline-block;
   float: right;
 }
-/* line 713, ../sass/custom.scss */
+/* line 721, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email .field-content {
   font-size: 0;
   background-image: url("../images/Black_Email.png");
@@ -837,13 +843,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 723, ../sass/custom.scss */
+/* line 731, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content {
   width: 100%;
   display: inline-block;
   margin-top: 10px;
 }
-/* line 727, ../sass/custom.scss */
+/* line 735, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price {
   background-color: #c71c2c;
   background-image: url("../images/Buy.png");
@@ -857,11 +863,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 5px;
   padding: 15px 15px 15px 40px;
 }
-/* line 739, ../sass/custom.scss */
+/* line 747, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price:hover {
   cursor: pointer;
 }
-/* line 748, ../sass/custom.scss */
+/* line 756, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list {
   display: inline-block;
   margin-top: -50px;
@@ -869,17 +875,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-color: #EBEBEB;
   float: right;
 }
-/* line 754, ../sass/custom.scss */
+/* line 762, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul {
   display: inline-block;
   float: right;
   margin-right: 24px;
 }
-/* line 758, ../sass/custom.scss */
+/* line 766, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li {
   padding: 0;
 }
-/* line 762, ../sass/custom.scss */
+/* line 770, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-next a {
   display: inline-block;
   width: 25px;
@@ -889,7 +895,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: -17px 0;
   background-repeat: no-repeat;
 }
-/* line 773, ../sass/custom.scss */
+/* line 781, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-previous a {
   display: inline-block;
   width: 25px;
@@ -899,11 +905,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: 6px 0;
   background-repeat: no-repeat;
 }
-/* line 783, ../sass/custom.scss */
+/* line 791, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-current {
   display: none;
 }
-/* line 792, ../sass/custom.scss */
+/* line 800, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right {
   float: left;
   display: inline-block;
@@ -911,7 +917,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #C5C5C5;
   margin: 50px 0 0;
 }
-/* line 798, ../sass/custom.scss */
+/* line 806, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right {
   display: inline-block;
   width: 100%;
@@ -924,7 +930,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   
 }*/
 }
-/* line 803, ../sass/custom.scss */
+/* line 811, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi {
   float: left;
   width: 48% !important;
@@ -934,21 +940,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding: 0;
   }*/
 }
-/* line 807, ../sass/custom.scss */
+/* line 815, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi:nth-child(2n + 1) {
   margin-right: 0;
   float: right;
 }
-/* line 811, ../sass/custom.scss */
+/* line 819, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi:nth-child(2n) {
   clear: left;
 }
-/* line 814, ../sass/custom.scss */
+/* line 822, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi .form-item {
   margin: 0;
   padding: 0;
 }
-/* line 823, ../sass/custom.scss */
+/* line 831, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 {
   display: inline-block;
   width: 100%;
@@ -957,19 +963,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: repeat-x;
   background-position: center bottom;
 }
-/* line 830, ../sass/custom.scss */
+/* line 838, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 h2 {
   margin-bottom: 13px;
   color: #fff;
   font-size: 35px;
   font-weight: bold;
 }
-/* line 837, ../sass/custom.scss */
+/* line 845, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 .content p {
   color: #fff;
   font-size: 17px;
 }
-/* line 844, ../sass/custom.scss */
+/* line 852, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices {
   height: 45px;
   margin: 0;
@@ -983,7 +989,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -moz-border-radius: 4px;
   vertical-align: top;
 }
-/* line 857, ../sass/custom.scss */
+/* line 865, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices li.select2-search-field input {
   float: left;
   width: 100% !important;
@@ -992,16 +998,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 15px;
   cursor: pointer;
 }
-/* line 873, ../sass/custom.scss */
+/* line 881, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-last-saved-searches-block {
   display: none;
 }
-/* line 876, ../sass/custom.scss */
+/* line 884, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-search-api-saved-searches-solr-node-index {
   display: inline-block;
   width: 100%;
 }
-/* line 880, ../sass/custom.scss */
+/* line 888, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right a.select2-choice {
   float: left;
   height: 45px;
@@ -1019,33 +1025,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: right 4px;
   background-repeat: no-repeat;
 }
-/* line 900, ../sass/custom.scss */
+/* line 908, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop {
   /*display: inline-block;
   max-width: 146px !important;
   width: 100% !important;*/
 }
-/* line 904, ../sass/custom.scss */
+/* line 912, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search {
   display: none;
 }
-/* line 911, ../sass/custom.scss */
+/* line 919, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox .lightbox .lightbox__content .lightbox__body {
   max-height: 475px;
   overflow-y: auto;
 }
-/* line 918, ../sass/custom.scss */
+/* line 926, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox #edit-contact-name a.select2-choice {
   height: 30px;
 }
 
 /* End */
 /* Agent central page design */
-/* line 928, ../sass/custom.scss */
+/* line 936, ../sass/custom.scss */
 .page-crm-core-agent-central #page {
   margin-top: 96px !important;
 }
-/* line 931, ../sass/custom.scss */
+/* line 939, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation {
   position: fixed;
   height: 96px;
@@ -1054,25 +1060,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   z-index: 102;
 }
-/* line 938, ../sass/custom.scss */
+/* line 946, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #logo {
   float: left;
   width: 170px;
   margin-left: 50px;
 }
-/* line 943, ../sass/custom.scss */
+/* line 951, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner {
   display: inline-block;
   float: left;
   width: calc(100% - 255px);
 }
-/* line 947, ../sass/custom.scss */
+/* line 955, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation {
   display: inline-block;
   width: 100%;
   /*width: calc(100% - 220px);*/
 }
-/* line 951, ../sass/custom.scss */
+/* line 959, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box {
   float: left;
   position: relative;
@@ -1080,7 +1086,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-top: 35px;
   margin-left: 38px;
 }
-/* line 958, ../sass/custom.scss */
+/* line 966, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.auto_submit {
   position: relative;
   display: inline-block;
@@ -1093,7 +1099,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 15px;
   color: #333;
 }
-/* line 970, ../sass/custom.scss */
+/* line 978, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit {
   position: absolute;
   top: 0;
@@ -1109,53 +1115,53 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: 12px 8px;
   background-color: transparent;
 }
-/* line 984, ../sass/custom.scss */
+/* line 992, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit:hover {
   box-shadow: none !important;
 }
-/* line 990, ../sass/custom.scss */
+/* line 998, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete {
   width: 294px !important;
   margin-left: 2px !important;
 }
-/* line 994, ../sass/custom.scss */
+/* line 1002, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li {
   font-size: 15px;
   padding: 15px 10px 0;
   white-space: nowrap !important;
 }
-/* line 998, ../sass/custom.scss */
+/* line 1006, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li a {
   color: #000;
   font-size: 15px;
-  font-family: 'helvetica-neue';
+  font-family: 'helvetica-neue w01';
   text-decoration: none;
   text-align: left;
 }
-/* line 1005, ../sass/custom.scss */
+/* line 1013, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover {
   background-color: #1A1A1A;
 }
-/* line 1008, ../sass/custom.scss */
+/* line 1016, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover h2 a {
   color: #FFF !important;
 }
-/* line 1017, ../sass/custom.scss */
+/* line 1025, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu {
   display: inline-block;
   float: right;
 }
-/* line 1020, ../sass/custom.scss */
+/* line 1028, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu {
   margin-top: 35px;
   /*margin-right: 56px;*/
 }
-/* line 1023, ../sass/custom.scss */
+/* line 1031, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li {
   float: left;
   list-style: none;
 }
-/* line 1026, ../sass/custom.scss */
+/* line 1034, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a {
   margin: 0 35px 0 8px;
   color: #747474;
@@ -1165,15 +1171,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   vertical-align: middle;
   letter-spacing: 2px;
 }
-/* line 1034, ../sass/custom.scss */
+/* line 1042, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:hover, .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:active, .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:focus {
   color: #C61C2C;
 }
-/* line 1039, ../sass/custom.scss */
+/* line 1047, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a.active {
   color: #C61C2C;
 }
-/* line 1043, ../sass/custom.scss */
+/* line 1051, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li::before {
   display: inline-block;
   /*width: 14px;
@@ -1184,77 +1190,80 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   vertical-align: middle;
 }
-/* line 1054, ../sass/custom.scss */
+/* line 1062, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-dashboard::before {
   height: 17px;
   width: 14px;
   background-image: url("../images/menu-symbol-of-four-lines.png");
 }
-/* line 1061, ../sass/custom.scss */
+/* line 1069, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout::before {
   height: 17px;
   width: 19px;
   background-image: url("../images/logout.png");
 }
-/* line 1066, ../sass/custom.scss */
+/* line 1074, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout a {
   font-weight: bold;
 }
-/* line 1071, ../sass/custom.scss */
+/* line 1079, ../sass/custom.scss */
 .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-agent-central::before {
   height: 15px;
   width: 13px;
   background-image: url("../images/malware.png");
 }
-/* line 1084, ../sass/custom.scss */
+/* line 1092, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block {
   float: right;
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 1089, ../sass/custom.scss */
+/* line 1097, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .view-header,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .view-header {
-  width: 162px;
-  margin-right: 5px;
+  width: 240px;
+  margin-left: 5px;
   padding: 10px 38px;
   background-color: #1A1A1A;
   color: #FFF;
   font-size: 14px;
-  font-family: 'helvetica-neue';
+  box-sizing: border-box;
+  /*font-family: 'helvetica-neue w01';*/
   cursor: pointer;
   background-image: url("../images/Icon_Arrow_down.png");
   background-position: right 10px center;
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 1104, ../sass/custom.scss */
+/* line 1113, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .view-crm-contact-type .view-header,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .view-crm-contact-type .view-header {
-  width: 163px;
+  width: 240px;
   background-color: #D92227;
+  font-family: 'helvetica-neue w01';
+  box-sizing: border-box;
 }
-/* line 1110, ../sass/custom.scss */
+/* line 1121, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .view-crm-activity-type p,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .view-crm-activity-type p {
   margin: 0;
 }
-/* line 1114, ../sass/custom.scss */
+/* line 1125, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list {
   /*.views-field-label {
     padding: 3px 0 0;
   }*/
 }
-/* line 1118, ../sass/custom.scss */
+/* line 1129, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul {
   position: absolute;
   display: none;
   max-width: 234px;
   width: 100%;
-  margin: 0;
+  margin: 0 0 0 5px;
   padding: 0;
   background-color: #FFF;
   color: #212830;
@@ -1262,91 +1271,114 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-align: center;
   z-index: 11;
 }
-/* line 1130, ../sass/custom.scss */
+/* line 1141, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul li {
   padding: 4px 0 0;
   list-style: none;
 }
-/* line 1133, ../sass/custom.scss */
+/* line 1144, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li:last-child,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul li:last-child {
   padding: 4px 0;
 }
-/* line 1136, ../sass/custom.scss */
+/* line 1147, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul li a {
   text-decoration: none;
   font-size: 14px;
-  font-family: 'helvetica-neue w01';
+  /*font-family: 'helvetica-neue w01';*/
   color: #C61C2C;
   line-height: 24px;
 }
-/* line 1142, ../sass/custom.scss */
+/* line 1153, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a:hover,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul li a:hover {
   color: #1A1A1A;
 }
-/* line 1151, ../sass/custom.scss */
+/* line 1162, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type:hover .item-list ul,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block:hover .item-list ul {
   display: block;
 }
-/* line 1157, ../sass/custom.scss */
+/* line 1168, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task {
   float: left;
   display: inline-block;
   width: 45.5%;
 }
-/* line 1162, ../sass/custom.scss */
+/* line 1173, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-header .block-title {
   margin-top: 10px;
   font-size: 34px;
-  font-family: 'open sans';
+  font-family: 'helvetica-neue w01';
+  /*font-family: 'open sans';*/
   font-weight: bold;
 }
-/* line 1169, ../sass/custom.scss */
+/* line 1181, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content {
   border: 1px solid #C5C5C5;
 }
-/* line 1171, ../sass/custom.scss */
+/* line 1183, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-row {
   padding: 20px 20px 20px 35px;
   background-image: url("../images/Line_dotted.jpg");
   background-position: center bottom;
   background-repeat: repeat-x;
 }
-/* line 1177, ../sass/custom.scss */
+/* line 1189, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-row-last {
   background-image: none;
 }
-/* line 1180, ../sass/custom.scss */
+/* line 1192, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-title {
   display: inline-block;
   font-size: 18px;
-  font-family: 'open sans';
+  /*font-family: 'open sans';*/
   font-weight: 700;
 }
-/* line 1186, ../sass/custom.scss */
+/* line 1198, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-date {
   float: right;
   display: inline-block;
-  font-family: 'open sans';
+  /*font-family: 'open sans';*/
   font-weight: 700;
   font-size: 13px;
 }
-/* line 1192, ../sass/custom.scss */
+/* line 1204, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-date .field-content {
   float: right;
   font-weight: 700;
 }
-/* line 1197, ../sass/custom.scss */
+/* line 1209, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-notes {
   padding-top: 5px;
   font-size: 14px;
-  font-family: 'sans-serif';
+  /*font-family: 'sans-serif';*/
 }
-/* line 1204, ../sass/custom.scss */
+/* line 1215, ../sass/custom.scss */
+.page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-notes .field-content .readmore-summary .readmore-link {
+  float: right;
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  background-image: url("../images/plus.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  text-indent: -9999px;
+}
+/* line 1227, ../sass/custom.scss */
+.page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-notes .field-content .readmore-text .readless-link {
+  float: right;
+  display: inline-block;
+  height: 3px;
+  width: 17px;
+  background-image: url("../images/minus.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  text-indent: -9999px;
+}
+/* line 1242, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar {
   float: right;
   display: inline-block;
@@ -1354,7 +1386,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-top: 20px;
   border: 1px solid #7A7A7A;
 }
-/* line 1210, ../sass/custom.scss */
+/* line 1248, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section {
   padding: 15px 0;
   background-color: #D92227;
@@ -1364,89 +1396,91 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: center 68px;
   background-repeat: repeat-x;
 }
-/* line 1218, ../sass/custom.scss */
+/* line 1256, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section h2,
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section .sub-title {
   padding-left: 40px;
 }
-/* line 1222, ../sass/custom.scss */
+/* line 1260, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section h2 {
   margin-bottom: 9px;
   font-size: 30px;
   font-weight: bold;
+  font-family: 'helvetica-neue w01';
 }
-/* line 1227, ../sass/custom.scss */
+/* line 1266, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section .sub-title {
   font-size: 14px;
   font-weight: 500;
-  font-family: 'open sans';
+  /*font-family: 'open sans';*/
 }
-/* line 1233, ../sass/custom.scss */
+/* line 1272, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen {
   padding: 0 10px 3px 0;
 }
-/* line 1235, ../sass/custom.scss */
+/* line 1274, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen .quicktabs-style-zen {
   margin: 20px 0 10px 0;
   padding: 0px 0 3px 40px;
 }
-/* line 1239, ../sass/custom.scss */
+/* line 1278, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen .quicktabs-style-zen li a {
   color: #000;
 }
-/* line 1243, ../sass/custom.scss */
+/* line 1282, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen .quicktabs-style-zen li.active {
   padding: 0;
   background-image: none;
 }
-/* line 1246, ../sass/custom.scss */
+/* line 1285, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen .quicktabs-style-zen li.active a {
   background-image: none;
   background-color: #ED91A1;
   border-radius: 5px 5px 0 0;
 }
-/* line 1256, ../sass/custom.scss */
+/* line 1295, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .date-heading {
   font-size: 15px;
-  font-family: 'sans-serif';
+  font-family: 'helvetica-neue w01';
+  /*font-family: 'sans-serif';*/
   text-align: left;
 }
-/* line 1260, ../sass/custom.scss */
+/* line 1300, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .date-heading h3 {
   font-weight: 500;
 }
-/* line 1265, ../sass/custom.scss */
+/* line 1305, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .pager .date-prev {
   padding: 5px 10px 5px 0;
   background-color: #D92227;
 }
-/* line 1268, ../sass/custom.scss */
+/* line 1308, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .pager .date-prev a {
   color: #FFF;
 }
-/* line 1270, ../sass/custom.scss */
+/* line 1310, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .pager .date-next {
   padding: 5px 0 5px 10px;
   background-color: #D92227;
 }
-/* line 1273, ../sass/custom.scss */
+/* line 1313, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .pager .date-next a {
   color: #FFF;
 }
-/* line 1277, ../sass/custom.scss */
+/* line 1317, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content {
   padding-top: 10px;
 }
-/* line 1279, ../sass/custom.scss */
+/* line 1319, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .views-row {
   margin-bottom: 10px;
 }
-/* line 1282, ../sass/custom.scss */
+/* line 1322, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .left-section {
   display: inline-block;
   margin-right: 20px;
 }
-/* line 1286, ../sass/custom.scss */
+/* line 1326, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .left-section .views-field-activity-date .field-content {
   display: inline-block;
   width: 50px;
@@ -1457,7 +1491,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   line-height: 24px;
   font-weight: 700;
 }
-/* line 1298, ../sass/custom.scss */
+/* line 1338, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section {
   display: inline-block;
   width: calc(100% - 135px);
@@ -1465,7 +1499,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-color: #EBEBEB;
   padding: 10px 10px 10px 30px;
 }
-/* line 1304, ../sass/custom.scss */
+/* line 1344, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section .notes-plus-icon {
   float: right;
   height: 25px;
@@ -1475,73 +1509,83 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-/* line 1315, ../sass/custom.scss */
+/* line 1355, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section .left-content .views-field-title .field-content {
   color: #A80716;
   font-size: 14px;
-  font-family: 'open sans';
+  /*font-family: 'open sans';*/
   font-weight: bold;
 }
-/* line 1323, ../sass/custom.scss */
+/* line 1363, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section .left-content .views-field-activity-time .field-content {
   font-size: 14px;
-  font-family: 'sans-serif';
+  /*font-family: 'sans-serif';*/
 }
-/* line 1330, ../sass/custom.scss */
+/* line 1370, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .hide-notes {
   display: none;
 }
-/* line 1333, ../sass/custom.scss */
+/* line 1373, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .show-notes {
   display: block;
 }
-/* line 1336, ../sass/custom.scss */
+/* line 1376, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .views-field-notes {
   margin-top: 10px;
   padding: 10px;
   background-color: #EBEBEB;
   font-size: 14px;
-  font-family: 'sans-serif';
+  /*font-family: 'sans-serif';*/
 }
-/* line 1344, ../sass/custom.scss */
+/* line 1384, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .no-results {
   font-size: 14px;
-  font-family: 'sans-serif';
+  /*font-family: 'sans-serif';*/
 }
-/* line 1352, ../sass/custom.scss */
+/* line 1392, ../sass/custom.scss */
 .page-crm-core-agent-central .view-header .block-title {
   font-size: 34px;
-  font-family: 'sans-serif';
+  font-family: 'helvetica-neue w01';
+  /*font-family: 'sans-serif';*/
 }
-/* line 1357, ../sass/custom.scss */
+/* line 1398, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table {
   margin-top: 40px;
 }
-/* line 1361, ../sass/custom.scss */
+/* line 1402, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table thead tr th {
   border-right: 2px solid #FFF;
   background-color: #BD1724;
   color: #FFF;
   text-align: center;
 }
-/* line 1370, ../sass/custom.scss */
+/* line 1411, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr {
   border-bottom: 1px dashed #898989;
 }
-/* line 1372, ../sass/custom.scss */
+/* line 1413, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr td {
   background: #EBEBEB;
   font-size: 14px;
-  font-family: "sans-serif";
+  /*font-family: "sans-serif";*/
   text-align: center;
   line-height: 40px;
 }
-/* line 1380, ../sass/custom.scss */
+/* line 1422, ../sass/custom.scss */
+.page-crm-core-agent-central .views-table tbody td.views-field-contact-name a {
+  color: #000;
+}
+/* line 1424, ../sass/custom.scss */
+.page-crm-core-agent-central .views-table tbody td.views-field-contact-name a:hover {
+  color: #C61C2C;
+  text-decoration: none;
+}
+/* line 1430, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody td.views-field-activity-type {
   padding: 0 35px;
   text-align: left;
 }
-/* line 1383, ../sass/custom.scss */
+/* line 1433, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody td.views-field-activity-type .plus-icon {
   float: right;
   height: 25px;
@@ -1551,12 +1595,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-/* line 1393, ../sass/custom.scss */
+/* line 1443, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action {
   text-align: center;
   padding-left: 15px;
 }
-/* line 1396, ../sass/custom.scss */
+/* line 1446, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-email {
   display: inline-block;
   width: 28px;
@@ -1567,7 +1611,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 0;
   text-decoration: none;
 }
-/* line 1406, ../sass/custom.scss */
+/* line 1456, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-phone {
   display: inline-block;
   width: 28px;
@@ -1578,7 +1622,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 0;
   text-decoration: none;
 }
-/* line 1416, ../sass/custom.scss */
+/* line 1466, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-notes {
   display: inline-block;
   width: 28px;
@@ -1589,15 +1633,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 0;
   text-decoration: none;
 }
-/* line 1427, ../sass/custom.scss */
+/* line 1477, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr.hide-notes {
   display: none;
 }
-/* line 1430, ../sass/custom.scss */
+/* line 1480, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr.show-notes {
   display: table-row;
 }
-/* line 1432, ../sass/custom.scss */
+/* line 1482, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr.show-notes td {
   text-align: left;
 }

@@ -4,6 +4,13 @@
 
 
 @import "compass/reset";
+
+body {
+  &.page-crm-core-contact,
+  &.page-crm-core-agent-central {
+    font-family: 'helvetica-neue w01' !important;
+  }
+}
 .page-crm-core-contact,
 .page-crm-core-agent-central {
   #page {
@@ -311,12 +318,12 @@
       .view-header {
         width: 240px;
         box-sizing: border-box;
-        margin-right:  5px;
+        margin-left:  5px;
         padding: 10px 38px;
         background-color: #1A1A1A;
         color: #FFF;
         font-size: 14px;
-        font-family: 'helvetica-neue';
+        /*font-family: 'helvetica-neue';*/
         cursor: pointer;
         background-image: url('../images/Icon_Arrow_down.png');
         background-position: right 10px center;
@@ -327,6 +334,7 @@
         .view-header {
           width: 240px;
           background-color: #D92227;
+          font-family: 'helvetica-neue w01';
           box-sizing: border-box;
         }
       }
@@ -344,7 +352,7 @@
           display: none;
           max-width: 234px;
           width: 100%;
-          margin: 0;
+          margin: 0 0 0 5px;
           padding: 0;
           background-color: #FFF;
           color: #212830;
@@ -998,7 +1006,7 @@
                 a {
                   color: #000;
                   font-size: 15px;
-                  font-family: 'helvetica-neue';
+                  font-family: 'helvetica-neue w01';
                   text-decoration: none;
                   text-align: left;
                 }
@@ -1087,13 +1095,14 @@
       display: inline-block;
       text-transform: uppercase;
       .view-header {
-        width: 162px;
-        margin-right: 5px;
+        width: 240px;
+        margin-left: 5px;
         padding: 10px 38px;
         background-color: #1A1A1A;
         color: #FFF;
         font-size: 14px;
-        font-family: 'helvetica-neue';
+        box-sizing: border-box;
+        /*font-family: 'helvetica-neue w01';*/
         cursor: pointer;
         background-image: url('../images/Icon_Arrow_down.png');
         background-position: right 10px center;
@@ -1102,8 +1111,10 @@
       }
       .view-crm-contact-type {
         .view-header {
-          width: 163px;
+          width: 240px;
           background-color: #D92227;
+          font-family: 'helvetica-neue w01';
+          box-sizing: border-box;
         }
       }
       .view-crm-activity-type {
@@ -1120,7 +1131,7 @@
           display: none;
           max-width: 234px;
           width: 100%;
-          margin: 0;
+          margin: 0 0 0 5px;
           padding: 0;
           background-color: #FFF;
           color: #212830;
@@ -1136,7 +1147,7 @@
             a {
               text-decoration: none;
               font-size: 14px;
-              font-family: 'helvetica-neue w01';
+              /*font-family: 'helvetica-neue w01';*/
               color: #C61C2C;
               line-height: 24px;
               &:hover {
@@ -1162,7 +1173,8 @@
         .block-title {
           margin-top: 10px;
           font-size: 34px;
-          font-family: 'open sans';
+          font-family: 'helvetica-neue w01';
+          /*font-family: 'open sans';*/
           font-weight: bold;
         }
       }
@@ -1180,13 +1192,13 @@
         .views-field-title {
           display: inline-block;
           font-size: 18px;
-          font-family: 'open sans';
+          /*font-family: 'open sans';*/
           font-weight: 700;
         }
         .views-field-field-activity-date {
           float: right;
           display: inline-block;
-          font-family: 'open sans';
+          /*font-family: 'open sans';*/
           font-weight: 700;
           font-size: 13px;
           .field-content {
@@ -1197,7 +1209,33 @@
         .views-field-field-activity-notes {
           padding-top: 5px;
           font-size: 14px;
-          font-family: 'sans-serif';
+          /*font-family: 'sans-serif';*/
+          .field-content {
+            .readmore-summary {
+              .readmore-link {
+                float: right;
+                display: inline-block;
+                height: 17px;
+                width: 17px;
+                background-image: url('../images/plus.png');
+                background-repeat: no-repeat;
+                background-size: auto 100%;
+                text-indent: -9999px;
+              }
+            }
+            .readmore-text {
+              .readless-link {
+                float: right;
+                display: inline-block;
+                height: 3px;
+                width: 17px;
+                background-image: url('../images/minus.png');
+                background-repeat: no-repeat;
+                background-size: auto 100%;
+                text-indent: -9999px;
+              }
+            }
+          }
         }
       }
     }
@@ -1223,11 +1261,12 @@
           margin-bottom: 9px;
           font-size: 30px;
           font-weight: bold;
+          font-family: 'helvetica-neue w01';
         }
         .sub-title {
           font-size: 14px;
           font-weight: 500;
-          font-family: 'open sans';
+          /*font-family: 'open sans';*/
         }
       }
       .quicktabs-style-zen {
@@ -1255,7 +1294,8 @@
         .date-nav {
           .date-heading {
             font-size: 15px;
-            font-family: 'sans-serif';
+            font-family: 'helvetica-neue w01';
+            /*font-family: 'sans-serif';*/
             text-align: left;
             h3 {
               font-weight: 500;
@@ -1315,14 +1355,14 @@
                 .field-content {
                   color: #A80716;
                   font-size: 14px;
-                  font-family: 'open sans';
+                  /*font-family: 'open sans';*/
                   font-weight: bold;
                 }
               }
               .views-field-activity-time {
                 .field-content {
                   font-size: 14px;
-                  font-family: 'sans-serif';
+                  /*font-family: 'sans-serif';*/
                 }
               }
             }
@@ -1338,12 +1378,12 @@
             padding: 10px;
             background-color: #EBEBEB;
             font-size: 14px;
-            font-family: 'sans-serif';
+            /*font-family: 'sans-serif';*/
           }
         }
         .no-results {
           font-size: 14px;
-          font-family: 'sans-serif';
+          /*font-family: 'sans-serif';*/
         }
       }
     }
@@ -1351,7 +1391,8 @@
   .view-header {
     .block-title {
       font-size: 34px;
-      font-family: 'sans-serif';
+      font-family: 'helvetica-neue w01';
+      /*font-family: 'sans-serif';*/
     }
   }
   .views-table {
@@ -1372,9 +1413,18 @@
         td {
           background: #EBEBEB;
           font-size: 14px;
-          font-family: "sans-serif";
+          /*font-family: "sans-serif";*/
           text-align: center;
           line-height: 40px;
+        }
+      }
+      td.views-field-contact-name {
+        a {
+          color: #000;
+          &:hover {
+            color: #C61C2C;
+            text-decoration: none;
+          }
         }
       }
       td.views-field-activity-type {

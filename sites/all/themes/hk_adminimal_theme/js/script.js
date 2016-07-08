@@ -116,7 +116,7 @@
             jQuery('.lightbox__overlay').click(function() {
               jQuery('#ng-lightbox').hide();
             });
-            jQuery('#ng-lightbox').on("click", function(event) {
+            jQuery('.lightbox__content').on("click", function(event) {
             event.stopPropagation();
           });
           var content_height = jQuery(window).height();

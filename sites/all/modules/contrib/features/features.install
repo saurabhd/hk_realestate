@@ -149,6 +149,7 @@ function features_update_7200() {
     db_create_table('cache_features', $schema);
   }
 }
+
 /**
  * Add {cache_featurestate} table.
  */

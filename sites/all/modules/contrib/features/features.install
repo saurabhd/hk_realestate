@@ -149,3 +149,13 @@ function features_update_7200() {
     db_create_table('cache_features', $schema);
   }
 }
+/**
+ * Add {cache_featurestate} table.
+ */
+function features_update_7201() {
+  if (!db_table_exists('cache_featurestate')) {
+    variable_del('features_codecache');
+    $schema = drupal_get_schema_unprocessed('system', 'cache');
+    db_create_table('cache_featurestate', $schema);
+  }
+}

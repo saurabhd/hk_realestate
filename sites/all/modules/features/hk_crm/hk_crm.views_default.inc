@@ -527,6 +527,12 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -2465,12 +2471,11 @@ function hk_crm_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_angefragte_wohnung']['delta_offset'] = '0';
-  /* Field: Content: Object ID */
+  /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['relationship'] = 'field_angefragte_wohnung_target_id';
-  $handler->display->display_options['fields']['field_objektid_nunumeric']['label'] = 'Objekt ID';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['exclude'] = TRUE;
   /* Field: Content: Apartment No. */
   $handler->display->display_options['fields']['field_apart_no']['id'] = 'field_apart_no';
@@ -2610,7 +2615,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_no']['label'] = '';
   $handler->display->display_options['fields']['field_apart_no']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_apart_no']['element_label_colon'] = FALSE;
-  /* Field: Content: Object ID */
+  /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';

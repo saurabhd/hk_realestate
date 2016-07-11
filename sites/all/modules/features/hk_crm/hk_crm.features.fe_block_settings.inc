@@ -555,7 +555,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
   );
 
   $export['locale-language'] = array(
-    'cache' => 2,
+    'cache' => -1,
     'css_class' => 'language-switcher',
     'custom' => 0,
     'delta' => 'language',
@@ -742,7 +742,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
   );
 
   $export['search_api_page-contact_search_box'] = array(
-    'cache' => -1,
+    'cache' => 5,
     'css_class' => 'search-block',
     'custom' => 0,
     'delta' => 'contact_search_box',

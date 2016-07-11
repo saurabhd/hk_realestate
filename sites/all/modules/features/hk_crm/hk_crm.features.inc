@@ -137,6 +137,8 @@ function hk_crm_default_search_api_index() {
     "item_type" : "crm_core_contact",
     "options" : {
       "datasource" : { "bundles" : [ "individual", "mitarbeiter" ] },
+      "index_directly" : 1,
+      "cron_limit" : "50",
       "fields" : {
         "contact_name:family" : { "type" : "text" },
         "contact_name:given" : { "type" : "text" },

@@ -19,6 +19,15 @@ function hk_crm_translations_de_defaults() {
     'plural' => 0,
   );
   $translatables[] = t('Notes', array(), array('context' => 'tab:crm_contact_page-1:title'));
+  $translations['de:quicktabs']['1d20abe7003e0ecac6f8cefb77ff63a7'] = array(
+    'source' => 'Agent Calendar',
+    'context' => 'title:agent_calendar',
+    'location' => 'quicktabs:title:agent_calendar',
+    'translation' => 'Agent-Kalender',
+    'plid' => 0,
+    'plural' => 0,
+  );
+  $translatables[] = t('Agent Calendar', array(), array('context' => 'title:agent_calendar'));
   $translations['de:quicktabs']['5e6a2eb5c3b8027e9b85a4bc5b3491e0'] = array(
     'source' => 'Activities',
     'context' => 'tab:crm_contact_page-0:title',

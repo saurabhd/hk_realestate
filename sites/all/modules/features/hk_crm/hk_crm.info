@@ -137,6 +137,7 @@ features[field_instance][] = crm_core_activity-task-field_activity_date
 features[field_instance][] = crm_core_activity-task-field_activity_notes
 features[field_instance][] = crm_core_activity-task-field_activity_participants
 features[field_instance][] = crm_core_activity-task-field_erledigt
+features[field_instance][] = crm_core_activity-task-field_participants
 features[field_instance][] = crm_core_activity-task-field_task_type
 features[field_instance][] = crm_core_contact-individual-field_birthday
 features[field_instance][] = crm_core_contact-individual-field_company

@@ -16,6 +16,10 @@
   max-width: 17ex;
 }
 
+#differentiator-color-table td div {
+  display: inline-table;
+}
+
 #cluster-differentiator-wrapper .form-item.form-type-textfield {
   display: inline-table;
   margin-right: 1em;

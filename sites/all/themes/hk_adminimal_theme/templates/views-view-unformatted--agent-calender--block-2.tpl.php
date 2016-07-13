@@ -23,7 +23,7 @@
         <div class="views-field views-field-title">        
           <span class="field-content"><?php print $row['title']; ?></span>  
         </div>
-        <div class="views-field views-field-activity-time">        
+        <div class="views-field views-field-activity-edit">        
           <span class="field-content"><?php print $row['edit_crm_activity']; ?></span>  
         </div>
         <div class="views-field views-field-activity-time">        

@@ -8,7 +8,7 @@
 body {
   &.page-crm-core-contact,
   &.page-crm-core-agent-central {
-    font-family: 'helvetica-neue w01' !important;
+    font-family: "sans-serif" !important;
   }
 }
 .page-crm-core-contact,
@@ -91,7 +91,7 @@ body {
                 a {
                   color: #000;
                   font-size: 15px;
-                  font-family: 'helvetica-neue';
+                  font-family: "sans-serif";
                   text-decoration: none;
                   text-align: left;
                 }
@@ -334,7 +334,7 @@ body {
         .view-header {
           width: 240px;
           background-color: #D92227;
-          font-family: 'helvetica-neue w01';
+          font-family: "sans-serif";
           box-sizing: border-box;
         }
       }
@@ -368,7 +368,7 @@ body {
             a {
               text-decoration: none;
               font-size: 14px;
-              font-family: 'helvetica-neue w01';
+              font-family: "sans-serif";
               color: #C61C2C;
               line-height: 24px;
               &:hover {
@@ -500,6 +500,7 @@ body {
                   cursor: pointer;
                 }
               }
+              td.views-field-action { min-width: 280px; }
             }
           }
         }
@@ -1006,7 +1007,7 @@ body {
                 a {
                   color: #000;
                   font-size: 15px;
-                  font-family: 'helvetica-neue w01';
+                  font-family: "sans-serif";
                   text-decoration: none;
                   text-align: left;
                 }
@@ -1113,7 +1114,7 @@ body {
         .view-header {
           width: 240px;
           background-color: #D92227;
-          font-family: 'helvetica-neue w01';
+          font-family: "sans-serif";
           box-sizing: border-box;
         }
       }
@@ -1173,7 +1174,7 @@ body {
         .block-title {
           margin-top: 10px;
           font-size: 34px;
-          font-family: 'helvetica-neue w01';
+          font-family: "sans-serif";
           /*font-family: 'open sans';*/
           font-weight: bold;
         }
@@ -1286,7 +1287,7 @@ body {
           margin-bottom: 9px;
           font-size: 30px;
           font-weight: bold;
-          font-family: 'helvetica-neue w01';
+          font-family: "sans-serif";
         }
         .sub-title {
           font-size: 14px;
@@ -1319,7 +1320,7 @@ body {
         .date-nav {
           .date-heading {
             font-size: 15px;
-            font-family: 'helvetica-neue w01';
+            font-family: "sans-serif";
             /*font-family: 'sans-serif';*/
             text-align: left;
             h3 {
@@ -1377,11 +1378,18 @@ body {
             }
             .left-content {
               .views-field-title {
+                display: inline-block;
                 .field-content {
                   color: #A80716;
                   font-size: 14px;
                   /*font-family: 'open sans';*/
                   font-weight: bold;
+                }
+              }
+              .views-field-activity-edit {
+                display: inline-block;
+                a {
+                  color: #747474;
                 }
               }
               .views-field-activity-time {
@@ -1416,7 +1424,7 @@ body {
   .view-header {
     .block-title {
       font-size: 34px;
-      font-family: 'helvetica-neue w01';
+      font-family: "sans-serif";
       /*font-family: 'sans-serif';*/
     }
   }
@@ -1601,3 +1609,6 @@ body {
   }
 }
 /* End */
+.lightbox .field-name-field-participants {
+  display: none;
+}

@@ -1,9 +1,8 @@
 @import "base";
-body {
-  .page-search {
-    font-family: 'helvetica-neue w01';
-  }
+body.page-search {
+  font-family: "sans-serif" !important;
 }
+
 .view-display-id-map_page {
     bottom: 0;
     left: 0;
@@ -797,7 +796,7 @@ div.hide-submit-processing {
   @extend .sprite-Icon_House2;
   text-align: center;
   border-radius: 0;
-  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font: 12px "sans-serif";
 }
 .marker-cluster span {
     color: #fff;
@@ -1310,7 +1309,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         .view-crm-contact-type {
           .view-header {
             background-color: #D92227;
-            font-family: 'helvetica-neue W01';
+            font-family: "sans-serif";
           }
           .item-list {
             ul {
@@ -1318,7 +1317,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
                 .views-field {
                   .field-content {
                     a {
-                      font-family: 'helvetica-neue W01' !important;
+                      font-family: "sans-serif" !important;
                     }
                   }
                 }
@@ -1514,6 +1513,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
               text-decoration: none;
             }
           }
+          td.views-field-nothing { min-width: 160px; }
           > td {
             padding-left: 25px;
           }
@@ -1628,3 +1628,6 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   }
 }
 /* End */
+.lightbox .field-name-field-participants {
+  display: none;
+}

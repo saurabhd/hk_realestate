@@ -1480,11 +1480,11 @@ body {
         }
         a.unclaimed-phone {
           display: inline-block;
-          width: 28px;
+          width: 18px;
           height: 18px;
           background-image: url("../images/mix-icon.jpg");
           background-repeat: no-repeat;
-          background-position: -98px -3px;
+          background-position: -107px -5px;
           font-size: 0;
           text-decoration: none;
         }
@@ -1494,7 +1494,27 @@ body {
           height: 18px;
           background-image: url("../images/mix-icon.jpg");
           background-repeat: no-repeat;
-          background-position: -49px -3px;
+          background-position: -53px -5px;
+          font-size: 0;
+          text-decoration: none;
+        }
+        a.unclaimed-meeting {
+          display: inline-block;
+          width: 28px;
+          height: 18px;
+          background-image: url("../images/mix-icon.jpg");
+          background-repeat: no-repeat;
+          background-position: -20px -5px;
+          font-size: 0;
+          text-decoration: none;
+        }
+        a.unclaimed-task {
+          display: inline-block;
+          width: 20px;
+          height: 18px;
+          background-image: url("../images/mix-icon.jpg");
+          background-repeat: no-repeat;
+          background-position: -80px -6px;
           font-size: 0;
           text-decoration: none;
         }
@@ -1507,6 +1527,75 @@ body {
         td {
           text-align: left;
         }
+      }
+    }
+  }
+  .view-agent-central {
+    .item-list {
+      ul.pager {
+        li.pager-current{
+          background-color: #D11F01;
+          border-radius: 50%;
+          color: #FFF;
+          display: inline-block;
+          height: 25px;
+          margin: 0;
+          padding: 0;
+          width: 25px;
+          a {
+            background-color: #D11F01;
+            border-radius: 50%;
+            color: #FFF;
+            display: inline-block;
+            height: 25px;
+            margin: 0;
+            padding: 0;
+            width: 25px;
+          }
+        }
+        li.pager-item,
+        li.pager-next,
+        li.pager-previous {
+          background-color: transparent;
+          /*border: 1px solid #B8B8B8;
+          border-radius: 50%;*/
+          a {
+            border: 1px solid #B8B8B8;
+            border-radius: 50%;
+            color: #000;
+            display: inline-block;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+            width: 30px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+/* End */
+
+/* Popup design */
+#ng-lightbox {
+  .lightbox {
+    .lightbox__content {
+      .close-ng-lightbox {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+        left: auto;
+        height: 35px;
+        width: 35px;
+        margin: -18px;
+        border-radius: 50%;
+        background-color: #CBC1BA;
+        color: #FFF;
+        font-size: 26px;
+        line-height: 32px;
+        text-align: center;
       }
     }
   }

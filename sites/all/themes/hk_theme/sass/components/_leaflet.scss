@@ -726,7 +726,7 @@ div.hide-submit-processing {
     button.toggle {
       padding-right: .5em;
       font-size: 12px;
-      font-family: $helvetica-neue;
+      /*font-family: $helvetica-neue;*/
       &::after {
           color: #fff;
           content: "";
@@ -1111,7 +1111,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       padding: 0 5px;
       color: #666;
       font-size: 14px;
-      font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+      /*font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;*/
       background: #FFF;
       cursor: text;
       vertical-align: -webkit-baseline-middle;
@@ -1142,7 +1142,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       li {
           padding: 0;
         a {
-          font-family: 'Neue Helvetica W01';
+          /*font-family: 'Neue Helvetica W01';*/
           display: inline-block;
           width: 100%;
           padding: 3px 10px;
@@ -1310,7 +1310,20 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         .view-crm-contact-type {
           .view-header {
             background-color: #D92227;
-            font-family: 'helvetica-neue w01';
+            font-family: 'helvetica-neue W01';
+          }
+          .item-list {
+            ul {
+              li {
+                .views-field {
+                  .field-content {
+                    a {
+                      font-family: 'helvetica-neue W01' !important;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
         .view-crm-activity-type {
@@ -1480,6 +1493,26 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
               font-size: 0;
               text-decoration: none;
             }
+            a.unclaimed-meeting {
+              display: inline-block;
+              width: 28px;
+              height: 18px;
+              background-image: url("../images/mix-icon.jpg");
+              background-repeat: no-repeat;
+              background-position: -22px -5px;
+              font-size: 0;
+              text-decoration: none;
+            }
+            a.unclaimed-task {
+              display: inline-block;
+              width: 28px;
+              height: 18px;
+              background-image: url("../images/mix-icon.jpg");
+              background-repeat: no-repeat;
+              background-position: -77px -7px;
+              font-size: 0;
+              text-decoration: none;
+            }
           }
           > td {
             padding-left: 25px;
@@ -1566,6 +1599,31 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   #crm-core-activity-edit-email-form {
     #edit-field-activity-date {
       display: none !important;
+    }
+  }
+}
+/* End */
+
+/* Popup design */
+#ng-lightbox {
+  .lightbox {
+    .lightbox__content {
+      .close-ng-lightbox {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+        left: auto;
+        height: 35px;
+        width: 35px;
+        margin: -18px;
+        border-radius: 50%;
+        background-color: #CBC1BA;
+        color: #FFF;
+        font-size: 26px;
+        line-height: 32px;
+        text-align: center;
+      }
     }
   }
 }

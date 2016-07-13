@@ -24,6 +24,9 @@
           <span class="field-content"><?php print $row['title']; ?></span>  
         </div>
         <div class="views-field views-field-activity-time">        
+          <span class="field-content"><?php print $row['edit_crm_activity']; ?></span>  
+        </div>
+        <div class="views-field views-field-activity-time">        
           <span class="field-content"><?php print date('H:i A', strtotime($row['field_activity_date'])); ?></span>  
         </div>
       </div>

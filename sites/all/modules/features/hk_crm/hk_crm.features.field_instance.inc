@@ -357,7 +357,7 @@ function hk_crm_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 1,
           'fallback' => 'none',
           'providers' => array(
@@ -728,7 +728,7 @@ function hk_crm_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 1,
           'fallback' => 'none',
           'providers' => array(
@@ -973,7 +973,7 @@ function hk_crm_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'providers' => array(
@@ -1140,7 +1140,7 @@ function hk_crm_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1193,7 +1193,7 @@ function hk_crm_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 15,
+      'weight' => 13,
     ),
   );
 
@@ -1254,7 +1254,7 @@ function hk_crm_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 16,
+      'weight' => 14,
     ),
   );
 
@@ -1293,7 +1293,7 @@ function hk_crm_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 1,
     ),
   );
 
@@ -1338,7 +1338,7 @@ function hk_crm_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -1428,7 +1428,7 @@ function hk_crm_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 8,
     ),
   );
 
@@ -1511,7 +1511,7 @@ function hk_crm_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -1556,7 +1556,7 @@ function hk_crm_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 2,
     ),
   );
 
@@ -1609,7 +1609,7 @@ function hk_crm_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 17,
+      'weight' => 3,
     ),
   );
 

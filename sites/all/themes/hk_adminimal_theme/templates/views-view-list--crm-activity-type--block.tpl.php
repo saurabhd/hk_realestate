@@ -20,7 +20,7 @@
       <li class="<?php print $classes_array[$id]; ?>">
         <div class="views-field views-field-label">        
           <span class="field-content">
-            <a href="http://en.hk.local/crm-core/contact/activity-add/<?php print $row['type']; ?>?destination=<?php print $_SERVER['REQUEST_URI']; ?>" class="ng-lightbox activity-link"><?php print t($row['label']); ?></a>
+            <a href="/crm-core/contact/activity-add/<?php print $row['type']; ?>?destination=<?php print $_SERVER['REQUEST_URI']; ?>" class="ng-lightbox activity-link"><?php print t($row['label']); ?></a>
           </span>  
         </div>
       </li>

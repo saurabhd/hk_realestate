@@ -1777,6 +1777,11 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 
 /* End */
 /* line 1612, ../sass/custom.scss */
+.lightbox .field-name-field-activity-participants {
+  display: none;
+}
+
+/* line 1615, ../sass/custom.scss */
 .lightbox .field-name-field-participants {
   display: none;
 }

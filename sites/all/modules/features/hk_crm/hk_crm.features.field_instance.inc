@@ -20,13 +20,12 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'german_date',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -38,74 +37,17 @@ function hk_crm_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'crm_core_activity',
     'field_name' => 'field_activity_date',
     'label' => 'Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'blank',
       'default_value_code' => '',
       'default_value_code2' => '',
       'entity_translation_sync' => FALSE,
-      'restrictions' => array(
-        'allowed_values' => array(
-          'type' => 'disabled',
-        ),
-        'max' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-        'min' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-      ),
-      'restrictions2' => array(
-        'allowed_values' => array(
-          'type' => 'disabled',
-        ),
-        'max' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-        'min' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -113,10 +55,10 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd.m.Y',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -558,13 +500,12 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'german_date',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -576,74 +517,17 @@ function hk_crm_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'crm_core_activity',
     'field_name' => 'field_activity_date',
     'label' => 'Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'blank',
       'default_value_code' => '',
       'default_value_code2' => '',
       'entity_translation_sync' => FALSE,
-      'restrictions' => array(
-        'allowed_values' => array(
-          'type' => 'disabled',
-        ),
-        'max' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-        'min' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-      ),
-      'restrictions2' => array(
-        'allowed_values' => array(
-          'type' => 'disabled',
-        ),
-        'max' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-        'min' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -651,10 +535,10 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd.m.Y',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -885,13 +769,12 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'german_date',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -914,64 +797,6 @@ function hk_crm_field_default_field_instances() {
       'default_value_code' => '',
       'default_value_code2' => '',
       'entity_translation_sync' => FALSE,
-      'restrictions' => array(
-        'allowed_values' => array(
-          'type' => 'disabled',
-        ),
-        'max' => array(
-          'date' => array(
-            'day' => 30,
-            'month' => 6,
-            'year' => 2016,
-          ),
-          'host_entity_date' => array(
-            'end_date' => 0,
-            'field' => '',
-          ),
-          'type' => 'disabled',
-        ),
-        'min' => array(
-          'date' => array(
-            'day' => 30,
-            'month' => 6,
-            'year' => 2016,
-          ),
-          'host_entity_date' => array(
-            'end_date' => 0,
-            'field' => '',
-          ),
-          'type' => 'disabled',
-        ),
-      ),
-      'restrictions2' => array(
-        'allowed_values' => array(
-          'type' => 'disabled',
-        ),
-        'max' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-        'min' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -979,7 +804,7 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd.m.Y',
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,
@@ -1255,64 +1080,6 @@ function hk_crm_field_default_field_instances() {
       'default_value_code' => '',
       'default_value_code2' => '',
       'entity_translation_sync' => FALSE,
-      'restrictions' => array(
-        'allowed_values' => array(
-          'type' => 'disabled',
-        ),
-        'max' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-        'min' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-      ),
-      'restrictions2' => array(
-        'allowed_values' => array(
-          'type' => 'disabled',
-        ),
-        'max' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-        'min' => array(
-          'date' => NULL,
-          'host_entity_date' => array(
-            'end_date' => FALSE,
-            'field' => NULL,
-          ),
-          'host_entity_interval' => array(
-            'field' => NULL,
-          ),
-          'interval' => NULL,
-          'type' => 'disabled',
-        ),
-      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1320,8 +1087,8 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'd/m/Y - g:i:sa',
-        'input_format_custom' => '',
+        'input_format' => 'custom',
+        'input_format_custom' => 'm.d.Y H\\hi',
         'label_position' => 'above',
         'no_fieldset' => 0,
         'text_parts' => array(),
@@ -1388,11 +1155,8 @@ function hk_crm_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 14,
       ),
       'live_results_search' => array(
@@ -1422,8 +1186,8 @@ function hk_crm_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 1,
         'references_dialog_search' => 0,
         'references_dialog_search_view' => '',
         'size' => 60,
@@ -1438,17 +1202,14 @@ function hk_crm_field_default_field_instances() {
   $field_instances['crm_core_contact-individual-field_individual_connection'] = array(
     'bundle' => 'individual',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 15,
       ),
       'live_results_search' => array(
@@ -1466,7 +1227,15 @@ function hk_crm_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'disable',
+          'action_on_edit' => 1,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'entity_translation_sync' => FALSE,
@@ -1478,8 +1247,8 @@ function hk_crm_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 1,
         'references_dialog_search' => 0,
         'references_dialog_search_view' => '',
         'size' => 60,
@@ -1802,11 +1571,8 @@ function hk_crm_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 16,
       ),
       'live_results_search' => array(

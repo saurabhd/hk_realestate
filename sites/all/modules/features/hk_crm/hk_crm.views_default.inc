@@ -26,7 +26,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none-accelerated';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
@@ -1134,7 +1134,6 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['label']['table'] = 'crm_core_activity_type';
   $handler->display->display_options['fields']['label']['field'] = 'label';
   $handler->display->display_options['fields']['label']['label'] = '';
-  $handler->display->display_options['fields']['label']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['label']['alter']['path'] = 'crm-core/contact/activity-add/[type]';
   $handler->display->display_options['fields']['label']['alter']['link_class'] = 'ng-lightbox activity-link';
   $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
@@ -2471,11 +2470,12 @@ function hk_crm_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_angefragte_wohnung']['delta_offset'] = '0';
-  /* Field: Content: Objekt ID */
+  /* Field: Content: Object ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['relationship'] = 'field_angefragte_wohnung_target_id';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['label'] = 'Objekt ID';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['exclude'] = TRUE;
   /* Field: Content: Apartment No. */
   $handler->display->display_options['fields']['field_apart_no']['id'] = 'field_apart_no';
@@ -2615,7 +2615,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_no']['label'] = '';
   $handler->display->display_options['fields']['field_apart_no']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_apart_no']['element_label_colon'] = FALSE;
-  /* Field: Content: Objekt ID */
+  /* Field: Content: Object ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';

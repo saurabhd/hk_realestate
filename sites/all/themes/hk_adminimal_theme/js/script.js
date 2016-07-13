@@ -109,11 +109,11 @@
           data: {},
           success: function (data) {
              $('#ng-lightbox').html('');
-            $('#ng-lightbox').html('<div class="lightbox lightbox--plain"><div class="lightbox__overlay"><div class="lightbox__content"><h2 class="lightbox__header">Add Individuum</h2><div class="lightbox__body">test</div></div></div></div>');
+            $('#ng-lightbox').html('<div class="lightbox lightbox--plain"><div class="lightbox__overlay"><div class="lightbox__content"><div class="close-ng-lightbox">x</div><h2 class="lightbox__header">Add Individuum</h2><div class="lightbox__body">test</div></div></div></div>');
             $('.lightbox__body').html(jQuery(data).find("#crm-core-contact-ui-form").html());
             jQuery('#ng-lightbox').show();
             //jQuery('.lightbox__body #page-title, #ng-lightbox div .lightbox.lightbox--plain').hide();
-            jQuery('.lightbox__overlay').click(function() {
+            jQuery('.lightbox__overlay, .close-ng-lightbox').click(function() {
               jQuery('#ng-lightbox').hide();
             });
             jQuery('.lightbox__content').on("click", function(event) {
@@ -133,6 +133,22 @@
           }
         });
       });
+
+      jQuery('.view-crm-activity-type .view-content ul li.views-row .views-field span a').click(function() {
+        jQuery('#ng-lightbox').show();
+        jQuery('#ng-lightbox .lightbox--plain:nth-child(1)').hide();
+        setTimeout(function(){
+          var content_height = jQuery(window).height();
+          var lightbox_height = content_height - 300;
+          jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'}); 
+        }, 500);   
+      });
+      jQuery( window ).resize(function() {
+        var content_height = jQuery(window).height();
+        var lightbox_height = content_height - 300;
+        jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
+      });
+
       var current_url = window.location.href;
       var current_url = current_url.split('?');
       if($('body').find('.last-save-searches a').length) {

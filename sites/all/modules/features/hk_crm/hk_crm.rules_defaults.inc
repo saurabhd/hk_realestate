@@ -59,7 +59,9 @@ function hk_crm_default_rules_configuration() {
         { "OR" : [
             { "data_is" : { "data" : [ "crm-core-activity:type" ], "value" : "phone_call" } },
             { "data_is" : { "data" : [ "crm-core-activity:type" ], "value" : "email" } },
-            { "data_is" : { "data" : [ "crm-core-activity:type" ], "value" : "notes" } }
+            { "data_is" : { "data" : [ "crm-core-activity:type" ], "value" : "notes" } },
+            { "data_is" : { "data" : [ "crm-core-activity:type" ], "value" : "meeting" } },
+            { "data_is" : { "data" : [ "crm-core-activity:type" ], "value" : "task" } }
           ]
         }
       ],

@@ -26,6 +26,8 @@ $left_time = '';
  if($days <= 7){
    if($days==1){
      $left_time =  "yesterday";
+   }else if($days==0){
+     $left_time =  "today";
    }else{
      $left_time =  $days." days Before";
    }

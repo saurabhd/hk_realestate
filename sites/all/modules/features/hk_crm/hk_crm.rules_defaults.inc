@@ -76,7 +76,7 @@ function hk_crm_default_rules_configuration() {
         { "entity_fetch" : {
             "USING" : {
               "type" : "crm_core_contact",
-              "id" : [ "crm-core-activity:field-activity-participants:0:contact-id" ]
+              "id" : [ "crm-core-activity:field-participants:0:contact-id" ]
             },
             "PROVIDE" : { "entity_fetched" : { "entity_fetched_contact_id" : "Fetched entity" } }
           }

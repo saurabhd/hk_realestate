@@ -57,7 +57,7 @@ $left_time = '';
    }
  }
 ?>
-  <td class="views-field views-field-activity-date"><?php print $left_time; ?></td>
+  <td class="views-field views-field-activity-date"><?php print t($left_time); ?></td>
   <td class="views-field views-field-activity-type"><?php print $row['type']; ?><span class="plus-icon"></span></td>
   <td class="views-field views-field-action"><?php print $row['nothing']; ?></td>
   <?php if(isset($row['field_activity_notes']) && !empty($row['field_activity_notes'])) { ?>

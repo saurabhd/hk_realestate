@@ -125,7 +125,7 @@ X',
       'granularity' => array(
         'day' => 'day',
         'hour' => 'hour',
-        'minute' => 0,
+        'minute' => 'minute',
         'month' => 'month',
         'second' => 0,
         'year' => 'year',
@@ -338,6 +338,42 @@ X',
     'type' => 'addressfield',
   );
 
+  // Exported field_base: 'field_crm_ansprechpartner'.
+  $field_bases['field_crm_ansprechpartner'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_crm_ansprechpartner',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'mitarbeiter' => 'mitarbeiter',
+        ),
+      ),
+      'target_type' => 'crm_core_contact',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_crm_bemerkungen'.
   $field_bases['field_crm_bemerkungen'] = array(
     'active' => 1,
@@ -472,7 +508,6 @@ X',
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'behaviors' => array(),
       'entity_translation_sync' => FALSE,
       'handler' => 'base',
       'handler_settings' => array(
@@ -509,7 +544,6 @@ X',
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'behaviors' => array(),
       'entity_translation_sync' => FALSE,
       'handler' => 'base',
       'handler_settings' => array(
@@ -819,7 +853,6 @@ X',
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'behaviors' => array(),
       'entity_translation_sync' => FALSE,
       'handler' => 'views',
       'handler_settings' => array(

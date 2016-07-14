@@ -278,7 +278,7 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'german_date',
+          'format_type' => 'date_with_h',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -313,7 +313,7 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'd.m.Y',
+        'input_format' => 'd.m.Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,
@@ -913,13 +913,12 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'date_with_h',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -931,10 +930,11 @@ function hk_crm_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'crm_core_activity',
     'field_name' => 'field_activity_date',
     'label' => 'Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'blank',
@@ -948,10 +948,10 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd.m.Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -1013,10 +1013,6 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'colorbox_node_classes' => '',
-          'colorbox_node_height' => 600,
-          'colorbox_node_link' => FALSE,
-          'colorbox_node_width' => 600,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -1047,6 +1043,69 @@ function hk_crm_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete_tags',
       'weight' => -4,
+    ),
+  );
+
+  // Exported field_instance: 'crm_core_activity-meeting-field_inquiry'.
+  $field_instances['crm_core_activity-meeting-field_inquiry'] = array(
+    'bundle' => 'meeting',
+    'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'crm_core_activity',
+    'field_name' => 'field_inquiry',
+    'label' => 'Inquiry',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'action' => 'disable',
+          'action_on_edit' => 1,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 6,
     ),
   );
 
@@ -1099,7 +1158,7 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'german_date',
+          'format_type' => 'date_with_h',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -1134,7 +1193,7 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'd.m.Y',
+        'input_format' => 'd.m.Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,
@@ -1369,13 +1428,12 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'date_with_h',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1387,10 +1445,11 @@ function hk_crm_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'crm_core_activity',
     'field_name' => 'field_activity_date',
     'label' => 'Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'blank',
@@ -1404,10 +1463,10 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd.m.Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -1470,10 +1529,6 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'colorbox_node_classes' => '',
-          'colorbox_node_height' => 600,
-          'colorbox_node_link' => FALSE,
-          'colorbox_node_width' => 600,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -1507,6 +1562,69 @@ function hk_crm_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'crm_core_activity-phone_call-field_inquiry'.
+  $field_instances['crm_core_activity-phone_call-field_inquiry'] = array(
+    'bundle' => 'phone_call',
+    'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'crm_core_activity',
+    'field_name' => 'field_inquiry',
+    'label' => 'Inquiry',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'action' => 'disable',
+          'action_on_edit' => 1,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance: 'crm_core_activity-task-field_activity_date'.
   $field_instances['crm_core_activity-task-field_activity_date'] = array(
     'bundle' => 'task',
@@ -1517,7 +1635,7 @@ function hk_crm_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'german_date',
+          'format_type' => 'date_with_h',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -1552,7 +1670,7 @@ function hk_crm_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'd.m.Y',
+        'input_format' => 'd.m.Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,
@@ -2156,6 +2274,51 @@ function hk_crm_field_default_field_instances() {
       ),
       'type' => 'addressfield_standard',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'crm_core_contact-individual-field_crm_ansprechpartner'.
+  $field_instances['crm_core_contact-individual-field_crm_ansprechpartner'] = array(
+    'bundle' => 'individual',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'crm_core_contact',
+    'field_name' => 'field_crm_ansprechpartner',
+    'label' => 'Primärer Ansprechpartner',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 9,
     ),
   );
 
@@ -2984,6 +3147,7 @@ function hk_crm_field_default_field_instances() {
   t('Other');
   t('Participants');
   t('Phone');
+  t('Primärer Ansprechpartner');
   t('Profile Picture');
   t('Recipient');
   t('Responsible agent');

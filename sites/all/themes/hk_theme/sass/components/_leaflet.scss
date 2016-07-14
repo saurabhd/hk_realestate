@@ -1459,38 +1459,40 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
               height: 65px;
             }
             a.unclaimed-email {
-              float: left;
               display: inline-block;
               margin-left: -24px;
               width: 28px;
               height: 18px;
               background-image: url("../images/mix-icon.jpg");
               background-repeat: no-repeat;
-              background-position: 7px center;
+              background-position: 3px center;
               font-size: 0;
               text-decoration: none;
+              margin-right: 10px;
+              padding: 10px 0;
             }
             a.unclaimed-phone {
-              float: left;
               display: inline-block;
               width: 28px;
               height: 18px;
               background-image: url("../images/mix-icon.jpg");
               background-repeat: no-repeat;
-              background-position: -98px -3px;
+              background-position: -100px -2px;
               font-size: 0;
               text-decoration: none;
+              margin-right: 10px;
+              padding: 10px 0;
             }
             a.unclaimed-notes {
-              float: left;
               display: inline-block;
               width: 28px;
               height: 18px;
               background-image: url("../images/mix-icon.jpg");
               background-repeat: no-repeat;
-              background-position: -49px -3px;
+              background-position: -53px -2px;
               font-size: 0;
               text-decoration: none;
+              padding: 10px 0;
             }
             a.unclaimed-meeting {
               display: inline-block;
@@ -1498,9 +1500,11 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
               height: 18px;
               background-image: url("../images/mix-icon.jpg");
               background-repeat: no-repeat;
-              background-position: -22px -5px;
+              background-position: -21px -3px;
               font-size: 0;
               text-decoration: none;
+              margin-right: 10px;
+              padding: 10px 0;
             }
             a.unclaimed-task {
               display: inline-block;
@@ -1508,12 +1512,14 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
               height: 18px;
               background-image: url("../images/mix-icon.jpg");
               background-repeat: no-repeat;
-              background-position: -77px -7px;
+              background-position: -75px -4px;
               font-size: 0;
               text-decoration: none;
+              margin-right: 10px;
+              padding: 10px 0;
             }
           }
-          td.views-field-nothing { min-width: 160px; }
+          td.views-field-nothing { min-width: 200px; }
           > td {
             padding-left: 25px;
           }

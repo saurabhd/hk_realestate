@@ -49,7 +49,7 @@
     display: none;
   }
 
-  #edit-field-contact-telefon-und-add-more, 
+  #edit-field-contact-telefon-und-add-more,
   #edit-field-angefragte-wohnung-und-1-target-id,
   #crm-core-profile-entry-form-anfrage--2 tr.even,
   .field-add-more-submit {
@@ -93,4 +93,43 @@
   }
 .form-item-field-crm-address-und-0-premise {
   display: none;
+}
+
+/* CRM Style RH */
+.not-front #autocomplete ul li {
+  font-weight: 300;
+  &:last-child {
+    padding-bottom: 1em;
+  }
+   h2 a {
+    font-weight: 400;
+    font-size: 16px;
+    padding: 1em 0 0 0;
+    display: block;
+  }
+}
+
+#block-hk-custom-crm-crm-contact-type .item-list ul li a,
+#block-views-crm-activity-type-block .item-list ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "sans-serif";
+  color: #c61c2c;
+  line-height: 24px;
+  display: block;
+  padding: 1em;
+}
+#block-hk-custom-crm-crm-contact-type .item-list ul li a:hover,
+#block-views-crm-activity-type-block .item-list ul li a:hover {
+    color: #1a1a1a;
+    background: #cdcdcd;
+}
+
+/* Lightbox forms */
+
+fieldset.date-combo .container-inline-date .date-padding {
+    padding: 0;
+}
+fieldset.date-combo .container-inline-date > .form-item {
+    margin-bottom: 0;
 }

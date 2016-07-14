@@ -13,6 +13,15 @@
 
 
 //
+// Set caret on input fields in H+K red
+//
+
+input::-webkit-input-placeholder {color: #c61c2c;}
+input::-moz-placeholder          {color: #c61c2c;} /* Firefox 19+ */
+input:-moz-placeholder           {color: #c61c2c;} /* Firefox 18- */
+input:-ms-input-placeholder      {color: #c61c2c;}
+
+//
 // Legacy IE support
 //
 // These variables are used by many mixins to add additional CSS to support

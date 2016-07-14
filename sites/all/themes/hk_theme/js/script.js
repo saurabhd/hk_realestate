@@ -16,6 +16,8 @@
   Drupal.behaviors.BearScripts = {
     attach: function (context, settings) {
 
+      $('#edit-keys-3').focus();
+
       $('#block-si-menumerge-menu-merge').meanmenu({
         meanMenuContainer: '.header',
         meanScreenWidth: "1024"

@@ -44,7 +44,7 @@
     width: auto;
     z-index: 200;
 }
-a.flag {
+.flag-merken a.flag {
   text-indent: -9999px;
   display: block;
   /*background: url(../images/Icon_Favorite.png) no-repeat;*/
@@ -57,7 +57,7 @@ a.flag {
   top: -7px;
   right: -7px;
 }
-a.flagged, a.unflag-action {
+.flag-merken a.flagged, a.unflag-action {
   /*background: url(../images/Icon_Favorite_active.png) no-repeat;*/
   /*@include sprite-sprite(Icon_Favorite_active);
   background: sprite($sprite, Icon_Favorite_active) no-repeat;*/

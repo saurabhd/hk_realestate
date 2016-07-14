@@ -96,8 +96,12 @@ function hk_custom_crm_translated_menu_link_alter(&$link) {
   }
  } 
 function hk_custom_crm_form_alter(&$form, &$form_state, $form_id) { 
- if($form_id == 'crm_core_activity_edit_email_form') {
+ if($form_id == 'crm_core_activity_edit_email_form' || $form_id == 'crm_core_activity_edit_meeting_form' || $form_id == 'crm_core_activity_edit_phone_call_form' || $form_id == 'crm_core_activity_edit_task_form' || $form_id == 'crm_core_activity_edit_notes_form') {
    $form['field_activity_participants']['und']['#required'] = 0;
+   $form['#validate'][] = 'hk_custom_crm_core_activity_form_validate';
  }
 }  
 
+function hk_custom_crm_core_activity_form_validate($form, &$form_state) {
+  $form_state['values']['field_activity_participants'] = $form_state['values']['field_participants'];
+}

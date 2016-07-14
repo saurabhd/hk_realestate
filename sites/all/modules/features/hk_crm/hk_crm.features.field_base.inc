@@ -508,7 +508,6 @@ X',
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'behaviors' => array(),
       'entity_translation_sync' => FALSE,
       'handler' => 'base',
       'handler_settings' => array(
@@ -545,7 +544,6 @@ X',
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'behaviors' => array(),
       'entity_translation_sync' => FALSE,
       'handler' => 'base',
       'handler_settings' => array(
@@ -855,7 +853,6 @@ X',
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'behaviors' => array(),
       'entity_translation_sync' => FALSE,
       'handler' => 'views',
       'handler_settings' => array(

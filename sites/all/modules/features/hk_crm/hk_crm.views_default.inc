@@ -649,6 +649,11 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['edit_crm_activity']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['edit_crm_activity']['alter']['text'] = ' <a href="/task" class="ng-lightbox">To-do erstellen</a> | <a href="/email" class="ng-lightbox">E-Mail verschicken</a> | <a href="/meeting" class="ng-lightbox">Treffen eintragen</a> ';
   $handler->display->display_options['fields']['edit_crm_activity']['redirect'] = 0;
+  /* Sort criterion: CRM Core Contact: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'crm_core_contact';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   /* Filter criterion: CRM Core Contact: Contact Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'crm_core_contact';
@@ -2838,6 +2843,17 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['activity_id']['field'] = 'activity_id';
   $handler->display->display_options['fields']['activity_id']['label'] = 'Aktivitäts-ID';
   $handler->display->display_options['fields']['activity_id']['exclude'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: CRM Core Activity: Date created */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'crm_core_activity';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: CRM Core Activity: Date (field_activity_date) */
+  $handler->display->display_options['sorts']['field_activity_date_value']['id'] = 'field_activity_date_value';
+  $handler->display->display_options['sorts']['field_activity_date_value']['table'] = 'field_data_field_activity_date';
+  $handler->display->display_options['sorts']['field_activity_date_value']['field'] = 'field_activity_date_value';
+  $handler->display->display_options['sorts']['field_activity_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: CRM Core Contact: Contact ID */
   $handler->display->display_options['arguments']['contact_id']['id'] = 'contact_id';
@@ -2864,17 +2880,6 @@ function hk_crm_views_default_views() {
     'kontaktformular' => 'kontaktformular',
     'meeting' => 'meeting',
     'phone_call' => 'phone_call',
-  );
-  /* Filter criterion: CRM Core Activity: Status (field_activity_status) */
-  $handler->display->display_options['filters']['field_activity_status_value']['id'] = 'field_activity_status_value';
-  $handler->display->display_options['filters']['field_activity_status_value']['table'] = 'field_data_field_activity_status';
-  $handler->display->display_options['filters']['field_activity_status_value']['field'] = 'field_activity_status_value';
-  $handler->display->display_options['filters']['field_activity_status_value']['value'] = array(
-    'Frisch Eingetroffen' => 'Frisch Eingetroffen',
-    'Einem Makler zugeordnet' => 'Einem Makler zugeordnet',
-    'In Bearbeitung' => 'In Bearbeitung',
-    'Wiedervorlage' => 'Wiedervorlage',
-    'Erledigt' => 'Erledigt',
   );
 
   /* Display: favourites */

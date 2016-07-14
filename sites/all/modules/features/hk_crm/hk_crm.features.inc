@@ -132,6 +132,25 @@ function hk_crm_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_fe_date_custom_date_formats().
+ */
+function hk_crm_fe_date_custom_date_formats() {
+  $custom_date_formats = array();
+  $custom_date_formats['d.m.Y H \\h i'] = 'd.m.Y H \\h i';
+  return $custom_date_formats;
+}
+
+/**
+ * Implements hook_date_format_types().
+ */
+function hk_crm_date_format_types() {
+  $format_types = array();
+  // Exported date format type: date_with_h
+  $format_types['date_with_h'] = 'date with H';
+  return $format_types;
+}
+
+/**
  * Implements hook_flag_default_flags().
  */
 function hk_crm_flag_default_flags() {

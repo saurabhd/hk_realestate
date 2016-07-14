@@ -53,4 +53,7 @@ $sites = array (
   'addweb.dev.drupalforgood.eu' => 'hk.dev.addweb-7431-prod.dot',
   'addweb.en.dev.drupalforgood.eu' => 'hk.dev.addweb-7431-prod.dot',
   'www.hk.dev.addweb-7431-prod.dot' => 'hk.dev.addweb-7431-prod.dot',
+  'addweb.dev.herbert-kohlmeyer.com' => 'addweb.dev.herbert-kohlmeyer.de',
+  'addweb.dev.ru.herbert-kohlmeyer.com' => 'addweb.dev.herbert-kohlmeyer.de',
+  'www.addweb.dev.herbert-kohlmeyer.de' => 'addweb.dev.herbert-kohlmeyer.de',
 );

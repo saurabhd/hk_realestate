@@ -23,7 +23,7 @@ function hk_crm_translations_de_defaults() {
     'source' => 'Agent Calendar',
     'context' => 'title:agent_calendar',
     'location' => 'quicktabs:title:agent_calendar',
-    'translation' => 'Agent-Kalender',
+    'translation' => 'Mein Kalender',
     'plid' => 0,
     'plural' => 0,
   );

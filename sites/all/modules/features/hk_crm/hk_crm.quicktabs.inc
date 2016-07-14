@@ -23,7 +23,7 @@ function hk_crm_quicktabs_default_quicktabs() {
       'vid' => 'agent_calender',
       'display' => 'block',
       'args' => '',
-      'title' => 'Day',
+      'title' => 'Tag',
       'weight' => '-100',
       'type' => 'view',
     ),
@@ -31,7 +31,7 @@ function hk_crm_quicktabs_default_quicktabs() {
       'vid' => 'agent_calender',
       'display' => 'block_1',
       'args' => '',
-      'title' => 'Week',
+      'title' => 'Woche',
       'weight' => '-99',
       'type' => 'view',
     ),
@@ -39,7 +39,7 @@ function hk_crm_quicktabs_default_quicktabs() {
       'vid' => 'agent_calender',
       'display' => 'block_2',
       'args' => '',
-      'title' => 'Month',
+      'title' => 'Monat',
       'weight' => '-98',
       'type' => 'view',
     ),
@@ -47,7 +47,7 @@ function hk_crm_quicktabs_default_quicktabs() {
       'vid' => 'agent_calender',
       'display' => 'block_3',
       'args' => '',
-      'title' => 'Year',
+      'title' => 'Jahr',
       'weight' => '-97',
       'type' => 'view',
     ),
@@ -59,10 +59,10 @@ function hk_crm_quicktabs_default_quicktabs() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Agent Calendar');
-  t('Day');
-  t('Month');
-  t('Week');
-  t('Year');
+  t('Jahr');
+  t('Monat');
+  t('Tag');
+  t('Woche');
 
   $export['agent_calendar'] = $quicktabs;
 

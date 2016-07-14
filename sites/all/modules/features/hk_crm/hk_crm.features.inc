@@ -9,26 +9,99 @@
  */
 function hk_crm_default_crm_core_activity_type() {
   $items = array();
+  $items['anfrage'] = entity_import('crm_core_activity_type', '{
+    "type" : "anfrage",
+    "label" : "Anfrage",
+    "weight" : 0,
+    "activity_string" : "Eine Anfrage wurde gestellt",
+    "description" : "jede Anfrage muss einem Makler zugeordnet werden und so schnell wie m\\u00f6glich bearneitet."
+  }');
   $items['email'] = entity_import('crm_core_activity_type', '{
     "type" : "email",
-    "label" : "Email",
+    "label" : "E-Mail",
     "weight" : 0,
     "activity_string" : "",
     "description" : ""
+  }');
+  $items['kontaktformular'] = entity_import('crm_core_activity_type', '{
+    "type" : "kontaktformular",
+    "label" : "Kontaktformular",
+    "weight" : 0,
+    "activity_string" : "Jemand hat das Kontaktformular ausgef\\u00fcllt.",
+    "description" : ""
+  }');
+  $items['meeting'] = entity_import('crm_core_activity_type', '{
+    "type" : "meeting",
+    "label" : "Termin",
+    "weight" : 0,
+    "activity_string" : "",
+    "description" : "A meeting between 2 or more contacts"
   }');
   $items['notes'] = entity_import('crm_core_activity_type', '{
     "type" : "notes",
-    "label" : "Notes",
+    "label" : "Notiz",
     "weight" : 0,
     "activity_string" : "",
     "description" : ""
   }');
+  $items['phone_call'] = entity_import('crm_core_activity_type', '{
+    "type" : "phone_call",
+    "label" : "Anruf",
+    "weight" : 0,
+    "activity_string" : "",
+    "description" : "A phone call between 2 or more contacts"
+  }');
   $items['task'] = entity_import('crm_core_activity_type', '{
     "type" : "task",
-    "label" : "Task",
+    "label" : "To-do",
     "weight" : 0,
     "activity_string" : "An agent created a task",
     "description" : "Agents can create tasks to fill their personal to-do list on the agent central view."
+  }');
+  return $items;
+}
+
+/**
+ * Implements hook_default_crm_core_contact_type().
+ */
+function hk_crm_default_crm_core_contact_type() {
+  $items = array();
+  $items['household'] = entity_import('crm_core_contact_type', '{
+    "type" : "household",
+    "label" : null,
+    "weight" : 0,
+    "primary_fields" : null,
+    "name" : "Household",
+    "description" : "A collection of individuals generally located at the same residence.",
+    "custom" : "0",
+    "disabled" : "0",
+    "locked" : "1"
+  }');
+  $items['individual'] = entity_import('crm_core_contact_type', '{
+    "type" : "individual",
+    "label" : null,
+    "weight" : 0,
+    "primary_fields" : {
+      "email" : "field_e_mail",
+      "address" : "field_crm_address",
+      "phone" : "field_phone"
+    },
+    "name" : "Kontakt",
+    "description" : "Ein individueller Kontakt. Kann weiter als Kunde, Makler, Gesch\\u00e4ftspartner etc. klassifiziert werden.",
+    "custom" : "0",
+    "disabled" : "0",
+    "locked" : "1"
+  }');
+  $items['organization'] = entity_import('crm_core_contact_type', '{
+    "type" : "organization",
+    "label" : null,
+    "weight" : 0,
+    "primary_fields" : null,
+    "name" : "Organization",
+    "description" : "A collection of individuals or other organizations that has additional contact data.",
+    "custom" : "0",
+    "disabled" : "0",
+    "locked" : "1"
   }');
   return $items;
 }
@@ -266,6 +339,21 @@ function hk_crm_default_search_api_live_results_search() {
     "enabled" : "1",
     "options" : {
       "custom" : { "page_id" : "2" },
+      "result count" : true,
+      "num_results" : "5",
+      "display" : "view_mode",
+      "caching" : 0,
+      "entity_type" : "crm_core_contact"
+    }
+  }');
+  $items['search_api_page_3'] = entity_import('search_api_live_results_search', '{
+    "machine_name" : "search_api_page_3",
+    "name" : "Dashboard",
+    "index_id" : "crm_contacts",
+    "type" : "search_api_page",
+    "enabled" : "1",
+    "options" : {
+      "custom" : { "page_id" : "3" },
       "result count" : true,
       "num_results" : "5",
       "display" : "view_mode",

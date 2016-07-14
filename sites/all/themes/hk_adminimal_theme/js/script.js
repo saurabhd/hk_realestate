@@ -100,6 +100,7 @@
       //---------------------------------------------------------------------------//
 
       $( ".view-crm-contact-type .views-row .contact-label" ).click(function(e) {
+        e.preventDefault();
         var path = jQuery(this).attr('href');
         jQuery.ajax({
           url: path,
@@ -108,19 +109,24 @@
           crossDomain: true,
           data: {},
           success: function (data) {
-             $('#ng-lightbox').html('');
-            $('#ng-lightbox').html('<div class="lightbox lightbox--plain"><div class="lightbox__overlay"><div class="lightbox__content"><div class="close-ng-lightbox">x</div><h2 class="lightbox__header">Add Individuum</h2><div class="lightbox__body">test</div></div></div></div>');
-            $('.lightbox__body').html(jQuery(data).find("#crm-core-contact-ui-form").html());
+            jQuery('#ng-lightbox').html('');
+            jQuery('#ng-lightbox').html('<div class="lightbox lightbox--plain contact-form"><div class="lightbox__overlay"><div class="lightbox__content"><div class="close-ng-lightbox">x</div><h2 class="lightbox__header">Add Individuum</h2><div class="lightbox__body">test</div></div></div></div>');
+            //alert(jQuery(data).find("#crm-core-contact-ui-form").parent().html());
+            jQuery('.lightbox__body').html(jQuery(data).find("#crm-core-contact-ui-form").parent().html());
             jQuery('#ng-lightbox').show();
-            //jQuery('.lightbox__body #page-title, #ng-lightbox div .lightbox.lightbox--plain').hide();
+            //jQuery('#ng-lightbox div .lightbox.lightbox--plain').hide();
             jQuery('.lightbox__overlay, .close-ng-lightbox').click(function() {
-              jQuery('#ng-lightbox').hide();
+              jQuery('#ng-lightbox').html('');
             });
             jQuery('.lightbox__content').on("click", function(event) {
             event.stopPropagation();
           });
           var content_height = jQuery(window).height();
           var lightbox_height = content_height - 300;
+          jQuery('.lightbox .lightbox__content').css({'border':'4px solid #cbc1ba', '-moz-border-radius':'10px', '-webkit-border-radius':'10px', 'border-radius':'10px', '-moz-box-shadow':'0 2px 2px 0 rgba(0,0,0,0.16)', '-webkit-box-shadow':'0 2px 2px 0 rgba(0,0,0,0.16)', 'box-shadow':'0 2px 2px 0 rgba(0,0,0,0.16)', '-moz-box-sizing': 'border-box', '-webkit-box-sizing': 'border-box', 'box-sizing': 'border-box', 'background': '#FFF', 'color': '#4b4b4b', '-moz-transform': 'translate(-50%,-50%)', '-ms-transform':'translate(-50%,-50%)', '-webkit-transform':'translate(-50%,-50%)', 'transform': 'translate(-50%,-50%)', 'position': 'absolute', 'top': '50%', 'left': '50%', 'max-width': '90%', 'width': '800px', 'max-height': '100%', 'min-height': '200px', 'overflow': 'visible'})
+          jQuery('.lightbox .lightbox__header').css({'padding': '20px', 'margin': '0', 'border-bottom':'1px solid #cbc1ba'});
+          jQuery('.lightbox .lightbox__body').css({'padding':'0 40px 40px 40px'});
+          jQuery('.lightbox .lightbox__overlay').css({'-moz-transition': 'opacity .2s', '-o-transition':'opacity .2s', '-webkit-transition':'opacity .2s', 'transition':'opacity .2s', 'position':'fixed', 'top': '0', 'right': '0', 'left': '0', 'bottom': '0', 'margin': '0', 'border': '0', 'width': '100%', 'z-index': '150', 'background': 'rgba(0,0,0,0.8)'});
           jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
           jQuery( window ).resize(function() {
             var content_height = jQuery(window).height();
@@ -133,15 +139,20 @@
           }
         });
       });
+      
+      jQuery(document).ajaxComplete(function() {
+       if(jQuery('#ng-lightbox .contact-form').length) {
+        jQuery('#ng-lightbox div .lightbox.lightbox--plain').html('');
+        jQuery('#ng-lightbox .contact-form').removeClass('contact-form');
+       }
+       var content_height = jQuery(window).height();
+        var lightbox_height = content_height - 300;
+        jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
+      });
 
-      jQuery('.view-crm-activity-type .view-content ul li.views-row .views-field span a').click(function() {
+      jQuery('.view-crm-activity-type .view-content ul li.views-row .views-field span a, .view-latest-activity-by-contact table tr td.views-field-action a').click(function() {
         jQuery('#ng-lightbox').show();
-        jQuery('#ng-lightbox .lightbox--plain:nth-child(1)').hide();
-        setTimeout(function(){
-          var content_height = jQuery(window).height();
-          var lightbox_height = content_height - 300;
-          jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'}); 
-        }, 500);   
+        //jQuery('#ng-lightbox .lightbox--plain:nth-child(1)').hide();  
       });
       jQuery( window ).resize(function() {
         var content_height = jQuery(window).height();

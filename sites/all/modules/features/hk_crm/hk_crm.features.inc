@@ -429,7 +429,7 @@ function hk_crm_default_search_api_saved_searches_settings() {
       "ids_list" : [],
       "user_select_interval" : 0,
       "interval_options" : { "86400" : "Daily", "604800" : "Weekly" },
-      "set_interval" : "86400",
+      "set_interval" : "0",
       "mail" : {
         "activate" : {
           "send" : 0,
@@ -441,7 +441,7 @@ function hk_crm_default_search_api_saved_searches_settings() {
           "body" : "[user:name],\\r\\n\\r\\nThere are new results for your saved search on [site:name]:\\r\\n\\r\\n[search-api-saved-searches:results]\\r\\n\\r\\nYou can configure your saved searches at the following address:\\r\\n[user:search-api-saved-searches-url]\\r\\n\\r\\n--  [site:name] team",
           "results" : "New results for search \\u0022[search-api-saved-search:name]\\u0022:\\r\\n[search-api-saved-search:items]\\r\\n[search-api-saved-search:results-capped]",
           "result" : "[search-api-saved-search-result:label] ([search-api-saved-search-result:url])",
-          "max_results" : "0",
+          "max_results" : "5",
           "results_capped" : "\\u2026\\r\\nView all results: [search-api-saved-search:view-url]"
         }
       },
@@ -449,11 +449,11 @@ function hk_crm_default_search_api_saved_searches_settings() {
         "allow" : 1,
         "fulltext" : 0,
         "fields" : [
-          "field_save_workflow",
           "field_apart_price",
           "field_bezirk",
           "field_kategorie",
           "field_moving_in_from",
+          "field_save_workflow",
           "field_apart_bathrooms",
           "field_apart_floor",
           "field_apart_living_space",

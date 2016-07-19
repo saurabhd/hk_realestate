@@ -87,6 +87,26 @@ function hk_crm_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_e_mail_sent_receipient_when_email_activity_created'] = entity_import('rules_config', '{ "rules_e_mail_sent_receipient_when_email_activity_created" : {
+      "LABEL" : "E-mail sent receipient when email activity created",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "crm_core_activity" ],
+      "ON" : { "crm_core_activity_insert" : [] },
+      "IF" : [
+        { "data_is" : { "data" : [ "crm-core-activity:type" ], "value" : "email" } }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : [ "crm-core-activity:field-recipient:primary-email" ],
+            "subject" : [ "crm-core-activity:title" ],
+            "message" : [ "crm-core-activity:field-activity-notes" ],
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_set_responsible_agent_to_contact'] = entity_import('rules_config', '{ "rules_set_responsible_agent_to_contact" : {
       "LABEL" : "Set responsible agent to contact",
       "PLUGIN" : "rule",

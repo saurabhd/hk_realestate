@@ -15,7 +15,7 @@ function hk_crm_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'crm_core_activity';
-  $view->human_name = 'Agent Calender';
+  $view->human_name = 'Addweb - Agent Calender';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -521,7 +521,7 @@ function hk_crm_views_default_views() {
   $view->description = 'Each agent has his personal dashboard with tasks, contacts and calendars.';
   $view->tag = 'default';
   $view->base_table = 'crm_core_contact';
-  $view->human_name = 'Agent Central';
+  $view->human_name = 'Addweb - Agent Central';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1250,7 +1250,7 @@ function hk_crm_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'crm_core_activity_type';
-  $view->human_name = 'CRM ACTIVITY TYPE';
+  $view->human_name = 'Addweb - CRM ACTIVITY TYPE';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1319,7 +1319,7 @@ function hk_crm_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'crm_core_contact';
-  $view->human_name = 'CRM Contact page';
+  $view->human_name = 'Addweb - CRM Contact page';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1916,7 +1916,7 @@ function hk_crm_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'search_api_saved_search';
-  $view->human_name = 'Last Saved Searches';
+  $view->human_name = 'Addweb - Last Saved Searches';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1972,7 +1972,7 @@ function hk_crm_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'crm_core_activity';
-  $view->human_name = 'Latest Activity By Contact';
+  $view->human_name = 'Addweb - Latest Activity By Contact';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -2102,7 +2102,7 @@ function hk_crm_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'crm_core_contact';
-  $view->human_name = 'Recipient';
+  $view->human_name = 'Addweb - Recipient';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -2454,7 +2454,7 @@ function hk_crm_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'crm_core_activity';
-  $view->human_name = 'Unclaimed leads table view';
+  $view->human_name = 'Addweb - Unclaimed leads table view';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -2657,7 +2657,7 @@ function hk_crm_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_angefragte_wohnung']['delta_offset'] = '0';
-  /* Field: Content: Object ID */
+  /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
@@ -2803,7 +2803,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_apart_no']['label'] = '';
   $handler->display->display_options['fields']['field_apart_no']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_apart_no']['element_label_colon'] = FALSE;
-  /* Field: Content: Object ID */
+  /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';

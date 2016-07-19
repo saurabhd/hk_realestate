@@ -674,7 +674,7 @@ function hk_crm_field_default_field_instances() {
     'entity_type' => 'crm_core_activity',
     'field_name' => 'field_recipient',
     'label' => 'Recipient',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(

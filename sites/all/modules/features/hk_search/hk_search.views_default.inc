@@ -644,6 +644,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_object_text_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
   $handler->display->display_options['fields']['field_object_text_schattenobjekt']['field'] = 'field_object_text_schattenobjekt';
   $handler->display->display_options['fields']['field_object_text_schattenobjekt']['label'] = '';
+  $handler->display->display_options['fields']['field_object_text_schattenobjekt']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_object_text_schattenobjekt']['element_label_colon'] = FALSE;
   /* Field: Indexed Content: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -687,6 +688,13 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_solr_node_index';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  /* Field: Object: Text Schattenobjekt (indexed) */
+  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['id'] = 'field_object_ref_field_object_text_schattenobjekt';
+  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['field'] = 'field_object_ref_field_object_text_schattenobjekt';
+  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['label'] = '';
+  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['element_label_colon'] = FALSE;
   /* Field: Views: Views Conditional */
   $handler->display->display_options['fields']['views_conditional']['id'] = 'views_conditional';
   $handler->display->display_options['fields']['views_conditional']['table'] = 'views_conditional';
@@ -696,9 +704,8 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['views_conditional']['if'] = 'field_obj_schattenobjekt';
   $handler->display->display_options['fields']['views_conditional']['condition'] = '1';
   $handler->display->display_options['fields']['views_conditional']['equalto'] = 'ja';
-  $handler->display->display_options['fields']['views_conditional']['then'] = '[field_object_text_schattenobjekt] 
-';
-  $handler->display->display_options['fields']['views_conditional']['or'] = '[field_object_ref_field_object_txt_map_popup_value]';
+  $handler->display->display_options['fields']['views_conditional']['then'] = '[field_object_ref_field_object_text_schattenobjekt]';
+  $handler->display->display_options['fields']['views_conditional']['or'] = '[field_object_ref_field_object_txt_map_popup_value] ';
   $handler->display->display_options['fields']['views_conditional']['strip_tags'] = 0;
   /* Field: Object: Node ID (indexed) */
   $handler->display->display_options['fields']['field_object_ref_nid']['id'] = 'field_object_ref_nid';
@@ -1967,6 +1974,14 @@ function hk_search_views_default_views() {
     'scale' => '0',
     'prefix_suffix' => 1,
   );
+  /* Field: Indexed Content: Text Schattenobjekt */
+  $handler->display->display_options['fields']['field_object_text_schattenobjekt']['id'] = 'field_object_text_schattenobjekt';
+  $handler->display->display_options['fields']['field_object_text_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_object_text_schattenobjekt']['field'] = 'field_object_text_schattenobjekt';
+  /* Field: Object: Text Schattenobjekt (indexed) */
+  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['id'] = 'field_object_ref_field_object_text_schattenobjekt';
+  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['field'] = 'field_object_ref_field_object_text_schattenobjekt';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Object: Node ID (indexed) */
   $handler->display->display_options['arguments']['field_object_ref_nid']['id'] = 'field_object_ref_nid';

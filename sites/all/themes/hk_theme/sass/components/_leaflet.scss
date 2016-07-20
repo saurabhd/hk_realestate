@@ -867,10 +867,10 @@ div.hide-submit-processing {
 */
 .leaflet-overlay-pane > svg.leaflet-zoom-animated > g > path.leaflet-clickable {
   fill: #fff;
-  fill-opacity: 0.2;
+  fill-opacity: 0;
   stroke: $primary;
-  stroke-opacity: 1;
-  stroke-width: 1;
+  stroke-opacity: 0;
+  stroke-width: 0;
   stroke-linecap: round; /* butt | square */
   stroke-linejoin: round; /* miter | bevel */
 }

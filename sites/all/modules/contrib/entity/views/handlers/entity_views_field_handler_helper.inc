@@ -442,8 +442,17 @@ class EntityFieldHandlerHelper {
         return NULL;
 
       case 'count':
-        return count(entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment'))));
-
+        $entitis = entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment'))); 
+        foreach ($entitis as $key => $entity) {
+            if($entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'] == 0) {
+              return count(entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment'))));
+            }
+            else {
+              $entity_list[$key] = $entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'];
+              return count($entity_list);
+            }
+        }
+      
       // Handles both collapse and list output. Fallback is to collapse.
       default:
         $inner_values = array();
@@ -466,6 +475,7 @@ class EntityFieldHandlerHelper {
         $separator = isset($handler->options['list']['separator']) ? $handler->options['list']['separator'] : ', ';
         return implode($separator, $inner_values);
     }
+
   }
 
   /**

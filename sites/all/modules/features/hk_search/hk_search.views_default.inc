@@ -760,7 +760,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['nid_1']['label'] = '';
   $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid_1']['alter']['text'] = '<div class="apart"><span class="rooms">[field_apart_rooms]</span><span class="space">[field_apart_living_space]</span><span class="price">[field_apart_price]</span></div>';
+  $handler->display->display_options['fields']['nid_1']['alter']['text'] = '<div class="apart"><span class="rooms">[field_apart_rooms]</span><span class="space">[field_apart_living_space]</span><span class="price">[field_apart_price]</span><a class="more"  href="/node/[nid]">Details</a></div>';
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid_1']['link_to_entity'] = 0;
   /* Field: Views: Views Conditional */
@@ -802,14 +802,6 @@ function hk_search_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_obj_schattenobjekt']['group'] = 1;
-  /* Filter criterion: Indexed Content: Status */
-  $handler->display->display_options['filters']['field_save_workflow']['id'] = 'field_save_workflow';
-  $handler->display->display_options['filters']['field_save_workflow']['table'] = 'search_api_index_solr_node_index';
-  $handler->display->display_options['filters']['field_save_workflow']['field'] = 'field_save_workflow';
-  $handler->display->display_options['filters']['field_save_workflow']['value'] = array(
-    4 => '4',
-    7 => '7',
-  );
   /* Filter criterion: Object » Standort: Well-known text (indexed) */
   $handler->display->display_options['filters']['field_object_ref_field_objekt_wkt_geom']['id'] = 'field_object_ref_field_objekt_wkt_geom';
   $handler->display->display_options['filters']['field_object_ref_field_objekt_wkt_geom']['table'] = 'search_api_index_solr_node_index';
@@ -1974,14 +1966,6 @@ function hk_search_views_default_views() {
     'scale' => '0',
     'prefix_suffix' => 1,
   );
-  /* Field: Indexed Content: Text Schattenobjekt */
-  $handler->display->display_options['fields']['field_object_text_schattenobjekt']['id'] = 'field_object_text_schattenobjekt';
-  $handler->display->display_options['fields']['field_object_text_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
-  $handler->display->display_options['fields']['field_object_text_schattenobjekt']['field'] = 'field_object_text_schattenobjekt';
-  /* Field: Object: Text Schattenobjekt (indexed) */
-  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['id'] = 'field_object_ref_field_object_text_schattenobjekt';
-  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
-  $handler->display->display_options['fields']['field_object_ref_field_object_text_schattenobjekt']['field'] = 'field_object_ref_field_object_text_schattenobjekt';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Object: Node ID (indexed) */
   $handler->display->display_options['arguments']['field_object_ref_nid']['id'] = 'field_object_ref_nid';
@@ -2020,14 +2004,6 @@ function hk_search_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_obj_schattenobjekt']['group'] = 1;
-  /* Filter criterion: Indexed Content: Status */
-  $handler->display->display_options['filters']['field_save_workflow']['id'] = 'field_save_workflow';
-  $handler->display->display_options['filters']['field_save_workflow']['table'] = 'search_api_index_solr_node_index';
-  $handler->display->display_options['filters']['field_save_workflow']['field'] = 'field_save_workflow';
-  $handler->display->display_options['filters']['field_save_workflow']['value'] = array(
-    4 => '4',
-    7 => '7',
-  );
   /* Filter criterion: Object » Standort: Well-known text (indexed) */
   $handler->display->display_options['filters']['field_object_ref_field_objekt_wkt_geom']['id'] = 'field_object_ref_field_objekt_wkt_geom';
   $handler->display->display_options['filters']['field_object_ref_field_objekt_wkt_geom']['table'] = 'search_api_index_solr_node_index';

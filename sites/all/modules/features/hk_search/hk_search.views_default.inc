@@ -760,7 +760,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['nid_1']['label'] = '';
   $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid_1']['alter']['text'] = '<div class="apart"><span class="rooms">[field_apart_rooms]</span><span class="space">[field_apart_living_space]</span><span class="price">[field_apart_price]</span><a class="more"  href="/node/[nid]">Details</a></div>';
+  $handler->display->display_options['fields']['nid_1']['alter']['text'] = '<div class="apart"><span class="rooms">[field_apart_rooms]</span><span class="space">[field_apart_living_space]</span><span class="price">[field_apart_price]</span></div>';
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid_1']['link_to_entity'] = 0;
   /* Field: Views: Views Conditional */

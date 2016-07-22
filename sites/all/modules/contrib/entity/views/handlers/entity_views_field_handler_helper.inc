@@ -444,7 +444,10 @@ class EntityFieldHandlerHelper {
       case 'count':
         $entitis = entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment'))); 
         foreach ($entitis as $key => $entity) {
-            if($entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'] == 0) {
+            if(isset($entity->field_obj_schattenobjekt[LANGUAGE_NONE]) && !empty($entity->field_obj_schattenobjekt[LANGUAGE_NONE])) {
+              $shadow_object = $entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'];
+            }
+            if($shadow_object == 0) {
               return count(entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment'))));
             }
             else {

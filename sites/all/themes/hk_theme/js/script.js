@@ -6,7 +6,6 @@
  * the README.txt next to this file.
  */
 
-
 // JavaScript should be made compatible with libraries other than jQuery by
 // wrapping it with an "anonymous closure". See:
 // - http://drupal.org/node/1446420
@@ -16,6 +15,8 @@
 (function ($) {
   Drupal.behaviors.BearScripts = {
     attach: function (context, settings) {
+
+      $('#edit-keys-3').focus();
 
       $('#block-si-menumerge-menu-merge').meanmenu({
         meanMenuContainer: '.header',
@@ -53,10 +54,79 @@
           placeholderOption: "first"
           //allowClear: true
       });
+      $('#edit-field-email-type-und').select2({
+          placeholder: Drupal.t('Select Email Type'),
+          placeholderOption: "first"
+          //allowClear: true
+      });
       $(".field-name-contact-name select, #edit-field-crm-address-und-0-country").select2({
         placeholder: Drupal.t('please select'),
         placeholderOption: "first"
         //allowClear: true
+      });
+
+      //---------------------------------------------------------------------------//
+      //************ Prepopulate term field value from url using ajax *************//
+      //---------------------------------------------------------------------------//
+      
+      $( ".view-crm-contact-type .views-row .contact-label" ).click(function(e) {
+        e.preventDefault();
+        var path = jQuery(this).attr('href');
+        jQuery.ajax({
+          url: path,
+          type: "GET",
+          cache: false,
+          crossDomain: true,
+          data: {},
+          success: function (data) {
+             $('#ng-lightbox').html('');
+            $('#ng-lightbox').html('<div class="lightbox lightbox--plain contact-form"><div class="lightbox__overlay"><div class="lightbox__content"><div class="close-ng-lightbox">x</div><h2 class="lightbox__header">Add Individuum</h2><div class="lightbox__body">test</div></div></div></div>');
+            $('.lightbox__body').html(jQuery(data).find("#crm-core-contact-ui-form").html());
+            jQuery('#ng-lightbox').show();
+            jQuery('.lightbox__content').on("click", function(event) {
+              event.stopPropagation();
+            });
+            jQuery('#ng-lightbox div .lightbox.lightbox--plain').hide();
+            jQuery('.lightbox__overlay, .close-ng-lightbox').click(function() {
+              jQuery('#ng-lightbox').html('');
+            });
+          
+          jQuery('.lightbox .lightbox__content').css({'border':'4px solid #cbc1ba', '-moz-border-radius':'10px', '-webkit-border-radius':'10px', 'border-radius':'10px', '-moz-box-shadow':'0 2px 2px 0 rgba(0,0,0,0.16)', '-webkit-box-shadow':'0 2px 2px 0 rgba(0,0,0,0.16)', 'box-shadow':'0 2px 2px 0 rgba(0,0,0,0.16)', '-moz-box-sizing': 'border-box', '-webkit-box-sizing': 'border-box', 'box-sizing': 'border-box', 'background': '#FFF', 'color': '#4b4b4b', '-moz-transform': 'translate(-50%,-50%)', '-ms-transform':'translate(-50%,-50%)', '-webkit-transform':'translate(-50%,-50%)', 'transform': 'translate(-50%,-50%)', 'position': 'absolute', 'top': '50%', 'left': '50%', 'max-width': '90%', 'width': '800px', 'max-height': '100%', 'min-height': '200px', 'overflow': 'visible'})
+          jQuery('.lightbox .lightbox__header').css({'padding': '20px', 'margin': '0', 'border-bottom':'1px solid #cbc1ba'});
+          jQuery('.lightbox .lightbox__body').css({'padding':'0 40px 40px 40px'});
+          jQuery('.lightbox .lightbox__overlay').css({'-moz-transition': 'opacity .2s', '-o-transition':'opacity .2s', '-webkit-transition':'opacity .2s', 'transition':'opacity .2s', 'position':'fixed', 'top': '0', 'right': '0', 'left': '0', 'bottom': '0', 'margin': '0', 'border': '0', 'width': '100%', 'z-index': '150', 'background': 'rgba(0,0,0,0.8)'}); 
+          var content_height = jQuery(window).height();
+          var lightbox_height = content_height - 300;
+          jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
+
+          jQuery( window ).resize(function() {
+            var content_height = jQuery(window).height();
+            var lightbox_height = content_height - 300;
+            jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
+          });
+          },
+          error: function (e) {
+              alert(e.responseText);
+          }
+        });
+      });
+      jQuery(document).ajaxComplete(function() {
+       if(jQuery('#ng-lightbox .contact-form').length) {
+        jQuery('#ng-lightbox div .lightbox.lightbox--plain').html('');
+        jQuery('#ng-lightbox .contact-form').removeClass('contact-form');
+       }
+        var content_height = jQuery(window).height();
+        var lightbox_height = content_height - 300;
+        jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
+      });
+      jQuery('.view-crm-activity-type ul li.views-row .views-field span a, .view-unclaimed-leads-table-view.view-display-id-block .views-field-nothing a').click(function() {
+        jQuery('#ng-lightbox').show();
+        //jQuery('#ng-lightbox .lightbox--plain:nth-child(1)').hide();   
+      });
+      jQuery( window ).resize(function() {
+        var content_height = jQuery(window).height();
+        var lightbox_height = content_height - 300;
+        jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
       });
 
       //var uiDialogHeight = jQuery('.ui-dialog').outerHeight();
@@ -106,6 +176,42 @@
         e.stopPropagation();
       });
 
+      // Search Slide toggle
+      jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
+        e.preventDefault();
+        jQuery('.ui-dialog').slideToggle();
+        jQuery('.page-buy #search').slideToggle();
+      });
+      jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
+        e.preventDefault();
+        //jQuery('#search.region-search').slideToggle();
+      });
+      // end
+
+      // Hide keyboard
+      if(jQuery(window).width() < 767) {
+        jQuery('.home-form-wrap ul li.select2-search-field input').attr('readonly',true);
+        jQuery('.home-form-wrap .ui-dialog #search .block-facetapi input').attr('readonly',true);
+        
+      }
+      // End
+
+      // Custom search box //
+      jQuery('#search .facets-borough-block .item-list', context).once().prepend('<a class="borough-select facet-select">Borough</a>');
+      jQuery('#search .facets-category-block .item-list', context).once().prepend('<a class="category-select facet-select">Category</a>');
+      jQuery('.facet-select').click(function(e){
+          e.stopImmediatePropagation();
+          jQuery('.facet-select').parent().removeClass('active');
+          jQuery(this).parent().addClass('active');
+          if(jQuery(this).parent().hasClass() == 'active') {
+            jQuery(this).parent().removeClass('active');
+          }
+          //jQuery('#search .block-views .active ul li:nth-child(1) a').mouseenter();
+      });
+       jQuery('body').click(function(){
+          jQuery('.facet-select').parent().removeClass('active');
+      });
+      // End //
     }
 
   }
@@ -215,6 +321,8 @@
 
 /* Home page search box */
 jQuery(document).ready(function() {
+  //alert('document.ready');
+
   home_dialog_center ();
   jQuery(window).resize(function() {
     home_dialog_center ();
@@ -244,6 +352,46 @@ jQuery(document).ready(function() {
     jQuery('.not-front #search').css('padding-bottom', paddingbottom);
   });
   /* End */
+
+  window.onload = function() {
+    jQuery('.not-front #facetapi-multiselect-form-1 .form-item').click(function() {
+      //alert('form1');
+      var selectHeight = jQuery(this).find('.select2-choices').outerHeight();
+      var paddingbottom = selectHeight - 30;
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+    });
+    /*jQuery('.not-front #facetapi-multiselect-form-1 .select2-search-choice-close').click(function() {
+      var selectHeight = jQuery('.not-front #facetapi-multiselect-form-2 .select2-choices').outerHeight();
+      var paddingbottom = selectHeight - 30;
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+    });*/
+
+    jQuery('.not-front #facetapi-multiselect-form-2 .form-item').click(function() {
+      //alert('form2');
+      var selectHeight = jQuery(this).find('.select2-choices').outerHeight();
+      var paddingbottom = selectHeight - 30;
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+    });
+    /*jQuery('.not-front #facetapi-multiselect-form-2 .select2-search-choice-close').click(function() {
+      var selectHeight = jQuery('.not-front #facetapi-multiselect-form-1 .select2-choices').outerHeight();
+      var paddingbottom = selectHeight - 30;
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom);
+    });*/
+  };
+
+  var paddingbottom_high = 0;
+  jQuery('.page-buy .select2-choices').each(function() {
+    //console.log('each');
+    var selectHeight = jQuery(this).outerHeight();
+    var paddingbottom = selectHeight - 30;
+    //var paddingbottom_high = paddingbottom;
+    console.log('p', + paddingbottom);
+    if(paddingbottom_high < paddingbottom) {
+      paddingbottom_high = paddingbottom;
+      console.log('high' + paddingbottom_high);
+      jQuery('.not-front #search').css('padding-bottom', paddingbottom_high);
+    }
+  });
 
   /*jQuery(".select2-container .select2-choices").change(function() {
     alert("Hi");

@@ -126,7 +126,7 @@ goog.scope(function () {
    * @param {number=} timeout Optional timeout for giving up on font load detection and rejecting the promise (defaults to 3 seconds).
    * @return {Promise.<fontface.Observer>}
    */
-  Observer.prototype.check = function (text, timeout) {
+  Observer.prototype.load = function (text, timeout) {
     var that = this;
     var testString = text || 'BESbswy';
     var timeoutValue = timeout || Observer.DEFAULT_TIMEOUT;
@@ -134,25 +134,36 @@ goog.scope(function () {
 
     return new Promise(function (resolve, reject) {
       if (Observer.SUPPORTS_NATIVE) {
-        var check = function () {
-          var now = that.getTime();
+        var loader = new Promise(function (resolve, reject) {
+          var check = function () {
+            var now = that.getTime();
 
-          if (now - start >= timeoutValue) {
-            reject(that);
-          } else {
-            document.fonts.load(that.getStyle(that['family']), testString).then(function (fonts) {
-              if (fonts.length >= 1) {
-                resolve(that);
-              } else {
-                setTimeout(check, 25);
-              }
-            }, function () {
-              reject(that);
-            });
-          }
-        }
+            if (now - start >= timeoutValue) {
+              reject();
+            } else {
+              document.fonts.load(that.getStyle(that['family']), testString).then(function (fonts) {
+                if (fonts.length >= 1) {
+                  resolve();
+                } else {
+                  setTimeout(check, 25);
+                }
+              }, function () {
+                reject();
+              });
+            }
+          };
+          check();
+        });
 
-        check();
+        var timer = new Promise(function (resolve, reject) {
+          setTimeout(reject, timeoutValue);
+        });
+
+        Promise.race([timer, loader]).then(function () {
+          resolve(that);
+        }, function () {
+          reject(that);
+        });
       } else {
         dom.waitForBody(function () {
           var rulerA = new Ruler(testString);

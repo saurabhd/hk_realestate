@@ -1,0 +1,108 @@
+<?php
+
+/**
+* Implements hook_block_info().
+*/
+function hk_custom_crm_block_info() {
+  $blocks = array();
+  $blocks['crm_contact_type'] = array(
+    'info' => t('CRM Contact Type'),
+  );
+  $blocks['custom_saved_search'] = array(
+    'info' => t('Custom Saved Search'),
+  );
+  return $blocks;
+}
+/**
+* Implements hook_block_view().
+*/
+function hk_custom_crm_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'crm_contact_type':
+      $block['subject'] = '';
+      $block['content'] = _hk_custom_crm_content();
+      break;
+    case 'custom_saved_search':
+      $block['subject'] = '';
+      $block['content'] = _hk_custom_crm_saved_search_content();
+      break; 
+  }
+  return $block;
+}
+
+function _hk_custom_crm_content() {
+  global $base_url;
+  $term_type = taxonomy_vocabulary_machine_name_load('individual_type');
+  $terms = taxonomy_get_tree($term_type->vid);
+  $output = '<div class="view-crm-contact-type"><div class="view-header"><div class="contact-type-header">'.t("Create Contact").'</div></div><div class="item-list"><ul>';
+  foreach ($terms as $key => $value) {
+    $count = $key+1;
+    $output .= '<li class="views-row views-row-'.$count.'"><div class="views-field views-field-label"><span class="field-content"><a href="'.$base_url.'/crm-core/contact/add/individual?edit[field_individual_type][und]='.$value->tid.'" class="contact-label">'.t("$value->name").'</a></span></div></li>';
+  }
+  $output .= '</ul></div></div>'; 
+  return $output;
+}
+
+function _hk_custom_crm_saved_search_content() {
+  $query = db_select('search_api_saved_search', 'sass')
+          ->fields('sass', array('options'))
+          ->execute();
+  $results = $query->fetchAll();
+  
+  $string = '';
+  $output = '';
+  $fvalue = '';
+  foreach ($results as $key => $value) {
+    $string[] = unserialize($value->options);
+  }
+  foreach ($string as $key => $value) {
+    $query_string = '';
+    if(!empty($value['page']['query']['f'])) {
+      $fvalue = $value['page']['query']['f'];
+      foreach ($fvalue as $f_key => $f_value) {
+        $query_string .= 'f[' . $f_key . ']=' . $f_value .'&';
+      }
+      $query_string = rtrim($query_string, '&');
+    }
+    $contact_cid = explode('/', $value['page']['path']);
+    $contact_cid = $contact_cid[2];
+    $arg2 = arg(2);
+    if($arg2 == $contact_cid) {
+      $output = $value['page']['path'] . '?' . $query_string;
+    }
+    //$path[$key]['query_string'] = $value['page']['query']['f'];
+  }
+  $output = '<div id="block-views-last-saved-searches-block"><div class="view view-last-saved-searches view-id-last_saved_searches view-display-id-block"><div class="view-content"><div class="views-row views-row-1 views-row-odd views-row-first views-row-last"><div class="views-field views-field-name"><div class="field-content last-save-searches"><a href="'.$output.'">Saved search</a></div></div></div></div></div>';
+  return $output;
+}
+function hk_custom_crm_translated_menu_link_alter(&$link) {
+  global $user;
+  $uid = $user->uid;
+  $cid = '';
+  $query =  db_select('crm_core_contact', 'cc')
+      ->fields('cc', array('contact_id'))
+      ->condition('uid', $uid)
+      ->execute();
+  $results = $query->fetchAll();
+  if(in_array('agent', $user->roles) || in_array('administrator', $user->roles)) {  
+    if(isset($results) && !empty($results)) {
+      $cid = $results[0]->contact_id;
+    }
+  }
+  if ($link['link_title'] == 'Agent Central') {
+    $link['path'] = 'crm-core/agent-central/'.$cid; 
+    $link['href'] = 'crm-core/agent-central/'.$cid;
+  }
+ } 
+function hk_custom_crm_form_alter(&$form, &$form_state, $form_id) { 
+ if($form_id == 'crm_core_activity_edit_email_form' || $form_id == 'crm_core_activity_edit_meeting_form' || $form_id == 'crm_core_activity_edit_phone_call_form' || $form_id == 'crm_core_activity_edit_task_form' || $form_id == 'crm_core_activity_edit_notes_form') {
+   $form['field_activity_participants']['und']['#required'] = 0;
+   $form['#validate'][] = 'hk_custom_crm_core_activity_form_validate';
+ }
+}  
+
+function hk_custom_crm_core_activity_form_validate($form, &$form_state) {
+  $form_state['values']['field_activity_participants'] = $form_state['values']['field_participants'];
+}
+ 

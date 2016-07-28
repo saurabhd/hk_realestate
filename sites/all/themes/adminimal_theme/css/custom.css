@@ -1,0 +1,773 @@
+/**
+ *  Ontact page design
+ **/
+/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* Contact page design */
+/* line 11, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page {
+  display: inline-block;
+  width: 100%;
+}
+/* line 15, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row {
+  display: inline-block;
+  width: 100%;
+  margin-top: 50px;
+  border: 1px solid #C3C3C3;
+}
+/* line 20, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container {
+  width: 100%;
+  padding: 15px 0 20px;
+  display: inline-block;
+  background-image: url("../images/Line_dotted.jpg");
+  background-repeat: repeat-x;
+  background-position: center bottom;
+}
+/* line 27, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .left-content {
+  padding-left: 15px;
+  display: inline-block;
+}
+/* line 32, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .left-content .views-field .field-content img {
+  height: 200px;
+  width: 200px;
+  margin-right: 20px;
+  -webkit-border-radius: 1000px;
+  -moz-border-radius: 1000px;
+  border-radius: 1000px;
+}
+/* line 43, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content {
+  -webkit-width: calc(100% - 250px);
+  -moz-width: calc(100% - 250px);
+  width: calc(100% - 250px);
+  display: inline-block;
+  margin-top: 20px;
+  vertical-align: top;
+}
+/* line 50, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field {
+  margin-bottom: 10px;
+}
+/* line 52, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-content {
+  display: inline-block;
+  font-size: 14px;
+  color: #525252;
+}
+/* line 56, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-content * {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 61, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-label {
+  display: inline-block;
+  width: 100px;
+  font-size: 14px;
+  color: #323232;
+  font-weight: bold;
+  vertical-align: top;
+}
+/* line 70, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-name .field-content {
+  font-size: 25px;
+  color: #242021;
+  font-weight: bold;
+}
+/* line 76, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-company-name {
+  margin-bottom: 15px;
+}
+/* line 78, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-company-name .field-content {
+  font-size: 17px;
+  color: #656565;
+}
+/* line 84, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-address::before {
+  background-image: url("../images/location-icon.png");
+  background-repeat: no-repeat;
+  background-size: 14px 17px;
+  padding-left: 30px;
+  content: '';
+}
+/* line 94, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-email::before {
+  background-image: url("../images/envelope.png");
+  background-repeat: no-repeat;
+  background-size: 17px 15px;
+  padding-left: 30px;
+  content: '';
+}
+/* line 104, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-phone::before {
+  background-image: url("../images/call-answer.png");
+  background-repeat: no-repeat;
+  background-size: 14px 15px;
+  padding-left: 30px;
+  content: '';
+}
+/* line 117, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container {
+  width: 100%;
+  display: inline-block;
+  padding: 30px;
+}
+/* line 121, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .views-field {
+  padding: 15px 0;
+}
+/* line 123, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .views-field .field-label {
+  display: inline-block;
+  width: 100px;
+  font-size: 15px;
+  color: #323232;
+  font-weight: bold;
+}
+/* line 131, ../sass/custom.scss */
+.page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .field-content {
+  display: inline-block;
+  font-size: 15px;
+}
+/* line 140, ../sass/custom.scss */
+.page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type,
+.page-crm-core-contact #content-before #block-views-crm-activity-type-block {
+  float: right;
+  display: inline-block;
+  text-transform: uppercase;
+}
+/* line 145, ../sass/custom.scss */
+.page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-header,
+.page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-header {
+  width: 162px;
+  margin-right: 5px;
+  padding: 10px 38px;
+  background-color: #1A1A1A;
+  color: #FFF;
+  font-size: 14px;
+  cursor: pointer;
+  background-image: url("../images/Icon_Arrow_down.png");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+}
+/* line 159, ../sass/custom.scss */
+.page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-crm-contact-type .view-header,
+.page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-crm-contact-type .view-header {
+  background-color: #D92227;
+}
+/* line 164, ../sass/custom.scss */
+.page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul,
+.page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul {
+  position: absolute;
+  display: none;
+  max-width: 234px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  color: #212830;
+  border: 2px solid #CDCDCD;
+  text-align: center;
+  z-index: 1;
+}
+/* line 176, ../sass/custom.scss */
+.page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li,
+.page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li {
+  list-style: none;
+}
+/* line 178, ../sass/custom.scss */
+.page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a,
+.page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #C61C2C;
+}
+/* line 182, ../sass/custom.scss */
+.page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a:hover,
+.page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li a:hover {
+  color: #1A1A1A;
+}
+/* line 191, ../sass/custom.scss */
+.page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type:hover .item-list ul,
+.page-crm-core-contact #content-before #block-views-crm-activity-type-block:hover .item-list ul {
+  display: block;
+}
+/* line 198, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page {
+  display: inline-block;
+  width: 100%;
+  margin-top: 50px;
+}
+/* line 202, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page {
+  display: inline-block;
+  width: 100%;
+}
+/* line 205, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs {
+  display: inline-block;
+  margin-left: 0;
+}
+/* line 208, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li {
+  display: inline-block;
+  margin-right: -3px;
+  float: left;
+}
+/* line 213, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li.active a {
+  position: relative;
+  background-color: #282D33;
+}
+/* line 216, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li.active a::after {
+  border-color: transparent;
+  border-top-color: #282D33;
+  border-width: 5px 5px 0;
+  bottom: 0;
+  left: 50%;
+  margin: 0 0 -5px -5px;
+  border-style: solid;
+  height: 0;
+  position: absolute;
+  width: 0;
+  content: '';
+}
+/* line 231, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li:first-child {
+  border-right: none;
+}
+/* line 234, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li:last-child {
+  border-right: none;
+}
+/* line 237, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li a {
+  height: 37px;
+  background-color: #BD1725;
+  padding: 10px 25px;
+  text-decoration: none;
+  border: 1px solid #A4A4A4;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 15px;
+}
+/* line 246, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li a:hover {
+  background-color: #282D33;
+}
+/* line 253, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page {
+  display: inline-block;
+  width: 100%;
+  margin-top: 23px;
+}
+/* line 259, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr {
+  background: transparent;
+}
+/* line 261, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td {
+  padding: 25px;
+  font-size: 17px;
+  color: #333333;
+}
+/* line 265, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td.views-field-field-activity-notes {
+  background-image: url("../images/plus.png");
+  background-repeat: no-repeat;
+  background-position: 26px 25px;
+  cursor: pointer;
+}
+/* line 272, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.show-notes {
+  display: none;
+}
+/* line 276, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.odd {
+  border-top: 1px solid #C3C3C3;
+  border-bottom: 1px solid #C3C3C3;
+  background-image: url("../images/Pattern.jpg");
+}
+/* line 281, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.even {
+  border-top: none;
+  border-bottom: none;
+}
+/* line 287, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list {
+  margin-top: 50px;
+}
+/* line 290, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current {
+  background-color: #D11F01;
+  border-radius: 50%;
+  color: #FFF;
+  display: inline-block;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  width: 25px;
+  line-height: 25px;
+}
+/* line 300, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current a {
+  /*background-color: #D11F01;
+  border-radius: 50%;
+  color: #FFF;
+  display: inline-block;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  width: 25px;*/
+}
+/* line 311, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item,
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next,
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous {
+  background-color: transparent;
+  /*border: 1px solid #B8B8B8;
+  border-radius: 50%;*/
+}
+/* line 317, ../sass/custom.scss */
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item a,
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next a,
+.page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous a {
+  border: 1px solid #B8B8B8;
+  border-radius: 50%;
+  color: #000;
+  display: inline-block;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  width: 25px;
+}
+/* line 332, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper {
+  display: inline-block;
+  width: 100%;
+}
+/* line 335, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 340, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #main-content {
+  float: left;
+  display: inline-block;
+  width: -webkit-calc(70% - 30px);
+  width: -moz-calc(70% - 30px);
+  width: calc(70% - 30px);
+  margin: 0 30px 0 0;
+}
+/* line 348, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top {
+  float: left;
+  display: inline-block;
+  width: 30%;
+  border: 1px solid #C5C5C5;
+  margin: 50px 0 0;
+}
+/* line 354, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top {
+  width: 100%;
+  padding-left: 0;
+  /* Matching Apartments section design */
+  /* End */
+}
+/* line 359, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area {
+  background-color: #FFF;
+}
+/* line 362, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header {
+  display: inline-block;
+  -webkit-width: calc(100% - 30px);
+  -moz-width: calc(100% - 30px);
+  width: calc(100% - 30px);
+  padding: 20px 0;
+  margin: 15px;
+  background-image: url("../images/Line_dotted.jpg");
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-color: #FFF;
+}
+/* line 373, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .block-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+/* line 377, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .sub-title {
+  color: #0a0a0a;
+  display: inline-block;
+  font-size: 16px;
+}
+/* line 383, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section {
+  background-color: #EBEBEB;
+  padding: 20px;
+}
+/* line 386, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E7E7E7;
+}
+/* line 390, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content {
+  float: left;
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 395, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row.views-row-last {
+  border-bottom: none;
+}
+/* line 400, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content .views-field-picture img {
+  width: 106px;
+  height: 92px;
+}
+/* line 406, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content {
+  display: inline-block;
+  float: left;
+  -mox-width: calc(100% - 120px);
+  -webkit-width: calc(100% - 120px);
+  width: calc(100% - 120px);
+}
+/* line 413, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .views-field-title a {
+  color: #343434;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* line 419, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+}
+/* line 423, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-apart-no {
+  color: #ef595a;
+  display: inline-block;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* line 430, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email {
+  /*float: right;
+  display: inline-block;
+  background-image: url('../images/Layer 22.png');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  font-size: 0;*/
+}
+/* line 431, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email a {
+  display: inline-block;
+  width: 40px;
+  text-decoration: none;
+  float: right;
+  display: inline-block;
+  background-image: url("../images/Black_Email.png");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  font-size: 0;
+}
+/* line 452, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms {
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+}
+/* line 456, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space {
+  display: inline-block;
+  float: left;
+}
+/* line 459, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space::before {
+  display: inline-block;
+  height: 29px;
+  width: 29px;
+  background-image: url("../images/Layer-22.png");
+  background-position: right 5px center;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  content: '';
+  vertical-align: top;
+}
+/* line 470, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space span {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* line 477, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms {
+  display: inline-block;
+  float: right;
+}
+/* line 480, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms::before {
+  display: inline-block;
+  height: 29px;
+  width: 35px;
+  background-image: url("../images/Layer1.png");
+  background-position: right 5px center;
+  background-repeat: no-repeat;
+  content: '';
+  vertical-align: top;
+}
+/* line 490, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms span {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* line 497, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email {
+  display: inline-block;
+  float: right;
+}
+/* line 500, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email .field-content {
+  font-size: 0;
+  background-image: url("../images/Black_Email.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+}
+/* line 510, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content {
+  width: 100%;
+  display: inline-block;
+  margin-top: 10px;
+}
+/* line 514, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price {
+  background-color: #c71c2c;
+  background-image: url("../images/Buy.png");
+  background-position: 9px 13px;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  color: #fff;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+  padding: 15px 15px 15px 40px;
+}
+/* line 526, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price:hover {
+  cursor: pointer;
+}
+/* line 535, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list {
+  display: inline-block;
+  margin-top: -50px;
+  width: 100%;
+  background-color: #EBEBEB;
+  float: right;
+}
+/* line 541, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul {
+  display: inline-block;
+  float: right;
+  margin-right: 24px;
+}
+/* line 545, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li {
+  padding: 0;
+}
+/* line 549, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-next a {
+  display: inline-block;
+  width: 25px;
+  height: 38px;
+  font-size: 0;
+  background-image: url("../images/next-prevous.png");
+  background-position: -17px 0;
+  background-repeat: no-repeat;
+}
+/* line 560, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-previous a {
+  display: inline-block;
+  width: 25px;
+  height: 38px;
+  font-size: 0;
+  background-image: url("../images/next-prevous.png");
+  background-position: 6px 0;
+  background-repeat: no-repeat;
+}
+/* line 570, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-current {
+  display: none;
+}
+/* line 579, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right {
+  float: left;
+  display: inline-block;
+  width: 30%;
+  border: 1px solid #C5C5C5;
+  margin: 50px 0 0;
+}
+/* line 585, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right {
+  display: inline-block;
+  width: 100%;
+  padding: 25px;
+  background-color: #757D88;
+}
+/* line 590, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  background-image: url("../images/Line_dotted.jpg");
+  background-repeat: repeat-x;
+  background-position: center bottom;
+}
+/* line 597, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 h2 {
+  margin-bottom: 13px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+}
+/* line 604, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 .content p {
+  color: #fff;
+  font-size: 17px;
+}
+/* line 611, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices {
+  margin-right: 5px !important;
+  background-color: #757D88 !important;
+  background-image: none !important;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+/* line 619, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices li.select2-search-field input {
+  width: 140px !important;
+  float: left;
+  margin-right: 5px;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 15px;
+  background-image: url("../images/Icon_Arrow_down.png");
+  background-position: right 4px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+/* line 634, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi {
+  width: 48% !important;
+  display: inline-block !important;
+}
+/* line 639, ../sass/custom.scss */
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right a.select2-choice {
+  height: 45px;
+  margin-right: 5px;
+  background-color: #757D88;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: rgba(255, 255, 255, 0.8) !important;
+  line-height: 45px;
+  font-size: 15px;
+}
+/* line 654, ../sass/custom.scss */
+.page-crm-core-contact #select2-drop {
+  width: 141px !important;
+}
+/* line 656, ../sass/custom.scss */
+.page-crm-core-contact #select2-drop .select2-search {
+  margin-top: 4px;
+}
+/* line 658, ../sass/custom.scss */
+.page-crm-core-contact #select2-drop .select2-search input {
+  width: 109px;
+}

@@ -22,13 +22,7 @@ function hk_admin_field_group_info() {
   $field_group->data = array(
     'label' => 'card content',
     'weight' => '2',
-    'children' => array(
-      0 => 'contact_name',
-      1 => 'field_contact_position',
-      2 => 'field_contact_telefon',
-      3 => 'field_contact_fax',
-      4 => 'field_contact_email',
-    ),
+    'children' => array(),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'card content',
@@ -54,10 +48,9 @@ function hk_admin_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Card',
-    'weight' => '0',
+    'weight' => '4',
     'children' => array(
-      0 => 'field_contact_bild',
-      1 => 'group_card_content',
+      0 => 'group_card_content',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

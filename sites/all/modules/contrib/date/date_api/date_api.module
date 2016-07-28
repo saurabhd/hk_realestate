@@ -2075,6 +2075,8 @@ function date_iso_week_range($week, $year) {
   date_timezone_set($min_date, date_default_timezone_object());
 
   // Find the first day of the first ISO week in the year.
+  // If it's already a Monday, date_modify won't add a Monday, it will remain the same day so add a Sunday first, then a Monday
+  date_modify($min_date, '+1 Sunday');
   date_modify($min_date, '+1 Monday');
 
   // Jump ahead to the desired week for the beginning of the week range.

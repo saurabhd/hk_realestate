@@ -1,0 +1,4 @@
+name = HK Custom CRM
+description = "make some customization of CRM"
+core = 7.x
+

@@ -340,6 +340,7 @@ function ip_geoloc_plugin_style_diff_color_ass_submit($form, &$form_state) {
     $i = 0;
     foreach ($form_state['values']['color_table'] as $association) {
 
+      $ass = &$diff_color_ass[$display_id][$differentiator][$i];
       if (is_array($association[$differentiator])) {
         // E.g association['field_address']['und'][0]['postal_code']
         foreach ($association[$differentiator][LANGUAGE_NONE] as $values) {
@@ -355,10 +356,11 @@ function ip_geoloc_plugin_style_diff_color_ass_submit($form, &$form_state) {
             $differentiator_value[] = $values;
           }
           if (!empty($differentiator_value)) {
-            $diff_color_ass[$display_id][$differentiator][$i]['differentiator_value'] = $differentiator_value;
-            $diff_color_ass[$display_id][$differentiator][$i]['color'] = $association['color'];
-            $diff_color_ass[$display_id][$differentiator][$i]['special char'] = $association['special char'];
-            $diff_color_ass[$display_id][$differentiator][$i]['special char class'] = $association['special char class'];
+            $ass['differentiator_value'] = $differentiator_value;
+            $ass['color'] = $association['color'];
+            $ass['special char'] = $association['special char'];
+            $ass['special char class'] = $association['special char class'];
+            $ass['random offset radius'] = $association['random offset radius'];
             $i++;
           }
         }
@@ -366,11 +368,12 @@ function ip_geoloc_plugin_style_diff_color_ass_submit($form, &$form_state) {
       else {
         // Plain text field or plain taxonomy select.
         $differentiator_value = trim($association[$differentiator]);
-        if (!empty($differentiator_value) || $differentiator_value == 0) {
-          $diff_color_ass[$display_id][$differentiator][$i]['differentiator_value'] = array($differentiator_value);
-          $diff_color_ass[$display_id][$differentiator][$i]['color'] = $association['color'];
-          $diff_color_ass[$display_id][$differentiator][$i]['special char'] = $association['special char'];
-          $diff_color_ass[$display_id][$differentiator][$i]['special char class'] = $association['special char class'];
+        if (!empty($differentiator_value) || $differentiator_value === '0' || $differentiator_value === 0) {
+          $ass['differentiator_value'] = array($differentiator_value);
+          $ass['color'] = $association['color'];
+          $ass['special char'] = $association['special char'];
+          $ass['special char class'] = $association['special char class'];
+          $ass['random offset radius'] = $association['random offset radius'];
           $i++;
         }
       }
@@ -512,6 +515,12 @@ function _ip_geoloc_plugin_style_diff_color_table_row_form($is_openlayers, $row,
     '#size' => 25,
     '#default_value' => empty($association) ? NULL : $association['special char class'],
   );
+  $form['random offset radius'] = array(
+    '#type' => 'textfield',
+    '#size' => 3,
+    '#suffix' => t('km'),
+    '#default_value' => empty($association) ? NULL : $association['random offset radius'],
+  );
   // We'll manually set the #parents property of these fields so that their
   // values appear in the $form_state['values']['color_table'] array.
   $form[$differentiator]['#parents'] = array(
@@ -522,7 +531,8 @@ function _ip_geoloc_plugin_style_diff_color_table_row_form($is_openlayers, $row,
     'color_table', $row, 'special char');
   $form['special char class']['#parents'] = array(
     'color_table', $row, 'special char class');
-
+  $form['random offset radius']['#parents'] = array(
+    'color_table', $row, 'random offset radius');
   return $form;
 }
 
@@ -561,6 +571,7 @@ function theme_ip_geoloc_plugin_style_differentiator_color_table($variables) {
     t('Associated style/color'),
     t('Font icon character'),
     t('Font icon class'),
+    t('Random offset'),
   );
   $rows = array();
   foreach ($form_children as $key) {
@@ -569,6 +580,7 @@ function theme_ip_geoloc_plugin_style_differentiator_color_table($variables) {
     $row['data'][] = drupal_render($form[$key]['color']);
     $row['data'][] = drupal_render($form[$key]['special char']);
     $row['data'][] = drupal_render($form[$key]['special char class']);
+    $row['data'][] = drupal_render($form[$key]['random offset radius']);
     $rows[] = $row;
   }
 
@@ -1002,7 +1014,7 @@ function _ip_geoloc_plugin_style_set_marker_color(&$location, $row, $differentia
 
     $differentiator_value = _ip_geoloc_plugin_style_get_differentiator_value($row, $differentiator, $view_args);
 
-    if (!empty($differentiator_value) || $differentiator_value === 0) {
+    if (!empty($differentiator_value) || $differentiator_value === '0' || $differentiator_value === 0) {
 
       foreach ($diff_color_ass as $key => $association) {
 
@@ -1037,6 +1049,9 @@ function _ip_geoloc_plugin_style_set_marker_color(&$location, $row, $differentia
         }
         if (!empty($association['special char class'])) {
           $location->marker_special_char_class = $association['special char class'];
+        }
+        if (!empty($association['random offset radius'])) {
+          $location->random_displacement = $association['random offset radius'];
         }
       }
     }

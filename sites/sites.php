@@ -48,7 +48,12 @@ $sites = array (
   'zh.herbert-kohlmeyer.com' => 'herbert-kohlmeyer.de',
   'hk.local' => 'herbert-kohlmeyer.de',
   'en.hk.local' => 'herbert-kohlmeyer.de',
-  'addweb.dev.drupalforgood.eu' => 'hk-addweb-7431-prod.dot',
   'addweb.dev.en.drupalforgood.eu' => 'hk-addweb-7431-prod.dot',
   'www.hk-addweb-7431-prod.dot' => 'hk-addweb-7431-prod.dot',
+  'addweb.dev.drupalforgood.eu' => 'hk.dev.addweb-7431-prod.dot',
+  'addweb.en.dev.drupalforgood.eu' => 'hk.dev.addweb-7431-prod.dot',
+  'www.hk.dev.addweb-7431-prod.dot' => 'hk.dev.addweb-7431-prod.dot',
+  'addweb.dev.herbert-kohlmeyer.com' => 'addweb.dev.herbert-kohlmeyer.de',
+  'addweb.dev.ru.herbert-kohlmeyer.com' => 'addweb.dev.herbert-kohlmeyer.de',
+  'www.addweb.dev.herbert-kohlmeyer.de' => 'addweb.dev.herbert-kohlmeyer.de',
 );

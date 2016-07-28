@@ -1,0 +1,91 @@
+From 04d509666656f95aef2936862f694e10a6f713c4 Mon Sep 17 00:00:00 2001
+From: Dylan Donkersgoed <ddonkersgoed@echidna.ca>
+Date: Fri, 24 Jun 2016 13:32:16 -0400
+Subject: [PATCH] 2679839-36
+
+---
+ prepopulate.module | 39 +++++++++++++++++++++++++++++++++------
+ 1 file changed, 33 insertions(+), 6 deletions(-)
+
+diff --git a/prepopulate.module b/prepopulate.module
+index d024385..d2f1306 100644
+--- a/prepopulate.module
++++ b/prepopulate.module
+@@ -37,6 +37,7 @@ function prepopulate_form_alter(&$form, $form_state, $form_id) {
+  * An #after_build function to set the values prepopulated in the request.
+  */
+ function prepopulate_after_build($form, &$form_state) {
++  _prepopulate_log($form, 'form');
+   if (isset($_REQUEST['edit'])) {
+     $request = (array) $_REQUEST['edit'];
+     _prepopulate_request_walk($form, $request);
+@@ -56,30 +57,49 @@ function _prepopulate_request_walk(&$form, &$request_slice) {
+   $limited_types = array(
+     'actions',
+     'button',
+-    'container',
+     'token',
+     'value',
+     'hidden',
+     'image_button',
+     'password',
+     'password_confirm',
+-    'text_format',
+     'markup',
+     );
+   if (is_array($request_slice)) {
+     foreach (array_keys($request_slice) as $request_variable) {
+-      if (element_child($request_variable) && !empty($form[$request_variable]) &&
+-       (!isset($form[$request_variable]['#type']) || !in_array($form[$request_variable]['#type'], $limited_types))) {
+-        if (!isset($form[$request_variable]['#access']) || $form[$request_variable]['#access'] != FALSE) {
+-          _prepopulate_request_walk($form[$request_variable], $request_slice[$request_variable]);
++
++      $and_checks = array(
++        'is child' => element_child($request_variable),
++        'in form' => !empty($form[$request_variable]),
++      );
++      _prepopulate_log($and_checks, "Is element: " . $request_variable);
++      if (array_sum($and_checks) == count($and_checks)) {
++        $or_checks = array(
++            'no #type set' => !isset($form[$request_variable]['#type']),
++            'language container' => isset($form[$request_variable]['#language']) && isset($form[$request_variable][$form[$request_variable]['#language']]['#type']) && !in_array($form[$request_variable][$form[$request_variable]['#language']]['#type'], $limited_types),
++            'container' => isset($form[$request_variable]['#type']) && $form[$request_variable]['#type'] == 'container' && isset($form[$request_variable]['#language']) && isset($form[$request_variable][$form[$request_variable]['#language']][0]['#type']) && $form[$request_variable][$form[$request_variable]['#language']][0]['#type'] == 'text_format',
++            'allowed #type' => isset($form[$request_variable]['#type']) && !in_array($form[$request_variable]['#type'], $limited_types),
++        );
++        _prepopulate_log($or_checks, 'is valid for drill down: ' . $request_variable);
++        if (array_sum($or_checks) > 0) {
++          if (!isset($form[$request_variable]['#access']) || $form[$request_variable]['#access'] != FALSE) {
++            _prepopulate_request_walk($form[$request_variable], $request_slice[$request_variable]);
++          }
++        }
++        else {
++          _prepopulate_log($or_checks, 'Not valid: ' . $request_variable);
+         }
+       }
++      else {
++        _prepopulate_log($and_checks, 'Not valid: ' . $request_variable);
++      }
+     }
+     if (!empty($form['#default_value']) && is_array($form['#default_value'])) {
+       $form['#default_value'] = array_merge($form['#default_value'], $request_slice);
+     }
+   }
+   else {
++    _prepopulate_log($request_slice, 'setting value');
+     if ($form['#type'] == 'markup' || empty($form['#type'])) {
+       $form['#value'] = check_plain($request_slice);
+     }
+@@ -96,3 +116,10 @@ function _prepopulate_request_walk(&$form, &$request_slice) {
+     }
+   }
+ }
++
++function _prepopulate_log($item, $reason) {
++  global $user;
++  if ($user->uid == 1 && function_exists('dsm')) {
++    dsm($item, $reason);
++  }
++}
+-- 
+2.8.3
+

@@ -1,463 +1,277 @@
 <?php
+
 /**
- * @file
- * @author - sherakama
- * Todo::::
+ * Implements hook_help().
+ */
+function contextual_view_modes_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#contextual_view_modes':
+      $help = '<p>' . t('Please submit help requests and issues to the !link.', array('!link' => l("Druapl.org issue queue", 'https://www.drupal.org/project/contextual_view_modes/'))) . '</p>';
+      $help .= "<p>" . t("For more help, please se the !readme", array('!readme' => l("README.md", drupal_get_path("module", "contextual_view_modes") . "/README.md"))) . "</p>";
+      $help .= "<p>" . t("") . "</p>";
+      $help .= "<p>" . t("") . "</p>";
+      $help .= "<p>" . t("") . "</p>";
+      $help .= "<p>" . t("") . "</p>";
+      $help .= "<p>" . t("") . "</p>";
+      return $help;
+  }
+}
+
+/**
+ * This is the magic of this module.
  *
- *     4. Create global content type default settings
+ * This hook allows us to evaluate the context conditions and trigger a change
+ * in view mode for the entity that is being rendered.
  *
- **/
-
-DEFINE('CVM_FIELD_NAME', 'field_cvm_cvm'); // The fieldname to look for
-
-
-/**
- * Implements hook_enable().
- * Create a field for use later
+ * @param string &$view_mode
+ *   The machine name of the view mode.
+ * @param array $context
+ *   An array of information surrounding the entity. Not the context module.
  */
-function contextual_view_modes_enable() {
+function contextual_view_modes_entity_view_mode_alter(&$view_mode, $context) {
 
-  // Need to tell drupal about my new field first :(.
-  field_cache_clear();
-  field_associate_fields('contextual_view_modes');
+  // Some contexts have yet to fire as this hook is before the context.
+  // Theme related stuff is an example.
+  // Lets try to fire them. But only once.
+  $static = &drupal_static(__FUNCTION__, FALSE);
+  if (!$static) {
+    module_invoke_all('context_page_condition');
+    $static = TRUE;
+  }
 
-  // Check if our field is not already created.
-  if (!field_info_field(CVM_FIELD_NAME)) {
-    $field = array(
-      'field_name' => CVM_FIELD_NAME,
-      'type' => 'contextual_view_modes_cvm',
-      'cardinality' => FIELD_CARDINALITY_UNLIMITED,
-    );
-    $the_field = field_create_field($field);
+  // Get some more information about the entity we are looking at.
+  $entity_types = entity_get_info();
+  $type = $context['entity_type'];
+  $entity = $context['entity'];
+
+  // We do not support comments at this time.
+  if ($type == "comment") {
+    return;
+  }
+
+  // Check to see if the entity has local settings first.
+  $entity_view_mode = contextual_view_modes_evaluate_individual_options($entity, $type);
+  // Then grab the global (in context plugin).
+  $global_view_mode = contextual_view_modes_evaluate_global_options($entity, $type);
+
+  // Local settings trump the global settings.
+  if ($entity_view_mode) {
+    $view_mode = $entity_view_mode;
+  }
+  elseif ($global_view_mode) {
+    $view_mode = $global_view_mode;
   }
 
 }
 
-
-
 /**
- * Implements hook_menu().
+ * Evaluate an entity for a view mode setting.
+ *
+ * @param object $entity
+ *   The entity being evaluated.
+ * @param string $type
+ *   The bundle name.
+ *
+ * @return mixed
+ *   The machine name of the view mode setting on the entity or false.
  */
-function contextual_view_modes_menu() {
-  $items = array();
+function contextual_view_modes_evaluate_individual_options($entity, $type) {
+  $entity_types = entity_get_info();
 
-  $items['admin/structure/cvm'] = array(
-    'title' => 'Contextual View Modes',
-    'description' => 'Settings and configuration options for contextual view modes',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('contextual_view_modes_settings'),
-    'file' => 'contextual_view_modes.admin.inc',
-    'access arguments' => array('administer cvm settings'),
-  );
+  // Check for a setting in the entity.
+  if (!contextual_view_modes_is_valid_entity($entity, $type)) {
+    return FALSE;
+  }
 
-  return $items;
+  // Check to see if the view mode exists.
+  $view_mode = contextual_view_modes_entity_get_view_mode($entity, $type);
+
+  // Invalid view mode.
+  if (!isset($entity_types[$type]['view modes'][$view_mode])) {
+    return FALSE;
+  }
+
+  // Good view mode.
+  return $view_mode;
 }
 
-
 /**
- * Implementation of hook_perm().
+ * Evaluate the view mode that should be displayed by the global options.
+ *
+ * @param object $entity
+ *   The entity being evaluated.
+ * @param string $type
+ *   The bundle name.
+ *
+ * @return mixed
+ *   The machine name of the view mode setting on the entity or false.
  */
-function contextual_view_modes_permission() {
-  return array(
-    'administer cvm settings' => array(
-      'title' => t('Administer Contextual View Modes'),
-      'description' => t('Allow administration of contextual view mode settings'),
-      ),
-    'set view modes per node' => array(
-        'title' => t('Contextual View Modes Per Node'),
-        'description' => t('Allow changing/setting contextual view mode per node'),
-      )
-    );
-}
-
-
-/**
- * Implements hook_field_info().
- */
-function contextual_view_modes_field_info() {
-  return array(
-    'contextual_view_modes_cvm' => array(
-      'label' => t('Contextual View Modes'),
-      'description' => t('Allows users to select a view mode and a context to apply it on'),
-      'settings' => array(),
-      'instance_settings' => array(
-        'cardinality' => FIELD_CARDINALITY_UNLIMITED,
-      ),
-      'default_widget' => 'contextual_view_modes_widget',
-      'default_formatter' => 'contextual_view_modes_no_output',
-      'no_ui' => TRUE,
-    ),
-  );
-}
-
-
-/**
- * Implements hook_field_validate().
- */
-function contextual_view_modes_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
-
-  // For storing the context keys. Con't have more then one use of the context.
-  $found = array();
-
-  foreach ($items as $delta => $item) {
-    if (!empty($item['context']) && $item['context'] !== "none") {
-
-      if (in_array($item['context'], $found)) {
-        $errors[$field['field_name']][$langcode][$delta][] = array(
-          'error' => 'contextual_view_modes_invalid',
-          'message' => t("Contextual View Mode Error: %itm context already in use!", array("%itm" => $item['context'])),
-        );
-      }
-
-      $found[] = $item['context'];
-
-    }
+function contextual_view_modes_evaluate_global_options($entity, $type) {
+  if ($plugin = context_get_plugin('reaction', 'context_reaction_view_mode')) {
+    return $plugin->execute($entity, $type);
   }
 }
 
-
 /**
- * Implements hook_field_is_empty().
+ * Validates view_mode switching on entity.
+ *
+ * Check to see if this entity has global view mode options or a per entity
+ * option available.
+ *
+ * @param object $entity
+ *   The entity object to work upon.
+ *
+ * @return bool
+ *   True if the entity is a valid entity and has settings to run.
  */
-function contextual_view_modes_field_is_empty($item, $field) {
+function contextual_view_modes_is_valid_entity($entity, $entity_type) {
 
-  if (empty($item['context']) || $item['context'] == "none") {
-    return TRUE;
+  // We do not support comments at this time.
+  if ($entity_type == "comment") {
+    return FALSE;
   }
 
-  if (empty($item['view_mode']) || $item['view_mode'] == "none") {
+  list($id, $vid, $bundle) = entity_extract_ids($entity_type, $entity);
+
+  // Users do not have a $vid so it will return null. Swap it for the id.
+  if (is_null($vid)) {
+    $vid = $id;
+  }
+
+  $settings = variable_get("contextual_view_modes_" . $entity_type);
+
+  // If there is an entry for the entity id return true.
+  if (!empty($settings[$vid])) {
     return TRUE;
   }
 
   return FALSE;
 }
 
+/**
+ * [contextual_view_modes_entity_get_view_mode description]
+ * @param  [type] $entity [description]
+ * @return [type]         [description]
+ */
+function contextual_view_modes_entity_get_view_mode($entity, $type) {
+
+  list($id, $vid, $bundle) = entity_extract_ids($type, $entity);
+
+  // Users have no vid.
+  if (is_null($vid) && $type == "user") {
+    $vid = $id;
+  }
+
+  // Now just need to actually have this return something.
+  if ($plugin = context_get_plugin('reaction', 'view_mode')) {
+    $plugin->execute($entity, $type);
+  }
+
+  $contexts = context_enabled_contexts();
+
+  // Get the variables for this entity.
+  $settings = variable_get('contextual_view_modes_' . $type, array());
+
+  // Loop through each context and see if this entity has a view mode assigned
+  // to a valid context.
+  $keys = array_keys($contexts);
+
+  foreach ($settings[$vid] as $delta => $values) {
+    if (in_array($values['context_name'], $keys)) {
+      return $values['view_mode'];
+    }
+  }
+
+  return "default";
+}
 
 /**
- * Implements hook_field_formatter_info().
+ * Returns an array of keyed and formatted values of available contexts.
  *
- * We need to tell Drupal that we have a formatter for this field
- *
- * @see field_example_field_formatter_view()
+ * @return array
+ *   An array of context names keyed by their machine name.
  */
-function contextual_view_modes_field_formatter_info() {
-  return array(
-    'contextual_view_modes_default' => array(
-      'label' => t('Default'),
-      'field types' => array('contextual_view_modes_cvm'),
-    ),
-  );
-}
-
-/**
- * Implements hook_field_formatter_view().
- */
-function contextual_view_modes_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
-  $element = array();
-  $settings = $display['settings'];
-
-  switch ($display['type']) {
-    case 'contextual_view_modes_default':
-      foreach ($items as $delta => $item) {
-        $element[$delta] = array(
-         // '#theme' => 'contextual_view_modes_theme_cvm_field',
-          '#data' => $item['context'],
-          '#markup' => contextual_view_modes_default_markup($entity_type, $entity, $field, $instance, $langcode, $items, $display),
-         // '#some_setting' => $settings['some_settig'],
-        );
-      }
-      break;
-  }
-
-  return $element;
-}
-
-
-/**
- * Returns the output for the field formatter
- * @param  [type] $entity_type [description]
- * @param  [type] $entity      [description]
- * @param  [type] $field       [description]
- * @param  [type] $instance    [description]
- * @param  [type] $langcode    [description]
- * @param  [type] $items       [description]
- * @param  [type] $display     [description]
- * @return string of HTML markup
- */
-function contextual_view_modes_default_markup($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
-
-  if (empty($items)) {
-    return t('No contextual view modes set.');
-  }
-
-  $data = array();
-  foreach ($items as $k => $opts) {
-    $data[] = t('When context') . " <strong>" . $opts['context'] . "</strong> " . t('is true display with view mode') . ": <strong>" . $opts['view_mode'] . "</strong>";
-  }
-
-  $output = theme_item_list(array(
-    'items'       => $data,
-    'type'        => 'ul',
-    'title'       => "",
-    'attributes'  => array()
-    )
-  );
-  return $output;
-}
-
-
-/**
- * Implements hook_field_widget_info().
- */
-function contextual_view_modes_field_widget_info() {
-    return array(
-    'contextual_view_modes_picker' => array(
-      'label' => t('Contextual View Modes Picker'),
-      'field types' => array('contextual_view_modes_cvm'),
-      'settings' => array(
-        'progress_indicator' => 'throbber',
-      ),
-      'behaviors' => array(
-        'multiple values' => FIELD_BEHAVIOR_DEFAULT,
-        'default value' => FIELD_BEHAVIOR_NONE,
-      ),
-    ),
-  );
-}
-
-/**
- * [contextual_view_modes_field_widget_form description]
- * @param  [type] $form       [description]
- * @param  [type] $form_state [description]
- * @param  [type] $field      [description]
- * @param  [type] $instance   [description]
- * @param  [type] $langcode   [description]
- * @param  [type] $items      [description]
- * @param  [type] $delta      [description]
- * @param  [type] $element    [description]
- * @return [type]
- */
-function contextual_view_modes_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
-
+function contextual_view_modes_get_context_options() {
   // Get the available contexts for use in a select field.
-  $contexts = array('none' => '- Pick a context -');
+  $contexts = array('none' => '- Select a context -');
   $contexts += context_context_list();
   foreach ($contexts as $key => $name) {
-    $contexts[$key] = ucwords(str_replace('_', " ", $name));
+    $contexts[$key] = ucfirst(str_replace('_', " ", $name));
   }
+  return $contexts;
+}
+
+/**
+ * Returns an array of view modes for an entity type.
+ * @param  [type] $entity_type [description]
+ * @return [type]              [description]
+ */
+function contextual_view_modes_get_view_mode_options($entity_type = NULL) {
 
   // Get the available view modes for use in a select field.
-  $ds_modes = ds_entity_view_modes('node');
-  $ds_modes_formatted = array('none' => '- None -');
-  foreach ($ds_modes as $name => $values) {
-    $ds_modes_formatted[$name] = ucwords(str_replace('_', " ", $values['label']));
-  }
+  $entity_info = entity_get_info($entity_type);
+  $view_modes_formatted = array('none' => '- None -');
+  $view_modes_formatted['default'] = 'Default';
+  foreach ($entity_info['view modes'] as $name => $values) {
 
-  //  //////////////////////////////////////////////////////////////////////////
-
-  $default_context = isset($items[$delta]['context']) ? $items[$delta]['context'] : '';
-  $default_view_mode = isset($items[$delta]['view_mode']) ? $items[$delta]['view_mode'] : '';
-  $widget = $element;
-  $widget['#delta'] = $delta;
-
-  $widget += array(
-    '#type' => 'fieldset',
-    '#element_validate' => array('contextual_view_modes_picker_validate'),
-    '#delta' => $delta,
-    '#attached' => array(
-      'css' => array(drupal_get_path('module', 'contextual_view_modes') . '/contextual_view_modes.css'),
-    ),
-  );
-
-  $widget['context'] = array(
-    '#type' => 'select',
-    '#title' => t("When this context: "),
-    '#options' => $contexts,
-    '#default_value' => $default_context,
-  );
-
-  $widget['view_mode'] = array(
-    '#type' => 'select',
-    '#title' => t("Use this view mode: "),
-    '#options' => $ds_modes_formatted,
-    '#default_value' => $default_view_mode,
-  );
-
-  $element = $widget;
-  return $element;
-}
-
-/**
- * [contextual_view_modes_picker_validate description]
- * @param  [type] $element       [description]
- * @param  [type] $form_state [description]
- * @return [type]             [description]
- */
-function contextual_view_modes_picker_validate($element, &$form_state) {
-  $delta = $element['#delta']; // TODO: Isn't there a better way to find out which element?
-  $field = $form_state['field'][$element['#field_name']][$element['#language']]['field'];
-  $field_name = $field['field_name'];
-  if (isset($form_state['values'][$field_name][$element['#language']][$delta]['cvm'])) {
-    // TODO: Check to see if there are multiple settings for a context...
-  }
-}
-
-/**
- * Implements hook_field_widget_error().
- *
- * hook_field_widget_error() lets us figure out what to do with errors
- * we might have generated in hook_field_validate(). Generally, we'll just
- * call form_error().
- *
- * @see field_example_field_validate()
- * @see form_error()
- */
-function contextual_view_modes_field_widget_error($element, $error, $form, &$form_state) {
-  switch ($error['error']) {
-    case 'contextual_view_modes_invalid':
-      form_error($element, $error['message']);
-      break;
-  }
-}
-
-
-/**
- * @param  $form  The form array
- * @param $form_state  The form state
- *
- */
-
-function contextual_view_modes_form_node_form_alter(&$form, $form_state, $form_id) {
-
-  $lang = $form['language']['#value'];
-  $enabled_types = variable_get('cvm_enabled_content_types', array());
-  $type = $form['type']['#value'];
-
-  // We only want this to show up on enabled content types
-  if(!in_array($type, $enabled_types)) {
-    return;
-  }
-
-  $form['contextual_display'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Contextual View Modes Settings'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-    '#group' => 'additional_settings',
-    '#weight' => 100,
-  );
-
-
-   // If there are global settings for this content type lets show the user here.
-  $global_cvm = variable_get('cvm_global_content_type_modes', array());
-  if (isset($global_cvm[$type])) {
-    // There are global settings for this content type. Lets show the user.
-
-    $data = array();
-    foreach ($global_cvm[$type] as $context_name => $vm) {
-      $data[] = t('The view mode: !vm is set for context: !c', array('!vm' => "<strong>" . $vm . "</strong>", "!c" => "<strong>" . $context_name . "</strong>"));
-    }
-
-    $form['contextual_display']['showntell'] = array(
-      '#markup' => theme_item_list(array(
-        'items' => $data,
-        'type' => 'ul',
-        'title' => t('Enabled Global Contextual View Modes'),
-        'attributes' => array()
-        )
-      ),
-    );
-
-  }
-
-
-
-  // Move all contextual view mode fields into the group.
-  $fields = $form_state['field'];
-
-  foreach ($fields as $field_name => $settings) {
-    if ($settings[$lang]['field']['type'] == "contextual_view_modes_cvm") {
-      $form['contextual_display'][$field_name] = $form[$field_name];
-      unset($form[$field_name]);
-    }
-  }
-
-}
-
-
-/**
- * Alters the build one more time to support view modes per node with contexts
- * @param  $build  The build array that drupal_render() expects
- */
-function contextual_view_modes_node_view_alter(&$build) {
-
-  // To avoid an endless loop do this vvvvvv.
-  static $call_once;
-  $call_once++;
-  if ($call_once >= 2) {
-    return;
-  }
-
-  // Only work with nodes when on page view.
-  $a0 = arg(0);
-  $a1 = arg(1);
-  if ($a0 !== "node" || !is_numeric($a1)) {
-    return;
-  }
-
-  // Get current node.
-  $node = $build['#node'];
-
-  // If v is not set then we want to run our version of ds_extras display switch.
-  if (isset($_GET['v'])) {
-    // V is set. Dont eff with that.
-    return;
-  }
-
-  // Check for the cvm field.
-  if (!isset($node->{CVM_FIELD_NAME})) {
-    return;
-  }
-
-  // Get all of the contexts that have a match.
-  $contexts = context_active_contexts();
-
-  // Loop through each context and see if this node has a view mode assigned
-  // to a valid context.
-  foreach ($contexts as $context_name => $context) {
-
-    // Avoid php errors...
-    if (empty($node->{CVM_FIELD_NAME}[$node->language])) {
+    // @Todo: allow this to work.
+    if ($name == "rss") {
       continue;
     }
 
-    foreach ($node->{CVM_FIELD_NAME}[$node->language] as $k => $values) {
-      if ($values['context'] == $context_name) {
-        $node->ds_switch = $context_name;
-        $build = node_view($node, $node->ds_switch);
-        // Take only the first match.
-        return;
-      }
-    }
+    $view_modes_formatted[$name] = ucwords(str_replace('_', " ", $values['label']));
   }
 
-  // If we get here then there has not been a setting for this specific node.
-  // Check to see if there is a global context we need to do.
-
-  $global_cvm = variable_get('cvm_global_content_type_modes', array());
-  if (isset($global_cvm[$node->type])) {
-    // We found settings...
-
-    foreach ($contexts as $context_name => $context) {
-      if (isset($global_cvm[$node->type][$context_name])) {
-        $node->ds_switch = $global_cvm[$node->type][$context_name];
-        $build = node_view($node, $node->ds_switch);
-        // Take only the first match.
-        return;
-      }
-    }
-
-  }
-
+  return $view_modes_formatted;
 }
 
+/**
+ * Implements hook_ctools_plugin_api().
+ *
+ * Make module compatible with context 3.x.
+ */
+function contextual_view_modes_ctools_plugin_api($module, $api) {
+  if ($module == 'context' && $api == 'plugins') {
+    return array('version' => 3);
+  }
+}
+
+/**
+ * Implements hook_context_plugins().
+ *
+ * To define your plugins, classes, and class hierarchy.
+ *
+ * @return array
+ *   An array of plugin information
+ */
+function contextual_view_modes_context_plugins() {
+  $plugins = array();
+  $plugins['context_reaction_view_mode'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'contextual_view_modes') . '/plugins',
+      'file' => 'context_reaction.view_mode.inc',
+      'class' => 'context_reaction_view_mode',
+      'parent' => 'context_reaction',
+    ),
+  );
+  return $plugins;
+}
+
+/**
+ * Implements hook_context_registry().
+ *
+ * To define your conditions and/or reactions and map them to plugins.
+ *
+ * @return array
+ *   An array of configuration values.
+ */
+function contextual_view_modes_context_registry() {
+  return array(
+    'reactions' => array(
+      'context_reaction_view_mode' => array(
+        'title' => t('View Mode'),
+        'plugin' => 'context_reaction_view_mode',
+      ),
+    ),
+  );
+}

@@ -70,7 +70,7 @@ function hk_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advagg_browser_dns_prefetch';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['advagg_browser_dns_prefetch'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -98,14 +98,14 @@ function hk_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advagg_cache_level';
-  $strongarm->value = '1';
+  $strongarm->value = '3';
   $export['advagg_cache_level'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advagg_combine_css_media';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['advagg_combine_css_media'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -140,7 +140,7 @@ function hk_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advagg_cron_timestamp';
-  $strongarm->value = 1457218277;
+  $strongarm->value = 1468421864;
   $export['advagg_cron_timestamp'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -196,7 +196,7 @@ function hk_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advagg_global_counter';
-  $strongarm->value = 9;
+  $strongarm->value = 15;
   $export['advagg_global_counter'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -525,7 +525,7 @@ function hk_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cdn_basic_mapping';
-  $strongarm->value = 'http://d6ilimlq7c61o.cloudfront.net';
+  $strongarm->value = 'https://d6ilimlq7c61o.cloudfront.net';
   $export['cdn_basic_mapping'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -915,7 +915,10 @@ function hk_base_strongarm() {
     'favicon_upload' => '',
     'style_checkboxes' => 1,
     'display_icons_config' => 1,
+    'rounded_buttons' => 1,
+    'sticky_actions' => 1,
     'avoid_custom_font' => 0,
+    'adminimal_ckeditor' => 1,
     'use_custom_media_queries' => 0,
     'media_query_mobile' => 'only screen and (max-width: 480px)',
     'media_query_tablet' => 'only screen and (min-width : 481px) and (max-width : 1024px)',
@@ -960,7 +963,7 @@ function hk_base_strongarm() {
     'media_query_tablet' => 'only screen and (min-width : 481px) and (max-width : 1024px)',
     'custom_css' => 0,
     'adminimal_theme_skin' => 'material',
-    'jquery_update_jquery_version' => '1.5',
+    'jquery_update_jquery_version' => '1.7',
     'favicon_mimetype' => 'image/vnd.microsoft.icon',
   );
   $export['theme_hk_adminimal_settings'] = $strongarm;
@@ -974,8 +977,8 @@ function hk_base_strongarm() {
     'toggle_favicon' => 1,
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
-    'default_logo' => 1,
-    'logo_path' => '',
+    'default_logo' => 0,
+    'logo_path' => 'sites/all/themes/hk_theme/H+K_Logo.svg',
     'logo_upload' => '',
     'default_favicon' => 0,
     'favicon_path' => 'sites/all/themes/hk_theme/images/favicon.ico',

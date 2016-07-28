@@ -1,0 +1,91 @@
+diff --git a/includes/search_api_live_results.admin.inc b/includes/search_api_live_results.admin.inc
+index 9521401..0677f75 100644
+--- a/includes/search_api_live_results.admin.inc
++++ b/includes/search_api_live_results.admin.inc
+@@ -258,6 +258,19 @@ function search_api_live_results_admin_search_edit(array $form, array &$form_sta
+     ),
+     '#default_value' => (!empty($search->options['display'])) ? $search->options['display'] : 'title',
+   );
++
++  $entity_types = array();
++  foreach (entity_get_info() as $entity_type => $entity_info) {
++    $entity_types[$entity_type] = $entity_info['label'];
++  }
++  $form['options']['entity_type'] = array(
++    '#type' => 'select',
++    '#title' => t('Entity type'),
++    '#description' => t('Select the entity type that this search will return.'),
++    '#options' => $entity_types,
++    '#default_value' => (!empty($search->options['entity_type'])) ? $search->options['entity_type'] : 'node',
++    '#required' => TRUE,
++  );
+   $form['options']['caching'] = array(
+     '#type' => 'checkbox',
+     '#title' => t('Use memcached caching (Experimental)'),
+@@ -322,6 +335,9 @@ function search_api_live_results_admin_search_edit_submit(array $form, array &$f
+     $search->options['custom'] = $values['options']['custom'] + $old;
+   }
+ 
++  // Save entity type
++  $search->options['entity_type'] = $values['options']['entity_type'];
++
+   $search->save();
+   drupal_set_message(t('The autocompletion settings for the search have been saved.'));
+   $form_state['redirect'] = 'admin/config/search/search_api/index/' . $search->index_id . '/live-results';
+diff --git a/includes/search_api_live_results.pages.inc b/includes/search_api_live_results.pages.inc
+index a4be663..7d9f42e 100644
+--- a/includes/search_api_live_results.pages.inc
++++ b/includes/search_api_live_results.pages.inc
+@@ -15,15 +15,19 @@ function search_api_live_results_json(SearchApiLiveResultsSearch $search, $keys
+   $query = $search->getQuery($keys);
+ 
+   if ($query) {
++    // Get the entity type
++    $entity_type = (!empty($search->options['entity_type']))? $search->options['entity_type'] : 'node';
++
+     $max_items = (!empty($search->options['num_results']))? $search->options['num_results'] : 5;
+     $query->range(0, $max_items);
+     $results = $query->execute();
+     foreach ((array) $results['results'] as $result) {
++      $entity = entity_load($entity_type, array($result['id']));
+       if ($search->options['display'] == 'view_mode') {
+-        $ret[] = drupal_render(node_view(node_load($result['id']), 'live_results_search'));
++        $ret[] = drupal_render(entity_view($entity_type, $entity, 'live_results_search'));
+       }
+       else {
+-        $ret[] = l(node_load($result['id'])->title, 'node/' . $result['id']);
++        $ret[] = l(entity_label($entity_type, $entity), entity_uri($entity_type, $entity));
+       }
+     }    
+   }
+@@ -37,4 +41,4 @@ function search_api_live_results_json(SearchApiLiveResultsSearch $search, $keys
+   drupal_alter('search_api_live_results_json', $ret, $context);
+ 
+   drupal_json_output($ret);
+-}
+\ No newline at end of file
++}
+diff --git a/search_api_live_results.module b/search_api_live_results.module
+index b7d357d..63b7843 100644
+--- a/search_api_live_results.module
++++ b/search_api_live_results.module
+@@ -159,12 +159,13 @@ function theme_live_results_search($variables) {
+ * Implements hook_entity_info_alter().
+ */
+ function search_api_live_results_entity_info_alter(&$entity_info) {
+-  $entity_info['node']['view modes']['live_results_search'] = array(
+-    'label' => t('Live results search'),
+-    'custom settings' => TRUE,
+-  );
+-  
+-  // @TODO ADD to all entities.
++  foreach ($entity_info as &$item) {
++    $item['view modes']['live_results_search'] = array(
++      'label' => t('Live results search'),
++      'custom settings' => TRUE,
++    );
++  }
++
+ }
+ 
+ /**

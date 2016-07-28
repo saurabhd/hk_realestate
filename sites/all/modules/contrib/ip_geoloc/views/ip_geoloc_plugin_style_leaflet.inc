@@ -246,7 +246,7 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
     $form['default_marker']['default_marker_special_char_class'] = array(
       '#title' => t('Font icon class'),
       '#type' => 'textfield',
-      '#size' => 25,
+      '#size' => 23,
       '#default_value' => $this->options['default_marker']['default_marker_special_char_class'],
       '#description' => $desc4,
     );
@@ -435,7 +435,7 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
     $form['sync'] = array(
       '#title' => t('Cross-highlighting between map markers and page content outside the map'),
       '#description' => '<br/>' . t('For the cross-highlighting to work, content outside the map must have the CSS class <em>.sync-id-[nid]</em>, where <em>[nid]</em> represents the content ID.') . ' '
-        . t('For Views content, you can do this by adding a <strong>Row class</strong> to the Grid, Table, HTML or Unformatted list formats of your Views Attachment or Block displays.'),
+        . t('For Views content, you can do this by adding a <strong>Row class</strong> to the Grid, Table, HTML or Unformatted list formats of your Views Attachment or Block displays. Use <em>sync-id-[nid]</em> for normal content and <em>sync-id-[uid]</em>.'),
       '#type' => 'fieldset',
       '#collapsible' => TRUE,
       '#collapsed' => empty($this->options['sync'][LEAFLET_SYNC_CONTENT_TO_MARKER]),
@@ -1014,12 +1014,20 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
         $feature['lat'] = isset($location->latitude)  ? $location->latitude  : $location->lat;
         $feature['lon'] = isset($location->longitude) ? $location->longitude : $location->lon;
         if (!empty($location->random_displacement)) {
-            ip_geoloc_add_random_displacement($feature, $location->random_displacement);
+            $d = $location->random_displacement * 1000;
+            ip_geoloc_add_random_displacement($feature, $d);
             $circle = array(
               'type'=> 'circle',
               'lat' => $feature['lat'],
               'lon' => $feature['lon'],
-              'radius' => $location->random_displacement,
+              'radius' => $d,
+              'options' => array(
+                'color' => 'silver', // of border
+                'opacity' => 0.8, // of border
+                'weight' => 1, // border thickness
+                'fillColor' => 'silver',
+                'fillOpacity' => 0.05, // almost transparent
+              ),
             );
             $features[] = $circle;
         }

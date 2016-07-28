@@ -783,7 +783,7 @@ function ip_geoloc_earth_flattening() {
  *
  * From: http://stackoverflow.com/a/5838991/5350316
  */
-function ip_geoloc_add_random_displacement(&$location, $radius) {
+function ip_geoloc_add_random_displacement(&$location, $radius_km) {
 
   $a = ip_geoloc_random(0, 1);
   $b = ip_geoloc_random(0, 1);
@@ -796,7 +796,7 @@ function ip_geoloc_add_random_displacement(&$location, $radius) {
   $angle = 2 * pi() * $a / $b;
   // Approximate km to degrees conversion
   // See http://stackoverflow.com/questions/1253499/simple-calculations-for-working-with-lat-lon-km-distance
-  $radius /= 111000;
+  $radius = $radius_km / 111000;
 
   $location['lat'] += $b * $radius * cos($angle);
   $location['lon'] += $b * $radius * sin($angle);

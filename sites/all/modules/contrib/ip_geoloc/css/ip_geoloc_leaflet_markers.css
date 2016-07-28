@@ -89,16 +89,3 @@
   border-left: 1px solid red;
   background-color: white;
 }
-
-/* Make the cluster population "footprint" outline pale transparent white,
-   with a thin red border.
-.leaflet-overlay-pane > svg.leaflet-zoom-animated > g > path.leaflet-clickable {
-  fill: white;
-  fill-opacity: 0.4;
-  stroke: red;
-  stroke-opacity: 0.6;
-  stroke-width: 1;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-*/

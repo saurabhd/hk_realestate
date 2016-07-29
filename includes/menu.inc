@@ -927,15 +927,13 @@ function _menu_link_translate(&$item, $translate = FALSE) {
       $item['access'] = FALSE;
       return FALSE;
     }
-    // We always need to load objects where appropriate.
-    // Problems may arise if this step is skipped.
-    if (!empty($item['load_functions']) && !_menu_load_objects($item, $map)) {
-      // An error occurred loading an object.
-      $item['access'] = FALSE;
-      return FALSE;
-    }
     // menu_tree_check_access() may set this ahead of time for links to nodes.
     if (!isset($item['access'])) {
+      if (!empty($item['load_functions']) && !_menu_load_objects($item, $map)) {
+        // An error occurred loading an object.
+        $item['access'] = FALSE;
+        return FALSE;
+      }
       _menu_check_access($item, $map);
     }
     // For performance, don't localize a link the user can't access.
@@ -1521,16 +1519,7 @@ function _menu_tree_check_access(&$tree) {
   $new_tree = array();
   foreach ($tree as $key => $v) {
     $item = &$tree[$key]['link'];
-    // Do not load hidden menu items if not in active breadcrumb trail and
-    // user can't administer the menu.
-    if (!empty($item['hidden']) && empty($item['in_active_trail']) && !user_access('administer menu')) {
-      continue;
-    }
-    // Prevent translating menu links twice.
-    if (!isset($item['menu_link_translated'])) {
-      _menu_link_translate($item);
-      $item['menu_link_translated'] = TRUE;
-    }
+    _menu_link_translate($item);
     if ($item['access'] || ($item['in_active_trail'] && strpos($item['href'], '%') !== FALSE)) {
       if ($tree[$key]['below']) {
         _menu_tree_check_access($tree[$key]['below']);
@@ -2430,7 +2419,7 @@ function menu_set_active_trail($new_trail = NULL) {
           // argument placeholders (%). Such links are not contained in regular
           // menu trees, and have only been loaded for the additional
           // translation that happens here, so as to be able to display them in
-          // the breadcumb for the current page.
+          // the breadcrumb for the current page.
           // @see _menu_tree_check_access()
           // @see _menu_link_translate()
           if (strpos($link['href'], '%') !== FALSE) {

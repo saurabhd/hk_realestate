@@ -134,7 +134,7 @@ function contextual_view_modes_add_nuther_callback($form, $form_state) {
  * Submit handler for the "add-one-more" button.
  *
  * Increments the max counter and causes a rebuild.
-
+ *
  * @param array $form
  *   The form array
  * @param  array $form_state

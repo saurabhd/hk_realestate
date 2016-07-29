@@ -40,15 +40,6 @@ function system_requirements($phase) {
       );
     }
   }
-  if (isset($GLOBALS['install_state']['profile_info'])) {
-    $profile_info = $GLOBALS['install_state']['profile_info'];
-  }
-  else {
-    if (!isset($profile)) {
-      $profile = drupal_get_profile();
-    }
-    $profile_info = install_profile_info($profile);
-  }
 
   // Web server information.
   $software = $_SERVER['SERVER_SOFTWARE'];
@@ -74,8 +65,8 @@ function system_requirements($phase) {
     );
   }
 
-  if (version_compare($phpversion, $profile_info['php']) < 0) {
-    $requirements['php']['description'] = $t('Your PHP installation is too old. Drupal requires at least PHP %version.', array('%version' => $profile_info['php']));
+  if (version_compare($phpversion, DRUPAL_MINIMUM_PHP) < 0) {
+    $requirements['php']['description'] = $t('Your PHP installation is too old. Drupal requires at least PHP %version.', array('%version' => DRUPAL_MINIMUM_PHP));
     $requirements['php']['severity'] = REQUIREMENT_ERROR;
     // If PHP is old, it's not safe to continue with the requirements check.
     return $requirements;
@@ -205,6 +196,12 @@ function system_requirements($phase) {
     );
   }
 
+  // Test database-specific multi-byte UTF-8 related requirements.
+  $charset_requirements = _system_check_db_utf8mb4_requirements($phase);
+  if (!empty($charset_requirements)) {
+    $requirements['database_charset'] = $charset_requirements;
+  }
+
   // Test PHP memory_limit
   $memory_limit = ini_get('memory_limit');
   $requirements['php_memory_limit'] = array(
@@ -212,16 +209,16 @@ function system_requirements($phase) {
     'value' => $memory_limit == -1 ? t('-1 (Unlimited)') : $memory_limit,
   );
 
-  if (!drupal_check_memory_limit($profile_info['php_memory_limit'], $memory_limit)) {
+  if (!drupal_check_memory_limit(DRUPAL_MINIMUM_PHP_MEMORY_LIMIT, $memory_limit)) {
     $description = '';
     if ($phase == 'install') {
-      $description = $t('Consider increasing your PHP memory limit to %memory_minimum_limit to help prevent errors in the installation process.', array('%memory_minimum_limit' => $profile_info['php_memory_limit']));
+      $description = $t('Consider increasing your PHP memory limit to %memory_minimum_limit to help prevent errors in the installation process.', array('%memory_minimum_limit' => DRUPAL_MINIMUM_PHP_MEMORY_LIMIT));
     }
     elseif ($phase == 'update') {
-      $description = $t('Consider increasing your PHP memory limit to %memory_minimum_limit to help prevent errors in the update process.', array('%memory_minimum_limit' => $profile_info['php_memory_limit']));
+      $description = $t('Consider increasing your PHP memory limit to %memory_minimum_limit to help prevent errors in the update process.', array('%memory_minimum_limit' => DRUPAL_MINIMUM_PHP_MEMORY_LIMIT));
     }
     elseif ($phase == 'runtime') {
-      $description = $t('Depending on your configuration, Drupal can run with a %memory_limit PHP memory limit. However, a %memory_minimum_limit PHP memory limit or above is recommended, especially if your site uses additional custom or contributed modules.', array('%memory_limit' => $memory_limit, '%memory_minimum_limit' => $profile_info['php_memory_limit']));
+      $description = $t('Depending on your configuration, Drupal can run with a %memory_limit PHP memory limit. However, a %memory_minimum_limit PHP memory limit or above is recommended, especially if your site uses additional custom or contributed modules.', array('%memory_limit' => $memory_limit, '%memory_minimum_limit' => DRUPAL_MINIMUM_PHP_MEMORY_LIMIT));
     }
 
     if (!empty($description)) {
@@ -262,24 +259,8 @@ function system_requirements($phase) {
     $requirements['settings.php']['title'] = $t('Configuration file');
   }
 
-  // Test the web server identity.
-  if (!isset($_SERVER['SERVER_SOFTWARE'])) {
-    // Skip this in Drush where SERVER_SOFTWARE is not set and .htaccess never used anyway.
-    $use_htaccess = FALSE;
-  }
-  elseif (isset($_SERVER['SERVER_SOFTWARE']) && preg_match("/Nginx/i", $_SERVER['SERVER_SOFTWARE'])) {
-    $use_htaccess = FALSE;
-  }
-  elseif (isset($_SERVER['SERVER_SOFTWARE']) && preg_match("/Apache/i", $_SERVER['SERVER_SOFTWARE'])) {
-    $use_htaccess = TRUE;
-  }
-  else {
-    $use_htaccess = FALSE;
-  }
-
-  // Test the contents of the .htaccess files only for Apache web server.
-  // The .htaccess is never used in other popular web servers, like Nginx.
-  if ($phase == 'runtime' && $use_htaccess) {
+  // Test the contents of the .htaccess files.
+  if ($phase == 'runtime') {
     // Try to write the .htaccess files first, to prevent false alarms in case
     // (for example) the /tmp directory was wiped.
     file_ensure_htaccess();
@@ -543,6 +524,75 @@ function system_requirements($phase) {
 }
 
 /**
+ * Checks whether the requirements for multi-byte UTF-8 support are met.
+ *
+ * @param string $phase
+ *   The hook_requirements() stage.
+ *
+ * @return array
+ *   A requirements array with the result of the charset check.
+ */
+function _system_check_db_utf8mb4_requirements($phase) {
+  global $install_state;
+  // In the requirements check of the installer, skip the utf8mb4 check unless
+  // the database connection info has been preconfigured by hand with valid
+  // information before running the installer, as otherwise we cannot get a
+  // valid database connection object.
+  if (isset($install_state['settings_verified']) && !$install_state['settings_verified']) {
+    return array();
+  }
+
+  $connection = Database::getConnection();
+  $t = get_t();
+  $requirements['title'] = $t('Database 4 byte UTF-8 support');
+
+  $utf8mb4_configurable = $connection->utf8mb4IsConfigurable();
+  $utf8mb4_active = $connection->utf8mb4IsActive();
+  $utf8mb4_supported = $connection->utf8mb4IsSupported();
+  $driver = $connection->driver();
+  $documentation_url = 'https://www.drupal.org/node/2754539';
+
+  if ($utf8mb4_active) {
+    if ($utf8mb4_supported) {
+      if ($phase != 'install' && $utf8mb4_configurable && !variable_get('drupal_all_databases_are_utf8mb4', FALSE)) {
+        // Supported, active, and configurable, but not all database tables
+        // have been converted yet.
+        $requirements['value'] = $t('Enabled, but database tables need conversion');
+        $requirements['description'] = $t('Please convert all database tables to utf8mb4 prior to enabling it in settings.php. See the <a href="@url">documentation on adding 4 byte UTF-8 support</a> for more information.', array('@url' => $documentation_url));
+        $requirements['severity'] = REQUIREMENT_ERROR;
+      }
+      else {
+        // Supported, active.
+        $requirements['value'] = $t('Enabled');
+        $requirements['description'] = $t('4 byte UTF-8 for @driver is enabled.', array('@driver' => $driver));
+        $requirements['severity'] = REQUIREMENT_OK;
+      }
+    }
+    else {
+      // Not supported, active.
+      $requirements['value'] = $t('Not supported');
+      $requirements['description'] = $t('4 byte UTF-8 for @driver is activated, but not supported on your system. Please turn this off in settings.php, or ensure that all database-related requirements are met. See the <a href="@url">documentation on adding 4 byte UTF-8 support</a> for more information.', array('@driver' => $driver, '@url' => $documentation_url));
+      $requirements['severity'] = REQUIREMENT_ERROR;
+    }
+  }
+  else {
+    if ($utf8mb4_supported) {
+      // Supported, not active.
+      $requirements['value'] = $t('Not enabled');
+      $requirements['description'] = $t('4 byte UTF-8 for @driver is not activated, but it is supported on your system. It is recommended that you enable this to allow 4-byte UTF-8 input such as emojis, Asian symbols and mathematical symbols to be stored correctly. See the <a href="@url">documentation on adding 4 byte UTF-8 support</a> for more information.', array('@driver' => $driver, '@url' => $documentation_url));
+      $requirements['severity'] = REQUIREMENT_INFO;
+    }
+    else {
+      // Not supported, not active.
+      $requirements['value'] = $t('Disabled');
+      $requirements['description'] = $t('4 byte UTF-8 for @driver is disabled. See the <a href="@url">documentation on adding 4 byte UTF-8 support</a> for more information.', array('@driver' => $driver, '@url' => $documentation_url));
+      $requirements['severity'] = REQUIREMENT_INFO;
+    }
+  }
+  return $requirements;
+}
+
+/**
  * Implements hook_install().
  */
 function system_install() {
@@ -556,6 +606,9 @@ function system_install() {
   // system_rebuild_theme_data().
   module_list(TRUE);
   module_implements('', FALSE, TRUE);
+
+  // Ensure the schema versions are not based on a previous module list.
+  drupal_static_reset('drupal_get_schema_versions');
 
   // Load system theme data appropriately.
   system_rebuild_theme_data();

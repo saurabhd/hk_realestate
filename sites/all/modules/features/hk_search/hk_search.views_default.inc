@@ -500,10 +500,12 @@ function hk_search_views_default_views() {
   $handler->display->display_options['style_options']['cluster_radius'] = '200';
   $handler->display->display_options['style_options']['disable_clustering_at_zoom'] = '18';
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_differentiator_fields'] = array(
-    'field_obj_schattenobjekt' => 'field_obj_schattenobjekt',
+    'field_bezirk' => 'field_bezirk',
   );
   $handler->display->display_options['style_options']['cluster_differentiator']['zoom_ranges'] = array(
-    1 => '',
+    1 => '10-12',
+    2 => '12-14',
+    3 => '14-18',
   );
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_tooltips'] = 1;
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_outline'] = '1';

@@ -1387,7 +1387,7 @@ class NodeSaveTestCase extends DrupalWebTestCase {
       'uid' => $this->web_user->uid,
       'type' => 'article',
       'title' => $this->randomName(8),
-      'created' => 443779200, // Tue, 24 Jan 1984 08:00:00 GMT
+      'created' => 280299600, // Sun, 19 Nov 1978 05:00:00 GMT
       'changed' => 979534800, // Drupal 1.0 release.
     );
 
@@ -1518,7 +1518,7 @@ class NodeTypeTestCase extends DrupalWebTestCase {
    * Tests editing a node type using the UI.
    */
   function testNodeTypeEditing() {
-    $web_user = $this->drupalCreateUser(array('bypass node access', 'administer content types'));
+    $web_user = $this->drupalCreateUser(array('bypass node access', 'administer content types', 'administer fields'));
     $this->drupalLogin($web_user);
 
     $instance = field_info_instance('node', 'body', 'page');
@@ -2331,7 +2331,6 @@ class NodeQueryAlter extends DrupalWebTestCase {
     // Test that the noAccessUser still doesn't have the 'view'
     // privilege after adding the node_access record.
     drupal_static_reset('node_access_view_all_nodes');
-    drupal_static_reset('node_access_grants');
     try {
       $query = db_select('node', 'mytab')
         ->fields('mytab');
@@ -2354,7 +2353,6 @@ class NodeQueryAlter extends DrupalWebTestCase {
     $this->drupalLogin($this->noAccessUser2);
     variable_set('node_test_node_access_all_uid', $this->noAccessUser->uid);
     drupal_static_reset('node_access_view_all_nodes');
-    drupal_static_reset('node_access_grants');
     try {
       $query = db_select('node', 'mytab')
         ->fields('mytab');
@@ -2770,8 +2768,8 @@ class NodeAccessFieldTestCase extends NodeWebTestCase {
     node_access_rebuild();
 
     // Create some users.
-    $this->admin_user = $this->drupalCreateUser(array('access content', 'bypass node access'));
-    $this->content_admin_user = $this->drupalCreateUser(array('access content', 'administer content types'));
+    $this->admin_user = $this->drupalCreateUser(array('access content', 'bypass node access', 'administer fields'));
+    $this->content_admin_user = $this->drupalCreateUser(array('access content', 'administer content types', 'administer fields'));
 
     // Add a custom field to the page content type.
     $this->field_name = drupal_strtolower($this->randomName() . '_field_name');
@@ -2987,4 +2985,37 @@ class NodePageCacheTest extends NodeWebTestCase {
     $this->drupalGet($node_path);
     $this->assertResponse(404);
   }
+}
+
+/**
+ * Tests that multi-byte UTF-8 characters are stored and retrieved correctly.
+ */
+class NodeMultiByteUtf8Test extends NodeWebTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Multi-byte UTF-8',
+      'description' => 'Test that multi-byte UTF-8 characters are stored and retrieved correctly.',
+      'group' => 'Node',
+    );
+  }
+
+  /**
+   * Tests that multi-byte UTF-8 characters are stored and retrieved correctly.
+   */
+  public function testMultiByteUtf8() {
+    $connection = Database::getConnection();
+    // On MySQL, this test will only run if 'charset' is set to 'utf8mb4' in
+    // settings.php.
+    if (!($connection->utf8mb4IsSupported() && $connection->utf8mb4IsActive())) {
+      return;
+    }
+    $title = '🐙';
+    $this->assertTrue(drupal_strlen($title, 'utf-8') < strlen($title), 'Title has multi-byte characters.');
+    $node = $this->drupalCreateNode(array('title' => $title));
+    $this->drupalGet('node/' . $node->nid);
+    $result = $this->xpath('//h1[@id="page-title"]');
+    $this->assertEqual(trim((string) $result[0]), $title, 'The passed title was returned.');
+  }
+
 }

@@ -500,10 +500,12 @@ function hk_search_views_default_views() {
   $handler->display->display_options['style_options']['cluster_radius'] = '200';
   $handler->display->display_options['style_options']['disable_clustering_at_zoom'] = '18';
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_differentiator_fields'] = array(
-    'field_obj_schattenobjekt' => 'field_obj_schattenobjekt',
+    'field_bezirk' => 'field_bezirk',
   );
   $handler->display->display_options['style_options']['cluster_differentiator']['zoom_ranges'] = array(
     1 => '',
+    2 => '',
+    3 => '',
   );
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_tooltips'] = 1;
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_outline'] = '1';
@@ -1001,7 +1003,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_object_ref_field_apart_pictures_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_object_ref_field_apart_pictures_file']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Content: Date changed */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_solr_node_index';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
@@ -1165,7 +1167,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_object_ref_field_apart_pictures_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_object_ref_field_apart_pictures_file']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Content: Date changed */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_solr_node_index';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
@@ -1325,7 +1327,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_object_ref_field_apart_pictures_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_object_ref_field_apart_pictures_file']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Content: Date changed */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_solr_node_index';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
@@ -1485,7 +1487,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_object_ref_field_apart_pictures_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_object_ref_field_apart_pictures_file']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Content: Date changed */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_solr_node_index';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';

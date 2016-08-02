@@ -1677,14 +1677,12 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           bottom: 0;
           left: 0;
           height: auto;
-          width: calc(100% + 150px);
+          width: auto;
           padding: 10px 10px;
           margin: 0 -75px -70px; 
           border: 2px solid #CBC1BA;
           border-radius: 5px;
           background-color: #FFF;
-          color: #979E95;
-          font-weight: 700;
           &:before {
             position: absolute;
             top: 0;
@@ -1696,6 +1694,13 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             background-position: center top;
             background-repeat: no-repeat;
             content: '';
+          }
+          a {
+            color: #979E95 !important;
+            font-weight: 700;
+            &:hover {
+              color: #C61C2C !important;
+            }
           }
         }
       }

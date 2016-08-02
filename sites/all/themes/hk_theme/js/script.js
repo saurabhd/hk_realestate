@@ -214,7 +214,7 @@
       // End //
 
       // Hover Phone number on hover of service menu //
-      jQuery("#block-menu-menu-service-menu ul.menu li .icon-hk-icon-telephone").parent().before('<div class="menu-tooltip" style="display:none">+49 30 780 870 80</div>');
+      jQuery("#block-menu-menu-service-menu ul.menu li .icon-hk-icon-telephone").parent().before('<div class="menu-tooltip" style="display:none"><a href="tel:+493078087080">+49 30 780 870 80</a></div>');
       jQuery("#block-menu-menu-service-menu ul.menu li:nth-child(2) a").on("click", function(e) {
         e.preventDefault();
       });

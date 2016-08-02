@@ -1640,3 +1640,66 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 /*.lightbox .field-name-field-participants {
   display: none;
 }*/
+/*#navigation {
+  #block-menu-menu-service-menu {
+    ul {
+      li {
+
+      }
+    }
+  }
+}*/
+.region-navigation {
+  #block-menu-menu-service-menu {
+    ul.menu {
+      li {
+        position: relative;
+        width: 15px !important;
+        margin: 0 5px;
+        &:hover {
+          .menu-tooltip {
+            display: block !important;
+          }
+        }
+        a {
+          .icon-hk-icon-telephone {
+            height: 15px;
+            width: 15px;
+            background-image: url('../images/telephone_icon.png');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+          }
+        }
+        .menu-tooltip {
+          position: absolute;
+          top: auto;
+          bottom: 0;
+          left: 0;
+          height: auto;
+          width: calc(100% + 150px);
+          padding: 10px 10px;
+          margin: 0 -75px -70px; 
+          border: 2px solid #CBC1BA;
+          border-radius: 5px;
+          background-color: #FFF;
+          color: #979E95;
+          font-weight: 700;
+          &:before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 24px;
+            width: 24px;
+            margin: -12px 0 0 -12px;
+            background-image: url('../images/up_arrow_bg.png');
+            background-position: center top;
+            background-repeat: no-repeat;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}
+

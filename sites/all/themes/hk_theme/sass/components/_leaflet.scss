@@ -1709,7 +1709,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           }
           a {
             color: #979E95 !important;
-            font-weight: 700;
+            font: 500 1em "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
             &:hover {
               color: #C61C2C !important;
             }

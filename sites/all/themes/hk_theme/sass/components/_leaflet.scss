@@ -1663,6 +1663,9 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         }
         a {
           .icon-hk-icon-telephone {
+            @media (max-width: 992px) {
+              margin-top: 16px;
+            }
             /*height: 15px;
             width: 15px;
             background-image: url('../images/telephone_icon.png');
@@ -1677,12 +1680,15 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           bottom: 0;
           left: 0;
           height: auto;
-          width: auto;
+          width: calc(100% + 180px);
           padding: 10px 10px;
           margin: 0 -75px -70px; 
           border: 2px solid #CBC1BA;
           border-radius: 5px;
           background-color: #FFF;
+          @media (max-width: 992px) {
+            margin: 0 0 0 -203px;
+          }
           &:before {
             position: absolute;
             top: 0;
@@ -1694,6 +1700,12 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             background-position: center top;
             background-repeat: no-repeat;
             content: '';
+            @media (max-width: 992px) {
+              right: 0;
+              left: auto;
+              margin: 9px -12px 0 0;
+              transform: rotate(90deg);
+            }
           }
           a {
             color: #979E95 !important;
@@ -1706,5 +1718,8 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       }
     }
   }
+}
+.language-switcher {
+  top: 216px !important;
 }
 

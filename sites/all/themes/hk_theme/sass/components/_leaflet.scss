@@ -1670,7 +1670,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 	      }
 	   }	
           .icon-hk-icon-telephone {
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
               margin-top: 25px;
             }
             /*height: 15px;
@@ -1726,7 +1726,18 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     }
   }
 }
-.language-switcher {
-  top: 298px !important;
+@media (max-width: 1024) {
+  .language-switcher {
+    top: 270px !important;
+  }
 }
-
+@media (max-width: 992px) {
+  .language-switcher {
+    top: 298px !important;
+  }
+}
+@media (max-width: 560px) {
+  .language-switcher {
+    top: 260px !important;
+  }
+}

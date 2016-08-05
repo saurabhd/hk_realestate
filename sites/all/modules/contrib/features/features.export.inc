@@ -672,7 +672,10 @@ function features_get_storage($module_name) {
 function features_get_signature($state = 'default', $module_name, $component, $reset = FALSE) {
   switch ($state) {
     case 'cache':
-      $codecache = variable_get('features_codecache', array());
+      $cache = cache_get('features_codecache', 'cache_featurestate');
+      if (!empty($cache->data)) {
+        $codecache = $cache->data;
+      }
       return isset($codecache[$module_name][$component]) ? $codecache[$module_name][$component] : FALSE;
     case 'default':
       $objects = features_get_default($component, $module_name, TRUE, $reset);
@@ -692,10 +695,13 @@ function features_get_signature($state = 'default', $module_name, $component, $r
  * Set the signature of a module/component pair in the codecache.
  */
 function features_set_signature($module, $component, $signature = NULL) {
-  $var_codecache = variable_get('features_codecache', array());
+  $cache = cache_get('features_codecache', 'cache_featurestate');
+  if (!empty($cache->data)) {
+    $codecache = $cache->data;
+  }
   $signature = isset($signature) ? $signature : features_get_signature('default', $module, $component, TRUE);
-  $var_codecache[$module][$component] = $signature;
-  variable_set('features_codecache', $var_codecache);
+  $codecache[$module][$component] = $signature;
+  cache_set('features_codecache', $codecache, 'cache_featurestate');
 }
 
 /**

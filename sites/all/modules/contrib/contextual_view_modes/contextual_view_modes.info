@@ -5,14 +5,13 @@ core = 7.x
 
 files[] = contextual_view_modes.module
 files[] = contextual_view_modes.install
-files[] = contextual_view_modes.admin.inc
 
 dependencies[] = "context"
 dependencies[] = "entity"
 
-; Information added by Drupal.org packaging script on 2016-05-14
-version = "7.x-3.0+16-dev"
+; Information added by Drupal.org packaging script on 2016-07-11
+version = "7.x-3.0+18-dev"
 core = "7.x"
 project = "contextual_view_modes"
-datestamp = "1463240647"
+datestamp = "1468223046"
 

@@ -198,6 +198,10 @@ function contextual_view_modes_users_user_insert($user) {
 function contextual_view_modes_users_user_update($user) {
   $uid = $user['original']->uid;
   $settings = variable_get("contextual_view_modes_user", array());
+  // If cvm is not around just go away.
+  if (!isset($user->cvm)) {
+    return;
+  }
   $settings[$uid] = $user['cvm']['grouping'];
   variable_set("contextual_view_modes_user", $settings);
 }

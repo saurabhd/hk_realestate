@@ -28,23 +28,7 @@ function leaflet_mapbox_menu() {
  * Implements hook_leaflet_map_info().
  */
 function leaflet_mapbox_leaflet_map_info() {
-  $settings = array(
-    'attributionControl' => TRUE,
-    'closePopupOnClick'  => TRUE,
-    'doubleClickZoom'    => TRUE,
-    'dragging'           => TRUE,
-    'fadeAnimation'      => TRUE,
-    'layerControl'       => FALSE,
-    'maxZoom'            => 19,
-    'minZoom'            => 0,
-    'scrollWheelZoom'    => TRUE,
-    'touchZoom'          => TRUE,
-    'trackResize'        => TRUE,
-    'zoom'               => variable_get('leaflet_mapbox_zoomlevel', 2),
-    'zoomAnimation'      => TRUE,
-    'zoomControl'        => TRUE,
-  );
-
+  
   // Get access token.
   $token = variable_get('leaflet_mapbox_token', '');
 
@@ -77,18 +61,38 @@ function leaflet_mapbox_leaflet_map_info() {
       );
       break;
   }
-
-  $map_info['leaflet-mapbox'] = array(
-    'label' => variable_get('leaflet_mapbox_label', ''),
-    'description' => variable_get('leaflet_mapbox_description', ''),
-    'settings' => $settings,
-    'layers' => array(
-      'earth' => array(
-        'urlTemplate' => $url_template,
-        'options' => $options,
+  $map_configs = variable_get('leaflet_mapbox_configs', array());
+  foreach ($map_configs as $id => $map_config) {
+    $settings = array(
+      'attributionControl' => TRUE,
+      'closePopupOnClick'  => TRUE,
+      'doubleClickZoom'    => TRUE,
+      'dragging'           => TRUE,
+      'fadeAnimation'      => TRUE,
+      'layerControl'       => FALSE,
+      'maxZoom'            => 18,
+      'minZoom'            =>  0,
+      'scrollWheelZoom'    => TRUE,
+      'touchZoom'          => TRUE,
+      'trackResize'        => TRUE,
+      'zoom'               => $map_config['zoomlevel'],
+      'zoomAnimation'      => TRUE,
+      'zoomControl'        => TRUE,
+    );
+    $code = $map_config['mapbox_code'];
+    $attribution = empty($map_config['attribution']) ? LEAFLET_MAPBOX_DEF_ATTRIBUTION : filter_xss($map_config['attribution']);
+    $map_info["leaflet-mapbox-$id"] = array(
+      'label' => filter_xss($map_config['label']),
+      'description' => filter_xss($map_config['description']),
+      'settings' => $settings,
+      'layers' => array(
+        'earth' => array(
+          // Use headless protocol so it works for both HTTP and HTTPS
+          'urlTemplate' => "//{s}.tiles.mapbox.com/v3/$code/{z}/{x}/{y}.png",
+          'options' => array('attribution' => $attribution),
+        )	 
       ),
-    ),
-  );
-
+    );
+  }
   return $map_info;
 }

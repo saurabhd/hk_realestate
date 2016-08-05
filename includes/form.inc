@@ -105,7 +105,8 @@
  *   generate the same form (or very similar forms) using different $form_ids
  *   can implement hook_forms(), which maps different $form_id values to the
  *   proper form constructor function. Examples may be found in node_forms(),
- *   and search_forms().
+ *   and search_forms(). hook_forms() can also be used to define forms in
+ *   classes.
  * @param ...
  *   Any additional arguments are passed on to the functions called by
  *   drupal_get_form(), including the unique form constructor function. For
@@ -809,7 +810,7 @@ function drupal_retrieve_form($form_id, &$form_state) {
     }
     if (isset($form_definition['callback'])) {
       $callback = $form_definition['callback'];
-      $form_state['build_info']['base_form_id'] = $callback;
+      $form_state['build_info']['base_form_id'] = isset($form_definition['base_form_id']) ? $form_definition['base_form_id'] : $callback;
     }
     // In case $form_state['wrapper_callback'] is not defined already, we also
     // allow hook_forms() to define one.
@@ -830,7 +831,7 @@ function drupal_retrieve_form($form_id, &$form_state) {
   // the actual form builder function ($callback) expects. This allows for
   // pre-populating a form with common elements for certain forms, such as
   // back/next/save buttons in multi-step form wizards. See drupal_build_form().
-  if (isset($form_state['wrapper_callback']) && function_exists($form_state['wrapper_callback'])) {
+  if (isset($form_state['wrapper_callback']) && is_callable($form_state['wrapper_callback'])) {
     $form = call_user_func_array($form_state['wrapper_callback'], $args);
     // Put the prepopulated $form into $args.
     $args[0] = $form;
@@ -1184,10 +1185,6 @@ function drupal_validate_form($form_id, &$form, &$form_state) {
       $validated_forms[$form_id] = TRUE;
       return;
     }
-  }
-  // Ensure the correct protocol when #https is set.
-  if (!empty($form['#https']) && !$GLOBALS['is_https']) {
-    form_set_error(NULL, t('This form requires HTTPS.  Contact the site administrator if the problem persists.'));
   }
 
   _form_validate($form, $form_state, $form_id);
@@ -1705,10 +1702,7 @@ function form_get_error($element) {
  * Flags an element as having an error.
  */
 function form_error(&$element, $message = '') {
-  $id = $element['#id'];
-  $element['#prefix'] = "<a id = '$id-error' class = 'element-invisible element-focusable'>$message</a>";
-  $link = l($message,current_path(), array("fragment" => "$id-error", 'absolute'=> TRUE, 'html'=>TRUE,));
-  form_set_error(implode('][', $element['#parents']), $link);
+  form_set_error(implode('][', $element['#parents']), $message);
 }
 
 /**
@@ -3035,7 +3029,7 @@ function form_process_password_confirm($element) {
 function password_confirm_validate($element, &$element_state) {
   $pass1 = trim($element['pass1']['#value']);
   $pass2 = trim($element['pass2']['#value']);
-  if (!empty($pass1) || !empty($pass2)) {
+  if (strlen($pass1) > 0 || strlen($pass2) > 0) {
     if (strcmp($pass1, $pass2)) {
       form_error($element, t('The specified passwords do not match.'));
     }
@@ -3552,6 +3546,7 @@ function form_process_tableselect($element) {
             '#return_value' => $key,
             '#default_value' => isset($value[$key]) ? $key : NULL,
             '#attributes' => $element['#attributes'],
+            '#ajax' => isset($element['#ajax']) ? $element['#ajax'] : NULL,
           );
         }
         else {
@@ -3989,7 +3984,12 @@ function form_process_autocomplete($element) {
     // browser interpreting the path plus search string as an actual file.
     $current_clean_url = isset($GLOBALS['conf']['clean_url']) ? $GLOBALS['conf']['clean_url'] : NULL;
     $GLOBALS['conf']['clean_url'] = 0;
-    $element['#autocomplete_input']['#url_value'] = url($element['#autocomplete_path'], array('absolute' => TRUE));
+    // Force the script path to 'index.php', in case the server is not
+    // configured to find it automatically. Normally it is the responsibility
+    // of the site to do this themselves using hook_url_outbound_alter() (see
+    // url()) but since this code is forcing non-clean URLs on sites that don't
+    // normally use them, it is done here instead.
+    $element['#autocomplete_input']['#url_value'] = url($element['#autocomplete_path'], array('absolute' => TRUE, 'script' => 'index.php'));
     $GLOBALS['conf']['clean_url'] = $current_clean_url;
   }
   return $element;

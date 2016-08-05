@@ -1,0 +1,43 @@
+diff --git a/sites/all/modules/contrib/entity/includes/entity.controller.inc b/sites/all/modules/contrib/entity/includes/entity.controller.inc
+index f675a63..98fe4fb 100755
+--- a/sites/all/modules/contrib/entity/includes/entity.controller.inc
++++ b/sites/all/modules/contrib/entity/includes/entity.controller.inc
+@@ -216,7 +216,19 @@ class EntityAPIController extends DrupalDefaultEntityController implements Entit
+     // were passed. The $ids array is reduced as items are loaded from cache,
+     // and we need to know if it's empty for this reason to avoid querying the
+     // database when all requested entities are loaded from cache.
+-    $passed_ids = !empty($ids) ? array_flip($ids) : FALSE;
++    $passed_ids = array();
++
++    if (!empty($ids)) {
++      foreach ($ids as $key => $value) {
++        if (is_string($value) || is_numeric($value)) {
++          $passed_ids[$value] = $key;
++        }
++      }
++    }
++
++    if (empty($passed_ids)) {
++      $passed_ids = FALSE;
++    }
+ 
+     // Try to load entities from the static cache.
+     if ($this->cache && !$revision_id) {
+diff --git a/sites/all/modules/contrib/entity/includes/entity.wrapper.inc b/sites/all/modules/contrib/entity/includes/entity.wrapper.inc
+index 06b89ad..9dde61c 100755
+--- a/sites/all/modules/contrib/entity/includes/entity.wrapper.inc
++++ b/sites/all/modules/contrib/entity/includes/entity.wrapper.inc
+@@ -1041,7 +1041,12 @@ class EntityListWrapper extends EntityMetadataWrapper implements IteratorAggrega
+       foreach ($list as $key => $id) {
+         // In case the entity cannot be loaded, we return NULL just as for empty
+         // properties.
+-        $list[$key] = isset($entities[$id]) ? $entities[$id] : NULL;
++        if ((is_string($id) || is_numeric($id)) && isset($entities[$id])) {
++          $list[$key] = $entities[$id];
++        }
++        else {
++          $list[$key] = NULL;
++        }
+       }
+       return $list;
+     }

@@ -18,9 +18,18 @@ function hk_crm_menu_default_menu_custom() {
     'language' => 'und',
     'i18n_mode' => 5,
   );
+  // Exported menu: menu-service-menu.
+  $menus['menu-service-menu'] = array(
+    'menu_name' => 'menu-service-menu',
+    'title' => 'Service Menu',
+    'description' => '',
+    'language' => 'und',
+    'i18n_mode' => 5,
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('CRM Core Menu');
+  t('Service Menu');
 
   return $menus;
 }

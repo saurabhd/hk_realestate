@@ -180,14 +180,116 @@ function hk_crm_menu_default_menu_links() {
     'language' => 'en',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: menu-service-menu_call-us:menu-dummy.
+  $menu_links['menu-service-menu_call-us:menu-dummy'] = array(
+    'menu_name' => 'menu-service-menu',
+    'link_path' => 'menu-dummy',
+    'router_path' => 'menu-dummy',
+    'link_title' => 'Call us',
+    'options' => array(
+      'alter' => TRUE,
+      'icon' => array(
+        'bundle' => 'hk',
+        'icon' => 'icon-hk_icon_telephone',
+        'position' => 'title_before',
+        'breadcrumb' => 0,
+        'title_wrapper' => 1,
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title-hide',
+      ),
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-service-menu_call-us:menu-dummy',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 2,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-service-menu_favorites:favorites.
+  $menu_links['menu-service-menu_favorites:favorites'] = array(
+    'menu_name' => 'menu-service-menu',
+    'link_path' => 'favorites',
+    'router_path' => 'favorites',
+    'link_title' => 'Favorites',
+    'options' => array(
+      'alter' => TRUE,
+      'attributes' => array(
+        'class' => array(
+          0 => 'flagged',
+        ),
+      ),
+      'icon' => array(
+        'bundle' => 'hk',
+        'icon' => 'icon-hk_icon_favorite',
+        'position' => 'title_before',
+        'breadcrumb' => 0,
+        'title_wrapper' => 1,
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title-hide',
+      ),
+      'identifier' => 'menu-service-menu_favorites:favorites',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 1,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-service-menu_search:menu-dummy.
+  $menu_links['menu-service-menu_search:menu-dummy'] = array(
+    'menu_name' => 'menu-service-menu',
+    'link_path' => 'menu-dummy',
+    'router_path' => 'menu-dummy',
+    'link_title' => 'Search',
+    'options' => array(
+      'alter' => TRUE,
+      'icon' => array(
+        'bundle' => 'hk',
+        'icon' => 'icon-hk_icon_search',
+        'position' => 'title_before',
+        'breadcrumb' => 0,
+        'title_wrapper' => 1,
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title-hide',
+      ),
+      'attributes' => array(),
+      'identifier' => 'menu-service-menu_search:menu-dummy',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 3,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Agent Central');
   t('Ausloggen');
+  t('Call us');
   t('Dashboard');
+  t('Favorites');
   t('Login');
   t('Logout');
+  t('Search');
 
   return $menu_links;
 }

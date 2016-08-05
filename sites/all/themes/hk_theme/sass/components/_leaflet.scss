@@ -1640,3 +1640,99 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 /*.lightbox .field-name-field-participants {
   display: none;
 }*/
+#navigation {
+  #block-system-main-menu {
+    width: calc(100% - 120px);
+  }
+}
+.region-navigation {
+  #block-menu-menu-service-menu {
+    ul.menu {
+      li {
+        position: relative;
+        &:hover {
+          .menu-tooltip {
+            display: block !important;
+          }
+        }
+        a {
+	   .icon-hk-icon-telephone,
+	   .icon-hk-icon-favorite,
+	   .icon-hk-icon-search {
+	      @media (max-width: 992px) {
+	        margin-top: 25px;
+	      }
+	   }	
+          .icon-hk-icon-telephone {
+            @media (max-width: 1024px) {
+              margin-top: 25px;
+            }
+            /*height: 15px;
+            width: 15px;
+            background-image: url('../images/telephone_icon.png');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;*/
+          }
+        }	
+        .menu-tooltip {
+          position: absolute;
+          top: auto;
+          bottom: 0;
+          left: 0;
+          height: auto;
+          width: calc(100% + 180px);
+          padding: 10px 10px;
+          margin: 0 -90px -70px; 
+          border: 2px solid #CBC1BA;
+          border-radius: 5px;
+          background-color: #FFF;
+          text-align: center;
+          @media (max-width: 1024px) {
+            margin: 0 0 0 -229px;
+          }
+          &:before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 24px;
+            width: 24px;
+            margin: -12px 0 0 -12px;
+            background-image: url('../images/up_arrow_bg.png');
+            background-position: center top;
+            background-repeat: no-repeat;
+            content: '';
+            @media (max-width: 1024px) {
+              right: 0;
+              left: auto;
+              margin: 9px -12px 0 0;
+              transform: rotate(90deg);
+            }
+          }
+          a {
+            color: #979E95 !important;
+            font: 500 1em "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+            &:hover {
+              color: #C61C2C !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024) {
+  .language-switcher {
+    top: 270px !important;
+  }
+}
+@media (max-width: 992px) {
+  .language-switcher {
+    top: 298px !important;
+  }
+}
+@media (max-width: 560px) {
+  .language-switcher {
+    top: 260px !important;
+  }
+}

@@ -130,6 +130,7 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
     $options['map_options'] = array(
       'contains' => array(
         'maxzoom' => array('default' => 18),
+	'minzoom' => array('default' => 12),
         'zoom' => array('default' => 2),
         'zoom_on_click' => array('default' => ''),
         'center_lat' => array('default' => ''),
@@ -937,6 +938,7 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
     $module_path = drupal_get_path('module', 'ip_geoloc');
     $marker_path = file_create_url(ip_geoloc_marker_directory());
     $max_zoom = (int) $this->options['map_options']['maxzoom'];
+    $min_zoom = (int) $this->options['map_options']['minzoom'];
     $zoom = max(1, (int)$this->options['map_options']['zoom']);
     $zoom_on_click = (int) $this->options['map_options']['zoom_on_click'];
     $scroll_wheel_zoom = (bool) $this->options['map_options']['scrollwheelzoom'];
@@ -1187,6 +1189,8 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
       }
     }
     $map['settings']['maxZoom'] = $max_zoom;
+    $map['settings']['minZoom'] = $min_zoom;
+    $map['settings']['maxBounds'] = array([[52.270517, 12.796015],[52.721994, 13.812250]]);
     $map['settings']['scrollWheelZoom'] = $scroll_wheel_zoom;
     $map['settings']['dragging'] = $dragging;
 

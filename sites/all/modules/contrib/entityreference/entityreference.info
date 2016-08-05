@@ -27,6 +27,7 @@ files[] = tests/entityreference.handlers.test
 files[] = tests/entityreference.taxonomy.test
 files[] = tests/entityreference.admin.test
 files[] = tests/entityreference.feeds.test
+files[] = tests/entityreference.entity_translation.test
 
 ; Information added by Drupal.org packaging script on 2015-11-13
 version = "7.x-1.1+11-dev"

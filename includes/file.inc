@@ -475,26 +475,6 @@ function file_ensure_htaccess() {
  *   already present. Defaults to FALSE.
  */
 function file_create_htaccess($directory, $private = TRUE, $force_overwrite = FALSE) {
-
-  // Test the web server identity.
-  if (!isset($_SERVER['SERVER_SOFTWARE'])) {
-    // Skip this in Drush where SERVER_SOFTWARE is not set and .htaccess never used anyway.
-    $use_htaccess = FALSE;
-  }
-  elseif (isset($_SERVER['SERVER_SOFTWARE']) && preg_match("/Nginx/i", $_SERVER['SERVER_SOFTWARE'])) {
-    $use_htaccess = FALSE;
-  }
-  elseif (isset($_SERVER['SERVER_SOFTWARE']) && preg_match("/Apache/i", $_SERVER['SERVER_SOFTWARE'])) {
-    $use_htaccess = TRUE;
-  }
-  else {
-    $use_htaccess = FALSE;
-  }
-
-  if (!$use_htaccess) {
-    return;
-  }
-
   if (file_uri_scheme($directory)) {
     $directory = file_stream_wrapper_uri_normalize($directory);
   }
@@ -1959,12 +1939,7 @@ function file_unmanaged_save_data($data, $destination = NULL, $replace = FILE_EX
   }
 
   // Move the file to its final destination.
-  $return = file_unmanaged_move($temp_name, $destination, $replace);
-  // Remove a possibly stale temporary file if the move operation failed.
-  if ($return === FALSE && file_exists($temp_name)) {
-    @drupal_unlink($temp_name);
-  }
-  return $return;
+  return file_unmanaged_move($temp_name, $destination, $replace);
 }
 
 /**
@@ -2047,7 +2022,7 @@ function file_download() {
  *
  * @see file_transfer()
  * @see file_download_access()
- * @see hook_file_downlaod()
+ * @see hook_file_download()
  */
 function file_download_headers($uri) {
   // Let other modules provide headers and control access to the file.

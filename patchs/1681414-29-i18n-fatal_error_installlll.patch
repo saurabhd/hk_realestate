@@ -1,0 +1,206 @@
+diff --git a/i18n.api.php b/i18n.api.php
+index cd1d7d4..8aff49c 100644
+--- a/i18n.api.php
++++ b/i18n.api.php
+@@ -15,6 +15,16 @@
+  *
+  * Other features like translation sets (i18n_translation) or string translation (i18n_string)
+  * rely on the information provided by this hook for automating string translation
++ *
++ * If you implement this hook in your module, make sure to clear the
++ * i18n_object_info cache in hook_enable() by implementing this snippet in your
++ * module.install file:
++ *
++ * @code
++ * function MYMODULE_enable() {
++ *   drupal_static_reset('i18n_object_info');
++ * }
++ * @endcode
+  */
+ function hook_i18n_object_info() {
+   // Information for node type object, see i18n_node_i18n_object_info()
+diff --git a/i18n.module b/i18n.module
+index e94dd83..99e17fd 100644
+--- a/i18n.module
++++ b/i18n.module
+@@ -629,5 +629,9 @@ function i18n_entity_translation_enabled($entity_type) {
+  * Implements hook_modules_enabled().
+  */
+ function i18n_modules_enabled($modules) {
++  // The modules that are being enabled might provide an i18n object. Make sure
++  // it can be used. This prevents fatal errors in contrib modules that provide
++  // i18n objects but omit to clear this cache in hook_enable().
++  // @see https://www.drupal.org/node/1681414
+   drupal_static_reset('i18n_object_info');
+ }
+diff --git a/i18n_block/i18n_block.install b/i18n_block/i18n_block.install
+index 606567c..d40efbb 100644
+--- a/i18n_block/i18n_block.install
++++ b/i18n_block/i18n_block.install
+@@ -28,6 +28,17 @@ function i18n_block_uninstall() {
+ }
+ 
+ /**
++ * Implements hook_enable().
++ */
++function i18n_block_enable() {
++  // Clear the object cache so that other modules can utilise the i18n object we
++  // provide. This needs to be done in hook_enable() since other modules might
++  // be enabled at the same time as this module, and they might need the object
++  // during their hook_install() or hook_enable() phases.
++  drupal_static_reset('i18n_object_info');
++}
++
++/**
+  * Implements hook_schema().
+  */
+ function i18n_block_schema() {
+diff --git a/i18n_contact/i18n_contact.install b/i18n_contact/i18n_contact.install
+new file mode 100644
+index 0000000..75feade
+--- /dev/null
++++ b/i18n_contact/i18n_contact.install
+@@ -0,0 +1,17 @@
++<?php
++
++/**
++ * @file
++ * Install, uninstall, update and schema hooks for the i18n_contact module.
++ */
++
++/**
++ * Implements hook_enable().
++ */
++function i18n_contact_enable() {
++  // Clear the object cache so that other modules can utilise the i18n object we
++  // provide. This needs to be done in hook_enable() since other modules might
++  // be enabled at the same time as this module, and they might need the object
++  // during their hook_install() or hook_enable() phases.
++  drupal_static_reset('i18n_object_info');
++}
+diff --git a/i18n_field/i18n_field.install b/i18n_field/i18n_field.install
+index 008c043..4f06b50 100644
+--- a/i18n_field/i18n_field.install
++++ b/i18n_field/i18n_field.install
+@@ -15,6 +15,16 @@ function i18n_field_install() {
+   }
+ }
+ 
++/**
++ * Implements hook_enable().
++ */
++function i18n_field_enable() {
++  // Clear the object cache so that other modules can utilise the i18n object we
++  // provide. This needs to be done in hook_enable() since other modules might
++  // be enabled at the same time as this module, and they might need the object
++  // during their hook_install() or hook_enable() phases.
++  drupal_static_reset('i18n_object_info');
++}
+ 
+ /**
+  * Implements hook_update_dependencies()
+diff --git a/i18n_menu/i18n_menu.install b/i18n_menu/i18n_menu.install
+index 0f49e1e..665650d 100644
+--- a/i18n_menu/i18n_menu.install
++++ b/i18n_menu/i18n_menu.install
+@@ -31,6 +31,17 @@ function i18n_menu_uninstall() {
+ }
+ 
+ /**
++ * Implements hook_enable().
++ */
++function i18n_menu_enable() {
++  // Clear the object cache so that other modules can utilise the i18n object we
++  // provide. This needs to be done in hook_enable() since other modules might
++  // be enabled at the same time as this module, and they might need the object
++  // during their hook_install() or hook_enable() phases.
++  drupal_static_reset('i18n_object_info');
++}
++
++/**
+  * Implements hook_schema_alter().
+  */
+ function i18n_menu_schema_alter(&$schema) {
+diff --git a/i18n_node/i18n_node.install b/i18n_node/i18n_node.install
+index 7622bcf..8230ade 100644
+--- a/i18n_node/i18n_node.install
++++ b/i18n_node/i18n_node.install
+@@ -37,6 +37,17 @@ function i18n_node_update_dependencies() {
+ }
+ 
+ /**
++ * Implements hook_enable().
++ */
++function i18n_node_enable() {
++  // Clear the object cache so that other modules can utilise the i18n object we
++  // provide. This needs to be done in hook_enable() since other modules might
++  // be enabled at the same time as this module, and they might need the object
++  // during their hook_install() or hook_enable() phases.
++  drupal_static_reset('i18n_object_info');
++}
++
++/**
+  * Implements hook_i18n_update_drupal6().
+  *
+  * Update old string names
+diff --git a/i18n_path/i18n_path.install b/i18n_path/i18n_path.install
+index 9e0950f..61aa1f2 100644
+--- a/i18n_path/i18n_path.install
++++ b/i18n_path/i18n_path.install
+@@ -18,6 +18,17 @@ function i18n_path_install() {
+ }
+ 
+ /**
++ * Implements hook_enable().
++ */
++function i18n_path_enable() {
++  // Clear the object cache so that other modules can utilise the i18n object we
++  // provide. This needs to be done in hook_enable() since other modules might
++  // be enabled at the same time as this module, and they might need the object
++  // during their hook_install() or hook_enable() phases.
++  drupal_static_reset('i18n_object_info');
++}
++
++/**
+  * Implements hook_schema().
+  */
+ function i18n_path_schema() {
+diff --git a/i18n_string/i18n_string.install b/i18n_string/i18n_string.install
+index 511bc8a..96f191f 100644
+--- a/i18n_string/i18n_string.install
++++ b/i18n_string/i18n_string.install
+@@ -12,6 +12,12 @@ function i18n_string_enable() {
+   // Refresh locales for enabled modules
+   $modules = module_implements('i18n_string_refresh');
+   i18n_string_modules_enabled($modules);
++
++  // Clear the object cache so that other modules can utilise the i18n object we
++  // provide. This needs to be done in hook_enable() since other modules might
++  // be enabled at the same time as this module, and they might need the object
++  // during their hook_install() or hook_enable() phases.
++  drupal_static_reset('i18n_object_info');
+ }
+ 
+ /**
+diff --git a/i18n_taxonomy/i18n_taxonomy.install b/i18n_taxonomy/i18n_taxonomy.install
+index dfb86a1..3cde138 100644
+--- a/i18n_taxonomy/i18n_taxonomy.install
++++ b/i18n_taxonomy/i18n_taxonomy.install
+@@ -34,6 +34,17 @@ function i18n_taxonomy_uninstall() {
+ }
+ 
+ /**
++ * Implements hook_enable().
++ */
++function i18n_taxonomy_enable() {
++  // Clear the object cache so that other modules can utilise the i18n object we
++  // provide. This needs to be done in hook_enable() since other modules might
++  // be enabled at the same time as this module, and they might need the object
++  // during their hook_install() or hook_enable() phases.
++  drupal_static_reset('i18n_object_info');
++}
++
++/**
+  * Implements hook_schema_alter().
+  */
+ function i18n_taxonomy_schema_alter(&$schema) {

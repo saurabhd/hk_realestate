@@ -11,6 +11,8 @@
 function features_schema() {
   $schema['cache_features'] = drupal_get_schema_unprocessed('system', 'cache');
   $schema['cache_features']['description'] = 'Cache table for features to store module info.';
+  $schema['cache_featurestate'] = drupal_get_schema_unprocessed('system', 'cache');
+  $schema['cache_featurestate']['description'] = 'Table for features to store persistent state info.';
   return $schema;
 }
 
@@ -149,6 +151,7 @@ function features_update_7200() {
     db_create_table('cache_features', $schema);
   }
 }
+
 
 /**
  * Add {cache_featurestate} table.

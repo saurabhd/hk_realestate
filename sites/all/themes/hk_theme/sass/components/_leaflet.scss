@@ -1652,7 +1652,10 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         position: relative;
         &:hover {
           .menu-tooltip {
-            display: block !important;
+            @media (min-width: 1024px) 
+            {
+              display: block !important;
+            }
           }
         }
         a {

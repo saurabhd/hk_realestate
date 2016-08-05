@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall, update and schema hooks for the i18n_contact module.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function i18n_contact_enable() {
+  // Clear the object cache so that other modules can utilise the i18n object we
+  // provide. This needs to be done in hook_enable() since other modules might
+  // be enabled at the same time as this module, and they might need the object
+  // during their hook_install() or hook_enable() phases.
+  drupal_static_reset('i18n_object_info');
+}

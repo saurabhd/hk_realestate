@@ -306,7 +306,12 @@ class EntityReference_SelectionHandler_Generic implements EntityReference_Select
    */
   public function getLabel($entity) {
     $target_type = $this->field['settings']['target_type'];
-    return entity_access('view', $target_type, $entity) ? entity_label($target_type, $entity) : t('- Restricted access -');
+    if (entity_access('view', $target_type, $entity) !== false) {
+      return entity_label($target_type, $entity);
+    }
+    else {
+      return t('- Restricted access -');
+    }
   }
 
   /**

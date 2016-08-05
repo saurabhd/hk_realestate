@@ -481,16 +481,16 @@ function leaflet_token_replace(&$subject, $key, $data = array()) {
 
 /**
  * Helper function to standardize forms between views and field formatters.
- * 
+ *
  * $group - String
  *  The name of the group element to generate.
- * 
+ *
  * $settings - Array
  *  Current form settings (for defaults, etc)
- * 
+ *
  * $options - Array
  *  Special options needed for this form element, if necessary.
- * 
+ *
  * Return - A fully loaded form element.
  */
 function leaflet_form_elements($group, $settings, $options = NULL) {
@@ -517,7 +517,9 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => $settings[$group]['text'],
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[popup][show]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[popup][show]"],
+            :input[name="options[settings][popup][show]"],
+            :input[name="popup[show]"]' => array('checked' => TRUE),
           ),
         ),
       );
@@ -601,7 +603,9 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#element_validate' => array('leaflet_icon_validate'),
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[icon][iconType]"]' => array('value' => 'marker'),
+            ':input[name="' . $options['path'] . '[icon][iconType]"],
+            :input[name="options[settings][icon][iconType]"],
+            :input[name="iconType"]' => array('value' => 'marker'),
           ),
         ),
       );
@@ -614,7 +618,9 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#element_validate' => array('leaflet_icon_validate'),
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[icon][iconType]"]' => array('value' => 'marker'),
+            ':input[name="' . $options['path'] . '[icon][iconType]"],
+            :input[name="options[settings][icon][iconType]"],
+            :input[name="iconType"]' => array('value' => 'marker'),
           ),
         ),
       );
@@ -622,16 +628,19 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#type' => 'select',
         '#title' => t('Marker field'),
         '#description' => t('Field to use as output for a map marker.'),
-        // See [#1796656]
-        '#options' => (array)array_merge(array('' => ''), $options['fields']),
+        '#options' => isset($options['fields']) ? array_merge(array('' => ''), $options['fields']) : array(),
         '#default_value' => isset($settings[$group]['html']) ? $settings[$group]['html'] : '',
         '#empty_option' => t('-- Select --'),
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[icon][iconType]"]' => array('value' => 'html'),
+            ':input[name="' . $options['path'] . '[icon][iconType]"],
+            :input[name="options[settings][icon][iconType]"],
+            :input[name="iconType"]' => array('value' => 'html'),
           ),
           'required' => array(
-            ':input[name="' . $options['path'] . '[icon][iconType]"]' => array('value' => 'html'),
+            ':input[name="' . $options['path'] . '[icon][iconType]"],
+            :input[name="options[settings][icon][iconType]"],
+            :input[name="iconType"]' => array('value' => 'html'),
           ),
         ),
       );
@@ -643,7 +652,9 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#options' => image_style_options(FALSE, PASS_THROUGH),
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[icon][iconType]"]' => array('value' => 'html'),
+            ':input[name="' . $options['path'] . '[icon][iconType]"],
+            :input[name="options[settings][icon][iconType]"],
+            :input[name="iconType"]' => array('value' => 'html'),
           ),
         ),
       );
@@ -654,10 +665,14 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['htmlClass']) ? $settings[$group]['htmlClass'] : 'leaflet_map_icon',
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[icon][iconType]"]' => array('value' => 'html'),
+            ':input[name="' . $options['path'] . '[icon][iconType]"],
+            :input[name="options[settings][icon][iconType]"],
+            :input[name="iconType"]' => array('value' => 'html'),
           ),
           'required' => array(
-            ':input[name="' . $options['path'] . '[icon][iconType]"]' => array('value' => 'html'),
+            ':input[name="' . $options['path'] . '[icon][iconType]"],
+            :input[name="options[settings][icon][iconType]"],
+            :input[name="iconType"]' => array('value' => 'html'),
           ),
         ),
       );
@@ -712,7 +727,9 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#description' => t('The point from which the shadow is shown.'),
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[icon][iconType]"]' => array('value' => 'marker'),
+            ':input[name="' . $options['path'] . '[icon][iconType]"],
+            :input[name="options[settings][icon][iconType]"],
+            :input[name="iconType"]' => array('value' => 'marker'),
           ),
         ),
       );
@@ -739,7 +756,9 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#description' => t('The point from which the marker popup opens, relative to the anchor point.'),
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[icon][iconType]"]' => array('value' => 'marker'),
+            ':input[name="' . $options['path'] . '[icon][iconType]"],
+            :input[name="options[settings][icon][iconType]"],
+            :input[name="iconType"]' => array('value' => 'marker'),
           ),
         ),
       );
@@ -783,7 +802,9 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['stroke']) ? $settings[$group]['stroke'] : 1,
         '#states' => array(
           'enabled' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"],
+            :input[name="options[settings][vector_display][stroke_override]"],
+            :input[name="stroke_override"]' => array('checked' => TRUE),
           ),
         ),
       );
@@ -794,10 +815,14 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['color']) ? $settings[$group]['color'] : '',
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke]"],
+            :input[name="options[settings][vector_display][stroke]"],
+            :input[name="stroke"]' => array('checked' => TRUE),
           ),
           'enabled' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"],
+            :input[name="options[settings][vector_display][stroke_override]"],
+            :input[name="stroke_override"]' => array('checked' => TRUE),
           ),
         ),
       );
@@ -808,10 +833,14 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['weight']) ? $settings[$group]['weight'] : '',
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke]"],
+            :input[name="options[settings][vector_display][stroke]"],
+            :input[name="stroke"]' => array('checked' => TRUE),
           ),
           'enabled' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"],
+            :input[name="options[settings][vector_display][stroke_override]"],
+            :input[name="stroke_override"]' => array('checked' => TRUE),
           ),
         ),
       );
@@ -822,10 +851,14 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['opacity']) ? $settings[$group]['opacity'] : '',
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke]"],
+            :input[name="options[settings][vector_display][stroke]"],
+            :input[name="stroke"]' => array('checked' => TRUE),
           ),
           'enabled' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"],
+            :input[name="options[settings][vector_display][stroke_override]"],
+            :input[name="stroke_override"]' => array('checked' => TRUE),
           ),
         ),
       );
@@ -836,10 +869,14 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['dashArray']) ? $settings[$group]['dashArray'] : '',
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke]"],
+            :input[name="options[settings][vector_display][stroke]"],
+            :input[name="stroke"]' => array('checked' => TRUE),
           ),
           'enabled' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"],
+            :input[name="options[settings][vector_display][stroke_override]"],
+            :input[name="stroke_override"]' => array('checked' => TRUE),
           ),
         ),
       );
@@ -850,7 +887,9 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['fill']) ? $settings[$group]['fill'] : 1,
         '#states' => array(
           'enabled' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"],
+            :input[name="options[settings][vector_display][stroke_override]"],
+            :input[name="stroke_override"]' => array('checked' => TRUE),
           ),
         ),
       );
@@ -861,10 +900,14 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['fillColor']) ? $settings[$group]['fillColor'] : '',
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][fill]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][fill]"],
+            :input[name="options[settings][vector_display][fill]"],
+            :input[name="fill"]' => array('checked' => TRUE),
           ),
           'enabled' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"],
+            :input[name="options[settings][vector_display][stroke_override]"],
+            :input[name="stroke_override"]' => array('checked' => TRUE),
           ),
         ),
       );
@@ -875,10 +918,14 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['fillOpacity']) ? $settings[$group]['fillOpacity'] : '',
         '#states' => array(
           'visible' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][fill]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][fill]"],
+            :input[name="options[settings][vector_display][fill]"],
+            :input[name="fill"]' => array('checked' => TRUE),
           ),
           'enabled' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"],
+            :input[name="options[settings][vector_display][stroke_override]"],
+            :input[name="stroke_override"]' => array('checked' => TRUE),
           ),
         ),
       );
@@ -889,7 +936,9 @@ function leaflet_form_elements($group, $settings, $options = NULL) {
         '#default_value' => isset($settings[$group]['clickable']) ? $settings[$group]['clickable'] : 1,
         '#states' => array(
           'enabled' => array(
-            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"]' => array('checked' => TRUE),
+            ':input[name="' . $options['path'] . '[' . $group . '][stroke_override]"],
+            :input[name="options[settings][vector_display][stroke_override]"],
+            :input[name="stroke_override"]' => array('checked' => TRUE),
           ),
         ),
       );

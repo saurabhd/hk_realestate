@@ -15,6 +15,16 @@
  *
  * Other features like translation sets (i18n_translation) or string translation (i18n_string)
  * rely on the information provided by this hook for automating string translation
+ *
+ * If you implement this hook in your module, make sure to clear the
+ * i18n_object_info cache in hook_enable() by implementing this snippet in your
+ * module.install file:
+ *
+ * @code
+ * function MYMODULE_enable() {
+ *   drupal_static_reset('i18n_object_info');
+ * }
+ * @endcode
  */
 function hook_i18n_object_info() {
   // Information for node type object, see i18n_node_i18n_object_info()

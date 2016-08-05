@@ -1041,7 +1041,12 @@ class EntityListWrapper extends EntityMetadataWrapper implements IteratorAggrega
       foreach ($list as $key => $id) {
         // In case the entity cannot be loaded, we return NULL just as for empty
         // properties.
-        $list[$key] = isset($entities[$id]) ? $entities[$id] : NULL;
+        if ((is_string($id) || is_numeric($id)) && isset($entities[$id])) {
+          $list[$key] = $entities[$id];
+        }
+        else {
+          $list[$key] = NULL;
+        }
       }
       return $list;
     }

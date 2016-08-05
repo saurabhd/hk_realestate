@@ -216,7 +216,18 @@ class EntityAPIController extends DrupalDefaultEntityController implements Entit
     // were passed. The $ids array is reduced as items are loaded from cache,
     // and we need to know if it's empty for this reason to avoid querying the
     // database when all requested entities are loaded from cache.
-    $passed_ids = !empty($ids) ? array_flip($ids) : FALSE;
+    $passed_ids = array();
+
+    if (!empty($ids)) {
+      foreach ($ids as $key => $value) {
+        if (is_string($value) || is_numeric($value)) {
+          $passed_ids[$value] = $key;
+        }
+      }
+    }
+    if (empty($passed_ids)) {
+      $passed_ids = FALSE;
+    }
 
     // Try to load entities from the static cache.
     if ($this->cache && !$revision_id) {

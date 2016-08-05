@@ -180,7 +180,7 @@
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
         jQuery('.ui-dialog').slideToggle();
-        jQuery('.page-buy #search').slideToggle();
+        jQuery('#search').slideToggle();
       });
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();

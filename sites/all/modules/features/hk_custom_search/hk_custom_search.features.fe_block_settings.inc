@@ -22,6 +22,13 @@ function hk_custom_search_default_fe_block_settings() {
     'module' => 'views',
     'node_types' => array(),
     'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
 offer
 offer/*
 about-us
@@ -64,6 +71,13 @@ oeffnungszeiten',
     'module' => 'views',
     'node_types' => array(),
     'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
 offer
 offer/*
 about-us
@@ -106,6 +120,13 @@ oeffnungszeiten',
     'module' => 'views',
     'node_types' => array(),
     'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
 offer
 offer/*
 about-us
@@ -148,6 +169,13 @@ oeffnungszeiten',
     'module' => 'views',
     'node_types' => array(),
     'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
 offer
 offer/*
 about-us
@@ -190,6 +218,13 @@ oeffnungszeiten',
     'module' => 'views',
     'node_types' => array(),
     'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
 offer
 offer/*
 about-us

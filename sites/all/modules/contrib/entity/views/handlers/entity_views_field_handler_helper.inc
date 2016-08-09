@@ -442,13 +442,14 @@ class EntityFieldHandlerHelper {
         return NULL;
 
       case 'count':
-        $entitis = entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment'))); 
+        $shadow_object = '';
+        $entitis = entity_load('node', $list, array('type' => array('apartment'))); 
         foreach ($entitis as $key => $entity) {
             if(isset($entity->field_obj_schattenobjekt[LANGUAGE_NONE]) && !empty($entity->field_obj_schattenobjekt[LANGUAGE_NONE])) {
               $shadow_object = $entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'];
             }
-            if($shadow_object == 0) {
-              return count(entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment'))));
+            if($shadow_object == 0 || $shadow_object == 2) {
+              return count(entity_load('node', $list, array('type' => array('apartment'))));
             }
             else {
               $entity_list[$key] = $entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'];

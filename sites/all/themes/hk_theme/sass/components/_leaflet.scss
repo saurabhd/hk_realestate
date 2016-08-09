@@ -743,7 +743,7 @@ div.hide-submit-processing {
     }
     .apart {
       color: $black;
-      display: table;
+      display: inline-block;
       float: left;
       width: 100%;
       clear: right;
@@ -751,7 +751,7 @@ div.hide-submit-processing {
         background: $grey;
       }*/
       span {
-        display: table-cell;
+        display: inline-block;
         width: 20%;
         padding: 0.5em 1em 0.5em 0;
         .id {
@@ -760,11 +760,11 @@ div.hide-submit-processing {
     }
   }
   .tablehead {
-    display: table;
+    display: inline-block;
     float: left;
     width: 100%;
     span {
-      display: table-cell;
+      display: inline-block;
       width: 20%;
       padding: 0.5em 1em 0.5em 0;
     }

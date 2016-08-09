@@ -278,25 +278,26 @@ function hk_rules_default_rules_configuration() {
     }
   }');
   $items['rules_publish_content_when_workflow_state_active'] = entity_import('rules_config', '{ "rules_publish_content_when_workflow_state_active" : {
-      "LABEL" : "Publish content when workflow state active",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
-      "ON" : {
-        "node_presave--objekt" : { "bundle" : "objekt" },
-        "node_presave--apartment" : { "bundle" : "apartment" }
-      },
-      "IF" : [
-        { "data_is" : {
-            "data" : [ "node:field-save-workflow" ],
-            "op" : "IN",
-            "value" : { "value" : { "4" : "4", "7" : "7" } }
-          }
-        }
-      ],
-      "DO" : [ { "node_publish" : { "node" : [ "node" ] } } ]
-    }
-  }');
+   "LABEL" : "Publish content when workflow state active and no shadow apartment",
+   "PLUGIN" : "reaction rule",
+   "OWNER" : "rules",
+   "REQUIRES" : [ "rules" ],
+   "ON" : {
+     "node_presave--objekt" : { "bundle" : "objekt" },
+     "node_presave--apartment" : { "bundle" : "apartment" }
+   },
+   "IF" : [
+     { "data_is" : {
+         "data" : [ "node:field-save-workflow" ],
+         "op" : "IN",
+         "value" : { "value" : { "4" : "4" } }
+       }
+     },
+     { "data_is" : { "data" : [ "node-unchanged:field-obj-schattenobjekt" ], "value" : "0" } }
+   ],
+   "DO" : [ { "node_publish" : { "node" : [ "node" ] } } ]
+ }
+}');
   $items['rules_publish_object_when_apartment_is_published'] = entity_import('rules_config', '{ "rules_publish_object_when_apartment_is_published" : {
       "LABEL" : "Publish object, when apartment is published",
       "PLUGIN" : "reaction rule",

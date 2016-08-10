@@ -823,6 +823,13 @@ function hk_search_views_default_views() {
     0 => '0',
     1 => '1',
   );
+  /* Filter criterion: Indexed Content: Status */
+  $handler->display->display_options['filters']['field_save_workflow']['id'] = 'field_save_workflow';
+  $handler->display->display_options['filters']['field_save_workflow']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['filters']['field_save_workflow']['field'] = 'field_save_workflow';
+  $handler->display->display_options['filters']['field_save_workflow']['value'] = array(
+    4 => '4',
+  );
   $handler->display->display_options['path'] = 'map';
 
   /* Display: Map Background Block */
@@ -2017,6 +2024,13 @@ function hk_search_views_default_views() {
     0 => '0',
     1 => '1',
   );
+  /* Filter criterion: Indexed Content: Status */
+  $handler->display->display_options['filters']['field_save_workflow']['id'] = 'field_save_workflow';
+  $handler->display->display_options['filters']['field_save_workflow']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['filters']['field_save_workflow']['field'] = 'field_save_workflow';
+  $handler->display->display_options['filters']['field_save_workflow']['value'] = array(
+    4 => '4',
+  );
   $handler->display->display_options['path'] = 'apartment-list';
 
   /* Display: Kaufen >> Wohn- und Geschäftshäuser */
@@ -2341,7 +2355,6 @@ function hk_search_views_default_views() {
   $handler->display->display_options['filters']['field_object_ref_field_obj_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
   $handler->display->display_options['filters']['field_object_ref_field_obj_schattenobjekt']['field'] = 'field_object_ref_field_obj_schattenobjekt';
   $handler->display->display_options['filters']['field_object_ref_field_obj_schattenobjekt']['value'] = array(
-    0 => '0',
     1 => '1',
   );
   $handler->display->display_options['path'] = 'shadow-apartment-list';

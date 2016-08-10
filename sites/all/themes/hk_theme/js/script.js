@@ -180,8 +180,14 @@
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
         jQuery('.ui-dialog').slideToggle();
-        jQuery('.page-buy #search').slideToggle();
+        jQuery('#search').slideToggle();
       });
+
+      // Phone icon tooltip toggle
+      jQuery("#block-menu-menu-service-menu ul.menu li .icon-hk-icon-telephone").on("click", function(e) {
+        jQuery('.menu-tooltip').toggle();
+      });
+
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
         //jQuery('#search.region-search').slideToggle();

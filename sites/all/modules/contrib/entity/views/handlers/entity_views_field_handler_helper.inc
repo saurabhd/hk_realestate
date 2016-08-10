@@ -442,21 +442,30 @@ class EntityFieldHandlerHelper {
         return NULL;
 
       case 'count':
-
-        $entitis = entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment'))); 
-        foreach ($entitis as $key => $entity) {
+ $shadow_object = '';
+        $entitis = entity_load('node', $list, array('type' => array('apartment'))); 
+        $entity_shadow = 0;
+        $entity_none_shadow = 0;
+        
+        $count = 0;
+        foreach ($entitis as $key => $entity) {   
+          if($entity->field_save_workflow[LANGUAGE_NONE][0]['value'] == '4') {
             if(isset($entity->field_obj_schattenobjekt[LANGUAGE_NONE]) && !empty($entity->field_obj_schattenobjekt[LANGUAGE_NONE])) {
               $shadow_object = $entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'];
             }
-            if($shadow_object == 0) {
-              return count(entity_load('node', $list, array('status' => NODE_PUBLISHED, 'type' => array('apartment'))));
+            //$object_id = $entity->field_object_ref[LANGUAGE_NONE][0]['target_id'];
+            if($shadow_object == 1) {  
+              //$entity_list[$key] = $entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'];
+              $entity_shadow++;
+              return $entity_shadow;       
             }
             else {
-              $entity_list[$key] = $entity->field_obj_schattenobjekt[LANGUAGE_NONE][0]['value'];
-              return count($entity_list);
+              //$normal_active_apartment[$object_id] = $entity->nid;  
+              $entity_none_shadow++;
             }
+          }
         }
-      
+        return $entity_none_shadow;      
       // Handles both collapse and list output. Fallback is to collapse.
       default:
         $inner_values = array();

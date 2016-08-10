@@ -21,9 +21,21 @@ function hk_custom_search_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '<front>
-buy
-buy/*',
+    'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
+offer
+offer/*
+about-us
+about-us/*
+contact
+contact/*
+oeffnungszeiten',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -44,15 +56,9 @@ buy/*',
         'theme' => 'hk_theme',
         'weight' => -27,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
     ),
     'title' => '<none>',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-093fbd629cf79b37e5deaed189114089'] = array(
@@ -64,9 +70,21 @@ buy/*',
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '<front>
-buy
-buy/*',
+    'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
+offer
+offer/*
+about-us
+about-us/*
+contact
+contact/*
+oeffnungszeiten',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -87,15 +105,9 @@ buy/*',
         'theme' => 'hk_theme',
         'weight' => -26,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
     ),
-    'title' => '',
-    'visibility' => 0,
+    'title' => '<none>',
+    'visibility' => 1,
   );
 
   $export['views-facets_block-block'] = array(
@@ -107,9 +119,21 @@ buy/*',
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '<front>
-buy
-buy/*',
+    'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
+offer
+offer/*
+about-us
+about-us/*
+contact
+contact/*
+oeffnungszeiten',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -130,15 +154,9 @@ buy/*',
         'theme' => 'hk_theme',
         'weight' => -22,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
     ),
     'title' => '<none>',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-facets_block-block_1'] = array(
@@ -150,9 +168,21 @@ buy/*',
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '<front>
-buy
-buy/*',
+    'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
+offer
+offer/*
+about-us
+about-us/*
+contact
+contact/*
+oeffnungszeiten',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -173,15 +203,9 @@ buy/*',
         'theme' => 'hk_theme',
         'weight' => -25,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
     ),
     'title' => '<none>',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-facets_block-block_2'] = array(
@@ -193,9 +217,21 @@ buy/*',
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '<front>
-buy
-buy/*',
+    'pages' => 'rent
+mieten
+service
+service/*
+ueber-uns
+ueber-uns/*
+kontakt
+kontakt/*
+offer
+offer/*
+about-us
+about-us/*
+contact
+contact/*
+oeffnungszeiten',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -216,15 +252,9 @@ buy/*',
         'theme' => 'hk_theme',
         'weight' => -24,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
     ),
     'title' => '<none>',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   return $export;

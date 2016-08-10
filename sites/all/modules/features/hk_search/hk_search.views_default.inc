@@ -2008,7 +2008,6 @@ function hk_search_views_default_views() {
   $handler->display->display_options['filters']['field_obj_schattenobjekt']['field'] = 'field_obj_schattenobjekt';
   $handler->display->display_options['filters']['field_obj_schattenobjekt']['value'] = array(
     0 => '0',
-    1 => '1',
   );
   $handler->display->display_options['filters']['field_obj_schattenobjekt']['group'] = 1;
   /* Filter criterion: Object » Standort: Well-known text (indexed) */

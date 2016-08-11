@@ -54,7 +54,12 @@
   <?php print render($title_suffix); ?>
   <span class="sub-title"><?php print t('Upcomming meeting & schedule'); ?></span>
 </div>
-<?php } ?>
+<?php } else { 
+if ($block->subject): ?>
+  <h2<?php print $title_attributes; ?>><?php print $block->subject ?></h2>
+<?php endif;?>
+  <?php print render($title_suffix);
+} ?>
   <div class="content"<?php print $content_attributes; ?>>
     <?php print $content ?>
   </div>

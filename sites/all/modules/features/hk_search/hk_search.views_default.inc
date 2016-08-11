@@ -477,8 +477,11 @@ function hk_search_views_default_views() {
   $handler->display->display_options['style_options']['visitor_marker']['visitor_marker_accuracy_circle'] = 0;
   $handler->display->display_options['style_options']['differentiator']['differentiator_field'] = 'field_obj_schattenobjekt';
   $handler->display->display_options['style_options']['center_option'] = '0';
-  $handler->display->display_options['style_options']['tags']['marker_tag'] = 'field_obj_apartments';
+  $handler->display->display_options['style_options']['tags']['marker_tag'] = array(
+    'field_obj_apartments_2' => 'field_obj_apartments_2',
+  );
   $handler->display->display_options['style_options']['tags']['tag_css_class'] = 'tag-below-marker';
+  $handler->display->display_options['style_options']['tooltips']['marker_tooltip'] = 'field_obj_apartments_1';
   $handler->display->display_options['style_options']['sync']['2'] = 0;
   $handler->display->display_options['style_options']['sync']['4'] = 0;
   $handler->display->display_options['style_options']['sync']['8'] = 1;
@@ -505,7 +508,6 @@ function hk_search_views_default_views() {
   $handler->display->display_options['style_options']['cluster_differentiator']['zoom_ranges'] = array(
     1 => '10-12',
     2 => '12-14',
-    3 => '14-18',
   );
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_tooltips'] = 1;
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_outline'] = '1';
@@ -778,10 +780,11 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['nid_1']['alter']['text'] = '<div class="apart"><span class="rooms">[field_apart_rooms]</span><span class="space">[field_apart_living_space]</span><span class="price">[field_apart_price]</span></div>';
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid_1']['link_to_entity'] = 0;
-  /* Field: Views: Views Conditional */
+  /* Field: conditional-popup */
   $handler->display->display_options['fields']['views_conditional_1']['id'] = 'views_conditional_1';
   $handler->display->display_options['fields']['views_conditional_1']['table'] = 'views_conditional';
   $handler->display->display_options['fields']['views_conditional_1']['field'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional_1']['ui_name'] = 'conditional-popup';
   $handler->display->display_options['fields']['views_conditional_1']['label'] = '';
   $handler->display->display_options['fields']['views_conditional_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['views_conditional_1']['if'] = 'field_obj_schattenobjekt';
@@ -791,6 +794,32 @@ function hk_search_views_default_views() {
 [nid_1]';
   $handler->display->display_options['fields']['views_conditional_1']['or'] = '[view]';
   $handler->display->display_options['fields']['views_conditional_1']['strip_tags'] = 0;
+  /* Field: shadow-item-count */
+  $handler->display->display_options['fields']['field_obj_apartments_1']['id'] = 'field_obj_apartments_1';
+  $handler->display->display_options['fields']['field_obj_apartments_1']['table'] = 'entity_node';
+  $handler->display->display_options['fields']['field_obj_apartments_1']['field'] = 'field_obj_apartments';
+  $handler->display->display_options['fields']['field_obj_apartments_1']['relationship'] = 'field_object_ref';
+  $handler->display->display_options['fields']['field_obj_apartments_1']['ui_name'] = 'shadow-item-count';
+  $handler->display->display_options['fields']['field_obj_apartments_1']['label'] = '';
+  $handler->display->display_options['fields']['field_obj_apartments_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_obj_apartments_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_obj_apartments_1']['list']['mode'] = 'shadow-count';
+  $handler->display->display_options['fields']['field_obj_apartments_1']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_obj_apartments_1']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_obj_apartments_1']['bypass_access'] = 0;
+  /* Field: non-shadow-item-count */
+  $handler->display->display_options['fields']['field_obj_apartments_2']['id'] = 'field_obj_apartments_2';
+  $handler->display->display_options['fields']['field_obj_apartments_2']['table'] = 'entity_node';
+  $handler->display->display_options['fields']['field_obj_apartments_2']['field'] = 'field_obj_apartments';
+  $handler->display->display_options['fields']['field_obj_apartments_2']['relationship'] = 'field_object_ref';
+  $handler->display->display_options['fields']['field_obj_apartments_2']['ui_name'] = 'non-shadow-item-count';
+  $handler->display->display_options['fields']['field_obj_apartments_2']['label'] = '';
+  $handler->display->display_options['fields']['field_obj_apartments_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_obj_apartments_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_obj_apartments_2']['list']['mode'] = 'non-shadow-count';
+  $handler->display->display_options['fields']['field_obj_apartments_2']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_obj_apartments_2']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_obj_apartments_2']['bypass_access'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed Content: Content type */

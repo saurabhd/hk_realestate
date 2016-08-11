@@ -477,11 +477,8 @@ function hk_search_views_default_views() {
   $handler->display->display_options['style_options']['visitor_marker']['visitor_marker_accuracy_circle'] = 0;
   $handler->display->display_options['style_options']['differentiator']['differentiator_field'] = 'field_obj_schattenobjekt';
   $handler->display->display_options['style_options']['center_option'] = '0';
-  $handler->display->display_options['style_options']['tags']['marker_tag'] = array(
-    'field_obj_apartments_2' => 'field_obj_apartments_2',
-  );
+  $handler->display->display_options['style_options']['tags']['marker_tag'] = 'field_obj_apartments_2';
   $handler->display->display_options['style_options']['tags']['tag_css_class'] = 'tag-below-marker';
-  $handler->display->display_options['style_options']['tooltips']['marker_tooltip'] = 'field_obj_apartments_1';
   $handler->display->display_options['style_options']['sync']['2'] = 0;
   $handler->display->display_options['style_options']['sync']['4'] = 0;
   $handler->display->display_options['style_options']['sync']['8'] = 1;

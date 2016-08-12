@@ -479,6 +479,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['style_options']['center_option'] = '0';
   $handler->display->display_options['style_options']['tags']['marker_tag'] = 'field_obj_apartments_2';
   $handler->display->display_options['style_options']['tags']['tag_css_class'] = 'tag-below-marker';
+  $handler->display->display_options['style_options']['tooltips']['marker_tooltip'] = 'field_obj_apartments_1';
   $handler->display->display_options['style_options']['sync']['2'] = 0;
   $handler->display->display_options['style_options']['sync']['4'] = 0;
   $handler->display->display_options['style_options']['sync']['8'] = 1;
@@ -788,7 +789,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['views_conditional_1']['condition'] = '1';
   $handler->display->display_options['fields']['views_conditional_1']['equalto'] = 'ja';
   $handler->display->display_options['fields']['views_conditional_1']['then'] = '<div class="tablehead"><span class="rooms">Rooms</span><span class="space">Space (ca.)</span><span class="price">Price</span><span class="more">&nbsp;</span></div>
-[nid_1]';
+[view_1]';
   $handler->display->display_options['fields']['views_conditional_1']['or'] = '[view]';
   $handler->display->display_options['fields']['views_conditional_1']['strip_tags'] = 0;
   /* Field: shadow-item-count */
@@ -827,15 +828,6 @@ function hk_search_views_default_views() {
     'apartment' => 'apartment',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indexed Content: Schattenobjekt? */
-  $handler->display->display_options['filters']['field_obj_schattenobjekt']['id'] = 'field_obj_schattenobjekt';
-  $handler->display->display_options['filters']['field_obj_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
-  $handler->display->display_options['filters']['field_obj_schattenobjekt']['field'] = 'field_obj_schattenobjekt';
-  $handler->display->display_options['filters']['field_obj_schattenobjekt']['value'] = array(
-    0 => '0',
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['field_obj_schattenobjekt']['group'] = 1;
   /* Filter criterion: Object » Standort: Well-known text (indexed) */
   $handler->display->display_options['filters']['field_object_ref_field_objekt_wkt_geom']['id'] = 'field_object_ref_field_objekt_wkt_geom';
   $handler->display->display_options['filters']['field_object_ref_field_objekt_wkt_geom']['table'] = 'search_api_index_solr_node_index';
@@ -855,6 +847,14 @@ function hk_search_views_default_views() {
   $handler->display->display_options['filters']['field_save_workflow']['field'] = 'field_save_workflow';
   $handler->display->display_options['filters']['field_save_workflow']['value'] = array(
     4 => '4',
+  );
+  /* Filter criterion: Indexed Content: Schattenobjekt? */
+  $handler->display->display_options['filters']['field_obj_schattenobjekt']['id'] = 'field_obj_schattenobjekt';
+  $handler->display->display_options['filters']['field_obj_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['filters']['field_obj_schattenobjekt']['field'] = 'field_obj_schattenobjekt';
+  $handler->display->display_options['filters']['field_obj_schattenobjekt']['value'] = array(
+    0 => '0',
+    1 => '1',
   );
   $handler->display->display_options['path'] = 'map';
 
@@ -2366,7 +2366,6 @@ function hk_search_views_default_views() {
   $handler->display->display_options['filters']['field_obj_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
   $handler->display->display_options['filters']['field_obj_schattenobjekt']['field'] = 'field_obj_schattenobjekt';
   $handler->display->display_options['filters']['field_obj_schattenobjekt']['value'] = array(
-    0 => '0',
     1 => '1',
   );
   $handler->display->display_options['filters']['field_obj_schattenobjekt']['group'] = 1;
@@ -2380,7 +2379,15 @@ function hk_search_views_default_views() {
   $handler->display->display_options['filters']['field_object_ref_field_obj_schattenobjekt']['table'] = 'search_api_index_solr_node_index';
   $handler->display->display_options['filters']['field_object_ref_field_obj_schattenobjekt']['field'] = 'field_object_ref_field_obj_schattenobjekt';
   $handler->display->display_options['filters']['field_object_ref_field_obj_schattenobjekt']['value'] = array(
+    0 => '0',
     1 => '1',
+  );
+  /* Filter criterion: Indexed Content: Status */
+  $handler->display->display_options['filters']['field_save_workflow']['id'] = 'field_save_workflow';
+  $handler->display->display_options['filters']['field_save_workflow']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['filters']['field_save_workflow']['field'] = 'field_save_workflow';
+  $handler->display->display_options['filters']['field_save_workflow']['value'] = array(
+    4 => '4',
   );
   $handler->display->display_options['path'] = 'shadow-apartment-list';
   $export['karten'] = $view;

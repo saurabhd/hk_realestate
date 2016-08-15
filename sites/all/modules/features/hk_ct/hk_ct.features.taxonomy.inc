@@ -9,6 +9,14 @@
  */
 function hk_ct_taxonomy_default_vocabularies() {
   return array(
+    'building_type' => array(
+      'name' => 'Building Type',
+      'machine_name' => 'building_type',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'category' => array(
       'name' => 'Kategorie',
       'machine_name' => 'category',

@@ -464,6 +464,9 @@ function hk_ct_field_group_info() {
       5 => 'field_moving_in_from',
       6 => 'field_apart_ceiling_height',
       7 => 'field_status_quo',
+      8 => 'field_apart_balcony',
+      9 => 'field_apart_lift',
+      10 => 'field_building_type',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

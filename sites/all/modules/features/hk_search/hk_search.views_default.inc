@@ -638,7 +638,7 @@ function hk_search_views_default_views() {
 <p>[field_object_ref_field_object_txt_map_popup_value]</p>
 <!--<p>[field_obj_apartments] apartments in total</p>-->
 <div class="wo"><i class="icon-hk-icon-location"></i>[field_object_ref_field_address_thoroughfare], [field_object_ref_field_address_postal_code] [field_object_ref_field_address_locality]</div>
-<div class="tablehead"><span class="id">Object ID</span><span class="rooms">Rooms</span><span class="space">Space (ca.)</span><span class="price">Price</span><span class="more">&nbsp;</span></div>';
+<div class="tablehead"><span class="inquiry-checkbox">&nbsp;</span><span class="id">Object ID</span><span class="rooms">Rooms</span><span class="space">Space (ca.)</span><span class="price">Price</span><span class="more">&nbsp;</span></div>';
   $handler->display->display_options['fields']['field_object_ref_field_object_txt_map_popup_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_object_ref_field_object_txt_map_popup_value']['link_to_entity'] = 0;
   /* Field: Indexed Content: Text Schattenobjekt */
@@ -647,8 +647,6 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_object_text_schattenobjekt']['field'] = 'field_object_text_schattenobjekt';
   $handler->display->display_options['fields']['field_object_text_schattenobjekt']['label'] = '';
   $handler->display->display_options['fields']['field_object_text_schattenobjekt']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_object_text_schattenobjekt']['alter']['text'] = '
-';
   $handler->display->display_options['fields']['field_object_text_schattenobjekt']['element_label_colon'] = FALSE;
   /* Field: Indexed Content: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -708,7 +706,8 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['views_conditional']['if'] = 'field_obj_schattenobjekt';
   $handler->display->display_options['fields']['views_conditional']['condition'] = '1';
   $handler->display->display_options['fields']['views_conditional']['equalto'] = 'ja';
-  $handler->display->display_options['fields']['views_conditional']['then'] = '[field_object_text_schattenobjekt]';
+  $handler->display->display_options['fields']['views_conditional']['then'] = 'Im Umkreis von etwa 500m zu diesem Marker finden sich auch folgende Wohnungen, die zu ihren Suchkriterien passen und für Sie vielleicht interessant sind
+';
   $handler->display->display_options['fields']['views_conditional']['or'] = '[field_object_ref_field_object_txt_map_popup_value] ';
   $handler->display->display_options['fields']['views_conditional']['strip_tags'] = 0;
   /* Field: Object: Node ID (indexed) */
@@ -788,7 +787,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['views_conditional_1']['if'] = 'field_obj_schattenobjekt';
   $handler->display->display_options['fields']['views_conditional_1']['condition'] = '1';
   $handler->display->display_options['fields']['views_conditional_1']['equalto'] = 'ja';
-  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<div class="tablehead"><span class="rooms">Rooms</span><span class="space">Space (ca.)</span><span class="price">Price</span><span class="more">&nbsp;</span></div>
+  $handler->display->display_options['fields']['views_conditional_1']['then'] = '<div class="tablehead"><span class="inquiry-checkbox">&nbsp;</span><span class="rooms">Rooms</span><span class="space">Space (ca.)</span><span class="price">Price</span></div>
 [view_1]';
   $handler->display->display_options['fields']['views_conditional_1']['or'] = '[view]';
   $handler->display->display_options['fields']['views_conditional_1']['strip_tags'] = 0;
@@ -1998,7 +1997,6 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_apart_price']['field'] = 'field_apart_price';
   $handler->display->display_options['fields']['field_apart_price']['ui_name'] = 'Price (Rewritten as apartment list)';
   $handler->display->display_options['fields']['field_apart_price']['label'] = '';
-  $handler->display->display_options['fields']['field_apart_price']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_apart_price']['alter']['text'] = '<div class="apart"><span class="id">[field_object_ref_field_objektid_nunumeric]-[field_apart_no]</span><span class="rooms">[field_apart_rooms]</span><span class="space">[field_apart_living_space]</span><span class="price">[field_apart_price]</span><a class="more"  href="/node/[nid]">Details</a></div>';
   $handler->display->display_options['fields']['field_apart_price']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_apart_price']['settings'] = array(
@@ -2331,7 +2329,6 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_apart_price']['field'] = 'field_apart_price';
   $handler->display->display_options['fields']['field_apart_price']['ui_name'] = 'Price (Rewritten as apartment list)';
   $handler->display->display_options['fields']['field_apart_price']['label'] = '';
-  $handler->display->display_options['fields']['field_apart_price']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_apart_price']['alter']['text'] = '<div class="apart"><span class="rooms">[field_apart_rooms]</span><span class="space">[field_apart_living_space]</span><span class="price">[field_apart_price]</span></div>';
   $handler->display->display_options['fields']['field_apart_price']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_apart_price']['settings'] = array(

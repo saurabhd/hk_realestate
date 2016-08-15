@@ -1135,7 +1135,7 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
           $feature['tag'] = $location->marker_tooltip;
         }
       }
-      
+      $feature['label'] = '';
       $features[] = $feature;
     }
  

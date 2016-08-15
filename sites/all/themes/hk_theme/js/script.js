@@ -114,6 +114,7 @@
       //---------------------------------------------------------------------------//
       //************ Inquiry popup for map pouup listing *************//
       //---------------------------------------------------------------------------//
+      var alldata = [];
       jQuery(".inquiry-button .home-page-popup-inquiry").live('click', function(e) {
       e.preventDefault();
       var path = jQuery('.inquiry-button .home-page-popup-inquiry').attr('href');
@@ -157,8 +158,13 @@
       });
     }); 
     var data = [];
+    
     jQuery( ".inquiry-checkbox .inquiry" ).live('click', function(e) { 
       e.stopImmediatePropagation();
+      jQuery(".inquiry-checkbox .inquiry", context).once().each(function() {
+        alldata.push(jQuery(this).val());
+        jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+alldata);
+      });
       if(this.checked){
         data.push(jQuery(this).val());
         jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+data);
@@ -167,9 +173,13 @@
         data = jQuery.grep(data, function(value) {
           return value != removeItem;
         });
+        if(data.length != 0) {
+          jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+data);
+        } else {
+          jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+alldata);
+        }
       }
     });
-
     jQuery(document).ajaxComplete(function() {
       jQuery('.lightbox__body #page-title, .page-favorites #ng-lightbox div .lightbox.lightbox--plain, #field-angefragte-wohnung-values .delta-order').hide();
       jQuery( ".lightbox__content" ).on('click', function(e) { 

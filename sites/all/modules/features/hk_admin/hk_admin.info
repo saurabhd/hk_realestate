@@ -42,6 +42,7 @@ features[features_api][] = api:2
 features[node][] = dokument
 features[taxonomy][] = dokumententyp
 features[user_permission][] = access administration menu
+features[user_permission][] = bypass node access
 features[user_permission][] = flush caches
 features[variable][] = field_bundle_settings_node__dokument
 features[variable][] = language_content_type_dokument

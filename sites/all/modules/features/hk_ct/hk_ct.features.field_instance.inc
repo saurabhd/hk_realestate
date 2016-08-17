@@ -77,9 +77,8 @@ function hk_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 54,
       ),
       'live_results_search' => array(
@@ -166,6 +165,61 @@ function hk_ct_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 59,
+    ),
+  );
+
+  // Exported field_instance: 'node-apartment-field_apart_built_year'.
+  $field_instances['node-apartment-field_apart_built_year'] = array(
+    'bundle' => 'apartment',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 57,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_apart_built_year',
+    'label' => 'Built year',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - g:i:sa',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-100:+0',
+      ),
+      'type' => 'date_select',
+      'weight' => 69,
     ),
   );
 
@@ -442,7 +496,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 56,
+      'weight' => 6,
     ),
   );
 
@@ -524,7 +578,7 @@ function hk_ct_field_default_field_instances() {
         'manualcrop_thumblist' => 0,
       ),
       'type' => 'media_generic',
-      'weight' => 55,
+      'weight' => 5,
     ),
   );
 
@@ -848,7 +902,7 @@ function hk_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -919,9 +973,8 @@ function hk_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 55,
       ),
       'live_results_search' => array(
@@ -1844,7 +1897,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 8,
+      'weight' => 11,
     ),
   );
 
@@ -2147,23 +2200,21 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
   // Exported field_instance: 'node-apartment-field_building_type'.
   $field_instances['node-apartment-field_building_type'] = array(
     'bundle' => 'apartment',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 56,
+        'type' => 'hidden',
+        'weight' => 58,
       ),
       'live_results_search' => array(
         'label' => 'above',
@@ -2188,11 +2239,11 @@ function hk_ct_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'computed_field',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 69,
+      'type' => 'computed',
+      'weight' => 70,
     ),
   );
 
@@ -2453,9 +2504,8 @@ function hk_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 53,
       ),
       'live_results_search' => array(
@@ -2492,7 +2542,7 @@ function hk_ct_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 38,
+      'weight' => 2,
     ),
   );
 
@@ -2591,7 +2641,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'geofield',
       'settings' => array(),
       'type' => 'geofield_wkt',
-      'weight' => 2,
+      'weight' => 6,
     ),
   );
 
@@ -2653,7 +2703,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 3,
     ),
   );
 
@@ -8556,6 +8606,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
   t('Body');
   t('Borough');
   t('Building type');
+  t('Built year');
   t('Category');
   t('Ceiling height');
   t('Commission');

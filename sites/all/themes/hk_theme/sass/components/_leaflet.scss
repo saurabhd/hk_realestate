@@ -747,6 +747,20 @@ div.hide-submit-processing {
   .views-row-odd .popup-content {
     background: $grey;
   }
+  .shadow-apartment {
+    tbody {
+      border-top: none;
+    }
+    tr {
+      border-bottom: none;
+      th {
+        border-bottom: none;
+      }
+      td {
+          padding: 0.5em 1em;
+      }
+    }
+  }
   .popup-content {
     color: $black;
     display: inline-block;

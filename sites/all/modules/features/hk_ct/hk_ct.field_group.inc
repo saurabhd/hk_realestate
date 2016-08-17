@@ -23,9 +23,9 @@ function hk_ct_field_group_info() {
     'label' => 'Akkordeon',
     'weight' => '54',
     'children' => array(
-      0 => 'group_lage',
-      1 => 'group_sonstiges',
-      2 => 'group_house',
+      0 => 'group_house',
+      1 => 'group_lage',
+      2 => 'group_sonstiges',
     ),
     'format_type' => 'accordion',
     'format_settings' => array(
@@ -144,7 +144,7 @@ function hk_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Veröffentlichen',
-    'weight' => '5',
+    'weight' => '7',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -467,6 +467,7 @@ function hk_ct_field_group_info() {
       8 => 'field_apart_balcony',
       9 => 'field_apart_lift',
       10 => 'field_building_type',
+      11 => 'field_apart_built_year',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

@@ -17,7 +17,7 @@ function hk_admin_default_crm_core_profile() {
   $crm_core_profile->label = 'Anfrage';
   $crm_core_profile->entities = array(
     'crm_core_contact' => array(
-      'label' => 'CRM Core Kontakt',
+      'label' => 'CRM Core Contact',
       'status' => 1,
       'bundle' => 'individual',
       'fields_container' => array(
@@ -26,13 +26,26 @@ function hk_admin_default_crm_core_profile() {
           'field_e_mail' => 'field_e_mail',
           'field_phone' => 'field_phone',
           'field_crm_address' => 0,
+          'field_crm_bemerkungen' => 0,
+          'field_birthday' => 0,
+          'field_company' => 0,
+          'field_individual_company' => 0,
+          'field_individual_connection' => 0,
+          'field_individual_type' => 0,
+          'field_job_title' => 0,
+          'field_languages' => 0,
+          'field_other' => 0,
+          'field_profile_picture' => 0,
+          'field_responsible_agent' => 0,
+          'field_secondary_agent' => 0,
+          'field_crm_ansprechpartner' => 0,
         ),
       ),
       'prepopulate' => 1,
       'prepopulate_type' => 'token_contact',
     ),
     'crm_core_activity' => array(
-      'label' => 'CRM Core Aktivität',
+      'label' => 'CRM Core Activity',
       'status' => 1,
       'bundle' => 'anfrage',
       'fields_container' => array(
@@ -152,13 +165,9 @@ function hk_admin_default_crm_core_profile() {
       'handler' => 'EntityReferenceProfileFieldHandler',
       'entity_type' => 'crm_core_activity',
       'bundle' => 'anfrage',
-      'status' => 1,
-      'hidden' => 1,
-      'default' => array(
-        0 => array(
-          'target_id' => '8',
-        ),
-      ),
+      'status' => 0,
+      'hidden' => 0,
+      'default' => array(),
       'weight' => '-50',
     ),
     'crm_core_activity_anfrage_field_activity_notes' => array(
@@ -209,7 +218,13 @@ function hk_admin_default_crm_core_profile() {
       'default' => array(
         0 => array(
           'target_id' => '',
+          '_weight' => '0',
         ),
+        1 => array(
+          'target_id' => '',
+          '_weight' => '1',
+        ),
+        'add_more' => 'Add another item',
       ),
       'weight' => '-48',
     ),
@@ -224,7 +239,7 @@ function hk_admin_default_crm_core_profile() {
 
 Thank you for sending your inquiry. We will get back to you as soon as possible.';
   $crm_core_profile->status = TRUE;
-  $crm_core_profile->uid = 1;
+  $crm_core_profile->uid = 1362;
   $crm_core_profile->created = 1428845767;
   $crm_core_profile->contact_match = 'default';
   $crm_core_profile->contact_match_engines = array();
@@ -240,7 +255,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
   $crm_core_profile->label = 'Phone call';
   $crm_core_profile->entities = array(
     'crm_core_contact' => array(
-      'label' => 'CRM Core Kontakt',
+      'label' => 'CRM Core Contact',
       'status' => 1,
       'bundle' => 'individual',
       'fields_container' => array(
@@ -249,13 +264,26 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
           'field_e_mail' => 'field_e_mail',
           'field_phone' => 'field_phone',
           'field_crm_address' => 0,
+          'field_crm_bemerkungen' => 0,
+          'field_birthday' => 0,
+          'field_company' => 0,
+          'field_individual_company' => 0,
+          'field_individual_connection' => 0,
+          'field_individual_type' => 0,
+          'field_job_title' => 0,
+          'field_languages' => 0,
+          'field_other' => 0,
+          'field_profile_picture' => 0,
+          'field_responsible_agent' => 0,
+          'field_secondary_agent' => 0,
+          'field_crm_ansprechpartner' => 0,
         ),
       ),
       'prepopulate' => 1,
       'prepopulate_type' => 'token_contact',
     ),
     'crm_core_activity' => array(
-      'label' => 'CRM Core Aktivität',
+      'label' => 'CRM Core Activity',
       'status' => 1,
       'bundle' => 'phone_call',
       'fields_container' => array(
@@ -264,6 +292,8 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
           'field_activity_notes' => 'field_activity_notes',
           'title' => 0,
           'field_activity_date' => 0,
+          'field_inquiry' => 0,
+          'field_participants' => 0,
         ),
       ),
     ),
@@ -276,7 +306,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'entity_type' => 'crm_core_contact',
       'bundle' => 'individual',
       'status' => 1,
-      'weight' => '-47',
+      'weight' => '-49',
     ),
     'crm_core_contact_individual_contact_name_title' => array(
       'field_name' => 'contact_name',
@@ -287,7 +317,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 1,
       'hidden' => 0,
       'default' => '',
-      'weight' => '-46',
+      'weight' => '-48',
     ),
     'crm_core_contact_individual_contact_name_given' => array(
       'field_name' => 'contact_name',
@@ -298,7 +328,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 1,
       'hidden' => 0,
       'default' => '',
-      'weight' => '-44',
+      'weight' => '-46',
     ),
     'crm_core_contact_individual_contact_name_middle' => array(
       'field_name' => 'contact_name',
@@ -309,7 +339,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 0,
       'hidden' => 1,
       'default' => '',
-      'weight' => '-37',
+      'weight' => '-41',
     ),
     'crm_core_contact_individual_contact_name_family' => array(
       'field_name' => 'contact_name',
@@ -320,7 +350,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 1,
       'hidden' => 0,
       'default' => '',
-      'weight' => '-43',
+      'weight' => '-45',
     ),
     'crm_core_contact_individual_contact_name_generational' => array(
       'field_name' => 'contact_name',
@@ -331,7 +361,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 0,
       'hidden' => 1,
       'default' => '',
-      'weight' => '-38',
+      'weight' => '-42',
     ),
     'crm_core_contact_individual_contact_name_credentials' => array(
       'field_name' => 'contact_name',
@@ -342,7 +372,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 1,
       'hidden' => 0,
       'default' => '',
-      'weight' => '-45',
+      'weight' => '-47',
     ),
     'crm_core_contact_individual_field_e_mail' => array(
       'field_name' => 'field_e_mail',
@@ -353,7 +383,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 1,
       'hidden' => 0,
       'default' => '',
-      'weight' => '-42',
+      'weight' => '-44',
     ),
     'crm_core_contact_individual_field_phone' => array(
       'field_name' => 'field_phone',
@@ -364,7 +394,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 1,
       'hidden' => 0,
       'default' => '',
-      'weight' => '-41',
+      'weight' => '-43',
     ),
     'crm_core_activity_phone_call_field_activity_participants' => array(
       'field_name' => 'field_activity_participants',
@@ -375,7 +405,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 0,
       'hidden' => 0,
       'default' => array(),
-      'weight' => 41,
+      'weight' => '41',
     ),
     'crm_core_activity_phone_call_field_activity_notes' => array(
       'field_name' => 'field_activity_notes',
@@ -386,38 +416,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'status' => 0,
       'hidden' => 0,
       'default' => '',
-      'weight' => 40,
-    ),
-    'crm_core_activity_phone_call_field_activity_status' => array(
-      'field_name' => 'field_activity_status',
-      'field_item' => '',
-      'handler' => 'DefaultProfileFieldHandler',
-      'entity_type' => 'crm_core_activity',
-      'bundle' => 'phone_call',
-      'status' => 0,
-      'hidden' => 0,
-      'default' => '',
-      'weight' => 39,
-    ),
-    'crm_core_activity_phone_call_field_activity_bearbeiter' => array(
-      'field_name' => 'field_activity_bearbeiter',
-      'field_item' => '',
-      'handler' => 'EntityReferenceProfileFieldHandler',
-      'entity_type' => 'crm_core_activity',
-      'bundle' => 'phone_call',
-      'status' => 0,
-      'hidden' => 0,
-      'weight' => 38,
-    ),
-    'crm_core_activity_phone_call_field_angefragte_wohnung' => array(
-      'field_name' => 'field_angefragte_wohnung',
-      'field_item' => '',
-      'handler' => 'EntityReferenceProfileFieldHandler',
-      'entity_type' => 'crm_core_activity',
-      'bundle' => 'phone_call',
-      'status' => 0,
-      'hidden' => 0,
-      'weight' => 37,
+      'weight' => '40',
     ),
   );
   $crm_core_profile->block = TRUE;
@@ -429,8 +428,8 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
   $crm_core_profile->message = 'Vielen Dank für Ihre Anfrage. Wir melden uns so schnell wie möglich mit einer Antwort. 
 
 Thank you for sending your inquiry. We will get back to you as soon as possible.';
-  $crm_core_profile->status = TRUE;
-  $crm_core_profile->uid = 1;
+  $crm_core_profile->status = FALSE;
+  $crm_core_profile->uid = 1362;
   $crm_core_profile->created = 1461427230;
   $crm_core_profile->contact_match = 'default';
   $crm_core_profile->contact_match_engines = array();
@@ -443,10 +442,10 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
   $crm_core_profile->disabled = FALSE; /* Edit this to true to make a default crm_core_profile disabled initially */
   $crm_core_profile->api_version = 1;
   $crm_core_profile->name = 'kontaktformular';
-  $crm_core_profile->label = 'Kontaktformular';
+  $crm_core_profile->label = 'kontaktformular';
   $crm_core_profile->entities = array(
     'crm_core_contact' => array(
-      'label' => 'CRM Core Kontakt',
+      'label' => 'CRM Core Contact',
       'status' => 1,
       'bundle' => 'individual',
       'fields_container' => array(
@@ -455,13 +454,26 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
           'field_e_mail' => 'field_e_mail',
           'field_phone' => 'field_phone',
           'field_crm_address' => 'field_crm_address',
+          'field_crm_bemerkungen' => 0,
+          'field_birthday' => 0,
+          'field_company' => 0,
+          'field_individual_company' => 0,
+          'field_individual_connection' => 0,
+          'field_individual_type' => 0,
+          'field_job_title' => 0,
+          'field_languages' => 0,
+          'field_other' => 0,
+          'field_profile_picture' => 0,
+          'field_responsible_agent' => 0,
+          'field_secondary_agent' => 0,
+          'field_crm_ansprechpartner' => 0,
         ),
       ),
       'prepopulate' => 1,
       'prepopulate_type' => 'token_contact',
     ),
     'crm_core_activity' => array(
-      'label' => 'CRM Core Aktivität',
+      'label' => 'CRM Core Activity',
       'status' => 1,
       'bundle' => 'kontaktformular',
       'fields_container' => array(
@@ -743,8 +755,8 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'handler' => 'EntityReferenceProfileFieldHandler',
       'entity_type' => 'crm_core_activity',
       'bundle' => 'kontaktformular',
-      'status' => 1,
-      'hidden' => 1,
+      'status' => 0,
+      'hidden' => 0,
       'default' => array(
         0 => array(
           'target_id' => '8',
@@ -810,7 +822,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
   $crm_core_profile->message = 'Thank you very much for your message. We will get back to you as soon as possible.
 your Herbert + Kohlmeyer Team';
   $crm_core_profile->status = TRUE;
-  $crm_core_profile->uid = 1;
+  $crm_core_profile->uid = 1362;
   $crm_core_profile->created = 1430982462;
   $crm_core_profile->contact_match = 'default';
   $crm_core_profile->contact_match_engines = array();

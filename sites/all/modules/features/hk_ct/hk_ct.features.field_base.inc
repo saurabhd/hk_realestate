@@ -188,6 +188,36 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_apart_built_year'.
+  $field_bases['field_apart_built_year'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_apart_built_year',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'date',
+    'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
+      'entity_translation_sync' => FALSE,
+      'granularity' => array(
+        'day' => 0,
+        'hour' => 0,
+        'minute' => 0,
+        'month' => 0,
+        'second' => 0,
+        'year' => 'year',
+      ),
+      'timezone_db' => '',
+      'todate' => '',
+      'tz_handling' => 'none',
+    ),
+    'translatable' => 0,
+    'type' => 'datetime',
+  );
+
   // Exported field_base: 'field_apart_ceiling_height'.
   $field_bases['field_apart_ceiling_height'] = array(
     'active' => 1,
@@ -827,25 +857,41 @@ function hk_ct_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_building_type',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
+    'indexes' => array(),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'computed_field',
     'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'building_type',
-          'parent' => 0,
-        ),
+      'code' => '$date = $entity->field_apart_built_year[LANGUAGE_NONE][0][\'value\'];
+$year = explode("-",$date);
+$year = $year[0];
+$building_type = \'\';
+if($year >= 2009 ) {
+$building_type = \'New Building\';
+}
+if($year <= 2008 && $year >= 1960) {
+$building_type = \'New Old Building\';
+}
+if($year <= 1960 ) {
+$building_type = \'Old Building\';
+}
+$entity_field[0][\'value\'] = $building_type;',
+      'database' => array(
+        'data_default' => '',
+        'data_index' => 0,
+        'data_length' => 32,
+        'data_not_NULL' => 0,
+        'data_precision' => 10,
+        'data_scale' => 2,
+        'data_size' => 'normal',
+        'data_type' => 'varchar',
       ),
+      'display_format' => '$display_output = $entity_field_item[\'value\'];',
       'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'title_taxonomy_allowed_values',
+      'recalculate' => 0,
+      'store' => 1,
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'computed',
   );
 
   // Exported field_base: 'field_developer'.

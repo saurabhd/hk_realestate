@@ -21,6 +21,17 @@ function hk_admin_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
+  // Exported permission: 'bypass node access'.
+  $permissions['bypass node access'] = array(
+    'name' => 'bypass node access',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'admintooluser' => 'admintooluser',
+      'agent' => 'agent',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'flush caches'.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',

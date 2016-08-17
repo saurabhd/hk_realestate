@@ -165,9 +165,13 @@ function hk_admin_default_crm_core_profile() {
       'handler' => 'EntityReferenceProfileFieldHandler',
       'entity_type' => 'crm_core_activity',
       'bundle' => 'anfrage',
-      'status' => 0,
+      'status' => 1,
       'hidden' => 0,
-      'default' => array(),
+      'default' => array(
+        0 => array(
+          'target_id' => '8',
+        ),
+      ),
       'weight' => '-50',
     ),
     'crm_core_activity_anfrage_field_activity_notes' => array(

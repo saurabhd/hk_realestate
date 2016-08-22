@@ -2450,24 +2450,20 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_apart_balcony']['field'] = 'field_apart_balcony';
   $handler->display->display_options['fields']['field_apart_balcony']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_apart_balcony']['empty'] = 'no';
-  /* Field: Indexed Content: Built year */
-  $handler->display->display_options['fields']['field_apart_built_year']['id'] = 'field_apart_built_year';
-  $handler->display->display_options['fields']['field_apart_built_year']['table'] = 'search_api_index_solr_node_index';
-  $handler->display->display_options['fields']['field_apart_built_year']['field'] = 'field_apart_built_year';
-  $handler->display->display_options['fields']['field_apart_built_year']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_apart_built_year']['settings'] = array(
-    'format_type' => 'search_api_facetapi_YEAR',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-  );
-  /* Field: Indexed Content: Building type */
+  /* Field: Content: Building type */
   $handler->display->display_options['fields']['field_building_type']['id'] = 'field_building_type';
-  $handler->display->display_options['fields']['field_building_type']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_building_type']['table'] = 'entity_node';
   $handler->display->display_options['fields']['field_building_type']['field'] = 'field_building_type';
-  $handler->display->display_options['fields']['field_building_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_building_type']['relationship'] = 'field_object_ref';
+  /* Field: Content: Year built */
+  $handler->display->display_options['fields']['field_year_built']['id'] = 'field_year_built';
+  $handler->display->display_options['fields']['field_year_built']['table'] = 'entity_node';
+  $handler->display->display_options['fields']['field_year_built']['field'] = 'field_year_built';
+  $handler->display->display_options['fields']['field_year_built']['relationship'] = 'field_object_ref';
+  $handler->display->display_options['fields']['field_year_built']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Object: Node ID (indexed) */
   $handler->display->display_options['arguments']['field_object_ref_nid']['id'] = 'field_object_ref_nid';

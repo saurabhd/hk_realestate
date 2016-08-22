@@ -168,61 +168,6 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_built_year'.
-  $field_instances['node-apartment-field_apart_built_year'] = array(
-    'bundle' => 'apartment',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 57,
-      ),
-      'live_results_search' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_apart_built_year',
-    'label' => 'Built year',
-    'required' => 0,
-    'settings' => array(
-      'default_value' => 'blank',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'increment' => 15,
-        'input_format' => 'm/d/Y - g:i:sa',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'no_fieldset' => 0,
-        'text_parts' => array(),
-        'year_range' => '-100:+0',
-      ),
-      'type' => 'date_select',
-      'weight' => 69,
-    ),
-  );
-
   // Exported field_instance: 'node-apartment-field_apart_ceiling_height'.
   $field_instances['node-apartment-field_apart_ceiling_height'] = array(
     'bundle' => 'apartment',
@@ -2204,49 +2149,6 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_building_type'.
-  $field_instances['node-apartment-field_building_type'] = array(
-    'bundle' => 'apartment',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 58,
-      ),
-      'live_results_search' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_building_type',
-    'label' => 'Building type',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'computed_field',
-      'settings' => array(),
-      'type' => 'computed',
-      'weight' => 70,
-    ),
-  );
-
   // Exported field_instance: 'node-apartment-field_kategorie'.
   $field_instances['node-apartment-field_kategorie'] = array(
     'bundle' => 'apartment',
@@ -3088,7 +2990,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 27,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3206,7 +3108,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 15,
       ),
       'exposekarte' => array(
         'label' => 'hidden',
@@ -3301,7 +3203,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 17,
       ),
       'exposekarte' => array(
         'label' => 'hidden',
@@ -3382,13 +3284,9 @@ function hk_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 73,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 40,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3513,15 +3411,9 @@ function hk_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_decimal',
-        'weight' => 70,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3593,7 +3485,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 28,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3693,6 +3585,62 @@ function hk_ct_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
+  // Exported field_instance: 'node-objekt-field_building_type'.
+  $field_instances['node-objekt-field_building_type'] = array(
+    'bundle' => 'objekt',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed_field_plain',
+        'weight' => 0,
+      ),
+      'exposekarte' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wohn_und_geschaeftshaus' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_building_type',
+    'label' => 'Building type',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'computed_field',
+      'settings' => array(),
+      'type' => 'computed',
+      'weight' => 52,
+    ),
+  );
+
   // Exported field_instance: 'node-objekt-field_developer'.
   $field_instances['node-objekt-field_developer'] = array(
     'bundle' => 'objekt',
@@ -3704,7 +3652,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 30,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3871,7 +3819,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 29,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3957,7 +3905,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 31,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4036,7 +3984,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 32,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4121,7 +4069,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 33,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4199,7 +4147,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 12,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4298,7 +4246,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 37,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4618,7 +4566,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 26,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4687,7 +4635,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 34,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4763,7 +4711,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 24,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4839,7 +4787,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 23,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4915,7 +4863,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 20,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4985,7 +4933,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 22,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -5061,7 +5009,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 21,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -5209,10 +5157,9 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 74,
+        'type' => 'hidden',
+        'weight' => 41,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -5449,7 +5396,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 14,
       ),
       'exposekarte' => array(
         'label' => 'hidden',
@@ -5720,7 +5667,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 16,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -5884,10 +5831,9 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 71,
+        'type' => 'hidden',
+        'weight' => 39,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -6666,7 +6612,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 25,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -6986,7 +6932,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 19,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -7563,7 +7509,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 18,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -8606,7 +8552,6 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
   t('Body');
   t('Borough');
   t('Building type');
-  t('Built year');
   t('Category');
   t('Ceiling height');
   t('Commission');

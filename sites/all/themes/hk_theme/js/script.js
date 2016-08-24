@@ -239,7 +239,8 @@
         jQuery('.ui-dialog').removeClass('ui-dialog-show');
       });
       if(jQuery(window).width() < 767) {
-        jQuery('.home-form-wrap .ui-dialog').hide();
+        //jQuery('.home-form-wrap .ui-dialog').hide();
+        jQuery('#search').hide();
       }
       // jQuery( window ).resize(function() {});
       jQuery("a.form-show-link").on("click", function() {
@@ -256,7 +257,7 @@
       // Search Slide toggle
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
-        jQuery('.ui-dialog').slideToggle();
+        //jQuery('.ui-dialog').slideToggle();
         jQuery('#search').slideToggle();
       });
 

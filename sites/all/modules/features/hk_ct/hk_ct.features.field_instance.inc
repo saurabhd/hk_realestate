@@ -10,7 +10,7 @@
 function hk_ct_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-apartment-field_apart_alloc_incident_costs'
+  // Exported field_instance: 'node-apartment-field_apart_alloc_incident_costs'.
   $field_instances['node-apartment-field_apart_alloc_incident_costs'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -22,6 +22,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 44,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -58,7 +64,57 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_bathrooms'
+  // Exported field_instance: 'node-apartment-field_apart_balcony'.
+  $field_instances['node-apartment-field_apart_balcony'] = array(
+    'bundle' => 'apartment',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 54,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_apart_balcony',
+    'label' => 'Balcony',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 67,
+    ),
+  );
+
+  // Exported field_instance: 'node-apartment-field_apart_bathrooms'.
   $field_instances['node-apartment-field_apart_bathrooms'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -70,6 +126,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -106,7 +168,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_ceiling_height'
+  // Exported field_instance: 'node-apartment-field_apart_ceiling_height'.
   $field_instances['node-apartment-field_apart_ceiling_height'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -118,6 +180,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 40,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -154,7 +222,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_commission'
+  // Exported field_instance: 'node-apartment-field_apart_commission'.
   $field_instances['node-apartment-field_apart_commission'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -172,6 +240,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'number_decimal',
         'weight' => 11,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -214,7 +288,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_description'
+  // Exported field_instance: 'node-apartment-field_apart_description'.
   $field_instances['node-apartment-field_apart_description'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -227,6 +301,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 52,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -301,7 +381,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_erweitertes_expose'
+  // Exported field_instance: 'node-apartment-field_apart_erweitertes_expose'.
   $field_instances['node-apartment-field_apart_erweitertes_expose'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -314,6 +394,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 48,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -355,11 +441,11 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 56,
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_expose'
+  // Exported field_instance: 'node-apartment-field_apart_expose'.
   $field_instances['node-apartment-field_apart_expose'] = array(
     'bundle' => 'apartment',
     'deleted' => 0,
@@ -370,6 +456,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 27,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -431,11 +523,11 @@ function hk_ct_field_default_field_instances() {
         'manualcrop_thumblist' => 0,
       ),
       'type' => 'media_generic',
-      'weight' => 55,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_floor'
+  // Exported field_instance: 'node-apartment-field_apart_floor'.
   $field_instances['node-apartment-field_apart_floor'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -447,6 +539,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 10,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -487,7 +585,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_floor_plan'
+  // Exported field_instance: 'node-apartment-field_apart_floor_plan'.
   $field_instances['node-apartment-field_apart_floor_plan'] = array(
     'bundle' => 'apartment',
     'deleted' => 0,
@@ -507,6 +605,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'photobox',
         'weight' => 2,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -594,7 +698,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_gallery'
+  // Exported field_instance: 'node-apartment-field_apart_gallery'.
   $field_instances['node-apartment-field_apart_gallery'] = array(
     'bundle' => 'apartment',
     'default_value' => array(),
@@ -664,6 +768,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'slick',
         'weight' => 1,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -737,11 +847,11 @@ function hk_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_hoa_fee'
+  // Exported field_instance: 'node-apartment-field_apart_hoa_fee'.
   $field_instances['node-apartment-field_apart_hoa_fee'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -753,6 +863,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -789,7 +905,57 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_living_space'
+  // Exported field_instance: 'node-apartment-field_apart_lift'.
+  $field_instances['node-apartment-field_apart_lift'] = array(
+    'bundle' => 'apartment',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 55,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_apart_lift',
+    'label' => 'Lift',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 68,
+    ),
+  );
+
+  // Exported field_instance: 'node-apartment-field_apart_living_space'.
   $field_instances['node-apartment-field_apart_living_space'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -807,6 +973,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'number_decimal',
         'weight' => 7,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -855,7 +1027,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_location'
+  // Exported field_instance: 'node-apartment-field_apart_location'.
   $field_instances['node-apartment-field_apart_location'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -867,6 +1039,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 29,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -907,7 +1085,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_maint_reserve_value'
+  // Exported field_instance: 'node-apartment-field_apart_maint_reserve_value'.
   $field_instances['node-apartment-field_apart_maint_reserve_value'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -919,6 +1097,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 43,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -959,7 +1143,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_maintenance_reserve'
+  // Exported field_instance: 'node-apartment-field_apart_maintenance_reserve'.
   $field_instances['node-apartment-field_apart_maintenance_reserve'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -971,6 +1155,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 42,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1011,7 +1201,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_nalloc_incid_cost'
+  // Exported field_instance: 'node-apartment-field_apart_nalloc_incid_cost'.
   $field_instances['node-apartment-field_apart_nalloc_incid_cost'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1023,6 +1213,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 45,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1059,7 +1255,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_net_rent'
+  // Exported field_instance: 'node-apartment-field_apart_net_rent'.
   $field_instances['node-apartment-field_apart_net_rent'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1071,6 +1267,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 35,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1107,7 +1309,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_no'
+  // Exported field_instance: 'node-apartment-field_apart_no'.
   $field_instances['node-apartment-field_apart_no'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1124,6 +1326,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'title_linked',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1198,7 +1406,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_other'
+  // Exported field_instance: 'node-apartment-field_apart_other'.
   $field_instances['node-apartment-field_apart_other'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1210,6 +1418,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 28,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1284,7 +1498,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_pictures'
+  // Exported field_instance: 'node-apartment-field_apart_pictures'.
   $field_instances['node-apartment-field_apart_pictures'] = array(
     'bundle' => 'apartment',
     'deleted' => 0,
@@ -1295,6 +1509,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 49,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1388,7 +1608,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_price'
+  // Exported field_instance: 'node-apartment-field_apart_price'.
   $field_instances['node-apartment-field_apart_price'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1406,6 +1626,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'number_decimal',
         'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1454,7 +1680,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_price_parking'
+  // Exported field_instance: 'node-apartment-field_apart_price_parking'.
   $field_instances['node-apartment-field_apart_price_parking'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1466,6 +1692,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 12,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1502,7 +1734,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_rate_of_return'
+  // Exported field_instance: 'node-apartment-field_apart_rate_of_return'.
   $field_instances['node-apartment-field_apart_rate_of_return'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1514,6 +1746,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 38,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1550,7 +1788,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_regionbound_counter'
+  // Exported field_instance: 'node-apartment-field_apart_regionbound_counter'.
   $field_instances['node-apartment-field_apart_regionbound_counter'] = array(
     'bundle' => 'apartment',
     'default_value' => array(
@@ -1566,6 +1804,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 41,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1598,11 +1842,11 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 8,
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_rooms'
+  // Exported field_instance: 'node-apartment-field_apart_rooms'.
   $field_instances['node-apartment-field_apart_rooms'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1620,6 +1864,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'number_integer',
         'weight' => 8,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -1662,7 +1912,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_sleeping_rooms'
+  // Exported field_instance: 'node-apartment-field_apart_sleeping_rooms'.
   $field_instances['node-apartment-field_apart_sleeping_rooms'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1674,6 +1924,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1710,7 +1966,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_apart_type'
+  // Exported field_instance: 'node-apartment-field_apart_type'.
   $field_instances['node-apartment-field_apart_type'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1722,6 +1978,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 37,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1765,7 +2027,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_ausstattung'
+  // Exported field_instance: 'node-apartment-field_ausstattung'.
   $field_instances['node-apartment-field_ausstattung'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1778,6 +2040,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 15,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1824,7 +2092,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_bezirk'
+  // Exported field_instance: 'node-apartment-field_bezirk'.
   $field_instances['node-apartment-field_bezirk'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1836,6 +2104,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 39,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1871,11 +2145,11 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_kategorie'
+  // Exported field_instance: 'node-apartment-field_kategorie'.
   $field_instances['node-apartment-field_kategorie'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1887,6 +2161,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 33,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1931,7 +2211,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_moving_in_from'
+  // Exported field_instance: 'node-apartment-field_moving_in_from'.
   $field_instances['node-apartment-field_moving_in_from'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1943,6 +2223,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 14,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1983,7 +2269,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_obj_schattenobjekt'
+  // Exported field_instance: 'node-apartment-field_obj_schattenobjekt'.
   $field_instances['node-apartment-field_obj_schattenobjekt'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -1995,6 +2281,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 47,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2027,7 +2319,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_object_ref'
+  // Exported field_instance: 'node-apartment-field_object_ref'.
   $field_instances['node-apartment-field_object_ref'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -2040,6 +2332,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 30,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2095,7 +2393,62 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_objekt_wkt'
+  // Exported field_instance: 'node-apartment-field_object_text_schattenobjekt'.
+  $field_instances['node-apartment-field_object_text_schattenobjekt'] = array(
+    'bundle' => 'apartment',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Wir haben in dieser Gegend Angebote für Sie. Näheres können sie telefonisch erfahren: 030 780 870 78.',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 53,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_object_text_schattenobjekt',
+    'label' => 'Text Schattenobjekt',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-apartment-field_objekt_wkt'.
   $field_instances['node-apartment-field_objekt_wkt'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -2157,6 +2510,12 @@ function hk_ct_field_default_field_instances() {
         'type' => 'geofield_leaflet',
         'weight' => 4,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2184,11 +2543,11 @@ function hk_ct_field_default_field_instances() {
       'module' => 'geofield',
       'settings' => array(),
       'type' => 'geofield_wkt',
-      'weight' => 2,
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_objektid_nunumeric'
+  // Exported field_instance: 'node-apartment-field_objektid_nunumeric'.
   $field_instances['node-apartment-field_objektid_nunumeric'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -2205,6 +2564,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'title_linked',
         'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2240,11 +2605,59 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-apartment-field_status_quo'
+  // Exported field_instance: 'node-apartment-field_save_workflow'.
+  $field_instances['node-apartment-field_save_workflow'] = array(
+    'bundle' => 'apartment',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_save_workflow',
+    'label' => 'Save Workflow',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'workflowfield',
+      'settings' => array(
+        'comment' => 1,
+        'fieldset' => 0,
+        'name_as_title' => 1,
+      ),
+      'type' => 'workflow_default',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-apartment-field_status_quo'.
   $field_instances['node-apartment-field_status_quo'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -2256,6 +2669,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 46,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2288,7 +2707,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-apartment-title_field'
+  // Exported field_instance: 'node-apartment-title_field'.
   $field_instances['node-apartment-title_field'] = array(
     'bundle' => 'apartment',
     'default_value' => NULL,
@@ -2300,6 +2719,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 32,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2338,7 +2763,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-kartenmarker-field_marker_adresse'
+  // Exported field_instance: 'node-kartenmarker-field_marker_adresse'.
   $field_instances['node-kartenmarker-field_marker_adresse'] = array(
     'bundle' => 'kartenmarker',
     'default_value' => NULL,
@@ -2356,6 +2781,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'addressfield_default',
         'weight' => 2,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -2402,7 +2833,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-kartenmarker-field_marker_text'
+  // Exported field_instance: 'node-kartenmarker-field_marker_text'.
   $field_instances['node-kartenmarker-field_marker_text'] = array(
     'bundle' => 'kartenmarker',
     'default_value' => NULL,
@@ -2415,6 +2846,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2449,7 +2886,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-kartenmarker-field_marker_wkt'
+  // Exported field_instance: 'node-kartenmarker-field_marker_wkt'.
   $field_instances['node-kartenmarker-field_marker_wkt'] = array(
     'bundle' => 'kartenmarker',
     'deleted' => 0,
@@ -2463,6 +2900,12 @@ function hk_ct_field_default_field_instances() {
         ),
         'type' => 'geofield_wkt',
         'weight' => 3,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -2486,7 +2929,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-kartenmarker-title_field'
+  // Exported field_instance: 'node-kartenmarker-title_field'.
   $field_instances['node-kartenmarker-title_field'] = array(
     'bundle' => 'kartenmarker',
     'default_value' => NULL,
@@ -2498,6 +2941,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2530,7 +2979,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_address'
+  // Exported field_instance: 'node-objekt-field_address'.
   $field_instances['node-objekt-field_address'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -2541,13 +2990,19 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 27,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 34,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'hidden',
@@ -2642,7 +3097,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_address_shadow_object'
+  // Exported field_instance: 'node-objekt-field_address_shadow_object'.
   $field_instances['node-objekt-field_address_shadow_object'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -2653,13 +3108,19 @@ function hk_ct_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 15,
       ),
       'exposekarte' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 16,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -2730,7 +3191,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_ansprechpartner'
+  // Exported field_instance: 'node-objekt-field_ansprechpartner'.
   $field_instances['node-objekt-field_ansprechpartner'] = array(
     'bundle' => 'objekt',
     'default_value' => array(),
@@ -2742,13 +3203,19 @@ function hk_ct_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 17,
       ),
       'exposekarte' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'hidden',
@@ -2809,7 +3276,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_apart_floor_plan'
+  // Exported field_instance: 'node-objekt-field_apart_floor_plan'.
   $field_instances['node-objekt-field_apart_floor_plan'] = array(
     'bundle' => 'objekt',
     'deleted' => 0,
@@ -2817,15 +3284,17 @@ function hk_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 73,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 40,
       ),
       'exposekarte' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2933,7 +3402,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_apart_price'
+  // Exported field_instance: 'node-objekt-field_apart_price'.
   $field_instances['node-objekt-field_apart_price'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -2942,17 +3411,17 @@ function hk_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_decimal',
-        'weight' => 70,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'exposekarte' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3005,7 +3474,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_bezirk'
+  // Exported field_instance: 'node-objekt-field_bezirk'.
   $field_instances['node-objekt-field_bezirk'] = array(
     'bundle' => 'objekt',
     'default_value' => array(),
@@ -3016,7 +3485,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 28,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3029,6 +3498,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'hidden',
@@ -3110,17 +3585,18 @@ function hk_ct_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-objekt-field_cvm_cvm'
-  $field_instances['node-objekt-field_cvm_cvm'] = array(
+  // Exported field_instance: 'node-objekt-field_building_type'.
+  $field_instances['node-objekt-field_building_type'] = array(
     'bundle' => 'objekt',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'computed_field',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 72,
+        'type' => 'computed_field_plain',
+        'weight' => 0,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3128,7 +3604,7 @@ function hk_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'map_popup' => array(
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3138,35 +3614,34 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 55,
+        'weight' => 0,
       ),
       'wohn_und_geschaeftshaus' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_cvm_cvm',
-    'label' => 'Contextual View Mode',
-    'required' => FALSE,
+    'field_name' => 'field_building_type',
+    'label' => 'Building type',
+    'required' => 0,
     'settings' => array(
-      'cardinality' => -1,
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'contextual_view_modes',
-      'settings' => array(
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'contextual_view_modes_picker',
-      'weight' => 63,
+      'active' => 0,
+      'module' => 'computed_field',
+      'settings' => array(),
+      'type' => 'computed',
+      'weight' => 52,
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_developer'
+  // Exported field_instance: 'node-objekt-field_developer'.
   $field_instances['node-objekt-field_developer'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -3177,13 +3652,19 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 30,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 37,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'inline',
@@ -3244,7 +3725,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_heating_type'
+  // Exported field_instance: 'node-objekt-field_heating_type'.
   $field_instances['node-objekt-field_heating_type'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -3262,6 +3743,12 @@ function hk_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 45,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'inline',
@@ -3321,7 +3808,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_kategorie'
+  // Exported field_instance: 'node-objekt-field_kategorie'.
   $field_instances['node-objekt-field_kategorie'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -3332,13 +3819,19 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 29,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 36,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -3401,7 +3894,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_moving_in_from'
+  // Exported field_instance: 'node-objekt-field_moving_in_from'.
   $field_instances['node-objekt-field_moving_in_from'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -3412,13 +3905,19 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 31,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 39,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'inline',
@@ -3474,7 +3973,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_no_of_floors'
+  // Exported field_instance: 'node-objekt-field_no_of_floors'.
   $field_instances['node-objekt-field_no_of_floors'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -3485,13 +3984,19 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 32,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 40,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'inline',
@@ -3552,7 +4057,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_acquise'
+  // Exported field_instance: 'node-objekt-field_obj_acquise'.
   $field_instances['node-objekt-field_obj_acquise'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -3564,13 +4069,19 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 33,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 57,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -3622,7 +4133,7 @@ function hk_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_apartments'
+  // Exported field_instance: 'node-objekt-field_obj_apartments'.
   $field_instances['node-objekt-field_obj_apartments'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -3636,13 +4147,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 12,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'hidden',
@@ -3718,7 +4235,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_enev_consumption_value'
+  // Exported field_instance: 'node-objekt-field_obj_enev_consumption_value'.
   $field_instances['node-objekt-field_obj_enev_consumption_value'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -3729,13 +4246,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 37,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 70,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -3778,7 +4301,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_enev_date'
+  // Exported field_instance: 'node-objekt-field_obj_enev_date'.
   $field_instances['node-objekt-field_obj_enev_date'] = array(
     'bundle' => 'objekt',
     'default_value' => array(),
@@ -3796,6 +4319,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 47,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -3845,7 +4374,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_enev_file'
+  // Exported field_instance: 'node-objekt-field_obj_enev_file'.
   $field_instances['node-objekt-field_obj_enev_file'] = array(
     'bundle' => 'objekt',
     'deleted' => 0,
@@ -3862,6 +4391,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 53,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -3951,7 +4486,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_enev_haustyp'
+  // Exported field_instance: 'node-objekt-field_obj_enev_haustyp'.
   $field_instances['node-objekt-field_obj_enev_haustyp'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -3969,6 +4504,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 51,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4014,7 +4555,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_gemeinschaftsgeschaeft'
+  // Exported field_instance: 'node-objekt-field_obj_gemeinschaftsgeschaeft'.
   $field_instances['node-objekt-field_obj_gemeinschaftsgeschaeft'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4025,13 +4566,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 26,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 33,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4077,7 +4624,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_kond_acquise'
+  // Exported field_instance: 'node-objekt-field_obj_kond_acquise'.
   $field_instances['node-objekt-field_obj_kond_acquise'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4088,13 +4635,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 34,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 58,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4147,7 +4700,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_kond_gemeingesch'
+  // Exported field_instance: 'node-objekt-field_obj_kond_gemeingesch'.
   $field_instances['node-objekt-field_obj_kond_gemeingesch'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4158,13 +4711,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 24,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 32,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4217,7 +4776,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_konditionen_tipp'
+  // Exported field_instance: 'node-objekt-field_obj_konditionen_tipp'.
   $field_instances['node-objekt-field_obj_konditionen_tipp'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4228,13 +4787,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 23,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 31,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4287,7 +4852,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_schattenobjekt'
+  // Exported field_instance: 'node-objekt-field_obj_schattenobjekt'.
   $field_instances['node-objekt-field_obj_schattenobjekt'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4298,13 +4863,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 20,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 28,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4350,7 +4921,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_tippgeber'
+  // Exported field_instance: 'node-objekt-field_obj_tippgeber'.
   $field_instances['node-objekt-field_obj_tippgeber'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4362,13 +4933,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 22,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 30,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4420,7 +4997,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_obj_verkaeufer'
+  // Exported field_instance: 'node-objekt-field_obj_verkaeufer'.
   $field_instances['node-objekt-field_obj_verkaeufer'] = array(
     'bundle' => 'objekt',
     'default_value' => array(),
@@ -4432,13 +5009,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 21,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 29,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4482,7 +5065,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_desc_commercial'
+  // Exported field_instance: 'node-objekt-field_object_desc_commercial'.
   $field_instances['node-objekt-field_object_desc_commercial'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4500,6 +5083,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 69,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4559,7 +5148,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_desc_freehold'
+  // Exported field_instance: 'node-objekt-field_object_desc_freehold'.
   $field_instances['node-objekt-field_object_desc_freehold'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4568,12 +5157,17 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 74,
+        'type' => 'hidden',
+        'weight' => 41,
       ),
       'exposekarte' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -4624,7 +5218,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_description'
+  // Exported field_instance: 'node-objekt-field_object_description'.
   $field_instances['node-objekt-field_object_description'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4642,6 +5236,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 67,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4702,7 +5302,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_description_invest'
+  // Exported field_instance: 'node-objekt-field_object_description_invest'.
   $field_instances['node-objekt-field_object_description_invest'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4720,6 +5320,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 68,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -4779,7 +5385,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_images'
+  // Exported field_instance: 'node-objekt-field_object_images'.
   $field_instances['node-objekt-field_object_images'] = array(
     'bundle' => 'objekt',
     'default_value' => array(),
@@ -4790,13 +5396,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 14,
       ),
       'exposekarte' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'hidden',
@@ -4921,7 +5533,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_location'
+  // Exported field_instance: 'node-objekt-field_object_location'.
   $field_instances['node-objekt-field_object_location'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -4940,6 +5552,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -5034,7 +5652,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_multi_apart_types'
+  // Exported field_instance: 'node-objekt-field_object_multi_apart_types'.
   $field_instances['node-objekt-field_object_multi_apart_types'] = array(
     'bundle' => 'objekt',
     'default_value' => array(
@@ -5049,13 +5667,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 16,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -5108,7 +5732,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_other'
+  // Exported field_instance: 'node-objekt-field_object_other'.
   $field_instances['node-objekt-field_object_other'] = array(
     'bundle' => 'objekt',
     'default_value' => array(
@@ -5132,6 +5756,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -5192,7 +5822,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_text_schattenobjekt'
+  // Exported field_instance: 'node-objekt-field_object_text_schattenobjekt'.
   $field_instances['node-objekt-field_object_text_schattenobjekt'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -5201,12 +5831,17 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 71,
+        'type' => 'hidden',
+        'weight' => 39,
       ),
       'exposekarte' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -5257,7 +5892,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_object_txt_map_popup'
+  // Exported field_instance: 'node-objekt-field_object_txt_map_popup'.
   $field_instances['node-objekt-field_object_txt_map_popup'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -5276,6 +5911,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'hidden',
@@ -5336,7 +5977,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_objekt_effizienzklasse'
+  // Exported field_instance: 'node-objekt-field_objekt_effizienzklasse'.
   $field_instances['node-objekt-field_objekt_effizienzklasse'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -5354,6 +5995,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 50,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -5411,7 +6058,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_objekt_endenergiebedarf'
+  // Exported field_instance: 'node-objekt-field_objekt_endenergiebedarf'.
   $field_instances['node-objekt-field_objekt_endenergiebedarf'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -5429,6 +6076,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 49,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -5483,7 +6136,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_objekt_energieausweistyp'
+  // Exported field_instance: 'node-objekt-field_objekt_energieausweistyp'.
   $field_instances['node-objekt-field_objekt_energieausweistyp'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -5501,6 +6154,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 46,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -5558,7 +6217,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_objekt_energietraeger'
+  // Exported field_instance: 'node-objekt-field_objekt_energietraeger'.
   $field_instances['node-objekt-field_objekt_energietraeger'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -5576,6 +6235,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 48,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -5633,7 +6298,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_objekt_wkt'
+  // Exported field_instance: 'node-objekt-field_objekt_wkt'.
   $field_instances['node-objekt-field_objekt_wkt'] = array(
     'bundle' => 'objekt',
     'default_value' => array(),
@@ -5756,6 +6421,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 28,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'hidden',
@@ -5930,7 +6601,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'widget_type' => 'geofield_wkt',
   );
 
-  // Exported field_instance: 'node-objekt-field_objektid_nunumeric'
+  // Exported field_instance: 'node-objekt-field_objektid_nunumeric'.
   $field_instances['node-objekt-field_objektid_nunumeric'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -5941,7 +6612,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 25,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -5954,6 +6625,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'map_popup' => array(
@@ -6077,7 +6754,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'widget_type' => 'text_textfield',
   );
 
-  // Exported field_instance: 'node-objekt-field_rent_commission'
+  // Exported field_instance: 'node-objekt-field_rent_commission'.
   $field_instances['node-objekt-field_rent_commission'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -6095,6 +6772,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 54,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'inline',
@@ -6155,7 +6838,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_sale_commission'
+  // Exported field_instance: 'node-objekt-field_sale_commission'.
   $field_instances['node-objekt-field_sale_commission'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -6173,6 +6856,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 55,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'inline',
@@ -6232,7 +6921,80 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_wug_act_rent'
+  // Exported field_instance: 'node-objekt-field_save_workflow'.
+  $field_instances['node-objekt-field_save_workflow'] = array(
+    'bundle' => 'objekt',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
+      'exposekarte' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'map_popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'mlt_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 61,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 45,
+      ),
+      'wohn_und_geschaeftshaus' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_save_workflow',
+    'label' => 'Status',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'workflowfield',
+      'settings' => array(
+        'comment' => 1,
+        'fieldset' => 0,
+        'name_as_title' => 1,
+      ),
+      'type' => 'workflow_default',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-objekt-field_wug_act_rent'.
   $field_instances['node-objekt-field_wug_act_rent'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -6250,6 +7012,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 56,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -6310,7 +7078,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_wug_no_of_units'
+  // Exported field_instance: 'node-objekt-field_wug_no_of_units'.
   $field_instances['node-objekt-field_wug_no_of_units'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -6328,6 +7096,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 43,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -6388,7 +7162,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_wug_occupancy'
+  // Exported field_instance: 'node-objekt-field_wug_occupancy'.
   $field_instances['node-objekt-field_wug_occupancy'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -6406,6 +7180,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 44,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -6466,7 +7246,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_wug_opt_constrruct'
+  // Exported field_instance: 'node-objekt-field_wug_opt_constrruct'.
   $field_instances['node-objekt-field_wug_opt_constrruct'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -6484,6 +7264,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 42,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -6538,7 +7324,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_wug_total_space'
+  // Exported field_instance: 'node-objekt-field_wug_total_space'.
   $field_instances['node-objekt-field_wug_total_space'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -6556,6 +7342,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 41,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'above',
@@ -6616,7 +7408,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-field_year_built'
+  // Exported field_instance: 'node-objekt-field_year_built'.
   $field_instances['node-objekt-field_year_built'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -6634,6 +7426,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 52,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'inline',
@@ -6700,7 +7498,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-objekt-title_field'
+  // Exported field_instance: 'node-objekt-title_field'.
   $field_instances['node-objekt-title_field'] = array(
     'bundle' => 'objekt',
     'default_value' => NULL,
@@ -6711,13 +7509,19 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 18,
       ),
       'exposekarte' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 19,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map_popup' => array(
         'label' => 'hidden',
@@ -6780,7 +7584,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-oeffnungszeit-body'
+  // Exported field_instance: 'node-oeffnungszeit-body'.
   $field_instances['node-oeffnungszeit-body'] = array(
     'bundle' => 'oeffnungszeit',
     'default_value' => NULL,
@@ -6793,6 +7597,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -6823,7 +7633,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-oeffnungszeit-field_oeffnungszeiten'
+  // Exported field_instance: 'node-oeffnungszeit-field_oeffnungszeiten'.
   $field_instances['node-oeffnungszeit-field_oeffnungszeiten'] = array(
     'bundle' => 'oeffnungszeit',
     'default_value' => NULL,
@@ -6855,6 +7665,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         ),
         'type' => 'office_hours',
         'weight' => 2,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6901,7 +7717,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-oeffnungszeit-title_field'
+  // Exported field_instance: 'node-oeffnungszeit-title_field'.
   $field_instances['node-oeffnungszeit-title_field'] = array(
     'bundle' => 'oeffnungszeit',
     'default_value' => NULL,
@@ -6913,6 +7729,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 10,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6945,7 +7767,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -6958,6 +7780,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -6998,7 +7826,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-page-title_field'
+  // Exported field_instance: 'node-page-title_field'.
   $field_instances['node-page-title_field'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -7007,6 +7835,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
@@ -7041,7 +7875,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-referenz-body'
+  // Exported field_instance: 'node-referenz-body'.
   $field_instances['node-referenz-body'] = array(
     'bundle' => 'referenz',
     'default_value' => NULL,
@@ -7054,6 +7888,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -7087,7 +7927,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-referenz-field_ref_adresse'
+  // Exported field_instance: 'node-referenz-field_ref_adresse'.
   $field_instances['node-referenz-field_ref_adresse'] = array(
     'bundle' => 'referenz',
     'default_value' => NULL,
@@ -7106,6 +7946,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         ),
         'type' => 'addressfield_default',
         'weight' => 3,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -7141,7 +7987,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-referenz-field_ref_anzahl_wohnungen'
+  // Exported field_instance: 'node-referenz-field_ref_anzahl_wohnungen'.
   $field_instances['node-referenz-field_ref_anzahl_wohnungen'] = array(
     'bundle' => 'referenz',
     'default_value' => NULL,
@@ -7154,6 +8000,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -7182,7 +8034,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-referenz-field_ref_foto'
+  // Exported field_instance: 'node-referenz-field_ref_foto'.
   $field_instances['node-referenz-field_ref_foto'] = array(
     'bundle' => 'referenz',
     'deleted' => 0,
@@ -7197,6 +8049,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         ),
         'type' => 'image',
         'weight' => 2,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -7272,7 +8130,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-referenz-field_ref_typ'
+  // Exported field_instance: 'node-referenz-field_ref_typ'.
   $field_instances['node-referenz-field_ref_typ'] = array(
     'bundle' => 'referenz',
     'default_value' => NULL,
@@ -7285,6 +8143,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -7305,7 +8169,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'node-referenz-title_field'
+  // Exported field_instance: 'node-referenz-title_field'.
   $field_instances['node-referenz-title_field'] = array(
     'bundle' => 'referenz',
     'default_value' => NULL,
@@ -7317,6 +8181,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 13,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -7343,7 +8213,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-category-description_field'
+  // Exported field_instance: 'taxonomy_term-category-description_field'.
   $field_instances['taxonomy_term-category-description_field'] = array(
     'bundle' => 'category',
     'default_value' => NULL,
@@ -7355,6 +8225,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -7382,7 +8258,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-category-name_field'
+  // Exported field_instance: 'taxonomy_term-category-name_field'.
   $field_instances['taxonomy_term-category-name_field'] = array(
     'bundle' => 'category',
     'default_value' => NULL,
@@ -7398,6 +8274,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
           'title_style' => '',
         ),
         'type' => 'title_linked',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -7464,7 +8346,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-vocabulary_5-description_field'
+  // Exported field_instance: 'taxonomy_term-vocabulary_5-description_field'.
   $field_instances['taxonomy_term-vocabulary_5-description_field'] = array(
     'bundle' => 'vocabulary_5',
     'default_value' => NULL,
@@ -7476,6 +8358,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -7503,7 +8391,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-vocabulary_5-name_field'
+  // Exported field_instance: 'taxonomy_term-vocabulary_5-name_field'.
   $field_instances['taxonomy_term-vocabulary_5-name_field'] = array(
     'bundle' => 'vocabulary_5',
     'default_value' => NULL,
@@ -7519,6 +8407,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
           'title_style' => '',
         ),
         'type' => 'title_linked',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -7545,7 +8439,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-vocabulary_6-description_field'
+  // Exported field_instance: 'taxonomy_term-vocabulary_6-description_field'.
   $field_instances['taxonomy_term-vocabulary_6-description_field'] = array(
     'bundle' => 'vocabulary_6',
     'default_value' => NULL,
@@ -7557,6 +8451,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -7584,7 +8484,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-vocabulary_6-name_field'
+  // Exported field_instance: 'taxonomy_term-vocabulary_6-name_field'.
   $field_instances['taxonomy_term-vocabulary_6-name_field'] = array(
     'bundle' => 'vocabulary_6',
     'default_value' => NULL,
@@ -7592,6 +8492,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -7641,15 +8547,16 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
   t('Apartment other');
   t('Apartments');
   t('Ausstelldatum');
+  t('Balcony');
   t('Bathrooms');
   t('Body');
   t('Borough');
+  t('Building type');
   t('Category');
   t('Ceiling height');
   t('Commission');
   t('Commission (Rent)');
   t('Consumption value');
-  t('Contextual View Mode');
   t('Description');
   t('Developer');
   t('Diese Zusatzbeschreibung wird nur für bezugsfreie Wohnungen unter der allgemeinen Hausbeschreibung angezeigt. Diese wird also ERGÄNZT, nicht ersetzt!');
@@ -7677,6 +8584,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
   t('Konditionen Acquise');
   t('Konditionen Gemeinschaftsgeschäft');
   t('Konditionen Tipp');
+  t('Lift');
   t('Living space');
   t('Location');
   t('Maintenance reserve');
@@ -7705,10 +8613,12 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
   t('Referenzfoto');
   t('Referenztyp');
   t('Rooms');
+  t('Save Workflow');
   t('Schattenobjekt?');
   t('Schattenwohnung?');
   t('Sleeping rooms');
   t('Standort');
+  t('Status');
   t('Status quo');
   t('Text Karten-Popup');
   t('Text Schattenobjekt');

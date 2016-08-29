@@ -192,6 +192,7 @@ body.page-search {
     }
   }
 }
+/* front page design */
 .front {
   .ui-dialog {
     /*left: 50% !important;*/
@@ -238,7 +239,12 @@ body.page-search {
       margin-right: 0;
     }
   }
-
+  /* fornt page popup */
+  #crm-core-profile-entry-form-anfrage {
+    .field-name-field-angefragte-wohnung {
+      display: none;
+    }
+  }
 }
 /* Search box */
 .page-kaufen #block-views-exp-karten-kaufen,
@@ -688,86 +694,150 @@ div.hide-submit-processing {
     }
 
 .leaflet-popup-content {
-    line-height: 1.4;
+  line-height: 1.4;
+  margin: 0;
+  display: table;
+  img {
+    float: left;
+    margin-right: 1em;
+  }
+  h2 {
+    margin-right: 1em;
+    display: none;
+  }
+  .right {
+    margin: 0 1em;
+  }
+  a {
+    color: $primary;
+    &:visited {
+      color: $dark;
+    }
+  }
+  p:first-of-type {
+    margin-top: 0 !important;
+  }
+  .wo {
+    float: left;
+    clear: both;
+    width: 100%;
+    margin: .5em 0;
+    i {
+      font-size: 1.6em;
+      line-height: 1;
+      margin: -0.15em 0.5em 0 -0.5em;
+    }
+  }
+  button.toggle {
+    padding-right: .5em;
+    font-size: 12px;
+    /*font-family: $helvetica-neue;*/
+    &::after {
+        color: #fff;
+        content: "";
+        float: right;
+        font-family: "hk";
+        line-height: 1.2;
+        width: 20px;
+      }
+  }
+  button.hide::after {
+      transform: rotate(45deg);
+    }
+  .views-row-odd .popup-content {
+    background: $grey;
+  }
+  .shadow-apartment {
     margin: 0;
-    display: table;
-    img {
-      float: left;
-      margin-right: 1em;
+    tbody {
+      border-top: none;
     }
-    h2 {
-      margin-right: 1em;
-      display: none;
-    }
-    .right {
-      margin: 0 1em;
-    }
-    a {
-      color: $primary;
-      &:visited {
-        color: $dark;
+    tr {
+      border-bottom: none;
+      th {
+        border-bottom: none;
+      }
+      td {
+          padding: 0.5em 1em;
       }
     }
-    p:first-of-type {
-      margin-top: 0 !important;
-    }
-    .wo {
-      float: left;
-      clear: both;
-      width: 100%;
-      margin: .5em 0;
-      i {
-        font-size: 1.6em;
-        line-height: 1;
-        margin: -0.15em 0.5em 0 -0.5em;
-      }
-    }
-    button.toggle {
-      padding-right: .5em;
-      font-size: 12px;
-      /*font-family: $helvetica-neue;*/
-      &::after {
-          color: #fff;
-          content: "";
-          float: right;
-          font-family: "hk";
-          line-height: 1.2;
-          width: 20px;
-        }
-    }
-    button.hide::after {
-        transform: rotate(45deg);
-      }
-    .views-row-odd .apart {
-      background: $grey;
+  }
+  .popup-content {
+    color: $black;
+    display: inline-block;
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+    /*background: $grey;*/
+    .inquiry {
+      margin: 0 5px 0 0;
     }
     .apart {
       color: $black;
       display: inline-block;
-      float: left;
-      width: 100%;
-      clear: right;
+      /*float: left;*/
+      width: calc(100% - 22px);
+      /*clear: right;*/
       /*&:nth-child(odd) {
         background: $grey;
       }*/
       span {
         display: inline-block;
-        width: 20%;
+        width: 16%;
         padding: 0.5em 1em 0.5em 0;
         .id {
           padding-left: 3px !important;
         }
+        &.inquiry-checkbox {
+          width: 10%;
+        }
+        &.id {
+          width: 20%;
+        }
+      }
     }
-  }
+   }
   .tablehead {
     display: inline-block;
     float: left;
     width: 100%;
+    padding: 0 10px;
     span {
       display: inline-block;
-      width: 20%;
+      width: 16%;
       padding: 0.5em 1em 0.5em 0;
+      &.inquiry-checkbox {
+        width: 10%;
+      }
+      &.id {
+       width: 20%;
+      }
     }
+  }
+  .inquiry-button {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    .home-page-popup-inquiry {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 10px 0;
+      background-color: #c61c2c;
+      color: #FFF;
+      font-size: 14px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    span {
+      width:100%;
+      display: inline-block;
+      text-align: center;
+    } 
   }
 }
 /* MarkerCluster overriding libraries/leaflet_markecluster/dist/MarkerClusterDefault.css*/
@@ -989,8 +1059,11 @@ div.hide-submit-processing {
   #block-views-facets-block-block-2 {
     a.facet-select {
       background-image: url('../images/sprite-sc8b09672a3.png');
-      background-position: right 232px;
+      background-position: right 226px;
       background-repeat: repeat-y;
+      font-size: 12px;
+      line-height: normal;
+      font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
     }
   }
   &.page-node-3562,
@@ -1073,6 +1146,9 @@ div.hide-submit-processing {
       }
     }
   }
+  #edit-field-activity-participants {
+    display: none;
+  }
 }
 #ng-lightbox {
   #edit-field-angefragte-wohnung-und-1-target-id {
@@ -1119,9 +1195,10 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       max-height: 80px;
       min-height: 2em;
       padding: 0 5px;
-      color: #666;
-      font-size: 14px;
-      /*font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;*/
+      color: #999;
+      font-size: 12px;
+      line-height: normal;
+      font-family: "Neue Helvetica W01";
       background: #FFF;
       cursor: text;
       vertical-align: -webkit-baseline-middle;
@@ -1142,8 +1219,8 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       padding: 3px 0 3px 3px;
       border: 2px solid #cbc1ba;
       background-color: #FFF;
-      color: #666;
-      font-size: 14px;
+      color: #999;
+      font-size: 12px;
       /*font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;*/
       list-style: none;
       border-bottom-left-radius: 4px;

@@ -110,6 +110,83 @@
           }
         });
       });
+
+      //---------------------------------------------------------------------------//
+      //************ Inquiry popup for map pouup listing *************//
+      //---------------------------------------------------------------------------//
+      var alldata = [];
+      jQuery(".inquiry-button .home-page-popup-inquiry").live('click', function(e) {
+      e.preventDefault();
+      var path = jQuery('.inquiry-button .home-page-popup-inquiry').attr('href');
+      jQuery.ajax({
+        url: path,
+        type: "GET",
+        cache: false,
+        crossDomain: true,
+        data: {},
+        success: function (data) {
+          //alert(data);
+          jQuery('#ng-lightbox').html('<div class="lightbox lightbox--plain"><div class="lightbox__overlay"><div class="lightbox__content"><div class="close-ng-lightbox">x</div><h2 class="lightbox__header">Inquiry</h2><div class="lightbox__body">test</div></div></div></div>');
+          jQuery('.lightbox__body').html(jQuery(data).find("#crm-core-profile-entry-form-anfrage").parent().html());
+          //jQuery('.lightbox__body #page-title, #ng-lightbox div .lightbox.lightbox--plain').hide();
+          jQuery('.lightbox__overlay, .close-ng-lightbox').click(function() {
+            jQuery('#ng-lightbox').hide();
+          });
+          jQuery('.lightbox__content').on("click", function(event) {
+            event.stopPropagation();
+          });
+          var content_height = jQuery(window).height();
+          var lightbox_height = content_height - 300;
+          jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
+          jQuery('.inquiry-button .home-page-popup-inquiry').on("click", function(event) {
+            jQuery('#ng-lightbox').show();
+          });
+          jQuery( window ).resize(function() {
+            var content_height = jQuery(window).height();
+            var lightbox_height = content_height - 300;
+            jQuery('.lightbox__body').css({'max-height':lightbox_height, 'overflow-y':'auto'});
+          });
+          jQuery(".field-name-contact-name select, #edit-field-crm-address-und-0-country").select2({
+            placeholder: Drupal.t('please select'),
+            placeholderOption: "first"
+            //allowClear: true
+          });
+        },
+        error: function (e) {
+            alert(e.responseText);
+        }
+      });
+    }); 
+    var data = [];
+    
+    jQuery( ".inquiry-checkbox .inquiry" ).live('click', function(e) { 
+      e.stopImmediatePropagation();
+      jQuery(".inquiry-checkbox .inquiry", context).once().each(function() {
+        alldata.push(jQuery(this).val());
+        jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+alldata);
+      });
+      if(this.checked){
+        data.push(jQuery(this).val());
+        jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+data);
+      } else {
+        var removeItem = jQuery(this).val();
+        data = jQuery.grep(data, function(value) {
+          return value != removeItem;
+        });
+        if(data.length != 0) {
+          jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+data);
+        } else {
+          jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+alldata);
+        }
+      }
+    });
+    jQuery(document).ajaxComplete(function() {
+      jQuery('.lightbox__body #page-title, .page-favorites #ng-lightbox div .lightbox.lightbox--plain, #field-angefragte-wohnung-values .delta-order').hide();
+      jQuery( ".lightbox__content" ).on('click', function(e) { 
+          jQuery('.ui-icon-closethick').trigger('click');
+      });
+    });
+
       jQuery(document).ajaxComplete(function() {
        if(jQuery('#ng-lightbox .contact-form').length) {
         jQuery('#ng-lightbox div .lightbox.lightbox--plain').html('');
@@ -162,7 +239,8 @@
         jQuery('.ui-dialog').removeClass('ui-dialog-show');
       });
       if(jQuery(window).width() < 767) {
-        jQuery('.home-form-wrap .ui-dialog').hide();
+        //jQuery('.home-form-wrap .ui-dialog').hide();
+        jQuery('#search').hide();
       }
       // jQuery( window ).resize(function() {});
       jQuery("a.form-show-link").on("click", function() {
@@ -179,7 +257,7 @@
       // Search Slide toggle
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
-        jQuery('.ui-dialog').slideToggle();
+        //jQuery('.ui-dialog').slideToggle();
         jQuery('#search').slideToggle();
       });
 

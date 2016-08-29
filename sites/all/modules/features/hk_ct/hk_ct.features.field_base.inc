@@ -10,7 +10,7 @@
 function hk_ct_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -33,7 +33,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'description_field'
+  // Exported field_base: 'description_field'.
   $field_bases['description_field'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -54,7 +54,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_address'
+  // Exported field_base: 'field_address'.
   $field_bases['field_address'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -71,7 +71,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'addressfield',
   );
 
-  // Exported field_base: 'field_address_shadow_object'
+  // Exported field_base: 'field_address_shadow_object'.
   $field_bases['field_address_shadow_object'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -88,7 +88,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'addressfield',
   );
 
-  // Exported field_base: 'field_ansprechpartner'
+  // Exported field_base: 'field_ansprechpartner'.
   $field_bases['field_ansprechpartner'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -124,7 +124,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_apart_alloc_incident_costs'
+  // Exported field_base: 'field_apart_alloc_incident_costs'.
   $field_bases['field_apart_alloc_incident_costs'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -144,7 +144,34 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_bathrooms'
+  // Exported field_base: 'field_apart_balcony'.
+  $field_bases['field_apart_balcony'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_apart_balcony',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'no',
+        1 => 'yes',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+      'values_field' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_apart_bathrooms'.
   $field_bases['field_apart_bathrooms'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -161,7 +188,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_apart_ceiling_height'
+  // Exported field_base: 'field_apart_ceiling_height'.
   $field_bases['field_apart_ceiling_height'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -181,7 +208,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_commission'
+  // Exported field_base: 'field_apart_commission'.
   $field_bases['field_apart_commission'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -201,7 +228,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_description'
+  // Exported field_base: 'field_apart_description'.
   $field_bases['field_apart_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -222,7 +249,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_apart_erweitertes_expose'
+  // Exported field_base: 'field_apart_erweitertes_expose'.
   $field_bases['field_apart_erweitertes_expose'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -258,7 +285,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_apart_expose'
+  // Exported field_base: 'field_apart_expose'.
   $field_bases['field_apart_expose'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -284,7 +311,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_apart_floor'
+  // Exported field_base: 'field_apart_floor'.
   $field_bases['field_apart_floor'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -306,7 +333,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_apart_floor_plan'
+  // Exported field_base: 'field_apart_floor_plan'.
   $field_bases['field_apart_floor_plan'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -331,7 +358,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_apart_gallery'
+  // Exported field_base: 'field_apart_gallery'.
   $field_bases['field_apart_gallery'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -356,7 +383,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_apart_hoa_fee'
+  // Exported field_base: 'field_apart_hoa_fee'.
   $field_bases['field_apart_hoa_fee'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -376,7 +403,34 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_living_space'
+  // Exported field_base: 'field_apart_lift'.
+  $field_bases['field_apart_lift'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_apart_lift',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'no',
+        1 => 'yes',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+      'values_field' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_apart_living_space'.
   $field_bases['field_apart_living_space'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -396,7 +450,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_location'
+  // Exported field_base: 'field_apart_location'.
   $field_bases['field_apart_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -417,7 +471,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_apart_maint_reserve_value'
+  // Exported field_base: 'field_apart_maint_reserve_value'.
   $field_bases['field_apart_maint_reserve_value'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -439,7 +493,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_apart_maintenance_reserve'
+  // Exported field_base: 'field_apart_maintenance_reserve'.
   $field_bases['field_apart_maintenance_reserve'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -461,7 +515,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_apart_nalloc_incid_cost'
+  // Exported field_base: 'field_apart_nalloc_incid_cost'.
   $field_bases['field_apart_nalloc_incid_cost'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -481,7 +535,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_net_rent'
+  // Exported field_base: 'field_apart_net_rent'.
   $field_bases['field_apart_net_rent'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -501,7 +555,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_no'
+  // Exported field_base: 'field_apart_no'.
   $field_bases['field_apart_no'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -523,7 +577,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_apart_other'
+  // Exported field_base: 'field_apart_other'.
   $field_bases['field_apart_other'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -544,7 +598,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_apart_pictures'
+  // Exported field_base: 'field_apart_pictures'.
   $field_bases['field_apart_pictures'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -569,7 +623,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_apart_price'
+  // Exported field_base: 'field_apart_price'.
   $field_bases['field_apart_price'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -589,7 +643,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_price_parking'
+  // Exported field_base: 'field_apart_price_parking'.
   $field_bases['field_apart_price_parking'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -609,7 +663,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_rate_of_return'
+  // Exported field_base: 'field_apart_rate_of_return'.
   $field_bases['field_apart_rate_of_return'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -629,7 +683,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_apart_regionbound_counter'
+  // Exported field_base: 'field_apart_regionbound_counter'.
   $field_bases['field_apart_regionbound_counter'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -646,7 +700,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_apart_rooms'
+  // Exported field_base: 'field_apart_rooms'.
   $field_bases['field_apart_rooms'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -663,7 +717,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_apart_sleeping_rooms'
+  // Exported field_base: 'field_apart_sleeping_rooms'.
   $field_bases['field_apart_sleeping_rooms'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -680,7 +734,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_apart_type'
+  // Exported field_base: 'field_apart_type'.
   $field_bases['field_apart_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -702,12 +756,13 @@ function hk_ct_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'title_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_ausstattung'
+  // Exported field_base: 'field_ausstattung'.
   $field_bases['field_ausstattung'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -736,7 +791,7 @@ function hk_ct_field_default_field_bases() {
     'type_name' => 'wohnung',
   );
 
-  // Exported field_base: 'field_bezirk'
+  // Exported field_base: 'field_bezirk'.
   $field_bases['field_bezirk'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -765,35 +820,49 @@ function hk_ct_field_default_field_bases() {
     'type_name' => 'residential_commercial_building',
   );
 
-  // Exported field_base: 'field_cvm_cvm'
-  $field_bases['field_cvm_cvm'] = array(
+  // Exported field_base: 'field_building_type'.
+  $field_bases['field_building_type'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_cvm_cvm',
-    'indexes' => array(
-      'context' => array(
-        0 => 'context',
-      ),
-      'view_context' => array(
-        0 => 'view_mode',
-        1 => 'context',
-      ),
-      'view_mode' => array(
-        0 => 'view_mode',
-      ),
-    ),
+    'field_name' => 'field_building_type',
+    'indexes' => array(),
     'locked' => 0,
-    'module' => 'contextual_view_modes',
+    'module' => 'computed_field',
     'settings' => array(
+      'code' => '$year = $entity->field_year_built[LANGUAGE_NONE][0][\'value\'];
+$building_type = \'\';
+if($year >= 2009 ) {
+$building_type = \'New Building\';
+}
+if($year <= 2008 && $year >= 1960) {
+$building_type = \'New Old Building\';
+}
+if($year <= 1960 ) {
+$building_type = \'Old Building\';
+}
+$entity_field[0][\'value\'] = $building_type;',
+      'database' => array(
+        'data_default' => '',
+        'data_index' => 0,
+        'data_length' => 32,
+        'data_not_NULL' => 0,
+        'data_precision' => 10,
+        'data_scale' => 2,
+        'data_size' => 'normal',
+        'data_type' => 'varchar',
+      ),
+      'display_format' => '$display_output = $entity_field_item[\'value\'];',
       'entity_translation_sync' => FALSE,
+      'recalculate' => 0,
+      'store' => 1,
     ),
     'translatable' => 0,
-    'type' => 'contextual_view_modes_cvm',
+    'type' => 'computed',
   );
 
-  // Exported field_base: 'field_developer'
+  // Exported field_base: 'field_developer'.
   $field_bases['field_developer'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -815,7 +884,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_heating_type'
+  // Exported field_base: 'field_heating_type'.
   $field_bases['field_heating_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -851,7 +920,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_kategorie'
+  // Exported field_base: 'field_kategorie'.
   $field_bases['field_kategorie'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -879,7 +948,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_marker_adresse'
+  // Exported field_base: 'field_marker_adresse'.
   $field_bases['field_marker_adresse'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -896,7 +965,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'addressfield',
   );
 
-  // Exported field_base: 'field_marker_text'
+  // Exported field_base: 'field_marker_text'.
   $field_bases['field_marker_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -917,7 +986,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_marker_wkt'
+  // Exported field_base: 'field_marker_wkt'.
   $field_bases['field_marker_wkt'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -968,7 +1037,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'geofield',
   );
 
-  // Exported field_base: 'field_moving_in_from'
+  // Exported field_base: 'field_moving_in_from'.
   $field_bases['field_moving_in_from'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -990,7 +1059,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_no_of_floors'
+  // Exported field_base: 'field_no_of_floors'.
   $field_bases['field_no_of_floors'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1012,7 +1081,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_obj_acquise'
+  // Exported field_base: 'field_obj_acquise'.
   $field_bases['field_obj_acquise'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1049,7 +1118,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_obj_apartments'
+  // Exported field_base: 'field_obj_apartments'.
   $field_bases['field_obj_apartments'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1085,7 +1154,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_obj_enev_consumption_value'
+  // Exported field_base: 'field_obj_enev_consumption_value'.
   $field_bases['field_obj_enev_consumption_value'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1105,7 +1174,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_obj_enev_date'
+  // Exported field_base: 'field_obj_enev_date'.
   $field_bases['field_obj_enev_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1135,7 +1204,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_obj_enev_file'
+  // Exported field_base: 'field_obj_enev_file'.
   $field_bases['field_obj_enev_file'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1161,7 +1230,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_obj_enev_haustyp'
+  // Exported field_base: 'field_obj_enev_haustyp'.
   $field_bases['field_obj_enev_haustyp'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1194,7 +1263,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_obj_gemeinschaftsgeschaeft'
+  // Exported field_base: 'field_obj_gemeinschaftsgeschaeft'.
   $field_bases['field_obj_gemeinschaftsgeschaeft'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1222,7 +1291,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_obj_kond_acquise'
+  // Exported field_base: 'field_obj_kond_acquise'.
   $field_bases['field_obj_kond_acquise'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1243,7 +1312,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_obj_kond_gemeingesch'
+  // Exported field_base: 'field_obj_kond_gemeingesch'.
   $field_bases['field_obj_kond_gemeingesch'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1264,7 +1333,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_obj_konditionen_tipp'
+  // Exported field_base: 'field_obj_konditionen_tipp'.
   $field_bases['field_obj_konditionen_tipp'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1285,7 +1354,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_obj_schattenobjekt'
+  // Exported field_base: 'field_obj_schattenobjekt'.
   $field_bases['field_obj_schattenobjekt'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1313,7 +1382,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_obj_tippgeber'
+  // Exported field_base: 'field_obj_tippgeber'.
   $field_bases['field_obj_tippgeber'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1350,7 +1419,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_obj_verkaeufer'
+  // Exported field_base: 'field_obj_verkaeufer'.
   $field_bases['field_obj_verkaeufer'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -1386,7 +1455,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_object_desc_commercial'
+  // Exported field_base: 'field_object_desc_commercial'.
   $field_bases['field_object_desc_commercial'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1407,7 +1476,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_object_desc_freehold'
+  // Exported field_base: 'field_object_desc_freehold'.
   $field_bases['field_object_desc_freehold'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1428,7 +1497,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_object_description'
+  // Exported field_base: 'field_object_description'.
   $field_bases['field_object_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1449,7 +1518,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_object_description_invest'
+  // Exported field_base: 'field_object_description_invest'.
   $field_bases['field_object_description_invest'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1470,7 +1539,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_object_images'
+  // Exported field_base: 'field_object_images'.
   $field_bases['field_object_images'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1495,7 +1564,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_object_location'
+  // Exported field_base: 'field_object_location'.
   $field_bases['field_object_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1516,7 +1585,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_object_multi_apart_types'
+  // Exported field_base: 'field_object_multi_apart_types'.
   $field_bases['field_object_multi_apart_types'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1543,7 +1612,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_object_other'
+  // Exported field_base: 'field_object_other'.
   $field_bases['field_object_other'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1564,7 +1633,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_object_ref'
+  // Exported field_base: 'field_object_ref'.
   $field_bases['field_object_ref'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1600,7 +1669,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_object_text_schattenobjekt'
+  // Exported field_base: 'field_object_text_schattenobjekt'.
   $field_bases['field_object_text_schattenobjekt'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1621,7 +1690,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_object_txt_map_popup'
+  // Exported field_base: 'field_object_txt_map_popup'.
   $field_bases['field_object_txt_map_popup'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1642,7 +1711,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_objekt_effizienzklasse'
+  // Exported field_base: 'field_objekt_effizienzklasse'.
   $field_bases['field_objekt_effizienzklasse'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1677,7 +1746,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_objekt_endenergiebedarf'
+  // Exported field_base: 'field_objekt_endenergiebedarf'.
   $field_bases['field_objekt_endenergiebedarf'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1697,7 +1766,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_objekt_energieausweistyp'
+  // Exported field_base: 'field_objekt_energieausweistyp'.
   $field_bases['field_objekt_energieausweistyp'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1726,7 +1795,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_objekt_energietraeger'
+  // Exported field_base: 'field_objekt_energietraeger'.
   $field_bases['field_objekt_energietraeger'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1763,7 +1832,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_objekt_wkt'
+  // Exported field_base: 'field_objekt_wkt'.
   $field_bases['field_objekt_wkt'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1845,7 +1914,7 @@ function hk_ct_field_default_field_bases() {
     'type_name' => 'residential_commercial_building',
   );
 
-  // Exported field_base: 'field_objektid_nunumeric'
+  // Exported field_base: 'field_objektid_nunumeric'.
   $field_bases['field_objektid_nunumeric'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1896,7 +1965,7 @@ function hk_ct_field_default_field_bases() {
     'type_name' => 'wohnung',
   );
 
-  // Exported field_base: 'field_oeffnungszeiten'
+  // Exported field_base: 'field_oeffnungszeiten'.
   $field_bases['field_oeffnungszeiten'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1919,7 +1988,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'office_hours',
   );
 
-  // Exported field_base: 'field_ref_adresse'
+  // Exported field_base: 'field_ref_adresse'.
   $field_bases['field_ref_adresse'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1936,7 +2005,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'addressfield',
   );
 
-  // Exported field_base: 'field_ref_anzahl_wohnungen'
+  // Exported field_base: 'field_ref_anzahl_wohnungen'.
   $field_bases['field_ref_anzahl_wohnungen'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1958,7 +2027,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ref_foto'
+  // Exported field_base: 'field_ref_foto'.
   $field_bases['field_ref_foto'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1983,7 +2052,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_ref_typ'
+  // Exported field_base: 'field_ref_typ'.
   $field_bases['field_ref_typ'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -2013,7 +2082,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_rent_commission'
+  // Exported field_base: 'field_rent_commission'.
   $field_bases['field_rent_commission'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2035,7 +2104,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sale_commission'
+  // Exported field_base: 'field_sale_commission'.
   $field_bases['field_sale_commission'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2057,7 +2126,56 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_status_quo'
+  // Exported field_base: 'field_save_workflow'.
+  $field_bases['field_save_workflow'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_save_workflow',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'workflowfield',
+    'settings' => array(
+      'allowed_values_function' => 'workflowfield_allowed_values',
+      'allowed_values_string' => '1 | (creation)
+2 | Draft
+3 | Ready
+4 | Active
+5 | Archived
+6 | Sold',
+      'entity_translation_sync' => FALSE,
+      'history' => array(
+        'history_tab_show' => 1,
+        'roles' => array(
+          -1 => 0,
+          3 => 3,
+          4 => 0,
+          5 => 0,
+          6 => 6,
+          7 => 0,
+        ),
+      ),
+      'watchdog_log' => 1,
+      'wid' => 1,
+      'widget' => array(
+        'comment' => 0,
+        'hide' => 0,
+        'name_as_title' => 0,
+        'options' => 'buttons',
+        'schedule' => 1,
+        'schedule_timezone' => 0,
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'workflow',
+  );
+
+  // Exported field_base: 'field_status_quo'.
   $field_bases['field_status_quo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2095,7 +2213,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_wug_act_rent'
+  // Exported field_base: 'field_wug_act_rent'.
   $field_bases['field_wug_act_rent'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2147,7 +2265,7 @@ function hk_ct_field_default_field_bases() {
     'type_name' => 'residential_commercial_building',
   );
 
-  // Exported field_base: 'field_wug_no_of_units'
+  // Exported field_base: 'field_wug_no_of_units'.
   $field_bases['field_wug_no_of_units'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2164,7 +2282,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_wug_occupancy'
+  // Exported field_base: 'field_wug_occupancy'.
   $field_bases['field_wug_occupancy'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2213,7 +2331,7 @@ function hk_ct_field_default_field_bases() {
     'type_name' => 'residential_commercial_building',
   );
 
-  // Exported field_base: 'field_wug_opt_constrruct'
+  // Exported field_base: 'field_wug_opt_constrruct'.
   $field_bases['field_wug_opt_constrruct'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2230,7 +2348,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_wug_total_space'
+  // Exported field_base: 'field_wug_total_space'.
   $field_bases['field_wug_total_space'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2247,7 +2365,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_year_built'
+  // Exported field_base: 'field_year_built'.
   $field_bases['field_year_built'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2264,7 +2382,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'name_field'
+  // Exported field_base: 'name_field'.
   $field_bases['name_field'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -2286,7 +2404,7 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'title_field'
+  // Exported field_base: 'title_field'.
   $field_bases['title_field'] = array(
     'active' => 1,
     'cardinality' => 1,

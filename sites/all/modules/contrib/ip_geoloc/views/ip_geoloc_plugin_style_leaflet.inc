@@ -1109,6 +1109,7 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
         $has_special_markers = TRUE;
         $feature['tag'] = $location->marker_tag;
       }
+
       if (!empty($tag_css_classes)) {
         $feature['cssClass'] = $tag_css_classes;
       }
@@ -1128,9 +1129,16 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
           // Just above topline, center.
           'popupAnchor' => array('x' => 0, 'y' => -$marker_height - 1),
         );
+
+        // Set shadow apartment value into tag value....
+        if($color == 'Icon_House_grey') {
+          $feature['tag'] = $location->marker_tooltip;
+        }
       }
+      $feature['label'] = '';
       $features[] = $feature;
     }
+ 
     if (isset($visitor_location['latitude'])) {
         if ($visitor_marker_color != 'none') {
         // See leaflet/README.txt for examples of Leaflet "features"
@@ -1291,11 +1299,12 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
     if ($open_balloons_on_hover || $goto_content_on_click) {
       drupal_add_js($module_path . '/js/ip_geoloc_leaflet_goto_content_on_click.js', array('scope' => 'footer'));
     }
+
     $settings = array(
       'mapId' => $map_id,
       'map' => $map,
       'features' => $features,
-    );
+    ); 
     $options = array(
       'type' => 'setting',
       // 'footer' only works for type 'inline'.

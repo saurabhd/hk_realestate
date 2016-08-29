@@ -1059,8 +1059,11 @@ div.hide-submit-processing {
   #block-views-facets-block-block-2 {
     a.facet-select {
       background-image: url('../images/sprite-sc8b09672a3.png');
-      background-position: right 232px;
+      background-position: right 226px;
       background-repeat: repeat-y;
+      font-size: 12px;
+      line-height: normal;
+      font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
     }
   }
   &.page-node-3562,
@@ -1193,7 +1196,8 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       min-height: 2em;
       padding: 0 5px;
       color: #999;
-      font-size: 14px;
+      font-size: 12px;
+      line-height: normal;
       font-family: "Neue Helvetica W01";
       background: #FFF;
       cursor: text;
@@ -1215,8 +1219,8 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       padding: 3px 0 3px 3px;
       border: 2px solid #cbc1ba;
       background-color: #FFF;
-      color: #666;
-      font-size: 14px;
+      color: #999;
+      font-size: 12px;
       /*font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;*/
       list-style: none;
       border-bottom-left-radius: 4px;

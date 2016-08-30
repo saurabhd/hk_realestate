@@ -246,6 +246,8 @@ body.page-search {
     }
   }
 }
+/* End */
+
 /* Search box */
 .page-kaufen #block-views-exp-karten-kaufen,
 .page-buy #search, .page-rent #search {
@@ -286,6 +288,20 @@ body.page-search {
 div.hide-submit-processing {
   display: none !important;
 }
+/* End */
+
+/* Inner page search box */
+.not-front {
+  #search {
+    display: none;
+  }
+  &.page-buy {
+    #search {
+      display: block;
+    }
+  }
+}
+
 /* End */
 
 /* Inquiry form */
@@ -1827,3 +1843,5 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     top: 260px !important;
   }
 }
+
+

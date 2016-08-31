@@ -18,6 +18,18 @@ body.page-search {
 .front .view-display-id-map_page {
   opacity: 1;
 }
+/* home page status message */
+.front {
+  #content {
+    .messages--status {
+      position: absolute;
+      top: 0;
+      margin-top: 115px;
+      z-index: 111;
+    }
+  }
+}
+/* End */
 /* Karte Objekt */
 .objectmap,
 .page-node-expose,
@@ -732,6 +744,10 @@ div.hide-submit-processing {
   }
   p:first-of-type {
     margin-top: 0 !important;
+  }
+  .view-karten {
+    display: inline-block;
+    width: 100%;
   }
   .wo {
     float: left;

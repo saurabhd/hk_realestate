@@ -160,23 +160,24 @@
     var data = [];
     
     jQuery( ".inquiry-checkbox .inquiry" ).live('click', function(e) { 
+      var alldata = [];
       e.stopImmediatePropagation();
-      jQuery(".inquiry-checkbox .inquiry", context).once().each(function() {
+      jQuery(".inquiry-checkbox .inquiry", context).each(function() {
         alldata.push(jQuery(this).val());
-        jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+alldata);
+        jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+alldata+'&destination=map');
       });
       if(this.checked){
         data.push(jQuery(this).val());
-        jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+data);
+        jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+data+'&destination=map');
       } else {
         var removeItem = jQuery(this).val();
         data = jQuery.grep(data, function(value) {
           return value != removeItem;
         });
         if(data.length != 0) {
-          jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+data);
+          jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+data+'&destination=map');
         } else {
-          jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+alldata);
+          jQuery('.inquiry-button .home-page-popup-inquiry').attr('href', '/anfrage?field_angefragte_wohnung='+alldata+'&destination=map');
         }
       }
     });
@@ -238,10 +239,7 @@
       jQuery('body').click(function(){
         jQuery('.ui-dialog').removeClass('ui-dialog-show');
       });
-      if(jQuery(window).width() < 767) {
-        //jQuery('.home-form-wrap .ui-dialog').hide();
-        jQuery('#search').hide();
-      }
+
       // jQuery( window ).resize(function() {});
       jQuery("a.form-show-link").on("click", function() {
         jQuery(this).parent().children('.ui-dialog').toggleClass('ui-dialog-show2');

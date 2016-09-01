@@ -85,7 +85,6 @@ function hk_search_default_search_api_index() {
         "field_object_ref:field_object_images:file:size" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_object_ref:field_object_images:file:type" : { "type" : "list\\u003Cstring\\u003E" },
         "field_object_ref:field_object_images:file:url" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_object_ref:field_object_text_schattenobjekt" : { "type" : "text" },
         "field_object_ref:field_object_txt_map_popup:value" : { "type" : "text" },
         "field_object_ref:field_objekt_wkt:geom" : { "type" : "string" },
         "field_object_ref:field_objektid_nunumeric" : { "type" : "text" },
@@ -94,7 +93,6 @@ function hk_search_default_search_api_index() {
         "field_object_ref:nid" : { "type" : "integer" },
         "field_object_ref:status" : { "type" : "integer" },
         "field_object_ref:title_field" : { "type" : "text" },
-        "field_object_text_schattenobjekt" : { "type" : "text" },
         "field_save_workflow" : { "type" : "string" },
         "field_status_quo" : { "type" : "string" },
         "is_new" : { "type" : "boolean" },
@@ -168,37 +166,6 @@ function hk_search_default_search_api_index() {
     },
     "enabled" : "1",
     "read_only" : "0"
-  }');
-  return $items;
-}
-
-/**
- * Implements hook_default_search_api_server().
- */
-function hk_search_default_search_api_server() {
-  $items = array();
-  $items['solr'] = entity_import('search_api_server', '{
-    "name" : "SOLR",
-    "machine_name" : "solr",
-    "description" : "",
-    "class" : "search_api_solr_service",
-    "options" : {
-      "clean_ids" : true,
-      "site_hash" : true,
-      "scheme" : "http",
-      "host" : "127.0.0.1",
-      "port" : "8099",
-      "path" : "\\/solr\\/d41d8cd98f00b204e9800998ecf8427e.herbert-kohlmeyer.de.o4507778742",
-      "http_user" : "",
-      "http_pass" : "",
-      "excerpt" : 0,
-      "retrieve_data" : 0,
-      "highlight_data" : 0,
-      "skip_schema_check" : 0,
-      "solr_version" : "",
-      "http_method" : "AUTO"
-    },
-    "enabled" : "1"
   }');
   return $items;
 }

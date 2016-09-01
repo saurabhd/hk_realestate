@@ -30,7 +30,6 @@ features[variable][] = advagg_convert_absolute_to_protocol_relative_path
 features[variable][] = advagg_convert_absolute_to_relative_path
 features[variable][] = advagg_core_groups
 features[variable][] = advagg_cron_frequency
-features[variable][] = advagg_cron_timestamp
 features[variable][] = advagg_css_compress_inline
 features[variable][] = advagg_css_compress_inline_if_not_cacheable
 features[variable][] = advagg_css_compressor

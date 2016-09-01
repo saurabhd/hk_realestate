@@ -31,7 +31,7 @@
     <![endif]-->
   <?php endif; ?>
   <script>jQuery.noConflict();</script>
-  <script type="text/javascript" src="http://fast.fonts.net/jsapi/69c28897-3128-41dd-a024-e20f5106e17e.js"></script>
+  <script type="text/javascript" src="//fast.fonts.net/jsapi/69c28897-3128-41dd-a024-e20f5106e17e.js"></script>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php if ($skip_link_text && $skip_link_anchor): ?>

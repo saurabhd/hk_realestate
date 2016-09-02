@@ -155,29 +155,28 @@ function hk_rules_default_rules_configuration() {
     }
   }');
   $items['rules_e_mail_to_client_and_office_when_inquiry_sent'] = entity_import('rules_config', '{ "rules_e_mail_to_client_and_office_when_inquiry_sent" : {
-      "LABEL" : "E-Mail to client when inquiry sent",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "mimemail", "crm_core_activity" ],
-      "ON" : { "crm_core_activity_insert" : [] },
-      "IF" : [
-        { "data_is" : { "data" : [ "crm-core-activity:type" ], "value" : "anfrage" } },
-        { "data_is" : { "data" : [ "site:current-page:language" ], "value" : "en" } }
-      ],
-      "DO" : [
-        { "mimemail" : {
-            "key" : "[crm-core-activity:activity-id]",
-            "to" : [ "crm-core-activity:field-activity-participants:1:primary-email" ],
-            "subject" : "Your inquiry for [crm-core-activity:field-angefragte-wohnung]",
-            "body" : "\\u003Ch4\\u003EThank you for your inquiry\\u003C\\/h4\\u003E\\r\\n\\u003Cp\\u003E We\\u0027ll get back to you as soon as possible. In the meantime, please find attached some important information concerning the new German withdrawal law and your notification about your withdrawal rights.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EYour Herbert + Kohlmeyer Team\\u003C\\/p\\u003E",
-            "plaintext" : "Thank you for your inquiry.\\r\\n\\r\\nWe\\u0027ll get back to you as soon as possible. In the meantime, please find attached some important information concerning the new German withdrawal law and your notification about your withdrawal rights.\\r\\n\\r\\nYour Herbert + Kohlmeyer Team",
-            "attachments" : "sites\\/herbert-kohlmeyer.de\\/files\\/hk_informationen_zur_widerrufsbelehrung.pdf\\r\\nsites\\/herbert-kohlmeyer.de\\/files\\/hk_widerrufsbelehrung.pdf",
-            "language" : "en"
-          }
+    "LABEL" : "E-Mail to client when inquiry sent",
+    "PLUGIN" : "reaction rule",
+    "OWNER" : "rules",
+    "REQUIRES" : [ "rules", "rules_i18n", "mimemail", "crm_core_activity" ],
+    "ON" : { "crm_core_activity_insert" : [] },
+    "IF" : [
+      { "data_is" : { "data" : [ "crm-core-activity:type" ], "value" : "anfrage" } }
+    ],
+    "DO" : [
+      { "mimemail" : {
+          "key" : "[crm-core-activity:activity-id]",
+          "to" : [ "crm-core-activity:field-activity-participants:1:primary-email" ],
+          "subject" : "Your inquiry for [crm-core-activity:field-angefragte-wohnung]",
+          "body" : "\u003Ch4\u003EThank you for your inquiry\u003C\/h4\u003E\r\n\u003Cp\u003E We\u0027ll get back to you as soon as possible. In the meantime, please find attached some important information concerning the new German withdrawal law and your notification about your withdrawal rights.\u003C\/p\u003E\r\n\u003Cp\u003EYour Herbert + Kohlmeyer Team\u003C\/p\u003E",
+          "plaintext" : "Thank you for your inquiry.\r\n\r\nWe\u0027ll get back to you as soon as possible. In the meantime, please find attached some important information concerning the new German withdrawal law and your notification about your withdrawal rights.\r\n\r\nYour Herbert + Kohlmeyer Team",
+          "attachments" : "sites\/herbert-kohlmeyer.de\/files\/hk_informationen_zur_widerrufsbelehrung.pdf\r\nsites\/herbert-kohlmeyer.de\/files\/hk_widerrufsbelehrung.pdf",
+          "language" : [ "site:current-page:language" ]
         }
-      ]
-    }
-  }');
+      }
+    ]
+  }
+}');
   $items['rules_e_mail_to_client_when_contact_form_sent'] = entity_import('rules_config', '{ "rules_e_mail_to_client_when_contact_form_sent" : {
       "LABEL" : "E-Mail to client when contact form sent",
       "PLUGIN" : "reaction rule",

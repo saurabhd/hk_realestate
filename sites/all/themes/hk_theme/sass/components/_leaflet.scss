@@ -395,9 +395,9 @@ div.hide-submit-processing {
       width: 47% !important;
     }
   }
+  }
   #block-menu-menu-menu-footer-menu {
     display: none;
-  }
   }
 }
 @media screen and (max-width: 992px) {
@@ -1860,4 +1860,15 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   }
 }
 
-
+@media (max-width: 1024px) {
+  #pbCloseBtn::before,
+  #pbAutoplayBtn::before {
+    height: 25px;
+    width: 25px;
+    padding: 5px 5px 7px 10px;
+    font-size: 1.5em;
+  }
+  #pbCloseBtn:hover::before {
+    padding: 8px 8px 8px 13px;
+  }
+}

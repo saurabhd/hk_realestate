@@ -1874,7 +1874,9 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 }
 
 /* Contact Page */
-.node-type-page.section-contact {
+.node-type-page.section-contact,
+.node-type-page.section-kontakt
+ {
    #crm-core-profile-entry-form-kontaktformular {
     .field-name-field-activity-participants {
       display: none;

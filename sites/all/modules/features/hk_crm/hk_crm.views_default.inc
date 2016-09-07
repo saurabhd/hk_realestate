@@ -2692,7 +2692,8 @@ function hk_crm_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_activity_participants']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_activity_participants']['delta_offset'] = '1';
+  $handler->display->display_options['fields']['field_activity_participants']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_activity_participants']['delta_reversed'] = TRUE;
   /* Field: CRM Core Activity: Notes */
   $handler->display->display_options['fields']['field_activity_notes']['id'] = 'field_activity_notes';
   $handler->display->display_options['fields']['field_activity_notes']['table'] = 'field_data_field_activity_notes';

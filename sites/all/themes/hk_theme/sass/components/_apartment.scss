@@ -29,7 +29,7 @@ h1.page-title {
         list-style: none;
         /*background: url(../images/Icon_Check.png) -10px 50% no-repeat;*/
         /*@include sprite-sprites(Icon_Check);*/
-        background-position: -10px -55px !important;
+        background-position: -10px -46px !important;
         @extend .sprite-Icon_Check;
         /*@include sprite-background-position($sprite-sprite, Icon_Check, -15px, -14px);*/
         padding: .25em 0 .25em 30px;
@@ -186,10 +186,12 @@ h1.page-title {
       top: -44px;
     }
   }
-  .field-name-apartment-characteristics,
-  .field-name-energieausweis {
+  .field-name-apartment-characteristics {
     margin: .5em 0;
     max-width: 560px;
+  }
+  .field-name-energieausweis {
+    margin: .5em 0;
   }
   .apartmerkmale,
   .energy {

@@ -19,6 +19,9 @@
     width: 100%;
     z-index: 150;
     background: rgba(0, 0, 0, 0.8);
+    @media (max-width: 767px) {
+      margin-top: 90px;
+    }
   }
 
   .lightbox__header {

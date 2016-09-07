@@ -262,9 +262,12 @@ aside.sidebars {
     padding: 20px;
   }
 }
+
+/* Meadia quary of Footer */
 @media screen and (max-width: 767px) {
-  .wrapper.footer.footer {
+  .wrapper.footer {
     display: inline-block;
     width: 100%;
+    margin-top: 80px;
   }
 }

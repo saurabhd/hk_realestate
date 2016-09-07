@@ -1872,3 +1872,12 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     padding: 8px 8px 8px 13px;
   }
 }
+
+/* Contact Page */
+.node-type-page.section-contact {
+   #crm-core-profile-entry-form-kontaktformular {
+    .field-name-field-activity-participants {
+      display: none;
+    }
+  }
+}

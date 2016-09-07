@@ -143,3 +143,18 @@ body.front h1#page-title {
     }
   }
 }
+
+ol,
+ul {
+  li {
+    list-style-position: inside;
+  }
+}
+
+/* About Page - Team Page */
+.not-front {
+  .element-invisible {
+    white-space: normal;
+    word-break: break-all;
+  }
+}

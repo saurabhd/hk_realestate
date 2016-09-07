@@ -759,7 +759,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'handler' => 'EntityReferenceProfileFieldHandler',
       'entity_type' => 'crm_core_activity',
       'bundle' => 'kontaktformular',
-      'status' => 0,
+      'status' => 1,
       'hidden' => 0,
       'default' => array(
         0 => array(

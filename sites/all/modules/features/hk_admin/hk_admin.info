@@ -50,6 +50,7 @@ features[user_permission][] = bypass node access
 features[user_permission][] = flush caches
 features[variable][] = field_bundle_settings_node__dokument
 features[variable][] = language_content_type_dokument
+features[variable][] = mail_system
 features[variable][] = media_dialog_theme
 features[variable][] = menu_options_dokument
 features[variable][] = menu_parent_dokument

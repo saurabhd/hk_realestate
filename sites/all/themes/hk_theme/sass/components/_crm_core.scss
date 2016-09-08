@@ -40,6 +40,8 @@
     background: #fff;
     border: 0;
     input {
+      display: inline-block;
+      width: 100%;
       background: #fff;
       border: 0;
     }
@@ -132,4 +134,41 @@ fieldset.date-combo .container-inline-date .date-padding {
 }
 fieldset.date-combo .container-inline-date > .form-item {
     margin-bottom: 0;
+}
+
+/* Inquary form Popup */
+@media (max-width: 767px){
+  .name-title-wrapper {
+    width: 48.50%;
+    margin-right: 2% !important;
+  }
+  .name-given-wrapper,
+  .name-credentials-wrapper {
+    display: inline-block;
+    width: 49%;
+    margin-right: 0 !important;
+    input {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  .name-family-wrapper {
+    clear: left;
+    width: 49%;
+    margin-right: 2% !important;
+    input {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .name-title-wrapper,
+  .name-family-wrapper {
+    width: 100%;
+  }
+  .name-given-wrapper,
+  .name-credentials-wrapper {
+    width: 100%;
+  }
 }

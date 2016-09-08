@@ -60,12 +60,24 @@
     .flex-direction-nav a.flex-prev {
       left: -50px;
       background: url(../images/Arrow_left.png) 0 50% no-repeat;
+      /*@media (max-width: 400px) {
+        width: 33px !important;
+        height: auto !important;
+        background-size: 100% auto;
+        margin-top: 0;
+      }*/
       /*@include sprite-sprite(Arrow_left);*/
     }
     .flex-direction-nav a.flex-next {
       right: -50px;
       text-align: right;
-      background: url(../images/Arrow_right.png) 0 50% no-repeat;
+      background: url(../images/Arrow_right.png) 0 50% no-repeat;]
+      /*@media (max-width: 400px) {
+        width: 33px !important;
+        height: auto !important;
+        background-size: 100% auto;
+        margin-top: 0;
+      }*/
       /*@include sprite-sprite(Arrow_right);*/
     }
     .flexslider:hover .flex-direction-nav .flex-prev {
@@ -255,6 +267,21 @@ html[xmlns] .flexslider .slides {
       background: url(../images/Arrow_left.png) 0 55% no-repeat;
       /*@include sprite-sprite(Arrow_left);*/
       padding-right: 2em;
+      @media (max-width: 991) {
+        background-position: 0 25%;
+      }
+      @media (max-width: 700) {
+        background-position: 0 18%;
+      }
+      @media (max-width: 600) {
+        background-position: 0 14%;
+      }
+      @media (max-width: 480) {
+        background-position: 0 10%;
+      }
+      @media (max-width: 320) {
+        background-position: 0 7%;
+      }
     }
     .flex-direction-nav a.flex-next {
       right: -50px;
@@ -262,6 +289,9 @@ html[xmlns] .flexslider .slides {
       background: url(../images/Arrow_right.png) 0 55% no-repeat;
       /*@include sprite-sprite(Arrow_right);*/
       padding-left: 2em;
+      @media (max-width: 991) {
+        background-position: 0 25%;
+      }
     }
     .flexslider:hover .flex-direction-nav .flex-prev {
       opacity: 1;
@@ -377,8 +407,14 @@ html[xmlns] .flexslider .slides {
 }
 /* Referenzen Slider */
 .views-field-field-ref-foto {
-    max-height: 850px;
-    float: left;
+  max-height: 850px;
+  float: left;
+  /*@media (max-width: 400px) {
+    img {
+      width: 1043px !important;
+      height: 750px !important;
+    }
+  }*/
 }
 .views-field-title-field {
     float: left;

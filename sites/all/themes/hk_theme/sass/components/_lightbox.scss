@@ -19,9 +19,6 @@
     width: 100%;
     z-index: 150;
     background: rgba(0, 0, 0, 0.8);
-    @media (max-width: 767px) {
-      margin-top: 90px;
-    }
   }
 
   .lightbox__header {
@@ -73,6 +70,9 @@
     max-height: 100%;
     min-height: 200px;
     overflow: visible;
+    @media (max-width: 767px) {
+      margin-top: 110px;
+    }
   }
 
   .lightbox__body {

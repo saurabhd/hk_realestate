@@ -1116,12 +1116,38 @@ div.hide-submit-processing {
   .field-type-text-long {
     max-width: 533px;
     width: 100% !important;
+    .form-item {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
     input,
     textarea {
       width: 100% !important;
       max-width: 100% !important;
     }
-  }/*
+  }
+
+  @media (max-width: 767px) {
+    .field-name-field-e-mail {
+      display: inline-block;
+      width: 48.50% !important;
+      margin-right: 2%;
+    }
+    .field-type-phone {
+      display: inline-block;
+      width: 49% !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .field-name-field-e-mail {
+      width: 100% !important;
+      margin-right: 0;
+    }
+    .field-type-phone {
+      width: 100% !important;
+    }
+  }
+  /*
   .field_angefragte_wohnung-delta-order {
     display: none;
   }*/

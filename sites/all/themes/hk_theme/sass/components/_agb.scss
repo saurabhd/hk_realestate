@@ -4,6 +4,13 @@
   -ms-column-count: 2;
   column-count: 2;
   padding-left: 20px;
+  @media (max-width: 640px) {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    -ms-column-count: 1;
+    column-count: 1;
+    padding-left: 10px;
+  }
   li {
     margin-bottom: 1em;
   }

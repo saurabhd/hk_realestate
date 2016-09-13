@@ -10,3 +10,6 @@ sites/*/private
 # unused site
 sites/hk.dev.addweb-7431-prod.dot
 sites/addweb.dev.herbert-kohlmeyer.de
+sites/herbert-kohlmeyer.de/modules/boa_site_control.ini
+sites/hk.dev.addweb-7431-prod.dot/modules/boa_site_control.ini
+sites/addweb.dev.herbert-kohlmeyer.de/modules/boa_site_control.ini

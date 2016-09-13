@@ -115,7 +115,7 @@
       //************ Inquiry popup for map pouup listing *************//
       //---------------------------------------------------------------------------//
       var alldata = [];
-      jQuery(".inquiry-button .home-page-popup-inquiry").live('click', function(e) {
+      jQuery(".inquiry-button .home-page-popup-inquiry").on('click', function(e) {
       e.preventDefault();
       var path = jQuery('.inquiry-button .home-page-popup-inquiry').attr('href');
       jQuery.ajax({
@@ -159,7 +159,7 @@
     }); 
     var data = [];
     
-    jQuery( ".inquiry-checkbox .inquiry" ).live('click', function(e) { 
+    jQuery( ".inquiry-checkbox .inquiry" ).on('click', function(e) { 
       var alldata = [];
       e.stopImmediatePropagation();
       jQuery(".inquiry-checkbox .inquiry", context).each(function() {

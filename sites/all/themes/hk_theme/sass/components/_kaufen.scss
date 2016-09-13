@@ -10,6 +10,12 @@
   .views-row-odd {
     float: left;
     width: 100%;
+    img {
+      max-width: 100%;
+      width: 300px;
+      max-height: auto;
+      height: 200px;
+    }
     @include breakpoint($br-desk) {
     width: 49%;
     }

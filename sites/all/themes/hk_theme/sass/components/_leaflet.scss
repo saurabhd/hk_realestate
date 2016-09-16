@@ -353,6 +353,7 @@ div.hide-submit-processing {
     }
   }
 }
+[id^="field-angefragte-wohnung-add-more-wrapper-"],
 #field-angefragte-wohnung-add-more-wrapper {
   .form-item {
     input.field-add-more-submit {
@@ -365,7 +366,98 @@ div.hide-submit-processing {
     display: none;
   }
 }
+
+[id^="crm-core-profile-entry-form-anfrage-"],
+#crm-core-profile-entry-form-anfrage {
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+  .name-title-wrapper {
+    width: 20%;
+    margin-right: 2% !important;
+    input {
+      width: 100%;
+    }
+  }
+  .name-given-wrapper,
+  .name-family-wrapper {
+    width: 28%;
+    margin-right: 2%;
+    input {
+      width: 100%;
+    }
+  }
+  .name-credentials-wrapper {
+    width: 16%;
+    margin-right: 0% !important;
+    input {
+      width: 100%;
+    }
+  }
+  
+  .field-type-email,
+  .field-type-phone {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+    input {
+      width: 100%;
+    }
+  }
+  .field-type-phone { margin-right: 0; }
+  .field-name-field-activity-notes {
+    max-width: 600px;
+  }
+}
+/* Popup of inquiry form */
+.lightbox__body {
+  [id^="crm-core-profile-entry-form-anfrage-"],
+  #crm-core-profile-entry-form-anfrage {
+    max-width: 100%; 
+  }
+}
+
+@media (max-width: 767px){
+  [id^="crm-core-profile-entry-form-anfrage-"],
+  #crm-core-profile-entry-form-anfrage {
+    .name-title-wrapper {
+      width: 48.50%;
+      margin-right: 2% !important;
+    }
+    .name-given-wrapper,
+    .name-credentials-wrapper {
+      display: inline-block;
+      width: 49%;
+      margin-right: 0 !important;
+      input {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+    .name-family-wrapper {
+      clear: left;
+      width: 49%;
+      margin-right: 2% !important;
+      input {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  .name-title-wrapper,
+  .name-family-wrapper {
+    width: 100%;
+  }
+  .name-given-wrapper,
+  .name-credentials-wrapper {
+    width: 100%;
+  }
+}
 /* End */
+
+
 
 /*.front .ui-dialog.ui-dialog-show {
   -moz-transition: height 1s ease;
@@ -704,6 +796,7 @@ div.hide-submit-processing {
 }
 
 .group-card {
+  min-height: 215px;
   border: 2px solid $secondary;
   overflow: hidden;
 }
@@ -1110,12 +1203,13 @@ div.hide-submit-processing {
 /* End */
 
 /* Anfrage page*/
+.lightbox__body [id^="crm-core-profile-entry-form-"],
 #crm-core-profile-entry-form-call {
   .field-name-field-e-mail,
   .field-type-phone,
   .field-type-text-long {
-    max-width: 533px;
-    width: 100% !important;
+    max-width: 600px;
+    width: 100%;
     .form-item {
       margin-top: 0 !important;
       margin-bottom: 0 !important;
@@ -1887,7 +1981,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 }
 
 @media (max-width: 1024px) {
-  #pbCloseBtn::before,
+  /*#pbCloseBtn::before,
   #pbAutoplayBtn::before {
     height: 25px;
     width: 25px;
@@ -1896,7 +1990,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   }
   #pbCloseBtn:hover::before {
     padding: 8px 8px 8px 13px;
-  }
+  }*/
 }
 
 /* Contact Page */
@@ -1906,6 +2000,17 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
    #crm-core-profile-entry-form-kontaktformular {
     .field-name-field-activity-participants {
       display: none;
+    }
+  }
+}
+
+
+/* Error message */
+.messages.error {
+  .messages__list {
+    .messages__item {
+      white-space: normal;
+      word-break: break-all;
     }
   }
 }

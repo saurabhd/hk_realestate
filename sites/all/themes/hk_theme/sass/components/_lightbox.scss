@@ -72,7 +72,7 @@
     min-height: 200px;
     overflow: visible;
     @media (max-width: 767px) {
-      margin-top: 20px;
+      margin-top: 0 !important;
     }
   }
 
@@ -84,3 +84,5 @@
 .ng-hidden {
   display: none;
 }
+
+

@@ -346,7 +346,7 @@ body {
   }
   .mean-container .mean-nav {
   }
-  .mean-container .mean-nav ul {
+  .mean-container .mean-nav > ul {
     z-index: 999;
     overflow-y: auto;
     height: 500px;
@@ -368,7 +368,7 @@ body {
 
 /* Responsive menu changes */
 @media(max-width: 767px) {
-  .mean-container .mean-nav ul {
+  .mean-container .mean-nav > ul {
     height: 200px;
   }
 }
@@ -380,7 +380,7 @@ body {
 } /* 560 */
 
 @media(max-width: 420px) {
-  .mean-container .mean-nav ul {
+  .mean-container .mean-nav > ul {
     height: 400px;
   }
 }

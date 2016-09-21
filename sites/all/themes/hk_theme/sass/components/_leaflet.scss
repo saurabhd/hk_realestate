@@ -1979,6 +1979,11 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     top: 260px !important;
   }
 }
+@media (max-width: 767px) {
+  .language-switcher {
+    display: none;
+  }
+}
 
 @media (max-width: 1024px) {
   /*#pbCloseBtn::before,
@@ -2014,3 +2019,41 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     }
   }
 }
+
+/* Home page - Search */
+.home-form-wrap {
+  #search {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+.page-search {
+  .search-title {
+    display: none;
+  }
+}
+.page-search {
+  .search-api-page-results {
+    display: none;
+  }
+}
+
+/* Map bar */
+.leaflet-control-scale-line {
+  font-size: 18px;
+}
+
+/* Dropdown icon */
+.block-facetapi {
+  form {
+    .select2-search-field {
+      background-image: url('../images/sprite-s8f10be3d0d.png');
+      background-repeat: no-repeat;
+      background-position: right 0;
+      input {
+        width: 290px !important;
+      }
+    }
+  }
+}
+

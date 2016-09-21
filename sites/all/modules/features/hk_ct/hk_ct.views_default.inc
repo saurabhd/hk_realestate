@@ -1378,6 +1378,13 @@ function hk_ct_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a class="inquiry-button btn ng-lightbox" href="/anfrage?field_angefragte_wohnung=&destination=/favorites&width=600&height=600" >Inquiry</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['use_ajax_flags'] = array(
     'merken' => 'merken',
     'bookmarks' => 0,

@@ -255,10 +255,13 @@
       // Search Slide toggle
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
-        //jQuery('.ui-dialog').slideToggle();
+        jQuery('.ui-dialog').slideToggle();
         jQuery('#search').slideToggle();
       });
-
+      if(jQuery(window).width() < 767) {
+        jQuery('.ui-dialog').hide();
+        jQuery('#search').hide();       
+      }
       // Phone icon tooltip toggle
       jQuery("#block-menu-menu-service-menu ul.menu li .icon-hk-icon-telephone").on("click", function(e) {
         jQuery('.menu-tooltip').toggle();
@@ -272,9 +275,8 @@
 
       // Hide keyboard
       if(jQuery(window).width() < 767) {
-        jQuery('.home-form-wrap ul li.select2-search-field input').attr('readonly',true);
-        jQuery('.home-form-wrap .ui-dialog #search .block-facetapi input').attr('readonly',true);
-        
+        /*jQuery('.home-form-wrap ul li.select2-search-field input').attr('readonly',true);
+        jQuery('.home-form-wrap .ui-dialog #search .block-facetapi input').attr('readonly',true);*/       
       }
       // End
 

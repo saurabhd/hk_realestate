@@ -422,7 +422,7 @@ function hk_crm_default_search_api_saved_searches_settings() {
       "date_field" : "",
       "description" : "",
       "registered_choose_mail" : 0,
-      "choose_name" : 0,
+      "choose_name" : 1,
       "registered_user_delete_key" : 0,
       "show_empty_list" : 1,
       "default_true" : true,

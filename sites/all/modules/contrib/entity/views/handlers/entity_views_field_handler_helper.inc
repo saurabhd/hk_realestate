@@ -18,7 +18,7 @@ class EntityFieldHandlerHelper {
    * Provide appropriate default options for a handler.
    */
   public static function option_definition($handler) {
-    if (entity_property_list_extract_type($handler->definition['type'])) {
+    if (isset($handler->definition['type']) && entity_property_list_extract_type($handler->definition['type'])) {
       $options['list']['contains']['mode'] = array('default' => 'collapse');
       $options['list']['contains']['separator'] = array('default' => ', ');
       $options['list']['contains']['type'] = array('default' => 'ul');
@@ -32,7 +32,7 @@ class EntityFieldHandlerHelper {
    * Provide an appropriate default option form for a handler.
    */
   public static function options_form($handler, &$form, &$form_state) {
-    if (entity_property_list_extract_type($handler->definition['type'])) {
+    if (isset($handler->definition['type']) && entity_property_list_extract_type($handler->definition['type'])) {
       $form['list']['mode'] = array(
         '#type' => 'select',
         '#title' => t('List handling'),
@@ -444,13 +444,13 @@ class EntityFieldHandlerHelper {
         return NULL;
 
       case 'count':
-        return count(entity_load('node', $list, array('type' => array('apartment'))));
-        
+          return count(entity_load('node', $list, array('type' => array('apartment'))));
+
       case 'shadow-count':
         $entitis = entity_load('node', $list, array('type' => array('apartment')));
         $cntShadow = 0;
         foreach ($entitis as $key => $entity) {
-          $shadow_object = ''; 
+          $shadow_object = '';
           $object_id = $entity->field_object_ref[LANGUAGE_NONE][0]['target_id'];
           if($entity->field_save_workflow[LANGUAGE_NONE][0]['value'] == '4') {
             if(isset($entity->field_obj_schattenobjekt[LANGUAGE_NONE]) && !empty($entity->field_obj_schattenobjekt[LANGUAGE_NONE])) {
@@ -462,12 +462,12 @@ class EntityFieldHandlerHelper {
           }
         }
         return $cntShadow;
-
+      
       case 'non-shadow-count':
         $entitis = entity_load('node', $list, array('type' => array('apartment')));
         $cntNonShadow = 0;
         foreach ($entitis as $key => $entity) {
-          $shadow_object = ''; 
+          $shadow_object = '';
           $object_id = $entity->field_object_ref[LANGUAGE_NONE][0]['target_id'];
           if($entity->field_save_workflow[LANGUAGE_NONE][0]['value'] == '4') {
             if(isset($entity->field_obj_schattenobjekt[LANGUAGE_NONE]) && !empty($entity->field_obj_schattenobjekt[LANGUAGE_NONE])) {
@@ -479,7 +479,6 @@ class EntityFieldHandlerHelper {
           }
         }
         return $cntNonShadow;
-         
       // Handles both collapse and list output. Fallback is to collapse.
       default:
         $inner_values = array();

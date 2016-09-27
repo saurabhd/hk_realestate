@@ -112,13 +112,14 @@ class EntityReferenceProfileFieldHandler extends DefaultProfileFieldHandler {
 
     // This check is a must to handle custom entity references and references to
     // nodes.
-    if (isset($form[$field_name][LANGUAGE_NONE]['#entity_type'])) {
-      $entity_type = $form[$field_name][LANGUAGE_NONE]['#entity_type'];
-      $bundle = $form[$field_name][LANGUAGE_NONE]['#bundle'];
+    $language = isset($form[$field_name]['#language']) ? $form[$field_name]['#language'] : LANGUAGE_NONE;
+    if (isset($form[$field_name][$language]['#entity_type'])) {
+      $entity_type = $form[$field_name][$language]['#entity_type'];
+      $bundle = $form[$field_name][$language]['#bundle'];
     }
     else {
-      $entity_type = $form[$field_name][LANGUAGE_NONE][0]['target_id']['#entity_type'];
-      $bundle = $form[$field_name][LANGUAGE_NONE][0]['target_id']['#bundle'];
+      $entity_type = $form[$field_name][$language][0]['target_id']['#entity_type'];
+      $bundle = $form[$field_name][$language][0]['target_id']['#bundle'];
     }
 
     // Store the field prefix.
@@ -138,11 +139,11 @@ class EntityReferenceProfileFieldHandler extends DefaultProfileFieldHandler {
         if (strpos($key, ',') !== FALSE || strpos($key, '"') !== FALSE) {
           $key = '"' . str_replace('"', '""', $key) . '"';
         }
-        if (isset($form[$field_name][LANGUAGE_NONE][0]['target_id']['#default_value'])) {
-          $default_value =& $form[$field_name][LANGUAGE_NONE][0]['target_id']['#default_value'];
+        if (isset($form[$field_name][$language][0]['target_id']['#default_value'])) {
+          $default_value =& $form[$field_name][$language][0]['target_id']['#default_value'];
         }
         else {
-          $default_value =& $form[$field_name][LANGUAGE_NONE]['#default_value'];
+          $default_value =& $form[$field_name][$language]['#default_value'];
         }
         $default_value = $key;
       }

@@ -212,16 +212,10 @@ function crm_core_profile_views_api() {
 function crm_core_profile_block_info() {
   $blocks = array();
 
-  // Load all the profiles.
+  // Load all the enabled profiles with block display configured.
   $conditions = array(
-    array(
-      'field' => 'status',
-      'value' => 1,
-    ),
-    array(
-      'field' => 'block',
-      'value' => 1,
-    ),
+    'status' => 1,
+    'block' => 1,
   );
 
   $profiles = crm_core_profile_load_all($conditions);
@@ -781,7 +775,7 @@ function crm_core_profile_access($profile) {
   // level permissions.
   if ($profile->access_control_perm !== 'none' && $profile->access_control === 'default') {
     // Do the permission check.
-    return user_access($profile->access_control_perm, $user->uid);
+    return user_access($profile->access_control_perm, $user);
   }
 
   // If there are no roles, permissions or user level access restrictions,
@@ -959,6 +953,8 @@ function crm_core_profile_load_node_config($nid) {
  */
 function crm_core_profile_entry_form($form, &$form_state, $profile, $preload = NULL, $data = array()) {
 
+  // If possible, we want to post this form securely via HTTPS.
+  $form['#https'] = TRUE;
   $form_state['profile'] = $profile;
 
   // Store any data passed into the form generation function here.
@@ -1001,7 +997,7 @@ function crm_core_profile_entry_form($form, &$form_state, $profile, $preload = N
  * @param array $form_state
  *   Form state array.
  *
- * * @return array
+ * @return array
  *   Form definition array.
  */
 function crm_core_profile_entry_form_after_build($form, &$form_state) {

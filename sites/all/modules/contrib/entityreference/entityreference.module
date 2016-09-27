@@ -668,67 +668,16 @@ function entityreference_settings_ajax_submit($form, &$form_state) {
  * Property callback for the Entity Metadata framework.
  */
 function entityreference_field_property_callback(&$info, $entity_type, $field, $instance, $field_type) {
-  // Set the property type based on the target type.
+  // Set the property type based on the targe type.
   $field_type['property_type'] = $field['settings']['target_type'];
 
   // Then apply the default.
   entity_metadata_field_default_property_callback($info, $entity_type, $field, $instance, $field_type);
 
-  // But use our property setter.
-  $name = $field['field_name'];
-  $property = &$info[$entity_type]['bundles'][$instance['bundle']]['properties'][$name];
-  $property['setter callback'] = 'entityreference_property_setter';
-
   // Invoke the behaviors to allow them to change the properties.
   foreach (entityreference_get_behavior_handlers($field, $instance) as $handler) {
     $handler->property_info_alter($info, $entity_type, $field, $instance, $field_type);
   }
-}
-
-/**
- * Custom entity metadata property setter for entityreference.
- *
- * Here we deal with cases where entity records a name or uuid as the identifier
- * of a target entity.  We need to store the numeric id, so we try to find it out
- * here.
- */
-function entityreference_property_setter($entity, $name, $value, $langcode, $entity_type, $info) {
-  $field = field_info_field($name);
-  $langcode = entity_metadata_field_get_language($entity_type, $entity, $field, $langcode);
-  $values = $field['cardinality'] == 1 ? array($value) : (array) $value;
-
-  $items = array();
-  foreach ($values as $delta => $value) {
-    if (isset($value)) {
-      if (is_numeric($value)) {
-        $items[$delta]['target_id'] = $value;
-      }
-      // We only need to process non-numeric ids.
-      else {
-        $target_id = NULL;
-        // Discover the entity type of the target entity, and get its info.
-        $target_type = $field['settings']['target_type'];
-        $target_info = entity_get_info($target_type);
-        // If this entity type supports a 'name' key, then try loading the entity
-        // by name in order to extract its numeric id.
-        if (isset($target_info['entity keys']['name'])) {
-          if ($target_entity = entity_load_single($target_type, $value)) {
-            list($target_id) = entity_extract_ids($target_type, $target_entity);
-          }
-        }
-
-        // Setting target in any case here - if we found the correct one this
-        // is good, if not, well, it's better to set nothing them raise
-        // exception because original $value doesn't feet in DB.
-        $items[$delta]['target_id'] = $target_id;
-      }
-    }
-  }
-
-  $entity->{$name}[$langcode] = $items;
-  // Empty the static field language cache, so the field system picks up any
-  // possible new languages.
-  drupal_static_reset('field_language');
 }
 
 /**
@@ -1257,7 +1206,7 @@ function entityreference_field_formatter_prepare_view($entity_type, $entities, $
 
     foreach ($items[$id] as $delta => $item) {
       // Check whether the referenced entity could be loaded.
-      if (isset($target_entities[$item['target_id']])) {
+      if (isset($item['target_id']) && isset($target_entities[$item['target_id']])) {
         // Replace the instance value with the term data.
         $items[$id][$delta]['entity'] = $target_entities[$item['target_id']];
         // Check whether the user has access to the referenced entity.

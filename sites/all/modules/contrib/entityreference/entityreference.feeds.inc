@@ -124,12 +124,14 @@ function entityreference_feeds_set_target($source, $entity, $target, $value) {
           $entity_id = $value;
           break;
         case 'label':
-          
-          if(!empty($options)){
+          $options = $handler->getReferencableEntities($value, '=');
+          if ($options) {
+            $options = reset($options);
             $etids = array_keys($options);
             // Use the first matching entity.
             $entity_id = reset($etids);
-          } else {
+          }
+          else {
             $entity_id = NULL;
           }
           break;

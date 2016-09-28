@@ -841,6 +841,10 @@ div.hide-submit-processing {
   .view-karten {
     display: inline-block;
     width: 100%;
+    .map-table-parent {
+      max-height: 250px;
+      overflow-y:auto; 
+    }
   }
   .wo {
     float: left;

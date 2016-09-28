@@ -101,15 +101,6 @@ h1.page-title {
     padding: .5em 0 .5em 2.5em;
   }
   .field-name-field-apart-living-space {
-    .label-inline,
-    .field-label {
-      color: $greyer;
-      font-size: 13px;
-      font-weight: normal;
-      position: absolute;
-      bottom: 5px;
-      left: 25%;
-    }
     padding: .5em .3em 1.5em .3em;
     display: table-cell;
     position: relative;
@@ -119,8 +110,35 @@ h1.page-title {
     border: 2px solid $secondary;
     @include border-left-radius($border-radius);
     width: 35%;
+    @media (max-width: 400px) {
+      font-size: 17px;
+    }
+    .label-inline,
+    .field-label {
+      color: $greyer;
+      font-size: 13px;
+      font-weight: normal;
+      position: absolute;
+      bottom: 5px;
+      left: 25%;
+      @media (max-width: 400px) {
+        left: auto;
+      }
+    }
   }
   .field-name-field-apart-rooms {
+    padding: .5em 1em 1.5em 1em;
+    display: table-cell;
+    position: relative;
+    font-size: 1.4em;
+    font-weight: 500;
+    text-align: center;
+    border-top: 2px solid $secondary;
+    border-bottom: 2px solid $secondary;
+    @media (max-width: 400px) {
+      padding: 0.5em 1.4em 1.5em;
+      font-size: 18px;
+    }
     .label-inline,
     .field-label {
       color: $greyer;
@@ -130,25 +148,8 @@ h1.page-title {
       bottom: 5px;
       margin-left: -25%;
     }
-    padding: .5em 1em 1.5em 1em;
-    display: table-cell;
-    position: relative;
-    font-size: 1.4em;
-    font-weight: 500;
-    text-align: center;
-    border-top: 2px solid $secondary;
-    border-bottom: 2px solid $secondary;
   }
   .field-name-field-apart-price {
-    .label-inline,
-    .field-label {
-      color: $greyer;
-      font-size: 13px;
-      font-weight: normal;
-      position: absolute;
-      bottom: 5px;
-      margin-left: 25%;
-    }
     padding: .5em .3em 1.5em .3em;
     display: table-cell;
     position: relative;
@@ -161,6 +162,18 @@ h1.page-title {
     &::after {
       content: " \*";
       color: $greyer;
+    }
+    @media (max-width: 400px) {
+      font-size: 18px;
+    }
+    .label-inline,
+    .field-label {
+      color: $greyer;
+      font-size: 13px;
+      font-weight: normal;
+      position: absolute;
+      bottom: 5px;
+      margin-left: 25%;
     }
   }
   .apartaddress,
@@ -217,6 +230,7 @@ h1.page-title {
         width: 44%;
         color: $black;
         font-weight: 500;
+        word-break: break-all;
       }
     }
     .views-field:nth-of-type(odd) {

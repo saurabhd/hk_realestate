@@ -53,6 +53,7 @@
 
   // White box.
   .lightbox__content {
+    margin-top: 40px;
     border: 4px solid $secondary;
     @include border-radius(10px);
     @include box-shadow($box-shadow);
@@ -70,6 +71,9 @@
     max-height: 100%;
     min-height: 200px;
     overflow: visible;
+    @media (max-width: 767px) {
+      margin-top: 0 !important;
+    }
   }
 
   .lightbox__body {
@@ -80,3 +84,5 @@
 .ng-hidden {
   display: none;
 }
+
+

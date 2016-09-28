@@ -52,8 +52,8 @@
       top: 91px;
       right: 0;
       padding: 0;
-      min-height: 50px;
-      z-index: 999999;
+      /*min-height: 50px;*/
+      z-index: 999;
 
     }
     a.meanmenu-reveal {
@@ -61,7 +61,7 @@
       box-sizing: content-box !important;
       width: 22px;
       height: 22px;
-      padding: 16px 8px 16px 16px;
+      padding: 16px 20px 16px 16px;
       /*border: 2px solid $secondary;*/
       border-right: 0;
       @include border-radius($border-radius 0 0 $border-radius);
@@ -224,8 +224,14 @@ a.meanmenu-reveal {
 @media screen and (max-width: 560px) {
   .mean-container {
     .mean-nav {
-      margin-top: 41px;
+      margin-top: 0;
     }
+    .mean-bar {
+      top: 61px;
+    }
+    a.meanmenu-reveal {
+    top: -50px;
+   }
   }
   .region-navigation #block-menu-menu-service-menu {
     top: 60px;

@@ -40,6 +40,8 @@
     background: #fff;
     border: 0;
     input {
+      display: inline-block;
+      width: 100%;
       background: #fff;
       border: 0;
     }
@@ -86,11 +88,26 @@
 .form-item-field-crm-address-und-0-country .select2-choice {
   width: 275px;
 }
-@media screen and (max-width: 480px) {
+/*@media screen and (max-width: 480px) {
   .form-item-field-crm-address-und-0-country .select2-choice {
     max-width: 225px;
-    }
   }
+}*/
+@media (max-width: 420px) {
+  .form-item-field-crm-address-und-0-country .select2-choice,
+  .section-contact .form-item .form-text,
+  .section-contact .field-name-field-e-mail {
+    width: 100% !important;
+  }
+  .section-contact .form-item-field-crm-address-und-0-postal-code,
+  .section-contact .form-item-field-crm-address-und-0-locality {
+    margin: 0 0 20px;
+    width: 100%;
+  }
+  .section-contact .form-submit {
+    width: 100%;
+  }
+}
 .form-item-field-crm-address-und-0-premise {
   display: none;
 }
@@ -133,3 +150,4 @@ fieldset.date-combo .container-inline-date .date-padding {
 fieldset.date-combo .container-inline-date > .form-item {
     margin-bottom: 0;
 }
+

@@ -115,7 +115,7 @@
       //************ Inquiry popup for map pouup listing *************//
       //---------------------------------------------------------------------------//
       var alldata = [];
-      jQuery(".inquiry-button .home-page-popup-inquiry").live('click', function(e) {
+      jQuery(".inquiry-button .home-page-popup-inquiry").on('click', function(e) {
       e.preventDefault();
       var path = jQuery('.inquiry-button .home-page-popup-inquiry').attr('href');
       jQuery.ajax({
@@ -126,7 +126,7 @@
         data: {},
         success: function (data) {
           //alert(data);
-          jQuery('#ng-lightbox').html('<div class="lightbox lightbox--plain"><div class="lightbox__overlay"><div class="lightbox__content"><div class="close-ng-lightbox">x</div><h2 class="lightbox__header">Inquiry</h2><div class="lightbox__body">test</div></div></div></div>');
+          jQuery('#ng-lightbox').html('<div class="lightbox lightbox--plain"><div class="lightbox__overlay"><div class="lightbox__content"><div class="close-ng-lightbox">x</div><h2 class="lightbox__header">'+Drupal.t('Inquiry')+'</h2><div class="lightbox__body">test</div></div></div></div>');
           jQuery('.lightbox__body').html(jQuery(data).find("#crm-core-profile-entry-form-anfrage").parent().html());
           //jQuery('.lightbox__body #page-title, #ng-lightbox div .lightbox.lightbox--plain').hide();
           jQuery('.lightbox__overlay, .close-ng-lightbox').click(function() {
@@ -159,7 +159,7 @@
     }); 
     var data = [];
     
-    jQuery( ".inquiry-checkbox .inquiry" ).live('click', function(e) { 
+    jQuery( ".inquiry-checkbox .inquiry" ).on('click', function(e) { 
       var alldata = [];
       e.stopImmediatePropagation();
       jQuery(".inquiry-checkbox .inquiry", context).each(function() {
@@ -255,10 +255,13 @@
       // Search Slide toggle
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
-        //jQuery('.ui-dialog').slideToggle();
+        jQuery('.ui-dialog').slideToggle();
         jQuery('#search').slideToggle();
       });
-
+      if(jQuery(window).width() < 767) {
+        jQuery('.ui-dialog').hide();
+        jQuery('#search').hide();       
+      }
       // Phone icon tooltip toggle
       jQuery("#block-menu-menu-service-menu ul.menu li .icon-hk-icon-telephone").on("click", function(e) {
         jQuery('.menu-tooltip').toggle();
@@ -272,9 +275,8 @@
 
       // Hide keyboard
       if(jQuery(window).width() < 767) {
-        jQuery('.home-form-wrap ul li.select2-search-field input').attr('readonly',true);
-        jQuery('.home-form-wrap .ui-dialog #search .block-facetapi input').attr('readonly',true);
-        
+        /*jQuery('.home-form-wrap ul li.select2-search-field input').attr('readonly',true);
+        jQuery('.home-form-wrap .ui-dialog #search .block-facetapi input').attr('readonly',true);*/       
       }
       // End
 

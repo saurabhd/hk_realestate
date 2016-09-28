@@ -2656,6 +2656,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_angefragte_wohnung']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['field_angefragte_wohnung']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_angefragte_wohnung']['delta_offset'] = '0';
   /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
@@ -2682,6 +2683,7 @@ function hk_crm_views_default_views() {
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['field_angefragte_wohnung_1']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_angefragte_wohnung_1']['delta_offset'] = '0';
   /* Field: CRM Core Activity: Participants */
   $handler->display->display_options['fields']['field_activity_participants']['id'] = 'field_activity_participants';

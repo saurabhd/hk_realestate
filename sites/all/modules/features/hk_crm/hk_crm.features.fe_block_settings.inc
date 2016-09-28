@@ -40,7 +40,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -35,
+        'weight' => -48,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -75,7 +75,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -29,
+        'weight' => -42,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -110,13 +110,13 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -30,
+        'weight' => -43,
       ),
       'hk_theme' => array(
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_theme',
-        'weight' => -19,
+        'weight' => -37,
       ),
     ),
     'title' => '<none>',
@@ -145,7 +145,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -25,
+        'weight' => -38,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -180,13 +180,13 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -33,
+        'weight' => -46,
       ),
       'hk_theme' => array(
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_theme',
-        'weight' => -22,
+        'weight' => -40,
       ),
     ),
     'title' => '<none>',
@@ -215,13 +215,13 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -31,
+        'weight' => -44,
       ),
       'hk_theme' => array(
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_theme',
-        'weight' => -20,
+        'weight' => -38,
       ),
     ),
     'title' => '<none>',
@@ -250,7 +250,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -26,
+        'weight' => -39,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -285,7 +285,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -23,
+        'weight' => -36,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -320,13 +320,13 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -34,
+        'weight' => -47,
       ),
       'hk_theme' => array(
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_theme',
-        'weight' => -23,
+        'weight' => -41,
       ),
     ),
     'title' => '<none>',
@@ -355,7 +355,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -27,
+        'weight' => -40,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -390,7 +390,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -28,
+        'weight' => -41,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -425,7 +425,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -24,
+        'weight' => -37,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -460,13 +460,13 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => -32,
+        'weight' => -45,
       ),
       'hk_theme' => array(
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_theme',
-        'weight' => -21,
+        'weight' => -39,
       ),
     ),
     'title' => '<none>',
@@ -541,7 +541,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => 0,
+        'weight' => -35,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -552,6 +552,46 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     ),
     'title' => '',
     'visibility' => 2,
+  );
+
+  $export['hk_custom_crm-custom_saved_search_block'] = array(
+    'cache' => 1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'custom_saved_search_block',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'hk_custom_crm',
+    'node_types' => array(),
+    'pages' => '<?php
+if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empty(arg(3))) {
+  return true;
+} else {
+  return false;
+}',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => 'sidebar_right',
+        'status' => 1,
+        'theme' => 'hk_adminimal',
+        'weight' => -33,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['locale-language'] = array(
@@ -809,7 +849,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'sidebar_right',
         'status' => 1,
         'theme' => 'hk_adminimal',
-        'weight' => 0,
+        'weight' => -34,
       ),
       'hk_theme' => array(
         'region' => '',

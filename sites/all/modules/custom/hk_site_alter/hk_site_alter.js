@@ -19,7 +19,7 @@
         data: {},
         success: function (data) {
           //alert(data);
-          jQuery('#ng-lightbox').html('<div class="lightbox lightbox--plain"><div class="lightbox__overlay"><div class="lightbox__content"><h2 class="lightbox__header">Inquiry</h2><div class="lightbox__body">test</div></div></div></div>');
+          jQuery('#ng-lightbox').html('<div class="lightbox lightbox--plain"><div class="lightbox__overlay"><div class="lightbox__content"><h2 class="lightbox__header">'+Drupal.t('Inquiry')+'</h2><div class="lightbox__body">test</div></div></div></div>');
           jQuery('.lightbox__body').html(jQuery(data).find("#crm-core-profile-entry-form-anfrage").parent().html());
           //jQuery('.lightbox__body #page-title, #ng-lightbox div .lightbox.lightbox--plain').hide();
           jQuery('.lightbox__overlay').click(function() {

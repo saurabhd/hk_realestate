@@ -441,7 +441,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 56,
     ),
   );
 
@@ -523,7 +523,7 @@ function hk_ct_field_default_field_instances() {
         'manualcrop_thumblist' => 0,
       ),
       'type' => 'media_generic',
-      'weight' => 5,
+      'weight' => 55,
     ),
   );
 
@@ -804,23 +804,26 @@ function hk_ct_field_default_field_instances() {
         'file_name' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
-          'value' => '[node:field-object-ref:field_objektid_nunumeric]-[node:field-apart-no]-[node:title_field].[file:ffp-extension-original]',
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
-          'value' => 'objekt/[node:field-object-ref:field_objektid_nunumeric]/[node:field_apart_no]/galerie',
+          'value' => '[file:path]',
         ),
+        'redirect' => 1,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
       'max_filesize' => '3 MB',
       'max_resolution' => '2480x3702',
-      'min_resolution' => '800x1675',
+      'min_resolution' => '',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -828,7 +831,7 @@ function hk_ct_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'manualcrop_crop_info' => 1,
+       'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 0,
         'manualcrop_inline_crop' => 1,
@@ -838,16 +841,16 @@ function hk_ct_field_default_field_instances() {
         'manualcrop_maximize_default_crop_area' => 0,
         'manualcrop_require_cropping' => array(),
         'manualcrop_styles_list' => array(
-          'expos__portrait' => 'expos__portrait',
-          'expose' => 'expose',
-        ),
+        'expos__portrait' => 'expos__portrait',
+        'expose' => 'expose',
+         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -1549,23 +1552,26 @@ function hk_ct_field_default_field_instances() {
         'file_name' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
-          'value' => '[node:field-object-ref:field_objektid_nunumeric]-[node:title_field].[file:ffp-extension-original]',
+          'value' => '[node:field-object-ref:field_objektid_nunumeric]-[node:field_apart_no]-[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
           'value' => 'objekt/[node:field-object-ref:field_objektid_nunumeric]/[node:field_apart_no]/wohnungsbilder',
         ),
+        'redirect' => 1,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
-      'max_filesize' => '3 MB',
+      'max_filesize' => '2 MB',
       'max_resolution' => '2480x3702',
-      'min_resolution' => '800x1675',
+      'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1574,7 +1580,6 @@ function hk_ct_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
           'public' => 'public',
         ),
         'allowed_types' => array(
@@ -1588,7 +1593,7 @@ function hk_ct_field_default_field_instances() {
           'media_default--media_browser_my_files' => 0,
           'upload' => 'upload',
         ),
-        'manualcrop_crop_info' => 1,
+	'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 1,
         'manualcrop_inline_crop' => 0,
@@ -1842,7 +1847,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 9,
     ),
   );
 
@@ -2145,7 +2150,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -2543,7 +2548,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'geofield',
       'settings' => array(),
       'type' => 'geofield_wkt',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -2605,7 +2610,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -2990,7 +2995,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 28,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3108,7 +3113,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'exposekarte' => array(
         'label' => 'hidden',
@@ -3203,7 +3208,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'exposekarte' => array(
         'label' => 'hidden',
@@ -3284,9 +3289,13 @@ function hk_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 40,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 73,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3411,9 +3420,15 @@ function hk_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 38,
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 70,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3485,7 +3500,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3652,7 +3667,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 31,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3819,7 +3834,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3905,7 +3920,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 32,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -3984,7 +3999,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 33,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4069,7 +4084,7 @@ function hk_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 34,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4147,7 +4162,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 1,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4246,7 +4261,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4566,7 +4581,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 27,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4635,7 +4650,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 35,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4711,7 +4726,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 25,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4787,7 +4802,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4863,7 +4878,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -4933,7 +4948,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -5009,7 +5024,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -5157,9 +5172,10 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 41,
+        'type' => 'text_default',
+        'weight' => 74,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -5396,7 +5412,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'exposekarte' => array(
         'label' => 'hidden',
@@ -5474,23 +5490,26 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'file_name' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
-          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+          'value' => '[node:field_objektid_nunumeric]-[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
           'value' => 'objekt/[node:field_objektid_nunumeric]',
         ),
+        'redirect' => 1,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
-      'max_filesize' => '3 MB',
+      'max_filesize' => '2 MB',
       'max_resolution' => '2480x3702',
-      'min_resolution' => '800x1675',
+      'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -5499,7 +5518,6 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
           'public' => 'public',
         ),
         'allowed_types' => array(
@@ -5509,11 +5527,11 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
         ),
-        'manualcrop_crop_info' => 1,
+	'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 1,
         'manualcrop_inline_crop' => 0,
@@ -5667,7 +5685,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -5831,9 +5849,10 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 39,
+        'type' => 'text_default',
+        'weight' => 71,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -6612,7 +6631,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 26,
       ),
       'exposekarte' => array(
         'label' => 'above',
@@ -7509,7 +7528,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'exposekarte' => array(
         'label' => 'above',

@@ -804,22 +804,26 @@ function hk_ct_field_default_field_instances() {
         'file_name' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
-          'value' => '[node:field-object-ref:field_objektid_nunumeric]-[node:field-apart-no]-[node:title_field].[file:ffp-extension-original]',
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
-          'value' => 'objekt/[node:field-object-ref:field_objektid_nunumeric]/[node:field_apart_no]/galerie',
+          'value' => '[file:path]',
         ),
+        'redirect' => 1,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
       'max_filesize' => '3 MB',
       'max_resolution' => '2480x3702',
+      'min_resolution' => '',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -827,7 +831,7 @@ function hk_ct_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'manualcrop_crop_info' => 1,
+       'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 0,
         'manualcrop_inline_crop' => 1,
@@ -837,9 +841,9 @@ function hk_ct_field_default_field_instances() {
         'manualcrop_maximize_default_crop_area' => 0,
         'manualcrop_require_cropping' => array(),
         'manualcrop_styles_list' => array(
-          'expos__portrait' => 'expos__portrait',
-          'expose' => 'expose',
-        ),
+        'expos__portrait' => 'expos__portrait',
+        'expose' => 'expose',
+         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
         'preview_image_style' => 'thumbnail',
@@ -1548,22 +1552,26 @@ function hk_ct_field_default_field_instances() {
         'file_name' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
-          'value' => '[node:field-object-ref:field_objektid_nunumeric]-[node:title_field].[file:ffp-extension-original]',
+          'value' => '[node:field-object-ref:field_objektid_nunumeric]-[node:field_apart_no]-[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
           'value' => 'objekt/[node:field-object-ref:field_objektid_nunumeric]/[node:field_apart_no]/wohnungsbilder',
         ),
+        'redirect' => 1,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
-      'max_filesize' => '3 MB',
+      'max_filesize' => '2 MB',
       'max_resolution' => '2480x3702',
+      'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1572,7 +1580,6 @@ function hk_ct_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
           'public' => 'public',
         ),
         'allowed_types' => array(
@@ -1586,7 +1593,7 @@ function hk_ct_field_default_field_instances() {
           'media_default--media_browser_my_files' => 0,
           'upload' => 'upload',
         ),
-        'manualcrop_crop_info' => 1,
+	'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 1,
         'manualcrop_inline_crop' => 0,
@@ -5483,22 +5490,26 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'file_name' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
-          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+          'value' => '[node:field_objektid_nunumeric]-[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 1,
           ),
           'value' => 'objekt/[node:field_objektid_nunumeric]',
         ),
+        'redirect' => 1,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
-      'max_filesize' => '3 MB',
+      'max_filesize' => '2 MB',
       'max_resolution' => '2480x3702',
+      'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -5507,7 +5518,6 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
           'public' => 'public',
         ),
         'allowed_types' => array(
@@ -5517,11 +5527,11 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
         ),
-        'manualcrop_crop_info' => 1,
+	'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 1,
         'manualcrop_inline_crop' => 0,

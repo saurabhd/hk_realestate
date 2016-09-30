@@ -44,6 +44,12 @@ function hk_site_alter_form_alter(&$form, &$form_state, $form_id) {
     $form['newsletters']['#options'][322] = 'I want to be informed on future offers that might be comparable.';
   }
   */
+
+  if ($form_id == 'objekt_node_form') {
+    $form['field_object_other'][LANGUAGE_NONE][0]['#default_value'] = t($form['field_object_other'][LANGUAGE_NONE][0]['#default_value']);
+  }
+
+
   if($form_id == 'crm_core_profile_entry_form_kontaktformular') {
     $block = block_load('simplenews', '0');
     $block = _block_get_renderable_array(_block_render_blocks(array($block)));

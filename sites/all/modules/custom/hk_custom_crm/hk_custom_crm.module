@@ -101,10 +101,11 @@ function _hk_custom_crm_saved_search_block_content() {
     $string[$key]['id'] = $value->id;
   }
   rsort($string);
+  $count = 0;
   foreach ($string as $key => $value) {
     $query_string = '';
     $row_class = '';
-    if($key == '0') {
+    if($count == 0) {
       $row_class = 'views-row-first';
     }
     if(!empty($value['page']['query']['f'])) {
@@ -118,6 +119,7 @@ function _hk_custom_crm_saved_search_block_content() {
     $contact_cid = $contact_cid[2];
     $arg2 = arg(2);
     if($arg2 == $contact_cid) {
+      $count++;
       $output = $value['page']['path'] . '?' . $query_string;
       $savedSearchPath = $value['page']['path'] . '?' . $query_string;
       $savedSearchBlock .='<tr class="views-row views-row-'.$key.' '.$row_class.'"><td><a href="'.$savedSearchPath.'">'.$value['name'].'</a></td><td><a href="/search-api/saved-search/'.$value['id'].'/disable" class="saved-search-enable waves-effect waves-button waves-classic">disable</a> | <a href="/search-api/saved-search/'.$value['id'].'/edit" class="saved-search-edit waves-effect waves-button waves-classic">edit</a> | <a href="/search-api/saved-search/'.$value['id'].'/delete" class="saved-search-delete waves-effect waves-button waves-classic">delete</a></td></tr>';

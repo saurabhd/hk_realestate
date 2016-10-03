@@ -899,7 +899,7 @@ body {
             table.table-class {
               margin: 0;
               tr.views-row {
-                border-bottom: 1px solid #AAA;
+                border-top: 1px solid #AAA;
                 td {
                     color: #FFF;
                   a {
@@ -912,7 +912,7 @@ body {
                     }
                   }
                 }
-                &.views-row-last {
+                &.views-row-first {
                   border:none;
                 }
               }

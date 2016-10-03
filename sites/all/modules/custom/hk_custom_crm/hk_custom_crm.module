@@ -102,12 +102,10 @@ function _hk_custom_crm_saved_search_block_content() {
   }
   rsort($string);
   foreach ($string as $key => $value) {
-    end($string); 
-    $last_key = key($string);
     $query_string = '';
     $row_class = '';
-    if($last_key == $key) {
-      $row_class = 'views-row-last';
+    if($key == '0') {
+      $row_class = 'views-row-first';
     }
     if(!empty($value['page']['query']['f'])) {
       $fvalue = $value['page']['query']['f'];

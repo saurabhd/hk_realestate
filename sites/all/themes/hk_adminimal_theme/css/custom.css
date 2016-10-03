@@ -1028,7 +1028,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 }
 /* line 901, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class tr.views-row {
-  border-bottom: 1px solid #AAA;
+  border-top: 1px solid #AAA;
 }
 /* line 903, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class tr.views-row td {
@@ -1046,7 +1046,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   text-decoration: none;
 }
 /* line 915, ../sass/custom.scss */
-.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class tr.views-row.views-row-last {
+.page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class tr.views-row.views-row-first {
   border: none;
 }
 /* line 922, ../sass/custom.scss */

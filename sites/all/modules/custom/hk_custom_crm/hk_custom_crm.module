@@ -88,21 +88,27 @@ function _hk_custom_crm_saved_search_content() {
 
 function _hk_custom_crm_saved_search_block_content() {
   $query = db_select('search_api_saved_search', 'sass')
-          ->fields('sass', array('options', 'name'))
+          ->fields('sass', array('options', 'name', 'id'))
           ->execute();
   $results = $query->fetchAll();
   $string = '';
   $output = '';
   $fvalue = '';
-  $savedSearchBlock = '<div id="block-views-saved-searches-block"><div class="view view-saved-searches view-id-last_saved_searches view-display-id-block"><ul class="item-list">';
+  $savedSearchBlock = '<div id="block-views-saved-searches-block"><div class="view view-saved-searches view-id-last_saved_searches view-display-id-block"><table class="table-class">';
   foreach ($results as $key => $value) {
     $string[] = unserialize($value->options);
     $string[$key]['name'] = $value->name;
+    $string[$key]['id'] = $value->id;
   }
   rsort($string);
   foreach ($string as $key => $value) {
-    
+    end($string); 
+    $last_key = key($string);
     $query_string = '';
+    $row_class = '';
+    if($last_key == $key) {
+      $row_class = 'views-row-last';
+    }
     if(!empty($value['page']['query']['f'])) {
       $fvalue = $value['page']['query']['f'];
       foreach ($fvalue as $f_key => $f_value) {
@@ -116,11 +122,11 @@ function _hk_custom_crm_saved_search_block_content() {
     if($arg2 == $contact_cid) {
       $output = $value['page']['path'] . '?' . $query_string;
       $savedSearchPath = $value['page']['path'] . '?' . $query_string;
-      $savedSearchBlock .='<li class="views-row views-row-'.$key.'"><a href="'.$savedSearchPath.'">'.$value['name'].'</a></li>';
+      $savedSearchBlock .='<tr class="views-row views-row-'.$key.' '.$row_class.'"><td><a href="'.$savedSearchPath.'">'.$value['name'].'</a></td><td><a href="/search-api/saved-search/'.$value['id'].'/disable" class="saved-search-enable waves-effect waves-button waves-classic">disable</a> | <a href="/search-api/saved-search/'.$value['id'].'/edit" class="saved-search-edit waves-effect waves-button waves-classic">edit</a> | <a href="/search-api/saved-search/'.$value['id'].'/delete" class="saved-search-delete waves-effect waves-button waves-classic">delete</a></td></tr>';
     }
     //$path[$key]['query_string'] = $value['page']['query']['f'];  
   }
-  $savedSearchBlock .= '</ul></div></div>';
+  $savedSearchBlock .= '</table></div></div>';
   $output = $savedSearchBlock;
   return $output;
 }

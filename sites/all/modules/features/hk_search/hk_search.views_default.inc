@@ -1906,26 +1906,32 @@ function hk_search_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Apartment-List';
   $handler->display->display_options['display_description'] = 'Karte für die Startseite, als Page in die Systemeinstellungen eingetragen.';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'field_object_ref_field_objektid_nunumeric' => 'field_object_ref_field_objektid_nunumeric',
     'field_obj_apartments' => 'field_obj_apartments',
     'field_obj_schattenobjekt' => 'field_obj_schattenobjekt',
+    'nid_1' => 'nid_1',
     'nid' => 'nid',
     'field_apart_no' => 'field_apart_no',
+    'field_object_ref_field_objektid_nunumeric' => 'field_object_ref_field_objektid_nunumeric',
     'field_apart_rooms' => 'field_apart_rooms',
     'field_apart_living_space' => 'field_apart_living_space',
     'title_field' => 'title_field',
     'field_apart_price' => 'field_apart_price',
+    'nothing' => 'nothing',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-    'field_object_ref_field_objektid_nunumeric' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
     'field_obj_apartments' => array(
       'align' => '',
       'separator' => '',
@@ -1938,12 +1944,22 @@ function hk_search_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'nid_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'nid' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_apart_no' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_object_ref_field_objektid_nunumeric' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -1974,7 +1990,13 @@ function hk_search_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -2537,6 +2559,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['field_year_built']['table'] = 'entity_node';
   $handler->display->display_options['fields']['field_year_built']['field'] = 'field_year_built';
   $handler->display->display_options['fields']['field_year_built']['relationship'] = 'field_object_ref';
+  $handler->display->display_options['fields']['field_year_built']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_year_built']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 1,

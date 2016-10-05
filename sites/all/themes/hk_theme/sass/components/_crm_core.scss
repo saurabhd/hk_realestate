@@ -61,8 +61,10 @@
 
 /* Contact form */
 .section-contact, .section-anfrage {
-  fieldset, .field-name-field-activity-notes {
-  max-width: 533px;
+  fieldset,
+  .field-name-field-activity-notes {
+    display: inline-block;
+    max-width: 533px;
   }
   .field-name-field-e-mail {
     float: left;

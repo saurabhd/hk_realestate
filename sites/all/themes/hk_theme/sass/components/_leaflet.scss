@@ -773,6 +773,12 @@ div.hide-submit-processing {
         margin-bottom: 1em;
       }
     }
+    @media screen and (max-width: 480px) {
+      max-width: 280px;
+    }
+    @media screen and (max-width: 360px) {
+      max-width: 250px;
+    }
     @media screen and ($br-tablet) {
       max-width: 550px;
     }
@@ -818,6 +824,9 @@ div.hide-submit-processing {
   line-height: 1.4;
   margin: 0;
   display: table;
+  @media (max-width: 767px) {
+    display: initial;
+  }
   img {
     float: left;
     margin-right: 1em;
@@ -875,6 +884,31 @@ div.hide-submit-processing {
     }
   .views-row-odd .popup-content {
     background: $grey;
+  }
+  .apartment-list-parent {
+    @media (max-width: 992px) {
+      display: inline-block;
+      width: 100%;
+      overflow: auto;
+    }
+    @media (max-width: 767px) {
+      width: 480px;
+    }
+    @media (max-width: 560px) {
+      width: 300px;
+    }
+    @media (max-width: 500px) {
+      width: 290px;
+    }
+    @media (max-width: 480px) {
+      width: 250px;
+    }
+  }
+  .apartment-list-sub-parent {
+    @media (max-width: 992px) {
+      display: inline-block;
+      width: 550px;
+    }
   }
   .grey-shadow-apartment {
     tr {

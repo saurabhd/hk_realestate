@@ -158,6 +158,14 @@ ul {
     word-break: break-all;
   }
 }
+/*Slider image - About Page */
+#cboxPrevious.element-invisible,
+#cboxNext.element-invisible {
+  &:focus {
+    outline: none;
+  }
+}
+
 
 /* ====================================================================================================================
  * RESPONSIVE

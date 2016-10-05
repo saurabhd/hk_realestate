@@ -212,7 +212,7 @@ body.page-search {
     width: 540px;
     margin-left: 0;
     /*margin-left: -270px;*/
-    padding: 3px 13px 12px;
+    padding: 3px 13px 0;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -1176,6 +1176,9 @@ div.hide-submit-processing {
       &:hover {
         background-image: url(../images/redIcon_x_Kreis.png);
         cursor: pointer;
+      }
+      &:focus {
+        outline: none;
       }
     }
   }

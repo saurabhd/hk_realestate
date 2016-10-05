@@ -876,16 +876,26 @@ div.hide-submit-processing {
   .views-row-odd .popup-content {
     background: $grey;
   }
+  .grey-shadow-apartment {
+    tr {
+      .views-field-nothing { width: 7%; }
+      .views-field-field-apart-rooms { width: 12%; }
+      .views-field-field-apart-living-space { width: 18%; }
+      .views-field-field-apart-price { width: 22%; }
+      .views-field-field-apart-lift { width: 8%; }
+      .views-field-field-apart-balcony { width: 13%; }
+      .views-field-field-building-type { width: 20%; }
+    }
+  }
   .shadow-apartment {
     margin: 0;
-    thead {
-      tr {
-        th{
-          &:nth-child(1){
-            width: 10%;
-          }
-        }
-      }
+    tr {
+      .views-field-nid-1 { width: 7%; }
+      .views-field-field-object-ref-field-objektid-nunumeric { width: 28%; }
+      .views-field-field-apart-rooms { width: 12%; }
+      .views-field-field-apart-living-space { width: 18%; }
+      .views-field-field-apart-price { width: 22%; }
+      .views-field-nothing { width: 13%; }
     }
     tbody {
       border-top: none;

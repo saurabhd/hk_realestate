@@ -50,7 +50,7 @@ function hk_ct_field_group_info() {
   $field_group->parent_name = 'group_text';
   $field_group->data = array(
     'label' => 'Akkordeon',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'group_lage',
     ),
@@ -110,14 +110,14 @@ function hk_ct_field_group_info() {
     'label' => 'Objektverwaltung',
     'weight' => '7',
     'children' => array(
-      0 => 'field_obj_verkaeufer',
-      1 => 'field_ansprechpartner',
-      2 => 'field_obj_kond_acquise',
-      3 => 'field_obj_gemeinschaftsgeschaeft',
-      4 => 'field_obj_konditionen_tipp',
-      5 => 'field_obj_tippgeber',
-      6 => 'field_obj_kond_gemeingesch',
-      7 => 'field_obj_acquise',
+      0 => 'field_ansprechpartner',
+      1 => 'field_obj_verkaeufer',
+      2 => 'field_obj_tippgeber',
+      3 => 'field_obj_konditionen_tipp',
+      4 => 'field_obj_kond_gemeingesch',
+      5 => 'field_obj_gemeinschaftsgeschaeft',
+      6 => 'field_obj_acquise',
+      7 => 'field_obj_kond_acquise',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -144,7 +144,7 @@ function hk_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Veröffentlichen',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -288,6 +288,7 @@ function hk_ct_field_group_info() {
       6 => 'field_apart_maint_reserve_value',
       7 => 'field_apart_alloc_incident_costs',
       8 => 'field_apart_nalloc_incid_cost',
+      9 => 'field__apartment_incidental_cost',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -360,6 +361,8 @@ function hk_ct_field_group_info() {
       7 => 'field_obj_enev_haustyp',
       8 => 'field_obj_enev_file',
       9 => 'field_obj_enev_consumption_value',
+      10 => 'field_building_type',
+      11 => 'field_year',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -466,8 +469,6 @@ function hk_ct_field_group_info() {
       7 => 'field_status_quo',
       8 => 'field_apart_balcony',
       9 => 'field_apart_lift',
-      10 => 'field_building_type',
-      11 => 'field_apart_built_year',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -605,7 +606,7 @@ function hk_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Haus',
-    'weight' => '37',
+    'weight' => '35',
     'children' => array(
       0 => 'field_object_desc_commercial',
       1 => 'field_object_description',
@@ -904,7 +905,7 @@ function hk_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Merkmale',
-    'weight' => '14',
+    'weight' => '13',
     'children' => array(
       0 => 'field_heating_type',
       1 => 'field_rent_commission',
@@ -1009,8 +1010,8 @@ function hk_ct_field_group_info() {
       0 => 'field_address',
       1 => 'field_bezirk',
       2 => 'field_objekt_wkt',
-      3 => 'field_address_shadow_object',
-      4 => 'field_obj_schattenobjekt',
+      3 => 'field_obj_schattenobjekt',
+      4 => 'field_address_shadow_object',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -1097,7 +1098,7 @@ function hk_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Sonstiges',
-    'weight' => '38',
+    'weight' => '36',
     'children' => array(
       0 => 'field_object_other',
     ),
@@ -1206,7 +1207,7 @@ function hk_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Text',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
       0 => 'field_object_txt_map_popup',
       1 => 'group_akkordeon',

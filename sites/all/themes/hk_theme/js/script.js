@@ -246,7 +246,7 @@
         jQuery('.ui-dialog').slideToggle();
       });
       jQuery(".home-form-wrap .ui-dialog-titlebar-close").on("click", function() {
-        jQuery(this).parent().parent('.ui-dialog').toggleClass('ui-dialog-show');
+        jQuery(this).parent().parent('.ui-dialog').slideUp();
       });
       jQuery('.home-form-wrap').click(function(e) {
         e.stopPropagation();
@@ -255,21 +255,16 @@
       // Search Slide toggle
       jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
         e.preventDefault();
-        jQuery('.ui-dialog').slideToggle();
-        jQuery('#search').slideToggle();
+        jQuery('.front .ui-dialog').slideToggle();
+        jQuery('.not-front #search').slideToggle();
       });
       if(jQuery(window).width() < 767) {
-        jQuery('.ui-dialog').hide();
-        jQuery('#search').hide();       
+        jQuery('.front .ui-dialog').hide();
+        jQuery('.not-front #search').hide();       
       }
       // Phone icon tooltip toggle
       jQuery("#block-menu-menu-service-menu ul.menu li .icon-hk-icon-telephone").on("click", function(e) {
         jQuery('.menu-tooltip').toggle();
-      });
-
-      jQuery("#block-menu-menu-service-menu ul.menu li.last a").on("click", function(e) {
-        e.preventDefault();
-        //jQuery('#search.region-search').slideToggle();
       });
       // end
 

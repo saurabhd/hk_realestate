@@ -416,6 +416,8 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field__apartment_incidental_cost']['id'] = 'field__apartment_incidental_cost';
   $handler->display->display_options['fields']['field__apartment_incidental_cost']['table'] = 'field_data_field__apartment_incidental_cost';
   $handler->display->display_options['fields']['field__apartment_incidental_cost']['field'] = 'field__apartment_incidental_cost';
+  $handler->display->display_options['fields']['field__apartment_incidental_cost']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field__apartment_incidental_cost']['alter']['text'] = '[field__apartment_incidental_cost] $/month';
   $handler->display->display_options['fields']['field__apartment_incidental_cost']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Panel-Ansichten';
 

@@ -53,7 +53,7 @@ body.page-search {
   left: 0;
   right: 0;
   bottom: 0;
-  height: auto !important;
+  /*height: auto !important;*/
 }
 .view-apartment,
 .view-mode-wohn_und_geschaeftshaus,
@@ -2100,7 +2100,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 
 /* Map bar */
 .leaflet-control-scale-line {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* Dropdown icon */

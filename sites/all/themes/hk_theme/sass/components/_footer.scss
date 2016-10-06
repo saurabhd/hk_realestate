@@ -5,6 +5,11 @@
     position: absolute;
   }
 }
+.front .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 .footer {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 101;

@@ -1007,13 +1007,32 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
     }
 
     $features = array();
+    $objects = $unique_objects = $apart_group = array();
+    $object_id = $prev_objectid = '';
+    $flag = 1;    
     foreach ($locations as $location) {
+      //if(!empty($location->random_displacement)) {
+          $apart_id = $location->id;
+          $apartment = node_load($apart_id);
+          $object_id = $apartment->field_object_ref[LANGUAGE_NONE][0]['target_id'];
+          $objects[] = $object_id;  
+          $apart_group[$object_id]['id'][] = $apart_id;
+          if(!empty($location->random_displacement)) {
+            $apart_group[$object_id]['shadow'][] = $apart_id; 
+          } else {
+            $apart_group[$object_id]['non-shadow'][] = $apart_id; 
+          }
+          //sort($apart_group);
+          //$unique_objects = array_unique($objects);
+      //}
       $feature = array();
+      
       if (isset($location->latitude) || isset($location->lat)) {
         $feature['type'] = 'point';
         $feature['lat'] = isset($location->latitude)  ? $location->latitude  : $location->lat;
         $feature['lon'] = isset($location->longitude) ? $location->longitude : $location->lon;
-        if (!empty($location->random_displacement)) {
+        if (!empty($location->random_displacement)) {         
+          if($apart_group[$object_id]['shadow'][0] == $apart_id && count($apart_group[$object_id]['id']) != count($apart_group[$object_id]['shadow'])) {
             $d = $location->random_displacement * 1000;
             ip_geoloc_add_random_displacement($feature, $d);
             $circle = array(
@@ -1030,6 +1049,7 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
               ),
             );
             $features[] = $circle;
+          }  
         }
       }
       elseif (isset($location->component)) {
@@ -1138,7 +1158,6 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
       $feature['label'] = '';
       $features[] = $feature;
     }
- 
     if (isset($visitor_location['latitude'])) {
         if ($visitor_marker_color != 'none') {
         // See leaflet/README.txt for examples of Leaflet "features"

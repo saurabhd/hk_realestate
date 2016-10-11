@@ -25,6 +25,6 @@
 <?php 
   $cost = rtrim($output," €/month");
   if($cost >= 1) {
-    print number_format($cost, 0,',', ' ').' '.ltrim($output, $cost);
+    print $output;
   }
 ?>

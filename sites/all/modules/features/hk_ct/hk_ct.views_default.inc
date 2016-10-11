@@ -412,7 +412,7 @@ function hk_ct_views_default_views() {
     'scale' => '0',
     'prefix_suffix' => 1,
   );
-  /* Field: Content:  Apartment Incidental Cost */
+  /* Field: Content: Incidental Cost */
   $handler->display->display_options['fields']['field__apartment_incidental_cost']['id'] = 'field__apartment_incidental_cost';
   $handler->display->display_options['fields']['field__apartment_incidental_cost']['table'] = 'field_data_field__apartment_incidental_cost';
   $handler->display->display_options['fields']['field__apartment_incidental_cost']['field'] = 'field__apartment_incidental_cost';

@@ -76,7 +76,7 @@ function hk_ct_field_default_field_bases() {
         'data_size' => 'normal',
         'data_type' => 'varchar',
       ),
-      'display_format' => '$display_output = $entity_field_item[\'value\'];',
+      'display_format' => '$display_output = t($entity_field_item[\'value\']);',
       'entity_translation_sync' => FALSE,
       'recalculate' => 0,
       'store' => 1,

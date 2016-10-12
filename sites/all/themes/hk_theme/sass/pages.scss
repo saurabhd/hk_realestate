@@ -106,7 +106,9 @@ body {
     padding: 0;
   }
 }
-
+@media ( max-width: 1024px) {
+  .front div.messages { margin: 1em 0 !important; }
+}
 div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
   margin: 1.5em 0; /* Drupal core uses "6px 0" margin */
 

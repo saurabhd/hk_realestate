@@ -9,6 +9,10 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  @media (max-width: 768px) {
+    position: fixed !important;
+    bottom: 0;
+  } 
 }
 .footer {
     background-color: rgba(0, 0, 0, 0.5);

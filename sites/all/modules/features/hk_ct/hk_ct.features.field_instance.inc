@@ -39,7 +39,7 @@ function hk_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field__apartment_incidental_cost',
-    'label' => ' Apartment Incidental Cost',
+    'label' => 'Incidental Cost',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -8592,7 +8592,6 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
 
   // Translatables
   // Included for use with string extractors like potx.
-  t(' Apartment Incidental Cost');
   t('3 Großbuchstaben plus Hausnummer');
   t('A <em>page</em>, similar in form to a <em>story</em>, is a simple method for creating and displaying information that rarely changes, such as an "About us" section of a website. By default, a <em>page</em> entry does not allow visitor comments and is not featured on the site\'s initial home page.');
   t('ACHTUNG! Nur für Wohn-und-Geschäftshäuser verwenden, sonst gehört der Grundriss immer zur zugehörigen Wohnung. Dieses Feld lässt sich noch nicht verbergen, wenn es nicht relevant ist, also bitte aufpassen.');
@@ -8645,6 +8644,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
   t('House description');
   t('House description freehold apartments');
   t('House type');
+  t('Incidental Cost');
   t('Konditionen Acquise');
   t('Konditionen Gemeinschaftsgeschäft');
   t('Konditionen Tipp');

@@ -926,12 +926,24 @@ div.hide-submit-processing {
       .views-field-field-apart-living-space { width: 99px; }
       .views-field-field-apart-price { width: 121px; }
       .views-field-field-apart-lift { width: 49px; }
-      .views-field-field-apart-balcony { width: 49px; }
-      .views-field-field-building-type { width: 95px; }
+      .views-field-field-apart-balcony { width: 60px; }
+      .views-field-field-building-type {
+        width: 95px;
+        word-break: break-all;
+      }
+    }
+  }
+  .grey-show-table-content {
+    width: 542px !important;
+    tr {
+      .views-field-field-building-type {
+        padding-left: 17px;
+      }
     }
   }
   .shadow-apartment {
     display: inline-block;
+    width: 533px;
     margin: 0;
     tr {
       .views-field-nid-1 { width: 38px; }

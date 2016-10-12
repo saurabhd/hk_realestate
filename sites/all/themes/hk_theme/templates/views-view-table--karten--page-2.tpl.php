@@ -38,7 +38,7 @@
         <?php endif; ?>
     </table>
     <div class="map-table-parent">
-      <table <?php if ($classes) { print 'class="'. $classes . ' shadow-apartment" '; } ?><?php print $attributes; ?>>
+      <table <?php if ($classes) { print 'class="'. $classes . ' shadow-apartment grey-shadow-apartment grey-show-table-content" '; } ?><?php print $attributes; ?>>
           <tbody>
           <?php foreach ($rows as $row_count => $row): ?>
               <tr <?php if ($row_classes[$row_count]) { print 'class="' . implode(' ', $row_classes[$row_count]) .'"';  } ?>>

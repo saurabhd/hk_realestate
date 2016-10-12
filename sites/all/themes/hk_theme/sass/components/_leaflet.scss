@@ -928,16 +928,16 @@ div.hide-submit-processing {
       .views-field-field-apart-lift { width: 49px; }
       .views-field-field-apart-balcony { width: 60px; }
       .views-field-field-building-type {
-        width: 95px;
+        width: 99px;
         word-break: break-all;
       }
     }
   }
   .grey-show-table-content {
-    width: 542px !important;
+    width: 544px !important;
     tr {
       .views-field-field-building-type {
-        padding-left: 17px;
+        padding-left: 21px;
       }
     }
   }
@@ -959,10 +959,11 @@ div.hide-submit-processing {
     tr {
       border-bottom: none;
       th {
+        padding: 3px 12px;
         border-bottom: none;
       }
       td {
-          padding: 0.5em 1em;
+          padding: 3px 12px;
       }
     }
   }

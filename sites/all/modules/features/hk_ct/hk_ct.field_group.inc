@@ -288,6 +288,7 @@ function hk_ct_field_group_info() {
       6 => 'field_apart_maint_reserve_value',
       7 => 'field_apart_alloc_incident_costs',
       8 => 'field_apart_nalloc_incid_cost',
+      9 => 'field__apartment_incidental_cost',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

@@ -889,6 +889,36 @@ body {
           display: inline-block;
           width: 100%;
         }
+        #block-hk-custom-crm-custom-saved-search-block {
+          #block-views-saved-searches-block {
+            border: 1px solid #AAAAAA;
+            -webkit-border-radius: 4px;
+               -moz-border-radius: 4px;
+                    border-radius: 4px;
+            margin-top: 15px;
+            table.table-class {
+              margin: 0;
+              tr.views-row {
+                border-top: 1px solid #AAA;
+                td {
+                    color: #FFF;
+                  a {
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 15px;
+                    font-family: 'Neue Helvetica W01', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+                    padding:5px 0;
+                    &:hover {
+                      text-decoration:none;
+                    }
+                  }
+                }
+                &.views-row-first {
+                  border:none;
+                }
+              }
+            }
+          }
+        }
         a.select2-choice {
           float: left;
           height: 45px;

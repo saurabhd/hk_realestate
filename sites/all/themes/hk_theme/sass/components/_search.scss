@@ -22,7 +22,13 @@
   border-width: 0 2px 2px;
   border-color: $primary;
 }
+.section-kontakt {
+  .select2-drop-active {
+    width: 275px !important;
+  }
+}
 .select2-drop.select2-drop-above.select2-drop-active {
+  width: 275px !important;
   border-top: 2px solid $primary;
 }
 .select2-chosen {

@@ -191,7 +191,7 @@ function crm_core_profile_new_form($form, &$form_state, $profile, $clone = FALSE
     '#type' => 'checkbox',
     '#title' => t('Enabled'),
     '#description' => t('Check this box to enable the profile. Disabling a profile makes it unavailable for use.'),
-    '#default_value' => empty($profile->status) ? FALSE : $profile->status,
+    '#default_value' => empty($form_state['is_new']) ? $profile->status : TRUE,
   );
 
   $form['entities'] = array(
@@ -251,7 +251,7 @@ function crm_core_profile_new_form($form, &$form_state, $profile, $clone = FALSE
         if (isset($entity_info['edit_callback'])) {
           // If there is an edit callback for this form item, use that and add
           // stuff to the form.
-          $entity_handler->$entity_info['edit_callback']($form, $profile, $entity_handler, $entity_info, $entity_label);
+          $entity_handler->{$entity_info['edit_callback']}($form, $profile, $entity_handler, $entity_info, $entity_label);
         }
       }
 
@@ -317,10 +317,6 @@ function crm_core_profile_new_form($form, &$form_state, $profile, $clone = FALSE
       }
     }
   }
-
-  $form['#attached']['js'] = array(
-    drupal_get_path('module', 'crm_core_profile') . '/js/profile_edit.js',
-  );
 
   $is_new = $form['is_new']['#value'];
   $form['actions'] = array('#type' => 'actions');

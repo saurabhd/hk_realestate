@@ -31,9 +31,9 @@ files[] = includes/entity_handlers/CRMCoreActivityHandler.inc
 files[] = includes/views/views_handler_field_crm_core_profile_page_path.inc
 files[] = includes/views/views_handler_field_crm_core_profile_page_redirect.inc
 
-; Information added by Drupal.org packaging script on 2014-11-14
-version = "7.x-1.0-beta10"
+; Information added by Drupal.org packaging script on 2016-09-04
+version = "7.x-1.0-beta11"
 core = "7.x"
 project = "crm_core_profile"
-datestamp = "1415994214"
+datestamp = "1472965157"
 

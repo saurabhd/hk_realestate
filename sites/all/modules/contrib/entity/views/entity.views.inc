@@ -173,6 +173,7 @@ function entity_views_table_definition($type, $exclude = TRUE) {
  * @see entity_views_table_definition()
  */
 function entity_views_field_definition($field, array $property_info, array &$table, $title_prefix = '') {
+  if (!isset($property_info)) return;
   $additional = array();
   $additional_field = array();
 
@@ -601,6 +602,28 @@ class EntityDefaultViewsController {
           'argument' => array(
             'real field' => $views_field_name,
             'handler' => 'views_handler_argument_date',
+          ),
+        );
+      break;
+
+      case 'duration':
+        $return += $description + array(
+          'field' => array(
+            'real field' => $views_field_name,
+            'handler' => 'entity_views_handler_field_duration',
+            'click sortable' => TRUE,
+           ),
+          'sort' => array(
+            'real field' => $views_field_name,
+            'handler' => 'views_handler_sort',
+          ),
+          'filter' => array(
+            'real field' => $views_field_name,
+            'handler' => 'views_handler_filter_numeric',
+          ),
+          'argument' => array(
+            'real field' => $views_field_name,
+            'handler' => 'views_handler_argument_numeric',
           ),
         );
       break;

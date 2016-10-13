@@ -195,7 +195,6 @@ class EntityReference_SelectionHandler_Generic implements EntityReference_Select
       $entity_type = $this->field['settings']['target_type'];
       $query = $this->buildEntityFieldQuery();
       $query->entityCondition('entity_id', $ids, 'IN');
-      $query->addTag('entityreference_validate');
       $result = $query->execute();
       if (!empty($result[$entity_type])) {
         return array_keys($result[$entity_type]);
@@ -306,12 +305,7 @@ class EntityReference_SelectionHandler_Generic implements EntityReference_Select
    */
   public function getLabel($entity) {
     $target_type = $this->field['settings']['target_type'];
-    if (entity_access('view', $target_type, $entity) !== false) {
-      return entity_label($target_type, $entity);
-    }
-    else {
-      return t('- Restricted access -');
-    }
+    return entity_access('view', $target_type, $entity) ? entity_label($target_type, $entity) : t('- Restricted access -');
   }
 
   /**
@@ -365,13 +359,9 @@ class EntityReference_SelectionHandler_Generic_node extends EntityReference_Sele
     // 'unpublished'. We need to do that as long as there are no access control
     // modules in use on the site. As long as one access control module is there,
     // it is supposed to handle this check.
-
-    // Dont do this on validate
-    if(!$query->hasTag('entityreference_validate')) {
-      if (!user_access('bypass node access') && !count(module_implements('node_grants'))) {
-        $base_table = $this->ensureBaseTable($query);
-        $query->condition("$base_table.status", NODE_PUBLISHED);
-      }
+    if (!user_access('bypass node access') && !count(module_implements('node_grants'))) {
+      $base_table = $this->ensureBaseTable($query);
+      $query->condition("$base_table.status", NODE_PUBLISHED);
     }
   }
 }

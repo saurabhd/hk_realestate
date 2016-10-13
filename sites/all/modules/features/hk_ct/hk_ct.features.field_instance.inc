@@ -10,6 +10,50 @@
 function hk_ct_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-apartment-field__apartment_incidental_cost'.
+  $field_instances['node-apartment-field__apartment_incidental_cost'] = array(
+    'bundle' => 'apartment',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed_field_plain',
+        'weight' => 56,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field__apartment_incidental_cost',
+    'label' => 'Incidental Cost',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'computed_field',
+      'settings' => array(),
+      'type' => 'computed',
+      'weight' => 45,
+    ),
+  );
+
   // Exported field_instance: 'node-apartment-field_apart_alloc_incident_costs'.
   $field_instances['node-apartment-field_apart_alloc_incident_costs'] = array(
     'bundle' => 'apartment',
@@ -110,7 +154,7 @@ function hk_ct_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 67,
+      'weight' => 76,
     ),
   );
 
@@ -164,7 +208,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 59,
+      'weight' => 68,
     ),
   );
 
@@ -218,7 +262,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 65,
+      'weight' => 74,
     ),
   );
 
@@ -284,7 +328,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 50,
+      'weight' => 51,
     ),
   );
 
@@ -581,7 +625,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 64,
+      'weight' => 73,
     ),
   );
 
@@ -954,7 +998,7 @@ function hk_ct_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 68,
+      'weight' => 77,
     ),
   );
 
@@ -1142,7 +1186,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 46,
+      'weight' => 47,
     ),
   );
 
@@ -1200,7 +1244,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 45,
+      'weight' => 46,
     ),
   );
 
@@ -1308,7 +1352,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 47,
+      'weight' => 48,
     ),
   );
 
@@ -1735,7 +1779,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 49,
+      'weight' => 50,
     ),
   );
 
@@ -1789,7 +1833,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 48,
+      'weight' => 49,
     ),
   );
 
@@ -1967,7 +2011,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 60,
+      'weight' => 69,
     ),
   );
 
@@ -2028,7 +2072,7 @@ function hk_ct_field_default_field_instances() {
         'use_select2' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 61,
+      'weight' => 70,
     ),
   );
 
@@ -2093,7 +2137,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 66,
+      'weight' => 75,
     ),
   );
 
@@ -2270,7 +2314,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 63,
+      'weight' => 72,
     ),
   );
 
@@ -2708,7 +2752,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 62,
+      'weight' => 71,
     ),
   );
 
@@ -8600,6 +8644,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
   t('House description');
   t('House description freehold apartments');
   t('House type');
+  t('Incidental Cost');
   t('Konditionen Acquise');
   t('Konditionen Gemeinschaftsgeschäft');
   t('Konditionen Tipp');

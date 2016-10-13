@@ -107,7 +107,7 @@ interface EntityAPIControllerInterface extends DrupalEntityControllerInterface {
    *   content language of the current request.
    * @param $page
    *   (optional) If set will control if the entity is rendered: if TRUE
-   *   the entity will be rendered without its title, so that it can be embeded
+   *   the entity will be rendered without its title, so that it can be embedded
    *   in another context. If FALSE the entity will be displayed with its title
    *   in a mode suitable for lists.
    *   If unset, the page mode will be enabled if the current path is the URI
@@ -217,7 +217,6 @@ class EntityAPIController extends DrupalDefaultEntityController implements Entit
     // and we need to know if it's empty for this reason to avoid querying the
     // database when all requested entities are loaded from cache.
     $passed_ids = array();
-
     if (!empty($ids)) {
       foreach ($ids as $key => $value) {
         if (is_string($value) || is_numeric($value)) {
@@ -228,7 +227,6 @@ class EntityAPIController extends DrupalDefaultEntityController implements Entit
     if (empty($passed_ids)) {
       $passed_ids = FALSE;
     }
-
     // Try to load entities from the static cache.
     if ($this->cache && !$revision_id) {
       $entities = $this->cacheGet($ids, $conditions);

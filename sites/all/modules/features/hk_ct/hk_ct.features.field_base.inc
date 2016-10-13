@@ -54,6 +54,37 @@ function hk_ct_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'field__apartment_incidental_cost'.
+  $field_bases['field__apartment_incidental_cost'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field__apartment_incidental_cost',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'computed_field',
+    'settings' => array(
+      'code' => '$entity_field[0][\'value\'] = $entity->field_apart_alloc_incident_costs[LANGUAGE_NONE][0][\'value\'] + $entity->field_apart_nalloc_incid_cost[LANGUAGE_NONE][0][\'value\'];;',
+      'database' => array(
+        'data_default' => '',
+        'data_index' => 0,
+        'data_length' => 32,
+        'data_not_NULL' => 0,
+        'data_precision' => 10,
+        'data_scale' => 2,
+        'data_size' => 'normal',
+        'data_type' => 'varchar',
+      ),
+      'display_format' => '$display_output = t($entity_field_item[\'value\']);',
+      'entity_translation_sync' => FALSE,
+      'recalculate' => 0,
+      'store' => 1,
+    ),
+    'translatable' => 0,
+    'type' => 'computed',
+  );
+
   // Exported field_base: 'field_address'.
   $field_bases['field_address'] = array(
     'active' => 1,

@@ -185,9 +185,9 @@ function name_render_component($value, $component_key, $markup, $modifier = NULL
 
   }
   if ($markup) {
-    return '<span class="' . check_plain($component_key) . '">' . check_plain($value) . '</span>';
+    return '<span class="' . check_plain($component_key) . '">' . t(check_plain($value)) . '</span>';
   }
-  return $value;
+  return t($value);
 }
 
 /**

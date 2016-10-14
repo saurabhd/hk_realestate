@@ -1,9 +1,16 @@
 .field-name-field-apart-floor-plan img {
+  margin-top: 30px;
   margin-right: 0;
   margin-left: 15px;
   /*margin: 1.4em 0 0 10px;*/
   width: 90.65%;
   height: 90.65%;
+  @media (max-width: 1024px) {
+    width: 70%;
+    height: 50%;
+    margin-top: 25px;
+    margin-left: 10px;
+  }
 }
 .media-icon--lightbox {
   z-index: 9;

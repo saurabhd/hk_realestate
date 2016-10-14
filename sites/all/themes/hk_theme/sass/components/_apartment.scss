@@ -300,6 +300,9 @@ h1.page-title {
   float: left;
   width: 128px;
   margin: 0;
+  @media (max-width: 1024px) {
+    width: 77px;
+  }
   > a {
     display:none;
   }

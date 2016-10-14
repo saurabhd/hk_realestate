@@ -177,11 +177,15 @@
     display: none;
   }
   .block-facetapi {
-    width: 18%;
-    min-width: 130px;
-    margin-right: 2%;
+    width: calc(20% - 16px)!important;
+    /*min-width: 130px;*/
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
+
 /* disable widget overlay */
 .ui-widget-overlay {
     position: static !important;

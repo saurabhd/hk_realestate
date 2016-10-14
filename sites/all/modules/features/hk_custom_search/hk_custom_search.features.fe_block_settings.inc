@@ -35,7 +35,8 @@ about-us
 about-us/*
 contact
 contact/*
-oeffnungszeiten',
+oeffnungszeiten
+node/*',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -84,7 +85,8 @@ about-us
 about-us/*
 contact
 contact/*
-oeffnungszeiten',
+oeffnungszeiten
+node/*',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -133,7 +135,8 @@ about-us
 about-us/*
 contact
 contact/*
-oeffnungszeiten',
+oeffnungszeiten
+node/*',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -182,7 +185,8 @@ about-us
 about-us/*
 contact
 contact/*
-oeffnungszeiten',
+oeffnungszeiten
+node/*',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -231,7 +235,8 @@ about-us
 about-us/*
 contact
 contact/*
-oeffnungszeiten',
+oeffnungszeiten
+node/*',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(

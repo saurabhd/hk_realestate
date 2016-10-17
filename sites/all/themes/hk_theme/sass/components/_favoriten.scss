@@ -63,6 +63,12 @@
   background: sprite($sprite, Icon_Favorite_active) no-repeat;*/
   @extend .sprite-Icon_Favorite_aktiv;
 }
+.flag-outer-merken .flag-merken a.flag-action {
+  background-position: 0 -92px;
+}
+.flag-outer-merken .flag-merken a.unflag-action {
+  background-position: 0 -142px;
+}
 a.fav_active i, .favorite i.icon-hk-icon-favorite {
   color: $primary;
 }

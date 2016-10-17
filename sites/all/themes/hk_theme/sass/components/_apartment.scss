@@ -297,17 +297,25 @@ h1.page-title {
   }
 }
 .field-name-field-apart-floor-plan {
+  position: relative;
   float: left;
-  width: 128px;
+  height: auto;
+  width: 100%;
   margin: 0;
   @media (max-width: 1024px) {
-    width: 77px;
+    /*width: 77px;*/
   }
   > a {
     display:none;
   }
   > a:first-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: left;
     display: block;
+    width: 90px;
+    margin: -170px 0 0;
   }
 }
 .field-name-thumbslider {

@@ -244,6 +244,39 @@ h1.page-title {
     }
   }
 }
+.node-type-apartment {
+  .custom-apartment-address {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: .2em;
+    border-bottom: 2px solid #c61c2c;
+    h1#page-title {
+      margin: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .apartaddress {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      width: auto;
+      margin-top: 20px;
+      @media (max-width: 767px) {
+        position: relative;
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+  }
+  .node-apartment {
+    .group-header {
+      margin-bottom: 0;
+    }
+  }
+}
 .file img {
   padding-top: 5px;
   /*margin-right: .3em;*/
@@ -298,12 +331,16 @@ h1.page-title {
 }
 .field-name-field-apart-floor-plan {
   position: relative;
-  float: left;
+  float: right;
   height: auto;
-  width: 100%;
-  margin: 0;
+  /*width: 100%;*/
+  width: 15%;
+  margin: 0 0 0 2%;
   @media (max-width: 1024px) {
     /*width: 77px;*/
+  }
+  @media (max-width: 480px) {
+    width: 23%;
   }
   > a {
     display:none;
@@ -312,10 +349,22 @@ h1.page-title {
     position: absolute;
     top: 0;
     right: 0;
+    bottom: 0;
     left: left;
     display: block;
-    width: 90px;
-    margin: -170px 0 0;
+    /*width: 90px;*/
+    width: 100%;
+    height: auto;
+    /*margin: -170px 0 0;*/
+    margin: 20px 0 0;
+    @media (max-width: 850px) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    @media (max-width: 480px) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 }
 .field-name-thumbslider {

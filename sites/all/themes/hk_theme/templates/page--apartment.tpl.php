@@ -47,18 +47,20 @@
         <?php if ($action_links): ?>
           <ul class="action-links"><?php print render($action_links); ?></ul>
         <?php endif; ?>
-        <?php print render($title_prefix); ?>
-        <?php if ($title): ?>
-          <h1 class="title" id="page-title"><?php print $title; ?></h1>
-        <?php endif; ?>
-        <?php print render($title_suffix); ?>
-        <?php
-        // $block = module_invoke('views', 'block_view', '-exp-karten-kaufen');
-        // print render($block['content']);
-	$arg1 = arg(1);
-	$block = views_embed_view('apartment', 'objektadresse', $arg1);          
-	print $block;
-        ?>
+        <div class="custom-apartment-address">
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
+            <h1 class="title" id="page-title"><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
+          <?php
+          // $block = module_invoke('views', 'block_view', '-exp-karten-kaufen');
+          // print render($block['content']);
+        	$arg1 = arg(1);
+        	$block = views_embed_view('apartment', 'objektadresse', $arg1);          
+        	print $block;
+          ?>
+        </div>
         <?php print render($page['search']); ?>
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>

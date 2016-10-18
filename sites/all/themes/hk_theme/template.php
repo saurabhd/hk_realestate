@@ -11,6 +11,14 @@ function hk_theme_preprocess_html(&$variables, $hook) {
   $variables['path_to_bear_skin'] = drupal_get_path('theme', 'hk_theme');
 }
 
+function hk_theme_preprocess_page(&$variables) {
+  if (isset($variables['node']->type)) {
+    // If the content type's machine name is "my_machine_name" the file
+    // name will be "page--my-machine-name.tpl.php".
+    $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
+  }
+}
+
 /**
  * Implements theme_links().
  * Enables sub-menu item display for main menu.

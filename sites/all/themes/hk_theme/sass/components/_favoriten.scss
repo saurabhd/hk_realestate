@@ -56,6 +56,7 @@
   position: absolute;
   top: -7px;
   right: -7px;
+  background-image: url("../images/sprite-sc8b09672a3.png");
 }
 .flag-merken a.flagged, a.unflag-action {
   /*background: url(../images/Icon_Favorite_active.png) no-repeat;*/
@@ -64,10 +65,12 @@
   @extend .sprite-Icon_Favorite_aktiv;
 }
 .flag-outer-merken .flag-merken a.flag-action {
-  background-position: 0 -92px;
+  /*background-position: 0 -92px;*/
+  background-position: 0 -294px;
 }
 .flag-outer-merken .flag-merken a.unflag-action {
-  background-position: 0 -142px;
+  /*background-position: 0 -142px;*/
+  background-position: 0 -344px;
 }
 a.fav_active i, .favorite i.icon-hk-icon-favorite {
   color: $primary;

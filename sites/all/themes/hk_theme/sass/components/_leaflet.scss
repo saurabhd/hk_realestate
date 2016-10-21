@@ -526,7 +526,7 @@ div.hide-submit-processing {
       top: 0 !important;
       left: 0 !important;
       display: none;
-      width: 80% !important;
+      width: 75% !important;
       margin-top: 170px;
       margin-left: 10%;
       #search.ui-dialog-content {
@@ -618,6 +618,11 @@ div.hide-submit-processing {
     max-width: 70% !important;
     margin-left: 14% !important;
     width: 640px inline-block;*/
+  }
+  .front {
+    .ui-dialog {
+      width: 70% !important;
+    }
   }
   .home-form-wrap {
     #search {

@@ -846,6 +846,12 @@ div.hide-submit-processing {
     float: left;
     margin-right: 1em;
   }
+  picture {
+    img {
+      max-height: 300px;
+      max-width: 300px;
+    }
+  }
   h2 {
     margin-right: 1em;
     display: none;
@@ -867,7 +873,7 @@ div.hide-submit-processing {
     width: 100%;
     .map-table-parent {
       max-height: 250px;
-      overflow-y:auto; 
+      /*overflow-y:auto;*/
     }
   }
   .wo {

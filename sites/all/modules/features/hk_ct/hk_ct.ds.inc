@@ -928,21 +928,19 @@ function hk_ct_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_building_type',
-        1 => 'group_text',
+        0 => 'group_text',
+        1 => 'field_object_txt_map_popup',
         2 => 'wohnungsliste',
-        3 => 'field_object_txt_map_popup',
-        4 => 'field_objekt_wkt',
-        5 => 'group_akkordeon',
-        6 => 'field_object_location',
-        7 => 'group_lage',
+        3 => 'field_objekt_wkt',
+        4 => 'group_akkordeon',
+        5 => 'field_object_location',
+        6 => 'group_lage',
       ),
     ),
     'fields' => array(
-      'field_building_type' => 'ds_content',
       'group_text' => 'ds_content',
-      'wohnungsliste' => 'ds_content',
       'field_object_txt_map_popup' => 'ds_content',
+      'wohnungsliste' => 'ds_content',
       'field_objekt_wkt' => 'ds_content',
       'group_akkordeon' => 'ds_content',
       'field_object_location' => 'ds_content',

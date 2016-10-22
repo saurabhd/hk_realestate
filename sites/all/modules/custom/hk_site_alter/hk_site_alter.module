@@ -103,8 +103,7 @@ function hk_site_alter_block_view_alter(&$data, $block) {
       $new_markup = t('@count offers', array('@count' => $results_count_int));
       $data['content']['results']['#markup'] = $new_markup;
     }
-    $original_reset_markup = $data['content']['reset']['#markup'];
-    $data['content']['reset']['#markup'] = t($original_reset_markup);
-   
+    /*$original_reset_markup = $data['content']['reset']['#markup'];
+    $data['content']['reset']['#markup'] = t($original_reset_markup);*/
   }
 }

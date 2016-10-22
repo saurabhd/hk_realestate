@@ -498,7 +498,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['style_options']['mini_map']['width'] = '150';
   $handler->display->display_options['style_options']['mini_map']['toggle'] = 1;
   $handler->display->display_options['style_options']['mini_map']['zoom_delta'] = '-5';
-  $handler->display->display_options['style_options']['cluster_radius'] = '200';
+  $handler->display->display_options['style_options']['cluster_radius'] = '100';
   $handler->display->display_options['style_options']['disable_clustering_at_zoom'] = '18';
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_differentiator_fields'] = array(
     'field_bezirk' => 'field_bezirk',

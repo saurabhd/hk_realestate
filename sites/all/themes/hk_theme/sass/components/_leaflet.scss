@@ -2198,3 +2198,12 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     }
   }
 }
+
+/* Hide language translator icon from contact direction page */
+.page-node.section-kontakt,
+.page-node.section-contact {
+  ul.links {
+    display: none;
+  }
+}
+/* End */

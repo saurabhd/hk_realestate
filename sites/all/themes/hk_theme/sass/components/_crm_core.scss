@@ -90,8 +90,11 @@
 .form-item-contact-name-und-0-title .select2-choice {
   height: 30px;
 }
+.form-item-field-crm-address-und-0-country {
+  max-width: 275px;
+}
 .form-item-field-crm-address-und-0-country .select2-choice {
-  width: 275px;
+  /*width: 275px;*/
 }
 /*@media screen and (max-width: 480px) {
   .form-item-field-crm-address-und-0-country .select2-choice {

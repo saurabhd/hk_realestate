@@ -2120,6 +2120,8 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 
 /* Error message */
 .messages.error {
+  white-space: normal;
+  word-break: break-all;
   .messages__list {
     .messages__item {
       white-space: normal;

@@ -108,6 +108,9 @@ body.page-search {
   top: 10px;
 }
 .leaflet-bottom {
+  @media (max-width: 667px) {
+    bottom: 40px;
+  }
   bottom: 65px;
 }
 .view-apartment .leaflet-bottom,
@@ -394,7 +397,7 @@ div.hide-submit-processing {
       width: 100%;
     }
   }
-  
+
   .field-type-email,
   .field-type-phone {
     float: left;
@@ -413,7 +416,7 @@ div.hide-submit-processing {
 .lightbox__body {
   [id^="crm-core-profile-entry-form-anfrage-"],
   #crm-core-profile-entry-form-anfrage {
-    max-width: 100%; 
+    max-width: 100%;
   }
 }
 
@@ -602,9 +605,6 @@ div.hide-submit-processing {
       }
     }
   }
-  .leaflet-bottom {
-    /*bottom: 0;*/
-  }
 }
 @media screen and (max-width: 560px) {
   /*.front .ui-dialog {
@@ -661,12 +661,6 @@ div.hide-submit-processing {
     padding: 0 1em !important;
   }
 }
-@media screen and (max-width: 360px) {
-  .leaflet-bottom {
-    max-width: 200px;
-  }
-}
-
 
   .ui-dialog {
     .ui-dialog-titlebar {
@@ -717,13 +711,6 @@ div.hide-submit-processing {
   }
 } /* 480 */
 @media screen and (max-width: 360px) {
-  .ui-dialog {
-    /*left: 0 !important;
-    top: 150px !important;
-    max-width: 66% !important;
-    margin-left: 13%;
-    width: 640px inline-block;*/
-  }
   #block-menu-menu-menu-footer-menu {
     display: none;
   }
@@ -746,6 +733,11 @@ div.hide-submit-processing {
   }
 }
 /* End */
+@media screen and (max-width: 320px) {
+  .leaflet-bottom {
+    max-width: 240px;
+  }
+}
 
 .ui-effects-transfer { border: 2px dotted gray; }
 
@@ -1064,7 +1056,7 @@ div.hide-submit-processing {
       width:100%;
       display: inline-block;
       text-align: center;
-    } 
+    }
   }
 }
 /* MarkerCluster overriding libraries/leaflet_markecluster/dist/MarkerClusterDefault.css*/
@@ -2000,7 +1992,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         position: relative;
         &:hover {
           .menu-tooltip {
-            @media (min-width: 1024px) 
+            @media (min-width: 1024px)
             {
               display: block !important;
             }
@@ -2013,7 +2005,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 	      @media (max-width: 992px) {
 	        margin-top: 25px;
 	      }
-	   }	
+	   }
           .icon-hk-icon-telephone {
             @media (max-width: 1024px) {
               margin-top: 25px;
@@ -2025,7 +2017,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             background-size: 100% auto;
             background-position: center;*/
           }
-        }	
+        }
         .menu-tooltip {
           position: absolute;
           top: auto;
@@ -2034,7 +2026,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           height: auto;
           width: calc(100% + 180px);
           padding: 10px 10px;
-          margin: 0 -90px -70px; 
+          margin: 0 -90px -70px;
           border: 2px solid #CBC1BA;
           border-radius: 5px;
           background-color: #FFF;
@@ -2148,10 +2140,10 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   }
 }
 
-/* Map bar */
+/* Map bar
 .leaflet-control-scale-line {
   font-size: 15px;
-}
+}*/
 
 /* Dropdown icon */
 .block-facetapi {
@@ -2169,7 +2161,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   }
 }
 
-/* Inquary button - favourite page */
+/* Inquiry button - favourite page */
 .view-footer {
   .inquiry-button {
     color: #fff;

@@ -6,7 +6,7 @@
           lFeature.on('click', function(e) {
             var lMap = Drupal.settings.leaflet[0].lMap;
             lMap.setView(e.latlng,18,1,.5,true);
-            lMap.panBy([0, -100]);
+            lMap.panBy([0, -220]);
             var n = $(".leaflet-popup-content .apart").length;
             if ( n > 5) {
                         $('.leaflet-popup-content').find('.apart:gt(4)').css("display","none").addClass('toggle');
@@ -32,6 +32,16 @@
                       }
           });
         });
+        if(L.Browser.mobile){
+          // mobile browser
+          $(document).bind('leaflet.feature', function(e, lFeature, feature) {
+          lFeature.on('click', function(e) {
+            var lMap = Drupal.settings.leaflet[0].lMap;
+            lMap.setView(e.latlng,18,1,.5,true);
+            lMap.panBy([0, -170]);
+          });
+        });
+        }
     /*  var body_width = $('body').outerWidth();
       var ui_dialog_width = $('.home-form-wrap .ui-dailog').outerWidth();
       var left_position = (body_width - ui_dialog_width) / 2;*/
@@ -45,7 +55,7 @@
             modal: "false",
             hide: { effect: "explode", duration: "1000" },
             autoOpen: "false",
-            position: { my: "center bottom", at: "bottom-80", collision: "fit flip", of: "#page" }
+            position: { my: "center bottom", at: "bottom-20", collision: "fit flip", of: "#page" }
           });
       //$( ".ismobiledevice.front .ui-dialog").hide();
 

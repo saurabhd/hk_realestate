@@ -103,6 +103,9 @@ body.page-search {
 /* Handler positionieren */
 .leaflet-top {
   top: 100px;
+  @media (max-width: 667px) {
+    top: 60px;
+  }
 }
 .objectmap .leaflet-top {
   top: 10px;
@@ -120,6 +123,11 @@ body.page-search {
 }
 .view-apartment .leaflet-popup-content {
   width: 200px !important;
+}
+@media (max-width: 667px) {
+  .leaflet-left .leaflet-control {
+    margin-left: 5px;
+  }
 }
 
 .ui-dialog {

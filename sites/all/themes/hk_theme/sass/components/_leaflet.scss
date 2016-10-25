@@ -2207,5 +2207,32 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   ul.links {
     display: none;
   }
+  @media (max-width: 767px) {
+    .field-type-addressfield {
+      max-width: 100%;
+      .form-wrapper {
+        width: 100%;
+        .country,
+        .form-item .form-text {
+          width: 100%;
+        }
+        div.addressfield-container-inline > div.form-item {
+          width: 100%;
+          margin-right: 0;
+        }
+        select.country {
+          min-height: 30px;
+          border: 2px solid #cbc1ba;
+          color: #666666;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px
+        }
+      }
+    }
+    .form-item-field-crm-address-und-0-country {
+      max-width: 100%;
+    }
+  }
 }
 /* End */

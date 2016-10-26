@@ -270,8 +270,9 @@
 
       // Hide keyboard
       if(jQuery(window).width() < 767) {
-        /*jQuery('.home-form-wrap ul li.select2-search-field input').attr('readonly',true);
-        jQuery('.home-form-wrap .ui-dialog #search .block-facetapi input').attr('readonly',true);*/       
+        jQuery('.home-form-wrap ul li.select2-search-field input').attr('readonly',true);
+        jQuery('.home-form-wrap .ui-dialog #search .block-facetapi input').attr('readonly',true);       
+        jQuery('.page-buy #search .block-facetapi ul li.select2-search-field input').attr('readonly',true);       
       }
       // End
 

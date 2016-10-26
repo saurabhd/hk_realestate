@@ -103,11 +103,17 @@ body.page-search {
 /* Handler positionieren */
 .leaflet-top {
   top: 100px;
+  @media (max-width: 667px) {
+    top: 60px;
+  }
 }
 .objectmap .leaflet-top {
   top: 10px;
 }
 .leaflet-bottom {
+  @media (max-width: 667px) {
+    bottom: 40px;
+  }
   bottom: 65px;
 }
 .view-apartment .leaflet-bottom,
@@ -117,6 +123,11 @@ body.page-search {
 }
 .view-apartment .leaflet-popup-content {
   width: 200px !important;
+}
+@media (max-width: 667px) {
+  .leaflet-left .leaflet-control {
+    margin-left: 5px;
+  }
 }
 
 .ui-dialog {
@@ -394,7 +405,7 @@ div.hide-submit-processing {
       width: 100%;
     }
   }
-  
+
   .field-type-email,
   .field-type-phone {
     float: left;
@@ -413,7 +424,7 @@ div.hide-submit-processing {
 .lightbox__body {
   [id^="crm-core-profile-entry-form-anfrage-"],
   #crm-core-profile-entry-form-anfrage {
-    max-width: 100%; 
+    max-width: 100%;
   }
 }
 
@@ -526,7 +537,7 @@ div.hide-submit-processing {
       top: 0 !important;
       left: 0 !important;
       display: none;
-      width: 80% !important;
+      width: 75% !important;
       margin-top: 170px;
       margin-left: 10%;
       #search.ui-dialog-content {
@@ -602,9 +613,6 @@ div.hide-submit-processing {
       }
     }
   }
-  .leaflet-bottom {
-    bottom: 0;
-  }
 }
 @media screen and (max-width: 560px) {
   /*.front .ui-dialog {
@@ -618,6 +626,15 @@ div.hide-submit-processing {
     max-width: 70% !important;
     margin-left: 14% !important;
     width: 640px inline-block;*/
+  }
+  .front {
+    .ui-dialog {
+      /*width: 73% !important;*/
+      margin-left: 43px;
+      width: -webkit-calc(100% - 100px) !important;
+      width: -moz-calc(100% - 100px) !important;
+      width: calc(100% - 100px) !important;
+    }
   }
   .home-form-wrap {
     #search {
@@ -652,6 +669,7 @@ div.hide-submit-processing {
     padding: 0 1em !important;
   }
 }
+
   .ui-dialog {
     .ui-dialog-titlebar {
       .ui-dialog-titlebar-close {
@@ -701,13 +719,6 @@ div.hide-submit-processing {
   }
 } /* 480 */
 @media screen and (max-width: 360px) {
-  .ui-dialog {
-    /*left: 0 !important;
-    top: 150px !important;
-    max-width: 66% !important;
-    margin-left: 13%;
-    width: 640px inline-block;*/
-  }
   #block-menu-menu-menu-footer-menu {
     display: none;
   }
@@ -730,6 +741,11 @@ div.hide-submit-processing {
   }
 }
 /* End */
+@media screen and (max-width: 320px) {
+  .leaflet-bottom {
+    max-width: 240px;
+  }
+}
 
 .ui-effects-transfer { border: 2px dotted gray; }
 
@@ -839,6 +855,12 @@ div.hide-submit-processing {
     float: left;
     margin-right: 1em;
   }
+  picture {
+    img {
+      max-height: 300px;
+      max-width: 300px;
+    }
+  }
   h2 {
     margin-right: 1em;
     display: none;
@@ -860,7 +882,7 @@ div.hide-submit-processing {
     width: 100%;
     .map-table-parent {
       max-height: 250px;
-      overflow-y:auto; 
+      /*overflow-y:auto;*/
     }
   }
   .wo {
@@ -919,7 +941,7 @@ div.hide-submit-processing {
     }
   }
   .grey-shadow-apartment {
-    width: 550px !important;
+    width: 565px !important;
     tr {
       .views-field-nothing { width: 71px; }
       .views-field-field-apart-rooms { width: 66px; }
@@ -929,12 +951,12 @@ div.hide-submit-processing {
       .views-field-field-apart-balcony { width: 60px; }
       .views-field-field-building-type {
         width: 99px;
-        word-break: break-all;
+        /*word-break: break-all;*/
       }
     }
   }
   .grey-show-table-content {
-    width: 544px !important;
+    width: 565px !important;
     tr {
       .views-field-field-building-type {
         padding-left: 21px;
@@ -1042,7 +1064,7 @@ div.hide-submit-processing {
       width:100%;
       display: inline-block;
       text-align: center;
-    } 
+    }
   }
 }
 /* MarkerCluster overriding libraries/leaflet_markecluster/dist/MarkerClusterDefault.css*/
@@ -1269,7 +1291,7 @@ div.hide-submit-processing {
       background-image: url('../images/sprite-sc8b09672a3.png');
       background-position: right 226px;
       background-repeat: repeat-y;
-      font-size: 12px;
+      font-size: 14px;
       line-height: normal;
       font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
     }
@@ -1394,8 +1416,10 @@ div.hide-submit-processing {
 body.not-front.not-logged-in.page-hybridauth { background: none; }
 
 #search {
+  float: left;
   display: inline-block;
   width: 100%;
+  margin-bottom: 13px;
   .block-views {
     float: left;
     width: 18.4%;
@@ -1427,13 +1451,13 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     > a {
       display: inline-block;
       width: 100%;
-      max-height: 80px;
-      min-height: 2em;
-      padding: 0 5px;
+      max-height: 25px;
+      min-height: 25px;
+      padding: 2px 5px;
       color: #999;
-      font-size: 12px;
+      font-size: 14px;
       line-height: normal;
-      font-family: "Neue Helvetica W01";
+      font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
       background: #FFF;
       cursor: text;
       vertical-align: -webkit-baseline-middle;
@@ -1469,6 +1493,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           width: 100%;
           padding: 3px 10px;
           color: #666;
+          font-size: 14px;
           white-space: normal;
           &:hover {
             background-color: #8e8e8e;
@@ -1975,7 +2000,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         position: relative;
         &:hover {
           .menu-tooltip {
-            @media (min-width: 1024px) 
+            @media (min-width: 1024px)
             {
               display: block !important;
             }
@@ -1988,7 +2013,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 	      @media (max-width: 992px) {
 	        margin-top: 25px;
 	      }
-	   }	
+	   }
           .icon-hk-icon-telephone {
             @media (max-width: 1024px) {
               margin-top: 25px;
@@ -2000,7 +2025,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
             background-size: 100% auto;
             background-position: center;*/
           }
-        }	
+        }
         .menu-tooltip {
           position: absolute;
           top: auto;
@@ -2009,7 +2034,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           height: auto;
           width: calc(100% + 180px);
           padding: 10px 10px;
-          margin: 0 -90px -70px; 
+          margin: 0 -90px -70px;
           border: 2px solid #CBC1BA;
           border-radius: 5px;
           background-color: #FFF;
@@ -2095,6 +2120,8 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
 
 /* Error message */
 .messages.error {
+  white-space: normal;
+  word-break: break-all;
   .messages__list {
     .messages__item {
       white-space: normal;
@@ -2121,19 +2148,91 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   }
 }
 
-/* Map bar */
+/* Map bar
 .leaflet-control-scale-line {
-  font-size: 16px;
-}
+  font-size: 15px;
+}*/
 
 /* Dropdown icon */
 .block-facetapi {
   form {
-    .select2-search-field {
+    .select2-choices { /* ul tag */
       background-image: url('../images/sprite-s8f10be3d0d.png');
       background-repeat: no-repeat;
       background-position: right 0;
     }
+    .select2-search-field { /* li tag */
+      /*background-image: url('../images/sprite-s8f10be3d0d.png');
+      background-repeat: no-repeat;
+      background-position: right 0;*/
+    }
   }
 }
 
+/* Inquiry button - favourite page */
+.view-footer {
+  .inquiry-button {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: #fff !important;
+      text-decoration: none !important;
+    }
+  }
+}
+
+/*.i18n-de {
+  .leaflet-popup-content{
+    .shadow-apartment {
+      tr {
+        .views-field-field-apart-price {
+          width: 100px;
+        }
+      }
+    }
+  }
+}*/
+
+.select2-container {
+  .select2-choice {
+    >.select2-chosen {
+      font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+    }
+  }
+}
+
+/* Hide language translator icon from contact direction page */
+.page-node.section-kontakt,
+.page-node.section-contact {
+  ul.links {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    .field-type-addressfield {
+      max-width: 100%;
+      .form-wrapper {
+        width: 100%;
+        .country,
+        .form-item .form-text {
+          width: 100%;
+        }
+        div.addressfield-container-inline > div.form-item {
+          width: 100%;
+          margin-right: 0;
+        }
+        select.country {
+          min-height: 30px;
+          border: 2px solid #cbc1ba;
+          color: #666666;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px
+        }
+      }
+    }
+    .form-item-field-crm-address-und-0-country {
+      max-width: 100%;
+    }
+  }
+}
+/* End */

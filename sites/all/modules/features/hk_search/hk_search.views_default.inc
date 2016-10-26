@@ -487,7 +487,7 @@ function hk_search_views_default_views() {
   $handler->display->display_options['style_options']['full_screen'] = 0;
   $handler->display->display_options['style_options']['scale_metric'] = 1;
   $handler->display->display_options['style_options']['scale_imperial'] = 0;
-  $handler->display->display_options['style_options']['zoom_indicator'] = 1;
+  $handler->display->display_options['style_options']['zoom_indicator'] = 0;
   $handler->display->display_options['style_options']['open_balloons_on_click'] = 1;
   $handler->display->display_options['style_options']['open_balloons_on_hover'] = 0;
   $handler->display->display_options['style_options']['goto_content_on_click'] = 0;
@@ -498,14 +498,14 @@ function hk_search_views_default_views() {
   $handler->display->display_options['style_options']['mini_map']['width'] = '150';
   $handler->display->display_options['style_options']['mini_map']['toggle'] = 1;
   $handler->display->display_options['style_options']['mini_map']['zoom_delta'] = '-5';
-  $handler->display->display_options['style_options']['cluster_radius'] = '200';
+  $handler->display->display_options['style_options']['cluster_radius'] = '100';
   $handler->display->display_options['style_options']['disable_clustering_at_zoom'] = '18';
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_differentiator_fields'] = array(
     'field_bezirk' => 'field_bezirk',
   );
   $handler->display->display_options['style_options']['cluster_differentiator']['zoom_ranges'] = array(
-    1 => '10-12',
-    2 => '12-14',
+    1 => '10-14',
+    2 => '14-18',
   );
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_tooltips'] = 1;
   $handler->display->display_options['style_options']['cluster_differentiator']['cluster_outline'] = '1';

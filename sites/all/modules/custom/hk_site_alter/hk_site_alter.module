@@ -49,7 +49,6 @@ function hk_site_alter_form_alter(&$form, &$form_state, $form_id) {
     $form['field_object_other'][LANGUAGE_NONE][0]['#default_value'] = t($form['field_object_other'][LANGUAGE_NONE][0]['#default_value']);
   }
 
-
   if($form_id == 'crm_core_profile_entry_form_kontaktformular') {
     $block = block_load('simplenews', '0');
     $block = _block_get_renderable_array(_block_render_blocks(array($block)));
@@ -87,4 +86,27 @@ function hk_site_alter_subscriptions_page_form_submit($form,&$form_state) {
   if(isset($form_state['input']['newsletters'])) {
     simplenews_subscribe_user($email, $newsletter_id, $confirm = FALSE, $source = 'action', NULL);
   }  
+}
+
+function hk_site_alter_form_i18n_string_locale_translate_edit_form_alter(&$form, $form_state) {
+  unset($form['#validate']);
+  // could also replace default validation handler function
+  // (locale_translate_edit_form_validate) with a modified version.
+}
+
+function hk_site_alter_block_view_alter(&$data, $block) {
+  global $language;
+  if($block->module == 'current_search') {
+    $original_markup = $data['content']['results']['#markup'];
+    $original_filtered = strip_tags($original_markup);
+    $results_count_int = filter_var($original_filtered, FILTER_SANITIZE_NUMBER_INT);
+    if($results_count_int){
+      $new_markup = t('@count offers', array('@count' => $results_count_int));
+      $data['content']['results']['#markup'] = $new_markup;
+    }
+    if(isset($data)) {
+      $original_reset_markup = $data['content']['reset']['#markup'];
+      $data['content']['reset']['#markup'] = t($original_reset_markup);
+    }  
+  }
 }

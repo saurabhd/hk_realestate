@@ -52,12 +52,17 @@
 .page-buy,
 .page-mieten,
 .view-merkliste,
-.view-apartment {
+.view-apartment,
+.not-front {
   #search {
     .block-facetapi {
-      width: 18.4%;
+      /*width: 18.4%;*/
+      width: -webkit-calc(20% - 16px);
+      width: -moz-calc(20% - 16px);
+      width: calc(20% - 16px);
     }
-    div:last-child {
+    div:last-child,
+    div:nth-child(5) {
       margin-right: 0;
     }
   }

@@ -49,9 +49,9 @@ goog.scope(function () {
   Observer.SUPPORTS_STRETCH = null;
 
   /**
-   * @type {boolean}
+   * @type {null|boolean}
    */
-  Observer.SUPPORTS_NATIVE = !!window['FontFace'];
+  Observer.SUPPORTS_NATIVE_FONT_LOADING = null;
 
   /**
    * @type {number}
@@ -84,6 +84,19 @@ goog.scope(function () {
   };
 
   /**
+   * Returns true if the browser supports the native font loading
+   * API.
+   *
+   * @return {boolean}
+   */
+  Observer.supportsNativeFontLoading = function () {
+    if (Observer.SUPPORTS_NATIVE_FONT_LOADING === null) {
+      Observer.SUPPORTS_NATIVE_FONT_LOADING = !!document['fonts'];
+    }
+    return Observer.SUPPORTS_NATIVE_FONT_LOADING;
+  };
+
+  /**
    * Returns true if the browser supports font-style in the font
    * short-hand syntax.
    *
@@ -96,7 +109,7 @@ goog.scope(function () {
       try {
         div.style.font = 'condensed 100px sans-serif';
       } catch (e) {}
-      Observer.SUPPORTS_STRETCH = (div.style.font !== "");
+      Observer.SUPPORTS_STRETCH = (div.style.font !== '');
     }
 
     return Observer.SUPPORTS_STRETCH;
@@ -129,11 +142,12 @@ goog.scope(function () {
   Observer.prototype.load = function (text, timeout) {
     var that = this;
     var testString = text || 'BESbswy';
+    var timeoutId = 0;
     var timeoutValue = timeout || Observer.DEFAULT_TIMEOUT;
     var start = that.getTime();
 
     return new Promise(function (resolve, reject) {
-      if (Observer.SUPPORTS_NATIVE) {
+      if (Observer.supportsNativeFontLoading()) {
         var loader = new Promise(function (resolve, reject) {
           var check = function () {
             var now = that.getTime();
@@ -141,7 +155,7 @@ goog.scope(function () {
             if (now - start >= timeoutValue) {
               reject();
             } else {
-              document.fonts.load(that.getStyle(that['family']), testString).then(function (fonts) {
+              document.fonts.load(that.getStyle('"' + that['family'] + '"'), testString).then(function (fonts) {
                 if (fonts.length >= 1) {
                   resolve();
                 } else {
@@ -156,10 +170,11 @@ goog.scope(function () {
         });
 
         var timer = new Promise(function (resolve, reject) {
-          setTimeout(reject, timeoutValue);
+          timeoutId = setTimeout(reject, timeoutValue);
         });
 
         Promise.race([timer, loader]).then(function () {
+          clearTimeout(timeoutId);
           resolve(that);
         }, function () {
           reject(that);
@@ -179,8 +194,6 @@ goog.scope(function () {
           var fallbackWidthC = -1;
 
           var container = dom.createElement('div');
-
-          var timeoutId = 0;
 
           /**
            * @private
@@ -230,7 +243,7 @@ goog.scope(function () {
           }
 
           // This ensures the scroll direction is correct.
-          container.dir = "ltr";
+          container.dir = 'ltr';
 
           rulerA.setFont(that.getStyle('sans-serif'));
           rulerB.setFont(that.getStyle('serif'));

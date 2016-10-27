@@ -169,7 +169,7 @@ function hk_admin_default_crm_core_profile() {
       'hidden' => 0,
       'default' => array(
         0 => array(
-          'target_id' => '8',
+          'target_id' => '145',
         ),
       ),
       'weight' => '-50',
@@ -763,7 +763,7 @@ Thank you for sending your inquiry. We will get back to you as soon as possible.
       'hidden' => 0,
       'default' => array(
         0 => array(
-          'target_id' => '8',
+          'target_id' => '145',
         ),
       ),
       'weight' => '-37',

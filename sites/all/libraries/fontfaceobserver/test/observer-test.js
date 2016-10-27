@@ -115,8 +115,8 @@ describe('Observer', function () {
       // dynamically inserted @font-face rules.
       var link = document.createElement('link');
 
-      link.rel = "stylesheet";
-      link.href = "assets/late.css";
+      link.rel = 'stylesheet';
+      link.href = 'assets/late.css';
 
       document.head.appendChild(link);
     });
@@ -125,7 +125,7 @@ describe('Observer', function () {
       var observer = new Observer('observer-test8', {}),
           ruler = new Ruler('hello');
 
-      document.body.dir = "rtl";
+      document.body.dir = 'rtl';
       document.body.appendChild(ruler.getElement());
 
       ruler.setFont('monospace', '');
@@ -143,7 +143,7 @@ describe('Observer', function () {
           expect(afterWidth, 'to equal', activeWidth);
           expect(afterWidth, 'not to equal', beforeWidth);
           document.body.removeChild(ruler.getElement());
-          document.body.dir = "ltr";
+          document.body.dir = 'ltr';
           done();
         }, 0);
       }, function () {
@@ -162,6 +162,34 @@ describe('Observer', function () {
       var beforeWidth = ruler.getWidth();
 
       ruler.setFont('100px "Trebuchet W01 Regular", monospace');
+      observer.load(null, 5000).then(function () {
+        var activeWidth = ruler.getWidth();
+
+        expect(activeWidth, 'not to equal', beforeWidth);
+
+        setTimeout(function () {
+          var afterWidth = ruler.getWidth();
+
+          expect(afterWidth, 'to equal', activeWidth);
+          expect(afterWidth, 'not to equal', beforeWidth);
+          document.body.removeChild(ruler.getElement());
+          done();
+        }, 0);
+      }, function () {
+        done(new Error('Timeout'));
+      });
+    });
+
+    it('loads a font with spaces and numbers in the name and resolve the promise', function (done) {
+      var observer = new Observer('Neue Frutiger 1450 W04', {}),
+          ruler = new Ruler('hello');
+
+      document.body.appendChild(ruler.getElement());
+
+      ruler.setFont('100px monospace');
+      var beforeWidth = ruler.getWidth();
+
+      ruler.setFont('100px "Neue Frutiger 1450 W04", monospace');
       observer.load(null, 5000).then(function () {
         var activeWidth = ruler.getWidth();
 

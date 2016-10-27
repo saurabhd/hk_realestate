@@ -32,7 +32,7 @@
                       }
           });
         });
-        if(L.Browser.mobile){
+        /*if(L.Browser.mobile){
           // mobile browser
           $(document).bind('leaflet.feature', function(e, lFeature, feature) {
           lFeature.on('click', function(e) {
@@ -41,7 +41,7 @@
             lMap.panBy([0, -170]);
           });
         });
-        }
+        }*/
     /*  var body_width = $('body').outerWidth();
       var ui_dialog_width = $('.home-form-wrap .ui-dailog').outerWidth();
       var left_position = (body_width - ui_dialog_width) / 2;*/

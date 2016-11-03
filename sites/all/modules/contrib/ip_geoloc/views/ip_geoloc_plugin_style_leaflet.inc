@@ -1009,30 +1009,38 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
     $features = array();
     $objects = $unique_objects = $apart_group = array();
     $object_id = $prev_objectid = '';
-    $flag = 1;    
+    $flag = 1;  
+    foreach ($locations as $location) {
+      $apart_id = $location->id;
+      $apartment = node_load($apart_id);
+      $object_id = $apartment->field_object_ref[LANGUAGE_NONE][0]['target_id'];
+      $objects[] = $object_id;  
+      $apart_group[$object_id]['id'][] = $apart_id;
+      if(!empty($location->random_displacement)) {
+        $apart_group[$object_id]['shadow'][] = $apart_id; 
+      } else {
+        $apart_group[$object_id]['non-shadow'][] = $apart_id; 
+      }
+    } 
     foreach ($locations as $location) {
       //if(!empty($location->random_displacement)) {
-          $apart_id = $location->id;
-          $apartment = node_load($apart_id);
-          $object_id = $apartment->field_object_ref[LANGUAGE_NONE][0]['target_id'];
-          $objects[] = $object_id;  
-          $apart_group[$object_id]['id'][] = $apart_id;
-          if(!empty($location->random_displacement)) {
-            $apart_group[$object_id]['shadow'][] = $apart_id; 
-          } else {
-            $apart_group[$object_id]['non-shadow'][] = $apart_id; 
-          }
-          //sort($apart_group);
-          //$unique_objects = array_unique($objects);
-      //}
+      $apart_id = $location->id;
+      $apartment = node_load($apart_id);
+      $object_id = $apartment->field_object_ref[LANGUAGE_NONE][0]['target_id'];
+        
       $feature = array();
-      
       if (isset($location->latitude) || isset($location->lat)) {
         $feature['type'] = 'point';
         $feature['lat'] = isset($location->latitude)  ? $location->latitude  : $location->lat;
         $feature['lon'] = isset($location->longitude) ? $location->longitude : $location->lon;
-        if (!empty($location->random_displacement)) {         
-          if($apart_group[$object_id]['shadow'][0] == $apart_id && count($apart_group[$object_id]['id']) != count($apart_group[$object_id]['shadow'])) {
+        if (!empty($location->random_displacement)) { 
+          if(count($apart_group[$object_id]['id']) == count($apart_group[$object_id]['shadow'])) {
+            $flag = 0;
+          } 
+          else {
+            $flag = 1;
+          }        
+          if($apart_group[$object_id]['shadow'][0] == $apart_id && $flag) {
             $d = $location->random_displacement * 1000;
             ip_geoloc_add_random_displacement($feature, $d);
             $circle = array(

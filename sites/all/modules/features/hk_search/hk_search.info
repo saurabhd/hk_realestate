@@ -13,7 +13,6 @@ dependencies[] = leaflet_markercluster
 dependencies[] = menu
 dependencies[] = search_api_solr
 dependencies[] = search_api_views
-dependencies[] = views_mobile
 features[ctools][] = current_search:current_search:1
 features[ctools][] = ds:ds:1
 features[ctools][] = ds_extras:ds_extras:1

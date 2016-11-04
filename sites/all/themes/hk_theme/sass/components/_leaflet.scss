@@ -782,6 +782,7 @@ div.hide-submit-processing {
       color: $primary;
     }
 }
+
 .leaflet-popup-content-wrapper,
 .group-card {
     @include border-radius($border-radius);
@@ -792,7 +793,7 @@ div.hide-submit-processing {
     background: #fff;
     @media screen and (max-width: 560px) {
       max-width: 315px;
-      overflow: hidden;
+      overflow-x: hidden;
       img {
         margin-bottom: 1em;
       }
@@ -824,7 +825,18 @@ div.hide-submit-processing {
       }
     }
 }
-
+@media (max-width: 767px) {
+  .leaflet-popup-content-wrapper {
+    max-height: 150px;
+    overflow-y: auto;
+  }
+}
+@media (max-width: 560px) {
+  .leaflet-popup-content-wrapper {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+}
 .group-card {
   min-height: 215px;
   border: 2px solid $secondary;
@@ -881,8 +893,14 @@ div.hide-submit-processing {
     display: inline-block;
     width: 100%;
     .map-table-parent {
-      max-height: 250px;
-      /*overflow-y:auto;*/
+      max-height: 200px;
+      overflow-y:auto;
+    }
+    @media (max-width: 767px) {
+      .map-table-parent {
+        max-height: 100%;
+        overflow-y: hidden;
+      }
     }
   }
   .wo {

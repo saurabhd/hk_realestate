@@ -1034,7 +1034,7 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
         $feature['lat'] = isset($location->latitude)  ? $location->latitude  : $location->lat;
         $feature['lon'] = isset($location->longitude) ? $location->longitude : $location->lon;
         if (!empty($location->random_displacement)) { 
-          if(count($apart_group[$object_id]['id']) == count($apart_group[$object_id]['shadow'])) {
+          if(count($apart_group[$object_id]['id']) == count($apart_group[$object_id]['shadow']) && count($apart_group[$object_id]['id']) > 1) {
             $flag = 0;
           } 
           else {

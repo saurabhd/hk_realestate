@@ -1007,14 +1007,12 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
     }
 
     $features = array();
-    $objects = $unique_objects = $apart_group = array();
-    $object_id = $prev_objectid = '';
-    $flag = 1;  
+    $apart_group = array();
+    $object_id = '';  
     foreach ($locations as $location) {
       $apart_id = $location->id;
       $apartment = node_load($apart_id);
-      $object_id = $apartment->field_object_ref[LANGUAGE_NONE][0]['target_id'];
-      $objects[] = $object_id;  
+      $object_id = $apartment->field_object_ref[LANGUAGE_NONE][0]['target_id'];  
       $apart_group[$object_id]['id'][] = $apart_id;
       if(!empty($location->random_displacement)) {
         $apart_group[$object_id]['shadow'][] = $apart_id; 
@@ -1027,20 +1025,13 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
       $apart_id = $location->id;
       $apartment = node_load($apart_id);
       $object_id = $apartment->field_object_ref[LANGUAGE_NONE][0]['target_id'];
-        
       $feature = array();
       if (isset($location->latitude) || isset($location->lat)) {
         $feature['type'] = 'point';
-        $feature['lat'] = isset($location->latitude)  ? $location->latitude  : $location->lat;
+        $feature['lat'] = isset($location->latitude) ? $location->latitude  : $location->lat;
         $feature['lon'] = isset($location->longitude) ? $location->longitude : $location->lon;
         if (!empty($location->random_displacement)) { 
-          if(count($apart_group[$object_id]['id']) == count($apart_group[$object_id]['shadow']) && count($apart_group[$object_id]['id']) > 1) {
-            $flag = 0;
-          } 
-          else {
-            $flag = 1;
-          }        
-          if($apart_group[$object_id]['shadow'][0] == $apart_id && $flag) {
+          if($apart_group[$object_id]['shadow'][0] == $apart_id){
             $d = $location->random_displacement * 1000;
             ip_geoloc_add_random_displacement($feature, $d);
             $circle = array(
@@ -1057,7 +1048,10 @@ class ip_geoloc_plugin_style_leaflet extends views_plugin_style {
               ),
             );
             $features[] = $circle;
-          }  
+          } 
+          else {
+            continue;
+          }
         }
       }
       elseif (isset($location->component)) {

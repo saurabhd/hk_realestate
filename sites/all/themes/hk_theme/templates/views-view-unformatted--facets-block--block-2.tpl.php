@@ -35,7 +35,7 @@ while ($start_space <= $maxSpace) {
   <?php if (!empty($title)) : ?>
     <h3><?php print $title; ?></h3>
   <?php endif; ?>
-  <a class="space-select facet-select">Space (ca.)</a>
+  <a class="space-select facet-select"><?php print t('Space (ca.)'); ?></a>
   <ul>
     <?php foreach ($space_range_array as $id => $row):?>
       <?php

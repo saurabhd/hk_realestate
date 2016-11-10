@@ -35,7 +35,7 @@ while ($start_room <= $maxRooms) {
   <?php if (!empty($title)) : ?>
     <h3><?php print $title; ?></h3>
   <?php endif; ?>
-  <a class="rooms-select facet-select">Rooms</a>
+  <a class="rooms-select facet-select"><?php print t('Rooms'); ?></a>
   <ul>
     <?php foreach ($room_range_array as $id => $row):?>
       <?php

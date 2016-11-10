@@ -282,8 +282,8 @@
       // End
 
       // Custom search box //
-      jQuery('#search .facets-borough-block .item-list', context).once().prepend('<a class="borough-select facet-select">Borough</a>');
-      jQuery('#search .facets-category-block .item-list', context).once().prepend('<a class="category-select facet-select">Category</a>');
+      jQuery('#search .facets-borough-block .item-list', context).once().prepend('<a class="borough-select facet-select">'+Drupal.t("Borough")+'</a>');
+      jQuery('#search .facets-category-block .item-list', context).once().prepend('<a class="category-select facet-select">'+Drupal.t("Category")+'</a>');
       jQuery('.facet-select').click(function(e){
           e.stopImmediatePropagation();
           jQuery('.facet-select').parent().removeClass('active');

@@ -27,6 +27,7 @@ features[facetapi][] = search_api@solr_node_index::field_apart_price
 features[facetapi][] = search_api@solr_node_index::field_apart_rooms
 features[facetapi][] = search_api@solr_node_index::field_bezirk
 features[facetapi][] = search_api@solr_node_index::field_kategorie
+features[fe_block_settings][] = views-apartment-block_1
 features[fe_block_settings][] = views-karten-block_1
 features[features_api][] = api:2
 features[search_api_index][] = solr_node_index

@@ -34,7 +34,7 @@ while ($start_price <= $maxPrice) {
   <?php if (!empty($title)) : ?>
     <h3><?php print $title; ?></h3>
   <?php endif; ?>
-  <a class="price-select facet-select">Price</a>
+  <a class="price-select facet-select"><?php print t('Price'); ?></a>
   <ul>
     <?php foreach ($price_range_array as $id => $row):?>
       <?php

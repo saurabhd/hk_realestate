@@ -253,8 +253,8 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => -39,
       ),
       'hk_theme' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'search',
+        'status' => 1,
         'theme' => 'hk_theme',
         'weight' => 0,
       ),
@@ -1102,8 +1102,8 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
-        'region' => 'sidebar_right_top',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'adminimal',
         'weight' => -36,
       ),

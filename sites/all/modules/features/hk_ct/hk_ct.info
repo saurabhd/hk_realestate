@@ -488,6 +488,7 @@ features[variable][] = pathauto_taxonomy_term_vocabulary_6_pattern
 features[variable][] = uuid_features_entity_taxonomy_term_building_type
 features[variable][] = uuid_features_entity_taxonomy_term_building_type
 features[views_view][] = merkliste
+features[views_view][] = object_landing_page
 features[views_view][] = apartment
 features[views_view][] = oeffnungszeiten
 features[views_view][] = referenzen

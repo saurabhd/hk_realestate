@@ -55,6 +55,11 @@ body.page-search {
   bottom: 0;
   height: auto !important;
 }
+.page-object-landing-page {
+  .leaflet-container {
+    height: 400px !important;
+  }
+}
 .view-apartment,
 .view-mode-wohn_und_geschaeftshaus,
 .field-name-field-objekt-wkt {

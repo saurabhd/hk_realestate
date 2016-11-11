@@ -57,7 +57,9 @@ body.page-search {
 }
 .page-object-landing-page {
   .leaflet-container {
+    position: relative;
     height: 400px !important;
+    margin-bottom: 100px;
   }
 }
 .view-apartment,

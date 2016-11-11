@@ -9,6 +9,9 @@
     overflow: auto;
     padding-bottom: 65px;
   }
+  .page-object-landing-page.front #main {
+    overflow: visible;
+  }
 }
 
 /* must be same height as the footer */

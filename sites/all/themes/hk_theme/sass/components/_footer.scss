@@ -1,9 +1,9 @@
 @import "base";
 @media screen and (max-width: 560px) {
-.front .footer {
+/*.front .footer {
     bottom: 0;
     position: absolute;
-  }
+  }*/
 }
 .front .footer {
   position: absolute;
@@ -62,6 +62,9 @@
         }
       }
   }
+}
+.page-object-landing-page.front .footer {
+  position: fixed;
 }
 .view-display-id-oeffnungszeiten_footer {
   float: right;

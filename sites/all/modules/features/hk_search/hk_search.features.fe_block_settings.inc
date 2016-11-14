@@ -37,14 +37,14 @@ function hk_search_default_fe_block_settings() {
         'weight' => 0,
       ),
       'hk_theme' => array(
-        'region' => 'highlighted',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'hk_theme',
         'weight' => -53,
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-apartment-block_2'] = array(
@@ -72,8 +72,8 @@ function hk_search_default_fe_block_settings() {
         'weight' => 0,
       ),
       'hk_theme' => array(
-        'region' => 'highlighted',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'hk_theme',
         'weight' => -52,
       ),

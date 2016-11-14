@@ -43,7 +43,6 @@ $br-wide: 1280px;
 /***********
 ~MIXINS
 ***********/
-
 @mixin hyphenate {
   -ms-hyphenate-limit-chars: 6 3 2;
     -moz-hyphenate-limit-chars: 6 3 2;
@@ -58,6 +57,18 @@ $br-wide: 1280px;
     -moz-hyphens: auto;
     hyphens: auto;
     word-break: normal;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+      -ms-box-shadow: $value;
+          box-shadow: $value;
 }
 
 /************

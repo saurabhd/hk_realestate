@@ -186,7 +186,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_address_thoroughfare']['element_type'] = 'h2';
   $handler->display->display_options['fields']['field_address_thoroughfare']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_address_thoroughfare']['element_default_classes'] = FALSE;
-  /* Field: Content: Schattenobjekt? */
+  /* Field: Content: Schattenwohnung? */
   $handler->display->display_options['fields']['field_obj_schattenobjekt']['id'] = 'field_obj_schattenobjekt';
   $handler->display->display_options['fields']['field_obj_schattenobjekt']['table'] = 'field_data_field_obj_schattenobjekt';
   $handler->display->display_options['fields']['field_obj_schattenobjekt']['field'] = 'field_obj_schattenobjekt';
@@ -748,7 +748,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Object ID */
+  /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
@@ -1284,7 +1284,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'apartment' => 'apartment',
   );
-  /* Filter criterion: Content: Schattenobjekt? (field_obj_schattenobjekt) */
+  /* Filter criterion: Content: Schattenwohnung? (field_obj_schattenobjekt) */
   $handler->display->display_options['filters']['field_obj_schattenobjekt_value']['id'] = 'field_obj_schattenobjekt_value';
   $handler->display->display_options['filters']['field_obj_schattenobjekt_value']['table'] = 'field_data_field_obj_schattenobjekt';
   $handler->display->display_options['filters']['field_obj_schattenobjekt_value']['field'] = 'field_obj_schattenobjekt_value';
@@ -1297,6 +1297,8 @@ function hk_ct_views_default_views() {
   $handler = $view->new_display('block', 'Slideshow for object page', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['style_options']['optionset'] = 'wohnungsansicht';
@@ -1333,7 +1335,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_object_images']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_object_images']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Object ID (field_objektid_nunumeric) */
+  /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
@@ -1377,7 +1379,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_object_slideshow_text']['label'] = '';
   $handler->display->display_options['fields']['field_object_slideshow_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Object ID (field_objektid_nunumeric) */
+  /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
@@ -1419,11 +1421,13 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_object_advantages']['table'] = 'field_data_field_object_advantages';
   $handler->display->display_options['fields']['field_object_advantages']['field'] = 'field_object_advantages';
   $handler->display->display_options['fields']['field_object_advantages']['label'] = '';
+  $handler->display->display_options['fields']['field_object_advantages']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['field_object_advantages']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_object_advantages']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_object_advantages']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_object_advantages']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Object ID (field_objektid_nunumeric) */
+  /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
@@ -1467,7 +1471,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_object_footer_text']['label'] = '';
   $handler->display->display_options['fields']['field_object_footer_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Object ID (field_objektid_nunumeric) */
+  /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';

@@ -64,6 +64,9 @@ function hk_ct_strongarm() {
       'wohn_und_geschaeftshaus' => array(
         'custom_settings' => FALSE,
       ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -71,16 +74,19 @@ function hk_ct_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '10',
         ),
         'language' => array(
           'weight' => '-4',
         ),
         'xmlsitemap' => array(
-          'weight' => '10',
+          'weight' => '11',
+        ),
+        'domain' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(
@@ -226,6 +232,9 @@ function hk_ct_strongarm() {
       'wohn_und_geschaeftshaus' => array(
         'custom_settings' => TRUE,
       ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -242,7 +251,10 @@ function hk_ct_strongarm() {
           'weight' => '-4',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '5',
+        ),
+        'domain' => array(
+          'weight' => '3',
         ),
       ),
       'display' => array(),

@@ -1353,6 +1353,140 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'objekt' => 'objekt',
   );
+
+  /* Display: Slideshow text for object */
+  $handler = $view->new_display('block', 'Slideshow text for object', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Object slideshow text */
+  $handler->display->display_options['fields']['field_object_slideshow_text']['id'] = 'field_object_slideshow_text';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['table'] = 'field_data_field_object_slideshow_text';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['field'] = 'field_object_slideshow_text';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['label'] = '';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Object ID (field_objektid_nunumeric) */
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'objekt' => 'objekt',
+  );
+
+  /* Display: Advantage of object */
+  $handler = $view->new_display('block', 'Advantage of object', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Object advantages */
+  $handler->display->display_options['fields']['field_object_advantages']['id'] = 'field_object_advantages';
+  $handler->display->display_options['fields']['field_object_advantages']['table'] = 'field_data_field_object_advantages';
+  $handler->display->display_options['fields']['field_object_advantages']['field'] = 'field_object_advantages';
+  $handler->display->display_options['fields']['field_object_advantages']['label'] = '';
+  $handler->display->display_options['fields']['field_object_advantages']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_object_advantages']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_object_advantages']['multi_type'] = 'ul';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Object ID (field_objektid_nunumeric) */
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'objekt' => 'objekt',
+  );
+
+  /* Display: Footer text of object */
+  $handler = $view->new_display('block', 'Footer text of object', 'block_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Object footer text */
+  $handler->display->display_options['fields']['field_object_footer_text']['id'] = 'field_object_footer_text';
+  $handler->display->display_options['fields']['field_object_footer_text']['table'] = 'field_data_field_object_footer_text';
+  $handler->display->display_options['fields']['field_object_footer_text']['field'] = 'field_object_footer_text';
+  $handler->display->display_options['fields']['field_object_footer_text']['label'] = '';
+  $handler->display->display_options['fields']['field_object_footer_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Object ID (field_objektid_nunumeric) */
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'objekt' => 'objekt',
+  );
   $export['apartment'] = $view;
 
   $view = new view();
@@ -1565,6 +1699,14 @@ function hk_ct_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'search_api_views_cache';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';

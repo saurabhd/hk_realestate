@@ -787,7 +787,7 @@ function hk_ct_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'title_taxonomy_allowed_values',
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -815,7 +815,7 @@ function hk_ct_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'options_list_callback' => NULL,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 1,
     'type' => 'taxonomy_term_reference',
@@ -844,7 +844,7 @@ function hk_ct_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'options_list_callback' => NULL,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -973,7 +973,7 @@ $entity_field[0][\'value\'] = $building_type;',
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'options_list_callback' => NULL,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -1486,6 +1486,27 @@ $entity_field[0][\'value\'] = $building_type;',
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_object_advantages'.
+  $field_bases['field_object_advantages'] = array(
+    'active' => 1,
+    'cardinality' => 3,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_object_advantages',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_object_desc_commercial'.
   $field_bases['field_object_desc_commercial'] = array(
     'active' => 1,
@@ -1567,6 +1588,27 @@ $entity_field[0][\'value\'] = $building_type;',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 1,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_object_footer_text'.
+  $field_bases['field_object_footer_text'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_object_footer_text',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
     'type' => 'text_long',
   );
 
@@ -1698,6 +1740,27 @@ $entity_field[0][\'value\'] = $building_type;',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_object_slideshow_text'.
+  $field_bases['field_object_slideshow_text'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_object_slideshow_text',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_object_text_schattenobjekt'.
@@ -2235,7 +2298,7 @@ $entity_field[0][\'value\'] = $building_type;',
         'No Information' => 'No Information',
         'N/A' => 'N/A',
       ),
-      'allowed_values_function' => 'values_field_content_allowed_values',
+      'allowed_values_function' => '',
       'allowed_values_no_localization' => 0,
       'entity_translation_sync' => FALSE,
       'values_field' => '',

@@ -36,6 +36,12 @@ function hk_search_default_fe_block_settings() {
         'theme' => 'hk_adminimal',
         'weight' => 0,
       ),
+      'hk_subdomain' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_subdomain',
+        'weight' => -53,
+      ),
       'hk_theme' => array(
         'region' => '',
         'status' => 0,
@@ -70,6 +76,12 @@ function hk_search_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'hk_adminimal',
         'weight' => 0,
+      ),
+      'hk_subdomain' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_subdomain',
+        'weight' => -52,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -106,6 +118,12 @@ function hk_search_default_fe_block_settings() {
         'theme' => 'hk_adminimal',
         'weight' => 0,
       ),
+      'hk_subdomain' => array(
+        'region' => 'highlighted',
+        'status' => 1,
+        'theme' => 'hk_subdomain',
+        'weight' => -51,
+      ),
       'hk_theme' => array(
         'region' => 'highlighted',
         'status' => 1,
@@ -141,6 +159,12 @@ function hk_search_default_fe_block_settings() {
         'theme' => 'hk_adminimal',
         'weight' => 0,
       ),
+      'hk_subdomain' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'hk_subdomain',
+        'weight' => 0,
+      ),
       'hk_theme' => array(
         'region' => 'footer',
         'status' => 1,
@@ -174,6 +198,12 @@ function hk_search_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_subdomain' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'hk_subdomain',
         'weight' => 0,
       ),
       'hk_theme' => array(

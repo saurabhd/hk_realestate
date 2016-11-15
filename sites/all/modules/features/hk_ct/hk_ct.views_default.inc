@@ -1299,6 +1299,10 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['style_options']['optionset'] = 'wohnungsansicht';
@@ -1317,20 +1321,9 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_object_images']['label'] = '';
   $handler->display->display_options['fields']['field_object_images']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_object_images']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_object_images']['type'] = 'picture';
   $handler->display->display_options['fields']['field_object_images']['settings'] = array(
-    'picture_mapping' => 'map_popup',
-    'fallback_image_style' => '',
-    'lazyload' => 0,
-    'lazyload_aspect_ratio' => 0,
-    'image_link' => 'colorbox',
-    'colorbox_settings' => array(
-      'colorbox_group' => 'map_popup',
-      'colorbox_gallery' => 'field_post',
-      'colorbox_gallery_custom' => '',
-      'colorbox_caption' => 'title',
-      'colorbox_caption_custom' => '',
-    ),
+    'image_style' => 'subdomain_slideshow__1500x680',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_object_images']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_object_images']['delta_offset'] = '0';
@@ -1422,8 +1415,15 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_object_advantages']['field'] = 'field_object_advantages';
   $handler->display->display_options['fields']['field_object_advantages']['label'] = '';
   $handler->display->display_options['fields']['field_object_advantages']['alter']['max_length'] = '200';
-  $handler->display->display_options['fields']['field_object_advantages']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_object_advantages']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_object_advantages']['type'] = 'readmore';
+  $handler->display->display_options['fields']['field_object_advantages']['settings'] = array(
+    'readmore_trim_length' => '200',
+    'readmore_trim_on_break' => 1,
+    'readmore_show_readless' => 1,
+    'readmore_ellipsis' => 0,
+    'readmore_wordsafe' => 1,
+  );
   $handler->display->display_options['fields']['field_object_advantages']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_object_advantages']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['arguments'] = FALSE;

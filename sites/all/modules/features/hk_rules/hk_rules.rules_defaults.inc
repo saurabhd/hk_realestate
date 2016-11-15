@@ -254,7 +254,7 @@ function hk_rules_default_rules_configuration() {
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "3" : "3" } },
+            "roles" : { "value" : { "6" : "6" } },
             "subject" : "[Website]: [node:title] ([node:field-objektid-nunumeric]-[node-unchanged:field-apart-no]) ist fertig zur Ver\\u00f6ffentlichung",
             "message" : "\\u0022[node:title] ([node:field-objektid-nunumeric]-[node-unchanged:field-apart-no])\\u0022 aus \\u0022[node:field-object-ref]\\u0022 ist von [node:author] zur Ver\\u00f6ffentlichung freigegeben worden. \\r\\n\\r\\nBitte bald \\u00fcberpr\\u00fcfen und ver\\u00f6ffentlichen!\\r\\n\\r\\nDirekter Link: [site:url]\\/node\\/[node:nid]"
           }

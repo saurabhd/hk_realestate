@@ -1,0 +1,37 @@
+/**
+ * @file
+ * SCSS file for variables.
+ *
+ * Footer SCSS for subdomain
+ */
+
+.page-object-landing-page.front {
+  .footer {
+    position: relative;
+    padding: 30px 0;
+    .menu-footer {
+      ul {
+        li {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          a {
+            padding-top: 0;
+            padding-bottom: 0;
+            border-left: 1px solid #000;
+            line-height: 12px;
+            &:hover {
+              border-top-color: transparent;
+              opacity: .8;
+            }
+          }
+        }
+      }
+    }
+    .block-views {
+      display: inline-block;
+      width: 100%;
+      padding: 0;
+      color: #FFF;
+    }
+  }
+}

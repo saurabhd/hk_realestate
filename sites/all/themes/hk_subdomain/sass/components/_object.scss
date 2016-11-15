@@ -1,0 +1,115 @@
+/**
+ * Object landing page SCSS
+ */
+
+/* Slider */
+#block-views-apartment-block-1 {
+  display: inline-block;
+  min-height: 200px;
+  width: 100%;
+  background-color: #ccc;
+}
+.object-slideshow {
+  position: relative;
+  margin-top: 40px;
+  .view-display-id-block_2 {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    display: inline-block;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #FFF;
+  }
+}
+
+/* Caption text */
+#block-views-apartment-block-2 {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 5px 15px 20px;
+  background-color: rgba(0, 0, 0, .4);
+  color: #FFF;
+}
+
+/* Object advantages */
+#block-views-apartment-block-3 {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  .item-list {
+    ul {
+      display: inline-block;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        float: left;
+        display: inline-block;
+        width: calc(33.3333% - 20px);
+        margin: 0 30px 0 0;
+        padding: 13px 20px;
+        @include box-shadow(0 0 5px 1px rgba(0, 0, 0, .5));
+        &:last-child { margin-right: 0; }
+        .readmore-summary {
+          span {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+          }
+          .readmore-link {
+            display: inline-block;
+            width: 100%;
+            max-width: 200px;
+            padding: 10px;
+            background-color: #E53835;
+            color: #FFF;
+            text-transform: uppercase;
+            @include border-radius(4px);
+            &:hover,
+            &:focus {
+              text-decoration: none;
+              opacity: .9;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Form design */
+.page-object-landing-page {
+  #search {
+    display: inline-block;
+    width: 100%;
+    .block-facetapi {
+      float: left;
+      width: calc(25% - 24px) !important;
+      margin: 0 32px 0 0;
+      padding: 0;
+      @include border-radius(0);
+      &:last-child { margin-right: 0; }
+    }
+    .select2-container {
+      .select2-choice {
+        border-top: none;
+        border-right: none;
+        border-bottom: 1px solid #cbc1ba;
+        border-left: none;
+        @include border-radius(0);
+      }
+    }
+  }
+}
+
+/* Map */
+.page-object-landing-page {
+  .leaflet-container {
+    position: relative;
+    height: 400px !important;
+  }
+}

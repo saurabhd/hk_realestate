@@ -386,6 +386,7 @@ features[image][] = flexthumbbreakpoints_theme_hk_theme_narrow_1x
 features[image][] = flexthumbbreakpoints_theme_hk_theme_wide_1x
 features[image][] = map-popup
 features[image][] = referenz
+features[image][] = subdomain_slideshow__1500x680
 features[node][] = apartment
 features[node][] = kartenmarker
 features[node][] = objekt

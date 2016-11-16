@@ -515,6 +515,22 @@ function hk_ct_image_default_styles() {
     ),
   );
 
+  // Exported image style: subdomain_slideshow__1500x680.
+  $styles['subdomain_slideshow__1500x680'] = array(
+    'label' => 'subdomain slideshow (1500x680)',
+    'effects' => array(
+      64 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1500,
+          'height' => 680,
+          '#imageinfo_cache_effect_callback' => 'image_scale_and_crop_effect',
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 

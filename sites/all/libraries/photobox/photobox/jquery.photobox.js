@@ -290,7 +290,7 @@
                     captionlink = thumbImg.getAttribute('data-pb-captionlink');
                     thumbSrc = thumbImg.getAttribute(that.options.thumbAttr) || thumbImg.getAttribute('src');
 
-                    caption.content = ( thumbImg.getAttribute('alt') || thumbImg.getAttribute('title') || '');
+                    caption.content = ( thumbImg.getAttribute('title') || thumbImg.getAttribute('alt') || '');
                 }
 
 

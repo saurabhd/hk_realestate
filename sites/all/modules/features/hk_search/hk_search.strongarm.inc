@@ -124,5 +124,113 @@ rent';
   );
   $export['search_api_facets_search_ids'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_backend_url';
+  $strongarm->value = '';
+  $export['shariff_backend_url'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_css';
+  $strongarm->value = 'complete';
+  $export['shariff_css'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_flattr_category';
+  $strongarm->value = '';
+  $export['shariff_flattr_category'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_flattr_user';
+  $strongarm->value = '';
+  $export['shariff_flattr_user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_mail_body';
+  $strongarm->value = '';
+  $export['shariff_mail_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_mail_subject';
+  $strongarm->value = '';
+  $export['shariff_mail_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_mail_url';
+  $strongarm->value = 'mailto:';
+  $export['shariff_mail_url'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_media_url';
+  $strongarm->value = '';
+  $export['shariff_media_url'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_orientation';
+  $strongarm->value = 'vertical';
+  $export['shariff_orientation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_referrer_track';
+  $strongarm->value = '';
+  $export['shariff_referrer_track'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_services';
+  $strongarm->value = array(
+    'twitter' => 'twitter',
+    'facebook' => 'facebook',
+    'googleplus' => 'googleplus',
+    'linkedin' => 0,
+    'pinterest' => 0,
+    'xing' => 0,
+    'whatsapp' => 0,
+    'addthis' => 0,
+    'tumblr' => 0,
+    'flattr' => 0,
+    'diaspora' => 0,
+    'reddit' => 0,
+    'stumbleupon' => 0,
+    'threema' => 0,
+    'mail' => 0,
+    'info' => 0,
+  );
+  $export['shariff_services'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_theme';
+  $strongarm->value = 'colored';
+  $export['shariff_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'shariff_twitter_via';
+  $strongarm->value = '';
+  $export['shariff_twitter_via'] = $strongarm;
+
   return $export;
 }

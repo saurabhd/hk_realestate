@@ -1794,7 +1794,9 @@ function hk_ct_views_default_views() {
     'image_style' => 'map-popup',
     'image_link' => '',
   );
+  $handler->display->display_options['fields']['field_apart_pictures']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_apart_pictures']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_apart_pictures']['separator'] = '';
   /* Field: Indexed Content: Category */
   $handler->display->display_options['fields']['field_kategorie']['id'] = 'field_kategorie';
   $handler->display->display_options['fields']['field_kategorie']['table'] = 'search_api_index_solr_node_index';

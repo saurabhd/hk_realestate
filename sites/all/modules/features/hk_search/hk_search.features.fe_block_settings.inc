@@ -21,7 +21,8 @@ function hk_search_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'shariff',
     'node_types' => array(),
-    'pages' => 'object-landing-page/*',
+    'pages' => 'object-landing-page/*
+node/*',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -185,7 +186,8 @@ function hk_search_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'object-landing-page/*',
+    'pages' => 'object-landing-page/*
+node/*',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(

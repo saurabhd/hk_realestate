@@ -8,7 +8,9 @@
 .page-object-landing-page.front {
   .footer {
     position: relative;
+    display: inline-block;
     padding: 30px 0;
+    background-color: #424242;
     .menu-footer {
       ul {
         li {
@@ -27,11 +29,39 @@
         }
       }
     }
-    .block-views {
+    /*.block-views {
       display: inline-block;
       width: 100%;
       padding: 0;
       color: #FFF;
+    }*/
+    .block-views {
+      float: left;
+      display: inline-block;
+      width: -webkit-calc(100% - 230px);
+      width:    -moz-calc(100% - 230px);
+      width:         calc(100% - 230px);
+      padding: 0 0 20px;
+      margin-right: 5px;
+      color: #FFF;
+      box-sizing: border-box;
+      border-bottom: 1px solid #3A3A3A;
+    }
+  }
+  .block-shariff {
+    float: right;
+    display: inline-block;
+    width: 185px;
+    .shariff {
+      ul {
+      float: right;
+      display: inline-block;
+      width: 100%;
+      padding: 10px;
+      background-color: #FFF;
+      box-sizing: border-box;
+      }
     }
   }
 }
+/* End */

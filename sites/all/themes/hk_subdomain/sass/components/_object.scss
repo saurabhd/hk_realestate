@@ -2,6 +2,18 @@
  * Object landing page SCSS
  */
 
+@font-face {
+  font-family: 'hk';
+  src: url('../fonts/hk.eot?82715418');
+  src: url('../fonts/hk.eot?82715418#iefix') format('embedded-opentype'),
+       url('../fonts/hk.woff?82715418') format('woff'),
+       url('../fonts/hk.ttf?82715418') format('truetype'),
+       url('../fonts/hk.svg?82715418#hk') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Slider */
 #block-views-apartment-block-1 {
   display: inline-block;
@@ -113,3 +125,58 @@
     height: 400px !important;
   }
 }
+/* End */
+
+/* Logo design */
+.page-object-landing-page {
+  font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+  #logo {
+    position: absolute;
+    right: 0;
+    margin: 85px 252px 0 0;
+  }
+  @media (max-width: 640px) {
+    #logo {
+      margin: 50px 175px 0 0;
+    }
+  }
+}
+/* End */
+
+/* Drop down arrow design */
+.select2-container {
+  .select2-choice {
+    .select2-arrow {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      margin-top: 5px;
+      margin-right: 10px;
+      background-image: url('../images/dropdown-arrow.png');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center left;
+      b { background-image: none; }
+    }
+  }
+}
+/* End */
+
+/* Location icon design */
+.icon-hk-icon-location:before {
+  font-family: "hk";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  content: '\e802';
+}
+/* End */

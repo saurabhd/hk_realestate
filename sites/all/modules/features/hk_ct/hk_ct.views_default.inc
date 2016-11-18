@@ -1364,11 +1364,24 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="object-inquiry-button">Jetzt Besichtigungstermin vereinbaren</span>';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = '/anfrage?field_angefragte_wohnung=[nid]';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Object slideshow text */
   $handler->display->display_options['fields']['field_object_slideshow_text']['id'] = 'field_object_slideshow_text';
   $handler->display->display_options['fields']['field_object_slideshow_text']['table'] = 'field_data_field_object_slideshow_text';
   $handler->display->display_options['fields']['field_object_slideshow_text']['field'] = 'field_object_slideshow_text';
   $handler->display->display_options['fields']['field_object_slideshow_text']['label'] = '';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_object_slideshow_text']['alter']['text'] = '<div class="object-slideshow-text">[field_object_slideshow_text]</div><div class ="object-inquiry-parrent">[nid]</div>';
   $handler->display->display_options['fields']['field_object_slideshow_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */

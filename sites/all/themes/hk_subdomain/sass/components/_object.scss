@@ -33,6 +33,36 @@
     padding: 20px 100px;
     background-color: rgba(0, 0, 0, .5);
     color: #FFF;
+    .object-slideshow-text {
+      float: left;
+      display: inline-block;
+      @include calc('width', '100% - 325px');
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+    }
+    .object-inquiry-parrent {
+      float: left;
+      display: inline-block;
+      width: 325px;
+      margin: 40px 0 0;
+      text-align: right;
+      @media (max-width: 992px) {
+        float: right;
+        width: auto;
+        margin: 15px 0 0;
+      }
+      @media (max-width: 640px) {
+        float: left;
+      }
+    }
+    .object-inquiry-button {
+      float: right;
+      display: inline-block;
+      padding: 7px;
+      @include border-radius(3px);
+      background-color: #FFF;
+    }
   }
 }
 
@@ -105,6 +135,12 @@
       padding: 0;
       @include border-radius(0);
       &:last-child { margin-right: 0; }
+      @media (max-width: 767px) {
+        @include calc('width', '50% - 16px' !important);
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
     }
     .select2-container {
       .select2-choice {
@@ -130,6 +166,22 @@
 /* Logo design */
 .page-object-landing-page {
   font-family: "Neue Helvetica W01",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+  &.front {
+    .wrapper.header {
+      #header {
+        height: 0;
+        width: 0;
+        padding: 0;
+      }
+    }
+    .object-slideshow {
+      margin-top: 0;
+    }
+    .select2-choice {
+      @include box-shadow(none);
+    }
+    .select2-drop-active { border-color: #CBC1BA;}
+  }
   #logo {
     position: absolute;
     right: 0;
@@ -156,7 +208,7 @@
       background-size: 100% auto;
       background-repeat: no-repeat;
       background-position: center left;
-      b { background-image: none; }
+      b { background-image: none !important; }
     }
   }
 }

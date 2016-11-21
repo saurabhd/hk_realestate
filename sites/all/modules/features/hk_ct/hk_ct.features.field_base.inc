@@ -1503,7 +1503,7 @@ $entity_field[0][\'value\'] = $building_type;',
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -1608,7 +1608,7 @@ $entity_field[0][\'value\'] = $building_type;',
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -1759,7 +1759,7 @@ $entity_field[0][\'value\'] = $building_type;',
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 

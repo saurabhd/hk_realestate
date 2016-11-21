@@ -118,6 +118,10 @@
             }
           }
         }
+        @media (max-width: 767px) {
+          width: 100%;
+          margin-bottom: 15px;
+        }
       }
     }
   }
@@ -160,6 +164,11 @@
     position: relative;
     height: 400px !important;
   }
+  @media (max-width: 767px) {
+    #main {
+      padding-bottom: 65px;
+    }
+  }
 }
 /* End */
 
@@ -182,7 +191,7 @@
     }
     .select2-drop-active { border-color: #CBC1BA;}
   }
-  #logo {
+  /*#logo {
     position: absolute;
     right: 0;
     margin: 85px 252px 0 0;
@@ -191,7 +200,7 @@
     #logo {
       margin: 50px 175px 0 0;
     }
-  }
+  }*/
 }
 /* End */
 

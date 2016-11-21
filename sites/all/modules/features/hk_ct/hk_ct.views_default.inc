@@ -528,7 +528,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_obj_enev_file']['field'] = 'field_obj_enev_file';
   $handler->display->display_options['fields']['field_obj_enev_file']['relationship'] = 'field_object_ref_target_id';
   $handler->display->display_options['fields']['field_obj_enev_file']['label'] = 'Download';
-  $handler->display->display_options['fields']['field_obj_enev_file']['alter']['text'] = '<a href="[field_obj_enev_file]">Energy Performance Certificate</a>';
+  $handler->display->display_options['fields']['field_obj_enev_file']['alter']['text'] = '<a href="[field_obj_enev_file]" target="_blank">Energy Performance Certificate</a>';
   $handler->display->display_options['fields']['field_obj_enev_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_obj_enev_file']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_obj_enev_file']['click_sort_column'] = 'fid';
@@ -1371,9 +1371,8 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="object-inquiry-button">Jetzt Besichtigungstermin vereinbaren</span>';
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="object-inquiry-button"><a href="/anfrage?field_angefragte_wohnung=[nid]">Jetzt Besichtigungstermin vereinbaren</a></span>';
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = '/anfrage?field_angefragte_wohnung=[nid]';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Object slideshow text */
   $handler->display->display_options['fields']['field_object_slideshow_text']['id'] = 'field_object_slideshow_text';

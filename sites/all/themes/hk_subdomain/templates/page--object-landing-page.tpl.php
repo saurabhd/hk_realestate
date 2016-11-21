@@ -5,14 +5,18 @@
   }
 ?>
   <div id="page">
+    <div class="wrapper navigation">
+      <div class="container">
+        <?php if ($logo): ?>
+          <a href="<?php print $front_page; ?>" title="<?php print t('Herbert + Kohlmeyer Real Estate: Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Herbert + Kohlmeyer Real Estate Logo'); ?>" width="165" height="90" /></a>
+        <?php endif; ?>
+      </div>
+    </div>
     <div class="wrapper header">
       <header id="header" role="banner">
         <?php print render($page['header']); ?>
       </header>
     </div>
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Herbert + Kohlmeyer Real Estate: Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Herbert + Kohlmeyer Real Estate Logo'); ?>" width="165" height="90" /></a>
-    <?php endif; ?>
     <div class="object-slideshow">
     <?php
       print views_embed_view('apartment', 'block_1', arg(1));

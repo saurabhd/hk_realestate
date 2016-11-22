@@ -1296,7 +1296,6 @@ function hk_ct_views_default_views() {
   /* Display: Slideshow for object page */
   $handler = $view->new_display('block', 'Slideshow for object page', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1351,7 +1350,6 @@ function hk_ct_views_default_views() {
   /* Display: Slideshow text for object */
   $handler = $view->new_display('block', 'Slideshow text for object', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1407,7 +1405,6 @@ function hk_ct_views_default_views() {
   /* Display: Advantage of object */
   $handler = $view->new_display('block', 'Advantage of object', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1462,7 +1459,6 @@ function hk_ct_views_default_views() {
   /* Display: Footer text of object */
   $handler = $view->new_display('block', 'Footer text of object', 'block_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1506,7 +1502,6 @@ function hk_ct_views_default_views() {
   /* Display: Object Location Text */
   $handler = $view->new_display('block', 'Object Location Text', 'block_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';

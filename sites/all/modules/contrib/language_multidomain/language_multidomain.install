@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_schema_alter().
+ */
+function language_multidomain_schema_alter(&$schema) {
+  // The default size of the domain database field (128) is too short.
+  $schema['languages']['domain']['length'] = 1024;
+}
+
+/**
+ * Implements hook_install().
+ */
+function language_multidomain_install() {
+  db_change_field('languages', 'domain', 'domain', array('type' => 'varchar', 'length' => 1024, 'not null' => TRUE, 'default' => '', 'description' => 'Domains to use for this language.'));
+}

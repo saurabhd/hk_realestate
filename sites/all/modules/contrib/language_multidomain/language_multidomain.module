@@ -1,0 +1,150 @@
+<?php
+
+/**
+ * Implements hook_language_negotiation_info_alter().
+ */
+function language_multidomain_language_negotiation_info_alter(array &$language_providers) {
+  // Replace the default callbacks with our own version, modified to handle multiple domains per language.
+  $language_providers[LOCALE_LANGUAGE_NEGOTIATION_URL]['callbacks']['language'] = 'locale_language_multidomain';
+  $language_providers[LOCALE_LANGUAGE_NEGOTIATION_URL]['callbacks']['url_rewrite'] = 'locale_language_multidomain_rewrite_url';
+  $language_providers[LOCALE_LANGUAGE_NEGOTIATION_URL]['file'] = drupal_get_path('module', 'language_multidomain') . '/language_multidomain.module';
+}
+
+/**
+ * Copy of locale_language_from_url(), modified to accept multiple domains.
+ */
+function locale_language_multidomain($languages) {
+  require_once 'includes/locale.inc';
+
+  $language_url = FALSE;
+
+  if (!language_negotiation_get_any(LOCALE_LANGUAGE_NEGOTIATION_URL)) {
+    return $language_url;
+  }
+  switch (variable_get('locale_language_negotiation_url_part', LOCALE_LANGUAGE_NEGOTIATION_URL_PREFIX)) {
+    case LOCALE_LANGUAGE_NEGOTIATION_URL_PREFIX:
+      // $_GET['q'] might not be available at this time, because
+      // path initialization runs after the language bootstrap phase.
+      list($language, $_GET['q']) = language_url_split_prefix(isset($_GET['q']) ? $_GET['q'] : NULL, $languages);
+      if ($language !== FALSE) {
+        $language_url = $language->language;
+      }
+      break;
+
+    case LOCALE_LANGUAGE_NEGOTIATION_URL_DOMAIN:
+      // Get only the host, not the port.
+      $http_host = $_SERVER['HTTP_HOST'];
+      if (strpos($http_host, ':') !== FALSE) {
+        $http_host_tmp = explode(':', $http_host);
+        $http_host = current($http_host_tmp);
+      }
+      foreach ($languages as $language) {
+        $hosts = array();
+        foreach (explode(',', $language->domain) as $host) {
+          $host = 'http://' . str_replace(array('http://', 'https://'), '', $host);
+          $hosts[] = parse_url($host, PHP_URL_HOST);
+        }
+        if ($hosts && in_array($http_host, $hosts)) {
+          $language_url = $language->language;
+          break;
+        }
+      }
+      break;
+  }
+
+  return $language_url;
+}
+
+/**
+ * Copy of locale_language_url_rewrite_url(), modified to accept multiple domains.
+ */
+function locale_language_multidomain_rewrite_url(&$path, &$options) {
+  require_once 'includes/locale.inc';
+
+  static $drupal_static_fast;
+  if (!isset($drupal_static_fast)) {
+    $drupal_static_fast['languages'] = &drupal_static(__FUNCTION__);
+  }
+  $languages = &$drupal_static_fast['languages'];
+
+  if (!isset($languages)) {
+    $languages = language_list('enabled');
+    $languages = array_flip(array_keys($languages[1]));
+  }
+
+  // Language can be passed as an option, or we go for current URL language.
+  if (!isset($options['language'])) {
+    global $language_url;
+    $options['language'] = $language_url;
+  }
+  // We allow only enabled languages here.
+  elseif (!isset($languages[$options['language']->language])) {
+    unset($options['language']);
+    return;
+  }
+
+  if (isset($options['language'])) {
+    switch (variable_get('locale_language_negotiation_url_part', LOCALE_LANGUAGE_NEGOTIATION_URL_PREFIX)) {
+      case LOCALE_LANGUAGE_NEGOTIATION_URL_DOMAIN:
+        if ($options['language']->domain) {
+          // Ask for an absolute URL with our modified base_url.
+          global $is_https;
+          $url_scheme = ($is_https) ? 'https://' : 'http://';
+
+          $hosts = explode(',', $options['language']->domain);
+
+          // Get only the host, not the port.
+          $http_host = $_SERVER['HTTP_HOST'];
+          if (strpos($http_host, ':') !== FALSE) {
+            $http_host_tmp = explode(':', $http_host);
+            $http_host = current($http_host_tmp);
+          }
+
+          $domains = array();
+          foreach ($hosts as $host) {
+            // Take the domain without ports or protocols so we can apply the
+            // protocol needed. The setting might include a protocol.
+            // This is changed in Drupal 8 but we need to keep backwards
+            // compatibility for Drupal 7.
+            $host = 'http://' . str_replace(array('http://', 'https://'), '', $host);
+
+            $domains[] = parse_url($host, PHP_URL_HOST);
+          }
+
+          // If we're not currently using one of the defined domains,
+          if (!in_array($http_host, $domains)) {
+            // ask for an absolute URL using the first defined domain as a base_url.
+            $options['absolute'] = TRUE;
+            // Apply the appropriate protocol to the URL.
+            $options['base_url'] = $url_scheme . reset($hosts);
+            if (isset($options['https']) && variable_get('https', FALSE)) {
+              if ($options['https'] === TRUE) {
+                $options['base_url'] = str_replace('http://', 'https://', $options['base_url']);
+              }
+              elseif ($options['https'] === FALSE) {
+                $options['base_url'] = str_replace('https://', 'http://', $options['base_url']);
+              }
+            }
+          }
+        }
+        break;
+
+      case LOCALE_LANGUAGE_NEGOTIATION_URL_PREFIX:
+        if (!empty($options['language']->prefix)) {
+          $options['prefix'] = $options['language']->prefix . '/';
+        }
+        break;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function language_multidomain_form_locale_languages_edit_form_alter(&$form, &$form_state) {
+  // Match the database column width set in language_multidomain_install().
+  $form['domain']['#maxlength'] = 1024;
+
+  // Amend the help text to indicate the possiblity to use multiple domains.
+  $form['domain']['#description'] .= ' ' . t('Multiple domains can be entered, separated with commas.');
+}

@@ -17,31 +17,50 @@ function advagg_run_check(key, value) {
   "use strict";
   // Only run if window.FontFaceObserver is defined.
   if (window.FontFaceObserver) {
-    new window.FontFaceObserver(value).check().then(function () {
-      // Only alpha numeric value.
-      key = key.replace(/[^a-zA-Z0-9\-]/g, '');
+    // Only alpha numeric value.
+    key = key.replace(/[^a-zA-Z0-9\-]/g, '');
 
-      // Set Class.
-      if (Drupal.settings.advagg_font_no_fout != 1) {
-        window.document.documentElement.className += ' ' + key;
-      }
-
-      // Set Cookie for a day.
-      if (Drupal.settings.advagg_font_cookie == 1) {
-        var expire_date = new Date(new Date().getTime() + 86400 * 1000);
-        document.cookie = 'advaggfont_' + key + '=' + value + ';'
-          + ' expires=' + expire_date.toGMTString() + ';'
-          + ' path=/;'
-          + ' domain=.' + document.location.hostname + ';';
-      }
-    }, function () {}
-  );
+    if (typeof window.FontFaceObserver.prototype.load === 'function') {
+      new window.FontFaceObserver(value).load().then(function () {
+        advagg_run_check_inner(key, value);
+      }, function () {});
+    }
+    else {
+      new window.FontFaceObserver(value).check().then(function () {
+        advagg_run_check_inner(key, value);
+      }, function () {});
+    }
   }
   else {
     // Try again in 100 ms.
     window.setTimeout(function () {
       advagg_run_check(key, value);
     }, 100);
+  }
+}
+
+/**
+ * Run the check.
+ *
+ * @param {string} key
+ *   The class name to add to the html tag.
+ * @param {string} value
+ *   The font name.
+ */
+function advagg_run_check_inner(key, value) {
+  'use strict';
+  // Set Class.
+  if (Drupal.settings.advagg_font_no_fout != 1) {
+    window.document.documentElement.className += ' ' + key;
+  }
+
+  // Set Cookie for a day.
+  if (Drupal.settings.advagg_font_cookie == 1) {
+    var expire_date = new Date(new Date().getTime() + 86400 * 1000);
+    document.cookie = 'advaggfont_' + key + '=' + value + ';'
+      + ' expires=' + expire_date.toGMTString() + ';'
+      + ' path=/;'
+      + ' domain=.' + document.location.hostname + ';';
   }
 }
 

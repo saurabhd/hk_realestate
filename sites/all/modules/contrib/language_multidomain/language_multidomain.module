@@ -40,7 +40,9 @@ function locale_language_multidomain($languages) {
       }
       foreach ($languages as $language) {
         $hosts = array();
-        foreach (explode(',', $language->domain) as $host) {
+        $domainListStr = $language->domain;
+        $domainListStr = str_ireplace(" ", "", $domainListStr);  //remove spaces
+        foreach (explode(',', $domainListStr) as $host) {
           $host = 'http://' . str_replace(array('http://', 'https://'), '', $host);
           $hosts[] = parse_url($host, PHP_URL_HOST);
         }

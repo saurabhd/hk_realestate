@@ -12,6 +12,47 @@ function hk_search_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-footer_copyright_block'] = array(
+    'cache' => -1,
+    'css_class' => 'footer-copyright',
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'footer_copyright_block',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_subdomain' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'hk_subdomain',
+        'weight' => -50,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['shariff-shariff_block'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -41,7 +82,7 @@ node/*',
         'region' => 'footer',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => 0,
+        'weight' => -52,
       ),
       'hk_theme' => array(
         'region' => '',
@@ -206,7 +247,7 @@ node/*',
         'region' => 'footer',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => 0,
+        'weight' => -51,
       ),
       'hk_theme' => array(
         'region' => 'footer',

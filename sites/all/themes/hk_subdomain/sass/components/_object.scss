@@ -1,4 +1,4 @@
-/**
+/*
  * Object landing page SCSS
  */
 
@@ -31,13 +31,21 @@
     display: inline-block;
     width: 100%;
     padding: 20px 100px;
+    border: 1px solid #FFF;
+    border-bottom: none;
     background-color: rgba(0, 0, 0, .5);
     color: #FFF;
+    @media (max-width: 1199px) {
+      padding: 20px 50px;
+    }
+    @media (max-width: 767px) {
+      padding: 15px;
+    }
     .object-slideshow-text {
       float: left;
       display: inline-block;
       @include calc('width', '100% - 325px');
-      @media (max-width: 992px) {
+      @media (max-width: 1199px) {
         width: 100%;
       }
     }
@@ -45,9 +53,9 @@
       float: left;
       display: inline-block;
       width: 325px;
-      margin: 40px 0 0;
+      margin: 55px 0 0;
       text-align: right;
-      @media (max-width: 992px) {
+      @media (max-width: 1199px) {
         float: right;
         width: auto;
         margin: 15px 0 0;
@@ -94,12 +102,13 @@
         width: calc(33.3333% - 20px);
         margin: 0 30px 0 0;
         padding: 13px 20px;
-        @include box-shadow(0 0 5px 1px rgba(0, 0, 0, .5));
+        @include box-shadow(0 0 5px 2px rgba(0, 0, 0, .5));
         &:last-child { margin-right: 0; }
         .readmore-summary {
           span {
             display: inline-block;
             width: 100%;
+            margin-top: 15px;
             text-align: center;
           }
           .readmore-link {
@@ -132,6 +141,8 @@
   #search {
     display: inline-block;
     width: 100%;
+    margin-top: 12px;
+    margin-bottom: 25px;
     .block-facetapi {
       float: left;
       width: calc(25% - 24px) !important;
@@ -140,10 +151,16 @@
       @include border-radius(0);
       &:last-child { margin-right: 0; }
       @media (max-width: 767px) {
-        @include calc('width', '50% - 16px' !important);
+        width: -webkit-calc(50% - 16px)!important;
+        width:    -moz-calc(50% - 16px)!important;
+        width:         calc(50% - 16px)!important;
         &:nth-child(2n) {
           margin-right: 0;
         }
+      }
+      @media (max-width: 480px) {
+        width: 100%;
+        margin-right: 0;
       }
     }
     .select2-container {
@@ -169,6 +186,8 @@
       padding-bottom: 65px;
     }
   }
+  .leaflet-left { top: 0; }
+  .leaflet-right { bottom: 0; }
 }
 /* End */
 
@@ -219,6 +238,24 @@
       background-position: center left;
       b { background-image: none !important; }
     }
+  }
+}
+/* End */
+
+/* Group card design */
+.view-object-landing-page {
+  .views-row {
+    margin-right: 2%;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    @media (max-width: 1024px) {
+      margin-right: 0;
+    }
+  }
+  .views-row-odd { float: left; }
+  @media (max-width: 560px) {
+    .group-card { max-width: 100%;}
   }
 }
 /* End */

@@ -138,6 +138,9 @@
 
 /* Form design */
 .page-object-landing-page {
+  #content {
+    .messages--status { z-index: 100;}
+  }
   #main { margin-top: 15px; }
   #search {
     display: inline-block;
@@ -145,8 +148,11 @@
     margin-top: 12px;
     margin-bottom: 25px;
     .block-facetapi {
+      z-index: 1;
       float: left;
-      width: calc(25% - 24px) !important;
+      width: -webkit-calc(25% - 24px) !important;
+      width:    -moz-calc(25% - 24px) !important;
+      width:         calc(25% - 24px) !important;
       margin: 0 32px 0 0;
       padding: 0;
       @include border-radius(0);
@@ -187,8 +193,14 @@
       padding-bottom: 65px;
     }
   }
-  .leaflet-left { top: 0; }
-  .leaflet-right { bottom: 0; }
+  .leaflet-left {
+    top: 0;
+    z-index: 100;
+  }
+  .leaflet-right {
+    bottom: 0;
+    z-index: 100;
+  }
 }
 /* End */
 

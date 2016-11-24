@@ -54,6 +54,11 @@
           placeholderOption: "first"
           //allowClear: true
       });
+      $('.floor select').select2({
+          placeholder: Drupal.t('Floor'),
+          placeholderOption: "first"
+          //allowClear: true
+      });
       $('#edit-field-email-type-und').select2({
           placeholder: Drupal.t('Select Email Type'),
           placeholderOption: "first"

@@ -1,0 +1,60 @@
+/**
+ * @file
+ * SCSS file for variables.
+ *
+ * All variables used in SCSS are defined in this file.
+ * Mixin
+ */
+
+
+/* Mixin - groups of css declarations */
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin widthplus($value, $value1) {
+  width: -webkit-calc($value + $value1);
+  width:    -moz-calc($value + $value1);
+  width:         calc($value + $value1);
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+      -ms-box-shadow: $value;
+          box-shadow: $value;
+}
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+     -moz-appearance: $value;
+      -ms-appearance: $value;
+          appearance: $value;
+  /*-webkit-user-select: $value;
+     -moz-user-select: $value;*/
+}
+@mixin transform($deg) {
+  -webkit-transform: $deg;
+     -moz-transform: $deg;
+      -ms-transform: $deg;
+          transform: $deg;
+}
+@mixin transition($value) {
+  -webkit-transition: $value;
+     -moz-transition: $value;
+      -ms-transition: $value;
+          transition: $value;
+}
+@mixin background($value, $value2, $value3, $value4) {
+  background: $value;
+  background: -moz-linear-gradient(top, $value 0%, $value2 50%, $value3 51%, $value4 100%);
+  background: -webkit-linear-gradient(top, $value 0%, $value2 50%, $value3 51%, $value4 100%);
+  background: linear-gradient(to bottom, $value 0%, $value2 50%, $value3 51%, $value4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$value', endColorstr='$value4',GradientType=0);
+}

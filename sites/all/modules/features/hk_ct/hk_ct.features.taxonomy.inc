@@ -16,6 +16,8 @@ function hk_ct_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'features_kategorie_test',
       'weight' => -10,
+      'language' => 'und',
+      'i18n_mode' => 0,
     ),
     'vocabulary_3' => array(
       'name' => 'Bezirke',
@@ -24,6 +26,8 @@ function hk_ct_taxonomy_default_vocabularies() {
       'hierarchy' => 1,
       'module' => 'features_bezirke',
       'weight' => -5,
+      'language' => 'und',
+      'i18n_mode' => 0,
     ),
     'vocabulary_5' => array(
       'name' => 'Ausstattung',
@@ -32,6 +36,8 @@ function hk_ct_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => -7,
+      'language' => 'und',
+      'i18n_mode' => 0,
     ),
     'vocabulary_6' => array(
       'name' => 'Wohnungstyp',
@@ -40,6 +46,8 @@ function hk_ct_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'features_wohnungstyp',
       'weight' => -6,
+      'language' => 'und',
+      'i18n_mode' => 0,
     ),
   );
 }

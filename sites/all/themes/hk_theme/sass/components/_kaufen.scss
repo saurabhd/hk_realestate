@@ -1,7 +1,8 @@
 .page-buy,
 .page-mieten,
 .view-merkliste,
-.view-apartment {
+.view-apartment,
+.view-object-landing-page {
   img {
       float: left;
       margin-right: 1em;
@@ -47,6 +48,11 @@
       margin-top: -5px;
     }
   }
+}
+
+.view-object-landing-page {
+  display: inline-block;
+  width: 100%;
 }
 /* buy page search box */
 .page-buy,

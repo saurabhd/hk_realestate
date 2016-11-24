@@ -362,7 +362,6 @@ function hk_ct_field_group_info() {
       8 => 'field_obj_enev_file',
       9 => 'field_obj_enev_consumption_value',
       10 => 'field_building_type',
-      11 => 'field_year',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -559,6 +558,7 @@ function hk_ct_field_group_info() {
       5 => 'group_ht_texte',
       6 => 'group_obj_apartments',
       7 => 'group_ort',
+      8 => 'group_object_landing',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -997,6 +997,36 @@ function hk_ct_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_object_landing|node|objekt|form';
+  $field_group->group_name = 'group_object_landing';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'objekt';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_horizontal';
+  $field_group->data = array(
+    'label' => 'Object Landing',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_object_advantages',
+      1 => 'field_object_slideshow_text',
+      2 => 'field_object_footer_text',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'label' => 'Object Landing',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-object-landing field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $field_groups['group_object_landing|node|objekt|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_ort|node|objekt|form';
   $field_group->group_name = 'group_ort';
   $field_group->entity_type = 'node';
@@ -1270,6 +1300,7 @@ function hk_ct_field_group_info() {
   t('Location');
   t('Mehrere Apartmenttypen im Objekt');
   t('Merkmale');
+  t('Object Landing');
   t('Objektverwaltung');
   t('Ort');
   t('Other');

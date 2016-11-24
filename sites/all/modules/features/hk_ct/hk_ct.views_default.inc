@@ -186,7 +186,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_address_thoroughfare']['element_type'] = 'h2';
   $handler->display->display_options['fields']['field_address_thoroughfare']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_address_thoroughfare']['element_default_classes'] = FALSE;
-  /* Field: Content: Schattenobjekt? */
+  /* Field: Content: Schattenwohnung? */
   $handler->display->display_options['fields']['field_obj_schattenobjekt']['id'] = 'field_obj_schattenobjekt';
   $handler->display->display_options['fields']['field_obj_schattenobjekt']['table'] = 'field_data_field_obj_schattenobjekt';
   $handler->display->display_options['fields']['field_obj_schattenobjekt']['field'] = 'field_obj_schattenobjekt';
@@ -528,7 +528,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['field_obj_enev_file']['field'] = 'field_obj_enev_file';
   $handler->display->display_options['fields']['field_obj_enev_file']['relationship'] = 'field_object_ref_target_id';
   $handler->display->display_options['fields']['field_obj_enev_file']['label'] = 'Download';
-  $handler->display->display_options['fields']['field_obj_enev_file']['alter']['text'] = '<a href="[field_obj_enev_file]">Energy Performance Certificate</a>';
+  $handler->display->display_options['fields']['field_obj_enev_file']['alter']['text'] = '<a href="[field_obj_enev_file]" target="_blank">Energy Performance Certificate</a>';
   $handler->display->display_options['fields']['field_obj_enev_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_obj_enev_file']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_obj_enev_file']['click_sort_column'] = 'fid';
@@ -748,7 +748,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Object ID */
+  /* Field: Content: Objekt ID */
   $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
   $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
@@ -1284,13 +1284,262 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'apartment' => 'apartment',
   );
-  /* Filter criterion: Content: Schattenobjekt? (field_obj_schattenobjekt) */
+  /* Filter criterion: Content: Schattenwohnung? (field_obj_schattenobjekt) */
   $handler->display->display_options['filters']['field_obj_schattenobjekt_value']['id'] = 'field_obj_schattenobjekt_value';
   $handler->display->display_options['filters']['field_obj_schattenobjekt_value']['table'] = 'field_data_field_obj_schattenobjekt';
   $handler->display->display_options['filters']['field_obj_schattenobjekt_value']['field'] = 'field_obj_schattenobjekt_value';
   $handler->display->display_options['filters']['field_obj_schattenobjekt_value']['operator'] = 'not';
   $handler->display->display_options['filters']['field_obj_schattenobjekt_value']['value'] = array(
     1 => '1',
+  );
+
+  /* Display: Slideshow for object page */
+  $handler = $view->new_display('block', 'Slideshow for object page', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'wohnungsansicht';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Object images */
+  $handler->display->display_options['fields']['field_object_images']['id'] = 'field_object_images';
+  $handler->display->display_options['fields']['field_object_images']['table'] = 'field_data_field_object_images';
+  $handler->display->display_options['fields']['field_object_images']['field'] = 'field_object_images';
+  $handler->display->display_options['fields']['field_object_images']['label'] = '';
+  $handler->display->display_options['fields']['field_object_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_object_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_object_images']['settings'] = array(
+    'image_style' => 'subdomain_slideshow__1500x680',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_object_images']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_object_images']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'objekt' => 'objekt',
+  );
+
+  /* Display: Slideshow text for object */
+  $handler = $view->new_display('block', 'Slideshow text for object', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="object-inquiry-button"><a href="/anfrage?field_angefragte_wohnung=[nid]">Jetzt Besichtigungstermin vereinbaren</a></span>';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Object slideshow text */
+  $handler->display->display_options['fields']['field_object_slideshow_text']['id'] = 'field_object_slideshow_text';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['table'] = 'field_data_field_object_slideshow_text';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['field'] = 'field_object_slideshow_text';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['label'] = '';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_object_slideshow_text']['alter']['text'] = '<div class="object-slideshow-text">[field_object_slideshow_text]</div><div class ="object-inquiry-parrent">[nid]</div>';
+  $handler->display->display_options['fields']['field_object_slideshow_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'objekt' => 'objekt',
+  );
+
+  /* Display: Advantage of object */
+  $handler = $view->new_display('block', 'Advantage of object', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Object advantages */
+  $handler->display->display_options['fields']['field_object_advantages']['id'] = 'field_object_advantages';
+  $handler->display->display_options['fields']['field_object_advantages']['table'] = 'field_data_field_object_advantages';
+  $handler->display->display_options['fields']['field_object_advantages']['field'] = 'field_object_advantages';
+  $handler->display->display_options['fields']['field_object_advantages']['label'] = '';
+  $handler->display->display_options['fields']['field_object_advantages']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['field_object_advantages']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_object_advantages']['type'] = 'readmore';
+  $handler->display->display_options['fields']['field_object_advantages']['settings'] = array(
+    'readmore_trim_length' => '200',
+    'readmore_trim_on_break' => 1,
+    'readmore_show_readless' => 1,
+    'readmore_ellipsis' => 0,
+    'readmore_wordsafe' => 1,
+  );
+  $handler->display->display_options['fields']['field_object_advantages']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_object_advantages']['multi_type'] = 'ul';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'objekt' => 'objekt',
+  );
+
+  /* Display: Footer text of object */
+  $handler = $view->new_display('block', 'Footer text of object', 'block_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Object footer text */
+  $handler->display->display_options['fields']['field_object_footer_text']['id'] = 'field_object_footer_text';
+  $handler->display->display_options['fields']['field_object_footer_text']['table'] = 'field_data_field_object_footer_text';
+  $handler->display->display_options['fields']['field_object_footer_text']['field'] = 'field_object_footer_text';
+  $handler->display->display_options['fields']['field_object_footer_text']['label'] = '';
+  $handler->display->display_options['fields']['field_object_footer_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'objekt' => 'objekt',
+  );
+
+  /* Display: Object Location Text */
+  $handler = $view->new_display('block', 'Object Location Text', 'block_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Location */
+  $handler->display->display_options['fields']['field_object_location']['id'] = 'field_object_location';
+  $handler->display->display_options['fields']['field_object_location']['table'] = 'field_data_field_object_location';
+  $handler->display->display_options['fields']['field_object_location']['field'] = 'field_object_location';
+  $handler->display->display_options['fields']['field_object_location']['label'] = '';
+  $handler->display->display_options['fields']['field_object_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Objekt ID (field_objektid_nunumeric) */
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['id'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['field'] = 'field_objektid_nunumeric_value';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_objektid_nunumeric_value']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'objekt' => 'objekt',
   );
   $export['apartment'] = $view;
 
@@ -1467,6 +1716,190 @@ function hk_ct_views_default_views() {
     'block' => 0,
   );
   $export['merkliste'] = $view;
+
+  $view = new view();
+  $view->name = 'object_landing_page';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_solr_node_index';
+  $view->human_name = 'Object Landing Page';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Object Landing Page';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Indexed Content: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Filter criterion: Indexed Content: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'apartment' => 'apartment',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'search_api_views_cache';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹‹';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '››';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Indexed Content: Object */
+  $handler->display->display_options['relationships']['field_object_ref']['id'] = 'field_object_ref';
+  $handler->display->display_options['relationships']['field_object_ref']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['relationships']['field_object_ref']['field'] = 'field_object_ref';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Content: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
+  /* Field: Indexed Content: Pictures */
+  $handler->display->display_options['fields']['field_apart_pictures']['id'] = 'field_apart_pictures';
+  $handler->display->display_options['fields']['field_apart_pictures']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_pictures']['field'] = 'field_apart_pictures';
+  $handler->display->display_options['fields']['field_apart_pictures']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_pictures']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_apart_pictures']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_apart_pictures']['settings'] = array(
+    'image_style' => 'map-popup',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_apart_pictures']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_apart_pictures']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_apart_pictures']['separator'] = '';
+  /* Field: Indexed Content: Category */
+  $handler->display->display_options['fields']['field_kategorie']['id'] = 'field_kategorie';
+  $handler->display->display_options['fields']['field_kategorie']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_kategorie']['field'] = 'field_kategorie';
+  $handler->display->display_options['fields']['field_kategorie']['label'] = '';
+  $handler->display->display_options['fields']['field_kategorie']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_kategorie']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_kategorie']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_kategorie']['bypass_access'] = 0;
+  /* Field: Indexed Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  /* Field: Indexed Content: Living space */
+  $handler->display->display_options['fields']['field_apart_living_space']['id'] = 'field_apart_living_space';
+  $handler->display->display_options['fields']['field_apart_living_space']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_living_space']['field'] = 'field_apart_living_space';
+  $handler->display->display_options['fields']['field_apart_living_space']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_living_space']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_apart_living_space']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => ',',
+    'scale' => '0',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Indexed Content: Purchasing price */
+  $handler->display->display_options['fields']['field_apart_price']['id'] = 'field_apart_price';
+  $handler->display->display_options['fields']['field_apart_price']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_price']['field'] = 'field_apart_price';
+  $handler->display->display_options['fields']['field_apart_price']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_price']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_apart_price']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => ',',
+    'scale' => '0',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Object » Address: Thoroughfare (i.e. Street address) (indexed) */
+  $handler->display->display_options['fields']['field_object_ref_field_address_thoroughfare']['id'] = 'field_object_ref_field_address_thoroughfare';
+  $handler->display->display_options['fields']['field_object_ref_field_address_thoroughfare']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_object_ref_field_address_thoroughfare']['field'] = 'field_object_ref_field_address_thoroughfare';
+  $handler->display->display_options['fields']['field_object_ref_field_address_thoroughfare']['label'] = '';
+  $handler->display->display_options['fields']['field_object_ref_field_address_thoroughfare']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_object_ref_field_address_thoroughfare']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_object_ref_field_address_thoroughfare']['link_to_entity'] = 0;
+  /* Field: Object » Address: Postal code (indexed) */
+  $handler->display->display_options['fields']['field_object_ref_field_address_postal_code']['id'] = 'field_object_ref_field_address_postal_code';
+  $handler->display->display_options['fields']['field_object_ref_field_address_postal_code']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_object_ref_field_address_postal_code']['field'] = 'field_object_ref_field_address_postal_code';
+  $handler->display->display_options['fields']['field_object_ref_field_address_postal_code']['label'] = '';
+  $handler->display->display_options['fields']['field_object_ref_field_address_postal_code']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_object_ref_field_address_postal_code']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_object_ref_field_address_postal_code']['link_to_entity'] = 0;
+  /* Field: Object » Address: Locality (i.e. City) (indexed) */
+  $handler->display->display_options['fields']['field_object_ref_field_address_locality']['id'] = 'field_object_ref_field_address_locality';
+  $handler->display->display_options['fields']['field_object_ref_field_address_locality']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_object_ref_field_address_locality']['field'] = 'field_object_ref_field_address_locality';
+  $handler->display->display_options['fields']['field_object_ref_field_address_locality']['label'] = '';
+  $handler->display->display_options['fields']['field_object_ref_field_address_locality']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_object_ref_field_address_locality']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_object_ref_field_address_locality']['link_to_entity'] = 0;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Object: Object ID (indexed) */
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['id'] = 'field_object_ref_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['field'] = 'field_object_ref_field_objektid_nunumeric';
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['title'] = '%1 Object Landing Page';
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['field_object_ref_field_objektid_nunumeric']['not'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Indexed Content: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'apartment' => 'apartment',
+  );
+  /* Filter criterion: Indexed Content: Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['path'] = 'object-landing-page';
+  $export['object_landing_page'] = $view;
 
   $view = new view();
   $view->name = 'oeffnungszeiten';

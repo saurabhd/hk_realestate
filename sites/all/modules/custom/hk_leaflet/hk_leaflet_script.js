@@ -48,7 +48,7 @@
     /*  var body_width = $('body').outerWidth();
       var ui_dialog_width = $('.home-form-wrap .ui-dailog').outerWidth();
       var left_position = (body_width - ui_dialog_width) / 2;*/
-      $( ".front #block-views-exp-karten-map-page, .front #search").dialog({
+      $( ".front #block-views-exp-karten-map-page, .front.page-map #search").dialog({
             height: "auto",
             minHeight: "120",
             width: "540",

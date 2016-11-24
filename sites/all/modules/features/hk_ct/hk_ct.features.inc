@@ -70,10 +70,10 @@ function hk_ct_flag_default_flags() {
     'flag_long' => 'add apartment to your personal favorites list',
     'flag_message' => 'apartment added',
     'unflag_short' => 'Remove from favorites',
-    'unflag_long' => 'remove apartment from your personal favorites list',
+    'unflag_long' => '',
     'unflag_message' => 'apartment removed',
     'unflag_denied_text' => '',
-    'link_type' => 'normal',
+    'link_type' => 'toggle',
     'weight' => 0,
     'show_in_links' => array(
       'full' => 'full',
@@ -82,11 +82,10 @@ function hk_ct_flag_default_flags() {
       'search_index' => 0,
       'search_result' => 0,
       'diff_standard' => 0,
-      'print' => 0,
       'token' => 0,
-      'workflow_tab' => 0,
-      'exposekarte' => 0,
-      'wohn_und_geschaeftshaus' => 0,
+      'map_popup' => 0,
+      'project' => 0,
+      'tile' => 0,
       'revision' => 0,
     ),
     'show_as_field' => 1,
@@ -114,6 +113,7 @@ function hk_ct_image_default_styles() {
   $styles['colorbox_full'] = array(
     'label' => 'Wohnungsbilder Galerie',
     'effects' => array(
+      57 => NULL,
       58 => array(
         'name' => 'image_scale',
         'data' => array(
@@ -131,6 +131,7 @@ function hk_ct_image_default_styles() {
   $styles['colorboxbreakpoints_theme_hk_theme_desk_1x'] = array(
     'label' => 'colorboxbreakpoints_theme_hk_theme_desk_1x',
     'effects' => array(
+      44 => NULL,
       17 => array(
         'name' => 'image_scale',
         'data' => array(
@@ -148,6 +149,7 @@ function hk_ct_image_default_styles() {
   $styles['colorboxbreakpoints_theme_hk_theme_mobile_1x'] = array(
     'label' => 'colorboxbreakpoints_theme_hk_theme_mobile_1x',
     'effects' => array(
+      43 => NULL,
       21 => array(
         'name' => 'image_scale',
         'data' => array(
@@ -165,6 +167,7 @@ function hk_ct_image_default_styles() {
   $styles['colorboxbreakpoints_theme_hk_theme_narrow_1x'] = array(
     'label' => 'colorboxbreakpoints_theme_hk_theme_narrow_1x',
     'effects' => array(
+      41 => NULL,
       19 => array(
         'name' => 'image_scale',
         'data' => array(
@@ -182,6 +185,7 @@ function hk_ct_image_default_styles() {
   $styles['colorboxbreakpoints_theme_hk_theme_wide_1x'] = array(
     'label' => 'colorboxbreakpoints_theme_hk_theme_wide_1x',
     'effects' => array(
+      42 => NULL,
       9 => array(
         'name' => 'image_scale',
         'data' => array(
@@ -199,6 +203,7 @@ function hk_ct_image_default_styles() {
   $styles['flexfullbreakpoints_theme_hk_theme_desk_1x'] = array(
     'label' => 'flexfullbreakpoints_theme_hk_theme_desk_1x',
     'effects' => array(
+      13 => NULL,
       12 => array(
         'name' => 'smartcrop_scale_and_crop',
         'data' => array(
@@ -216,6 +221,7 @@ function hk_ct_image_default_styles() {
   $styles['flexfullbreakpoints_theme_hk_theme_mobile_1x'] = array(
     'label' => 'flexfullbreakpoints_theme_hk_theme_mobile_1x',
     'effects' => array(
+      62 => NULL,
       23 => array(
         'name' => 'smartcrop_scale_and_crop',
         'data' => array(
@@ -233,6 +239,7 @@ function hk_ct_image_default_styles() {
   $styles['flexfullbreakpoints_theme_hk_theme_narrow_1x'] = array(
     'label' => 'flexfullbreakpoints_theme_hk_theme_narrow_1x',
     'effects' => array(
+      61 => NULL,
       56 => array(
         'name' => 'smartcrop_scale_and_crop',
         'data' => array(
@@ -250,6 +257,7 @@ function hk_ct_image_default_styles() {
   $styles['flexfullbreakpoints_theme_hk_theme_wide_1x'] = array(
     'label' => 'flexfullbreakpoints_theme_hk_theme_wide_1x',
     'effects' => array(
+      60 => NULL,
       14 => array(
         'name' => 'smartcrop_scale_and_crop',
         'data' => array(
@@ -335,6 +343,7 @@ function hk_ct_image_default_styles() {
   $styles['map-popup'] = array(
     'label' => 'map-popup',
     'effects' => array(
+      4 => NULL,
       3 => array(
         'name' => 'smartcrop_scale_and_crop',
         'data' => array(
@@ -359,6 +368,22 @@ function hk_ct_image_default_styles() {
           'height' => 750,
           'upscale' => 0,
           '#imageinfo_cache_effect_callback' => 'image_scale_effect',
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: subdomain_slideshow__1500x680.
+  $styles['subdomain_slideshow__1500x680'] = array(
+    'label' => 'subdomain slideshow (1500x680)',
+    'effects' => array(
+      64 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1500,
+          'height' => 680,
+          '#imageinfo_cache_effect_callback' => 'image_scale_and_crop_effect',
         ),
         'weight' => 1,
       ),

@@ -16,6 +16,8 @@ function hk_crm_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
     ),
     'individual_type' => array(
       'name' => 'Individual Type',
@@ -24,6 +26,8 @@ function hk_crm_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
     ),
     'meeting_type' => array(
       'name' => 'Meeting Type',
@@ -32,6 +36,8 @@ function hk_crm_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
     ),
     'task_type' => array(
       'name' => 'Task type',
@@ -40,6 +46,8 @@ function hk_crm_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
     ),
   );
 }

@@ -85,6 +85,9 @@ function hk_ct_strongarm() {
         'xmlsitemap' => array(
           'weight' => '11',
         ),
+        'domain' => array(
+          'weight' => '1',
+        ),
       ),
       'display' => array(
         'flag_merken' => array(
@@ -248,7 +251,10 @@ function hk_ct_strongarm() {
           'weight' => '-4',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '5',
+        ),
+        'domain' => array(
+          'weight' => '3',
         ),
       ),
       'display' => array(),

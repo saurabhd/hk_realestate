@@ -582,7 +582,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => -40,
       ),
       'hk_subdomain' => array(
-        'region' => 'content',
+        'region' => '',
         'status' => 0,
         'theme' => 'hk_subdomain',
         'weight' => 0,
@@ -718,7 +718,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'navigation',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => -34,
+        'weight' => -55,
       ),
       'hk_theme' => array(
         'region' => 'navigation',
@@ -765,7 +765,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'navigation',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => -32,
+        'weight' => -51,
       ),
       'hk_theme' => array(
         'region' => 'navigation',
@@ -803,10 +803,10 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => -25,
       ),
       'hk_subdomain' => array(
-        'region' => 'navigation',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'hk_subdomain',
-        'weight' => -35,
+        'weight' => -53,
       ),
       'hk_theme' => array(
         'region' => 'navigation',
@@ -941,7 +941,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'navigation',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => -33,
+        'weight' => -52,
       ),
       'hk_theme' => array(
         'region' => 'navigation',
@@ -1025,10 +1025,10 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'weight' => -25,
       ),
       'hk_subdomain' => array(
-        'region' => 'navigation',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'hk_subdomain',
-        'weight' => -37,
+        'weight' => -54,
       ),
       'hk_theme' => array(
         'region' => 'navigation',

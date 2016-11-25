@@ -94,8 +94,8 @@ function search_api_ranges_facetapi_facet_info_alter(array &$facet_info, array $
  * @param string $order
  *   Either ASC (for min) or DESC (for max)
  *
- * @return string|null
- *   The rounded integer value for min/max, or NULL.
+ * @return string
+ *   The rounded integer value for min/max
  *
  */
 function search_api_ranges_minmax($variables, $order = 'ASC') {
@@ -110,13 +110,9 @@ function search_api_ranges_minmax($variables, $order = 'ASC') {
     return isset($variables['result']) ? $variables['result'] : NULL;
   }
 
-  /** @var SearchApiQuery $query */
   $query = $variables['query'];
-  /** @var SearchApiIndex $index */
   $index = $variables['index'];
   $order_lower = strtolower($order);
-  // Generate a facet tag using the base field.
-  $tag = 'facet:' . $variables['range_field'];
 
   // Check if min or max values are indexed for multiple fields.
   if (search_api_is_list_type($index->options['fields'][$variables['range_field']]['type'])) {
@@ -148,8 +144,13 @@ function search_api_ranges_minmax($variables, $order = 'ASC') {
   // otherwise our min/max would always equal user input.
   $filters = &$query->getFilter()->getFilters();
   foreach ($filters as $key => $filter) {
-    if (isset($filter->tags) && is_array($filter->tags) && in_array($tag, $filter->tags)) {
-      unset($filters[$key]);
+
+    // Check for array: old style filters are objects which we can skip.
+    if (is_array($filter)) {
+      if ($filter[0] == $variables['range_field'] || ($filter[0] != $variables['range_field'] && $filter[2] == '<>')) {
+        $current_filter = $filters[$key];
+        unset($filters[$key]);
+      }
     }
   }
 
@@ -178,71 +179,26 @@ function search_api_ranges_minmax($variables, $order = 'ASC') {
     }
   }
   if (!$results['results']) {
-    return NULL;
+    return;
   }
 
-  $result_ids = array();
   foreach ($results['results'] as $result) {
-    $result_ids[] = $result['id'];
+    $entity = entity_load($variables['index']->item_type, array($result['id']));
+    $variables['index']->dataAlter($entity);
+    $wrapper = $variables['index']->entityWrapper($entity[$result['id']]);
   }
-  $entities = entity_load($index->item_type, $result_ids);
-
-  $index->dataAlter($entities);
-
-  $orphan_ids = array();
-  foreach ($result_ids as $id) {
-    if (!isset($entities[$id])) {
-      $orphan_ids[] = $id;
-    }
-    else {
-      $entity = $entities[$id];
-      $wrapper = $index->entityWrapper($entity);
-    }
-  }
-
-  if (!empty($orphan_ids)) {
-    $warning = t(
-      'Orphan ids detected in search index: @orphan_ids.' . "\n" .
-      'Re-indexing is recommended.',
-      array(
-        '@orphan_ids' => implode(', ', $orphan_ids)
-      ));
-    drupal_set_message($warning, 'warning');
-  }
-
-  if (!isset($wrapper)) {
-    return NULL;
-  }
-
   $fields[$variables['range_field']]['type'] = 'integer';
-  $round_precision = isset($variables['round-precision']) ? $variables['round-precision'] : 0;
-  if ($round_precision == 0) {
-    $fields[$variables['range_field']]['type'] = 'integer';
-  }
-  else {
-    $fields[$variables['range_field']]['type'] = 'float';
-  }
   $fields = search_api_extract_fields($wrapper, $fields);
 
   // We have to round because jQuery slider cannot handle decimals.
   $return = $fields[$variables['range_field']]['value'];
   switch ($order) {
     case 'DESC':
-      if ($round_precision == 0) {
-        $return = ceil($return);
-      }
-      elseif ($round_precision > 0) {
-         $return = round($return, $round_precision, PHP_ROUND_HALF_UP);
-      }
+      $return = ceil($return);
       break;
 
     default:
-      if ($round_precision == 0) {
-        $return = floor($return);
-      }
-      elseif ($round_precision > 0) {
-        $return = round($return, $round_precision, PHP_ROUND_HALF_DOWN);
-      }
+      $return = floor($return);
   }
   return $return;
 }
@@ -323,12 +279,6 @@ function search_api_ranges_forms($form_id, $args) {
 function search_api_ranges_block_slider_view_form($form, &$form_state, $variables) {
   $form = array();
 
-  // Add JS.
-  $module_path = drupal_get_path('module', 'search_api_ranges');
-  $form['#attached']['library'][] = array('system', 'ui.slider');
-  $form['#attached']['js'][] = $module_path . '/jquery.numeric.js';
-  $form['#attached']['js'][] = $module_path . '/search_api_ranges.js';
-
   // For compatibility with Search API ajax,
   // we generate the 'ajax target URL' as a hidden field.
   $params = drupal_get_query_parameters($_GET, array('q'));
@@ -354,8 +304,8 @@ function search_api_ranges_block_slider_view_form($form, &$form_state, $variable
         . $variables['range_field'] . '@to!suffix_' . $variables['range_field'],
         array(
           '!field_name' => t($variables['name']),
-          '@from' => $variables['min'],
-          '@to' => $variables['max'],
+          '@from' => number_format($variables['min'], 0),
+          '@to' => number_format($variables['max'], 0),
           '!prefix_' . $variables['range_field'] => $variables['prefix'],
           '!suffix_' . $variables['range_field'] => $variables['suffix'],
          )
@@ -427,7 +377,7 @@ function search_api_ranges_block_slider_view_form_submit($form, &$form_state) {
     $exists = FALSE;
     $split_path = explode('/', $path);
     foreach ($split_path as $key => $value) {
-      if ($value == $range_field) {
+      if (!($key % 2) && $value == $range_field) {
         $exists = $split_path[$key + 1];
       }
     }
@@ -530,13 +480,7 @@ function search_api_ranges_generate_ranges_simple($variables, $step) {
 function search_api_ranges_generate_ranges_advanced($variables, $steps) {
   $element = $variables['element'];
   // Calculate the min and max of the ranges.
-  $values = array();
-  foreach ($element as $key => $value) {
-    // Exclude values that don't belong to ranges list
-    if (is_numeric($key)) {
-      $values[] = $key;
-    }
-  }
+  $values = array_keys($element);
   sort($values, SORT_NUMERIC);
   $min_all = $values[0];
   $max_all = $values[count($values) - 1];

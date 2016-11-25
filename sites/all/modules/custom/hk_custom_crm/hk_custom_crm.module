@@ -101,47 +101,49 @@ function _hk_custom_crm_saved_search_block_content() {
     $string[$key]['id'] = $value->id;
     $string[$key]['enabled'] = $value->enabled;
   }
-  rsort($string);
-  $count = 0;
-  foreach ($string as $key => $value) {
-    $query_string = $last_query_string = $enabled_disabled = '';
-    $row_class = '';
-    if($count == 0) {
-      $row_class = 'views-row-first';
-    }
-    if(!empty($value['page']['query']['f'])) {
-      $fvalue = $value['page']['query']['f'];
-      foreach ($fvalue as $f_key => $f_value) {
-        $query_string .= 'f[' . $f_key . ']=' . $f_value .'&';
+  if(!empty($string) && isset($string)) {
+    rsort($string);
+    $count = 0;
+    foreach ($string as $key => $value) {
+      $query_string = $last_query_string = $enabled_disabled = '';
+      $row_class = '';
+      if($count == 0) {
+        $row_class = 'views-row-first';
       }
-      $query_string = rtrim($query_string, '&');
-    }
-    if(!empty($string[0]['page']['query']['f'])) {
-      $fvalue = $string[0]['page']['query']['f'];
-      foreach ($fvalue as $f_key => $f_value) {
-        $last_query_string .= 'f[' . $f_key . ']=' . $f_value .'&';
+      if(!empty($value['page']['query']['f'])) {
+        $fvalue = $value['page']['query']['f'];
+        foreach ($fvalue as $f_key => $f_value) {
+          $query_string .= 'f[' . $f_key . ']=' . $f_value .'&';
+        }
+        $query_string = rtrim($query_string, '&');
       }
-      $last_query_string = rtrim($last_query_string, '&');
-    }
-    $contact_cid = explode('/', $value['page']['path']);
-    $contact_cid = $contact_cid[2];
-    $arg2 = arg(2);
-    if($arg2 == $contact_cid) {
-      $count++;
-      $destinationPath = 'crm-core/contact/'.$arg2;
-      if($value['enabled']) {
-        $enabled_disabled = '<a href="/search-api/saved-search/'.$value['id'].'/disable?destination=/'.$destinationPath.'" class="saved-search-enable waves-effect waves-button waves-classic">'.t('disable').'</a>';
-      } else {
-        $enable_action = '/enable';
-        $enable_label = t('enable');
-        $enable_options['query']['token'] = drupal_get_token($value['id']);
-        $enabled_disabled = '<a href="/search-api/saved-search/'.$value['id'].'/enable?token='.$enable_options['query']['token'].'&destination=/'.$destinationPath.'" class="saved-search-enable waves-effect waves-button waves-classic">'.t('enable').'</a>';
+      if(!empty($string[0]['page']['query']['f'])) {
+        $fvalue = $string[0]['page']['query']['f'];
+        foreach ($fvalue as $f_key => $f_value) {
+          $last_query_string .= 'f[' . $f_key . ']=' . $f_value .'&';
+        }
+        $last_query_string = rtrim($last_query_string, '&');
       }
-      $savedSearchPath = $value['page']['path'] . '?' . $query_string;
-      $savedSearchBlock .='<tr class="views-row views-row-'.$key.' '.$row_class.'"><td><a href="'.$savedSearchPath.'">'.$value['name'].'</a></td><td>'.$enabled_disabled.' | <a href="/search-api/saved-search/'.$value['id'].'/edit?destination=/'.$destinationPath.'" class="saved-search-edit waves-effect waves-button waves-classic">'.t('edit').'</a> | <a href="/search-api/saved-search/'.$value['id'].'/delete?destination=/'.$destinationPath.'" class="saved-search-delete waves-effect waves-button waves-classic">'.t('delete').'</a></td></tr>';
+      $contact_cid = explode('/', $value['page']['path']);
+      $contact_cid = $contact_cid[2];
+      $arg2 = arg(2);
+      if($arg2 == $contact_cid) {
+        $count++;
+        $destinationPath = 'crm-core/contact/'.$arg2;
+        if($value['enabled']) {
+          $enabled_disabled = '<a href="/search-api/saved-search/'.$value['id'].'/disable?destination=/'.$destinationPath.'" class="saved-search-enable waves-effect waves-button waves-classic">'.t('disable').'</a>';
+        } else {
+          $enable_action = '/enable';
+          $enable_label = t('enable');
+          $enable_options['query']['token'] = drupal_get_token($value['id']);
+          $enabled_disabled = '<a href="/search-api/saved-search/'.$value['id'].'/enable?token='.$enable_options['query']['token'].'&destination=/'.$destinationPath.'" class="saved-search-enable waves-effect waves-button waves-classic">'.t('enable').'</a>';
+        }
+        $savedSearchPath = $value['page']['path'] . '?' . $query_string;
+        $savedSearchBlock .='<tr class="views-row views-row-'.$key.' '.$row_class.'"><td><a href="'.$savedSearchPath.'">'.$value['name'].'</a></td><td>'.$enabled_disabled.' | <a href="/search-api/saved-search/'.$value['id'].'/edit?destination=/'.$destinationPath.'" class="saved-search-edit waves-effect waves-button waves-classic">'.t('edit').'</a> | <a href="/search-api/saved-search/'.$value['id'].'/delete?destination=/'.$destinationPath.'" class="saved-search-delete waves-effect waves-button waves-classic">'.t('delete').'</a></td></tr>';
+      }
+      //$path[$key]['query_string'] = $value['page']['query']['f'];  
     }
-    //$path[$key]['query_string'] = $value['page']['query']['f'];  
-  }
+  }  
   $savedSearchBlock .= '</table></div></div>';
   $output = $savedSearchBlock;
   return $output;

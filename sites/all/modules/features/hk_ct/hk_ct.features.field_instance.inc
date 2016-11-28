@@ -5174,7 +5174,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'enable' => 0,
         'insert_plugin' => '',
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -5559,7 +5559,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'enable' => 0,
         'insert_plugin' => '',
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -6062,7 +6062,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'enable' => 0,
         'insert_plugin' => '',
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(

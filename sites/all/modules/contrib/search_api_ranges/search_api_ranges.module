@@ -575,7 +575,7 @@ function _search_api_generate_range($min, $max, $count, $variables, $params, $la
   // Generate the new query.
   $query = urlencode($variables['range_field']) . ":[$min TO $max]";
   $active = FALSE;
-
+  $variables_target = '';
   // Add the new query or remove it if the range is already active.
   if (empty($params['f'])) {
     $params['f'] = array($query);
@@ -596,10 +596,13 @@ function _search_api_generate_range($min, $max, $count, $variables, $params, $la
       . $variables['suffix'] . '–' . $variables['prefix']
       . number_format($max, 0) . $variables['suffix'];
   }
+  if(isset($variables['target'])) {
+    $variables_target = $variables['target'];
+  }
   // Build up a render array.
   return array(
     '#markup' => $label,
-    '#path' => $variables['target'],
+    '#path' => $variables_target,
     '#html' => FALSE,
     '#indexed_value' => 'TODO: what to put here?',
     '#count' => $count,

@@ -44,7 +44,8 @@
     .object-slideshow-text {
       float: left;
       display: inline-block;
-      @include calc('width', '100% - 325px');
+      width: 60%;
+      /*@include calc('width', '100% - 325px');*/
       @media (max-width: 1199px) {
         width: 100%;
       }
@@ -52,7 +53,8 @@
     .object-inquiry-parrent {
       float: left;
       display: inline-block;
-      width: 325px;
+      /*width: 325px;*/
+      width: 40%;
       margin: 55px 0 0;
       text-align: right;
       @media (max-width: 1199px) {
@@ -66,10 +68,18 @@
     }
     .object-inquiry-button {
       float: right;
-      display: inline-block;
-      padding: 7px;
-      @include border-radius(3px);
-      background-color: #FFF;
+      a {
+        display: inline-block;
+        width: 100%;
+        padding: 7px 40px;
+        @include border-radius(3px);
+        background-color: #FFF;
+      }
+      .ajax-progress {
+        height: 0;
+        width: 0;
+        overflow: hidden;
+      }
     }
   }
 }
@@ -90,13 +100,13 @@
   width: 100%;
   padding: 0;
   .item-list {
-    ul {
+    > ul {
       display: inline-block;
       width: 100%;
       margin: 0;
       padding: 0;
       list-style: none;
-      li {
+      > li {
         float: left;
         display: inline-block;
         width: calc(33.3333% - 20px);
@@ -105,7 +115,7 @@
         @include box-shadow(0 0 5px 2px rgba(0, 0, 0, .5));
         &:last-child { margin-right: 0; }
         .readmore-summary {
-          span {
+          .readmore-span {
             display: inline-block;
             width: 100%;
             margin-top: 15px;

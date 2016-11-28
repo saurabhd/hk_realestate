@@ -517,7 +517,12 @@ function hk_ct_ds_custom_fields_info() {
   $ds_field->ui_limit = 'apartment|*';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<a href="/anfrage?field_angefragte_wohnung=[node:nid]&destination=/node/[node:nid]&width=600&height=600" class="ng-lightbox btn full"><?php print t("Inquiry")?></a>',
+      'value' => '<?php
+$nid = \'[node:nid]\';
+$alias = drupal_get_path_alias(\'node/\'.$nid);
+?>
+<a href="/anfrage?field_angefragte_wohnung=[node:nid]&destination=<?php print $alias; ?>&width=600&height=600" class="ng-lightbox btn full"><?php print t("Inquiry")?></a>
+',
       'format' => 'ds_code',
     ),
     'use_token' => 1,

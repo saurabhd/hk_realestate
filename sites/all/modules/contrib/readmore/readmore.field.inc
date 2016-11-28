@@ -121,7 +121,7 @@ function readmore_field_formatter_view($entity_type, $entity, $field, $instance,
           );
 
           // Add readmore link.
-          $summary .= '<span>';
+          $summary .= '<span class="readmore-span">';
           $summary .= $display['settings']['readmore_ellipsis'] ? t('...') : NULL;
           $summary .= l(t('read more'), current_path(), array('attributes' => array('class' => array('readmore-link'))));
           $summary .= '</span>';

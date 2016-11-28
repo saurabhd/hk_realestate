@@ -1362,6 +1362,13 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Objekt ID */
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['id'] = 'field_objektid_nunumeric';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['table'] = 'field_data_field_objektid_nunumeric';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['field'] = 'field_objektid_nunumeric';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['label'] = '';
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_objektid_nunumeric']['element_label_colon'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -1369,7 +1376,7 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="object-inquiry-button"><a href="/anfrage?field_angefragte_wohnung=[nid]">Jetzt Besichtigungstermin vereinbaren</a></span>';
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="object-inquiry-button"><a href="/anfrage?field_angefragte_wohnung=[nid]&destination=object-landing-page/[field_objektid_nunumeric]" class="ng-lightbox">Jetzt Besichtigungstermin vereinbaren</a></span>';
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Object slideshow text */

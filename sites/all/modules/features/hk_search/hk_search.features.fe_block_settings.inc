@@ -298,7 +298,7 @@ node/*',
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-karten-block_1'] = array(

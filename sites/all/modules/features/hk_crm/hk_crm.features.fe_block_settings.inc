@@ -128,7 +128,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => -42,
+        'weight' => -46,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -210,7 +210,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => -45,
+        'weight' => -49,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -251,7 +251,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => -43,
+        'weight' => -47,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -292,7 +292,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => -40,
+        'weight' => -45,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -374,7 +374,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => -46,
+        'weight' => -50,
       ),
       'hk_theme' => array(
         'region' => 'search',
@@ -538,7 +538,7 @@ if(arg(0) == \'crm-core\' && arg(1) == \'contact\' && is_numeric(arg(2)) && empt
         'region' => 'search',
         'status' => 1,
         'theme' => 'hk_subdomain',
-        'weight' => -44,
+        'weight' => -48,
       ),
       'hk_theme' => array(
         'region' => 'search',

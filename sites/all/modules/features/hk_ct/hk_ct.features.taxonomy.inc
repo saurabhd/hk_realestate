@@ -19,6 +19,16 @@ function hk_ct_taxonomy_default_vocabularies() {
       'language' => 'und',
       'i18n_mode' => 0,
     ),
+    'status_quo' => array(
+      'name' => 'Status quo',
+      'machine_name' => 'status_quo',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
+    ),
     'vocabulary_3' => array(
       'name' => 'Bezirke',
       'machine_name' => 'vocabulary_3',

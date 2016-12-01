@@ -65,7 +65,12 @@ function hk_ct_field_default_field_bases() {
     'locked' => 0,
     'module' => 'computed_field',
     'settings' => array(
-      'code' => '$entity_field[0][\'value\'] = $entity->field_apart_alloc_incident_costs[LANGUAGE_NONE][0][\'value\'] + $entity->field_apart_nalloc_incid_cost[LANGUAGE_NONE][0][\'value\'];;',
+      'code' => 'if(isset($entity->field_apart_alloc_incident_costs[LANGUAGE_NONE][0][\'value\']) && isset($entity->field_apart_nalloc_incid_cost[LANGUAGE_NONE][0][\'value\'])) {
+$entity_field[0][\'value\'] = $entity->field_apart_alloc_incident_costs[LANGUAGE_NONE][0][\'value\'] + $entity->field_apart_nalloc_incid_cost[LANGUAGE_NONE][0][\'value\'];
+}
+else {
+$entity_field[0][\'value\'] = 0;
+}',
       'database' => array(
         'data_default' => '',
         'data_index' => 0,
@@ -2305,6 +2310,34 @@ $entity_field[0][\'value\'] = $building_type;',
     ),
     'translatable' => 1,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_status_quo_'.
+  $field_bases['field_status_quo_'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_status_quo_',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'status_quo',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
+    ),
+    'translatable' => 1,
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_wug_act_rent'.

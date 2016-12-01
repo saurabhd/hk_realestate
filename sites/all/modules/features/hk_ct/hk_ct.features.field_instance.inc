@@ -154,7 +154,7 @@ function hk_ct_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 76,
+      'weight' => 77,
     ),
   );
 
@@ -262,7 +262,7 @@ function hk_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 74,
+      'weight' => 75,
     ),
   );
 
@@ -625,7 +625,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 73,
+      'weight' => 74,
     ),
   );
 
@@ -998,7 +998,7 @@ function hk_ct_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 77,
+      'weight' => 78,
     ),
   );
 
@@ -2137,7 +2137,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 75,
+      'weight' => 76,
     ),
   );
 
@@ -2314,7 +2314,7 @@ function hk_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 72,
+      'weight' => 73,
     ),
   );
 
@@ -2753,6 +2753,51 @@ function hk_ct_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 71,
+    ),
+  );
+
+  // Exported field_instance: 'node-apartment-field_status_quo_'.
+  $field_instances['node-apartment-field_status_quo_'] = array(
+    'bundle' => 'apartment',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 57,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_status_quo_',
+    'label' => 'Status quo',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 72,
     ),
   );
 

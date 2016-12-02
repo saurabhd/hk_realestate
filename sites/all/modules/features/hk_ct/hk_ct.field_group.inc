@@ -468,6 +468,7 @@ function hk_ct_field_group_info() {
       7 => 'field_status_quo',
       8 => 'field_apart_balcony',
       9 => 'field_apart_lift',
+      10 => 'field_status_quo_',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

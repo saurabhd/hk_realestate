@@ -1,0 +1,4 @@
+name = HK Status quo alter
+description = "Make module to change status quo field"
+core = 7.x
+

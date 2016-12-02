@@ -1,0 +1,33 @@
+<?php
+/*
+ * Cron run for update apartment node.
+ */
+function hk_status_quo_alter_cron() {
+  $query = db_select('node','n');
+  $query->join('field_data_field_status_quo','s','s.entity_id = n.nid');
+  $query->fields('n', array('nid'));
+  $result = $query->execute();
+  $nids = $result->fetchCol();
+  /*print('<pre style="color:red;">');
+  print_r($nids);
+  print('</pre>');
+  exit;*/
+  foreach ($nids as $key => $nid) {
+    $node = node_load($nid);
+    $language = $node->language;
+    //if(!empty($node->field_status_quo[$language][0]['value'])) {
+     $term_name = $node->field_status_quo[$language][0]['value'];
+     if($term_name == 'well_tended') {
+      $term_name = str_replace('_', '-', $term_name);
+     }
+     $term_name = str_replace('_', ' ', $term_name);
+     $term = taxonomy_get_term_by_name($term_name);
+     $tid = key($term);
+     $node->field_status_quo_[$language][0]['tid'] = $tid;
+     //unset($node->field_status_quo_[$language]);
+     
+     field_attach_update('node', $node);
+    //}
+  }
+}
+?>

@@ -2098,6 +2098,11 @@ function hk_search_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="node/[nid]" class="more">Details</a>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Indexed Content: Apartment No. */
+  $handler->display->display_options['sorts']['field_apart_no']['id'] = 'field_apart_no';
+  $handler->display->display_options['sorts']['field_apart_no']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['sorts']['field_apart_no']['field'] = 'field_apart_no';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Object: Node ID (indexed) */
   $handler->display->display_options['arguments']['field_object_ref_nid']['id'] = 'field_object_ref_nid';

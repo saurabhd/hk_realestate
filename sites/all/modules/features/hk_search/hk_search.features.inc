@@ -53,7 +53,7 @@ function hk_search_default_search_api_index() {
         "field_apart_bathrooms" : { "type" : "integer" },
         "field_apart_floor" : { "type" : "text" },
         "field_apart_living_space" : { "type" : "decimal" },
-        "field_apart_no" : { "type" : "text" },
+        "field_apart_no" : { "type" : "integer" },
         "field_apart_price" : { "type" : "decimal" },
         "field_apart_rooms" : { "type" : "integer" },
         "field_apart_sleeping_rooms" : { "type" : "integer" },

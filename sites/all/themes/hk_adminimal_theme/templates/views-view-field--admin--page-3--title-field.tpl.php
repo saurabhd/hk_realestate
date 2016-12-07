@@ -23,9 +23,12 @@
  */
 ?>
 <?php //print $output;
-  $query = $_SERVER['QUERY_STRING'];
+  $query = array('destination' => current_path() . '&' . $_SERVER['QUERY_STRING']);
+  $edit_url = url('node/' . $row->nid .'/edit',array('query' => drupal_get_destination()));
+  $translate_url = url('node/' . $row->nid .'/translate',array('query' => drupal_get_destination()));
+  $clone_url = url('node/' . $row->nid .'/clone',array('query' => drupal_get_destination()));
   $nid = $row->nid;
   $apt_no = $row->field_field_apart_no[0]['rendered']['#markup'];
   $title = $row->field_title_field[0]['rendered']['#markup'];
-  print $apt_no.'| <a href="/node/'.$nid.'" title="Wohnung ansehen">'.$title.'</a> | <a href="/node/'.$nid.'/edit?destination=/admin/content/dash/wohnungen?'.$query.'">Bearbeiten</a> | <a href="/node/'.$nid.'/translate?destination=/admin/content/dash/wohnungen?'.$query.'">Übersetzen</a> | <a href="/node/'.$nid.'/clone/confirm?destination=/admin/content/dash/wohnungen?'.$query.'">Klonen</a>';
+  print $apt_no.'| <a href="/node/'.$nid.'" title="Wohnung ansehen">'.$title.'</a> | <a href="'.$edit_url.'">Bearbeiten</a> | <a href="'.$translate_url.'">Übersetzen</a> | <a href="'.$clone_url.'">Klonen</a>';
 ?>

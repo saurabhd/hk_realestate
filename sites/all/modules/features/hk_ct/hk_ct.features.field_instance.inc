@@ -841,7 +841,7 @@ function hk_ct_field_default_field_instances() {
       'alt_field' => 1,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_directory' => '',
+      'file_directory' => 'objekt',
       'file_extensions' => 'png gif jpg jpeg',
       'filefield_paths' => array(
         'active_updating' => 0,
@@ -864,7 +864,7 @@ function hk_ct_field_default_field_instances() {
         'redirect' => 1,
         'retroactive_update' => 0,
       ),
-      'filefield_paths_enabled' => 1,
+      'filefield_paths_enabled' => 0,
       'max_filesize' => '3 MB',
       'max_resolution' => '2480x3702',
       'min_resolution' => '',
@@ -1589,7 +1589,7 @@ function hk_ct_field_default_field_instances() {
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_directory' => 'apart_pics',
+      'file_directory' => 'objekt',
       'file_extensions' => 'png gif jpg jpeg',
       'filefield_paths' => array(
         'active_updating' => 0,
@@ -1612,7 +1612,7 @@ function hk_ct_field_default_field_instances() {
         'redirect' => 1,
         'retroactive_update' => 0,
       ),
-      'filefield_paths_enabled' => 1,
+      'filefield_paths_enabled' => 0,
       'max_filesize' => '2 MB',
       'max_resolution' => '2480x3702',
       'min_resolution' => '',
@@ -5700,7 +5700,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_directory' => 'objektbilder/[node_nid]',
+      'file_directory' => 'objekt',
       'file_extensions' => 'png gif jpg jpeg',
       'filefield_paths' => array(
         'active_updating' => 0,
@@ -5723,7 +5723,7 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
         'redirect' => 1,
         'retroactive_update' => 0,
       ),
-      'filefield_paths_enabled' => 1,
+      'filefield_paths_enabled' => 0,
       'max_filesize' => '2 MB',
       'max_resolution' => '2480x3702',
       'min_resolution' => '',
@@ -8643,6 +8643,49 @@ Nachdem eine Wohnung von hier aus erstellt oder bearbeitet wurde, muss auch das 
       ),
       'type' => 'text_textfield',
       'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-status_quo-name_field'.
+  $field_instances['taxonomy_term-status_quo-name_field'] = array(
+    'bundle' => 'status_quo',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'name_field',
+    'label' => 'Name',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
     ),
   );
 

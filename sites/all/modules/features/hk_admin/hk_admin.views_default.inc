@@ -938,7 +938,6 @@ function hk_admin_views_default_views() {
     4 => '4',
     5 => '5',
     6 => '6',
-    7 => '7',
   );
   $handler->display->display_options['filters']['sid']['group'] = 1;
   $handler->display->display_options['filters']['sid']['exposed'] = TRUE;
@@ -954,7 +953,10 @@ function hk_admin_views_default_views() {
     5 => 0,
     6 => 0,
     7 => 0,
+    8 => 0,
+    9 => 0,
   );
+  $handler->display->display_options['filters']['sid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['sid']['expose']['workflow_reduce_wid'] = '1';
   $handler->display->display_options['filters']['sid']['expose']['workflow_include_all'] = TRUE;
   /* Filter criterion: Workflow current: New state name */
@@ -967,7 +969,6 @@ function hk_admin_views_default_views() {
     4 => '4',
     5 => '5',
     6 => '6',
-    7 => '7',
   );
   $handler->display->display_options['filters']['sid_1']['group'] = 1;
   /* Filter criterion: Content: Language */
@@ -1876,7 +1877,6 @@ function hk_admin_views_default_views() {
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['text'] = '[field_apart_no] | <a href="/node/[nid]" title="Wohnung ansehen">[title_field]</a> | <a href="/node/[nid]/edit?destination=/admin/content/dash/wohnungen">Bearbeiten</a> | <a href="/node/[nid]/translate?destination=/admin/content/dash/wohnungen">Übersetzen</a> | <a href="/node/[nid]/clone/confirm?destination=/admin/content/dash/wohnungen">Klonen</a>';
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Purchasing price (editable) */
@@ -1926,14 +1926,14 @@ function hk_admin_views_default_views() {
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Erstellungsdatum';
+  $handler->display->display_options['fields']['created']['label'] = 'Erstellt am';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
-  $handler->display->display_options['fields']['changed']['label'] = 'Letze Änderung';
+  $handler->display->display_options['fields']['changed']['label'] = 'Geändert am';
   $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
   $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
@@ -2079,7 +2079,7 @@ function hk_admin_views_default_views() {
   $handler->display->display_options['filters']['sid']['is_grouped'] = TRUE;
   $handler->display->display_options['filters']['sid']['group_info']['label'] = 'Status';
   $handler->display->display_options['filters']['sid']['group_info']['identifier'] = 'sid';
-  $handler->display->display_options['filters']['sid']['group_info']['default_group'] = '1';
+  $handler->display->display_options['filters']['sid']['group_info']['default_group'] = '5';
   $handler->display->display_options['filters']['sid']['group_info']['group_items'] = array(
     1 => array(
       'title' => 'Todo (Entwurf + Fertig)',
@@ -2120,21 +2120,6 @@ function hk_admin_views_default_views() {
       ),
     ),
     6 => array(
-      'title' => 'Veröffentlicht + Schattenwohnungn',
-      'operator' => 'in',
-      'value' => array(
-        4 => '4',
-        7 => '7',
-      ),
-    ),
-    7 => array(
-      'title' => 'Schattenwohnungen',
-      'operator' => 'in',
-      'value' => array(
-        7 => '7',
-      ),
-    ),
-    8 => array(
       'title' => 'Nicht veröffentlicht (Archiviert + Verkauft))',
       'operator' => 'in',
       'value' => array(
@@ -2142,14 +2127,14 @@ function hk_admin_views_default_views() {
         6 => '6',
       ),
     ),
-    9 => array(
+    7 => array(
       'title' => 'Archiviert',
       'operator' => 'in',
       'value' => array(
         5 => '5',
       ),
     ),
-    10 => array(
+    8 => array(
       'title' => 'Verkauft',
       'operator' => 'in',
       'value' => array(

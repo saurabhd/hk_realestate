@@ -7,9 +7,9 @@ dependencies[] = entityreference
 dependencies[] = entity
 configure = admin/config/content/entityreference_feeds
 
-; Information added by Drupal.org packaging script on 2015-09-17
-version = "7.x-1.0-beta1+8-dev"
+; Information added by Drupal.org packaging script on 2016-04-19
+version = "7.x-1.0-beta3"
 core = "7.x"
 project = "entityreference_feeds"
-datestamp = "1442496245"
+datestamp = "1461058881"
 

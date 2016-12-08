@@ -22,7 +22,7 @@ class MediaFileFieldTestCase extends DrupalWebTestCase {
     $modules[] = 'media';
     $modules[] = 'media_module_test';
     parent::setUp($modules);
-    $this->admin_user = $this->drupalCreateUser(array('access content', 'view files', 'view own files', 'access media browser', 'access administration pages', 'administer site configuration', 'administer users', 'administer permissions', 'administer content types', 'administer nodes', 'administer files', 'bypass node access', 'bypass file access'));
+    $this->admin_user = $this->drupalCreateUser(array('access content', 'view files', 'view own files', 'access media browser', 'access administration pages', 'administer site configuration', 'administer users', 'administer permissions', 'administer content types', 'administer nodes', 'administer files', 'bypass node access', 'bypass file access', 'administer fields'));
     $this->drupalLogin($this->admin_user);
   }
 
@@ -911,7 +911,7 @@ class MediaElementSettingsTestCase extends MediaFileFieldTestCase {
     $instance = field_info_instance('node', $field_name, $type_name);
 
     $javascript = $this->drupalGet("node/add/$type_name");
-  
+
     $multiselect = ($field['cardinality'] > 1 || $field['cardinality'] == FIELD_CARDINALITY_UNLIMITED);
     $field_widget = array(
         'elements' => array(

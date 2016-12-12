@@ -2272,44 +2272,6 @@ $entity_field[0][\'value\'] = $building_type;',
     'type' => 'workflow',
   );
 
-  // Exported field_base: 'field_status_quo'.
-  $field_bases['field_status_quo'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_status_quo',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'First Occupancy' => 'First Occupancy',
-        'First Occupancy after Renovation' => 'First Occupancy after Renovation',
-        'Well-Tended' => 'Well-Tended',
-        'Normal' => 'Normal',
-        'Modernised' => 'Modernised',
-        'Completely Refurbished' => 'Completely Refurbished',
-        'Partially restored' => 'Partially restored',
-        'Renovated' => 'Renovated',
-        'In need of renovation' => 'In need of renovation',
-        'In need of modernization' => 'In need of modernization',
-        'No Information' => 'No Information',
-        'N/A' => 'N/A',
-      ),
-      'allowed_values_function' => '',
-      'allowed_values_no_localization' => 0,
-      'entity_translation_sync' => FALSE,
-      'values_field' => '',
-    ),
-    'translatable' => 1,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_status_quo_'.
   $field_bases['field_status_quo_'] = array(
     'active' => 1,

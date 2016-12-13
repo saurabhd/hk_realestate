@@ -5,17 +5,18 @@
 <!--[if IE 8]><html class="lt-ie9" <?php print $html_attributes; ?>><![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html <?php print $html_attributes . $rdf_namespaces; ?>><!--<![endif]-->
 
-<head profile="<?php print $grddl_profile; ?>">
+<head>
   <meta name="google-site-verification" content="knQSpp_mc-a5nAUxUS_QaBDLS1tddahIn2dIhhGQ4EM" />
+  <meta name="msvalidate.01" content="39B34C79CB9947373E2134525CD68342" />
+  <meta name="yandex-verification" content="43592467d515c22c" />
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
 
   <?php if ($default_mobile_metatags): ?>
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
   <?php endif; ?>
-  <meta http-equiv="cleartype" content="on">
   <?php print $styles; ?>
   <?php if (theme_get_setting('sticky_footer')): ?>
     <link href="<?php print $base_path . $path_to_bear_skin; ?>/css/sticky-footer.css" media="all" rel="stylesheet" type="text/css" />

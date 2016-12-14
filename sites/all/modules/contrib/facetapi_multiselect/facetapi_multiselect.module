@@ -97,7 +97,9 @@ function facetapi_multiselect_form($form, &$form_state, $widget, $element) {
 function _facetapi_multiselect_disable_options($content, $element) {
   // Create a new DOMDocument object with our rendered HTML
   $select = new DOMDocument;
-  $select->loadHTML('<?xml encoding="UTF-8">' .$content);
+
+  //parameters added based on http://stackoverflow.com/questions/4879946/how-to-savehtml-of-domdocument-without-html-wrapper
+  $select->loadHTML($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
   // Loop over our options list
   foreach ($select->getElementsByTagName('option') as $option) {

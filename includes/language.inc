@@ -298,6 +298,7 @@ function language_negotiation_get_switch_links($type, $path) {
       // http://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-other-lang-id.html
       foreach ($result as $langcode => $link) {
         $result[$langcode]['attributes']['xml:lang'] = $langcode;
+        $result[$langcode]['attributes']['lang'] = $langcode;
       }
 
       if (!empty($result)) {

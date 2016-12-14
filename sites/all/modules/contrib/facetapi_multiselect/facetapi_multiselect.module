@@ -99,7 +99,7 @@ function _facetapi_multiselect_disable_options($content, $element) {
   $select = new DOMDocument;
 
   //parameters added based on http://stackoverflow.com/questions/4879946/how-to-savehtml-of-domdocument-without-html-wrapper
-  $select->loadHTML('<?xml encoding="UTF-8">' .$content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+  $select->loadHTML($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
   // Loop over our options list
   foreach ($select->getElementsByTagName('option') as $option) {

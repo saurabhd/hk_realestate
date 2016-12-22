@@ -115,8 +115,8 @@ After that, you will be able to log in at [site:login-url] using your [user:hybr
   $strongarm->name = 'hybridauth_providers';
   $strongarm->value = array(
     'Twitter' => 'Twitter',
+    'Facebook' => 'Facebook',
     'AOL' => 0,
-    'Facebook' => 0,
     'Foursquare' => 0,
     'Google' => 0,
     'LinkedIn' => 0,

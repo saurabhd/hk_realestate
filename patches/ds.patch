@@ -1,0 +1,33 @@
+diff --git a/sites/all/modules/contrib/ds/ds.module b/sites/all/modules/contrib/ds/ds.module
+index 0140671..7d10cc5 100755
+--- a/sites/all/modules/contrib/ds/ds.module
++++ b/sites/all/modules/contrib/ds/ds.module
+@@ -850,17 +850,19 @@ function ds_render_ctools_field($field) {
+           if (!isset($field['entity']->{$key}[$language])) {
+             $language = LANGUAGE_NONE;
+           }
+-          foreach ($field['entity']->{$key}[$language] as $tkey => $item) {
+-            if (isset($item['tid']) && !isset($item['taxonomy_term'])) {
+-              if (!isset($terms_loaded[$item['tid']])) {
+-                $term = taxonomy_term_load($item['tid']);
+-                if (!is_object($term)) {
+-                  // This term is missing in the database.
+-                  continue;
++          if (isset($field['entity']->{$key}[$language])) {
++            foreach ($field['entity']->{$key}[$language] as $tkey => $item) {
++              if (isset($item['tid']) && !isset($item['taxonomy_term'])) {
++                if (!isset($terms_loaded[$item['tid']])) {
++                  $term = taxonomy_term_load($item['tid']);
++                  if (!is_object($term)) {
++                    // This term is missing in the database.
++                    continue;
++                  }
++                  $terms_loaded[$item['tid']] = $term;
+                 }
+-                $terms_loaded[$item['tid']] = $term;
++                $field['entity']->{$key}[$language][$tkey]['taxonomy_term'] = $terms_loaded[$item['tid']];
+               }
+-              $field['entity']->{$key}[$language][$tkey]['taxonomy_term'] = $terms_loaded[$item['tid']];
+             }
+           }
+         }

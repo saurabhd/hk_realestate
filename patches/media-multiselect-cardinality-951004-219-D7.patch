@@ -1,0 +1,126 @@
+diff --git a/includes/media.fields.inc b/includes/media.fields.inc
+index 619c035..771b9f7 100644
+--- a/includes/media.fields.inc
++++ b/includes/media.fields.inc
+@@ -100,6 +100,8 @@ function media_field_widget_form(&$form, &$form_state, $field, $instance, $langc
+ 
+   // Essentially we use the media type, extended with some enhancements.
+   $element_info = element_info('media');
++  $multiselect = ($field['cardinality'] > 1 || $field['cardinality'] == FIELD_CARDINALITY_UNLIMITED);
++
+   $element += array(
+     '#type' => 'media',
+     '#value_callback' => 'media_field_widget_value',
+@@ -113,6 +115,7 @@ function media_field_widget_form(&$form, &$form_state, $field, $instance, $langc
+         'file_extensions' => isset($field_settings['file_extensions']) ? $field_settings['file_extensions'] : variable_get('file_entity_default_allowed_extensions', 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm'),
+         'max_filesize' => isset($field_settings['max_filesize']) ? $field_settings['max_filesize'] : 0,
+         'uri_scheme' => !empty($field['settings']['uri_scheme']) ? $field['settings']['uri_scheme'] : file_default_scheme(),
++        'multiselect' => $multiselect,
+       ),
+     ),
+     // Allows this field to return an array instead of a single value.
+@@ -277,6 +280,23 @@ function media_field_widget_process($element, &$form_state, $form) {
+  * wrapper around the entire group so it can be replaced all at once.
+  */
+ function media_field_widget_process_multiple($element, &$form_state, $form) {
++    // In order to support multiple selection, we need to reconstruct the _POST
++  // data that is checked in media_attach_file(). We need to reconstruct the
++  // field's _POST key name, for example: field_mediafield_und_0.
++  $upload_name_prefix = implode('_', $element['#parents']) . '_';
++  $upload_name = $upload_name_prefix . $element['#file_upload_delta'];
++  if (!empty($_POST['media'][$upload_name])) {
++    $files = explode(',', $_POST['media'][$upload_name]);
++    $count = count($files);
++    // Supposing #file_upload_delta is always the last delta this will work
++    for ($i = 0; $i < $count; $i++) {
++      // For each file selected, increment the field key to be processed.
++      // field_mediafield_und_0 becomes field_mediafield_und_1, etc.
++      $_POST['media'][$upload_name_prefix . ($element['#file_upload_delta'] + $i)] = $files[$i];
++      $element[] = $element[$element['#file_upload_delta']];
++    }
++  }
++
+   $element_children = element_children($element, TRUE);
+   $count = count($element_children);
+ 
+diff --git a/js/media.js b/js/media.js
+index 6c20fe7..607cd3a 100644
+--- a/js/media.js
++++ b/js/media.js
+@@ -91,19 +91,31 @@ Drupal.media.openBrowser = function (event) {
+       return;
+     }
+ 
+-    // Grab the first of the selected media files.
+-    var mediaFile = mediaFiles[0];
++    var mediaFileValue;
++    // Process the value based on multiselect.
++    if (mediaFiles.length > 1) {
++      // Reverse array to have files in correct order
++      mediaFiles.reverse();
++      // Concatenate the array into a comma separated string.
++      mediaFileValue = mediaFiles.map(function(file) {
++        return file.fid;
++      }).join(',');
++    }
++    else {
++      // Grab the first of the selected media files.
++      mediaFileValue = mediaFiles[0].fid;
++
++      // Display a preview of the file using the selected media file's display.
++      previewField.html(mediaFileValue.preview);
++    }
+ 
+     // Set the value of the hidden file ID field and trigger a change.
+-    uploadField.val(mediaFile.fid);
++    uploadField.val(mediaFileValue);
+     uploadField.trigger('change');
+ 
+     // Find the attach button and automatically trigger it.
+     var attachButton = uploadField.siblings('.attach');
+     attachButton.trigger('mousedown');
+-
+-    // Display a preview of the file using the selected media file's display.
+-    previewField.html(mediaFile.preview);
+   }, configuration);
+ 
+   return false;
+diff --git a/tests/media.test b/tests/media.test
+index 3594aaf..0432923 100644
+--- a/tests/media.test
++++ b/tests/media.test
+@@ -182,7 +182,7 @@ class MediaFileFieldTestCase extends DrupalWebTestCase {
+     }
+ 
+     // Attach a file to the node.
+-    $edit['media[' . $field_name . '_' . $langcode . '_0]'] = $file->fid;
++    $edit[$field_name . '[' . $langcode . '][0][fid]'] = $file->fid;
+     $this->drupalPost("node/$nid/edit", $edit, t('Save'));
+ 
+     return $nid;
+@@ -911,6 +911,8 @@ class MediaElementSettingsTestCase extends MediaFileFieldTestCase {
+     $instance = field_info_instance('node', $field_name, $type_name);
+ 
+     $javascript = $this->drupalGet("node/add/$type_name");
++
++    $multiselect = ($field['cardinality'] > 1 || $field['cardinality'] == FIELD_CARDINALITY_UNLIMITED);
+     $field_widget = array(
+         'elements' => array(
+           '#edit-' . $field_name . '-' . LANGUAGE_NONE . '-0-upload' => array(
+@@ -926,6 +928,7 @@ class MediaElementSettingsTestCase extends MediaFileFieldTestCase {
+               'file_extensions' => 'txt',
+               'max_filesize' => '',
+               'uri_scheme' => 'public',
++              'multiselect' => $multiselect,
+             ),
+           ),
+         ),
+@@ -1112,7 +1115,7 @@ class MediaFileFieldValidateTestCase extends MediaFileFieldTestCase {
+     $node = node_load($nid, NULL, TRUE);
+     $node_file = (object) $node->{$field_name}[LANGUAGE_NONE][0];
+     $this->assertFileExists($node_file, 'File exists after attaching to the required multiple value field.');
+-    $this->assertFileEntryExists($node_file, 'File entry exists after attaching to the required multipel value field.');
++    $this->assertFileEntryExists($node_file, 'File entry exists after attaching to the required multiple value field.');
+ 
+     // Remove our file field.
+     field_delete_field($field_name);

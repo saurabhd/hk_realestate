@@ -1,0 +1,23 @@
+diff --git a/modules/icon_menu/icon_menu.module b/modules/icon_menu/icon_menu.module
+index 823bc35..377aaa8 100644
+--- a/modules/icon_menu/icon_menu.module
++++ b/modules/icon_menu/icon_menu.module
+@@ -67,6 +67,10 @@ function icon_menu_preprocess_link(&$variables) {
+         case 'title_after':
+           $variables['text'] .= $icon;
+           break;
++
++        case 'title_replace':
++          $variables['text'] = $icon;
++          break;
+       }
+       $variables['options']['icon']['processed'] = TRUE;
+     }
+@@ -142,6 +146,7 @@ function _icon_menu_form_alter(array &$form, array $item = array(), array &$comp
+     '#options' => array(
+       'title_before' => t('Before title'),
+       'title_after' => t('After title'),
++      'title_replace' => t('Replace title'),
+     ),
+     '#default_value' => $defaults['position'],
+     '#states' => $icon_state,

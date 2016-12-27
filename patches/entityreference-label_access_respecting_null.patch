@@ -1,0 +1,18 @@
+diff --git a/plugins/selection/EntityReference_SelectionHandler_Generic.class.php b/plugins/selection/EntityReference_SelectionHandler_Generic.class.php
+index 444a74c..c55f6f0 100644
+--- a/plugins/selection/EntityReference_SelectionHandler_Generic.class.php
++++ b/plugins/selection/EntityReference_SelectionHandler_Generic.class.php
+@@ -305,7 +305,12 @@ class EntityReference_SelectionHandler_Generic implements EntityReference_Select
+    */
+   public function getLabel($entity) {
+     $target_type = $this->field['settings']['target_type'];
+-    return entity_access('view', $target_type, $entity) ? entity_label($target_type, $entity) : t('- Restricted access -');
++    if (entity_access('view', $target_type, $entity) !== false) {
++      return entity_label($target_type, $entity);
++    }
++    else {
++      return t('- Restricted access -');
++    }
+   }
+ 
+   /**

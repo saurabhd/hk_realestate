@@ -1,0 +1,22 @@
+diff --git a/entityreference.feeds.inc b/entityreference.feeds.inc
+index 3f64141..eb7bc93 100644
+--- a/entityreference.feeds.inc
++++ b/entityreference.feeds.inc
+@@ -126,9 +126,14 @@ function entityreference_feeds_set_target($source, $entity, $target, $value) {
+         case 'label':
+           $options = $handler->getReferencableEntities($value, '=');
+           $options = reset($options);
+-          $etids = array_keys($options);
+-          // Use the first matching entity.
+-          $entity_id = reset($etids);
++          
++          if(!empty($options)){
++            $etids = array_keys($options);
++            // Use the first matching entity.
++            $entity_id = reset($etids);
++          } else {
++            $entity_id = NULL;
++          }
+           break;
+       }
+       /*

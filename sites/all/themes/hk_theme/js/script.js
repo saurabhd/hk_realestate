@@ -70,6 +70,15 @@
         //allowClear: true
       });
 
+      $(".views-field-field-activity-notes").click(function(){
+        if($(this).parent().next().hasClass('show-notes')) {
+            $(this).parent().next().removeClass('show-notes');
+         } else {
+          $('.hide-notes').removeClass('show-notes');
+          $(this).parent().next().addClass('show-notes');
+         }  
+      });
+      
       //---------------------------------------------------------------------------//
       //************ Prepopulate term field value from url using ajax *************//
       //---------------------------------------------------------------------------//

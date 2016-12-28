@@ -89,3 +89,13 @@ function hk_theme_wysiwyg_editor_settings_alter(&$settings, $context) {
 function hk_theme_process_token_tree(&$variables) {
   $variables['recursion_limit'] = variable_get('token_recursion_limit', 1);
 }
+
+function hk_theme_theme($existing, $type, $theme, $path){
+  $items['user_profile'] = array(
+    'render element' => 'elements',
+    'path' => drupal_get_path('theme', 'hk_theme') . '/templates',
+    'template' => 'user-profile',
+  );
+
+  return $items;
+}

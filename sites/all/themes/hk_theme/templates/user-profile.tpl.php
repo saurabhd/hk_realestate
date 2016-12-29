@@ -44,28 +44,30 @@
     <div class="user-info">
       <h2 class="block-title">User Information</h2>
       <div><a href="user/<?php print $uid; ?>/edit"><?php print t('Edit'); ?></a></div>
-      <div class="left-content">
-        <div class="views-field views-profile-picture">  
-          <div class="field-content">
-            <?php print $user_profile['user_picture']['#markup']; ?>
-          </div>
-        </div>
-      </div>
-      <div class="right-content">
-        <div class="views-field views-user-name">  
-          <div class="field-content">
-            <?php print $user->name; ?>
-          </div>
-        </div>
-        <?php if (isset($user->mail) && !empty($user->mail)) { ?>
-          <div class="views-field views-user-mail"> 
-            <div class="field-label">E-mail:</div> 
-            <div class="field-content">
-              <?php print $user->mail; ?>
+        <div class="user-info-content">
+          <div class="left-content">
+            <div class="views-field views-profile-picture">  
+              <div class="field-content">
+                <?php print $user_profile['user_picture']['#markup']; ?>
+              </div>
             </div>
           </div>
-        <?php } ?>
-      </div>
+          <div class="right-content">
+            <div class="views-field views-user-name">  
+              <div class="field-content">
+                <?php print $user->name; ?>
+              </div>
+            </div>
+            <?php if (isset($user->mail) && !empty($user->mail)) { ?>
+              <div class="views-field views-user-mail"> 
+                <div class="field-label">E-mail:</div> 
+                <div class="field-content">
+                  <?php print $user->mail; ?>
+                </div>
+              </div>
+            <?php } ?>
+          </div>
+        </div>
     </div>  
   <?php } 
   else { 

@@ -44,7 +44,7 @@
             </td>
           <?php } ?>
           <?php if($field == 'field_activity_notes') { ?>
-            <td <?php if ($field_classes[$field][$row_count]) { print 'class="'. $field_classes[$field][$row_count] . '" '; } ?><?php print drupal_attributes($field_attributes[$field][$row_count]); ?>>
+            <td <?php if ($field_classes[$field][$row_count]) { print 'class="'. $field_classes[$field][$row_count] . ' hide-show-icon" '; } ?><?php print drupal_attributes($field_attributes[$field][$row_count]); ?>>
             </td>
           <?php } ?>
         <?php endforeach; ?>

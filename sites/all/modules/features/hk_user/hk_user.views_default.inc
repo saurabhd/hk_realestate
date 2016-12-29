@@ -132,6 +132,7 @@ function hk_user_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_activity_participants_crm_core_activity']['table'] = 'crm_core_contact';
   $handler->display->display_options['relationships']['reverse_field_activity_participants_crm_core_activity']['field'] = 'reverse_field_activity_participants_crm_core_activity';
   $handler->display->display_options['relationships']['reverse_field_activity_participants_crm_core_activity']['relationship'] = 'relation_crm_core_user_sync_crm_core_contact';
+  $handler->display->display_options['relationships']['reverse_field_activity_participants_crm_core_activity']['required'] = TRUE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['id'] = 'field_angefragte_wohnung_target_id';
   $handler->display->display_options['relationships']['field_angefragte_wohnung_target_id']['table'] = 'field_data_field_angefragte_wohnung';
@@ -223,6 +224,8 @@ function hk_user_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
 
   /* Display: User Notes */
   $handler = $view->new_display('block', 'User Notes', 'user_notes');
@@ -488,6 +491,7 @@ function hk_user_views_default_views() {
   $handler->display->display_options['fields']['contact_name']['field'] = 'contact_name';
   $handler->display->display_options['fields']['contact_name']['relationship'] = 'relation_crm_core_user_sync_crm_core_contact';
   $handler->display->display_options['fields']['contact_name']['label'] = 'Contact Name';
+  $handler->display->display_options['fields']['contact_name']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['contact_name']['click_sort_column'] = 'title';
   $handler->display->display_options['fields']['contact_name']['settings'] = array(
     'format' => 'short_full',
@@ -505,22 +509,33 @@ function hk_user_views_default_views() {
   $handler->display->display_options['fields']['field_crm_address']['table'] = 'field_data_field_crm_address';
   $handler->display->display_options['fields']['field_crm_address']['field'] = 'field_crm_address';
   $handler->display->display_options['fields']['field_crm_address']['relationship'] = 'relation_crm_core_user_sync_crm_core_contact';
+  $handler->display->display_options['fields']['field_crm_address']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_crm_address']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_crm_address']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
+  );
   /* Field: CRM Core Contact: Phone */
   $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
   $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['relationship'] = 'relation_crm_core_user_sync_crm_core_contact';
+  $handler->display->display_options['fields']['field_phone']['hide_empty'] = TRUE;
   /* Field: CRM Core Contact: E-Mail */
   $handler->display->display_options['fields']['field_e_mail']['id'] = 'field_e_mail';
   $handler->display->display_options['fields']['field_e_mail']['table'] = 'field_data_field_e_mail';
   $handler->display->display_options['fields']['field_e_mail']['field'] = 'field_e_mail';
   $handler->display->display_options['fields']['field_e_mail']['relationship'] = 'relation_crm_core_user_sync_crm_core_contact';
+  $handler->display->display_options['fields']['field_e_mail']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_e_mail']['type'] = 'email_plain';
   /* Field: CRM Core Contact: birthday */
   $handler->display->display_options['fields']['field_birthday']['id'] = 'field_birthday';
   $handler->display->display_options['fields']['field_birthday']['table'] = 'field_data_field_birthday';
   $handler->display->display_options['fields']['field_birthday']['field'] = 'field_birthday';
   $handler->display->display_options['fields']['field_birthday']['relationship'] = 'relation_crm_core_user_sync_crm_core_contact';
+  $handler->display->display_options['fields']['field_birthday']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_birthday']['settings'] = array(
     'format_type' => 'long',
     'fromto' => 'both',
@@ -534,11 +549,13 @@ function hk_user_views_default_views() {
   $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
   $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['relationship'] = 'relation_crm_core_user_sync_crm_core_contact';
+  $handler->display->display_options['fields']['field_job_title']['hide_empty'] = TRUE;
   /* Field: CRM Core Contact: Languages */
   $handler->display->display_options['fields']['field_languages']['id'] = 'field_languages';
   $handler->display->display_options['fields']['field_languages']['table'] = 'field_data_field_languages';
   $handler->display->display_options['fields']['field_languages']['field'] = 'field_languages';
   $handler->display->display_options['fields']['field_languages']['relationship'] = 'relation_crm_core_user_sync_crm_core_contact';
+  $handler->display->display_options['fields']['field_languages']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_languages']['delta_offset'] = '0';
   /* Field: CRM Core Contact: Contact ID */
   $handler->display->display_options['fields']['contact_id']['id'] = 'contact_id';
@@ -548,6 +565,7 @@ function hk_user_views_default_views() {
   $handler->display->display_options['fields']['contact_id']['label'] = '';
   $handler->display->display_options['fields']['contact_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['contact_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['contact_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['contact_id']['link_to_contact'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;

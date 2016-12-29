@@ -12,6 +12,48 @@ function hk_user_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['quicktabs-user_profile'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'user_profile',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'quicktabs',
+    'node_types' => array(),
+    'pages' => 'user
+users/*',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_subdomain' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_subdomain',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'hk_theme',
+        'weight' => -57,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 1,
+  );
+
   $export['views-user_profile-block_3'] = array(
     'cache' => -1,
     'css_class' => '',

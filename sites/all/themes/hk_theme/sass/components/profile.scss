@@ -1,0 +1,190 @@
+/**
+ * @file
+ *
+ * Profile design.
+ */
+
+/* Profile info */
+.profile {
+  display: inline-block;
+  width: 100%;
+  @media (max-width: 640px) {
+    text-align: center;
+  }
+  .user-info {
+    display: inline-block;
+    width: 100%;
+    .user-info-content {
+      display: inline-block;
+      width: 100%;
+      padding: 20px 20px 15px;
+      border: 1px solid #C3C3C3;
+      .left-content {
+        display: inline-block;
+        @media (max-width: 640px) {
+          width: 100%;
+          margin-bottom: 12px;
+        }
+        .user-picture {
+          float: none;
+        }
+      }
+      .right-content {
+        display: inline-block;
+        vertical-align: top;
+        @media (max-width: 640px) {
+          width: 100%;
+        }
+        .views-user-name {
+          margin-bottom: 12px;
+          color: #242021;
+          font-size: 25px;
+          font-weight: bold;
+          font-family: "sans-serif";
+        }
+        .views-user-mail {
+          .field-label {
+            display: inline-block;
+            width: 100px;
+            font-size: 14px;
+            color: #323232;
+            font-weight: bold;
+            &:before {
+              background-image: url('../images/envelope.png');
+              background-repeat: no-repeat;
+              background-size: 17px 15px;
+              padding-left: 30px;
+              content: '';
+            }
+            @media (max-width: 640px) {
+              width: 100%;
+            }
+          }
+          .field-content {
+            display: inline-block;
+            font-size: 14px;
+            color: #525252;
+            @media (max-width: 480px) {
+              word-break: break-all;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Conrtact info */
+.user-contact-info {
+  .views-field {
+    .views-label {
+      display: inline-block;
+      width: 130px;
+      font-size: 14px;
+      color: #323232;
+      font-weight: bold;
+    }
+    .field-content {
+      display: inline-block;
+      font-size: 14px;
+      color: #525252;
+    }
+  }
+}
+#block-quicktabs-user-profile {
+  .item-list {
+    ul {
+      display: inline-block;
+      padding: 0;
+      li {
+        float: left;
+        display: inline-block;
+        margin-right: -4px;
+        @media (max-width: 640px) {
+          width: 100%;
+        }
+        &.active {
+          a {
+            position: relative;
+            background-color: #282d33;
+            &:after {
+              position: absolute;
+              left: 50%;
+              bottom: 0;
+              height: 0;
+              width: 0;
+              margin: 0 0 -5px -5px;
+              border-color: transparent;
+              border-top-color: #282d33;
+              border-width: 5px 5px 0;
+              border-style: solid;
+              content: '';
+              @media (max-width: 640px) {
+                display: none;
+              }
+            }
+          }
+        }
+        a {
+          display: inline-block;
+          padding: 6px 20px;
+          text-decoration: none;
+          border: 1px solid #a4a4a4;
+          background-color: #bd1725;
+          color: #FFF;
+          font-weight: bold;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  #quicktabs-container-user_profile {
+    display: inline-block;
+    width: 100%;
+    overflow-x: auto;
+    .views-table {
+      tr {
+        &.odd{
+          border-top: 1px solid #c3c3c3;
+          border-bottom: 1px solid #c3c3c3;
+          background-image: url('../images/Pattern.jpg');
+        }
+        &.hide-notes {
+          display: none;
+        }
+        &.show-notes {
+          display: block;
+          -webkit-transition : all .5s ease .5s;
+             -moz-transition: all .5s ease .5s;
+                  transition: all .5s ease .5s;
+        }
+        th {
+          padding: 5px 25px;
+          @media (max-width: 640px) {
+            padding: 5px 0;
+          }
+        }
+        td {
+          padding: 25px;
+          @media (max-width: 640px) {
+            padding: 25px 0;
+          }
+          &.hide-show-icon {
+            background-image: url('../images/plus.png');
+            background-repeat: no-repeat;
+            background-position: 26px 25px;
+            cursor: pointer;
+          }
+        }
+        th,
+        td {
+          &:nth-child(1) { min-width: 120px; }
+          &:nth-child(2) { min-width: 150px; }
+          &:nth-child(3) { min-width: 180px; }
+          &:nth-child(4) { min-width: 100px; }
+          &:nth-child(5) { min-width: 60px; }
+        }
+      }
+    }
+  }
+}

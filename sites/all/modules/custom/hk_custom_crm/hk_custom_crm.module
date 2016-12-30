@@ -63,25 +63,27 @@ function _hk_custom_crm_saved_search_content() {
     $string[] = unserialize($value->options);
     $string[$key]['name'] = $value->name;
   }
-  foreach ($string as $key => $value) {
-    
-    $query_string = '';
-    if(!empty($value['page']['query']['f'])) {
-      $fvalue = $value['page']['query']['f'];
-      foreach ($fvalue as $f_key => $f_value) {
-        $query_string .= 'f[' . $f_key . ']=' . $f_value .'&';
+  if (is_array($string) || is_object($string))
+  {
+    foreach ($string as $key => $value) {
+      $query_string = '';
+      if(!empty($value['page']['query']['f'])) {
+        $fvalue = $value['page']['query']['f'];
+        foreach ($fvalue as $f_key => $f_value) {
+          $query_string .= 'f[' . $f_key . ']=' . $f_value .'&';
+        }
+        $query_string = rtrim($query_string, '&');
       }
-      $query_string = rtrim($query_string, '&');
+      $contact_cid = explode('/', $value['page']['path']);
+      $contact_cid = $contact_cid[2];
+      $arg2 = arg(2);
+      if($arg2 == $contact_cid) {
+        $output = $value['page']['path'] . '?' . $query_string;
+        $savedSearchPath = $value['page']['path'] . '?' . $query_string;
+      }
+      //$path[$key]['query_string'] = $value['page']['query']['f'];  
     }
-    $contact_cid = explode('/', $value['page']['path']);
-    $contact_cid = $contact_cid[2];
-    $arg2 = arg(2);
-    if($arg2 == $contact_cid) {
-      $output = $value['page']['path'] . '?' . $query_string;
-      $savedSearchPath = $value['page']['path'] . '?' . $query_string;
-    }
-    //$path[$key]['query_string'] = $value['page']['query']['f'];  
-  }
+  } 
   $output = '<div id="block-views-last-saved-searches-block"><div class="view view-last-saved-searches view-id-last_saved_searches view-display-id-block"><div class="view-content"><div class="views-row views-row-1 views-row-odd views-row-first views-row-last"><div class="views-field views-field-name"><div class="field-content last-save-searches"><a href="'.$output.'">Saved search</a></div></div></div></div></div></div>';
   return $output;
 }

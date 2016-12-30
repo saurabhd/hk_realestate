@@ -32,6 +32,10 @@ function hk_user_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '«';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '«';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '»';
+  $handler->display->display_options['pager']['options']['tags']['last'] = '»';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'name' => 'name',
@@ -114,6 +118,10 @@ function hk_user_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '«';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = '»';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['defaults']['style_options'] = FALSE;

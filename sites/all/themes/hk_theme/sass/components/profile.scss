@@ -8,8 +8,15 @@
 .profile {
   display: inline-block;
   width: 100%;
+  font-family: "sans-serif";
   @media (max-width: 640px) {
     text-align: center;
+  }
+  h2 {
+    font-family: "sans-serif";
+    @media (max-width: 640px) {
+      font-size: 15px;
+    }
   }
   .user-info {
     display: inline-block;
@@ -19,6 +26,9 @@
       width: 100%;
       padding: 20px 20px 15px;
       border: 1px solid #C3C3C3;
+      @media (max-width: 640px) {
+        padding: 12px 12px 7px;
+      }
       .left-content {
         display: inline-block;
         @media (max-width: 640px) {
@@ -40,12 +50,15 @@
           color: #242021;
           font-size: 25px;
           font-weight: bold;
-          font-family: "sans-serif";
+          @media (max-width: 640px) {
+            font-size: 16px;
+          }
         }
         .views-user-mail {
           .field-label {
             display: inline-block;
             width: 100px;
+            /*font-family: "sans-serif";*/
             font-size: 14px;
             color: #323232;
             font-weight: bold;
@@ -58,12 +71,14 @@
             }
             @media (max-width: 640px) {
               width: 100%;
+              font-size: 12px;
             }
           }
           .field-content {
             display: inline-block;
-            font-size: 14px;
             color: #525252;
+            font-size: 14px;
+            /*font-family: "sans-serif";*/
             @media (max-width: 480px) {
               word-break: break-all;
             }
@@ -75,23 +90,35 @@
 }
 
 /* Conrtact info */
-.user-contact-info {
-  .views-field {
-    .views-label {
-      display: inline-block;
-      width: 130px;
-      font-size: 14px;
-      color: #323232;
-      font-weight: bold;
+.user-profile-contact-info-block {
+  font-family: "sans-serif";
+  h2 {
+    font-family: "sans-serif";
+    @media (max-width: 640px) {
+      font-size: 15px;
     }
-    .field-content {
-      display: inline-block;
-      font-size: 14px;
-      color: #525252;
+  }
+  .user-contact-info {
+    .views-field {
+      .views-label {
+        display: inline-block;
+        width: 130px;
+        color: #323232;
+        font-size: 14px;
+        /*font-family: "sans-serif";*/
+        font-weight: bold;
+      }
+      .field-content {
+        display: inline-block;
+        color: #525252;
+        font-size: 14px;
+        /*font-family: "sans-serif";*/
+      }
     }
   }
 }
 #block-quicktabs-user-profile {
+  font-family: "sans-serif";
   .item-list {
     ul {
       display: inline-block;
@@ -107,6 +134,7 @@
           a {
             position: relative;
             background-color: #282d33;
+            font-family: "sans-serif";
             &:after {
               position: absolute;
               left: 50%;
@@ -183,6 +211,42 @@
           &:nth-child(3) { min-width: 180px; }
           &:nth-child(4) { min-width: 100px; }
           &:nth-child(5) { min-width: 60px; }
+        }
+      }
+    }
+    .item-list {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      .pager {
+        li {
+          float: none;
+          border: none;
+          padding: 0;
+          margin: 0 3px;
+          &.pager-current {
+            display: inline-block;
+            width: 24px;
+            height: 25px;
+            padding: 1px;
+            background-color: #D11F01;
+            border-radius: 50%;
+            color: #FFF;
+            font-weight: normal;
+          }
+          &.pager-last,
+          &.pager-first { display: none; }
+          a {
+            display: inline-block;
+            width: 24px;
+            height: 25px;
+            padding: 0;
+            background-color: transparent;
+            border: 1px solid #a4a4a4;
+            border-radius: 50%;
+            color: #000;
+            font-weight: normal;
+          }
         }
       }
     }

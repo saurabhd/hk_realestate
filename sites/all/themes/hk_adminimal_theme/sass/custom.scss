@@ -1511,64 +1511,30 @@ body {
       .views-field-action {
         text-align: center;
         padding-left: 15px;
+        a,
         a.unclaimed-email {
           display: inline-block;
           width: 28px;
           height: 18px;
+          margin-right: 10px;
+          padding: 0;
           background-image: url("../images/mix-icon.jpg");
           background-repeat: no-repeat;
           background-position: 3px center;
           font-size: 0;
           text-decoration: none;
-          margin-right: 10px;
-          padding: 10px 0;
         }
         a.unclaimed-phone {
-          display: inline-block;
-          width: 28px;
-          height: 18px;
-          background-image: url("../images/mix-icon.jpg");
-          background-repeat: no-repeat;
-          background-position: -100px 7px;
-          font-size: 0;
-          text-decoration: none;
-          margin-right: 10px;
-          padding: 10px 0;
+          background-position: -100px -4px;
         }
         a.unclaimed-notes {
-          display: inline-block;
-          width: 28px;
-          height: 18px;
-          background-image: url("../images/mix-icon.jpg");
-          background-repeat: no-repeat;
-          background-position: -49px 6px;
-          font-size: 0;
-          text-decoration: none;
-          padding: 10px 0;
+          background-position: -49px -4px;
         }
         a.unclaimed-meeting {
-          display: inline-block;
-          width: 28px;
-          height: 18px;
-          background-image: url("../images/mix-icon.jpg");
-          background-repeat: no-repeat;
-          background-position: -21px 7px;
-          font-size: 0;
-          text-decoration: none;
-          margin-right: 10px;
-          padding: 10px 0;
+          background-position: -21px -4px;
         }
         a.unclaimed-task {
-          display: inline-block;
-          width: 28px;
-          height: 18px;
-          background-image: url("../images/mix-icon.jpg");
-          background-repeat: no-repeat;
-          background-position: -75px 7px;
-          font-size: 0;
-          text-decoration: none;
-          margin-right: 10px;
-          padding: 10px 0;
+          background-position: -75px -4px;
         }
       }
       tr.hide-notes {

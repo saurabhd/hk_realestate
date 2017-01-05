@@ -1,7 +1,7 @@
 /**
  *  Ontact page design
  **/
-/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,45 +23,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -1685,82 +1685,48 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding-left: 15px;
 }
 /* line 1514, ../sass/custom.scss */
+.page-crm-core-agent-central .views-table tbody .views-field-action a,
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-email {
   display: inline-block;
   width: 28px;
   height: 18px;
+  margin-right: 10px;
+  padding: 0;
   background-image: url("../images/mix-icon.jpg");
   background-repeat: no-repeat;
   background-position: 3px center;
   font-size: 0;
   text-decoration: none;
-  margin-right: 10px;
-  padding: 10px 0;
 }
-/* line 1526, ../sass/custom.scss */
+/* line 1527, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-phone {
-  display: inline-block;
-  width: 28px;
-  height: 18px;
-  background-image: url("../images/mix-icon.jpg");
-  background-repeat: no-repeat;
-  background-position: -100px 7px;
-  font-size: 0;
-  text-decoration: none;
-  margin-right: 10px;
-  padding: 10px 0;
+  background-position: -100px -4px;
 }
-/* line 1538, ../sass/custom.scss */
+/* line 1530, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-notes {
-  display: inline-block;
-  width: 28px;
-  height: 18px;
-  background-image: url("../images/mix-icon.jpg");
-  background-repeat: no-repeat;
-  background-position: -49px 6px;
-  font-size: 0;
-  text-decoration: none;
-  padding: 10px 0;
+  background-position: -49px -4px;
 }
-/* line 1549, ../sass/custom.scss */
+/* line 1533, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-meeting {
-  display: inline-block;
-  width: 28px;
-  height: 18px;
-  background-image: url("../images/mix-icon.jpg");
-  background-repeat: no-repeat;
-  background-position: -21px 7px;
-  font-size: 0;
-  text-decoration: none;
-  margin-right: 10px;
-  padding: 10px 0;
+  background-position: -21px -4px;
 }
-/* line 1561, ../sass/custom.scss */
+/* line 1536, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-task {
-  display: inline-block;
-  width: 28px;
-  height: 18px;
-  background-image: url("../images/mix-icon.jpg");
-  background-repeat: no-repeat;
-  background-position: -75px 7px;
-  font-size: 0;
-  text-decoration: none;
-  margin-right: 10px;
-  padding: 10px 0;
+  background-position: -75px -4px;
 }
-/* line 1574, ../sass/custom.scss */
+/* line 1540, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr.hide-notes {
   display: none;
 }
-/* line 1577, ../sass/custom.scss */
+/* line 1543, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr.show-notes {
   display: table-row;
 }
-/* line 1579, ../sass/custom.scss */
+/* line 1545, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr.show-notes td {
   text-align: left;
 }
-/* line 1588, ../sass/custom.scss */
+/* line 1554, ../sass/custom.scss */
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-current {
   background-color: #D11F01;
   border-radius: 50%;
@@ -1771,7 +1737,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding: 0;
   width: 25px;
 }
-/* line 1597, ../sass/custom.scss */
+/* line 1563, ../sass/custom.scss */
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-current a {
   background-color: #D11F01;
   border-radius: 50%;
@@ -1782,7 +1748,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding: 0;
   width: 25px;
 }
-/* line 1608, ../sass/custom.scss */
+/* line 1574, ../sass/custom.scss */
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-item,
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-next,
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-previous {
@@ -1790,7 +1756,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   /*border: 1px solid #B8B8B8;
   border-radius: 50%;*/
 }
-/* line 1614, ../sass/custom.scss */
+/* line 1580, ../sass/custom.scss */
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-item a,
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-next a,
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-previous a {
@@ -1807,7 +1773,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 
 /* End */
 /* Popup design */
-/* line 1636, ../sass/custom.scss */
+/* line 1602, ../sass/custom.scss */
 #ng-lightbox .lightbox .lightbox__content .close-ng-lightbox {
   position: absolute;
   top: 0;
@@ -1826,7 +1792,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 }
 
 /* End */
-/* line 1656, ../sass/custom.scss */
+/* line 1622, ../sass/custom.scss */
 .lightbox .field-name-field-activity-participants {
   display: none;
 }
@@ -1835,15 +1801,15 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   display: none;
 }*/
 /* CRM Style RH */
-/* line 1664, ../sass/custom.scss */
+/* line 1630, ../sass/custom.scss */
 .not-front #autocomplete ul li {
   font-weight: 300;
 }
-/* line 1666, ../sass/custom.scss */
+/* line 1632, ../sass/custom.scss */
 .not-front #autocomplete ul li:last-child {
   padding-bottom: 1em;
 }
-/* line 1669, ../sass/custom.scss */
+/* line 1635, ../sass/custom.scss */
 .not-front #autocomplete ul li h2 a {
   font-weight: 400;
   font-size: 16px;
@@ -1852,12 +1818,12 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 }
 
 /* Lightbox forms */
-/* line 1679, ../sass/custom.scss */
+/* line 1645, ../sass/custom.scss */
 fieldset.date-combo .container-inline-date .date-padding {
   padding: 0;
 }
 
-/* line 1682, ../sass/custom.scss */
+/* line 1648, ../sass/custom.scss */
 fieldset.date-combo .container-inline-date > .form-item {
   margin-bottom: 0;
 }

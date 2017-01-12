@@ -2260,3 +2260,10 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   }
 }
 /* End */
+
+/* Uer login page */
+.not-logged-in.page-user {
+  #block-quicktabs-user-profile {
+    display: none;
+  }
+}

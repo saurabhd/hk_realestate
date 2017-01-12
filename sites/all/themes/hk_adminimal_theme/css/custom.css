@@ -1,7 +1,7 @@
 /**
  *  Ontact page design
  **/
-/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,45 +23,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -71,16 +71,53 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-family: "sans-serif" !important;
 }
 
-/* line 16, ../sass/custom.scss */
-.page-crm-core-contact #page,
-.page-crm-core-agent-central #page {
-  width: auto !important;
-  padding: 20px 68px;
+/*.page-crm-core-contact,
+.page-crm-core-agent-central {
+  #page {
+    width: auto !important;
+    padding: 20px 68px;
+  }
+}*/
+/* line 22, ../sass/custom.scss */
+#page {
+  width: 100%;
+  /*.wrapper.navigation {
+    width: 100%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background: rgba(255,255,255,.9);
+    position: fixed;
+    height: 90px;
+    z-index: 102;
+    @media screen and (max-width: 667px) {
+      height: 60px;
+    }
+  }*/
+}
+@media (max-width: 1280px) {
+  /* line 24, ../sass/custom.scss */
+  #page .wrapper {
+    padding: 0 20px;
+  }
+}
+/* line 29, ../sass/custom.scss */
+#page .container,
+#page .wrapper.main {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  /* line 29, ../sass/custom.scss */
+  #page .container,
+  #page .wrapper.main {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 }
 
-/* Contact page design */
-/* line 24, ../sass/custom.scss */
-.page-crm-core-contact .navigation {
+/* Header design */
+/* line 54, ../sass/custom.scss */
+.page-crm-core-contact .navigation,
+.page-crm-core-agent-central .navigation {
   position: fixed;
   height: 96px;
   width: 100%;
@@ -88,34 +125,39 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   z-index: 102;
 }
-/* line 31, ../sass/custom.scss */
-.page-crm-core-contact .navigation #logo {
+/* line 61, ../sass/custom.scss */
+.page-crm-core-contact .navigation #logo,
+.page-crm-core-agent-central .navigation #logo {
   float: left;
   width: 170px;
   margin-left: 50px;
 }
-/* line 36, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner {
+/* line 66, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner,
+.page-crm-core-agent-central .navigation #navigation-inner {
   display: inline-block;
   float: left;
   width: calc(100% - 250px);
 }
-/* line 40, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation {
+/* line 70, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation {
   display: inline-block;
   width: 100%;
   /*width: calc(100% - 220px);*/
 }
-/* line 44, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box {
+/* line 74, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box {
   float: left;
   position: relative;
   display: inline-block;
   margin-top: 35px;
   margin-left: 38px;
 }
-/* line 51, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.auto_submit {
+/* line 81, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.auto_submit,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.auto_submit {
   position: relative;
   display: inline-block;
   width: 270px;
@@ -127,8 +169,9 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-size: 15px;
   color: #333;
 }
-/* line 63, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit {
+/* line 93, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit {
   position: absolute;
   top: 0;
   right: 0;
@@ -143,54 +186,64 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-position: 12px 8px;
   background-color: transparent;
 }
-/* line 77, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit:hover {
+/* line 107, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit:hover,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit:hover {
   box-shadow: none !important;
 }
-/* line 83, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete {
+/* line 113, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete {
   width: 294px !important;
   margin-left: 2px !important;
 }
-/* line 87, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li {
+/* line 117, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li {
   font-size: 16px;
   padding: 15px 10px 0;
   white-space: nowrap !important;
 }
-/* line 91, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li a {
+/* line 121, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li a,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li a {
   color: #000;
   font-size: 16px;
   font-family: "sans-serif";
   text-decoration: none;
   text-align: left;
 }
-/* line 98, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover {
+/* line 128, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover {
   background-color: #1A1A1A;
 }
-/* line 101, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover h2 a {
+/* line 131, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover h2 a,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover h2 a {
   color: #FFF !important;
 }
-/* line 110, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu {
+/* line 140, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu {
   display: inline-block;
   float: right;
 }
-/* line 113, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu {
+/* line 143, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu {
   margin-top: 35px;
   /*margin-right: 56px;*/
 }
-/* line 116, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li {
+/* line 146, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li {
   float: left;
   list-style: none;
 }
-/* line 119, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a {
+/* line 149, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a {
   margin: 0 35px 0 8px;
   color: #747474;
   line-height: normal;
@@ -199,17 +252,21 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   vertical-align: middle;
   letter-spacing: 2px;
 }
-/* line 127, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:hover, .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:active {
+/* line 157, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:hover, .page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:active,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:hover,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:active {
   color: #C61C2C;
   text-decoration: none;
 }
-/* line 133, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li li.active {
+/* line 163, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li li.active,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li li.active {
   color: #C61C2C;
 }
-/* line 136, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li::before {
+/* line 166, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li::before,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li::before {
   display: inline-block;
   /*width: 14px;
   height: 17px;
@@ -219,48 +276,56 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   content: '';
   vertical-align: middle;
 }
-/* line 147, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-dashboard::before {
+/* line 177, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-dashboard::before,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-dashboard::before {
   height: 17px;
   width: 14px;
   background-image: url("../images/menu-symbol-of-four-lines.png");
 }
-/* line 154, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout::before {
+/* line 184, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout::before,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout::before {
   height: 17px;
   width: 19px;
   background-image: url("../images/logout.png");
 }
-/* line 159, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout a {
+/* line 189, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout a,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout a {
   font-weight: bold;
 }
-/* line 164, ../sass/custom.scss */
-.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-agent-central::before {
+/* line 194, ../sass/custom.scss */
+.page-crm-core-contact .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-agent-central::before,
+.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-agent-central::before {
   height: 15px;
   width: 13px;
   background-image: url("../images/malware.png");
 }
-/* line 176, ../sass/custom.scss */
-.page-crm-core-contact #navigation {
+/* line 206, ../sass/custom.scss */
+.page-crm-core-contact #navigation,
+.page-crm-core-agent-central #navigation {
   display: inline-block;
   width: 100% !important;
   padding-top: 96px;
   clear: both;
 }
-/* line 182, ../sass/custom.scss */
+
+/* End */
+/* Contact page design */
+/* line 217, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page {
   display: inline-block;
   width: 100%;
 }
-/* line 186, ../sass/custom.scss */
+/* line 221, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row {
   display: inline-block;
   width: 100%;
   margin-top: 50px;
   border: 1px solid #C3C3C3;
 }
-/* line 191, ../sass/custom.scss */
+/* line 226, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container {
   width: 100%;
   padding: 15px 0 20px;
@@ -269,12 +334,12 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-repeat: repeat-x;
   background-position: center bottom;
 }
-/* line 198, ../sass/custom.scss */
+/* line 233, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .left-content {
   padding-left: 15px;
   display: inline-block;
 }
-/* line 203, ../sass/custom.scss */
+/* line 238, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .left-content .views-field .field-content img {
   height: 200px;
   width: 200px;
@@ -283,7 +348,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   -moz-border-radius: 1000px;
   border-radius: 1000px;
 }
-/* line 214, ../sass/custom.scss */
+/* line 249, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content {
   -webkit-width: calc(100% - 250px);
   -moz-width: calc(100% - 250px);
@@ -292,22 +357,22 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   margin-top: 20px;
   vertical-align: top;
 }
-/* line 221, ../sass/custom.scss */
+/* line 256, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field {
   margin-bottom: 10px;
 }
-/* line 223, ../sass/custom.scss */
+/* line 258, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-content {
   display: inline-block;
   font-size: 14px;
   color: #525252;
 }
-/* line 227, ../sass/custom.scss */
+/* line 262, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-content * {
   display: inline-block;
   vertical-align: top;
 }
-/* line 232, ../sass/custom.scss */
+/* line 267, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field .field-label {
   display: inline-block;
   width: 100px;
@@ -316,22 +381,22 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-weight: bold;
   vertical-align: top;
 }
-/* line 241, ../sass/custom.scss */
+/* line 276, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-name .field-content {
   font-size: 25px;
   color: #242021;
   font-weight: bold;
 }
-/* line 247, ../sass/custom.scss */
+/* line 282, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-company-name {
   margin-bottom: 15px;
 }
-/* line 249, ../sass/custom.scss */
+/* line 284, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-company-name .field-content {
   font-size: 17px;
   color: #656565;
 }
-/* line 255, ../sass/custom.scss */
+/* line 290, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-address::before {
   background-image: url("../images/location-icon.png");
   background-repeat: no-repeat;
@@ -339,7 +404,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding-left: 30px;
   content: '';
 }
-/* line 265, ../sass/custom.scss */
+/* line 300, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-email::before {
   background-image: url("../images/envelope.png");
   background-repeat: no-repeat;
@@ -347,7 +412,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding-left: 30px;
   content: '';
 }
-/* line 275, ../sass/custom.scss */
+/* line 310, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .top-container .right-content .views-field.views-field-field-phone::before {
   background-image: url("../images/call-answer.png");
   background-repeat: no-repeat;
@@ -355,7 +420,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding-left: 30px;
   content: '';
 }
-/* line 288, ../sass/custom.scss */
+/* line 323, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container {
   display: inline-block;
   min-height: 406px;
@@ -363,11 +428,11 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   display: inline-block;
   padding: 30px;
 }
-/* line 294, ../sass/custom.scss */
+/* line 329, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .views-field {
   padding: 15px 0;
 }
-/* line 296, ../sass/custom.scss */
+/* line 331, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .views-field .field-label {
   display: inline-block;
   width: 100px;
@@ -375,19 +440,19 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   color: #323232;
   font-weight: bold;
 }
-/* line 304, ../sass/custom.scss */
+/* line 339, ../sass/custom.scss */
 .page-crm-core-contact .view-crm-contact-page .view-content .views-row .bottom-container .field-content {
   display: inline-block;
   font-size: 15px;
 }
-/* line 313, ../sass/custom.scss */
+/* line 348, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block {
   float: right;
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 318, ../sass/custom.scss */
+/* line 353, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-header,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-header {
   width: 240px;
@@ -404,7 +469,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 334, ../sass/custom.scss */
+/* line 369, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-crm-contact-type .view-header,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-crm-contact-type .view-header {
   width: 240px;
@@ -412,19 +477,19 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-family: "sans-serif";
   box-sizing: border-box;
 }
-/* line 342, ../sass/custom.scss */
+/* line 377, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .view-crm-activity-type p,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .view-crm-activity-type p {
   margin: 0;
 }
-/* line 346, ../sass/custom.scss */
+/* line 381, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list {
   /*.views-field-label {
     padding: 3px 0 0;
   }*/
 }
-/* line 350, ../sass/custom.scss */
+/* line 385, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul {
   position: absolute;
@@ -439,18 +504,18 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   text-align: center;
   z-index: 1;
 }
-/* line 362, ../sass/custom.scss */
+/* line 397, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li {
   padding: 4px 0 0;
   list-style: none;
 }
-/* line 365, ../sass/custom.scss */
+/* line 400, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li:last-child,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li:last-child {
   padding: 4px 0;
 }
-/* line 368, ../sass/custom.scss */
+/* line 403, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li a {
   text-decoration: none;
@@ -461,45 +526,45 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   display: block;
   padding: 1em;
 }
-/* line 376, ../sass/custom.scss */
+/* line 411, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a:hover,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block .item-list ul li a:hover {
   color: #1A1A1A;
   background: #CDCDCD;
 }
-/* line 386, ../sass/custom.scss */
+/* line 421, ../sass/custom.scss */
 .page-crm-core-contact #content-before #block-hk-custom-crm-crm-contact-type:hover .item-list ul,
 .page-crm-core-contact #content-before #block-views-crm-activity-type-block:hover .item-list ul {
   display: block;
 }
-/* line 393, ../sass/custom.scss */
+/* line 428, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page {
   display: inline-block;
   width: 100%;
   margin-top: 50px;
 }
-/* line 397, ../sass/custom.scss */
+/* line 432, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page {
   display: inline-block;
   width: 100%;
 }
-/* line 400, ../sass/custom.scss */
+/* line 435, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs {
   display: inline-block;
   margin-left: 0;
 }
-/* line 403, ../sass/custom.scss */
+/* line 438, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li {
   display: inline-block;
   margin-right: -3px;
   float: left;
 }
-/* line 408, ../sass/custom.scss */
+/* line 443, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li.active a {
   position: relative;
   background-color: #282D33;
 }
-/* line 411, ../sass/custom.scss */
+/* line 446, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li.active a::after {
   border-color: transparent;
   border-top-color: #282D33;
@@ -513,15 +578,15 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   width: 0;
   content: '';
 }
-/* line 426, ../sass/custom.scss */
+/* line 461, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li:first-child {
   border-right: none;
 }
-/* line 429, ../sass/custom.scss */
+/* line 464, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li:last-child {
   border-right: none;
 }
-/* line 432, ../sass/custom.scss */
+/* line 467, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li a {
   height: 37px;
   background-color: #BD1725;
@@ -532,74 +597,74 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-weight: bold;
   font-size: 15px;
 }
-/* line 441, ../sass/custom.scss */
+/* line 476, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-crm_contact_page ul.quicktabs-tabs li a:hover {
   background-color: #282D33;
 }
-/* line 448, ../sass/custom.scss */
+/* line 483, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page {
   display: inline-block;
   width: 100%;
   margin-top: 23px;
 }
-/* line 455, ../sass/custom.scss */
+/* line 490, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table thead tr th {
   padding: 25px;
 }
-/* line 461, ../sass/custom.scss */
+/* line 496, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr {
   background: transparent;
 }
-/* line 463, ../sass/custom.scss */
+/* line 498, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td {
   max-width: 160px;
   padding: 25px;
   font-size: 17px;
   color: #333333;
 }
-/* line 468, ../sass/custom.scss */
+/* line 503, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr td a {
   padding: 0;
   white-space: normal;
 }
-/* line 473, ../sass/custom.scss */
+/* line 508, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.hide-notes {
   display: none;
 }
-/* line 476, ../sass/custom.scss */
+/* line 511, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.show-notes {
   display: table-row;
   -webkit-transition: all 0.5s ease 0.5s;
   -moz-transition: all 0.5s ease 0.5s;
   transition: all 0.5s ease 0.5s;
 }
-/* line 483, ../sass/custom.scss */
+/* line 518, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.odd {
   border-top: 1px solid #C3C3C3;
   border-bottom: 1px solid #C3C3C3;
   background-image: url("../images/Pattern.jpg");
 }
-/* line 488, ../sass/custom.scss */
+/* line 523, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page table tbody tr.even {
   border-top: none;
   border-bottom: none;
 }
-/* line 499, ../sass/custom.scss */
+/* line 534, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .view-display-id-block_1 table tbody tr td.views-field-field-activity-notes {
   background-image: url("../images/plus.png");
   background-repeat: no-repeat;
   background-position: 26px 25px;
   cursor: pointer;
 }
-/* line 506, ../sass/custom.scss */
+/* line 541, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .view-display-id-block_1 table tbody tr td.views-field-action {
   min-width: 280px;
 }
-/* line 511, ../sass/custom.scss */
+/* line 546, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list {
   margin-top: 50px;
 }
-/* line 514, ../sass/custom.scss */
+/* line 549, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current {
   background-color: #D11F01;
   border-radius: 50%;
@@ -611,7 +676,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   width: 25px;
   line-height: 25px;
 }
-/* line 524, ../sass/custom.scss */
+/* line 559, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-current a {
   /*background-color: #D11F01;
   border-radius: 50%;
@@ -622,7 +687,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding: 0;
   width: 25px;*/
 }
-/* line 535, ../sass/custom.scss */
+/* line 570, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous {
@@ -630,7 +695,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   /*border: 1px solid #B8B8B8;
   border-radius: 50%;*/
 }
-/* line 541, ../sass/custom.scss */
+/* line 576, ../sass/custom.scss */
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-item a,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-next a,
 .page-crm-core-contact #block-quicktabs-crm-contact-page #quicktabs-container-crm_contact_page .item-list ul.pager li.pager-previous a {
@@ -643,18 +708,18 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding: 0;
   width: 25px;
 }
-/* line 556, ../sass/custom.scss */
+/* line 591, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper {
   display: inline-block;
   width: 100%;
 }
-/* line 559, ../sass/custom.scss */
+/* line 594, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 564, ../sass/custom.scss */
+/* line 599, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #main-content {
   float: left;
   display: inline-block;
@@ -663,7 +728,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   width: calc(70% - 30px);
   margin: 0 30px 0 0;
 }
-/* line 572, ../sass/custom.scss */
+/* line 607, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top {
   float: left;
   display: inline-block;
@@ -671,18 +736,18 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   border: 1px solid #C5C5C5;
   margin: 50px 0 0;
 }
-/* line 578, ../sass/custom.scss */
+/* line 613, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top {
   width: 100%;
   padding-left: 0;
   /* Matching Apartments section design */
   /* End */
 }
-/* line 583, ../sass/custom.scss */
+/* line 618, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area {
   background-color: #FFF;
 }
-/* line 586, ../sass/custom.scss */
+/* line 621, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header {
   display: inline-block;
   -webkit-width: calc(100% - 30px);
@@ -695,45 +760,45 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-repeat: repeat-x;
   background-color: #FFF;
 }
-/* line 597, ../sass/custom.scss */
+/* line 632, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .block-title {
   font-size: 32px;
   margin-bottom: 10px;
 }
-/* line 601, ../sass/custom.scss */
+/* line 636, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-header .sub-title {
   color: #0a0a0a;
   display: inline-block;
   font-size: 16px;
 }
-/* line 607, ../sass/custom.scss */
+/* line 642, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section {
   background-color: #EBEBEB;
   padding: 20px;
   min-height: 527px;
 }
-/* line 611, ../sass/custom.scss */
+/* line 646, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #E7E7E7;
 }
-/* line 615, ../sass/custom.scss */
+/* line 650, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content {
   float: left;
   display: inline-block;
   margin-right: 10px;
 }
-/* line 620, ../sass/custom.scss */
+/* line 655, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row.views-row-last {
   border-bottom: none;
 }
-/* line 625, ../sass/custom.scss */
+/* line 660, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .left-content .views-field-picture img {
   width: 106px;
   height: 92px;
 }
-/* line 631, ../sass/custom.scss */
+/* line 666, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content {
   display: inline-block;
   float: left;
@@ -741,19 +806,19 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   -webkit-width: calc(100% - 120px);
   width: calc(100% - 120px);
 }
-/* line 638, ../sass/custom.scss */
+/* line 673, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .views-field-title a {
   color: #343434;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 644, ../sass/custom.scss */
+/* line 679, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email {
   display: inline-block;
   width: 100%;
   margin-top: 10px;
 }
-/* line 648, ../sass/custom.scss */
+/* line 683, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-apart-no {
   color: #ef595a;
   display: inline-block;
@@ -761,7 +826,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 655, ../sass/custom.scss */
+/* line 690, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email {
   /*float: right;
   display: inline-block;
@@ -771,7 +836,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-size: 24px auto;
   font-size: 0;*/
 }
-/* line 656, ../sass/custom.scss */
+/* line 691, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-apart-no-email .views-field-email a {
   display: inline-block;
   width: 40px;
@@ -784,18 +849,18 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-size: 24px auto;
   font-size: 0;
 }
-/* line 677, ../sass/custom.scss */
+/* line 712, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms {
   display: inline-block;
   margin-top: 10px;
   width: 100%;
 }
-/* line 681, ../sass/custom.scss */
+/* line 716, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space {
   display: inline-block;
   float: left;
 }
-/* line 684, ../sass/custom.scss */
+/* line 719, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space::before {
   display: inline-block;
   height: 29px;
@@ -807,19 +872,19 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   content: '';
   vertical-align: top;
 }
-/* line 695, ../sass/custom.scss */
+/* line 730, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-living-space span {
   display: inline-block;
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 702, ../sass/custom.scss */
+/* line 737, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms {
   display: inline-block;
   float: right;
 }
-/* line 705, ../sass/custom.scss */
+/* line 740, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms::before {
   display: inline-block;
   height: 29px;
@@ -830,19 +895,19 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   content: '';
   vertical-align: top;
 }
-/* line 715, ../sass/custom.scss */
+/* line 750, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-bedrooms span {
   display: inline-block;
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
 }
-/* line 722, ../sass/custom.scss */
+/* line 757, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email {
   display: inline-block;
   float: right;
 }
-/* line 725, ../sass/custom.scss */
+/* line 760, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .right-content .content-space-rooms .views-field-email .field-content {
   font-size: 0;
   background-image: url("../images/Black_Email.png");
@@ -850,13 +915,13 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 735, ../sass/custom.scss */
+/* line 770, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content {
   width: 100%;
   display: inline-block;
   margin-top: 10px;
 }
-/* line 739, ../sass/custom.scss */
+/* line 774, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price {
   background-color: #c71c2c;
   background-image: url("../images/Buy.png");
@@ -870,11 +935,11 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   margin-right: 5px;
   padding: 15px 15px 15px 40px;
 }
-/* line 751, ../sass/custom.scss */
+/* line 786, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .view.view-search-area .view-content .content-section .views-row .bottom-content .views-field-price:hover {
   cursor: pointer;
 }
-/* line 760, ../sass/custom.scss */
+/* line 795, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list {
   display: inline-block;
   margin-top: -50px;
@@ -882,17 +947,17 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-color: #EBEBEB;
   float: right;
 }
-/* line 766, ../sass/custom.scss */
+/* line 801, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul {
   display: inline-block;
   float: right;
   margin-right: 24px;
 }
-/* line 770, ../sass/custom.scss */
+/* line 805, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li {
   padding: 0;
 }
-/* line 774, ../sass/custom.scss */
+/* line 809, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-next a {
   display: inline-block;
   width: 25px;
@@ -902,7 +967,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-position: -17px 0;
   background-repeat: no-repeat;
 }
-/* line 785, ../sass/custom.scss */
+/* line 820, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-previous a {
   display: inline-block;
   width: 25px;
@@ -912,11 +977,11 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-position: 6px 0;
   background-repeat: no-repeat;
 }
-/* line 795, ../sass/custom.scss */
+/* line 830, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right-top .region-sidebar-right-top #block-views-search-area-block .item-list ul li.pager-current {
   display: none;
 }
-/* line 804, ../sass/custom.scss */
+/* line 839, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right {
   float: left;
   display: inline-block;
@@ -924,7 +989,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   border: 1px solid #C5C5C5;
   margin: 50px 0 0;
 }
-/* line 810, ../sass/custom.scss */
+/* line 845, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right {
   display: inline-block;
   width: 100%;
@@ -937,7 +1002,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 
         }*/
 }
-/* line 815, ../sass/custom.scss */
+/* line 850, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi {
   float: left;
   width: 48% !important;
@@ -947,21 +1012,21 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
     padding: 0;
   }*/
 }
-/* line 819, ../sass/custom.scss */
+/* line 854, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi:nth-child(2n + 1) {
   margin-right: 0;
   float: right;
 }
-/* line 823, ../sass/custom.scss */
+/* line 858, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi:nth-child(2n) {
   clear: left;
 }
-/* line 826, ../sass/custom.scss */
+/* line 861, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .block-facetapi .form-item {
   margin: 0;
   padding: 0;
 }
-/* line 835, ../sass/custom.scss */
+/* line 870, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 {
   display: inline-block;
   width: 100%;
@@ -970,19 +1035,19 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-repeat: repeat-x;
   background-position: center bottom;
 }
-/* line 842, ../sass/custom.scss */
+/* line 877, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 h2 {
   margin-bottom: 13px;
   color: #fff;
   font-size: 35px;
   font-weight: bold;
 }
-/* line 849, ../sass/custom.scss */
+/* line 884, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-block-1 .content p {
   color: #fff;
   font-size: 17px;
 }
-/* line 856, ../sass/custom.scss */
+/* line 891, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices {
   height: 45px;
   margin: 0;
@@ -996,7 +1061,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   -moz-border-radius: 4px;
   vertical-align: top;
 }
-/* line 869, ../sass/custom.scss */
+/* line 904, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right .select2-container-multi .select2-choices li.select2-search-field input {
   float: left;
   width: 100% !important;
@@ -1005,16 +1070,16 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-size: 15px;
   cursor: pointer;
 }
-/* line 885, ../sass/custom.scss */
+/* line 920, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-views-last-saved-searches-block {
   display: none;
 }
-/* line 888, ../sass/custom.scss */
+/* line 923, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-search-api-saved-searches-solr-node-index {
   display: inline-block;
   width: 100%;
 }
-/* line 893, ../sass/custom.scss */
+/* line 928, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block {
   border: 1px solid #AAAAAA;
   -webkit-border-radius: 4px;
@@ -1022,34 +1087,34 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   border-radius: 4px;
   margin-top: 15px;
 }
-/* line 899, ../sass/custom.scss */
+/* line 934, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class {
   margin: 0;
 }
-/* line 901, ../sass/custom.scss */
+/* line 936, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class tr.views-row {
   border-top: 1px solid #AAA;
 }
-/* line 903, ../sass/custom.scss */
+/* line 938, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class tr.views-row td {
   color: #FFF;
 }
-/* line 905, ../sass/custom.scss */
+/* line 940, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class tr.views-row td a {
   color: rgba(255, 255, 255, 0.8);
   font-size: 15px;
   font-family: 'Neue Helvetica W01', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   padding: 5px 0;
 }
-/* line 910, ../sass/custom.scss */
+/* line 945, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class tr.views-row td a:hover {
   text-decoration: none;
 }
-/* line 915, ../sass/custom.scss */
+/* line 950, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right #block-hk-custom-crm-custom-saved-search-block #block-views-saved-searches-block table.table-class tr.views-row.views-row-first {
   border: none;
 }
-/* line 922, ../sass/custom.scss */
+/* line 957, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right .region-sidebar-right a.select2-choice {
   float: left;
   height: 45px;
@@ -1067,206 +1132,41 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-position: right 4px;
   background-repeat: no-repeat;
 }
-/* line 940, ../sass/custom.scss */
+/* line 975, ../sass/custom.scss */
 .page-crm-core-contact #content-wrapper #sidebar-right #block-hk-custom-crm-custom-saved-search {
   display: inline-block;
   width: 100%;
 }
-/* line 946, ../sass/custom.scss */
+/* line 981, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop {
   /*display: inline-block;
   max-width: 146px !important;
   width: 100% !important;*/
 }
-/* line 950, ../sass/custom.scss */
+/* line 985, ../sass/custom.scss */
 .page-crm-core-contact #select2-drop .select2-search {
   display: none;
 }
-/* line 957, ../sass/custom.scss */
+/* line 992, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox .lightbox .lightbox__content .lightbox__body {
   max-height: 475px;
   overflow-y: auto;
 }
-/* line 964, ../sass/custom.scss */
+/* line 999, ../sass/custom.scss */
 .page-crm-core-contact #ng-lightbox #edit-contact-name a.select2-choice {
   height: 30px;
 }
 
 /* End */
 /* Agent central page design */
-/* line 974, ../sass/custom.scss */
-.page-crm-core-agent-central #page {
-  margin-top: 96px !important;
-}
-/* line 977, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation {
-  position: fixed;
-  height: 96px;
-  width: 100%;
-  background-image: url("../images/search-page-parten.png") !important;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  z-index: 102;
-}
-/* line 984, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #logo {
-  float: left;
-  width: 170px;
-  margin-left: 50px;
-}
-/* line 989, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner {
-  display: inline-block;
-  float: left;
-  width: calc(100% - 255px);
-}
-/* line 993, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation {
-  display: inline-block;
-  width: 100%;
-  /*width: calc(100% - 220px);*/
-}
-/* line 997, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box {
-  float: left;
-  position: relative;
-  display: inline-block;
-  margin-top: 35px;
-  margin-left: 38px;
-}
-/* line 1004, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.auto_submit {
-  position: relative;
-  display: inline-block;
-  width: 270px;
-  height: 20px;
-  background-image: none;
-  padding-left: 20px;
-  border-color: #969696;
-  border-radius: 3px;
-  font-size: 15px;
-  color: #333;
-}
-/* line 1016, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: auto;
-  display: inline-block;
-  width: 20px;
-  height: 35px;
-  margin-left: -30px;
-  font-size: 0;
-  background-image: url("../images/red-search-icon.png");
-  background-repeat: no-repeat;
-  background-position: 12px 8px;
-  background-color: transparent;
-}
-/* line 1030, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit:hover {
-  box-shadow: none !important;
-}
-/* line 1036, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete {
-  width: 294px !important;
-  margin-left: 2px !important;
-}
-/* line 1040, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li {
-  font-size: 16px;
-  padding: 16px 10px 0;
-  white-space: nowrap !important;
-}
-/* line 1044, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li a {
-  color: #000;
-  font-size: 16px;
-  font-family: "sans-serif";
-  text-decoration: none;
-  text-align: left;
-}
-/* line 1051, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover {
-  background-color: #1A1A1A;
-}
-/* line 1054, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover h2 a {
-  color: #FFF !important;
-}
-/* line 1063, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu {
-  display: inline-block;
-  float: right;
-}
-/* line 1066, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu {
-  margin-top: 35px;
-  /*margin-right: 56px;*/
-}
-/* line 1069, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li {
-  float: left;
-  list-style: none;
-}
-/* line 1072, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a {
-  margin: 0 35px 0 8px;
-  color: #747474;
-  line-height: normal;
-  font-size: 14px;
-  font-family: "sans-serif";
-  vertical-align: middle;
-  letter-spacing: 2px;
-}
-/* line 1080, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:hover, .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:active, .page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:focus {
-  color: #C61C2C;
-}
-/* line 1085, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a.active {
-  color: #C61C2C;
-}
-/* line 1089, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li::before {
-  display: inline-block;
-  /*width: 14px;
-  height: 17px;
-  background-image: url("../images/menu-symbol-of-four-lines.png");*/
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  content: '';
-  vertical-align: middle;
-}
-/* line 1100, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-dashboard::before {
-  height: 17px;
-  width: 14px;
-  background-image: url("../images/menu-symbol-of-four-lines.png");
-}
-/* line 1107, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout::before {
-  height: 17px;
-  width: 19px;
-  background-image: url("../images/logout.png");
-}
-/* line 1112, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout a {
-  font-weight: bold;
-}
-/* line 1117, ../sass/custom.scss */
-.page-crm-core-agent-central .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-agent-central::before {
-  height: 15px;
-  width: 13px;
-  background-image: url("../images/malware.png");
-}
-/* line 1130, ../sass/custom.scss */
+/* line 1010, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block {
   float: right;
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 1135, ../sass/custom.scss */
+/* line 1015, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .view-header,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .view-header {
   width: 240px;
@@ -1276,14 +1176,13 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   color: #FFF;
   font-size: 14px;
   box-sizing: border-box;
-  /*font-family: 'helvetica-neue w01';*/
   cursor: pointer;
   background-image: url("../images/Icon_Arrow_down.png");
   background-position: right 10px center;
   background-repeat: no-repeat;
   background-size: 24px auto;
 }
-/* line 1151, ../sass/custom.scss */
+/* line 1030, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .view-crm-contact-type .view-header,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .view-crm-contact-type .view-header {
   width: 240px;
@@ -1291,19 +1190,12 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-family: "sans-serif";
   box-sizing: border-box;
 }
-/* line 1159, ../sass/custom.scss */
+/* line 1038, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .view-crm-activity-type p,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .view-crm-activity-type p {
   margin: 0;
 }
-/* line 1163, ../sass/custom.scss */
-.page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list,
-.page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list {
-  /*.views-field-label {
-    padding: 3px 0 0;
-  }*/
-}
-/* line 1167, ../sass/custom.scss */
+/* line 1043, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul {
   position: absolute;
@@ -1318,92 +1210,88 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   text-align: center;
   z-index: 11;
 }
-/* line 1179, ../sass/custom.scss */
+/* line 1055, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul li {
   padding: 4px 0 0;
   list-style: none;
 }
-/* line 1182, ../sass/custom.scss */
+/* line 1058, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li:last-child,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul li:last-child {
   padding: 4px 0;
 }
-/* line 1185, ../sass/custom.scss */
+/* line 1061, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul li a {
   text-decoration: none;
   font-size: 14px;
-  /*font-family: 'helvetica-neue w01';*/
   color: #C61C2C;
   line-height: 24px;
 }
-/* line 1191, ../sass/custom.scss */
+/* line 1066, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type .item-list ul li a:hover,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block .item-list ul li a:hover {
   color: #1A1A1A;
 }
-/* line 1200, ../sass/custom.scss */
+/* line 1075, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-hk-custom-crm-crm-contact-type:hover .item-list ul,
 .page-crm-core-agent-central #content-before #block-views-crm-activity-type-block:hover .item-list ul {
   display: block;
 }
-/* line 1206, ../sass/custom.scss */
+/* line 1081, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task {
   float: left;
   display: inline-block;
   width: 45.5%;
 }
-/* line 1211, ../sass/custom.scss */
+/* line 1086, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-header .block-title {
   margin-top: 10px;
   margin-bottom: 30px;
   font-size: 34px;
   font-family: "sans-serif";
 }
-/* line 1218, ../sass/custom.scss */
+/* line 1093, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content {
   border: 1px solid #C5C5C5;
   margin-bottom: 40px;
 }
-/* line 1221, ../sass/custom.scss */
+/* line 1096, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-row {
   padding: 20px 20px 20px 35px;
   background-image: url("../images/Line_dotted.jpg");
   background-position: center bottom;
   background-repeat: repeat-x;
 }
-/* line 1227, ../sass/custom.scss */
+/* line 1102, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-row-last {
   background-image: none;
 }
-/* line 1230, ../sass/custom.scss */
+/* line 1105, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-title {
   display: inline-block;
   font-size: 18px;
-  /*font-family: 'open sans';*/
   font-weight: 700;
 }
-/* line 1236, ../sass/custom.scss */
+/* line 1110, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-date {
   float: right;
   display: inline-block;
-  /*font-family: 'open sans';*/
   font-weight: 700;
   font-size: 13px;
 }
-/* line 1242, ../sass/custom.scss */
+/* line 1115, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-date .field-content {
   float: right;
   font-weight: 700;
 }
-/* line 1247, ../sass/custom.scss */
+/* line 1120, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-notes {
   padding-top: 5px;
   font-size: 14px;
-  /*font-family: 'sans-serif';*/
 }
-/* line 1253, ../sass/custom.scss */
+/* line 1125, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-notes .field-content .readmore-summary .readmore-link {
   float: right;
   display: inline-block;
@@ -1414,7 +1302,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-size: auto 100%;
   text-indent: -9999px;
 }
-/* line 1265, ../sass/custom.scss */
+/* line 1137, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-field-activity-notes .field-content .readmore-text .readless-link {
   float: right;
   display: inline-block;
@@ -1425,11 +1313,11 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-size: auto 100%;
   text-indent: -9999px;
 }
-/* line 1279, ../sass/custom.scss */
+/* line 1151, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-ops .flag-wrapper {
   position: relative;
 }
-/* line 1281, ../sass/custom.scss */
+/* line 1153, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-ops .flag-wrapper::before {
   position: absolute;
   display: inline-block;
@@ -1441,17 +1329,17 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-size: 100% auto;
   content: '';
 }
-/* line 1292, ../sass/custom.scss */
+/* line 1164, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-ops .flag-wrapper a {
   padding-left: 22px;
   color: #000;
 }
-/* line 1295, ../sass/custom.scss */
+/* line 1167, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before .to-do-task .view-content .views-field-ops .flag-wrapper a:hover {
   color: #000;
   text-decoration: none;
 }
-/* line 1304, ../sass/custom.scss */
+/* line 1176, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar {
   float: right;
   display: inline-block;
@@ -1459,7 +1347,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   margin-top: 20px;
   border: 1px solid #7A7A7A;
 }
-/* line 1310, ../sass/custom.scss */
+/* line 1182, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section {
   padding: 15px 0;
   background-color: #D92227;
@@ -1469,90 +1357,89 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-position: center 68px;
   background-repeat: repeat-x;
 }
-/* line 1318, ../sass/custom.scss */
+/* line 1190, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section h2,
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section .sub-title {
   padding-left: 40px;
 }
-/* line 1322, ../sass/custom.scss */
+/* line 1194, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section h2 {
   margin-bottom: 9px;
   font-size: 30px;
   font-family: "sans-serif";
 }
-/* line 1327, ../sass/custom.scss */
+/* line 1199, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .header-section .sub-title {
   font-size: 14px;
   font-weight: 500;
 }
-/* line 1332, ../sass/custom.scss */
+/* line 1204, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen {
   padding: 0 10px 3px 0;
 }
-/* line 1334, ../sass/custom.scss */
+/* line 1206, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen .quicktabs-style-zen {
   margin: 20px 0 10px 0;
   padding: 0px 0 3px 40px;
 }
-/* line 1338, ../sass/custom.scss */
+/* line 1210, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen .quicktabs-style-zen li a {
   color: #000;
 }
-/* line 1342, ../sass/custom.scss */
+/* line 1214, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen .quicktabs-style-zen li.active {
   padding: 0;
   background-image: none;
 }
-/* line 1345, ../sass/custom.scss */
+/* line 1217, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar .quicktabs-style-zen .quicktabs-style-zen li.active a {
   background-image: none;
   background-color: #ED91A1;
   border-radius: 5px 5px 0 0;
 }
-/* line 1355, ../sass/custom.scss */
+/* line 1227, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .date-heading {
   font-size: 15px;
   font-family: "sans-serif";
-  /*font-family: 'sans-serif';*/
   text-align: left;
 }
-/* line 1360, ../sass/custom.scss */
+/* line 1231, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .date-heading h3 {
   font-weight: 500;
 }
-/* line 1365, ../sass/custom.scss */
+/* line 1236, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .pager .date-prev {
   padding: 5px 10px 5px 0;
   background-color: #D92227;
   right: 100px;
 }
-/* line 1368, ../sass/custom.scss */
+/* line 1239, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .pager .date-prev a {
   color: #FFF;
 }
-/* line 1371, ../sass/custom.scss */
+/* line 1242, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .pager .date-next {
   padding: 5px 0 5px 10px;
   background-color: #D92227;
 }
-/* line 1374, ../sass/custom.scss */
+/* line 1245, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .date-nav .pager .date-next a {
   color: #FFF;
 }
-/* line 1378, ../sass/custom.scss */
+/* line 1249, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content {
   padding-top: 10px;
 }
-/* line 1380, ../sass/custom.scss */
+/* line 1251, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .views-row {
   margin-bottom: 10px;
 }
-/* line 1383, ../sass/custom.scss */
+/* line 1254, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .left-section {
   display: inline-block;
   margin-right: 20px;
 }
-/* line 1387, ../sass/custom.scss */
+/* line 1258, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .left-section .views-field-activity-date .field-content {
   display: inline-block;
   width: 50px;
@@ -1563,7 +1450,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   line-height: 24px;
   font-weight: 700;
 }
-/* line 1399, ../sass/custom.scss */
+/* line 1270, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section {
   display: inline-block;
   width: calc(100% - 135px);
@@ -1571,7 +1458,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-color: #EBEBEB;
   padding: 10px 10px 10px 30px;
 }
-/* line 1405, ../sass/custom.scss */
+/* line 1276, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section .notes-plus-icon {
   float: right;
   height: 25px;
@@ -1581,95 +1468,89 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-/* line 1415, ../sass/custom.scss */
+/* line 1286, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section .left-content .views-field-title {
   display: inline-block;
 }
-/* line 1417, ../sass/custom.scss */
+/* line 1288, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section .left-content .views-field-title .field-content {
   color: #A80716;
   font-size: 14px;
-  /*font-family: 'open sans';*/
   font-weight: bold;
 }
-/* line 1424, ../sass/custom.scss */
+/* line 1294, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section .left-content .views-field-activity-edit {
   display: inline-block;
 }
-/* line 1426, ../sass/custom.scss */
+/* line 1296, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section .left-content .views-field-activity-edit a {
   color: #747474;
 }
-/* line 1431, ../sass/custom.scss */
+/* line 1301, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .right-section .left-content .views-field-activity-time .field-content {
   font-size: 14px;
-  /*font-family: 'sans-serif';*/
 }
-/* line 1438, ../sass/custom.scss */
+/* line 1307, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .hide-notes {
   display: none;
 }
-/* line 1441, ../sass/custom.scss */
+/* line 1310, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .show-notes {
   display: block;
 }
-/* line 1444, ../sass/custom.scss */
+/* line 1313, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .view-content .views-field-notes {
   margin-top: 10px;
   padding: 10px;
   background-color: #EBEBEB;
   font-size: 14px;
-  /*font-family: 'sans-serif';*/
 }
-/* line 1452, ../sass/custom.scss */
+/* line 1320, ../sass/custom.scss */
 .page-crm-core-agent-central #content-before #block-quicktabs-agent-calendar #quicktabs-container-agent_calendar .no-results {
   font-size: 14px;
-  /*font-family: 'sans-serif';*/
 }
-/* line 1460, ../sass/custom.scss */
+/* line 1327, ../sass/custom.scss */
 .page-crm-core-agent-central .view-header .block-title {
   font-size: 34px;
   font-family: "sans-serif";
-  /*font-family: 'sans-serif';*/
 }
-/* line 1466, ../sass/custom.scss */
+/* line 1332, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table {
   margin-top: 40px;
 }
-/* line 1470, ../sass/custom.scss */
+/* line 1336, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table thead tr th {
   border-right: 2px solid #FFF;
   background-color: #BD1724;
   color: #FFF;
   text-align: center;
 }
-/* line 1479, ../sass/custom.scss */
+/* line 1345, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr {
   border-bottom: 1px dashed #898989;
 }
-/* line 1481, ../sass/custom.scss */
+/* line 1347, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr td {
   background: #EBEBEB;
   font-size: 14px;
-  /*font-family: "sans-serif";*/
   text-align: center;
   line-height: 40px;
 }
-/* line 1490, ../sass/custom.scss */
+/* line 1355, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody td.views-field-contact-name a {
   color: #000;
 }
-/* line 1492, ../sass/custom.scss */
+/* line 1357, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody td.views-field-contact-name a:hover {
   color: #C61C2C;
   text-decoration: none;
 }
-/* line 1498, ../sass/custom.scss */
+/* line 1363, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody td.views-field-activity-type {
   padding: 0 35px;
   text-align: left;
 }
-/* line 1501, ../sass/custom.scss */
+/* line 1366, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody td.views-field-activity-type .plus-icon {
   float: right;
   height: 25px;
@@ -1679,12 +1560,12 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-/* line 1511, ../sass/custom.scss */
+/* line 1376, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action {
   text-align: center;
   padding-left: 15px;
 }
-/* line 1514, ../sass/custom.scss */
+/* line 1379, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a,
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-email {
   display: inline-block;
@@ -1698,35 +1579,35 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-size: 0;
   text-decoration: none;
 }
-/* line 1527, ../sass/custom.scss */
+/* line 1392, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-phone {
   background-position: -100px -4px;
 }
-/* line 1530, ../sass/custom.scss */
+/* line 1395, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-notes {
   background-position: -49px -4px;
 }
-/* line 1533, ../sass/custom.scss */
+/* line 1398, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-meeting {
   background-position: -21px -4px;
 }
-/* line 1536, ../sass/custom.scss */
+/* line 1401, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody .views-field-action a.unclaimed-task {
   background-position: -75px -4px;
 }
-/* line 1540, ../sass/custom.scss */
+/* line 1405, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr.hide-notes {
   display: none;
 }
-/* line 1543, ../sass/custom.scss */
+/* line 1408, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr.show-notes {
   display: table-row;
 }
-/* line 1545, ../sass/custom.scss */
+/* line 1410, ../sass/custom.scss */
 .page-crm-core-agent-central .views-table tbody tr.show-notes td {
   text-align: left;
 }
-/* line 1554, ../sass/custom.scss */
+/* line 1419, ../sass/custom.scss */
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-current {
   background-color: #D11F01;
   border-radius: 50%;
@@ -1737,7 +1618,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding: 0;
   width: 25px;
 }
-/* line 1563, ../sass/custom.scss */
+/* line 1428, ../sass/custom.scss */
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-current a {
   background-color: #D11F01;
   border-radius: 50%;
@@ -1748,15 +1629,13 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   padding: 0;
   width: 25px;
 }
-/* line 1574, ../sass/custom.scss */
+/* line 1439, ../sass/custom.scss */
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-item,
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-next,
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-previous {
   background-color: transparent;
-  /*border: 1px solid #B8B8B8;
-  border-radius: 50%;*/
 }
-/* line 1580, ../sass/custom.scss */
+/* line 1443, ../sass/custom.scss */
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-item a,
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-next a,
 .page-crm-core-agent-central .view-agent-central .item-list ul.pager li.pager-previous a {
@@ -1773,7 +1652,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 
 /* End */
 /* Popup design */
-/* line 1602, ../sass/custom.scss */
+/* line 1465, ../sass/custom.scss */
 #ng-lightbox .lightbox .lightbox__content .close-ng-lightbox {
   position: absolute;
   top: 0;
@@ -1792,7 +1671,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 }
 
 /* End */
-/* line 1622, ../sass/custom.scss */
+/* line 1485, ../sass/custom.scss */
 .lightbox .field-name-field-activity-participants {
   display: none;
 }
@@ -1801,15 +1680,15 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   display: none;
 }*/
 /* CRM Style RH */
-/* line 1630, ../sass/custom.scss */
+/* line 1493, ../sass/custom.scss */
 .not-front #autocomplete ul li {
   font-weight: 300;
 }
-/* line 1632, ../sass/custom.scss */
+/* line 1495, ../sass/custom.scss */
 .not-front #autocomplete ul li:last-child {
   padding-bottom: 1em;
 }
-/* line 1635, ../sass/custom.scss */
+/* line 1498, ../sass/custom.scss */
 .not-front #autocomplete ul li h2 a {
   font-weight: 400;
   font-size: 16px;
@@ -1818,12 +1697,12 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 }
 
 /* Lightbox forms */
-/* line 1645, ../sass/custom.scss */
+/* line 1508, ../sass/custom.scss */
 fieldset.date-combo .container-inline-date .date-padding {
   padding: 0;
 }
 
-/* line 1648, ../sass/custom.scss */
+/* line 1511, ../sass/custom.scss */
 fieldset.date-combo .container-inline-date > .form-item {
   margin-bottom: 0;
 }

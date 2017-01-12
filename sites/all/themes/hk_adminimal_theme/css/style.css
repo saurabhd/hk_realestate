@@ -471,7 +471,7 @@ div.vertical-tabs ul li.selected a:focus strong {
  * Page layout.
  */
 #page {
-  padding: 20px 40px;
+  /*padding: 20px 40px;*/
   background: #fff;
   position: relative;
   color: #333;

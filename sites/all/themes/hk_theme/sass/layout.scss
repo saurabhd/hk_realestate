@@ -40,6 +40,13 @@ $site-max-width: 100%;
   }
 }
 
+/* Search page */
+.admin-menu.page-search {
+  #page {
+    margin-top: 30px;
+  }
+}
+
 body.front h1#page-title {
     display: none;
 }

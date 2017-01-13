@@ -28,22 +28,23 @@ $site-max-width: 100%;
     }
   }
   .wrapper.navigation {
-    width: 100%;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    background: rgba(255,255,255,.9);
     position: fixed;
-    height: 90px;
+    top: 0;
     z-index: 102;
+    height: 90px;
+    width: 100%;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     @media screen and (max-width: 667px) {
       height: 60px;
     }
   }
 }
 
-/* Search page */
-.admin-menu.page-search {
+/* Admin login */
+.admin-menu {
   #page {
-    margin-top: 30px;
+    .wrapper.navigation { margin-top: 30px; }
   }
 }
 

@@ -13,13 +13,21 @@
         var rangeFrom = widget.find('input[name=range-from]');
         var rangeTo = widget.find('input[name=range-to]');
 
-        slider.slider({
+        var widgetId = jQuery(this).parent('div').attr('id').replace('search-api-ranges-','');
+        var step = 1;
+        var roundPrecision = 0;//Is not used in this file yet. Maybe in the future will needed.
+        if (Drupal.settings.search_api_ranges[widgetId] && Drupal.settings.search_api_ranges[widgetId]['slider-step'])
+          step = parseFloat(Drupal.settings.search_api_ranges[widgetId]['slider-step']);
+        if (Drupal.settings.search_api_ranges[widgetId] && Drupal.settings.search_api_ranges[widgetId]['round-precision'])
+          roundPrecision = parseFloat(Drupal.settings.search_api_ranges[widgetId]['round-precision']);
+          slider.slider({
           range: true,
           animate: true,
-          step: 1,
-          min: parseInt(rangeMin.val()),
-          max: parseInt(rangeMax.val()),
-          values: [parseInt(rangeFrom.val()), parseInt(rangeTo.val())],
+
+          step: step,
+          min: parseFloat(rangeMin.val()),
+          max: parseFloat(rangeMax.val()),
+          values: [parseFloat(rangeFrom.val()), parseFloat(rangeTo.val())],
 
           // on change: when clicking somewhere in the bar
           change: function(event, ui) {
@@ -40,28 +48,33 @@
           delaySubmit(widget);
         });
 
-        rangeFrom.numeric();
+        // cancel delayed submission if user starts changing values again
+        slider.bind('slide', function(event, ui) {
+          clearTimeout(submitTimeout);
+        });
+
+        rangeFrom.numeric({decimal : "."});
         rangeFrom.bind('keyup', function() {
           clearTimeout(submitTimeout);
           if (!isNaN(rangeFrom.val()) && rangeFrom.val() !== '') {
-            var value = parseInt(rangeFrom.val());
-            if (value > parseInt(rangeTo.val())) {
-              value = parseInt(rangeTo.val());
+            var value = parseFloat(rangeFrom.val());
+            if (value > parseFloat(rangeTo.val())) {
+              value = parseFloat(rangeTo.val());
             }
-            slider.slider("option", "values", [value, parseInt(rangeTo.val())]);
+            slider.slider("option", "values", [value, parseFloat(rangeTo.val())]);
             delaySubmit(widget);
           }
         });
 
-        rangeTo.numeric();
+        rangeTo.numeric({decimal : "."});
         rangeTo.bind('keyup', function() {
           clearTimeout(submitTimeout);
           if (!isNaN(rangeTo.val()) && rangeTo.val() !== '') {
-            var value = parseInt(rangeTo.val());
-            if (value < parseInt(rangeFrom.val())) {
-              value = parseInt(rangeFrom.val());
+            var value = parseFloat(rangeTo.val());
+            if (value < parseFloat(rangeFrom.val())) {
+              value = parseFloat(rangeFrom.val());
             }
-            slider.slider("option", "values", [parseInt(rangeFrom.val()), value]);
+            slider.slider("option", "values", [parseFloat(rangeFrom.val()), value]);
             delaySubmit(widget);
           }
         });

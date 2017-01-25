@@ -16,15 +16,30 @@ class SearchApiRangesWidgetUISlider extends FacetapiWidget {
     $theme_suffix .= '__' . preg_replace('/\W+/', '_', $this->facet->getAdapter()->getSearcher());
     $theme_suffix .= '__' . preg_replace('/\W+/', '_', $this->facet['field alias']);
 
+    $settings = $this->settings->settings;
+    $step = isset($settings['slider-step']) ? $settings['slider-step'] : 1;
+    $round_precision = isset($settings['round-precision']) ? (int)$settings['round-precision'] : 0;
     $element = array(
       '#theme' => 'search_api_ranges_slider' . $theme_suffix,
       '#slider' => $this->_buildUISliderForm(),
+      '#prefix' => '<div id="search-api-ranges-' . $this->facet['field alias'] . '">',
+      '#suffix' => '</div>',
+      '#attached' => array(
+        'js' => array(
+          array(
+            'data' => array(
+              'search_api_ranges' => array(
+                $this->facet['field alias'] => array(
+                  'slider-step' => $step,
+                  'round-precision' => $round_precision,
+                ),
+              ),
+            ),
+            'type' => 'setting'
+          ),
+        ),
+      ),
     );
-
-    // Add js.
-    drupal_add_library('system', 'ui.slider');
-    drupal_add_js(drupal_get_path('module', 'search_api_ranges') . '/jquery.numeric.js');
-    drupal_add_js(drupal_get_path('module', 'search_api_ranges') . '/search_api_ranges.js');
   }
 
   /**
@@ -61,6 +76,22 @@ class SearchApiRangesWidgetUISlider extends FacetapiWidget {
         i.e. 1000 for 1 second.'),
       '#states' => array('visible' => array('select[name="widget"]' => array('value' => $this->id),),),
     );
+  $form['widget']['widget_settings']['links'][$this->id]['slider-step'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Step for the slider'),
+      '#default_value' => is_numeric($this->settings->settings['slider-step']) ? $this->settings->settings['slider-step'] : 1,
+      '#description' => t('Default is 1. Can be decimal: 0.1, 0.5 and so on. Use point as delimeter in decimals. From jQuery UI API documentation: Determines the size or amount of each interval or step the slider takes between the min and max. The full specified value range of the slider (max - min) should be evenly divisible by the step.'),
+      //'#states' => array('invisible' => array( ':input[name="use-decimals"]' => array('checked' => FALSE),),),
+      '#states' => array('visible' => array('select[name="widget"]' => array('value' => $this->id),),),
+    );
+  $form['widget']['widget_settings']['links'][$this->id]['round-precision'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Round precision'),
+      '#default_value' => is_numeric($this->settings->settings['round-precision']) ? (int)$this->settings->settings['round-precision'] : 0,
+      '#description' => t('Specifies the number of decimal digits to round to. Default is 0. Can be only integer number.'),
+      //'#states' => array('invisible' => array( ':input[name="use-decimals"]' => array('checked' => FALSE),),),
+      '#states' => array('visible' => array('select[name="widget"]' => array('value' => $this->id),),),
+    );
   }
 
   /**
@@ -72,6 +103,8 @@ class SearchApiRangesWidgetUISlider extends FacetapiWidget {
       'prefix' => '',
       'suffix' => '',
       'auto-submit-delay' => 1500,
+      'slider-step' => 1,
+      'round-precision' => 0,
     );
   }
 
@@ -88,6 +121,8 @@ class SearchApiRangesWidgetUISlider extends FacetapiWidget {
     $index = search_api_index_load($index_id[1]);
     list($query, $results) = $this->facet->getAdapter()->getCurrentSearch();
 
+    $settings = $this->settings->settings;
+    $round_precision = isset($settings['round-precision']) ? (int)$settings['round-precision'] : 0;
     // Make a clone of the query, as to not alter the current search query
     $query = clone $query;
 
@@ -96,6 +131,7 @@ class SearchApiRangesWidgetUISlider extends FacetapiWidget {
       'index' => $index,
       'range_field' => $this->facet['field alias'],
       'query' => $query,
+      'round-precision' => $round_precision,
     );
 
     // Query the min/max values for the range slider
@@ -111,8 +147,8 @@ class SearchApiRangesWidgetUISlider extends FacetapiWidget {
     foreach ($this->facet->getAdapter()->getAllActiveItems() as $key => $active_item) {
       if ($active_item['field alias'] == $this->facet['field alias']) {
         $values = explode(' ', substr($active_item['value'], 1, -1));
-        $from_value = round($values[0]);
-        $to_value = round($values[2]);
+        $from_value = round($values[0], $round_precision, PHP_ROUND_HALF_DOWN);
+        $to_value = round($values[2], $round_precision, PHP_ROUND_HALF_UP);
         break;
       };
     };

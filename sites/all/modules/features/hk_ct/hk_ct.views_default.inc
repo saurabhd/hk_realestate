@@ -1511,20 +1511,25 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Object advantages */
+  $handler->display->display_options['fields']['field_object_advantages_1']['label'] = '';
+  $handler->display->display_options['fields']['field_object_advantages_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_object_advantages_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_object_advantages_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_object_advantages_1']['multi_type'] = 'ul';
+  /* Field: Content: Object advantages */
   $handler->display->display_options['fields']['field_object_advantages']['id'] = 'field_object_advantages';
   $handler->display->display_options['fields']['field_object_advantages']['table'] = 'field_data_field_object_advantages';
   $handler->display->display_options['fields']['field_object_advantages']['field'] = 'field_object_advantages';
   $handler->display->display_options['fields']['field_object_advantages']['label'] = '';
+  $handler->display->display_options['fields']['field_object_advantages']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_object_advantages']['alter']['text'] = '<div class="readmore-summary">[field_object_advantages] <span class="readmore-span"><a class="readmore-link">read more</a></span></div>
+  <div class="readmore-text" style="display:none;">[field_object_advantages-value]<a class="readless-link">Read less</a></div>';
   $handler->display->display_options['fields']['field_object_advantages']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_object_advantages']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['field_object_advantages']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_object_advantages']['type'] = 'readmore';
+  $handler->display->display_options['fields']['field_object_advantages']['type'] = 'text_trimmed';
   $handler->display->display_options['fields']['field_object_advantages']['settings'] = array(
-    'readmore_trim_length' => '200',
-    'readmore_trim_on_break' => 1,
-    'readmore_show_readless' => 1,
-    'readmore_ellipsis' => 0,
-    'readmore_wordsafe' => 1,
+    'trim_length' => '150',
   );
   $handler->display->display_options['fields']['field_object_advantages']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_object_advantages']['multi_type'] = 'ul';

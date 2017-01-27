@@ -5,8 +5,8 @@ $options['db_type'] = 'mysql';
 $options['db_host'] = 'localhost';
 $options['db_port'] = '3306';
 $options['db_passwd'] = 'bj8XCKyivX';
-$options['db_name'] = 'addwebdevherbert';
-$options['db_user'] = 'addwebdevherbert';
+$options['db_name'] = 'addwebdevherbe_0';
+$options['db_user'] = 'addwebdevherbe_0';
 $options['packages'] = array (
   'platforms' => 
   array (

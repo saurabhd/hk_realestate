@@ -1511,6 +1511,9 @@ function hk_ct_views_default_views() {
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Object advantages */
+  $handler->display->display_options['fields']['field_object_advantages_1']['id'] = 'field_object_advantages_1';
+  $handler->display->display_options['fields']['field_object_advantages_1']['table'] = 'field_data_field_object_advantages';
+  $handler->display->display_options['fields']['field_object_advantages_1']['field'] = 'field_object_advantages';
   $handler->display->display_options['fields']['field_object_advantages_1']['label'] = '';
   $handler->display->display_options['fields']['field_object_advantages_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_object_advantages_1']['element_label_colon'] = FALSE;

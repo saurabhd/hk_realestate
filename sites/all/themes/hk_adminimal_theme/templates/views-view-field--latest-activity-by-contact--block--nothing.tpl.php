@@ -23,13 +23,13 @@
  */
 ?>
 <?php $destination = $_SERVER['REQUEST_URI']; ?>
-<a class="ng-lightbox unclaimed-email" href="/crm-core/contact/activity-add/email?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="E-Mail senden">E-Mail</a>
+<a class="ng-lightbox unclaimed-email" href="/crm-core/contact/activity-add/email?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="<?php print t('Send E-mail'); ?>">E-Mail</a>
 
-<a class="ng-lightbox unclaimed-meeting" href="/crm-core/contact/activity-add/meeting?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="Arrange meeting">Meeting</a> 
+<a class="ng-lightbox unclaimed-meeting" href="/crm-core/contact/activity-add/meeting?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="<?php print t('Arrange Meeting'); ?>">Meeting</a> 
 
-<a class="ng-lightbox unclaimed-phone" href="/crm-core/contact/activity-add/phone_call?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="Telefonanruf zusammenfassen">Telefonanruf</a> 
+<a class="ng-lightbox unclaimed-phone" href="/crm-core/contact/activity-add/phone_call?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="<?php print t('Phone Call'); ?>">Telefonanruf</a> 
 
-<a class="ng-lightbox unclaimed-task" href="/crm-core/contact/activity-add/task?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="Add Task">Task</a>
+<a class="ng-lightbox unclaimed-task" href="/crm-core/contact/activity-add/task?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="<?php print t('Add Task'); ?>">Task</a>
 
-<a class="ng-lightbox unclaimed-notes" href="/crm-core/contact/activity-add/notes?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="Notiz erstellen">Notiz</a>
+<a class="ng-lightbox unclaimed-notes" href="/crm-core/contact/activity-add/notes?field_inquiry=[activity_id]&destination=<?php print $destination; ?>" title="<?php print t('Create Note'); ?>">Notiz</a>
 

@@ -376,6 +376,8 @@ div.hide-submit-processing {
   #search {
     display: none;
   }
+  /*.field-name-field-inquiry,
+  .field-name-field-participants { display: none; }*/
 }
 
 [id^="crm-core-profile-entry-form-anfrage-"],
@@ -1656,6 +1658,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
       }
     }
     #main {
+      margin-top: 60px;
       background: transparent;
       border: none;
       #block-hk-custom-crm-crm-contact-type,
@@ -1670,6 +1673,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
           background-color: #1A1A1A;
           color: #FFF;
           font-size: 14px;
+          line-height: 19px;
           cursor: pointer;
           background-image: url("../images/select_arrow.gif");
           background-position: right 10px center;
@@ -1697,7 +1701,8 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
         }
         .view-crm-activity-type {
           p {
-            margin: 1px 0 2px;
+            margin: 0;
+            line-height: 19px;
           }
         }
         .item-list {
@@ -2258,3 +2263,10 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
   }
 }
 /* End */
+
+/* Uer login page */
+.not-logged-in.page-user {
+  #block-quicktabs-user-profile {
+    display: none;
+  }
+}

@@ -25,6 +25,7 @@ function hk_admin_user_default_permissions() {
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
     'roles' => array(
+      'Buyer' => 'Buyer',
       'administrator' => 'administrator',
       'admintooluser' => 'admintooluser',
       'agent' => 'agent',

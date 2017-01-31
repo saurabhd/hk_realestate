@@ -11,32 +11,58 @@ body {
     font-family: "sans-serif" !important;
   }
 }
-.page-crm-core-contact,
+/*.page-crm-core-contact,
 .page-crm-core-agent-central {
   #page {
     width: auto !important;
     padding: 20px 68px;
   }
+}*/
+
+#page {
+  width: 100%;
+  .wrapper {
+    @media (max-width: 1280px) {
+      padding: 0 20px;
+    }
+  }
+  .container,
+  .wrapper.main {
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  }
 }
 
-/* Contact page design */
-.page-crm-core-contact {
+/* Header design */
+/*.page-crm-core-contact,
+.page-crm-core-agent-central*/
+#page {
   .navigation {
     position: fixed;
-    height: 96px;
+    top: 0;
+    z-index: 102;
+    height: 90px;
     width: 100%;
     background-image: url('../images/search-page-parten.png') !important;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    z-index: 102;
-    #logo {
-      float: left;
-      width: 170px;
-      margin-left: 50px;
+    @media screen and (max-width: 667px) {
+      height: 60px;
+    }
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
     }
     #navigation-inner {
       display: inline-block;
-      float: left;
-      width: calc(100% - 250px);
+      float: right;
+      width: -webkit-calc(100% - 250px);
+      width:    -moz-calc(100% - 250px);
+      width:         calc(100% - 250px);
       .region-navigation {
         display: inline-block;
         width: 100%;
@@ -52,7 +78,7 @@ body {
               position: relative;
               display: inline-block;
               width: 270px;
-              height: 20px;
+              /*height: 20px;*/
               background-image: none;
               padding-left: 20px;
               border-color: #969696;
@@ -111,11 +137,13 @@ body {
           display: inline-block;
           float: right;
           ul.menu {
-            margin-top: 35px;
-            /*margin-right: 56px;*/
+            float: left;
+            margin: 35px 0 24px;
             li {
               float: left;
+              padding: 0;
               list-style: none;
+              line-height: 24px;
               a {
                 margin: 0 35px 0 8px;
                 color: #747474;
@@ -127,7 +155,6 @@ body {
                 &:hover,
                 &:active {
                   color: #C61C2C;
-                  text-decoration: none;
                 }
               }
               li.active {
@@ -179,6 +206,125 @@ body {
     padding-top: 96px;
     clear: both;
   }
+}
+
+/* Admin login */
+.admin-menu {
+  #page {
+    .wrapper.navigation { margin-top: 30px; }
+  }
+}
+
+#logo { /* Wrapping link for logo */
+  float: left; /* LTR */
+  margin: 0;
+  padding: 0;
+  z-index: 1000000;
+  @media (min-width: 1024px) {
+    padding: 0 1em;
+  }
+  @media (min-width: 768px) {
+    margin: 0 0 0 -27px;
+  }
+  img {
+    margin: 0;
+    vertical-align: bottom;
+    z-index: 1000000;
+  }
+}
+/* End */
+
+/* Button Design */
+#content-before {
+  #block-hk-custom-crm-crm-contact-type,
+  #block-views-crm-activity-type-block {
+    float: right;
+    display: inline-block;
+    text-transform: uppercase;
+    .view-header {
+      width: 240px;
+      box-sizing: border-box;
+      margin-left:  5px;
+      padding: 10px 38px;
+      background-color: #1A1A1A;
+      color: #FFF;
+      font-size: 14px;
+      cursor: pointer;
+      background-image: url('../images/Icon_Arrow_down.png');
+      background-position: right 10px center;
+      background-repeat: no-repeat;
+      background-size: 24px auto;
+    }
+    .view-crm-contact-type {
+      .view-header {
+        width: 240px;
+        background-color: #D92227;
+        font-family: "sans-serif";
+        box-sizing: border-box;
+      }
+    }
+    .view-crm-activity-type {
+      p {
+        margin: 0;
+      }
+    }
+    .item-list {
+      ul {
+        position: absolute;
+        display: none;
+        max-width: 234px;
+        width: 100%;
+        margin: 0 0 0 5px;
+        padding: 0;
+        background-color: #FFF;
+        color: #212830;
+        border: 2px solid #CDCDCD;
+        text-align: center;
+        z-index: 11;
+        li {
+          padding: 4px 0 0;
+          list-style: none;
+          &:last-child {
+            padding: 4px 0;
+          }
+          a {
+            text-decoration: none;
+            font-size: 14px;
+            font-family: "sans-serif";
+            color: #C61C2C;
+            line-height: 24px;
+            display: block;
+            padding: 1em;
+            &:hover {
+              color: #1A1A1A;
+              background: #CDCDCD;
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      .item-list {
+        ul {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+/* */
+.page-crm-core-contact,
+.page-crm-core-agent-central {
+  .wrapper.main {
+    #content {
+      padding: 32px;
+    }
+  }
+}
+
+/* Contact page design */
+.page-crm-core-contact {
   .view-crm-contact-page {
     display: inline-block;
     width: 100%;
@@ -201,9 +347,11 @@ body {
             .views-field {
               .field-content {
                 img {
+                  display: inline-block;
                   height: 200px;
                   width: 200px;
                   margin-right: 20px;
+                  border: 1px solid #efefef;
                   -webkit-border-radius: 1000px;
                      -moz-border-radius: 1000px;
                           border-radius: 1000px;
@@ -212,10 +360,10 @@ body {
             }
           }
           .right-content {
-            -webkit-width: calc(100% - 250px);
-              -moz-width: calc(100% - 250px);
-                width: calc(100% - 250px);
-                display: inline-block;
+            display: inline-block;
+            width: -webkit-calc(100% - 250px);
+            width:    -moz-calc(100% - 250px);
+            width:         calc(100% - 250px);
             margin-top: 20px;
             vertical-align: top;
             .views-field {
@@ -309,87 +457,7 @@ body {
       }
     }
   }
-  #content-before {
-    #block-hk-custom-crm-crm-contact-type,
-    #block-views-crm-activity-type-block {
-      float: right;
-      display: inline-block;
-      text-transform: uppercase;
-      .view-header {
-        width: 240px;
-        box-sizing: border-box;
-        margin-left:  5px;
-        padding: 10px 38px;
-        background-color: #1A1A1A;
-        color: #FFF;
-        font-size: 14px;
-        /*font-family: 'helvetica-neue';*/
-        cursor: pointer;
-        background-image: url('../images/Icon_Arrow_down.png');
-        background-position: right 10px center;
-        background-repeat: no-repeat;
-        background-size: 24px auto;
-      }
-      .view-crm-contact-type {
-        .view-header {
-          width: 240px;
-          background-color: #D92227;
-          font-family: "sans-serif";
-          box-sizing: border-box;
-        }
-      }
-      .view-crm-activity-type {
-        p {
-          margin: 0;
-        }
-      }
-      .item-list {
-        /*.views-field-label {
-          padding: 3px 0 0;
-        }*/
-        ul {
-          position: absolute;
-          display: none;
-          max-width: 234px;
-          width: 100%;
-          margin: 0 0 0 5px;
-          padding: 0;
-          background-color: #FFF;
-          color: #212830;
-          border: 2px solid #CDCDCD;
-          text-align: center;
-          z-index: 1;
-          li {
-            padding: 4px 0 0;
-            list-style: none;
-            &:last-child {
-              padding: 4px 0;
-            }
-            a {
-              text-decoration: none;
-              font-size: 14px;
-              font-family: "sans-serif";
-              color: #C61C2C;
-              line-height: 24px;
-              display: block;
-              padding: 1em;
-              &:hover {
-                color: #1A1A1A;
-                background: #CDCDCD;
-              }
-            }
-          }
-        }
-      }
-      &:hover {
-        .item-list {
-          ul {
-            display: block;
-          }
-        }
-      }
-    }
-  }
+
   #block-quicktabs-crm-contact-page {
     display: inline-block;
     width: 100%;
@@ -971,163 +1039,8 @@ body {
 
 /* Agent central page design */
 .page-crm-core-agent-central {
-  #page {
-    margin-top: 96px !important;
-  }
-  .navigation {
-    position: fixed;
-    height: 96px;
-    width: 100%;
-    background-image: url('../images/search-page-parten.png') !important;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    z-index: 102;
-    #logo {
-      float: left;
-      width: 170px;
-      margin-left: 50px;
-    }
-    #navigation-inner {
-      display: inline-block;
-      float: left;
-      width: calc(100% - 255px);
-      .region-navigation {
-        display: inline-block;
-        width: 100%;
-        /*width: calc(100% - 220px);*/
-        #block-search-api-page-contact-search-box {
-          float: left;
-          position: relative;
-          display: inline-block;
-          margin-top: 35px;
-          margin-left: 38px;
-          #search-api-page-search-form-contact-search-box {
-            input.auto_submit {
-              position: relative;
-              display: inline-block;
-              width: 270px;
-              height: 20px;
-              background-image: none;
-              padding-left: 20px;
-              border-color: #969696;
-              border-radius: 3px;
-              font-size: 15px;
-              color: #333;
-            }
-            input.form-submit {
-              position: absolute;
-              top: 0;
-              right: 0;
-              left: auto;
-              display: inline-block;
-              width: 20px;
-              height: 35px;
-              margin-left: -30px;
-              font-size: 0;
-              background-image: url('../images/red-search-icon.png');
-              background-repeat: no-repeat;
-              background-position: 12px 8px;
-              background-color: transparent;
-              &:hover {
-                box-shadow: none !important;
-              }
-            }
-          }
-
-          #autocomplete {
-            width: 294px !important;
-            margin-left: 2px !important;
-            ul {
-              li {
-                font-size: 16px;
-                padding: 16px 10px 0;
-                white-space: nowrap !important;
-                a {
-                  color: #000;
-                  font-size: 16px;
-                  font-family: "sans-serif";
-                  text-decoration: none;
-                  text-align: left;
-                }
-                &:hover {
-                  background-color: #1A1A1A;
-                  h2 {
-                    a {
-                      color: #FFF !important;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        #block-menu-menu-crm-core-menu {
-          display: inline-block;
-          float: right;
-          ul.menu {
-            margin-top: 35px;
-            /*margin-right: 56px;*/
-            li {
-              float: left;
-              list-style: none;
-              a {
-                margin: 0 35px 0 8px;
-                color: #747474;
-                line-height: normal;
-                font-size: 14px;
-                font-family: "sans-serif";
-                vertical-align: middle;
-                letter-spacing: 2px;
-                &:hover,
-                &:active,
-                &:focus {
-                  color: #C61C2C;
-                }
-                &.active {
-                  color: #C61C2C;
-                }
-              }
-              &::before {
-                display: inline-block;
-                /*width: 14px;
-                height: 17px;
-                background-image: url("../images/menu-symbol-of-four-lines.png");*/
-                background-repeat: no-repeat;
-                background-position: 0 0;
-                content: '';
-                vertical-align: middle;
-              }
-              &.menu-dashboard {
-                &::before {
-                  height: 17px;
-                  width: 14px;
-                  background-image: url("../images/menu-symbol-of-four-lines.png");
-                }
-              }
-              &.menu-logout {
-                &::before {
-                  height: 17px;
-                  width: 19px;
-                  background-image: url("../images/logout.png");
-                }
-                a {
-                  font-weight: bold;
-                }
-              }
-              &.menu-agent-central {
-                &::before {
-                  height: 15px;
-                  width: 13px;
-                  background-image: url("../images/malware.png");
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
   #content-before {
-    #block-hk-custom-crm-crm-contact-type,
+    /*#block-hk-custom-crm-crm-contact-type,
     #block-views-crm-activity-type-block {
       float: right;
       display: inline-block;
@@ -1140,7 +1053,6 @@ body {
         color: #FFF;
         font-size: 14px;
         box-sizing: border-box;
-        /*font-family: 'helvetica-neue w01';*/
         cursor: pointer;
         background-image: url('../images/Icon_Arrow_down.png');
         background-position: right 10px center;
@@ -1161,9 +1073,6 @@ body {
         }
       }
       .item-list {
-        /*.views-field-label {
-          padding: 3px 0 0;
-        }*/
         ul {
           position: absolute;
           display: none;
@@ -1185,7 +1094,6 @@ body {
             a {
               text-decoration: none;
               font-size: 14px;
-              /*font-family: 'helvetica-neue w01';*/
               color: #C61C2C;
               line-height: 24px;
               &:hover {
@@ -1202,7 +1110,7 @@ body {
           }
         }
       }
-    }
+    }*/
     .to-do-task {
       float: left;
       display: inline-block;
@@ -1230,13 +1138,11 @@ body {
         .views-field-title {
           display: inline-block;
           font-size: 18px;
-          /*font-family: 'open sans';*/
           font-weight: 700;
         }
         .views-field-field-activity-date {
           float: right;
           display: inline-block;
-          /*font-family: 'open sans';*/
           font-weight: 700;
           font-size: 13px;
           .field-content {
@@ -1247,7 +1153,6 @@ body {
         .views-field-field-activity-notes {
           padding-top: 5px;
           font-size: 14px;
-          /*font-family: 'sans-serif';*/
           .field-content {
             .readmore-summary {
               .readmore-link {
@@ -1355,7 +1260,6 @@ body {
           .date-heading {
             font-size: 15px;
             font-family: "sans-serif";
-            /*font-family: 'sans-serif';*/
             text-align: left;
             h3 {
               font-weight: 500;
@@ -1417,7 +1321,6 @@ body {
                 .field-content {
                   color: #A80716;
                   font-size: 14px;
-                  /*font-family: 'open sans';*/
                   font-weight: bold;
                 }
               }
@@ -1430,7 +1333,6 @@ body {
               .views-field-activity-time {
                 .field-content {
                   font-size: 14px;
-                  /*font-family: 'sans-serif';*/
                 }
               }
             }
@@ -1446,12 +1348,10 @@ body {
             padding: 10px;
             background-color: #EBEBEB;
             font-size: 14px;
-            /*font-family: 'sans-serif';*/
           }
         }
         .no-results {
           font-size: 14px;
-          /*font-family: 'sans-serif';*/
         }
       }
     }
@@ -1460,7 +1360,6 @@ body {
     .block-title {
       font-size: 34px;
       font-family: "sans-serif";
-      /*font-family: 'sans-serif';*/
     }
   }
   .views-table {
@@ -1481,7 +1380,6 @@ body {
         td {
           background: #EBEBEB;
           font-size: 14px;
-          /*font-family: "sans-serif";*/
           text-align: center;
           line-height: 40px;
         }
@@ -1511,64 +1409,30 @@ body {
       .views-field-action {
         text-align: center;
         padding-left: 15px;
+        a,
         a.unclaimed-email {
           display: inline-block;
           width: 28px;
           height: 18px;
+          margin-right: 10px;
+          padding: 0;
           background-image: url("../images/mix-icon.jpg");
           background-repeat: no-repeat;
           background-position: 3px center;
           font-size: 0;
           text-decoration: none;
-          margin-right: 10px;
-          padding: 10px 0;
         }
         a.unclaimed-phone {
-          display: inline-block;
-          width: 28px;
-          height: 18px;
-          background-image: url("../images/mix-icon.jpg");
-          background-repeat: no-repeat;
-          background-position: -100px 7px;
-          font-size: 0;
-          text-decoration: none;
-          margin-right: 10px;
-          padding: 10px 0;
+          background-position: -100px -4px;
         }
         a.unclaimed-notes {
-          display: inline-block;
-          width: 28px;
-          height: 18px;
-          background-image: url("../images/mix-icon.jpg");
-          background-repeat: no-repeat;
-          background-position: -49px 6px;
-          font-size: 0;
-          text-decoration: none;
-          padding: 10px 0;
+          background-position: -49px -4px;
         }
         a.unclaimed-meeting {
-          display: inline-block;
-          width: 28px;
-          height: 18px;
-          background-image: url("../images/mix-icon.jpg");
-          background-repeat: no-repeat;
-          background-position: -21px 7px;
-          font-size: 0;
-          text-decoration: none;
-          margin-right: 10px;
-          padding: 10px 0;
+          background-position: -21px -4px;
         }
         a.unclaimed-task {
-          display: inline-block;
-          width: 28px;
-          height: 18px;
-          background-image: url("../images/mix-icon.jpg");
-          background-repeat: no-repeat;
-          background-position: -75px 7px;
-          font-size: 0;
-          text-decoration: none;
-          margin-right: 10px;
-          padding: 10px 0;
+          background-position: -75px -4px;
         }
       }
       tr.hide-notes {
@@ -1609,8 +1473,6 @@ body {
         li.pager-next,
         li.pager-previous {
           background-color: transparent;
-          /*border: 1px solid #B8B8B8;
-          border-radius: 50%;*/
           a {
             border: 1px solid #B8B8B8;
             border-radius: 50%;

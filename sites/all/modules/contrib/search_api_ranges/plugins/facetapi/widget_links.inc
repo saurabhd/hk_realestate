@@ -49,16 +49,21 @@ class SearchApiRangesWidgetLinks extends FacetapiWidgetLinks {
       $element = search_api_ranges_generate_ranges_advanced($variables, $this->settings->settings['range_advanced']);
     }
 
-    // Replace ':' with '/'
+    // Create pretty path
     if (module_exists('facetapi_pretty_paths')) {
-      foreach($element as $key => $e){
-        if (isset($e['#query']['f'])){
-          $element[$key]['#query']['f'] = str_replace(':', '/', $e['#query']['f']);
-			if (isset($e['#path']) && isset($element[$key]['#query']['f'][0]) && substr_count($e['#path'],'/'.$element[$key]['#query']['f'][0])>0 ){
-				$element[$key]['#active'] = TRUE;
-				$element[$key]['#path'] = str_replace('/'.$element[$key]['#query']['f'][0],'',$e['#path']);
-				unset($element[$key]['#query']['f']);
-			}
+      foreach($element as $key => $e) {
+        if (isset($e['#query']['f'][0])) {
+          $element[$key]['#query']['f'][0] = str_replace(':', '/', $e['#query']['f'][0]);
+
+          // Remove the queries from the f array and add them to the path
+          if (isset($e['#path']) && substr_count($e['#path'],'/'.$element[$key]['#query']['f'][0])>0 ) {
+            $element[$key]['#active'] = TRUE;
+            $element[$key]['#path'] = str_replace('/'.$element[$key]['#query']['f'][0],'',$e['#path']);
+          }
+          else {
+            $element[$key]['#path'] = $element[$key]['#path'] . '/' . $element[$key]['#query']['f'][0];
+          }
+          unset($element[$key]['#query']['f']);
         }
       }
     }
@@ -68,23 +73,11 @@ class SearchApiRangesWidgetLinks extends FacetapiWidgetLinks {
 
     $items_build = $this->buildListItems($element);
 
-    // Replace ?f[0]= with /
-    if (module_exists('facetapi_pretty_paths')) {
-      foreach($items_build as $key => $build){
-        $items_build[$key]['data'] = str_replace('?f[0]=', '/', $build['data']);
-      }
-    }
-
     $element = array(
       '#theme' => 'item_list',
       '#items' => $items_build,
       '#attributes' => $this->build['#attributes'],
     );
-
-    // Add js.
-    drupal_add_library('system', 'ui.slider');
-    drupal_add_js(drupal_get_path('module', 'search_api_ranges') . '/jquery.numeric.js');
-    drupal_add_js(drupal_get_path('module', 'search_api_ranges') . '/search_api_ranges.js');
   }
 
   /**

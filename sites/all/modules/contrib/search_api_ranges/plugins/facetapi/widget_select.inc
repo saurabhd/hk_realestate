@@ -27,6 +27,7 @@ class SearchApiRangesWidgetSelect extends FacetapiWidgetLinks {
       'element' => $element,
       'index' => $index,
       'range_field' => $this->facet['field alias'],
+      'target' => $this->facet->getAdapter()->getSearchPath(),
       'query' => $query,
       'prefix' => $this->settings->settings['prefix'],
       'suffix' => $this->settings->settings['suffix'],
@@ -55,13 +56,14 @@ class SearchApiRangesWidgetSelect extends FacetapiWidgetLinks {
         };
       };
     };
-    //$remove_facet_url = '';
     $tmp_first = array_pop($cp_first);
-    //if ($tmp_first['#active'] == TRUE) {
+    $remove_facet_url = url($tmp_first['#path']);
+    if ($tmp_first['#active'] == TRUE) {
       $remove_facet_url = url($_GET['q'], array('query' => $tmp_first['#query']));
-    //};
+    };
 
     $options[$remove_facet_url] = t('All');
+    $active = $remove_facet_url;
     foreach ($element as $value => $item) {
       $instring = FALSE;
       if (count($item['#query']['f']) > 0) {
@@ -81,26 +83,17 @@ class SearchApiRangesWidgetSelect extends FacetapiWidgetLinks {
 
       $url = url($_GET['q'], array('query' => $item['#query']));
       $options[$url] = $item['#markup'] . ' (' . $item['#count'] . ')';
+      if ($item['#active'] == TRUE) {
+        $active = $url;
+      }
     };
 
-    $active = array('#active' => FALSE);
-    foreach ($element as $key => $item) {
-      if ($item['#active'] == TRUE) {
-        $active = $item;
-        break;
-      };
-    };
     if (end($options) !== '(-)') {
       if (!isset($form_state)) {
         $form_state = array();
       };
-      $element = facetapi_ranges_select_facet_form($form_state, $options, $count_select_widget, $active, $remove_facet_url);
+      $element = facetapi_ranges_select_facet_form($form_state, $options, $count_select_widget, $active);
     };
-
-    // Add js.
-    drupal_add_library('system', 'ui.slider');
-    drupal_add_js(drupal_get_path('module', 'search_api_ranges') . '/jquery.numeric.js');
-    drupal_add_js(drupal_get_path('module', 'search_api_ranges') . '/search_api_ranges.js');
   }
 
   /**
@@ -196,39 +189,22 @@ class SearchApiRangesWidgetSelect extends FacetapiWidgetLinks {
 
 }
 
-function facetapi_ranges_select_facet_form($form_state, $options, $count = 0, $active, $first) {
-  //drupal_add_js(drupal_get_path('module', 'facetapi_select') .'/js/facetapi_select.js');
-  //drupal_add_css(drupal_get_path('module', 'facetapi_select').'/default.css');
+function facetapi_ranges_select_facet_form($form_state, $options, $count = 0, $active) {
 
   $name = 'facetapi_ranges_select_facet_form_' . $count;
   $query_string = $_GET;
 
   unset($query_string['q']);
-  $default_value = url($_GET['q'], array('query' => $query_string));
-  //$default_value = str_replace('%5B', '', $default_value);
-  //$default_value = str_replace('%5D', '', $default_value);
-  if ($active['#active'] == TRUE) {
-    $i = 0;
-    foreach ($options as $key => $label) {
-      if ($i == 1) {
-        $default_value = $key;
-        break;
-      };
-      $i++;
-    };
-  }
-  else {
-    $default_value = $first;
-  };
-  
+
   $form['facets'] = array(
     '#type' => 'select',
     '#id' => $name,
     '#options' => $options,
-    '#value' => $default_value,
+    '#value' => $active,
     '#attributes' => array(
       'onchange' => "top.location.href=document.getElementById('$name').options[document.getElementById('$name').selectedIndex].value"),
   );
 
   return $form;
 }
+

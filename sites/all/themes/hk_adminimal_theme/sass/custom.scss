@@ -19,25 +19,34 @@ body {
   }
 }*/
 
-#page {
-  width: 100%;
-  .wrapper {
-    @media (max-width: 1280px) {
-      padding: 0 20px;
-    }
-  }
-  .container,
-  .wrapper.main {
+#page .wrapper.main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.page-search,
+.page-crm-core {
+  #page {
     width: 100%;
-    @media (min-width: 768px) {
-      width: 90%;
-      max-width: 1400px;
-      margin: 0 auto;
+    .wrapper {
+      @media (max-width: 1280px) {
+        padding: 0 20px;
+      }
+    }
+    .container,
+    .wrapper.main {
+      width: 100%;
+      @media (min-width: 768px) {
+        width: 90%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
     }
   }
 }
 
 /* Header design */
+
 /*.page-crm-core-contact,
 .page-crm-core-agent-central*/
 #page {
@@ -203,8 +212,16 @@ body {
   #navigation {
     display: inline-block;
     width: 100% !important;
-    padding-top: 96px;
     clear: both;
+  }
+}
+
+.page-search,
+.page-crm-core {
+  #page {
+    #navigation {
+      padding-top: 96px;
+    }
   }
 }
 

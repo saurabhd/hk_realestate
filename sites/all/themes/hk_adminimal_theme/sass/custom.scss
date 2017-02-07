@@ -208,6 +208,15 @@ body {
   }
 }
 
+/* For admin page */
+.page-admin {
+  #page {
+    #navigation {
+      padding-top: 0;
+    }
+  }
+}
+
 /* Admin login */
 .admin-menu {
   #page {

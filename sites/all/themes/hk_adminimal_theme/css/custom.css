@@ -106,7 +106,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
 /* Header design */
 /*.page-crm-core-contact,
 .page-crm-core-agent-central*/
-/* line 44, ../sass/custom.scss */
+/* line 45, ../sass/custom.scss */
 #page .navigation {
   position: fixed;
   top: 0;
@@ -117,18 +117,18 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 @media screen and (max-width: 667px) {
-  /* line 44, ../sass/custom.scss */
+  /* line 45, ../sass/custom.scss */
   #page .navigation {
     height: 60px;
   }
 }
-/* line 55, ../sass/custom.scss */
+/* line 56, ../sass/custom.scss */
 #page .navigation * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 60, ../sass/custom.scss */
+/* line 61, ../sass/custom.scss */
 #page .navigation #navigation-inner {
   display: inline-block;
   float: right;
@@ -136,13 +136,13 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   width: -moz-calc(100% - 250px);
   width: calc(100% - 250px);
 }
-/* line 66, ../sass/custom.scss */
+/* line 67, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation {
   display: inline-block;
   width: 100%;
   /*width: calc(100% - 220px);*/
 }
-/* line 70, ../sass/custom.scss */
+/* line 71, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box {
   float: left;
   position: relative;
@@ -150,7 +150,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   margin-top: 35px;
   margin-left: 38px;
 }
-/* line 77, ../sass/custom.scss */
+/* line 78, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.auto_submit {
   position: relative;
   display: inline-block;
@@ -163,7 +163,7 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   font-size: 15px;
   color: #333;
 }
-/* line 89, ../sass/custom.scss */
+/* line 90, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit {
   position: absolute;
   top: 0;
@@ -179,22 +179,22 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   background-position: 12px 8px;
   background-color: transparent;
 }
-/* line 103, ../sass/custom.scss */
+/* line 104, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #search-api-page-search-form-contact-search-box input.form-submit:hover {
   box-shadow: none !important;
 }
-/* line 109, ../sass/custom.scss */
+/* line 110, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete {
   width: 294px !important;
   margin-left: 2px !important;
 }
-/* line 113, ../sass/custom.scss */
+/* line 114, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li {
   font-size: 16px;
   padding: 15px 10px 0;
   white-space: nowrap !important;
 }
-/* line 117, ../sass/custom.scss */
+/* line 118, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li a {
   color: #000;
   font-size: 16px;
@@ -202,32 +202,32 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   text-decoration: none;
   text-align: left;
 }
-/* line 124, ../sass/custom.scss */
+/* line 125, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover {
   background-color: #1A1A1A;
 }
-/* line 127, ../sass/custom.scss */
+/* line 128, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-search-api-page-contact-search-box #autocomplete ul li:hover h2 a {
   color: #FFF !important;
 }
-/* line 136, ../sass/custom.scss */
+/* line 137, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu {
   display: inline-block;
   float: right;
 }
-/* line 139, ../sass/custom.scss */
+/* line 140, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu {
   float: left;
   margin: 35px 0 24px;
 }
-/* line 142, ../sass/custom.scss */
+/* line 143, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li {
   float: left;
   padding: 0;
   list-style: none;
   line-height: 24px;
 }
-/* line 147, ../sass/custom.scss */
+/* line 148, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a {
   margin: 0 35px 0 8px;
   color: #747474;
@@ -237,15 +237,15 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   vertical-align: middle;
   letter-spacing: 2px;
 }
-/* line 155, ../sass/custom.scss */
+/* line 156, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:hover, #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li a:active {
   color: #C61C2C;
 }
-/* line 160, ../sass/custom.scss */
+/* line 161, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li li.active {
   color: #C61C2C;
 }
-/* line 163, ../sass/custom.scss */
+/* line 164, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li::before {
   display: inline-block;
   /*width: 14px;
@@ -256,40 +256,39 @@ body.page-crm-core-contact, body.page-crm-core-agent-central {
   content: '';
   vertical-align: middle;
 }
-/* line 174, ../sass/custom.scss */
+/* line 175, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-dashboard::before {
   height: 17px;
   width: 14px;
   background-image: url("../images/menu-symbol-of-four-lines.png");
 }
-/* line 181, ../sass/custom.scss */
+/* line 182, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout::before {
   height: 17px;
   width: 19px;
   background-image: url("../images/logout.png");
 }
-/* line 186, ../sass/custom.scss */
+/* line 187, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-logout a {
   font-weight: bold;
 }
-/* line 191, ../sass/custom.scss */
+/* line 192, ../sass/custom.scss */
 #page .navigation #navigation-inner .region-navigation #block-menu-menu-crm-core-menu ul.menu li.menu-agent-central::before {
   height: 15px;
   width: 13px;
   background-image: url("../images/malware.png");
 }
-/* line 203, ../sass/custom.scss */
+/* line 204, ../sass/custom.scss */
 #page #navigation {
   display: inline-block;
   width: 100% !important;
-  padding-top: 96px;
   clear: both;
 }
 
-/* For admin page */
 /* line 214, ../sass/custom.scss */
-.page-admin #page #navigation {
-  padding-top: 0;
+.page-search #page #navigation,
+.page-crm-core #page #navigation {
+  padding-top: 96px;
 }
 
 /* Admin login */

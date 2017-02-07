@@ -38,6 +38,7 @@ body {
 }
 
 /* Header design */
+
 /*.page-crm-core-contact,
 .page-crm-core-agent-central*/
 #page {
@@ -203,16 +204,15 @@ body {
   #navigation {
     display: inline-block;
     width: 100% !important;
-    padding-top: 96px;
     clear: both;
   }
 }
 
-/* For admin page */
-.page-admin {
+.page-search,
+.page-crm-core {
   #page {
     #navigation {
-      padding-top: 0;
+      padding-top: 96px;
     }
   }
 }

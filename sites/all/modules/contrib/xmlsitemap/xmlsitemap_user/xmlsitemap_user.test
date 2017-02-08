@@ -22,7 +22,7 @@ class XMLSitemapUserFunctionalTest extends XMLSitemapTestHelper {
     parent::setUp($modules);
 
     // Save the user settings before creating the users.
-    xmlsitemap_link_bundle_settings_save('user', 'user', array('status' => 1, 'priority' => 0.5));
+    xmlsitemap_link_bundle_settings_save('user', 'user', array('status' => 1, 'priority' => 0.5, 'changefreq' => 3600));
 
     // Create the users
     $this->admin_user = $this->drupalCreateUser(array('administer users', 'administer permissions', 'administer xmlsitemap'));

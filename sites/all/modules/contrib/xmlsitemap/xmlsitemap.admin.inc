@@ -499,7 +499,8 @@ function xmlsitemap_add_form_entity_summary(&$form, $entity, array $entity_info)
   $priorities = xmlsitemap_get_priority_options(NULL, FALSE);
   $statuses = xmlsitemap_get_status_options(NULL);
   $destination = drupal_get_destination();
-
+  $changefreqs = xmlsitemap_get_changefreq_options();
+ 
   $rows = array();
   $totals = array('total' => 0, 'indexed' => 0, 'visible' => 0);
   foreach ($entity_info['bundles'] as $bundle => $bundle_info) {
@@ -520,6 +521,7 @@ function xmlsitemap_add_form_entity_summary(&$form, $entity, array $entity_info)
     }
     $row[] = $statuses[$bundle_info['xmlsitemap']['status'] ? 1 : 0];
     $row[] = $priorities[number_format($bundle_info['xmlsitemap']['priority'], 1)];
+    $row[] = $changefreqs[$bundle_info['xmlsitemap']['changefreq']];
     $row[] = $status['total'];
     $row[] = $status['indexed'];
     $row[] = $status['visible'];
@@ -531,6 +533,7 @@ function xmlsitemap_add_form_entity_summary(&$form, $entity, array $entity_info)
       isset($entity_info['bundle label']) ? $entity_info['bundle label'] : '',
       t('Inclusion'),
       t('Priority'),
+      t('Change frequency'),
       t('Available'),
       t('Indexed'),
       t('Visible'),
@@ -538,7 +541,7 @@ function xmlsitemap_add_form_entity_summary(&$form, $entity, array $entity_info)
     $rows[] = array(
       array(
         'data' => t('Totals'),
-        'colspan' => 3,
+        'colspan' => 4,
         'header' => TRUE,
       ),
       array(
@@ -630,6 +633,18 @@ function xmlsitemap_add_link_bundle_settings(array &$form, array &$form_state, $
     ),
   );
 
+  $form['xmlsitemap']['changefreq'] = array(
+    '#type' => 'select',
+    '#title' => t('Default change frequency'),
+    '#options' => xmlsitemap_get_changefreq_options(),
+    '#default_value' => $bundle_info['changefreq'],
+    '#states' => array(
+      'invisible' => array(
+        'select[name="xmlsitemap[status]"]' => array('value' => '0'),
+      ),
+    ),
+  );
+
   $form += array('#submit' => array());
   array_unshift($form['#submit'], 'xmlsitemap_link_bundle_settings_form_submit');
 
@@ -699,6 +714,9 @@ function xmlsitemap_add_form_link_options(array &$form, $entity, $bundle, $id) {
     'priority' => $bundle_info['priority'],
     'priority_default' => $bundle_info['priority'],
     'priority_override' => 0,
+    'changefreq' => $bundle_info['changefreq'],
+    'changefreq_default' => $bundle_info['changefreq'],
+    'changefreq_override' => 0,
   );
 
   $form['xmlsitemap'] = array(
@@ -706,7 +724,7 @@ function xmlsitemap_add_form_link_options(array &$form, $entity, $bundle, $id) {
     '#tree' => TRUE,
     '#title' => t('XML sitemap'),
     '#collapsible' => TRUE,
-    '#collapsed' => !$link['status_override'] && !$link['priority_override'],
+    '#collapsed' => !$link['status_override'] && !$link['priority_override'] && !$link['changefreq_override'],
     '#access' => user_access('administer xmlsitemap') || xmlsitemap_link_bundle_access($bundle_info),
     '#group' => 'additional_settings',
     '#attached' => array(
@@ -783,6 +801,35 @@ function xmlsitemap_add_form_link_options(array &$form, $entity, $bundle, $id) {
   $form['xmlsitemap']['priority_override'] = array(
     '#type' => 'value',
     '#value' => $link['priority_override'],
+  );
+
+  // Changefreq field
+  $form['xmlsitemap']['changefreq'] = array(
+    '#type' => 'select',
+    '#title' => t('Change frequency'),
+    '#options' => xmlsitemap_get_changefreq_options($link['changefreq_default']),
+    '#default_value' => $link['changefreq_override'] ? $link['changefreq'] : 'default',
+    '#description' => t('The change frequency of this URL.'),
+    '#states' => array(
+      'invisible' => array(
+        'select[name="xmlsitemap[status]"]' => array('value' => '0'),
+      ),
+    ),
+  );
+  if (!$link['status_default']) {
+    // If the default status is excluded, add a visible state on the include
+    // override option.
+    $form['xmlsitemap']['changefreq']['#states']['visible'] = array(
+      'select[name="xmlsitemap[status]"]' => array('value' => '1'),
+    );
+  }
+  $form['xmlsitemap']['changefreq_default'] = array(
+    '#type' => 'value',
+    '#value' => $link['changefreq_default'],
+  );
+  $form['xmlsitemap']['changefreq_override'] = array(
+    '#type' => 'value',
+    '#value' => $link['changefreq_override'],
   );
 
   // Other persistent fields.
@@ -872,6 +919,35 @@ function xmlsitemap_get_status_options($default = NULL) {
   }
 
   $options += $statuses;
+  return $options;
+}
 
+
+/**
+ * Get a list of change frequency options.
+ *
+ * @param $default
+ *   Include a 'default' option.
+ * @return
+ *   An array of options.
+ *
+ * @see xmlsitemap_get_changefreq_values().
+ *   The values are translated here.
+ */
+function xmlsitemap_get_changefreq_options($default = NULL) {
+  $options = array();
+
+  $changefreqs = xmlsitemap_get_changefreq_values();
+  foreach ($changefreqs as $key => $label) {
+    $changefreqs[$key] = t(drupal_ucfirst($label));
+  }
+
+  if (isset($default)) {
+    $default = (int)$default;
+    $options['default'] = t('Default (@value)', array('@value' => $changefreqs[$default]));
+  }
+
+  // Add the rest of the options.
+  $options += $changefreqs;
   return $options;
 }

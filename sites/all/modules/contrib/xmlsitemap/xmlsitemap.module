@@ -25,6 +25,7 @@ define('XMLSITEMAP_FREQUENCY_WEEKLY', 604800); // 60 * 60 * 24 * 7
 define('XMLSITEMAP_FREQUENCY_DAILY', 86400); // 60 * 60 * 24
 define('XMLSITEMAP_FREQUENCY_HOURLY', 3600); // 60 * 60
 define('XMLSITEMAP_FREQUENCY_ALWAYS', 60);
+define('XMLSITEMAP_FREQUENCY_DEFAULT', XMLSITEMAP_FREQUENCY_MONTHLY);
 
 /**
  * Short lastmod timestamp format.
@@ -586,6 +587,7 @@ function xmlsitemap_link_save(array $link, array $context = array()) {
     'priority' => XMLSITEMAP_PRIORITY_DEFAULT,
     'priority_override' => 0,
     'changefreq' => 0,
+    'changefreq_override' => 0,
     'changecount' => 0,
     'language' => LANGUAGE_NONE,
   );
@@ -1036,6 +1038,9 @@ function xmlsitemap_link_bundle_settings_save($entity, $bundle, array $settings,
     if ($settings['priority'] != $old_settings['priority']) {
       xmlsitemap_link_update_multiple(array('priority' => $settings['priority']), array('type' => $entity, 'subtype' => $bundle, 'priority_override' => 0));
     }
+    if ($settings['changefreq'] != $old_settings['changefreq']) {
+      xmlsitemap_link_update_multiple(array('changefreq' => $settings['changefreq']), array('type' => $entity, 'subtype' => $bundle, 'changefreq_override' => 0));
+    }
   }
 
   variable_set("xmlsitemap_settings_{$entity}_{$bundle}", $settings);
@@ -1085,6 +1090,7 @@ function xmlsitemap_link_bundle_load($entity, $bundle, $load_bundle_info = TRUE)
   $info += array(
     'status' => XMLSITEMAP_STATUS_DEFAULT,
     'priority' => XMLSITEMAP_PRIORITY_DEFAULT,
+    'changefreq' => XMLSITEMAP_FREQUENCY_DEFAULT,
   );
   return $info;
 }
@@ -1164,7 +1170,7 @@ function xmlsitemap_get_changefreq($interval) {
     return FALSE;
   }
 
-  foreach (xmlsitemap_get_changefreq_options() as $value => $frequency) {
+  foreach (xmlsitemap_get_changefreq_values() as $value => $frequency) {
     if ($interval <= $value) {
       return $frequency;
     }
@@ -1337,7 +1343,7 @@ function xmlsitemap_restore_user() {
 
 function xmlsitemap_process_form_link_options($form, &$form_state) {
   $link = &$form_state['values']['xmlsitemap'];
-  $fields = array('status' => XMLSITEMAP_STATUS_DEFAULT, 'priority' => XMLSITEMAP_PRIORITY_DEFAULT);
+  $fields = array('status' => XMLSITEMAP_STATUS_DEFAULT, 'priority' => XMLSITEMAP_PRIORITY_DEFAULT, 'changefreq' => XMLSITEMAP_FREQUENCY_DEFAULT);
 
   foreach ($fields as $field => $default) {
     if ($link[$field] === 'default') {
@@ -1383,8 +1389,12 @@ function xmlsitemap_link_bundle_settings_form_submit($form, &$form_state) {
 /**
  * @todo Document this function.
  * @todo Make these translatable
+ * Get a list of change frequency values.
+ *
+ * @return
+ *   An array of options.
  */
-function xmlsitemap_get_changefreq_options() {
+function xmlsitemap_get_changefreq_values() {
   return array(
     XMLSITEMAP_FREQUENCY_ALWAYS => 'always',
     XMLSITEMAP_FREQUENCY_HOURLY => 'hourly',

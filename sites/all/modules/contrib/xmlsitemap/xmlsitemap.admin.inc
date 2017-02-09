@@ -58,11 +58,12 @@ function xmlsitemap_sitemap_list_form() {
   $query->extend('TableSort')->orderByHeader($header);
   $smids = $query->execute()->fetchCol();
   $sitemaps = $smids ? xmlsitemap_sitemap_load_multiple($smids) : array();
-
   $options = array();
+  
   foreach ($sitemaps as $smid => $sitemap) {
-    $sitemap->url = url($sitemap->uri['path'], $sitemap->uri['options']);
-
+    //$sitemap->url = url($sitemap->uri['path'], $sitemap->uri['options']);
+    $base_url = $sitemap->uri['options']['base_url'];
+    $sitemap->url = $base_url.'/'.$sitemap->uri['path'];
     $options[$smid]['url'] = array(
       'data' => array(
         '#type' => 'link',
@@ -100,7 +101,7 @@ function xmlsitemap_sitemap_list_form() {
       $options[$smid]['operations'] = t('None (sitemap locked)');
     }
   }
-
+ 
   $form['sitemaps'] = array(
     '#type' => 'tableselect',
     '#header' => $header,

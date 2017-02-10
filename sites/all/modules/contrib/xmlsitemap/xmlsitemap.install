@@ -231,6 +231,13 @@ function xmlsitemap_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
+      'changefreq_override' => array(
+        'description' => 'A boolean that if TRUE means that the changefreq field has been overridden from its default value.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
       'changecount' => array(
         'description' => 'The number of times this item has been changed. Used to help calculate the next changefreq value.',
         'type' => 'int',
@@ -552,6 +559,14 @@ function xmlsitemap_update_7202() {
 function xmlsitemap_update_7203() {
   xmlsitemap_update_6204();
   _xmlsitemap_sitemap_rehash_all();
+}
+
+/**
+ * Add {xmlsitemap}.changefreq_override column.
+ */
+function xmlsitemap_update_7205() {
+  $schema = xmlsitemap_schema();
+  db_add_field('xmlsitemap', 'changefreq_override', $schema['xmlsitemap']['fields']['changefreq_override']);
 }
 
 function _xmlsitemap_sitemap_rehash_all() {

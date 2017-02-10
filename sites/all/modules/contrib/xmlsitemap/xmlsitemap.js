@@ -14,6 +14,9 @@ Drupal.behaviors.xmlsitemapFieldsetSummaries = {
       var priority = $('#edit-xmlsitemap-priority option:selected').text();
       vals.push(Drupal.t('Priority: @value', { '@value': priority }));
 
+      var changefreq = $('#edit-xmlsitemap-changefreq option:selected').text();
+      vals.push(Drupal.t('Change frequency: @value', { '@value': changefreq }));
+
       return vals.join('<br />');
     });
   }

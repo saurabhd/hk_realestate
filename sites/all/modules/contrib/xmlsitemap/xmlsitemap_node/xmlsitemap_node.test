@@ -24,7 +24,7 @@ class XMLSitemapNodeFunctionalTest extends XMLSitemapTestHelper {
 
     $this->admin_user = $this->drupalCreateUser(array('administer nodes', 'bypass node access', 'administer content types', 'administer xmlsitemap'));
     $this->normal_user = $this->drupalCreateUser(array('create page content', 'edit any page content', 'access content', 'view own unpublished content'));
-    xmlsitemap_link_bundle_settings_save('node', 'page', array('status' => 1, 'priority' => 0.5));
+    xmlsitemap_link_bundle_settings_save('node', 'page', array('status' => 1, 'priority' => 0.5, 'changefreq' => 3600));
   }
 
   function testNodeSettings() {

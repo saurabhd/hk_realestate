@@ -112,6 +112,24 @@ function xmlsitemap_node_field_extra_fields() {
 }
 
 /**
+ * Implements hook_xmlsitemap_element_alter().
+ */
+function xmlsitemap_node_xmlsitemap_element_alter(array &$element, array $link, $sitemap) {
+  if ($link['type'] == 'node') {
+    if ($link['changefreq_override']) {
+      $element['changefreq'] = xmlsitemap_get_changefreq($link['changefreq']);
+    }
+    else {
+      module_load_include('inc', 'xmlsitemap', 'xmlsitemap.admin');
+      $settings = xmlsitemap_link_bundle_load('node', $link['subtype']);
+      $changefreqs = xmlsitemap_get_changefreq_options();
+
+      $element['changefreq'] = drupal_strtolower($changefreqs[$settings['changefreq']]);
+    }
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  *
  * @see node_type_form()
@@ -188,9 +206,12 @@ function xmlsitemap_node_create_link(stdClass $node) {
     'priority' => $settings['priority'],
     'priority_default' => $settings['priority'],
     'priority_override' => 0,
+    'changefreq' => $settings['changefreq'],
+    'changefreq_default' => $settings['changefreq'],
+    'changefreq_override' => 0,
   );
 
-  // Always recalculate changefreq and changecount.
+  // Only recalculate changefreq and changecount when not overridden.
   $timestamps = xmlsitemap_node_get_timestamps($node);
   $node->xmlsitemap['changefreq'] = $node->nid ? xmlsitemap_calculate_changefreq($timestamps) : 0;
   $node->xmlsitemap['changecount'] = $node->nid ? count($timestamps) - 1 : 0;

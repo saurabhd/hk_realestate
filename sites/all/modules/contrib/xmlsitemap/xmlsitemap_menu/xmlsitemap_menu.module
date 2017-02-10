@@ -254,6 +254,9 @@ function xmlsitemap_menu_create_link(array $menu_item) {
     'priority' => $settings['priority'],
     'priority_default' => $settings['priority'],
     'priority_override' => 0,
+    'changefreq' => $settings['changefreq'],
+    'changefreq_default' => $settings['changefreq'],
+    'changefreq_override' => 0,
   );
 
   // The following values must always be checked because they are volatile.

@@ -1,0 +1,443 @@
+From 6ae89970bed837219c243cbad953151d041cee7b Mon Sep 17 00:00:00 2001
+From: M Parker <mparker17@536298.no-reply.drupal.org>
+Date: Wed, 16 Nov 2016 10:51:36 -0500
+Subject: [PATCH] 1811692-54
+
+---
+ xmlsitemap.admin.inc                           | 81 +++++++++++++++++++++++++-
+ xmlsitemap.generate.inc                        | 11 ++--
+ xmlsitemap.install                             | 15 +++++
+ xmlsitemap.js                                  |  3 +
+ xmlsitemap.module                              | 18 ++++--
+ xmlsitemap_menu/xmlsitemap_menu.module         |  3 +
+ xmlsitemap_node/xmlsitemap_node.module         | 32 +++++++++-
+ xmlsitemap_node/xmlsitemap_node.test           |  2 +-
+ xmlsitemap_taxonomy/xmlsitemap_taxonomy.module |  3 +
+ xmlsitemap_user/xmlsitemap_user.module         |  3 +
+ xmlsitemap_user/xmlsitemap_user.test           |  2 +-
+ 11 files changed, 157 insertions(+), 16 deletions(-)
+
+diff --git a/xmlsitemap.admin.inc b/xmlsitemap.admin.inc
+index 496dd2c..9015c28 100644
+--- a/xmlsitemap.admin.inc
++++ b/xmlsitemap.admin.inc
+@@ -499,6 +499,7 @@ function xmlsitemap_add_form_entity_summary(&$form, $entity, array $entity_info)
+   $priorities = xmlsitemap_get_priority_options(NULL, FALSE);
+   $statuses = xmlsitemap_get_status_options(NULL);
+   $destination = drupal_get_destination();
++  $changefreqs = xmlsitemap_get_changefreq_options();
+ 
+   $rows = array();
+   $totals = array('total' => 0, 'indexed' => 0, 'visible' => 0);
+@@ -520,6 +521,7 @@ function xmlsitemap_add_form_entity_summary(&$form, $entity, array $entity_info)
+     }
+     $row[] = $statuses[$bundle_info['xmlsitemap']['status'] ? 1 : 0];
+     $row[] = $priorities[number_format($bundle_info['xmlsitemap']['priority'], 1)];
++    $row[] = $changefreqs[$bundle_info['xmlsitemap']['changefreq']];
+     $row[] = $status['total'];
+     $row[] = $status['indexed'];
+     $row[] = $status['visible'];
+@@ -531,6 +533,7 @@ function xmlsitemap_add_form_entity_summary(&$form, $entity, array $entity_info)
+       isset($entity_info['bundle label']) ? $entity_info['bundle label'] : '',
+       t('Inclusion'),
+       t('Priority'),
++      t('Change frequency'),
+       t('Available'),
+       t('Indexed'),
+       t('Visible'),
+@@ -538,7 +541,7 @@ function xmlsitemap_add_form_entity_summary(&$form, $entity, array $entity_info)
+     $rows[] = array(
+       array(
+         'data' => t('Totals'),
+-        'colspan' => 3,
++        'colspan' => 4,
+         'header' => TRUE,
+       ),
+       array(
+@@ -629,6 +632,17 @@ function xmlsitemap_add_link_bundle_settings(array &$form, array &$form_state, $
+       ),
+     ),
+   );
++  $form['xmlsitemap']['changefreq'] = array(
++    '#type' => 'select',
++    '#title' => t('Default change frequency'),
++    '#options' => xmlsitemap_get_changefreq_options(),
++    '#default_value' => $bundle_info['changefreq'],
++    '#states' => array(
++      'invisible' => array(
++        'select[name="xmlsitemap[status]"]' => array('value' => '0'),
++      ),
++    ),
++  );
+ 
+   $form += array('#submit' => array());
+   array_unshift($form['#submit'], 'xmlsitemap_link_bundle_settings_form_submit');
+@@ -699,6 +713,9 @@ function xmlsitemap_add_form_link_options(array &$form, $entity, $bundle, $id) {
+     'priority' => $bundle_info['priority'],
+     'priority_default' => $bundle_info['priority'],
+     'priority_override' => 0,
++    'changefreq' => $bundle_info['changefreq'],
++    'changefreq_default' => $bundle_info['changefreq'],
++    'changefreq_override' => 0,
+   );
+ 
+   $form['xmlsitemap'] = array(
+@@ -706,7 +723,7 @@ function xmlsitemap_add_form_link_options(array &$form, $entity, $bundle, $id) {
+     '#tree' => TRUE,
+     '#title' => t('XML sitemap'),
+     '#collapsible' => TRUE,
+-    '#collapsed' => !$link['status_override'] && !$link['priority_override'],
++    '#collapsed' => !$link['status_override'] && !$link['priority_override'] && !$link['changefreq_override'],
+     '#access' => user_access('administer xmlsitemap') || xmlsitemap_link_bundle_access($bundle_info),
+     '#group' => 'additional_settings',
+     '#attached' => array(
+@@ -785,6 +802,35 @@ function xmlsitemap_add_form_link_options(array &$form, $entity, $bundle, $id) {
+     '#value' => $link['priority_override'],
+   );
+ 
++  // Changefreq field
++  $form['xmlsitemap']['changefreq'] = array(
++    '#type' => 'select',
++    '#title' => t('Change frequency'),
++    '#options' => xmlsitemap_get_changefreq_options($link['changefreq_default']),
++    '#default_value' => $link['changefreq_override'] ? $link['changefreq'] : 'default',
++    '#description' => t('The change frequency of this URL.'),
++    '#states' => array(
++      'invisible' => array(
++        'select[name="xmlsitemap[status]"]' => array('value' => '0'),
++      ),
++    ),
++  );
++  if (!$link['status_default']) {
++    // If the default status is excluded, add a visible state on the include
++    // override option.
++    $form['xmlsitemap']['changefreq']['#states']['visible'] = array(
++      'select[name="xmlsitemap[status]"]' => array('value' => '1'),
++    );
++  }
++  $form['xmlsitemap']['changefreq_default'] = array(
++    '#type' => 'value',
++    '#value' => $link['changefreq_default'],
++  );
++  $form['xmlsitemap']['changefreq_override'] = array(
++    '#type' => 'value',
++    '#value' => $link['changefreq_override'],
++  );
++
+   // Other persistent fields.
+   //$form['xmlsitemap']['lastmod'] = array(
+   //  '#type' => 'value',
+@@ -873,5 +919,36 @@ function xmlsitemap_get_status_options($default = NULL) {
+ 
+   $options += $statuses;
+ 
++  return $options;
++}
++
++
++/**
++ * Get a list of change frequency options.
++ *
++ * @param $default
++ *   Include a 'default' option.
++ * @return
++ *   An array of options.
++ *
++ * @see xmlsitemap_get_changefreq_values().
++ *   The values are translated here.
++ */
++function xmlsitemap_get_changefreq_options($default = NULL) {
++  $options = array();
++
++  $changefreqs = xmlsitemap_get_changefreq_values();
++  foreach ($changefreqs as $key => $label) {
++    $changefreqs[$key] = t(drupal_ucfirst($label));
++  }
++
++  if (isset($default)) {
++    $default = (int)$default;
++    $options['default'] = t('Default (@value)', array('@value' => $changefreqs[$default]));
++  }
++
++  // Add the rest of the options.
++  $options += $changefreqs;
++
+   return $options;
+ }
+diff --git a/xmlsitemap.generate.inc b/xmlsitemap.generate.inc
+index 57c3bc1..e7d1b85 100644
+--- a/xmlsitemap.generate.inc
++++ b/xmlsitemap.generate.inc
+@@ -169,7 +169,7 @@ function xmlsitemap_generate_chunk(stdClass $sitemap, XMLSitemapWriter $writer,
+   $link_count = 0;
+ 
+   $query = db_select('xmlsitemap', 'x');
+-  $query->fields('x', array('id', 'type', 'subtype', 'loc', 'lastmod', 'changefreq', 'changecount', 'priority', 'language', 'access', 'status'));
++  $query->fields('x', array('id', 'type', 'subtype', 'loc', 'lastmod', 'changefreq', 'changefreq_override', 'changecount', 'priority', 'language', 'access', 'status'));
+   $query->condition('x.access', 1);
+   $query->condition('x.status', 1);
+   $query->orderBy('x.language', 'DESC');
+@@ -217,10 +217,12 @@ function xmlsitemap_generate_chunk(stdClass $sitemap, XMLSitemapWriter $writer,
+       // with a short changefreq but updated two years ago show decay.
+       // We use abs() here just incase items were created on this same cron run
+       // because lastmod would be greater than REQUEST_TIME.
+-      $link['changefreq'] = (abs(REQUEST_TIME - $link['lastmod']) + $link['changefreq']) / 2;
++      if (empty($link['changefreq_override'])) {
++        $link['changefreq'] = (abs(REQUEST_TIME - $link['lastmod']) + $link['changefreq']) / 2;
++      }
+     }
+-    if (!empty($output_elements['changefreq']) && $link['changefreq']) {
+-      $element['changefreq'] = xmlsitemap_get_changefreq($link['changefreq']);
++    if (!empty($output_elements['changefreq'])) {
++      $element['changefreq'] = xmlsitemap_get_changefreq($link['changefreq'] ?: XMLSITEMAP_FREQUENCY_DEFAULT);
+     }
+     if (!empty($output_elements['priority']) && isset($link['priority']) && $link['priority'] != 0.5) {
+       // Don't output the priority value for links that have 0.5 priority. This
+@@ -545,6 +547,7 @@ function xmlsitemap_rebuild_clear(array $types, $save_custom) {
+   if ($save_custom) {
+     $query->condition('status_override', 0);
+     $query->condition('priority_override', 0);
++    $query->condition('changefreq_override', 0);
+   }
+ 
+   return $query->execute();
+diff --git a/xmlsitemap.install b/xmlsitemap.install
+index 916ebec..01a2bfc 100644
+--- a/xmlsitemap.install
++++ b/xmlsitemap.install
+@@ -231,6 +231,13 @@ function xmlsitemap_schema() {
+         'not null' => TRUE,
+         'default' => 0,
+       ),
++      'changefreq_override' => array(
++        'description' => 'A boolean that if TRUE means that the changefreq field has been overridden from its default value.',
++        'type' => 'int',
++        'size' => 'tiny',
++        'not null' => TRUE,
++        'default' => 0,
++      ),
+       'changecount' => array(
+         'description' => 'The number of times this item has been changed. Used to help calculate the next changefreq value.',
+         'type' => 'int',
+@@ -568,3 +575,11 @@ function _xmlsitemap_sitemap_rehash_all() {
+     }
+   }
+ }
++
++/**
++ * Add {xmlsitemap}.changefreq_override column.
++ */
++function xmlsitemap_update_7205() {
++  $schema = xmlsitemap_schema();
++  db_add_field('xmlsitemap', 'changefreq_override', $schema['xmlsitemap']['fields']['changefreq_override']);
++}
+diff --git a/xmlsitemap.js b/xmlsitemap.js
+index 06b92bc..c1b42ea 100644
+--- a/xmlsitemap.js
++++ b/xmlsitemap.js
+@@ -14,6 +14,9 @@ Drupal.behaviors.xmlsitemapFieldsetSummaries = {
+       var priority = $('#edit-xmlsitemap-priority option:selected').text();
+       vals.push(Drupal.t('Priority: @value', { '@value': priority }));
+ 
++      var changefreq = $('#edit-xmlsitemap-changefreq option:selected').text();
++      vals.push(Drupal.t('Change frequency: @value', { '@value': changefreq }));
++
+       return vals.join('<br />');
+     });
+   }
+diff --git a/xmlsitemap.module b/xmlsitemap.module
+index 09d02ea..a9c53b7 100644
+--- a/xmlsitemap.module
++++ b/xmlsitemap.module
+@@ -25,6 +25,7 @@ define('XMLSITEMAP_FREQUENCY_WEEKLY', 604800); // 60 * 60 * 24 * 7
+ define('XMLSITEMAP_FREQUENCY_DAILY', 86400); // 60 * 60 * 24
+ define('XMLSITEMAP_FREQUENCY_HOURLY', 3600); // 60 * 60
+ define('XMLSITEMAP_FREQUENCY_ALWAYS', 60);
++define('XMLSITEMAP_FREQUENCY_DEFAULT', XMLSITEMAP_FREQUENCY_MONTHLY);
+ 
+ /**
+  * Short lastmod timestamp format.
+@@ -586,6 +587,7 @@ function xmlsitemap_link_save(array $link, array $context = array()) {
+     'priority' => XMLSITEMAP_PRIORITY_DEFAULT,
+     'priority_override' => 0,
+     'changefreq' => 0,
++    'changefreq_override' => 0,
+     'changecount' => 0,
+     'language' => LANGUAGE_NONE,
+   );
+@@ -1036,6 +1038,9 @@ function xmlsitemap_link_bundle_settings_save($entity, $bundle, array $settings,
+     if ($settings['priority'] != $old_settings['priority']) {
+       xmlsitemap_link_update_multiple(array('priority' => $settings['priority']), array('type' => $entity, 'subtype' => $bundle, 'priority_override' => 0));
+     }
++    if ($settings['changefreq'] != $old_settings['changefreq']) {
++      xmlsitemap_link_update_multiple(array('changefreq' => $settings['changefreq']), array('type' => $entity, 'subtype' => $bundle, 'changefreq_override' => 0));
++    }
+   }
+ 
+   variable_set("xmlsitemap_settings_{$entity}_{$bundle}", $settings);
+@@ -1085,6 +1090,7 @@ function xmlsitemap_link_bundle_load($entity, $bundle, $load_bundle_info = TRUE)
+   $info += array(
+     'status' => XMLSITEMAP_STATUS_DEFAULT,
+     'priority' => XMLSITEMAP_PRIORITY_DEFAULT,
++    'changefreq' => XMLSITEMAP_FREQUENCY_DEFAULT,
+   );
+   return $info;
+ }
+@@ -1164,7 +1170,7 @@ function xmlsitemap_get_changefreq($interval) {
+     return FALSE;
+   }
+ 
+-  foreach (xmlsitemap_get_changefreq_options() as $value => $frequency) {
++  foreach (xmlsitemap_get_changefreq_values() as $value => $frequency) {
+     if ($interval <= $value) {
+       return $frequency;
+     }
+@@ -1337,7 +1343,7 @@ function xmlsitemap_restore_user() {
+ 
+ function xmlsitemap_process_form_link_options($form, &$form_state) {
+   $link = &$form_state['values']['xmlsitemap'];
+-  $fields = array('status' => XMLSITEMAP_STATUS_DEFAULT, 'priority' => XMLSITEMAP_PRIORITY_DEFAULT);
++  $fields = array('status' => XMLSITEMAP_STATUS_DEFAULT, 'priority' => XMLSITEMAP_PRIORITY_DEFAULT, 'changefreq' => XMLSITEMAP_FREQUENCY_DEFAULT);
+ 
+   foreach ($fields as $field => $default) {
+     if ($link[$field] === 'default') {
+@@ -1381,10 +1387,12 @@ function xmlsitemap_link_bundle_settings_form_submit($form, &$form_state) {
+ }
+ 
+ /**
+- * @todo Document this function.
+- * @todo Make these translatable
++ * Get a list of change frequency values.
++ *
++ * @return
++ *   An array of options.
+  */
+-function xmlsitemap_get_changefreq_options() {
++function xmlsitemap_get_changefreq_values() {
+   return array(
+     XMLSITEMAP_FREQUENCY_ALWAYS => 'always',
+     XMLSITEMAP_FREQUENCY_HOURLY => 'hourly',
+diff --git a/xmlsitemap_menu/xmlsitemap_menu.module b/xmlsitemap_menu/xmlsitemap_menu.module
+index 65e24f4..841085d 100644
+--- a/xmlsitemap_menu/xmlsitemap_menu.module
++++ b/xmlsitemap_menu/xmlsitemap_menu.module
+@@ -254,6 +254,9 @@ function xmlsitemap_menu_create_link(array $menu_item) {
+     'priority' => $settings['priority'],
+     'priority_default' => $settings['priority'],
+     'priority_override' => 0,
++    'changefreq' => $settings['changefreq'],
++    'changefreq_default' => $settings['changefreq'],
++    'changefreq_override' => 0,
+   );
+ 
+   // The following values must always be checked because they are volatile.
+diff --git a/xmlsitemap_node/xmlsitemap_node.module b/xmlsitemap_node/xmlsitemap_node.module
+index 20f5f05..861b58f 100644
+--- a/xmlsitemap_node/xmlsitemap_node.module
++++ b/xmlsitemap_node/xmlsitemap_node.module
+@@ -111,6 +111,24 @@ function xmlsitemap_node_field_extra_fields() {
+   return $extras;
+ }
+ 
++/**
++ * Implements hook_xmlsitemap_element_alter().
++ */
++function xmlsitemap_node_xmlsitemap_element_alter(array &$element, array $link, $sitemap) {
++  if ($link['type'] == 'node') {
++    if ($link['changefreq_override']) {
++      $element['changefreq'] = xmlsitemap_get_changefreq($link['changefreq']);
++    }
++    else {
++      module_load_include('inc', 'xmlsitemap', 'xmlsitemap.admin');
++      $settings = xmlsitemap_link_bundle_load('node', $link['subtype']);
++      $changefreqs = xmlsitemap_get_changefreq_options();
++
++      $element['changefreq'] = drupal_strtolower($changefreqs[$settings['changefreq']]);
++    }
++  }
++}
++
+ /**
+  * Implements hook_form_FORM_ID_alter().
+  *
+@@ -188,12 +206,20 @@ function xmlsitemap_node_create_link(stdClass $node) {
+     'priority' => $settings['priority'],
+     'priority_default' => $settings['priority'],
+     'priority_override' => 0,
++    'changefreq' => $settings['changefreq'],
++    'changefreq_default' => $settings['changefreq'],
++    'changefreq_override' => 0,
+   );
+ 
+-  // Always recalculate changefreq and changecount.
++  // Only recalculate changefreq and changecount when not overridden.
+   $timestamps = xmlsitemap_node_get_timestamps($node);
+-  $node->xmlsitemap['changefreq'] = $node->nid ? xmlsitemap_calculate_changefreq($timestamps) : 0;
+-  $node->xmlsitemap['changecount'] = $node->nid ? count($timestamps) - 1 : 0;
++  if ($node->xmlsitemap['changefreq_override'] == 0) {
++    $node->xmlsitemap['changefreq'] = $node->nid ? xmlsitemap_calculate_changefreq($timestamps) : 0;
++    $node->xmlsitemap['changecount'] = $node->nid ? count($timestamps) - 1 : 0;
++  }
++  else {
++    $node->xmlsitemap['changecount'] = 0;
++  }
+ 
+   // Node access must be reset since it a user may have changed published status, etc.
+   //$access = &drupal_static('node_access');
+diff --git a/xmlsitemap_node/xmlsitemap_node.test b/xmlsitemap_node/xmlsitemap_node.test
+index edb59fd..cf7b5cd 100644
+--- a/xmlsitemap_node/xmlsitemap_node.test
++++ b/xmlsitemap_node/xmlsitemap_node.test
+@@ -24,7 +24,7 @@ class XMLSitemapNodeFunctionalTest extends XMLSitemapTestHelper {
+ 
+     $this->admin_user = $this->drupalCreateUser(array('administer nodes', 'bypass node access', 'administer content types', 'administer xmlsitemap'));
+     $this->normal_user = $this->drupalCreateUser(array('create page content', 'edit any page content', 'access content', 'view own unpublished content'));
+-    xmlsitemap_link_bundle_settings_save('node', 'page', array('status' => 1, 'priority' => 0.5));
++    xmlsitemap_link_bundle_settings_save('node', 'page', array('status' => 1, 'priority' => 0.5, 'changefreq' => 3600));
+   }
+ 
+   function testNodeSettings() {
+diff --git a/xmlsitemap_taxonomy/xmlsitemap_taxonomy.module b/xmlsitemap_taxonomy/xmlsitemap_taxonomy.module
+index f0d335d..5ec779e 100644
+--- a/xmlsitemap_taxonomy/xmlsitemap_taxonomy.module
++++ b/xmlsitemap_taxonomy/xmlsitemap_taxonomy.module
+@@ -169,6 +169,9 @@ function xmlsitemap_taxonomy_create_link(stdClass &$term) {
+     'priority' => $settings['priority'],
+     'priority_default' => $settings['priority'],
+     'priority_override' => 0,
++    'changefreq' => $settings['changefreq'],
++    'changefreq_default' => $settings['changefreq'],
++    'changefreq_override' => 0,
+   );
+ 
+   // The following values must always be checked because they are volatile.
+diff --git a/xmlsitemap_user/xmlsitemap_user.module b/xmlsitemap_user/xmlsitemap_user.module
+index d441570..ae2762f 100644
+--- a/xmlsitemap_user/xmlsitemap_user.module
++++ b/xmlsitemap_user/xmlsitemap_user.module
+@@ -144,6 +144,9 @@ function xmlsitemap_user_create_link(stdClass &$account) {
+     'priority' => $settings['priority'],
+     'priority_default' => $settings['priority'],
+     'priority_override' => 0,
++    'changefreq' => $settings['changefreq'],
++    'changefreq_default' => $settings['changefreq'],
++    'changefreq_override' => 0,
+   );
+ 
+   // The following values must always be checked because they are volatile.
+diff --git a/xmlsitemap_user/xmlsitemap_user.test b/xmlsitemap_user/xmlsitemap_user.test
+index 346038c..60e99f7 100644
+--- a/xmlsitemap_user/xmlsitemap_user.test
++++ b/xmlsitemap_user/xmlsitemap_user.test
+@@ -22,7 +22,7 @@ class XMLSitemapUserFunctionalTest extends XMLSitemapTestHelper {
+     parent::setUp($modules);
+ 
+     // Save the user settings before creating the users.
+-    xmlsitemap_link_bundle_settings_save('user', 'user', array('status' => 1, 'priority' => 0.5));
++    xmlsitemap_link_bundle_settings_save('user', 'user', array('status' => 1, 'priority' => 0.5, 'changefreq' => 3600));
+ 
+     // Create the users
+     $this->admin_user = $this->drupalCreateUser(array('administer users', 'administer permissions', 'administer xmlsitemap'));
+-- 
+2.10.2
+

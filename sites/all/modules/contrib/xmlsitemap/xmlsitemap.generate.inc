@@ -169,7 +169,7 @@ function xmlsitemap_generate_chunk(stdClass $sitemap, XMLSitemapWriter $writer, 
   $link_count = 0;
 
   $query = db_select('xmlsitemap', 'x');
-  $query->fields('x', array('id', 'type', 'subtype', 'loc', 'lastmod', 'changefreq', 'changecount', 'priority', 'language', 'access', 'status'));
+  $query->fields('x', array('id', 'type', 'subtype', 'loc', 'lastmod', 'changefreq', 'changefreq_override', 'changecount', 'priority', 'language', 'access', 'status'));
   $query->condition('x.access', 1);
   $query->condition('x.status', 1);
   $query->orderBy('x.language', 'DESC');
@@ -217,10 +217,12 @@ function xmlsitemap_generate_chunk(stdClass $sitemap, XMLSitemapWriter $writer, 
       // with a short changefreq but updated two years ago show decay.
       // We use abs() here just incase items were created on this same cron run
       // because lastmod would be greater than REQUEST_TIME.
-      $link['changefreq'] = (abs(REQUEST_TIME - $link['lastmod']) + $link['changefreq']) / 2;
+      if (empty($link['changefreq_override'])) {
+        $link['changefreq'] = (abs(REQUEST_TIME - $link['lastmod']) + $link['changefreq']) / 2;
+      }
     }
-    if (!empty($output_elements['changefreq']) && $link['changefreq']) {
-      $element['changefreq'] = xmlsitemap_get_changefreq($link['changefreq']);
+    if (!empty($output_elements['changefreq'])) {
+      $element['changefreq'] = xmlsitemap_get_changefreq($link['changefreq'] ?: XMLSITEMAP_FREQUENCY_DEFAULT);
     }
     if (!empty($output_elements['priority']) && isset($link['priority']) && $link['priority'] != 0.5) {
       // Don't output the priority value for links that have 0.5 priority. This
@@ -545,6 +547,7 @@ function xmlsitemap_rebuild_clear(array $types, $save_custom) {
   if ($save_custom) {
     $query->condition('status_override', 0);
     $query->condition('priority_override', 0);
+    $query->condition('changefreq_override', 0);
   }
 
   return $query->execute();

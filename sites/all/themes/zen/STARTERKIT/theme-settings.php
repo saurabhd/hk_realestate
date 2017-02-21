@@ -1,13 +1,13 @@
 <?php
 /**
- * Implements hook_form_system_theme_settings_alter().
- *
- * @param $form
- *   Nested array of form elements that comprise the form.
- * @param $form_state
- *   A keyed array containing the current state of the form.
+ * @file
+ * Contains the theme's settings form.
  */
-function STARTERKIT_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL)  {
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function STARTERKIT_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
@@ -17,16 +17,16 @@ function STARTERKIT_form_system_theme_settings_alter(&$form, &$form_state, $form
 
   /* -- Delete this line if you want to use this setting
   $form['STARTERKIT_example'] = array(
-    '#type'          => 'checkbox',
-    '#title'         => t('STARTERKIT sample setting'),
-    '#default_value' => theme_get_setting('STARTERKIT_example'),
-    '#description'   => t("This option doesn't do anything; it's just an example."),
+  '#type'          => 'checkbox',
+  '#title'         => t('STARTERKIT sample setting'),
+  '#default_value' => theme_get_setting('STARTERKIT_example'),
+  '#description'   => t("This example option doesn't do anything."),
   );
   // */
 
-  // Remove some of the base theme's settings.
-  /* -- Delete this line if you want to turn off this setting.
-  unset($form['themedev']['zen_wireframes']); // We don't need to toggle wireframes on this site.
+  /* -- Delete this line if you want to remove this base theme setting.
+  // We don't need breadcrumbs to be configurable on this site.
+  unset($form['breadcrumb']);
   // */
 
   // We are editing the $form in place, so we don't need to return anything.

@@ -133,7 +133,7 @@
     <?php endif; ?>
 
   </div>
-
+  <?php print render($page['footer_top']); ?>
   <?php print render($page['footer']); ?>
 
 </div>

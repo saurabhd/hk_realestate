@@ -23,6 +23,10 @@
     width: 60%;
     float:left;
   }
+  /* Hide Slick Nav elements for the object page */
+  .section-object nav.slick__arrow {
+    display: none;
+  }
   .field-name-wohnungsliste {
     margin-top: 1.5em;
     .label-above {

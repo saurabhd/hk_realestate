@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Hk Site Redesign feature.
+ */
+
+include_once 'hk_site_redesign.features.inc';

@@ -19,6 +19,14 @@ function hk_site_redesign_default_fe_block_boxes() {
   $export['buyer_trust_us'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Call Us Now';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'call_us_now';
+  $fe_block_boxes->body = '<div class=\'call-us-now-wrap\'><div class=\'call-us-now-text\'>call us now</div><div class=\'call-us-now-number\'>+49 30 780 870 80</div></div>';
+
+  $export['call_us_now'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Expert Guidance';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'expert_guidance';
@@ -30,7 +38,7 @@ function hk_site_redesign_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Footer First';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'footer_first';
-  $fe_block_boxes->body = '<div class="main-address"><div class="address">Lychener Str.2<span>10 437 Berlin - prenzlauer Berg</span></div><div class="phone">+49 30 780 870 80</div><div class="Email">hk@gmail.com</div></div>';
+  $fe_block_boxes->body = '<div class="main-address"><div class="address"><p>Lychener Str.2</p><p>10 437 Berlin - prenzlauer Berg</p></div><div class="phone"><p>+49 30 780 870 80</p></div><div class="Email">hk@gmail.com</div></div>';
 
   $export['footer_first'] = $fe_block_boxes;
 

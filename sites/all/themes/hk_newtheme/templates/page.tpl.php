@@ -7,9 +7,12 @@
  * @see https://drupal.org/node/1728148
  */
 ?>
-
+<div class="top-header-wrap">
+  <div class="layout-center">
+    <?php print render($page['header_top']); ?>
+  </div>
+</div>
 <div class="layout-center">
-<?php print render($page['header_top']); ?>
   <header class="header" role="banner">
 
     <?php if ($logo): ?>
@@ -30,9 +33,9 @@
       </div>
     <?php endif; ?>
 
-    <?php if ($secondary_menu): ?>
-      <nav class="header__secondary-menu" role="navigation">
-        <?php print theme('links__system_secondary_menu', array(
+    <?php //if ($secondary_menu): ?>
+     <!--  <nav class="header__secondary-menu" role="navigation"> -->
+        <?php /*print theme('links__system_secondary_menu', array(
           'links' => $secondary_menu,
           'attributes' => array(
             'class' => array('links', 'inline', 'clearfix'),
@@ -42,10 +45,10 @@
             'level' => 'h2',
             'class' => array('visually-hidden'),
           ),
-        )); ?>
-      </nav>
-    <?php endif; ?>
-
+        ));*/ ?>
+      <!-- </nav> -->
+    <?php //endif; ?>
+    <?php print render($page['header_side']); ?>
     <?php print render($page['header']); ?>
 
   </header>

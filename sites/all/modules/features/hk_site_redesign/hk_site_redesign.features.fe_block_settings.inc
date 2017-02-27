@@ -59,6 +59,53 @@ function hk_site_redesign_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['block-call_us_now'] = array(
+    'cache' => -1,
+    'css_class' => 'call-us-now',
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'call_us_now',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_newtheme' => array(
+        'region' => 'header_side',
+        'status' => 1,
+        'theme' => 'hk_newtheme',
+        'weight' => 0,
+      ),
+      'hk_subdomain' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_subdomain',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['block-expert_guidance'] = array(
     'cache' => -1,
     'css_class' => 'expert-guidance',
@@ -134,7 +181,7 @@ function hk_site_redesign_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'hk_newtheme',
-        'weight' => -71,
+        'weight' => -77,
       ),
       'hk_subdomain' => array(
         'region' => '',
@@ -463,7 +510,7 @@ function hk_site_redesign_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'hk_newtheme',
-        'weight' => -69,
+        'weight' => -74,
       ),
       'hk_subdomain' => array(
         'region' => '',
@@ -511,6 +558,53 @@ function hk_site_redesign_default_fe_block_settings() {
         'status' => 1,
         'theme' => 'hk_newtheme',
         'weight' => 0,
+      ),
+      'hk_subdomain' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_subdomain',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['multiblock-1'] = array(
+    'cache' => -1,
+    'css_class' => 'shariff-sharing-buttons',
+    'custom' => 0,
+    'delta' => 1,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'multiblock',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_newtheme' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'hk_newtheme',
+        'weight' => -76,
       ),
       'hk_subdomain' => array(
         'region' => '',

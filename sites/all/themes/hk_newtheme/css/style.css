@@ -1,0 +1,282 @@
+/**
+ *
+ * Home page CSS
+ */
+
+/* Top Header Design */
+.top-header-wrap {
+  display: inline-block;
+  width: 100%;
+  background-color: #C61C2C;
+  color: #FFF;
+}
+.top-header-wrap .layout-center { padding-top: 8px; }
+.top-header-wrap .region-header-top {
+  display: inline-block;
+  width: 100%;
+  /*margin-top: 7px;*/
+}
+.top-header-wrap .block.open-hours {
+  float: left;
+  display: inline-block;
+  width: 50%;
+  margin-top: 6px;
+  font-size: 14px;
+}
+.top-header-wrap .block.open-hours .open-hours-text::before {
+  display: inline-block;
+  margin-right: 6px;
+  font-family: 'FontAwesome';
+  content: '\f017';
+}
+.top-header-wrap .list-your-property {
+  float: left;
+  display: inline-block;
+  width: 25%;
+}
+.top-header-wrap .list-your-property p {
+  margin: 0;
+}
+.top-header-wrap .list-your-property p a {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 3px;
+  background-color: #000;
+  color: #FFF;
+  font-size: 14px;
+  text-decoration: none;
+}
+.top-header-wrap #block-system-user-menu {
+  float: left;
+  width: 20%;
+  padding-right: 15px;
+  text-align: right;
+}
+.top-header-wrap #block-system-user-menu ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.top-header-wrap #block-system-user-menu ul li {
+  float: left;
+  margin-top: 3px;
+  list-style-image: none;
+  list-style-type: none;
+}
+.top-header-wrap #block-system-user-menu ul li.favorite-icon a {
+  font-size: 0;
+}
+.top-header-wrap #block-system-user-menu ul li.favorite-icon a::before {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 14px;
+  font-family: 'FontAwesome';
+  content: '\f08a';
+}
+.top-header-wrap #block-system-user-menu ul li a {
+  padding: 6px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #FFF;
+  font-size: 14px;
+  text-decoration: none;
+}
+.top-header-wrap #block-system-user-menu ul li.is-active-trail a {
+  border: 1px solid #FFF;
+}
+
+.top-header-wrap #block-lang-dropdown-language {
+  float: left;
+  width: 4%;
+  margin-top: 2px;
+  margin-left: 1%;
+  text-align: right;
+}
+.top-header-wrap #block-lang-dropdown-language select {
+  padding: 2px 4px;
+  color: #FFF;
+  font-size: 12px;
+  background-color: #C61C2C;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.top-header-wrap #block-lang-dropdown-language select:focus {outline: none;}
+.top-header-wrap #block-lang-dropdown-language .form-type-select {
+  position: relative;
+}
+.top-header-wrap #block-lang-dropdown-language .form-type-select::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  margin-left: 36px;
+  font-family: 'FontAwesome';
+  content: '\f0d7';
+}
+
+
+/* Map display none */
+.view-karten { display: none; }
+
+/* Footer Design */
+.footer {
+  display: inline-block;
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 40px;
+  color: #696969;
+}
+.footer .block {
+  float: left;
+  width: calc(33.33% - 14px);
+  margin-right: 20px;
+  font-size: 14px;
+}
+.footer .block:last-child { margin-right: 0; }
+.footer .block h2 {
+  margin: 0;
+  padding-bottom: 12px;
+  color: #000;
+  font-size: 18px;
+}
+.footer .block ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.footer .block ul li {
+  list-style-image: none;
+  list-style-type: none;
+}
+.footer .block a {
+  color: #696969;
+  text-decoration: none;
+}
+.footer .block a:hover { text-decoration: underline; }
+.footer .block .main-address .address {
+  position: relative;
+  margin-bottom: 6px;
+}
+.footer .block .main-address .address::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 4px;
+  font-size: 20px;
+  font-family: 'FontAwesome';
+  content: '\f041';
+}
+.footer .block .main-address .address p {
+  margin: 0;
+  padding-left: 36px;
+}
+.footer .block .main-address .phone {
+  position: relative;
+  margin-bottom: 6px;
+}
+.footer .block .main-address .phone::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  font-family: 'FontAwesome';
+  content: '\f095';
+}
+.footer .block .main-address .phone p {
+  margin: 0;
+  padding-left: 34px;
+}
+.footer .block .main-address .Email { position: relative; }
+.footer .block .main-address .Email::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  font-family: 'FontAwesome';
+  content: '\f0e0';
+}
+.footer .block .main-address .Email a {
+  padding-left: 36px;
+}
+.footer .block .main-address .menu li {
+  margin-bottom: 6px;
+}
+
+/* Bottom Footer Design */
+.region-bottom {
+  display: inline-block;
+  width: 100%;
+}
+.region-bottom .page-bottom-menu {
+  display: inline-block;
+  float: left;
+  width: 70%;
+}
+.region-bottom .page-bottom-menu ul {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.region-bottom .page-bottom-menu ul li {
+  float: left;
+  color: #FFF;
+  list-style-image: none;
+  list-style-type: none;
+  text-align: center;
+}
+.region-bottom .page-bottom-menu ul li.footer-wishlist {
+  width: 25%;
+  background-color: #000;
+}
+.region-bottom .page-bottom-menu ul li.footer-list-your-property {
+  width: 30%;
+  background-color: #C61C2C;
+}
+.region-bottom .page-bottom-menu ul li.footer-feedback {
+  width: 20%;
+  background-color: #000;
+}
+.region-bottom .page-bottom-menu ul li.footer-contact {
+  width: 25%;
+  background-color: #C61C2C;
+}
+.region-bottom .page-bottom-menu ul li a {
+  display: inline-block;
+  color: #FFF;
+  padding: 20px 0;
+  text-decoration: none;
+}
+.region-bottom .block-simplenews {
+  /*float: left;*/
+  display: inline-block;
+  width: 30%;
+  background-color: #000;
+}
+.region-bottom .block-simplenews form { 
+  display: inline-block;
+  width: 100%;
+  padding: 8px 8px 9px;
+}
+.region-bottom .block-simplenews form .form-item {
+  margin: 0;
+}
+.region-bottom .block-simplenews label { display: none; }
+.region-bottom .block-simplenews form .form-item #edit-mail {
+  float: left;
+  height: 46px;
+  width: 60%;
+  margin: 0;
+}
+.region-bottom .block-simplenews form .form-submit {
+  display: inline-block;
+  background-color: #C61C2C;
+  color: #FFF;
+  font-size: 18px;
+  border: none;
+  padding: 11px 22px;
+}

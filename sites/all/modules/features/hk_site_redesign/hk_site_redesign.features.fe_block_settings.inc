@@ -202,7 +202,7 @@ function hk_site_redesign_default_fe_block_settings() {
 
   $export['block-list_your_property_for_free'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'list-your-property',
     'custom' => 0,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,

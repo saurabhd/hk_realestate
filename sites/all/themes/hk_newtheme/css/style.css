@@ -226,10 +226,79 @@
 .view-karten { display: none; }
 /* End */
 
-/* Home page Slider part */
+/* Section title design */
+.block__title {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.block__title::before,
+.block__title::after {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-image: url('../images/red-arrow-icon.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  vertical-align: middle;
+  content: '';
+}
+.block__title::before { margin-right: 18px; }
+.block__title::after { margin-left: 18px; }
+/* End */
+
+/* Happy client section */
+#block-views-addweb-happy-clients-block {
+  display: inline-block;
+  width: 100%;
+}
+#block-views-addweb-happy-clients-block .view-content .slides {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+#block-views-addweb-happy-clients-block .view-content .slides li .views-field-title a {
+  color: #000;
+  font-size: 38px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+#block-views-addweb-happy-clients-block .view-content .slides li .views-field-title a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+#block-views-addweb-happy-clients-block .view-content .slides li .views-field-body {
+  font-size: 14px;
+  line-height: 30px;
+}
+#block-views-addweb-happy-clients-block .view-content .slides li .views-field-field-user-photo {
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+#block-views-addweb-happy-clients-block .view-content .slides li .views-field-field-user-photo img {
+  height: 80px;
+  width: 80px;
+  -webkit-border-radius: 100%;
+     -moz-border-radius: 100%;
+          border-radius: 100%;
+}
 .flexslider .slides img {
   height: auto;
   width: auto;
+}
+#block-views-addweb-happy-clients-block .flex-control-paging { display: none; }
+#block-views-addweb-happy-clients-block .flex-direction-nav a {
+  height: 28px;
+  width: 20px;
+}
+#block-views-addweb-happy-clients-block .flex-direction-nav a:before {
+  font-family: 'FontAwesome';
+  content: '\f105';
+}
+#block-views-addweb-happy-clients-block .flex-direction-nav a.flex-prev:before {
+  content: '\f104';
 }
 /* End */
 

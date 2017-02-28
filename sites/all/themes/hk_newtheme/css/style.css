@@ -226,12 +226,18 @@
 .view-karten { display: none; }
 /* End */
 
+/* Home page Slider part */
+.flexslider .slides img {
+  height: auto;
+  width: auto;
+}
+/* End */
 
 /* Choose Us */
 .footer-top-wrap {
   display: inline-block;
   width: 100%;
-  padding: 3px 0 60px;
+  padding: 35px 0 60px;
   background-image: url('../images/footer-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;

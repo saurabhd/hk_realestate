@@ -717,6 +717,53 @@ function hk_site_redesign_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['views-addweb_happy_clients-block'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'addweb_happy_clients-block',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_newtheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'hk_newtheme',
+        'weight' => 0,
+      ),
+      'hk_subdomain' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_subdomain',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Happy Clients',
+    'visibility' => 1,
+  );
+
   $export['views-footer_link-block'] = array(
     'cache' => -1,
     'css_class' => '',

@@ -66,5 +66,16 @@ function hk_site_redesign_strongarm() {
   );
   $export['theme_hk_newtheme_settings'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_menu_link_menu-footer-menu';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+    'changefreq' => '2419200',
+  );
+  $export['xmlsitemap_settings_menu_link_menu-footer-menu'] = $strongarm;
+
   return $export;
 }

@@ -10,6 +10,171 @@
 function hk_site_redesign_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: menu-footer-menu_about-us:<front>.
+  $menu_links['menu-footer-menu_about-us:<front>'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'About Us',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-footer-menu_about-us:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 1,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu_auction-results:<front>.
+  $menu_links['menu-footer-menu_auction-results:<front>'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'Auction Results',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-footer-menu_auction-results:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 3,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu_faq:<front>.
+  $menu_links['menu-footer-menu_faq:<front>'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'FAQ',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-footer-menu_faq:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 5,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu_home-price-guide:<front>.
+  $menu_links['menu-footer-menu_home-price-guide:<front>'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'Home Price Guide',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-footer-menu_home-price-guide:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 2,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-footer-menu_suburb-profiles:<front>.
+  $menu_links['menu-footer-menu_suburb-profiles:<front>'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'suburb Profiles',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => '',
+        'style' => '',
+      ),
+      'identifier' => 'menu-footer-menu_suburb-profiles:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 4,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: menu-page-bottom_contact:<front>.
   $menu_links['menu-page-bottom_contact:<front>'] = array(
     'menu_name' => 'menu-page-bottom',
@@ -142,6 +307,35 @@ function hk_site_redesign_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: user-menu_ausloggen:user/logout.
+  $menu_links['user-menu_ausloggen:user/logout'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/logout',
+    'router_path' => 'user/logout',
+    'link_title' => 'Ausloggen',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'alter' => TRUE,
+      'identifier' => 'user-menu_ausloggen:user/logout',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+    'language' => 'de',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: user-menu_favorites:favorites.
   $menu_links['user-menu_favorites:favorites'] = array(
     'menu_name' => 'user-menu',
@@ -178,6 +372,35 @@ function hk_site_redesign_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
     'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: user-menu_log-out:user/logout.
+  $menu_links['user-menu_log-out:user/logout'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/logout',
+    'router_path' => 'user/logout',
+    'link_title' => 'Log out',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(),
+      'alter' => TRUE,
+      'identifier' => 'user-menu_log-out:user/logout',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+    'language' => 'en',
     'menu_links_customized' => 1,
   );
   // Exported menu link: user-menu_sign-in:user/login.
@@ -280,14 +503,21 @@ function hk_site_redesign_menu_default_menu_links() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('About Us');
+  t('Auction Results');
+  t('Ausloggen');
   t('Contact');
+  t('FAQ');
   t('Favorites');
   t('Feedback');
+  t('Home Price Guide');
   t('List your property for free');
+  t('Log out');
   t('User account');
   t('Wishlist');
   t('sign in');
   t('sign up');
+  t('suburb Profiles');
 
   return $menu_links;
 }

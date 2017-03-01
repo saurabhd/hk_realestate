@@ -181,7 +181,7 @@ function hk_site_redesign_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'hk_newtheme',
-        'weight' => -77,
+        'weight' => -78,
       ),
       'hk_subdomain' => array(
         'region' => '',
@@ -510,7 +510,7 @@ function hk_site_redesign_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'hk_newtheme',
-        'weight' => -74,
+        'weight' => -76,
       ),
       'hk_subdomain' => array(
         'region' => '',
@@ -604,7 +604,7 @@ function hk_site_redesign_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'hk_newtheme',
-        'weight' => -76,
+        'weight' => -77,
       ),
       'hk_subdomain' => array(
         'region' => '',
@@ -745,7 +745,7 @@ function hk_site_redesign_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'hk_newtheme',
-        'weight' => 0,
+        'weight' => -66,
       ),
       'hk_subdomain' => array(
         'region' => '',
@@ -839,7 +839,7 @@ function hk_site_redesign_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'hk_newtheme',
-        'weight' => 0,
+        'weight' => -78,
       ),
       'hk_subdomain' => array(
         'region' => '',
@@ -854,8 +854,8 @@ function hk_site_redesign_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
+    'title' => 'Featured Projects',
+    'visibility' => 1,
   );
 
   return $export;

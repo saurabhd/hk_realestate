@@ -37,19 +37,24 @@ function hk_site_redesign_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   /* Field: Content: User Photo */
   $handler->display->display_options['fields']['field_user_photo']['id'] = 'field_user_photo';
   $handler->display->display_options['fields']['field_user_photo']['table'] = 'field_data_field_user_photo';
   $handler->display->display_options['fields']['field_user_photo']['field'] = 'field_user_photo';
   $handler->display->display_options['fields']['field_user_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_user_photo']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_photo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_photo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_photo']['settings'] = array(
@@ -61,18 +66,33 @@ function hk_site_redesign_views_default_views() {
   $handler->display->display_options['fields']['field_user_name']['table'] = 'field_data_field_user_name';
   $handler->display->display_options['fields']['field_user_name']['field'] = 'field_user_name';
   $handler->display->display_options['fields']['field_user_name']['label'] = '';
+  $handler->display->display_options['fields']['field_user_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_name']['element_label_colon'] = FALSE;
   /* Field: Content: User Designation */
   $handler->display->display_options['fields']['field_user_designation']['id'] = 'field_user_designation';
   $handler->display->display_options['fields']['field_user_designation']['table'] = 'field_data_field_user_designation';
   $handler->display->display_options['fields']['field_user_designation']['field'] = 'field_user_designation';
   $handler->display->display_options['fields']['field_user_designation']['label'] = '';
+  $handler->display->display_options['fields']['field_user_designation']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_designation']['element_label_colon'] = FALSE;
   /* Field: Content: Apartment Image */
   $handler->display->display_options['fields']['field_apartment_image']['id'] = 'field_apartment_image';
   $handler->display->display_options['fields']['field_apartment_image']['table'] = 'field_data_field_apartment_image';
   $handler->display->display_options['fields']['field_apartment_image']['field'] = 'field_apartment_image';
   $handler->display->display_options['fields']['field_apartment_image']['label'] = '';
+  $handler->display->display_options['fields']['field_apartment_image']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_apartment_image']['alter']['text'] = '<div class=\'happy-client-warp\'>
+<div class="title-text">[title]</div>
+[body]
+<div class=\'happy-client-user-info\'>
+<div class="user-photo">[field_user_photo]</div>
+<div lcass="name-text">[field_user_name]</div>
+<div class="user-deg">[field_user_designation]</div>
+</div>
+</div>
+<div class=\'happy-client-apartment-info\'>
+[field_apartment_image]
+</div>';
   $handler->display->display_options['fields']['field_apartment_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_apartment_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_apartment_image']['settings'] = array(

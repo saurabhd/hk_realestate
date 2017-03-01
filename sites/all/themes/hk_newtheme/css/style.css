@@ -230,6 +230,9 @@
 .block__title {
   display: inline-block;
   width: 100%;
+  margin-bottom: 55px;
+  font-size: 32px;
+  font-weight: normal;
   text-align: center;
 }
 .block__title::before,
@@ -255,43 +258,94 @@
 #block-views-addweb-happy-clients-block .view-content .slides {
   display: inline-block;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
-#block-views-addweb-happy-clients-block .view-content .slides li .views-field-title a {
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp {
+  float: left;
+  width: 50%;
+  padding-right: 35px;
+}
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp .title-text {
+  min-height: 85px;
+  font-size: 36px;
+  line-height: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp .views-field-title a {
   color: #000;
   font-size: 38px;
   text-transform: uppercase;
   text-decoration: none;
 }
-#block-views-addweb-happy-clients-block .view-content .slides li .views-field-title a:hover {
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp .views-field-title a:hover {
   color: #000;
   text-decoration: none;
 }
 
-#block-views-addweb-happy-clients-block .view-content .slides li .views-field-body {
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp p {
+  margin: 15px 0;
   font-size: 14px;
   line-height: 30px;
 }
-#block-views-addweb-happy-clients-block .view-content .slides li .views-field-field-user-photo {
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp .happy-client-user-info {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp .happy-client-user-info .user-photo{
   display: inline-block;
   height: 80px;
   width: 80px;
 }
-#block-views-addweb-happy-clients-block .view-content .slides li .views-field-field-user-photo img {
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp .happy-client-user-info .user-photo img {
   height: 80px;
   width: 80px;
   -webkit-border-radius: 100%;
      -moz-border-radius: 100%;
           border-radius: 100%;
 }
-.flexslider .slides img {
-  height: auto;
-  width: auto;
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp .happy-client-user-info .name-text {
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+}
+#block-views-addweb-happy-clients-block .view-content .happy-client-warp .happy-client-user-info .user-deg {
+  color: #444;
+  font-size: 14px;
+  font-weight: normal;
+}
+#block-views-addweb-happy-clients-block .view-content .happy-client-apartment-info {
+  float: left;
+  width: 50%;
+}
+#block-views-addweb-happy-clients-block .flex-direction-nav {
+  position: absolute;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 125px;
+  text-align: center;
 }
 #block-views-addweb-happy-clients-block .flex-control-paging { display: none; }
 #block-views-addweb-happy-clients-block .flex-direction-nav a {
   height: 28px;
   width: 20px;
+}
+#block-views-addweb-happy-clients-block .flex-direction-nav a {
+  position: relative;
+  left: auto;
+  right: auto;
+  display: inline-block;
+}
+#block-views-addweb-happy-clients-block .flex-direction-nav li { display: inline-block; }
+#block-views-addweb-happy-clients-block .flex-direction-nav a.flex-prev {
+  margin-left: -205px;
+}
+#block-views-addweb-happy-clients-block .flex-direction-nav a.flex-next {
+  margin-right: -125px;
 }
 #block-views-addweb-happy-clients-block .flex-direction-nav a:before {
   font-family: 'FontAwesome';
@@ -301,6 +355,58 @@
   content: '\f104';
 }
 /* End */
+
+/* Featured Projects section design */
+#block-views-latest-apartment-node-block .view-latest-apartment-node .view-content {
+  display: flex;
+  width: 100%;
+}
+#block-views-latest-apartment-node-block .view-latest-apartment-node .views-row {
+  float: left;
+  width: -webkit-calc(25% - 15px);
+  width:    -moz-calc(25% - 15px);
+  width:         calc(25% - 15px);
+  margin-right: 20px;
+  background-color: #FFF;
+  -webkit-box-shadow: 0 0 8px 0px rgba(0, 0, 0, .6);
+     -moz-box-shadow: 0 0 8px 0px rgba(0, 0, 0, .6);
+          box-shadow: 0 0 8px 0px rgba(0, 0, 0, .6);
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+#block-views-latest-apartment-node-block .view-latest-apartment-node .views-row .views-field-field-apart-pictures img { width: 100%; }
+#block-views-latest-apartment-node-block .view-latest-apartment-node .views-row .views-field-title {
+  color: #B71C1C;
+  font-size: 14px;
+  font-weight: bold;
+}
+#block-views-latest-apartment-node-block .view-latest-apartment-node .views-row .views-field-field-apart-living-space,
+#block-views-latest-apartment-node-block .view-latest-apartment-node .views-row .views-field-field-apart-price {
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 13px;
+  line-height: 14px;
+}
+#block-views-latest-apartment-node-block .view-latest-apartment-node .views-row .views-field-field-apart-price {
+  padding-right: 0;
+  padding-left: 10px;
+  border-left: 2px solid #000;
+}
+#block-views-latest-apartment-node-block .view-latest-apartment-node .views-row .views-field-nothing a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #B71C1C;
+  color: #FFF;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+#block-views-latest-apartment-node-block .view-latest-apartment-node .views-row .views-field-nothing a:hover {
+  color: #FFF;
+  text-decoration: none;
+}
+/* End */
+
 
 /* Choose Us */
 .footer-top-wrap {

@@ -294,6 +294,53 @@ function hk_site_redesign_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['block-referral_block'] = array(
+    'cache' => -1,
+    'css_class' => 'referral-block',
+    'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'machine_name' => 'referral_block',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adminimal',
+        'weight' => 0,
+      ),
+      'hk_adminimal' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_adminimal',
+        'weight' => 0,
+      ),
+      'hk_newtheme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'hk_newtheme',
+        'weight' => -79,
+      ),
+      'hk_subdomain' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_subdomain',
+        'weight' => 0,
+      ),
+      'hk_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'hk_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
   $export['block-sellers_prefer_us'] = array(
     'cache' => -1,
     'css_class' => 'sellers-prefer-us',

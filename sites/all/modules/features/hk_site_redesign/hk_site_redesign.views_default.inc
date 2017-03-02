@@ -32,6 +32,13 @@ function hk_site_redesign_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Sub Title */
+  $handler->display->display_options['fields']['field_sub_title']['id'] = 'field_sub_title';
+  $handler->display->display_options['fields']['field_sub_title']['table'] = 'field_data_field_sub_title';
+  $handler->display->display_options['fields']['field_sub_title']['field'] = 'field_sub_title';
+  $handler->display->display_options['fields']['field_sub_title']['label'] = '';
+  $handler->display->display_options['fields']['field_sub_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sub_title']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -82,6 +89,7 @@ function hk_site_redesign_views_default_views() {
   $handler->display->display_options['fields']['field_apartment_image']['label'] = '';
   $handler->display->display_options['fields']['field_apartment_image']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_apartment_image']['alter']['text'] = '<div class=\'happy-client-warp\'>
+<div class="sub-title-text">[field_sub_title]</div>
 <div class="title-text">[title]</div>
 [body]
 <div class=\'happy-client-user-info\'>
@@ -265,9 +273,51 @@ function hk_site_redesign_views_default_views() {
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'See Details';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Quick View';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  /* Field: Indexed Content: Rooms */
+  $handler->display->display_options['fields']['field_apart_rooms']['id'] = 'field_apart_rooms';
+  $handler->display->display_options['fields']['field_apart_rooms']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_rooms']['field'] = 'field_apart_rooms';
+  $handler->display->display_options['fields']['field_apart_rooms']['label'] = 'Sleeping rooms';
+  $handler->display->display_options['fields']['field_apart_rooms']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_apart_rooms']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_apart_rooms']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Indexed Content: Bathrooms */
+  $handler->display->display_options['fields']['field_apart_bathrooms']['id'] = 'field_apart_bathrooms';
+  $handler->display->display_options['fields']['field_apart_bathrooms']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_bathrooms']['field'] = 'field_apart_bathrooms';
+  $handler->display->display_options['fields']['field_apart_bathrooms']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_apart_bathrooms']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_apart_bathrooms']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Indexed Content: Floor */
+  $handler->display->display_options['fields']['field_apart_floor']['id'] = 'field_apart_floor';
+  $handler->display->display_options['fields']['field_apart_floor']['table'] = 'search_api_index_solr_node_index';
+  $handler->display->display_options['fields']['field_apart_floor']['field'] = 'field_apart_floor';
+  $handler->display->display_options['fields']['field_apart_floor']['label'] = '';
+  $handler->display->display_options['fields']['field_apart_floor']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_apart_floor']['alter']['text'] = '<div class=\'quick-view\'>
+<div class=\'room\'><div class=\'room-label\'>Sleeping rooms</div>[field_apart_rooms]</div>
+<div class=\'bathrooms\'><div class=\'bathroom-label\'>Bathrooms</div>[field_apart_bathrooms]</div>
+<div class=\'floor\'><div class=\'floor-label\'>No. of floors</div>[field_apart_floor]</div>
+</div>';
+  $handler->display->display_options['fields']['field_apart_floor']['element_label_colon'] = FALSE;
   /* Sort criterion: Indexed Content: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_solr_node_index';

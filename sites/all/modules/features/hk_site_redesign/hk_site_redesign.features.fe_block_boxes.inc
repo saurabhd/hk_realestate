@@ -59,6 +59,14 @@ function hk_site_redesign_default_fe_block_boxes() {
   $export['open_hours'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Referral Block';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'referral_block';
+  $fe_block_boxes->body = '<a href=\'#\'>Referral</a>';
+
+  $export['referral_block'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Sellers Prefer Us';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'sellers_prefer_us';

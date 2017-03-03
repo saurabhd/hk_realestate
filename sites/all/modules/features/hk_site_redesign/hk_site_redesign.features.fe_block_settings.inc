@@ -319,7 +319,7 @@ function hk_site_redesign_default_fe_block_settings() {
         'weight' => 0,
       ),
       'hk_newtheme' => array(
-        'region' => 'content',
+        'region' => 'navigation',
         'status' => 1,
         'theme' => 'hk_newtheme',
         'weight' => -79,

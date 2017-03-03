@@ -313,9 +313,9 @@ function hk_site_redesign_views_default_views() {
   $handler->display->display_options['fields']['field_apart_floor']['label'] = '';
   $handler->display->display_options['fields']['field_apart_floor']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_apart_floor']['alter']['text'] = '<div class=\'quick-view\'>
-<div class=\'room\'><div class=\'room-label\'>Sleeping rooms</div>[field_apart_rooms]</div>
-<div class=\'bathrooms\'><div class=\'bathroom-label\'>Bathrooms</div>[field_apart_bathrooms]</div>
-<div class=\'floor\'><div class=\'floor-label\'>No. of floors</div>[field_apart_floor]</div>
+<div class=\'room\'><div class=\'room-label\'>Sleeping rooms</div><div class=\'number\'>[field_apart_rooms]</div></div>
+<div class=\'bathrooms\'><div class=\'bathroom-label\'>Bathrooms</div><div class=\'number\'>[field_apart_bathrooms]</div></div>
+<div class=\'floor\'><div class=\'floor-label\'>No. of floors</div><div class=\'number\'>[field_apart_floor]</div></div>
 </div>';
   $handler->display->display_options['fields']['field_apart_floor']['element_label_colon'] = FALSE;
   /* Sort criterion: Indexed Content: Date created */

@@ -49,6 +49,15 @@
           ));*/ ?>
         <!-- </nav> -->
       <?php //endif; ?>
+      <?php if ($main_menu): ?>
+        <nav class="main-menu" role="navigation">
+        <?php 
+          $block = block_load('system', 'main-menu');
+          $renderable_array = _block_get_renderable_array(_block_render_blocks(array($block)));
+          print drupal_render($renderable_array);
+        ?>
+        </nav>
+      <?php endif; ?>
       <?php print render($page['header_side']); ?>
       <?php print render($page['header']); ?>
 
@@ -105,13 +114,13 @@
       <a href="#skip-link" class="visually-hidden visually-hidden--focusable" id="main-menu" tabindex="-1">Back to top</a>
 
       <?php if ($main_menu): ?>
-        <nav class="main-menu" role="navigation">
+        <!-- <nav class="main-menu" role="navigation"> -->
           <?php
           // This code snippet is hard to modify. We recommend turning off the
           // "Main menu" on your sub-theme's settings form, deleting this PHP
           // code block, and, instead, using the "Menu block" module.
           // @see https://drupal.org/project/menu_block
-          print theme('links__system_main_menu', array(
+          /*print theme('links__system_main_menu', array(
             'links' => $main_menu,
             'attributes' => array(
               'class' => array('navbar', 'clearfix'),
@@ -121,8 +130,8 @@
               'level' => 'h2',
               'class' => array('visually-hidden'),
             ),
-          )); ?>
-        </nav>
+          ));*/ ?>
+        <!-- </nav> -->
       <?php endif; ?>
 
       <?php //print render($page['navigation']); ?>

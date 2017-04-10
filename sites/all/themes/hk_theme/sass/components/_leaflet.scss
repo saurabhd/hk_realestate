@@ -1473,6 +1473,7 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     -moz-border-radius: 4px;
     border-radius: 4px;
     > a {
+      float: left;
       display: inline-block;
       width: 100%;
       max-height: 25px;
@@ -2270,3 +2271,15 @@ body.not-front.not-logged-in.page-hybridauth { background: none; }
     display: none;
   }
 }
+
+/* Featured page design changes */
+.view-karten {
+  .view-header {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 1em;
+    p { margin: 0;}
+  }
+}
+/* End */

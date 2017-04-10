@@ -19,6 +19,14 @@
   .field-name-field-object-txt-map-popup {
     clear: left;
   }
+  .field-name-field-object-txt-map-popup {
+    width: 60%;
+    float:left;
+  }
+  /* Hide Slick Nav elements for the object page */
+  .section-objekt nav.slick__arrow {
+    display: none;
+  }
   .field-name-wohnungsliste {
     margin-top: 1.5em;
     .label-above {

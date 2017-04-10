@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_node_grants_alter().
+ */
+function domain_xmlsitemap_node_grants_alter(&$grants, $account, $op) {
+  if (!empty($account->xmlsitemap_node_access)) {
+    unset($grants['domain_site']);
+    unset($grants['domain_id']);
+    $grants['domain_all'] = array(0);
+  }
+}
+
+/**
+ * Implements hook_xmlsitemap_link_url_alter().
+ */
+function domain_xmlsitemap_xmlsitemap_link_url_alter(&$link_options) {
+  // Check to see if the link's language is the domain's default language.
+  if ($link_options['options']['xmlsitemap_sitemap']->context['domain'] > 0) {
+    if (module_exists('domain_conf')) {
+      $default = domain_conf_variable_get($link_options['options']['xmlsitemap_sitemap']->context['domain'], 'language_default');
+      if ($default == $link_options['language']->language) {
+        // Remove the language prefix from the link, as it's not necessary.
+        $link_options['language']->prefix = '';
+      }
+    }
+  }
+}

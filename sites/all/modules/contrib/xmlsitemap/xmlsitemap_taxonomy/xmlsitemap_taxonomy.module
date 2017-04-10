@@ -169,6 +169,9 @@ function xmlsitemap_taxonomy_create_link(stdClass &$term) {
     'priority' => $settings['priority'],
     'priority_default' => $settings['priority'],
     'priority_override' => 0,
+    'changefreq' => $settings['changefreq'],
+    'changefreq_default' => $settings['changefreq'],
+    'changefreq_override' => 0,
   );
 
   // The following values must always be checked because they are volatile.

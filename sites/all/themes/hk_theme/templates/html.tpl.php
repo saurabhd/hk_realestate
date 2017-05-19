@@ -9,6 +9,7 @@
   <meta name="google-site-verification" content="knQSpp_mc-a5nAUxUS_QaBDLS1tddahIn2dIhhGQ4EM" />
   <meta name="msvalidate.01" content="39B34C79CB9947373E2134525CD68342" />
   <meta name="yandex-verification" content="43592467d515c22c" />
+  <meta name="p:domain_verify" content="d89f5205509d4110850c71fb67c53e19"/>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
 
